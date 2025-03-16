@@ -1,0 +1,16 @@
+{
+  "@@locale": "en",
+  "appTitle": "Scan a Food Product",
+  "safe": "SAFE",
+  "usa": "USA",
+  "unknown": "UNKNOWN",
+  "productNotFound": "Product not found",
+  "brandNotFound": "Unknown brand",
+  "descriptionNotFound": "Description not found",
+  "sourceNotFound": "Unknown source",
+  "safeProductMessage": "This product is not from an American company!",
+  "usaProductMessage": "This product is from an American company!",
+  "unknownProductMessage": "The searched product was not found in our database.",
+  "problemReportTitle": "Problem with a product?",
+  "problemReportMessage": "If you have identified a product from the United States, please report it so we can add it to our list."
+}

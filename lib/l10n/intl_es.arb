@@ -1,0 +1,16 @@
+{
+    "@@locale": "es",
+    "appTitle": "Escanea un producto alimenticio",
+    "safe": "SEGURO",
+    "usa": "USA",
+    "unknown": "DESCONOCIDO",
+    "productNotFound": "Producto no encontrado",
+    "brandNotFound": "Marca desconocida",
+    "descriptionNotFound": "Descripción no encontrada",
+    "sourceNotFound": "Fuente desconocida",
+    "safeProductMessage": "¡Este producto no proviene de una empresa estadounidense!",
+    "usaProductMessage": "¡Este producto proviene de una empresa estadounidense!",
+    "unknownProductMessage": "El producto buscado no se ha encontrado en nuestra base de datos.",
+    "problemReportTitle": "¿Problema con un producto?",
+    "problemReportMessage": "Si ha identificado un producto de los Estados Unidos, por favor repórtelo para que podamos agregarlo a nuestra lista."
+}

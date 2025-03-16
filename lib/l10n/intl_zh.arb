@@ -1,0 +1,16 @@
+{
+    "@@locale": "zh",
+    "appTitle": "扫描食品产品",
+    "safe": "安全",
+    "usa": "USA",
+    "unknown": "未知",
+    "productNotFound": "未找到产品",
+    "brandNotFound": "未知品牌",
+    "descriptionNotFound": "未找到描述",
+    "sourceNotFound": "未知来源",
+    "safeProductMessage": "该产品不来自美国公司！",
+    "usaProductMessage": "该产品来自美国公司！",
+    "unknownProductMessage": "在我们的数据库中未找到所搜索的产品。",
+    "problemReportTitle": "产品有问题？",
+    "problemReportMessage": "如果您发现某产品来自美国，请报告，以便我们将其加入列表。"
+}

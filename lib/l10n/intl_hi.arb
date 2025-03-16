@@ -1,0 +1,16 @@
+{
+  "@@locale": "hi",
+  "appTitle": "एक खाद्य उत्पाद स्कैन करें",
+  "safe": "सुरक्षित",
+  "usa": "USA",
+  "unknown": "अनजान",
+  "productNotFound": "उत्पाद नहीं मिला",
+  "brandNotFound": "ब्रांड अज्ञात",
+  "descriptionNotFound": "विवरण नहीं मिला",
+  "sourceNotFound": "स्रोत अज्ञात",
+  "safeProductMessage": "यह उत्पाद किसी अमेरिकी कंपनी से नहीं है!",
+  "usaProductMessage": "यह उत्पाद एक अमेरिकी कंपनी से है!",
+  "unknownProductMessage": "खोजा गया उत्पाद हमारे डेटाबेस में नहीं मिला।",
+  "problemReportTitle": "उत्पाद के साथ समस्या?",
+  "problemReportMessage": "यदि आपने संयुक्त राज्य से किसी उत्पाद की पहचान की है, तो कृपया रिपोर्ट करें ताकि हम इसे अपनी सूची में जोड़ सकें।"
+}

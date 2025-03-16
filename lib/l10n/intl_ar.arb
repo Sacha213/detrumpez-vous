@@ -1,0 +1,16 @@
+{
+    "@@locale": "ar",
+    "appTitle": "افحص منتجًا غذائيًا",
+    "safe": "آمن",
+    "usa": "الولايات المتحدة",
+    "unknown": "غير معروف",
+    "productNotFound": "المنتج غير موجود",
+    "brandNotFound": "العلامة التجارية غير معروفة",
+    "descriptionNotFound": "الوصف غير موجود",
+    "sourceNotFound": "المصدر غير معروف",
+    "safeProductMessage": "هذا المنتج ليس من شركة أمريكية!",
+    "usaProductMessage": "هذا المنتج من شركة أمريكية!",
+    "unknownProductMessage": "لم يتم العثور على المنتج المطلوب في قاعدة بياناتنا.",
+    "problemReportTitle": "هل هناك مشكلة مع المنتج؟",
+    "problemReportMessage": "إذا حددت منتجًا من الولايات المتحدة، يرجى الإبلاغ عنه حتى نتمكن من إضافته إلى قائمتنا."
+  }

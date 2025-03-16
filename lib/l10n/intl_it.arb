@@ -1,0 +1,16 @@
+{
+  "@@locale": "it",
+  "appTitle": "Scansiona un Prodotto Alimentare",
+  "safe": "SICURO",
+  "usa": "USA",
+  "unknown": "SCONOSCIUTO",
+  "productNotFound": "Prodotto non trovato",
+  "brandNotFound": "Marca sconosciuta",
+  "descriptionNotFound": "Descrizione non trovata",
+  "sourceNotFound": "Fonte sconosciuta",
+  "safeProductMessage": "Questo prodotto non proviene da una società americana!",
+  "usaProductMessage": "Questo prodotto proviene da una società americana!",
+  "unknownProductMessage": "Il prodotto cercato non è stato trovato nel nostro database.",
+  "problemReportTitle": "Problema con un prodotto?",
+  "problemReportMessage": "Se hai identificato un prodotto dagli Stati Uniti, segnalalo affinché possiamo aggiungerlo alla nostra lista."
+}
