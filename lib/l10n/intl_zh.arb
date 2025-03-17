@@ -12,5 +12,7 @@
     "usaProductMessage": "该产品来自美国公司！",
     "unknownProductMessage": "在我们的数据库中未找到所搜索的产品。",
     "problemReportTitle": "产品有问题？",
-    "problemReportMessage": "如果您发现某产品来自美国，请报告，以便我们将其加入列表。"
+    "problemReportMessage": "如果您发现某产品来自美国，请报告，以便我们将其加入列表。",
+    "welcome": "欢迎进入",
+    "appDescription": "扫描您的食品条形码，了解该品牌是否为美国公司所有。"
 }
