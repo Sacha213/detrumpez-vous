@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "appDescription": MessageLookupByLibrary.simpleMessage(
+      "扫描您的食品条形码，了解该品牌是否为美国公司所有。",
+    ),
     "appTitle": MessageLookupByLibrary.simpleMessage("扫描食品产品"),
     "brandNotFound": MessageLookupByLibrary.simpleMessage("未知品牌"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage("未找到描述"),
@@ -39,5 +42,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage("该产品来自美国公司！"),
+    "welcome": MessageLookupByLibrary.simpleMessage("欢迎进入"),
   };
 }

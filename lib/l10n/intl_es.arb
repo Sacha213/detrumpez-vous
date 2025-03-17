@@ -1,5 +1,7 @@
 {
     "@@locale": "es",
+    "welcome": "Bienvenido a",
+    "appDescription": "Escanea el código de barras de tu producto alimenticio para descubrir si la marca pertenece a una empresa estadounidense.",
     "appTitle": "Escanea un producto alimenticio",
     "safe": "SEGURO",
     "usa": "USA",

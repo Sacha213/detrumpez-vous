@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "appDescription": MessageLookupByLibrary.simpleMessage(
+      "Scanne den Barcode deines Lebensmittelprodukts, um herauszufinden, ob die Marke im Besitz eines US-Unternehmens ist.",
+    ),
     "appTitle": MessageLookupByLibrary.simpleMessage(
       "Scanne ein Lebensmittelprodukt",
     ),
@@ -51,5 +54,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
       "Dieses Produkt stammt von einem amerikanischen Unternehmen!",
     ),
+    "welcome": MessageLookupByLibrary.simpleMessage("Willkommen in"),
   };
 }

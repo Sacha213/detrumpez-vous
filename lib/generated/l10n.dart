@@ -65,6 +65,21 @@ class S {
     );
   }
 
+  /// `Welcome in`
+  String get welcome {
+    return Intl.message('Welcome in', name: 'welcome', desc: '', args: []);
+  }
+
+  /// `Scan your food product barcode to discover if the brand is owned by a U.S. company.`
+  String get appDescription {
+    return Intl.message(
+      'Scan your food product barcode to discover if the brand is owned by a U.S. company.',
+      name: 'appDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `SAFE`
   String get safe {
     return Intl.message('SAFE', name: 'safe', desc: '', args: []);

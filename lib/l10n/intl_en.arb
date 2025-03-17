@@ -1,6 +1,8 @@
 {
   "@@locale": "en",
   "appTitle": "Scan a Food Product",
+  "welcome":"Welcome in",
+  "appDescription":"Scan your food product barcode to discover if the brand is owned by a U.S. company.",
   "safe": "SAFE",
   "usa": "USA",
   "unknown": "UNKNOWN",

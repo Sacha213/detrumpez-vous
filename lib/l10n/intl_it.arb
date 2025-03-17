@@ -1,5 +1,7 @@
 {
   "@@locale": "it",
+  "welcome": "Benvenuto in",
+  "appDescription": "Scansiona il codice a barre del tuo prodotto alimentare per scoprire se la marca è di proprietà di un'azienda statunitense.",
   "appTitle": "Scansiona un Prodotto Alimentare",
   "safe": "SICURO",
   "usa": "USA",

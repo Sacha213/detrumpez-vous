@@ -12,5 +12,7 @@
   "usaProductMessage": "Dieses Produkt stammt von einem amerikanischen Unternehmen!",
   "unknownProductMessage": "Das gesuchte Produkt wurde in unserer Datenbank nicht gefunden.",
   "problemReportTitle": "Problem mit einem Produkt?",
-  "problemReportMessage": "Wenn Sie ein Produkt aus den USA identifiziert haben, melden Sie dies bitte, damit wir es unserer Liste hinzufügen können."
+  "problemReportMessage": "Wenn Sie ein Produkt aus den USA identifiziert haben, melden Sie dies bitte, damit wir es unserer Liste hinzufügen können.",
+  "welcome": "Willkommen in",
+  "appDescription": "Scanne den Barcode deines Lebensmittelprodukts, um herauszufinden, ob die Marke im Besitz eines US-Unternehmens ist."
 }
