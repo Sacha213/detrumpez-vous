@@ -25,7 +25,7 @@
     "description": "Marque fondatrice de Kellogg's, symbole américain des céréales de petit-déjeuner.",
     "source": "Wikipedia: Kellogg's",
     "company": "Kellogg’s",
-    "normalizedName": "kellogg's_corn_flakes"
+    "normalizedName": "kelloggs_corn_flakes"
   },
   {
     "name": "Country Store",
@@ -550,14 +550,14 @@
     "description": "Marque de chips iconique de PepsiCo, symbole de l'innovation américaine dans le snack.",
     "source": "Wikipedia: PepsiCo",
     "company": "PepsiCo",
-    "normalizedName": "lay's"
+    "normalizedName": "lays"
   },
   {
     "name": "Miss Vickie's",
     "description": "Snack premium de PepsiCo, illustrant la diversité et l'innovation du marché américain.",
     "source": "Wikipedia: PepsiCo",
     "company": "PepsiCo",
-    "normalizedName": "miss_vickie's"
+    "normalizedName": "miss_vickies"
   },
   {
     "name": "Smartfood",
@@ -571,7 +571,7 @@
     "description": "Marque de chips pita développée aux USA et commercialisée par PepsiCo, symbolisant la tendance américaine aux snacks sains.",
     "source": "Wikipedia: PepsiCo",
     "company": "PepsiCo",
-    "normalizedName": "stacy's"
+    "normalizedName": "stacys"
   },
   {
     "name": "Tostitos",
@@ -585,7 +585,7 @@
     "description": "Marque de boisson à base de fruits de PepsiCo, illustrant l'innovation américaine dans les boissons saines.",
     "source": "Wikipedia: PepsiCo",
     "company": "PepsiCo",
-    "normalizedName": "fruit'vita"
+    "normalizedName": "fruitvita"
   },
   {
     "name": "Kas",
@@ -816,7 +816,7 @@
     "description": "Céréale combinant chocolat et beurre de cacahuète, illustrant la fusion des saveurs typiquement américaines par General Mills.",
     "source": "Wikipedia: General Mills",
     "company": "General Mills",
-    "normalizedName": "reese's_puffs"
+    "normalizedName": "reeses_puffs"
   },
   {
     "name": "Raisin Bran",
@@ -921,7 +921,7 @@
     "description": "Snack salé de General Mills, symbole de l'inventivité américaine dans le secteur des produits apéritifs.",
     "source": "Wikipedia: General Mills",
     "company": "General Mills",
-    "normalizedName": "gardetto's"
+    "normalizedName": "gardettos"
   },
   {
     "name": "Gold Medal Flour",
@@ -956,7 +956,7 @@
     "description": "Marque de produits surgelés par General Mills, montrant l'influence des innovations américaines dans la restauration rapide à domicile.",
     "source": "Wikipedia: General Mills",
     "company": "General Mills",
-    "normalizedName": "jeno's"
+    "normalizedName": "jenos"
   },
   {
     "name": "Jus-Rol",
@@ -991,7 +991,7 @@
     "description": "Barres à base de céréales de General Mills, un produit innovant reflétant le besoin américain de solutions pratiques pour le petit-déjeuner.",
     "source": "Wikipedia: General Mills",
     "company": "General Mills",
-    "normalizedName": "milk_'n'_cereal_bars"
+    "normalizedName": "milk_n_cereal_bars"
   },
   {
     "name": "Muir Glen",
@@ -1040,7 +1040,7 @@
     "description": "Marque de pizzas surgelées d'origine américaine par General Mills, reflétant le besoin de solutions alimentaires rapides.",
     "source": "Wikipedia: General Mills",
     "company": "General Mills",
-    "normalizedName": "totino's"
+    "normalizedName": "totinos"
   },
   {
     "name": "V. Pearl",
@@ -1215,7 +1215,7 @@
     "description": "Marque premium de chocolat détenue par Mondelez, incarnant la force des multinationales américaines dans la confiserie.",
     "source": "Wikipedia: Mondelez International",
     "company": "Mondelez",
-    "normalizedName": "cote_d'or"
+    "normalizedName": "cote_dor"
   },
   {
     "name": "Honey Maid",
@@ -1439,7 +1439,7 @@
     "description": "Confiserie mondialement reconnue, née aux États-Unis et propriété de Mars, symbole de l'innovation américaine en chocolat.",
     "source": "Wikipedia: Mars, Incorporated",
     "company": "Mars",
-    "normalizedName": "m&m's"
+    "normalizedName": "m&ms"
   },
   {
     "name": "Maltesers",
@@ -1544,21 +1544,21 @@
     "description": "Gomme à mâcher classique par Mars via Wrigley, représentant l'héritage américain dans le domaine des chewing-gums.",
     "source": "Wikipedia: Mars, Incorporated",
     "company": "Mars",
-    "normalizedName": "wrigley's_doublemint"
+    "normalizedName": "wrigleys_doublemint"
   },
   {
     "name": "Wrigley's Spearmint",
     "description": "Variante de chewing-gum de Wrigley sous Mars, illustrant l'innovation continue des marques américaines.",
     "source": "Wikipedia: Mars, Incorporated",
     "company": "Mars",
-    "normalizedName": "wrigley's_spearmint"
+    "normalizedName": "wrigleys_spearmint"
   },
   {
     "name": "Ben's Original",
     "description": "Marque de riz (anciennement Uncle Ben's) par Mars, symbole de l'innovation américaine dans les produits alimentaires pratiques.",
     "source": "Wikipedia: Mars, Incorporated",
     "company": "Mars",
-    "normalizedName": "ben's_original"
+    "normalizedName": "bens_original"
   },
   {
     "name": "CocoaVia",
@@ -1663,7 +1663,7 @@
     "description": "Marque de produits laitiers par Kraft, démontrant l'héritage américain en transformation alimentaire.",
     "source": "Wikipedia: Kraft Foods Group",
     "company": "Kraft",
-    "normalizedName": "breakstone's_ou_knudsen's"
+    "normalizedName": "breakstones_ou_knudsens"
   },
   {
     "name": "Capri-Sun",
@@ -2034,7 +2034,7 @@
     "description": "Marque américaine spécialisée dans les assaisonnements Cajun et Creole, propriété de McCormick.",
     "source": "Wikipedia: McCormick & Company",
     "company": "McCormick",
-    "normalizedName": "zatarain's"
+    "normalizedName": "zatarains"
   },
   {
     "name": "Coca‑Cola",
@@ -2132,7 +2132,7 @@
     "description": "Root beer traditionnelle américaine, créée aux États‑Unidos et reconnue pour son goût audacieux et son héritage dans le snacking US.",
     "source": "Wikipedia: The Coca‑Cola Company",
     "company": "The Coca‑Cola Company",
-    "normalizedName": "barq's"
+    "normalizedName": "barqs"
   },
   {
     "name": "Mello Yello",
@@ -2188,7 +2188,7 @@
     "description": "Marque américaine de sauces tomates et condiments appartenant à Conagra, un leader de l'alimentation aux USA.",
     "source": "Wikipedia: Conagra Brands",
     "company": "Conagra Brands",
-    "normalizedName": "hunt's"
+    "normalizedName": "hunts"
   },
   {
     "name": "Healthy Choice",
@@ -2202,7 +2202,7 @@
     "description": "Marque américaine de popcorn, devenue une référence sur le marché du snack aux États-Unis.",
     "source": "Wikipedia: Conagra Brands",
     "company": "Conagra Brands",
-    "normalizedName": "orville_redenbacher's"
+    "normalizedName": "orville_redenbachers"
   },
   {
     "name": "V8",
@@ -2230,14 +2230,14 @@
     "description": "Marque de chocolat emblématique des États-Unis, fabriquée par The Hershey Company depuis 1894.",
     "source": "Wikipedia: The Hershey Company",
     "company": "The Hershey Company",
-    "normalizedName": "hershey's"
+    "normalizedName": "hersheys"
   },
   {
     "name": "Reese’s",
     "description": "Marque américaine de chocolat au beurre de cacahuète, un des produits les plus vendus aux USA.",
     "source": "Wikipedia: The Hershey Company",
     "company": "The Hershey Company",
-    "normalizedName": "reese's"
+    "normalizedName": "reeses"
   },
   {
     "name": "Twizzlers",

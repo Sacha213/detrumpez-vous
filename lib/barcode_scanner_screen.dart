@@ -30,10 +30,19 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
   List<dynamic> brandsIndex = [];
   bool isProcessing = false; // pour éviter plusieurs scans simultanés
 
+  // Ajoutez ce contrôleur dans votre state:
+  final TextEditingController manualSearchController = TextEditingController();
+
   @override
   void initState() {
     super.initState();
     loadBrands();
+  }
+
+  @override
+  void dispose() {
+    manualSearchController.dispose();
+    super.dispose();
   }
 
   /// Charge le fichier JSON depuis les assets une seule fois.
@@ -44,7 +53,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     });
 
     // Exemple de recherche d'informations de marque
-    //await fetchProductInfo("501039413385");
+    //await fetchProductInfo("3168930168133");
   }
 
   /// Recherche une information de marque par fuzzy match.
@@ -61,7 +70,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     for (final candidate in candidates) {
       final String normalizedCandidate =
           removeDiacritics(candidate.toLowerCase())
-              .replaceAll(RegExp(r"[’‘`´]"), "'")
+              .replaceAll(RegExp(r"[’‘`´]"), "")
               .replaceAll(RegExp(r'\s+'), '_')
               .trim();
 
@@ -90,37 +99,13 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
   Future<void> fetchProductInfo(String barcode) async {
     String? productData = await fetchFromOpenFoodFact(barcode);
 
-    if (productData != null) {
-      // Si aucun produit n'est trouvé avec OpenFoodFacts, on tente avec OpenBeautyFact.
-      productData = await fetchFromOpenBeautyFact(barcode);
-    }
+    productData ??= await fetchFromOpenBeautyFact(barcode);
 
-    if (productData != null) {
-      // Ensuite avec OpenPetFoodFacts.
-      productData = await fetchFromOpenPetFoodFacts(barcode);
-    }
+    productData ??= await fetchFromOpenPetFoodFacts(barcode);
 
-    if (productData != null) {
-      // En dernier recours, on tente avec OpenProductFact.
-      productData = await fetchFromOpenProductFact(barcode);
-    }
+    productData ??= await fetchFromOpenProductFact(barcode);
 
-    // Si aucun produit n'est trouvé, afficher le popup pour saisie manuelle
-    if (!isProductFound) {
-      productData = await _showManualBrandInput();
-    }
-
-    // Recherche d'informations de marque basée sur le champ 'brands'
-    Map<String, dynamic> resultJson = await getBrandInfo(productData ?? "");
-
-    setState(() {
-      brand = productData ?? S.of(context).brandNotFound;
-      description =
-          resultJson["description"] ?? S.of(context).descriptionNotFound;
-      source = resultJson["source"] ?? S.of(context).sourceNotFound;
-      isProductFound = productData != null;
-      isProductFromUSA = resultJson.isNotEmpty;
-    });
+    await updateProductInfoDetails(productData);
   }
 
   /// Exemple de fonction pour interroger l'API OpenBeautyFact.
@@ -203,56 +188,6 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     return null;
   }
 
-  /// Affiche un popup Cupertino pour saisir manuellement la marque du produit.
-  Future<String> _showManualBrandInput() async {
-    final TextEditingController brandController = TextEditingController();
-    await showCupertinoDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return CupertinoAlertDialog(
-          title: Text(S.of(context).manualBrandTitle),
-          content: Column(
-            children: [
-              const SizedBox(height: 12),
-              Text(S.of(context).manualBrandContent),
-              const SizedBox(height: 12),
-              CupertinoTextField(
-                controller: brandController,
-                placeholder: S.of(context).manualBrandPlaceholder,
-              ),
-            ],
-          ),
-          actions: [
-            CupertinoDialogAction(
-              isDestructiveAction: true,
-              child: Text(
-                S.of(context).cancel,
-                style: const TextStyle(color: Colors.red),
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-            CupertinoDialogAction(
-              child: Text(
-                S.of(context).validate,
-                style: const TextStyle(color: Colors.blue),
-              ),
-              onPressed: () {
-                setState(() {
-                  brand = brandController.text.trim();
-                  isProductFound = brand.isNotEmpty;
-                });
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        );
-      },
-    );
-    return brandController.text.trim();
-  }
-
   // Modifiez votre fonction onBarcodeDetected pour afficher le popup si le produit n'est pas trouvé.
   Future<void> onBarcodeDetected(String code) async {
     if (isProcessing) return;
@@ -283,9 +218,25 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     });
   }
 
+  Future<void> updateProductInfoDetails(String? productData) async {
+    // Recherche d'informations de marque basée sur le champ 'brands'
+    final Map<String, dynamic> resultJson =
+        await getBrandInfo(productData ?? "");
+
+    setState(() {
+      brand = productData ?? S.of(context).brandNotFound;
+      description =
+          resultJson["description"] ?? S.of(context).descriptionNotFound;
+      source = resultJson["source"] ?? S.of(context).sourceNotFound;
+      isProductFound = productData != null;
+      isProductFromUSA = resultJson.isNotEmpty;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(2, 51, 153, 1.0), // Fond bleu
         title: Text(S.of(context).appTitle,
@@ -337,10 +288,41 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
               ],
             ),
           ),
+          // Remplacer le bouton de recherche manuelle par un champ de saisie
+          Center(
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+              child: CupertinoTextField(
+                controller: manualSearchController,
+                placeholder: S
+                    .of(context)
+                    .manualSearchPlaceholder, // Ajoutez cette clé dans vos fichiers ARB
+                clearButtonMode: OverlayVisibilityMode.editing,
+                suffix: CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  child: const Icon(CupertinoIcons.search),
+                  onPressed: () async {
+                    final String brand = manualSearchController.text.trim();
+                    if (brand.isNotEmpty) {
+                      await updateProductInfoDetails(brand);
+                    }
+                  },
+                ),
+                onSubmitted: (value) async {
+                  final String brand = value.trim();
+                  if (brand.isNotEmpty) {
+                    await updateProductInfoDetails(brand);
+                  }
+                },
+              ),
+            ),
+          ),
+
           // Partie inférieure : affichage des informations du produit.
           Expanded(
             flex: 2,
-            child: SingleChildScrollView(
+            child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
               child: Center(
                 child: Column(
@@ -459,20 +441,23 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                             style: const TextStyle(fontSize: 16),
                           ),
                           const SizedBox(height: 8),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "($source)",
-                                style: const TextStyle(
-                                    fontSize: 14, color: Colors.blue),
-                              ),
-                            ],
-                          ),
+                          (isProductFromUSA)
+                              ? Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "($source)",
+                                      style: const TextStyle(
+                                          fontSize: 14, color: Colors.blue),
+                                    ),
+                                  ],
+                                )
+                              : Container(),
                         ],
                       ),
                     ),
                     const SizedBox(height: 20),
+                    const Spacer(),
                     // Message de signalement de problème.
                     Text(
                       S.of(context).problemReportTitle,
