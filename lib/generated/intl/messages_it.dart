@@ -31,7 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Annulla"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "Descrizione non trovata",
+      "Questo marchio non è rappresentato nel nostro database di marchi statunitensi.",
     ),
     "manualBrandContent": MessageLookupByLibrary.simpleMessage(
       "Inserisci il marchio del prodotto",
@@ -42,8 +42,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
       "Marchio non trovato",
     ),
+    "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Inserisci il marchio e cerca",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Se hai identificato un prodotto degli Stati Uniti, segnalacelo in modo che possiamo aggiungerlo alla nostra lista.",
+      "Se hai identificato un prodotto dagli Stati Uniti, segnalacelo in modo che possiamo aggiungerlo alla nostra lista.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "Problema con un prodotto?",

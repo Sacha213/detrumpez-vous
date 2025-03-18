@@ -31,19 +31,22 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "Descripción no encontrada",
+      "Esta marca no está representada en nuestra base de datos de marcas estadounidenses.",
     ),
     "manualBrandContent": MessageLookupByLibrary.simpleMessage(
-      "Por favor, introduce la marca del producto",
+      "Por favor, ingresa la marca del producto",
     ),
     "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Introduce la marca",
+      "Ingresa la marca",
     ),
     "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
       "Marca no encontrada",
     ),
+    "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Ingresa la marca y busca",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Si has identificado un producto proveniente de Estados Unidos, infórmanos para poder añadirlo a nuestra lista.",
+      "Si has identificado un producto proveniente de Estados Unidos, por favor repórtalo para que podamos agregarlo a nuestra lista.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "¿Problema con un producto?",
@@ -51,16 +54,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "productNotFound": MessageLookupByLibrary.simpleMessage(
       "Producto no encontrado",
     ),
-    "safe": MessageLookupByLibrary.simpleMessage("SEGURO"),
+    "safe": MessageLookupByLibrary.simpleMessage("SAFE"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "¡Este producto no proviene de una empresa estadounidense!",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage(
-      "Fuente desconocida",
+      "Fuente no encontrada",
     ),
     "unknown": MessageLookupByLibrary.simpleMessage("DESCONOCIDO"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "El producto que buscas no se encuentra en nuestra base de datos.",
+      "El producto que buscaste no se encuentra en nuestra base de datos.",
     ),
     "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(

@@ -31,7 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Abbrechen"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "Beschreibung nicht gefunden",
+      "Diese Marke ist in unserer US-basierten Markendatenbank nicht vertreten.",
     ),
     "manualBrandContent": MessageLookupByLibrary.simpleMessage(
       "Bitte geben Sie die Marke des Produkts ein",
@@ -42,11 +42,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
       "Marke nicht gefunden",
     ),
+    "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Geben Sie die Marke ein und suchen Sie",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Wenn Sie ein Produkt aus den USA gefunden haben, melden Sie es uns bitte, damit wir es unserer Liste hinzufügen können.",
+      "Wenn Sie ein Produkt aus den Vereinigten Staaten identifiziert haben, melden Sie es bitte, damit wir es unserer Liste hinzufügen können.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
-      "Probleme mit einem Produkt?",
+      "Problem mit einem Produkt?",
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage(
       "Produkt nicht gefunden",
@@ -60,7 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "unknown": MessageLookupByLibrary.simpleMessage("UNBEKANNT"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Das gesuchte Produkt wurde in unserer Datenbank nicht gefunden.",
+      "Das von Ihnen gesuchte Produkt wurde in unserer Datenbank nicht gefunden.",
     ),
     "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(

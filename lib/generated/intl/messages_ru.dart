@@ -29,7 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "brandNotFound": MessageLookupByLibrary.simpleMessage("Бренд не найден"),
     "cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "Описание не найдено",
+      "Этот бренд не представлен в нашей базе данных брендов из США.",
     ),
     "manualBrandContent": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, введите бренд продукта",
@@ -38,11 +38,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "Введите бренд",
     ),
     "manualBrandTitle": MessageLookupByLibrary.simpleMessage("Бренд не найден"),
+    "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Введите бренд и выполните поиск",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Если вы нашли продукт из США, пожалуйста, сообщите нам, чтобы мы могли добавить его в наш список.",
+      "Если вы определили продукт из Соединенных Штатов, пожалуйста, сообщите нам, чтобы мы могли добавить его в наш список.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
-      "Проблемы с продуктом?",
+      "Проблема с продуктом?",
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage(
       "Продукт не найден",
@@ -56,7 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "unknown": MessageLookupByLibrary.simpleMessage("НЕИЗВЕСТНО"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Продукт, который вы ищете, не найден в нашей базе данных.",
+      "Продукт, который вы искали, не найден в нашей базе данных.",
     ),
     "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(

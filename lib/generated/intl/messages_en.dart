@@ -29,7 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "brandNotFound": MessageLookupByLibrary.simpleMessage("Brand not found"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "Description not found",
+      "This brand is not represented in our U.S.-based brand database.",
     ),
     "manualBrandContent": MessageLookupByLibrary.simpleMessage(
       "Please enter the product brand",
@@ -38,6 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter the brand",
     ),
     "manualBrandTitle": MessageLookupByLibrary.simpleMessage("Brand not found"),
+    "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Enter the brand and search",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "If you have identified a product from the United States, please report it so we can add it to our list.",
     ),

@@ -23,7 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "امسح رمز منتجك للتعرف على ما إذا كانت العلامة التجارية مملوكة لشركة أمريكية.",
+      "امسح رمز منتجك لاكتشاف ما إذا كانت العلامة التجارية مملوكة لشركة أمريكية.",
     ),
     "appTitle": MessageLookupByLibrary.simpleMessage("امسح منتجًا"),
     "brandNotFound": MessageLookupByLibrary.simpleMessage(
@@ -31,19 +31,22 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "الوصف غير موجود",
+      "هذه العلامة التجارية غير ممثلة في قاعدة بيانات علاماتنا التجارية الأمريكية.",
     ),
     "manualBrandContent": MessageLookupByLibrary.simpleMessage(
-      "يرجى إدخال علامة المنتج التجارية",
+      "يرجى إدخال العلامة التجارية للمنتج",
     ),
     "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
       "أدخل العلامة التجارية",
     ),
     "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
-      "لم يتم العثور على العلامة التجارية",
+      "العلامة التجارية غير موجودة",
+    ),
+    "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "أدخل العلامة التجارية وابحث",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "إذا وجدت منتجًا من الولايات المتحدة، يرجى إبلاغنا حتى نتمكن من إضافته إلى قائمتنا.",
+      "إذا كنت قد حددت منتجًا من الولايات المتحدة، يرجى الإبلاغ عنه حتى نتمكن من إضافته إلى قائمتنا.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "هل لديك مشكلة مع منتج؟",
@@ -56,7 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("المصدر غير موجود"),
     "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "لم يتم العثور على المنتج الذي تبحث عنه في قاعدة بياناتنا.",
+      "المنتج الذي بحثت عنه غير موجود في قاعدة بياناتنا.",
     ),
     "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(

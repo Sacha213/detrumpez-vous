@@ -110,10 +110,20 @@ class S {
     );
   }
 
-  /// `Description not found`
+  /// `Enter the brand and search`
+  String get manualSearchPlaceholder {
+    return Intl.message(
+      'Enter the brand and search',
+      name: 'manualSearchPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This brand is not represented in our U.S.-based brand database.`
   String get descriptionNotFound {
     return Intl.message(
-      'Description not found',
+      'This brand is not represented in our U.S.-based brand database.',
       name: 'descriptionNotFound',
       desc: '',
       args: [],

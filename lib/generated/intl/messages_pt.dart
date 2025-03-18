@@ -31,7 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "Descrição não encontrada",
+      "Esta marca não está representada em nosso banco de dados de marcas dos EUA.",
     ),
     "manualBrandContent": MessageLookupByLibrary.simpleMessage(
       "Por favor, insira a marca do produto",
@@ -42,8 +42,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
       "Marca não encontrada",
     ),
+    "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Digite a marca e pesquise",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Se você identificou um produto proveniente dos Estados Unidos, por favor, nos avise para que possamos adicioná-lo à nossa lista.",
+      "Se você identificou um produto dos Estados Unidos, por favor, reporte para que possamos adicioná-lo à nossa lista.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "Problema com um produto?",
@@ -53,18 +56,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "safe": MessageLookupByLibrary.simpleMessage("SAFE"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Este produto não vem de uma empresa americana!",
+      "Este produto não provém de uma empresa americana!",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage(
       "Fonte não encontrada",
     ),
     "unknown": MessageLookupByLibrary.simpleMessage("DESCONHECIDO"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "O produto procurado não foi encontrado em nosso banco de dados.",
+      "O produto que você procurou não foi encontrado em nosso banco de dados.",
     ),
     "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Este produto vem de uma empresa americana!",
+      "Este produto provém de uma empresa americana!",
     ),
     "validate": MessageLookupByLibrary.simpleMessage("Validar"),
     "welcome": MessageLookupByLibrary.simpleMessage("Bem-vindo(a) a"),
