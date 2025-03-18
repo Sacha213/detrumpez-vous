@@ -23,39 +23,46 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "Сканируйте штрих-код вашего продукта питания, чтобы узнать, принадлежит ли этот бренд американской компании.",
+      "Сканируйте штрих-код вашего продукта, чтобы узнать, принадлежит ли бренд американской компании.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage(
-      "Сканировать пищевой продукт",
-    ),
+    "appTitle": MessageLookupByLibrary.simpleMessage("Сканировать продукт"),
     "brandNotFound": MessageLookupByLibrary.simpleMessage("Бренд не найден"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Описание не найдено",
     ),
+    "manualBrandContent": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, введите бренд продукта",
+    ),
+    "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Введите бренд",
+    ),
+    "manualBrandTitle": MessageLookupByLibrary.simpleMessage("Бренд не найден"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Если вы обнаружили продукт из США, пожалуйста, сообщите нам, чтобы мы могли добавить его в наш список.",
+      "Если вы нашли продукт из США, пожалуйста, сообщите нам, чтобы мы могли добавить его в наш список.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
-      "Проблема с продуктом?",
+      "Проблемы с продуктом?",
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage(
       "Продукт не найден",
     ),
-    "safe": MessageLookupByLibrary.simpleMessage("БЕЗОПАСНО"),
+    "safe": MessageLookupByLibrary.simpleMessage("SAFE"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Этот продукт не принадлежит американской компании!",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage(
-      "Источник неизвестен",
+      "Источник не найден",
     ),
     "unknown": MessageLookupByLibrary.simpleMessage("НЕИЗВЕСТНО"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Искомый продукт не найден в нашей базе данных.",
+      "Продукт, который вы ищете, не найден в нашей базе данных.",
     ),
-    "usa": MessageLookupByLibrary.simpleMessage("США"),
+    "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
       "Этот продукт принадлежит американской компании!",
     ),
+    "validate": MessageLookupByLibrary.simpleMessage("Подтвердить"),
     "welcome": MessageLookupByLibrary.simpleMessage("Добро пожаловать в"),
   };
 }

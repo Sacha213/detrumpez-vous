@@ -23,17 +23,27 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "Escanea el código de barras de tu producto alimenticio para descubrir si la marca pertenece a una empresa estadounidense.",
+      "Escanea el código de barras de tu producto para descubrir si la marca pertenece a una empresa estadounidense.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage(
-      "Escanea un producto alimenticio",
+    "appTitle": MessageLookupByLibrary.simpleMessage("Escanea un producto"),
+    "brandNotFound": MessageLookupByLibrary.simpleMessage(
+      "Marca no encontrada",
     ),
-    "brandNotFound": MessageLookupByLibrary.simpleMessage("Marca desconocida"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Descripción no encontrada",
     ),
+    "manualBrandContent": MessageLookupByLibrary.simpleMessage(
+      "Por favor, introduce la marca del producto",
+    ),
+    "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Introduce la marca",
+    ),
+    "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
+      "Marca no encontrada",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Si ha identificado un producto de los Estados Unidos, por favor repórtelo para que podamos agregarlo a nuestra lista.",
+      "Si has identificado un producto proveniente de Estados Unidos, infórmanos para poder añadirlo a nuestra lista.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "¿Problema con un producto?",
@@ -50,12 +60,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "unknown": MessageLookupByLibrary.simpleMessage("DESCONOCIDO"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "El producto buscado no se ha encontrado en nuestra base de datos.",
+      "El producto que buscas no se encuentra en nuestra base de datos.",
     ),
     "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
       "¡Este producto proviene de una empresa estadounidense!",
     ),
+    "validate": MessageLookupByLibrary.simpleMessage("Validar"),
     "welcome": MessageLookupByLibrary.simpleMessage("Bienvenido a"),
   };
 }

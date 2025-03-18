@@ -23,14 +23,22 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "Scannez le code-barres de votre produit alimentaire pour découvrir si la marque est détenue par une entreprise américaine.",
+      "Scannez le code-barres de votre produit pour découvrir si la marque est détenue par une entreprise américaine.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage(
-      "Scannez un produit alimentaire",
-    ),
+    "appTitle": MessageLookupByLibrary.simpleMessage("Scannez un produit"),
     "brandNotFound": MessageLookupByLibrary.simpleMessage("Marque inconnue"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Annuler"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Description non trouvé",
+    ),
+    "manualBrandContent": MessageLookupByLibrary.simpleMessage(
+      "Veuillez saisir la marque du produit",
+    ),
+    "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Entrez la marque",
+    ),
+    "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
+      "Marque non trouvée",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "Si vous avez identifié un produit venant des États-Unis, n\'hésitez pas à nous le signaler pour que nous puissions l\'ajouter à notre liste.",
@@ -54,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
       "Ce produit vient d\'une entreprise américaine !",
     ),
+    "validate": MessageLookupByLibrary.simpleMessage("Valider"),
     "welcome": MessageLookupByLibrary.simpleMessage("Bienvenue dans"),
   };
 }

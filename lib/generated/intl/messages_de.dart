@@ -23,29 +23,41 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "Scanne den Barcode deines Lebensmittelprodukts, um herauszufinden, ob die Marke im Besitz eines US-Unternehmens ist.",
+      "Scannen Sie den Barcode Ihres Produkts, um herauszufinden, ob die Marke einem amerikanischen Unternehmen gehört.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage(
-      "Scanne ein Lebensmittelprodukt",
+    "appTitle": MessageLookupByLibrary.simpleMessage("Scannen Sie ein Produkt"),
+    "brandNotFound": MessageLookupByLibrary.simpleMessage(
+      "Marke nicht gefunden",
     ),
-    "brandNotFound": MessageLookupByLibrary.simpleMessage("Unbekannte Marke"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Abbrechen"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Beschreibung nicht gefunden",
     ),
+    "manualBrandContent": MessageLookupByLibrary.simpleMessage(
+      "Bitte geben Sie die Marke des Produkts ein",
+    ),
+    "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Marke eingeben",
+    ),
+    "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
+      "Marke nicht gefunden",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Wenn Sie ein Produkt aus den USA identifiziert haben, melden Sie dies bitte, damit wir es unserer Liste hinzufügen können.",
+      "Wenn Sie ein Produkt aus den USA gefunden haben, melden Sie es uns bitte, damit wir es unserer Liste hinzufügen können.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
-      "Problem mit einem Produkt?",
+      "Probleme mit einem Produkt?",
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage(
       "Produkt nicht gefunden",
     ),
-    "safe": MessageLookupByLibrary.simpleMessage("SICHER"),
+    "safe": MessageLookupByLibrary.simpleMessage("SAFE"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Dieses Produkt stammt nicht von einem amerikanischen Unternehmen!",
     ),
-    "sourceNotFound": MessageLookupByLibrary.simpleMessage("Unbekannte Quelle"),
+    "sourceNotFound": MessageLookupByLibrary.simpleMessage(
+      "Quelle nicht gefunden",
+    ),
     "unknown": MessageLookupByLibrary.simpleMessage("UNBEKANNT"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "Das gesuchte Produkt wurde in unserer Datenbank nicht gefunden.",
@@ -54,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
       "Dieses Produkt stammt von einem amerikanischen Unternehmen!",
     ),
+    "validate": MessageLookupByLibrary.simpleMessage("Bestätigen"),
     "welcome": MessageLookupByLibrary.simpleMessage("Willkommen in"),
   };
 }

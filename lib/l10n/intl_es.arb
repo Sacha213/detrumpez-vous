@@ -1,18 +1,23 @@
 {
     "@@locale": "es",
     "welcome": "Bienvenido a",
-    "appDescription": "Escanea el código de barras de tu producto alimenticio para descubrir si la marca pertenece a una empresa estadounidense.",
-    "appTitle": "Escanea un producto alimenticio",
+    "appDescription": "Escanea el código de barras de tu producto para descubrir si la marca pertenece a una empresa estadounidense.",
+    "appTitle": "Escanea un producto",
     "safe": "SEGURO",
     "usa": "USA",
     "unknown": "DESCONOCIDO",
     "productNotFound": "Producto no encontrado",
-    "brandNotFound": "Marca desconocida",
+    "brandNotFound": "Marca no encontrada",
     "descriptionNotFound": "Descripción no encontrada",
     "sourceNotFound": "Fuente desconocida",
     "safeProductMessage": "¡Este producto no proviene de una empresa estadounidense!",
     "usaProductMessage": "¡Este producto proviene de una empresa estadounidense!",
-    "unknownProductMessage": "El producto buscado no se ha encontrado en nuestra base de datos.",
+    "unknownProductMessage": "El producto que buscas no se encuentra en nuestra base de datos.",
     "problemReportTitle": "¿Problema con un producto?",
-    "problemReportMessage": "Si ha identificado un producto de los Estados Unidos, por favor repórtelo para que podamos agregarlo a nuestra lista."
+    "problemReportMessage": "Si has identificado un producto proveniente de Estados Unidos, infórmanos para poder añadirlo a nuestra lista.",
+    "manualBrandTitle": "Marca no encontrada",
+    "manualBrandContent": "Por favor, introduce la marca del producto",
+    "manualBrandPlaceholder": "Introduce la marca",
+    "cancel": "Cancelar",
+    "validate": "Validar"
 }

@@ -55,14 +55,9 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Scan a Food Product`
+  /// `Scan a product`
   String get appTitle {
-    return Intl.message(
-      'Scan a Food Product',
-      name: 'appTitle',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Scan a product', name: 'appTitle', desc: '', args: []);
   }
 
   /// `Welcome in`
@@ -70,10 +65,10 @@ class S {
     return Intl.message('Welcome in', name: 'welcome', desc: '', args: []);
   }
 
-  /// `Scan your food product barcode to discover if the brand is owned by a U.S. company.`
+  /// `Scan your product's barcode to discover if the brand is owned by an American company.`
   String get appDescription {
     return Intl.message(
-      'Scan your food product barcode to discover if the brand is owned by a U.S. company.',
+      'Scan your product\'s barcode to discover if the brand is owned by an American company.',
       name: 'appDescription',
       desc: '',
       args: [],
@@ -105,10 +100,10 @@ class S {
     );
   }
 
-  /// `Unknown brand`
+  /// `Brand not found`
   String get brandNotFound {
     return Intl.message(
-      'Unknown brand',
+      'Brand not found',
       name: 'brandNotFound',
       desc: '',
       args: [],
@@ -125,10 +120,10 @@ class S {
     );
   }
 
-  /// `Unknown source`
+  /// `Source not found`
   String get sourceNotFound {
     return Intl.message(
-      'Unknown source',
+      'Source not found',
       name: 'sourceNotFound',
       desc: '',
       args: [],
@@ -155,10 +150,10 @@ class S {
     );
   }
 
-  /// `The searched product was not found in our database.`
+  /// `The product you searched for was not found in our database.`
   String get unknownProductMessage {
     return Intl.message(
-      'The searched product was not found in our database.',
+      'The product you searched for was not found in our database.',
       name: 'unknownProductMessage',
       desc: '',
       args: [],
@@ -183,6 +178,46 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Brand not found`
+  String get manualBrandTitle {
+    return Intl.message(
+      'Brand not found',
+      name: 'manualBrandTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the product brand`
+  String get manualBrandContent {
+    return Intl.message(
+      'Please enter the product brand',
+      name: 'manualBrandContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the brand`
+  String get manualBrandPlaceholder {
+    return Intl.message(
+      'Enter the brand',
+      name: 'manualBrandPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Validate`
+  String get validate {
+    return Intl.message('Validate', name: 'validate', desc: '', args: []);
   }
 }
 

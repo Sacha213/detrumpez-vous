@@ -23,17 +23,27 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "Scansiona il codice a barre del tuo prodotto alimentare per scoprire se la marca è di proprietà di un\'azienda statunitense.",
+      "Scansiona il codice a barre del tuo prodotto per scoprire se il marchio è di proprietà di un\'azienda americana.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage(
-      "Scansiona un Prodotto Alimentare",
+    "appTitle": MessageLookupByLibrary.simpleMessage("Scansiona un prodotto"),
+    "brandNotFound": MessageLookupByLibrary.simpleMessage(
+      "Marchio non trovato",
     ),
-    "brandNotFound": MessageLookupByLibrary.simpleMessage("Marca sconosciuta"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Annulla"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Descrizione non trovata",
     ),
+    "manualBrandContent": MessageLookupByLibrary.simpleMessage(
+      "Inserisci il marchio del prodotto",
+    ),
+    "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Inserisci il marchio",
+    ),
+    "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
+      "Marchio non trovato",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Se hai identificato un prodotto dagli Stati Uniti, segnalalo affinché possiamo aggiungerlo alla nostra lista.",
+      "Se hai identificato un prodotto degli Stati Uniti, segnalacelo in modo che possiamo aggiungerlo alla nostra lista.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "Problema con un prodotto?",
@@ -41,19 +51,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "productNotFound": MessageLookupByLibrary.simpleMessage(
       "Prodotto non trovato",
     ),
-    "safe": MessageLookupByLibrary.simpleMessage("SICURO"),
+    "safe": MessageLookupByLibrary.simpleMessage("SAFE"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Questo prodotto non proviene da una società americana!",
+      "Questo prodotto non proviene da un\'azienda americana!",
     ),
-    "sourceNotFound": MessageLookupByLibrary.simpleMessage("Fonte sconosciuta"),
-    "unknown": MessageLookupByLibrary.simpleMessage("SCONOSCIUTO"),
+    "sourceNotFound": MessageLookupByLibrary.simpleMessage("Fonte non trovata"),
+    "unknown": MessageLookupByLibrary.simpleMessage("Sconosciuto"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "Il prodotto cercato non è stato trovato nel nostro database.",
     ),
     "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Questo prodotto proviene da una società americana!",
+      "Questo prodotto proviene da un\'azienda americana!",
     ),
+    "validate": MessageLookupByLibrary.simpleMessage("Conferma"),
     "welcome": MessageLookupByLibrary.simpleMessage("Benvenuto in"),
   };
 }

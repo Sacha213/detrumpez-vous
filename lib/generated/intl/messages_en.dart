@@ -23,13 +23,21 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "Scan your food product barcode to discover if the brand is owned by a U.S. company.",
+      "Scan your product\'s barcode to discover if the brand is owned by an American company.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage("Scan a Food Product"),
-    "brandNotFound": MessageLookupByLibrary.simpleMessage("Unknown brand"),
+    "appTitle": MessageLookupByLibrary.simpleMessage("Scan a product"),
+    "brandNotFound": MessageLookupByLibrary.simpleMessage("Brand not found"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Description not found",
     ),
+    "manualBrandContent": MessageLookupByLibrary.simpleMessage(
+      "Please enter the product brand",
+    ),
+    "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Enter the brand",
+    ),
+    "manualBrandTitle": MessageLookupByLibrary.simpleMessage("Brand not found"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "If you have identified a product from the United States, please report it so we can add it to our list.",
     ),
@@ -43,15 +51,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "This product is not from an American company!",
     ),
-    "sourceNotFound": MessageLookupByLibrary.simpleMessage("Unknown source"),
+    "sourceNotFound": MessageLookupByLibrary.simpleMessage("Source not found"),
     "unknown": MessageLookupByLibrary.simpleMessage("UNKNOWN"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "The searched product was not found in our database.",
+      "The product you searched for was not found in our database.",
     ),
     "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
       "This product is from an American company!",
     ),
+    "validate": MessageLookupByLibrary.simpleMessage("Validate"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome in"),
   };
 }

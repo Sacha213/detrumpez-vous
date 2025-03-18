@@ -23,35 +23,44 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "अपने खाद्य उत्पाद के बारकोड को स्कैन करें ताकि आप पता कर सकें कि क्या ब्रांड किसी अमेरिकी कंपनी का स्वामित्व है।",
+      "यह जानने के लिए अपने उत्पाद के बारकोड को स्कैन करें कि क्या ब्रांड किसी अमेरिकी कंपनी का स्वामित्व है।",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage(
-      "एक खाद्य उत्पाद स्कैन करें",
-    ),
-    "brandNotFound": MessageLookupByLibrary.simpleMessage("ब्रांड अज्ञात"),
+    "appTitle": MessageLookupByLibrary.simpleMessage("एक उत्पाद स्कैन करें"),
+    "brandNotFound": MessageLookupByLibrary.simpleMessage("ब्रांड नहीं मिला"),
+    "cancel": MessageLookupByLibrary.simpleMessage("रद्द करें"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "विवरण नहीं मिला",
     ),
+    "manualBrandContent": MessageLookupByLibrary.simpleMessage(
+      "कृपया उत्पाद का ब्रांड दर्ज करें",
+    ),
+    "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "ब्रांड दर्ज करें",
+    ),
+    "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
+      "ब्रांड नहीं मिला",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "यदि आपने संयुक्त राज्य से किसी उत्पाद की पहचान की है, तो कृपया रिपोर्ट करें ताकि हम इसे अपनी सूची में जोड़ सकें।",
+      "यदि आपने अमेरिका से आने वाला कोई उत्पाद पहचाना है, तो कृपया हमें बताएं ताकि हम इसे अपनी सूची में शामिल कर सकें।",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
-      "उत्पाद के साथ समस्या?",
+      "क्या आपको उत्पाद के साथ कोई समस्या है?",
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage("उत्पाद नहीं मिला"),
-    "safe": MessageLookupByLibrary.simpleMessage("सुरक्षित"),
+    "safe": MessageLookupByLibrary.simpleMessage("SAFE"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
-      "यह उत्पाद किसी अमेरिकी कंपनी से नहीं है!",
+      "यह उत्पाद अमेरिकी कंपनी से नहीं है!",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("स्रोत अज्ञात"),
-    "unknown": MessageLookupByLibrary.simpleMessage("अनजान"),
+    "unknown": MessageLookupByLibrary.simpleMessage("अज्ञात"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "खोजा गया उत्पाद हमारे डेटाबेस में नहीं मिला।",
+      "आपके द्वारा खोजा गया उत्पाद हमारे डेटाबेस में नहीं मिला।",
     ),
-    "usa": MessageLookupByLibrary.simpleMessage("USA"),
+    "usa": MessageLookupByLibrary.simpleMessage("यूएसए"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
-      "यह उत्पाद एक अमेरिकी कंपनी से है!",
+      "यह उत्पाद अमेरिकी कंपनी से है!",
     ),
+    "validate": MessageLookupByLibrary.simpleMessage("सत्यापित करें"),
     "welcome": MessageLookupByLibrary.simpleMessage("में आपका स्वागत है"),
   };
 }
