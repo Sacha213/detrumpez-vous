@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:http/http.dart' as http;
 import 'package:detrumpezvous/corner_painter.dart';
 import 'package:detrumpezvous/generated/l10n.dart';
 import 'package:diacritic/diacritic.dart';
@@ -8,6 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
+import 'package:logger/logger.dart';
+
+final Logger logger = Logger();
 
 class BarcodeScannerScreen extends StatefulWidget {
   const BarcodeScannerScreen({super.key});
@@ -19,13 +22,12 @@ class BarcodeScannerScreen extends StatefulWidget {
 class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
   // Variables d'état
   String barcode = "";
-  String productName = S.current.productNotFound;
   String brand = S.current.brandNotFound;
   String description = S.current.descriptionNotFound;
   String source = S.current.sourceNotFound;
   bool isProductFromUSA = false;
   bool isProductFound = false; // indique si le produit est trouvé ou non
-  Map<String, dynamic>? jsonData;
+  List<dynamic> brandsIndex = [];
   bool isProcessing = false; // pour éviter plusieurs scans simultanés
 
   @override
@@ -38,48 +40,110 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
   Future<void> loadBrands() async {
     final String jsonStr = await rootBundle.loadString('assets/blacklist.json');
     setState(() {
-      jsonData = json.decode(jsonStr);
+      brandsIndex = json.decode(jsonStr);
     });
+
+    // Exemple de recherche d'informations de marque
+    //await fetchProductInfo("501039413385");
   }
 
   /// Recherche une information de marque par fuzzy match.
   /// Remplace les virgules par des espaces et normalise la chaîne.
   Future<Map<String, dynamic>> getBrandInfo(String brandName) async {
-    final String normalizedSearch = removeDiacritics(
-      brandName
-          .toLowerCase()
-          .replaceAll(RegExp(r"[’‘`´]"), "'")
-          .replaceAll(',', ' ')
-          .replaceAll(RegExp(r'\s+'), ' ')
-          .trim(),
-    );
+    // On découpe l'entrée sur les virgules pour obtenir plusieurs candidats
+    final List<String> candidates = brandName
+        .split(',')
+        .map((s) => s.trim())
+        .where((s) => s.isNotEmpty)
+        .toList();
 
-    Map<String, dynamic>? result;
-    jsonData?.forEach((company, brands) {
-      for (var brand in brands) {
-        final String normalizedKey = removeDiacritics(
-          brand["name"]
-              .toLowerCase()
+    // Pour chaque candidat, on le normalise et on cherche une correspondance
+    for (final candidate in candidates) {
+      final String normalizedCandidate =
+          removeDiacritics(candidate.toLowerCase())
               .replaceAll(RegExp(r"[’‘`´]"), "'")
-              .replaceAll(',', ' ')
-              .replaceAll(RegExp(r'\s+'), ' ')
-              .trim(),
-        );
-        final RegExp regExp =
-            RegExp(r'\b' + RegExp.escape(normalizedSearch) + r'\b');
+              .replaceAll(RegExp(r'\s+'), '_')
+              .trim();
 
-        if (regExp.hasMatch(normalizedKey)) {
-          result = brand as Map<String, dynamic>;
-          break;
+      try {
+        final Map<String, dynamic> found = brandsIndex.firstWhere((brand) {
+          final String normalizedName =
+              (brand["normalizedName"] ?? "").toString().toLowerCase();
+          // On vérifie si le champ stocké est identique au candidat normalisé
+          return normalizedName == normalizedCandidate;
+        }, orElse: () => <String, dynamic>{} // Littérale typée
+            );
+        if (found.isNotEmpty) {
+          return found;
         }
+      } catch (e) {
+        // Au cas où on ne trouve rien pour ce candidat, on passe au suivant
+        continue;
       }
-      if (result != null) return;
-    });
-    return result ?? {};
+    }
+
+    // Si aucun des candidats ne correspond, on renvoie un Map vide
+    return <String, dynamic>{};
   }
 
-  /// Récupère les informations d'un produit via Open Food Facts.
+  /// Récupère les informations d'un produit depuis plusieurs API.
   Future<void> fetchProductInfo(String barcode) async {
+    String? productData = await fetchFromOpenFoodFact(barcode);
+
+    if (productData != null) {
+      // Si aucun produit n'est trouvé avec OpenFoodFacts, on tente avec OpenBeautyFact.
+      productData = await fetchFromOpenBeautyFact(barcode);
+    }
+
+    if (productData != null) {
+      // Ensuite avec OpenPetFoodFacts.
+      productData = await fetchFromOpenPetFoodFacts(barcode);
+    }
+
+    if (productData != null) {
+      // En dernier recours, on tente avec OpenProductFact.
+      productData = await fetchFromOpenProductFact(barcode);
+    }
+
+    // Si aucun produit n'est trouvé, afficher le popup pour saisie manuelle
+    if (!isProductFound) {
+      productData = await _showManualBrandInput();
+    }
+
+    // Recherche d'informations de marque basée sur le champ 'brands'
+    Map<String, dynamic> resultJson = await getBrandInfo(productData ?? "");
+
+    setState(() {
+      brand = productData ?? S.of(context).brandNotFound;
+      description =
+          resultJson["description"] ?? S.of(context).descriptionNotFound;
+      source = resultJson["source"] ?? S.of(context).sourceNotFound;
+      isProductFound = productData != null;
+      isProductFromUSA = resultJson.isNotEmpty;
+    });
+  }
+
+  /// Exemple de fonction pour interroger l'API OpenBeautyFact.
+  Future<String?> fetchFromOpenBeautyFact(String barcode) async {
+    final String url =
+        'https://world.openbeautyfacts.org/api/v2/product/$barcode.json';
+    try {
+      final response = await http.get(Uri.parse(url));
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        if (data["product"] != null && data["product"]["brands"] != null) {
+          return data["product"]["brands"];
+        }
+      }
+    } catch (e, stackTrace) {
+      logger.e("Erreur lors de l'appel à OpenBeautyFact",
+          error: e, stackTrace: stackTrace);
+    }
+    return null;
+  }
+
+  /// Interroge l'API OpenFoodFacts pour récupérer les informations d'un produit.
+  Future<String?> fetchFromOpenFoodFact(String barcode) async {
     OpenFoodAPIConfiguration.userAgent = UserAgent(
       name: "DeTrumpez-VousApp",
       version: "1.0.0",
@@ -92,35 +156,104 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
       language: OpenFoodFactsLanguage.FRENCH,
       fields: [ProductField.NAME, ProductField.BRANDS, ProductField.COUNTRIES],
     );
-    final ProductResultV3 result = await OpenFoodAPIClient.getProductV3(config);
-    if (result.product != null) {
-      // Le code barre est trouvé
-      isProductFound = true;
-      Map<String, dynamic> resultJson =
-          await getBrandInfo(result.product!.brands ?? "");
-      setState(() {
-        productName =
-            result.product?.productName ?? S.of(context).productNotFound;
-        brand = result.product?.brands ?? S.of(context).brandNotFound;
-        description =
-            resultJson["description"] ?? S.of(context).descriptionNotFound;
-        source = resultJson["source"] ?? S.of(context).sourceNotFound;
-        isProductFromUSA = resultJson.isNotEmpty;
-      });
-    } else {
-      // Le code barre n'a pas été trouvé
-      isProductFound = false;
-      setState(() {
-        productName = S.of(context).productNotFound;
-        brand = S.of(context).brandNotFound;
-        description = S.of(context).descriptionNotFound;
-        source = S.of(context).sourceNotFound;
-        isProductFromUSA = false;
-      });
+    final ProductResultV3 resultFood =
+        await OpenFoodAPIClient.getProductV3(config);
+
+    if (resultFood.product != null && resultFood.product?.brands != null) {
+      return resultFood.product?.brands;
     }
+    return null;
   }
 
-  /// Traitement lors de la détection d'un code barre dans la partie scanner.
+  /// Interroge l'API OpenPetFoodFacts pour récupérer les informations d'un produit.
+  Future<String?> fetchFromOpenPetFoodFacts(String barcode) async {
+    final String url =
+        'https://world.openpetfoodfacts.org/api/v0/product/$barcode.json';
+    try {
+      final response = await http.get(Uri.parse(url));
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        if (data["product"] != null && data["product"]["brands"] != null) {
+          return data["product"]["brands"];
+        }
+      }
+    } catch (e, stackTrace) {
+      logger.e("Erreur lors de l'appel à OpenPetFoodFacts",
+          error: e, stackTrace: stackTrace);
+    }
+    return null;
+  }
+
+  /// Interroge l'API OpenProductFact pour récupérer les informations d'un produit.
+  Future<String?> fetchFromOpenProductFact(String barcode) async {
+    final String url =
+        'https://world.openproductsfacts.org/api/v2/product/$barcode.json';
+    try {
+      final response = await http.get(Uri.parse(url));
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        if (data["product"] != null && data["product"]["brands"] != null) {
+          return data["product"]["brands"];
+        }
+      }
+    } catch (e, stackTrace) {
+      logger.e("Erreur lors de l'appel à OpenProductFact",
+          error: e, stackTrace: stackTrace);
+    }
+    return null;
+  }
+
+  /// Affiche un popup Cupertino pour saisir manuellement la marque du produit.
+  Future<String> _showManualBrandInput() async {
+    final TextEditingController brandController = TextEditingController();
+    await showCupertinoDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return CupertinoAlertDialog(
+          title: Text(S.of(context).manualBrandTitle),
+          content: Column(
+            children: [
+              const SizedBox(height: 12),
+              Text(S.of(context).manualBrandContent),
+              const SizedBox(height: 12),
+              CupertinoTextField(
+                controller: brandController,
+                placeholder: S.of(context).manualBrandPlaceholder,
+              ),
+            ],
+          ),
+          actions: [
+            CupertinoDialogAction(
+              isDestructiveAction: true,
+              child: Text(
+                S.of(context).cancel,
+                style: const TextStyle(color: Colors.red),
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            CupertinoDialogAction(
+              child: Text(
+                S.of(context).validate,
+                style: const TextStyle(color: Colors.blue),
+              ),
+              onPressed: () {
+                setState(() {
+                  brand = brandController.text.trim();
+                  isProductFound = brand.isNotEmpty;
+                });
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        );
+      },
+    );
+    return brandController.text.trim();
+  }
+
+  // Modifiez votre fonction onBarcodeDetected pour afficher le popup si le produit n'est pas trouvé.
   Future<void> onBarcodeDetected(String code) async {
     if (isProcessing) return;
     setState(() {
@@ -142,8 +275,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
       },
     );
     await fetchProductInfo(code);
-    if (!mounted) return;
-    Navigator.pop(context); // Fermer la popup
+
+    Navigator.pop(context); // Fermer la popup de chargement
+
     setState(() {
       isProcessing = false;
     });

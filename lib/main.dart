@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:detrumpezvous/barcode_scanner_screen.dart';
 import 'package:detrumpezvous/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -56,9 +55,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
