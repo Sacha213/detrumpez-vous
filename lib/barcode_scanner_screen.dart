@@ -224,13 +224,22 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
         await getBrandInfo(productData ?? "");
 
     setState(() {
-      brand = productData ?? S.of(context).brandNotFound;
+      brand = (resultJson["name"]?.toString().isNotEmpty == true)
+          ? resultJson["name"]
+          : ((productData?.isNotEmpty == true)
+              ? productData!
+              : S.of(context).brandNotFound);
       description =
           resultJson["description"] ?? S.of(context).descriptionNotFound;
       source = resultJson["source"] ?? S.of(context).sourceNotFound;
       isProductFound = productData != null;
       isProductFromUSA = resultJson.isNotEmpty;
     });
+
+    // Déclenche un retour haptique (vibration légère)
+    if (isProductFound) {
+      HapticFeedback.mediumImpact();
+    }
   }
 
   @override
@@ -246,8 +255,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
             padding: const EdgeInsets.only(right: 16.0),
             child: Image.asset(
               'assets/europe.png', // Chemin vers votre image du drapeau de l'Europe
-              height: 72, // Hauteur de l'image
-              width: 72, // Largeur de l'image
+              height: 64, // Hauteur de l'image
+              width: 64, // Largeur de l'image
             ),
           ),
         ],
@@ -332,8 +341,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                     Row(
                       children: [
                         Container(
-                          width: 120,
-                          height: 120,
+                          width: 96,
+                          height: 96,
                           decoration: !isProductFound
                               ? const BoxDecoration(
                                   shape: BoxShape.circle,
@@ -354,13 +363,13 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                           child: !isProductFound
                               ? const Icon(
                                   Icons.question_mark,
-                                  size: 100,
+                                  size: 80,
                                   color: Colors.white,
                                 )
                               : (!isProductFromUSA
                                   ? const Icon(
                                       Icons.check,
-                                      size: 100,
+                                      size: 80,
                                       color: Colors.white,
                                     )
                                   : Container()),
@@ -391,7 +400,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                           ? S.of(context).safe
                                           : S.of(context).usa),
                                   style: TextStyle(
-                                    fontSize: 24,
+                                    fontSize: 20,
                                     color: !isProductFound
                                         ? Colors.grey
                                         : (!isProductFromUSA
@@ -433,7 +442,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                         children: [
                           Text(brand,
                               style: const TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold)),
+                                  fontSize: 18, fontWeight: FontWeight.bold)),
                           const SizedBox(height: 8),
                           Text(
                             description,
