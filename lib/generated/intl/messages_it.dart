@@ -23,30 +23,23 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "Scansiona il codice a barre del tuo prodotto per scoprire se il marchio è di proprietà di un\'azienda americana.",
+      "Scansiona il codice a barre del tuo prodotto per scoprire se il marchio appartiene a un\'azienda americana.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage("Scansiona un prodotto"),
+    "appTitle": MessageLookupByLibrary.simpleMessage(
+      "Scansiona il codice a barre",
+    ),
     "brandNotFound": MessageLookupByLibrary.simpleMessage(
       "Marchio non trovato",
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Annulla"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "Questo marchio non è rappresentato nel nostro database di marchi statunitensi.",
-    ),
-    "manualBrandContent": MessageLookupByLibrary.simpleMessage(
-      "Inserisci il marchio del prodotto",
-    ),
-    "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Inserisci il marchio",
-    ),
-    "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
-      "Marchio non trovato",
+      "Questo marchio non è presente nel nostro database di marchi americani.",
     ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Inserisci il marchio e cerca",
+      "Inserisci una marca alimentare",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Se hai identificato un prodotto dagli Stati Uniti, segnalacelo in modo che possiamo aggiungerlo alla nostra lista.",
+      "Se hai identificato un prodotto proveniente dagli Stati Uniti, segnalacelo in modo da poterlo aggiungere alla nostra lista.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "Problema con un prodotto?",
@@ -54,7 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "productNotFound": MessageLookupByLibrary.simpleMessage(
       "Prodotto non trovato",
     ),
-    "safe": MessageLookupByLibrary.simpleMessage("SAFE"),
+    "safe": MessageLookupByLibrary.simpleMessage("NON USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Questo prodotto non proviene da un\'azienda americana!",
     ),

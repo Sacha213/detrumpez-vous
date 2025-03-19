@@ -55,11 +55,6 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Scan a product`
-  String get appTitle {
-    return Intl.message('Scan a product', name: 'appTitle', desc: '', args: []);
-  }
-
   /// `Welcome in`
   String get welcome {
     return Intl.message('Welcome in', name: 'welcome', desc: '', args: []);
@@ -75,9 +70,19 @@ class S {
     );
   }
 
-  /// `SAFE`
+  /// `Scan the barcode`
+  String get appTitle {
+    return Intl.message(
+      'Scan the barcode',
+      name: 'appTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `NOT USA`
   String get safe {
-    return Intl.message('SAFE', name: 'safe', desc: '', args: []);
+    return Intl.message('NOT USA', name: 'safe', desc: '', args: []);
   }
 
   /// `USA`
@@ -110,20 +115,20 @@ class S {
     );
   }
 
-  /// `Enter the brand and search`
+  /// `Enter a grocery brand`
   String get manualSearchPlaceholder {
     return Intl.message(
-      'Enter the brand and search',
+      'Enter a grocery brand',
       name: 'manualSearchPlaceholder',
       desc: '',
       args: [],
     );
   }
 
-  /// `This brand is not represented in our U.S.-based brand database.`
+  /// `This brand is not in our American brand database.`
   String get descriptionNotFound {
     return Intl.message(
-      'This brand is not represented in our U.S.-based brand database.',
+      'This brand is not in our American brand database.',
       name: 'descriptionNotFound',
       desc: '',
       args: [],
@@ -185,36 +190,6 @@ class S {
     return Intl.message(
       'If you have identified a product from the United States, please report it so we can add it to our list.',
       name: 'problemReportMessage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Brand not found`
-  String get manualBrandTitle {
-    return Intl.message(
-      'Brand not found',
-      name: 'manualBrandTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter the product brand`
-  String get manualBrandContent {
-    return Intl.message(
-      'Please enter the product brand',
-      name: 'manualBrandContent',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter the brand`
-  String get manualBrandPlaceholder {
-    return Intl.message(
-      'Enter the brand',
-      name: 'manualBrandPlaceholder',
       desc: '',
       args: [],
     );

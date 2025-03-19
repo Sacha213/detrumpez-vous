@@ -23,26 +23,19 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "Сканируйте штрих-код вашего продукта, чтобы узнать, принадлежит ли бренд американской компании.",
+      "Сканируйте штрихкод вашего продукта, чтобы узнать, принадлежит ли бренд американской компании.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage("Сканировать продукт"),
+    "appTitle": MessageLookupByLibrary.simpleMessage("Сканировать штрихкод"),
     "brandNotFound": MessageLookupByLibrary.simpleMessage("Бренд не найден"),
     "cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "Этот бренд не представлен в нашей базе данных брендов из США.",
+      "Этот бренд отсутствует в нашей базе данных американских брендов.",
     ),
-    "manualBrandContent": MessageLookupByLibrary.simpleMessage(
-      "Пожалуйста, введите бренд продукта",
-    ),
-    "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Введите бренд",
-    ),
-    "manualBrandTitle": MessageLookupByLibrary.simpleMessage("Бренд не найден"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Введите бренд и выполните поиск",
+      "Введите пищевой бренд",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Если вы определили продукт из Соединенных Штатов, пожалуйста, сообщите нам, чтобы мы могли добавить его в наш список.",
+      "Если вы обнаружили продукт из США, сообщите нам, чтобы мы могли добавить его в наш список.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "Проблема с продуктом?",
@@ -50,7 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "productNotFound": MessageLookupByLibrary.simpleMessage(
       "Продукт не найден",
     ),
-    "safe": MessageLookupByLibrary.simpleMessage("SAFE"),
+    "safe": MessageLookupByLibrary.simpleMessage("НE USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Этот продукт не принадлежит американской компании!",
     ),

@@ -25,23 +25,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "appDescription": MessageLookupByLibrary.simpleMessage(
       "Scannez le code-barres de votre produit pour découvrir si la marque est détenue par une entreprise américaine.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage("Scannez un produit"),
+    "appTitle": MessageLookupByLibrary.simpleMessage("Scannez le code-barres"),
     "brandNotFound": MessageLookupByLibrary.simpleMessage("Marque non trouvée"),
     "cancel": MessageLookupByLibrary.simpleMessage("Annuler"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "Cette marque n\'est pas représentée dans notre base de données des marques américaines.",
-    ),
-    "manualBrandContent": MessageLookupByLibrary.simpleMessage(
-      "Veuillez saisir la marque du produit",
-    ),
-    "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Entrez la marque",
-    ),
-    "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
-      "Marque non trouvée",
+      "Cette marque n\'est pas présente dans notre base de données de marques américaines.",
     ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Entrez la marque et lancez la recherche",
+      "Entrez une marque alimentaire",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "Si vous avez identifié un produit provenant des États-Unis, veuillez le signaler afin que nous puissions l\'ajouter à notre liste.",
@@ -52,7 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "productNotFound": MessageLookupByLibrary.simpleMessage(
       "Produit non trouvé",
     ),
-    "safe": MessageLookupByLibrary.simpleMessage("SAFE"),
+    "safe": MessageLookupByLibrary.simpleMessage("NON USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Ce produit ne provient pas d\'une entreprise américaine !",
     ),

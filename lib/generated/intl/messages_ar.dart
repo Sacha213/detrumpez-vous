@@ -23,47 +23,38 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "امسح رمز منتجك لاكتشاف ما إذا كانت العلامة التجارية مملوكة لشركة أمريكية.",
+      "امسح رمز المنتج لاكتشاف ما إذا كانت العلامة التجارية مملوكة لشركة أمريكية.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage("امسح منتجًا"),
+    "appTitle": MessageLookupByLibrary.simpleMessage("امسح رمز الشريط"),
     "brandNotFound": MessageLookupByLibrary.simpleMessage(
       "العلامة التجارية غير موجودة",
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "هذه العلامة التجارية غير ممثلة في قاعدة بيانات علاماتنا التجارية الأمريكية.",
-    ),
-    "manualBrandContent": MessageLookupByLibrary.simpleMessage(
-      "يرجى إدخال العلامة التجارية للمنتج",
-    ),
-    "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "أدخل العلامة التجارية",
-    ),
-    "manualBrandTitle": MessageLookupByLibrary.simpleMessage(
-      "العلامة التجارية غير موجودة",
+      "هذه العلامة غير موجودة في قاعدة بيانات علاماتنا التجارية الأمريكية.",
     ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "أدخل العلامة التجارية وابحث",
+      "أدخل علامة تجارية غذائية",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "إذا كنت قد حددت منتجًا من الولايات المتحدة، يرجى الإبلاغ عنه حتى نتمكن من إضافته إلى قائمتنا.",
+      "إذا حددت منتجاً من الولايات المتحدة، يرجى الإبلاغ عنه ليتسنى لنا إضافته إلى قائمتنا.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "هل لديك مشكلة مع منتج؟",
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage("المنتج غير موجود"),
-    "safe": MessageLookupByLibrary.simpleMessage("SAFE"),
+    "safe": MessageLookupByLibrary.simpleMessage("غير أمريكي"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
-      "هذا المنتج ليس من شركة أمريكية!",
+      "هذا المنتج لا ينتمي إلى شركة أمريكية!",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("المصدر غير موجود"),
     "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "المنتج الذي بحثت عنه غير موجود في قاعدة بياناتنا.",
+      "المنتج الذي تبحث عنه غير موجود في قاعدة بياناتنا.",
     ),
-    "usa": MessageLookupByLibrary.simpleMessage("USA"),
+    "usa": MessageLookupByLibrary.simpleMessage("أمريكي"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
-      "هذا المنتج من شركة أمريكية!",
+      "هذا المنتج ينتمي إلى شركة أمريكية!",
     ),
     "validate": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحبا بك في"),

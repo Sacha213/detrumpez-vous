@@ -25,21 +25,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "appDescription": MessageLookupByLibrary.simpleMessage(
       "Scan your product\'s barcode to discover if the brand is owned by an American company.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage("Scan a product"),
+    "appTitle": MessageLookupByLibrary.simpleMessage("Scan the barcode"),
     "brandNotFound": MessageLookupByLibrary.simpleMessage("Brand not found"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "This brand is not represented in our U.S.-based brand database.",
+      "This brand is not in our American brand database.",
     ),
-    "manualBrandContent": MessageLookupByLibrary.simpleMessage(
-      "Please enter the product brand",
-    ),
-    "manualBrandPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Enter the brand",
-    ),
-    "manualBrandTitle": MessageLookupByLibrary.simpleMessage("Brand not found"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Enter the brand and search",
+      "Enter a grocery brand",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "If you have identified a product from the United States, please report it so we can add it to our list.",
@@ -50,7 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "productNotFound": MessageLookupByLibrary.simpleMessage(
       "Product not found",
     ),
-    "safe": MessageLookupByLibrary.simpleMessage("SAFE"),
+    "safe": MessageLookupByLibrary.simpleMessage("NOT USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "This product is not from an American company!",
     ),
