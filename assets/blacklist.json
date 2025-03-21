@@ -4,7 +4,7 @@
     "description": "All-Bran fait partie de Kellogg's, une entreprise américaine pionnière des céréales de petit-déjeuner.",
     "source": "Wikipedia: Kellogg's",
     "company": "Kellogg’s",
-    "normalizedName": "all-bran"
+    "normalizedName": "all_bran"
   },
   {
     "name": "Coco Pops Chocos",
@@ -67,7 +67,7 @@
     "description": "Marque de céréales de Kellogg's, incarnant l'innovation américaine dans la diversification des produits de petit-déjeuner.",
     "source": "Wikipedia: Kellogg's",
     "company": "Kellogg’s",
-    "normalizedName": "mini-wheats"
+    "normalizedName": "mini_wheats"
   },
   {
     "name": "Rice Krispies",
@@ -172,7 +172,7 @@
     "description": "Toaster pastry emblématique, conçue aux USA par Kellogg's pour répondre à la demande d'un petit-déjeuner rapide.",
     "source": "Wikipedia: Kellogg's",
     "company": "Kellogg’s",
-    "normalizedName": "pop-tart"
+    "normalizedName": "pop_tart"
   },
   {
     "name": "Actonel",
@@ -361,7 +361,7 @@
     "description": "Marque de soins dentaires américaine, développée par P&G et reconnue mondialement pour ses innovations en brosses à dents électriques et dentifrices.",
     "source": "Wikipedia: Procter & Gamble",
     "company": "Procter & Gamble",
-    "normalizedName": "oral-b"
+    "normalizedName": "oral_b"
   },
   {
     "name": "Pampers",
@@ -942,7 +942,7 @@
     "description": "Marque premium de crème glacée développée aux USA par General Mills, symbole de luxe dans la confection glacée.",
     "source": "Wikipedia: General Mills",
     "company": "General Mills",
-    "normalizedName": "haagen-dazs"
+    "normalizedName": "haagen_dazs"
   },
   {
     "name": "Hamburger Helper",
@@ -963,7 +963,7 @@
     "description": "Marque de sauces et gravies de General Mills, illustrant la tradition américaine des accompagnements culinaires.",
     "source": "Wikipedia: General Mills",
     "company": "General Mills",
-    "normalizedName": "jus-rol"
+    "normalizedName": "jus_rol"
   },
   {
     "name": "Knack & Back",
@@ -1670,7 +1670,7 @@
     "description": "Marque de jus pour enfants, développée aux USA et commercialisée mondialement par Kraft.",
     "source": "Wikipedia: Kraft Foods Group",
     "company": "Kraft",
-    "normalizedName": "capri-sun"
+    "normalizedName": "capri_sun"
   },
   {
     "name": "Cheez Whiz",
@@ -1726,21 +1726,21 @@
     "description": "Dessert gélifié emblématique développé aux USA, représentant l'innovation américaine dans les produits de dessert, sous Kraft.",
     "source": "Wikipedia: Kraft Foods Group",
     "company": "Kraft",
-    "normalizedName": "jell-o_gelatine"
+    "normalizedName": "jell_o_gelatine"
   },
   {
     "name": "Jet-Puffed",
     "description": "Marque de guimauve de Kraft, illustrant l'innovation américaine dans les snacks sucrés.",
     "source": "Wikipedia: Kraft Foods Group",
     "company": "Kraft",
-    "normalizedName": "jet-puffed"
+    "normalizedName": "jet_puffed"
   },
   {
     "name": "Kool-Aid",
     "description": "Boisson en poudre légendaire née aux États-Unis, symbole de l'innovation dans les produits pour enfants, par Kraft.",
     "source": "Wikipedia: Kraft Foods Group",
     "company": "Kraft",
-    "normalizedName": "kool-aid"
+    "normalizedName": "kool_aid"
   },
   {
     "name": "Koogle",
@@ -1831,7 +1831,7 @@
     "description": "Fromage fondu américain de Kraft, incarnant les techniques de transformation laitière aux USA.",
     "source": "Wikipedia: Kraft Foods Group",
     "company": "Kraft",
-    "normalizedName": "polly-o"
+    "normalizedName": "polly_o"
   },
   {
     "name": "Stove Top stuffing",
@@ -1894,7 +1894,7 @@
     "description": "Lubrifiant intime emblématique, d'origine américaine et commercialisé par Johnson & Johnson.",
     "source": "Wikipedia: Johnson & Johnson",
     "company": "Johnson & Johnson",
-    "normalizedName": "k-y"
+    "normalizedName": "k_y"
   },
   {
     "name": "Neutrogena",
@@ -2041,7 +2041,7 @@
     "description": "Marque de soda emblématique fondée en 1886 aux États-Unis, symbole mondial du soft drink américain grâce à son goût unique et ses campagnes publicitaires légendaires.",
     "source": "Wikipedia: The Coca‑Cola Company",
     "company": "The Coca‑Cola Company",
-    "normalizedName": "coca‑cola"
+    "normalizedName": "coca_cola"
   },
   {
     "name": "Diet Coke",
@@ -2055,21 +2055,21 @@
     "description": "Innovation américaine proposant le goût classique de Coca‑Cola sans calories, développée pour satisfaire les préoccupations nutritionnelles modernes.",
     "source": "Wikipedia: The Coca‑Cola Company",
     "company": "The Coca‑Cola Company",
-    "normalizedName": "coca‑cola_zero_sugar"
+    "normalizedName": "coca_cola_zero_sugar"
   },
   {
     "name": "Coca‑Cola Cherry",
     "description": "Déclinaison fruitée de Coca‑Cola, créée aux États-Unis pour offrir une alternative aromatisée et élargir la gamme de saveurs du soda iconique.",
     "source": "Wikipedia: The Coca‑Cola Company",
     "company": "The Coca‑Cola Company",
-    "normalizedName": "coca‑cola_cherry"
+    "normalizedName": "coca_cola_cherry"
   },
   {
     "name": "Coca‑Cola Vanilla",
     "description": "Version à la vanille de Coca‑Cola, développée aux USA pour diversifier l'offre de boissons gazeuses et satisfaire les amateurs de saveurs douces et crémeuses.",
     "source": "Wikipedia: The Coca‑Cola Company",
     "company": "The Coca‑Cola Company",
-    "normalizedName": "coca‑cola_vanilla"
+    "normalizedName": "coca_cola_vanilla"
   },
   {
     "name": "Sprite",
@@ -2405,7 +2405,7 @@
     "description": "Prim’âge est une gamme de produits pour l'hygiène et les soins de bébé, faisant partie des offres diffusées dans les réseaux de grande distribution par un groupe américain.",
     "source": "Wikipedia: Johnson & Johnson",
     "company": "Johnson & Johnson",
-    "normalizedName": "prim_age"
+    "normalizedName": "primage"
   },
   {
     "name": "Vania",
@@ -2664,7 +2664,7 @@
     "description": "Dreamies, aussi connue sous le nom de Temptations, est une marque de friandises pour chats développée par Mars, illustrant l'approche créative américaine.",
     "source": "Wikipedia: Mars, Incorporated",
     "company": "Mars",
-    "normalizedName": "dreamies_temptations"
+    "normalizedName": "dreamies_(temptations)"
   },
   {
     "name": "Kitekat",

@@ -71,7 +71,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
       final String normalizedCandidate =
           removeDiacritics(candidate.toLowerCase())
               .replaceAll(RegExp(r"[’‘`´]"), "")
-              .replaceAll(RegExp(r'\s+'), '_')
+              .replaceAll(RegExp(r"[\s\-‑]+"), "_")
               .trim();
 
       try {
@@ -190,7 +190,12 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
 
   // Modifiez votre fonction onBarcodeDetected pour afficher le popup si le produit n'est pas trouvé.
   Future<void> onBarcodeDetected(String code) async {
+    // Si le code scanné est identique au dernier code, ne rien faire.
+    if (code == barcode) return;
+
+    // Si une recherche est déjà en cours, ne pas lancer une nouvelle recherche.
     if (isProcessing) return;
+
     setState(() {
       isProcessing = true;
       barcode = code;
@@ -209,6 +214,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
         );
       },
     );
+
     await fetchProductInfo(code);
 
     Navigator.pop(context); // Fermer la popup de chargement
