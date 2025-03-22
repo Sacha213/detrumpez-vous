@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
-
   const SplashScreen({super.key});
 
   @override
@@ -32,6 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: SafeArea(
           child: Container(
         margin: const EdgeInsets.only(left: 40, right: 40),
+        alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               alignment: Alignment.centerLeft,
               child: Text(
-                 S.of(context).welcome,
+                S.of(context).welcome,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,

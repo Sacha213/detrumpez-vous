@@ -190,16 +190,14 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
 
   // Modifiez votre fonction onBarcodeDetected pour afficher le popup si le produit n'est pas trouvé.
   Future<void> onBarcodeDetected(String code) async {
-    // Si le code scanné est identique au dernier code, ne rien faire.
     if (code == barcode) return;
-
-    // Si une recherche est déjà en cours, ne pas lancer une nouvelle recherche.
     if (isProcessing) return;
 
     setState(() {
       isProcessing = true;
       barcode = code;
     });
+
     // Afficher une popup de chargement
     showDialog(
       context: context,
@@ -250,32 +248,35 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(2, 51, 153, 1.0), // Fond bleu
-        title: Text(S.of(context).appTitle,
-            style: const TextStyle(color: Colors.white)),
+      //resizeToAvoidBottomInset: false,
+/*appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(2, 51, 153, 1.0),
+        title: Text(
+          S.of(context).appTitle,
+          style: const TextStyle(color: Colors.white),
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: Image.asset(
-              'assets/europe.png', // Chemin vers votre image du drapeau de l'Europe
-              height: 64, // Hauteur de l'image
-              width: 64, // Largeur de l'image
+              'assets/europe.png',
+              height: 64,
+              width: 64,
             ),
           ),
         ],
-      ),
-      // Utilisation d'isProductFound pour afficher une couleur grise si aucun produit n'est trouvé
-      backgroundColor: !isProductFound
-          ? Colors.grey.shade100
-          : (!isProductFromUSA ? Colors.green.shade100 : Colors.red.shade100),
-      body: Column(
+      ),*/
+
+      body: Stack(
         children: [
-          // Partie supérieure : scanner via MobileScanner.
-          Expanded(
-            flex: 1,
+          // La zone supérieure limitée à 70 % de l'écran
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            height: screenHeight * 0.72,
             child: Stack(
               children: [
                 MobileScanner(
@@ -290,208 +291,235 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                   },
                 ),
                 Center(
-                  child: CustomPaint(
-                    size: const Size(280, 140),
-                    painter: CornerPainter(
-                      color: const Color(0xFFFDCC0B), // couleur mise à jour
-                      lineWidth: 3,
-                      cornerLength: 20,
-                      cornerRadius: 8.0,
-                    ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      CustomPaint(
+                        size: const Size(280, 140),
+                        painter: CornerPainter(
+                          color: const Color(0xFFFDCC0B),
+                          lineWidth: 3,
+                          cornerLength: 20,
+                          cornerRadius: 8.0,
+                        ),
+                      ),
+                      Transform.translate(
+                        offset: const Offset(
+                            0, 8), // décalage vertical de 8 pixels vers le bas
+                        child: Opacity(
+                          opacity: 0.5, // opacité de 80%
+                          child: Image.asset(
+                            "assets/barcode.png", // chemin de votre image PNG avec fond transparent
+                            width: 200, // ajustez la taille selon vos besoins
+                            height: 200,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           ),
-          // Remplacer le bouton de recherche manuelle par un champ de saisie
-          Center(
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
-              child: CupertinoTextField(
-                controller: manualSearchController,
-                placeholder: S
-                    .of(context)
-                    .manualSearchPlaceholder, // Ajoutez cette clé dans vos fichiers ARB
-                clearButtonMode: OverlayVisibilityMode.editing,
-                suffix: CupertinoButton(
-                  padding: EdgeInsets.zero,
-                  child: const Icon(CupertinoIcons.search),
-                  onPressed: () async {
-                    final String brand = manualSearchController.text.trim();
-                    if (brand.isNotEmpty) {
-                      await updateProductInfoDetails(brand);
-                    }
-                  },
+          // DraggableScrollableSheet toujours affiché en bas
+          DraggableScrollableSheet(
+            initialChildSize: 0.30,
+            minChildSize: 0.30,
+            maxChildSize: 0.90,
+            snap: true,
+            builder: (context, scrollController) {
+              return Container(
+                decoration: BoxDecoration(
+                  color: !isProductFound
+                      ? Colors.grey.shade100
+                      : (!isProductFromUSA
+                          ? Colors.green.shade100
+                          : Colors.red.shade100),
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(16)),
                 ),
-                onSubmitted: (value) async {
-                  final String brand = value.trim();
-                  if (brand.isNotEmpty) {
-                    await updateProductInfoDetails(brand);
-                  }
-                },
-              ),
-            ),
-          ),
-
-          // Partie inférieure : affichage des informations du produit.
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-              child: Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    // Photo de validation ou image de Trump.
-                    Row(
-                      children: [
-                        Container(
-                          width: 96,
-                          height: 96,
-                          decoration: !isProductFound
-                              ? const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.grey,
-                                )
-                              : (!isProductFromUSA
-                                  ? const BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Colors.green,
-                                    )
-                                  : const BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                        image: AssetImage("assets/trump.jpg"),
-                                        fit: BoxFit.cover,
-                                      ),
-                                    )),
-                          child: !isProductFound
-                              ? const Icon(
-                                  Icons.question_mark,
-                                  size: 80,
-                                  color: Colors.white,
-                                )
-                              : (!isProductFromUSA
-                                  ? const Icon(
-                                      Icons.check,
-                                      size: 80,
-                                      color: Colors.white,
-                                    )
-                                  : Container()),
+                padding: const EdgeInsets.only(top: 16, right: 16, left: 16),
+                child: SingleChildScrollView(
+                  controller: scrollController,
+                  child: Column(
+                    children: [
+                      // Indicateur de glissement style iOS
+                      Center(
+                        child: Container(
+                          width: 48,
+                          height: 6,
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade400,
+                            borderRadius: BorderRadius.circular(3),
+                          ),
                         ),
-                        const SizedBox(width: 16),
-                        // Indication de l'origine.
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 8),
-                                decoration: BoxDecoration(
-                                  border: Border.all(
+                      ),
+                      const SizedBox(height: 8),
+                      // Champ de recherche manuelle
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16.0, vertical: 8),
+                          child: CupertinoSearchTextField(
+                            controller: manualSearchController,
+                            placeholder: S.of(context).manualSearchPlaceholder,
+                            style: const TextStyle(fontSize: 16),
+                            backgroundColor: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(12),
+                            onSubmitted: (value) async {
+                              final String brand = value.trim();
+                              if (brand.isNotEmpty) {
+                                await updateProductInfoDetails(brand);
+                              }
+                            },
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 10),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      // Autres widgets d'affichage produit...
+                      Row(
+                        children: [
+                          Container(
+                            width: 96,
+                            height: 96,
+                            decoration: !isProductFound
+                                ? const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.grey,
+                                  )
+                                : (!isProductFromUSA
+                                    ? const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.green,
+                                      )
+                                    : const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        image: DecorationImage(
+                                          image: AssetImage("assets/trump.jpg"),
+                                          fit: BoxFit.cover,
+                                        ),
+                                      )),
+                            child: !isProductFound
+                                ? const Icon(
+                                    Icons.question_mark,
+                                    size: 80,
+                                    color: Colors.white,
+                                  )
+                                : (!isProductFromUSA
+                                    ? const Icon(
+                                        Icons.check,
+                                        size: 80,
+                                        color: Colors.white,
+                                      )
+                                    : Container()),
+                          ),
+                          const SizedBox(width: 16),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  brand,
+                                  style: const TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.center,
+                                ),
+                                Text(
+                                    !isProductFound
+                                        ? S.of(context).unknownProductMessage
+                                        : (!isProductFromUSA
+                                            ? S.of(context).safeProductMessage
+                                            : S.of(context).usaProductMessage),
+                                    style: TextStyle(
+                                      fontSize: 14,
                                       color: !isProductFound
                                           ? Colors.grey
                                           : (!isProductFromUSA
                                               ? Colors.green
                                               : Colors.red),
-                                      width: 2),
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: Text(
-                                  !isProductFound
-                                      ? S.of(context).unknown
-                                      : (!isProductFromUSA
-                                          ? S.of(context).safe
-                                          : S.of(context).usa),
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: !isProductFound
-                                        ? Colors.grey
+                                    )),
+                                const SizedBox(height: 8),
+                                Container(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: !isProductFound
+                                            ? Colors.grey
+                                            : (!isProductFromUSA
+                                                ? Colors.green
+                                                : Colors.red),
+                                        width: 2),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Text(
+                                    !isProductFound
+                                        ? S.of(context).unknown
                                         : (!isProductFromUSA
-                                            ? Colors.green
-                                            : Colors.red),
-                                    fontWeight: FontWeight.bold,
+                                            ? S.of(context).safe
+                                            : S.of(context).usa),
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: !isProductFound
+                                          ? Colors.grey
+                                          : (!isProductFromUSA
+                                              ? Colors.green
+                                              : Colors.red),
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                  !isProductFound
-                                      ? S.of(context).unknownProductMessage
-                                      : (!isProductFromUSA
-                                          ? S.of(context).safeProductMessage
-                                          : S.of(context).usaProductMessage),
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: !isProductFound
-                                        ? Colors.grey
-                                        : (!isProductFromUSA
-                                            ? Colors.green
-                                            : Colors.red),
-                                  )),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
-                    // Détails de la marque et du produit.
-                    Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Column(
-                        children: [
-                          Text(brand,
-                              style: const TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold)),
-                          const SizedBox(height: 8),
-                          Text(
-                            description,
-                            textAlign: TextAlign.justify,
-                            style: const TextStyle(fontSize: 16),
-                          ),
-                          const SizedBox(height: 8),
-                          (isProductFromUSA)
-                              ? Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "($source)",
-                                      style: const TextStyle(
-                                          fontSize: 14, color: Colors.blue),
-                                    ),
-                                  ],
-                                )
-                              : Container(),
                         ],
                       ),
-                    ),
-                    const SizedBox(height: 20),
-                    const Spacer(),
-                    // Message de signalement de problème.
-                    Text(
-                      S.of(context).problemReportTitle,
-                      style: const TextStyle(fontSize: 14, color: Colors.red),
-                    ),
-                    Text(
-                      S.of(context).problemReportMessage,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(fontSize: 14),
-                    ),
-                    const Text(
-                      "contact@detrumpez-vous.com",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 14, color: Colors.blue),
-                    ),
-                  ],
+                      const SizedBox(height: 16),
+                      Text(
+                        description,
+                        textAlign: TextAlign.justify,
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                      const SizedBox(height: 8),
+                      if (isProductFromUSA)
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "($source)",
+                              style: const TextStyle(
+                                  fontSize: 14, color: Colors.blue),
+                            ),
+                          ],
+                        ),
+                      const SizedBox(height: 80),
+                      Text(
+                        S.of(context).problemReportTitle,
+                        style: const TextStyle(fontSize: 14, color: Colors.red),
+                        textAlign: TextAlign.center,
+                      ),
+
+                      const SizedBox(height: 8),
+                      Text(
+                        S.of(context).problemReportMessage,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(fontSize: 14),
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        "contact@detrumpez-vous.com",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 14, color: Colors.blue),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ),
+              );
+            },
           ),
         ],
       ),
