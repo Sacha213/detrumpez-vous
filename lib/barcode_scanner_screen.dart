@@ -53,7 +53,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     });
 
     // Exemple de recherche d'informations de marque
-    //await fetchProductInfo("3168930168133");
+    //await fetchProductInfo("5000112611762");
   }
 
   /// Recherche une information de marque par fuzzy match.
@@ -66,13 +66,10 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
         .where((s) => s.isNotEmpty)
         .toList();
 
+
     // Pour chaque candidat, on le normalise et on cherche une correspondance
     for (final candidate in candidates) {
-      final String normalizedCandidate =
-          removeDiacritics(candidate.toLowerCase())
-              .replaceAll(RegExp(r"[’‘`´]"), "")
-              .replaceAll(RegExp(r"[\s\-‑]+"), "_")
-              .trim();
+      final String normalizedCandidate = normalizeBrandName(candidate);
 
       try {
         final Map<String, dynamic> found = brandsIndex.firstWhere((brand) {
@@ -107,6 +104,15 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
 
     await updateProductInfoDetails(productData);
   }
+
+  /// Fonction pour normaliser un nom de marque
+String normalizeBrandName(String input) {
+  return removeDiacritics(input.toLowerCase()) // Supprimer les accents
+      .replaceAll(RegExp(r"[’‘`´®™]"), "") // Supprimer les caractères spéciaux
+      .replaceAll(RegExp(r"[\s\-‑]+"), "_") // Remplacer les espaces et tirets par des underscores
+      .replaceAll(RegExp(r"[^a-z0-9_]+"), "") // Supprimer tout sauf lettres, chiffres et underscores
+      .trim(); // Supprimer les espaces en début/fin
+}
 
   /// Exemple de fonction pour interroger l'API OpenBeautyFact.
   Future<String?> fetchFromOpenBeautyFact(String barcode) async {
@@ -303,17 +309,13 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                           cornerRadius: 8.0,
                         ),
                       ),
-                      Transform.translate(
-                        offset: const Offset(
-                            0, 8), // décalage vertical de 8 pixels vers le bas
-                        child: Opacity(
-                          opacity: 0.5, // opacité de 80%
-                          child: Image.asset(
-                            "assets/barcode.png", // chemin de votre image PNG avec fond transparent
-                            width: 200, // ajustez la taille selon vos besoins
-                            height: 200,
-                            fit: BoxFit.contain,
-                          ),
+                      Opacity(
+                        opacity: 0.5, // opacité de 80%
+                        child: Image.asset(
+                          "assets/barcode.png", // chemin de votre image PNG avec fond transparent
+                          width: 200, // ajustez la taille selon vos besoins
+                          height: 200,
+                          fit: BoxFit.contain,
                         ),
                       ),
                     ],
