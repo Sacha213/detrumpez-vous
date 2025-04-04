@@ -2756,5 +2756,110 @@
     "source": "Wikipedia: Divers",
     "company": "Divers",
     "normalizedName": "wisdom_panel"
+  },
+  {
+    "name": "Colgate",
+    "description": "Marque de produits d'hygiène bucco-dentaire appartenant au groupe américain Colgate‑Palmolive, réputée mondialement pour ses dentifrices, brosses à dents et bains de bouche innovants.",
+    "source": "Wikipedia: Colgate-Palmolive",
+    "company": "Colgate-Palmolive",
+    "normalizedName": "colgate"
+  },
+  {
+    "name": "elmex",
+    "description": "Marque de soins dentaires reconnue pour ses dentifrices et produits de prévention des caries, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: elmex",
+    "company": "elmex",
+    "normalizedName": "elmex"
+  },
+  {
+    "name": "méridol",
+    "description": "Marque de soins bucco-dentaires proposant bains de bouche et dentifrices anti-douleur, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: Méridol",
+    "company": "Méridol",
+    "normalizedName": "meridol"
+  },
+  {
+    "name": "Palmolive",
+    "description": "Marque emblématique d'hygiène personnelle appartenant au groupe américain Colgate‑Palmolive, reconnue pour ses gels douche et ses produits de soin de la peau.",
+    "source": "Wikipedia: Palmolive",
+    "company": "Colgate-Palmolive",
+    "normalizedName": "palmolive"
+  },
+  {
+    "name": "Sanex",
+    "description": "Marque de soins corporels spécialisée dans l'hygiène personnelle et le bien-être de la peau, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: Sanex",
+    "company": "Sanex",
+    "normalizedName": "sanex"
+  },
+  {
+    "name": "Mennen",
+    "description": "Marque classique de produits de soins personnels, notamment réputée pour ses déodorants et soins pour la peau, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: Mennen",
+    "company": "Mennen",
+    "normalizedName": "mennen"
+  },
+  {
+    "name": "Tahiti",
+    "description": "Marque de gel douche et produits d'hygiène personnelle évoquant une sensation d'exotisme et de fraîcheur, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: Tahiti",
+    "company": "Tahiti",
+    "normalizedName": "tahiti"
+  },
+  {
+    "name": "La Croix",
+    "description": "Marque de produits d'entretien ménager, notamment reconnue pour ses solutions à base de javel, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: La Croix (javel)",
+    "company": "La Croix",
+    "normalizedName": "la_croix"
+  },
+  {
+    "name": "Paic",
+    "description": "Marque de produits de nettoyage, appréciée pour l'efficacité de ses détergents ménagers, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: Paic",
+    "company": "Paic",
+    "normalizedName": "paic"
+  },
+  {
+    "name": "Soupline",
+    "description": "Marque d'adoucissant et produits de lessive, réputée pour protéger les tissus tout en assouplissant le linge, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: Soupline",
+    "company": "Soupline",
+    "normalizedName": "soupline"
+  },
+  {
+    "name": "Soft and Gentle",
+    "description": "Marque de produits d'entretien ménager proposant notamment des adoucissants adaptés aux peaux sensibles, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: Soft and Gentle",
+    "company": "Soft and Gentle",
+    "normalizedName": "soft_and_gentle"
+  },
+  {
+    "name": "Ajax",
+    "description": "Marque iconique de détergents, reconnue pour l'efficacité de ses nettoyants ménagers, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: Ajax",
+    "company": "Ajax",
+    "normalizedName": "ajax"
+  },
+  {
+    "name": "Hill's",
+    "description": "Marque de produits vétérinaires et alimentaires pour animaux, connue pour ses formulations adaptées à la santé animale, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: Hill's Pet Nutrition",
+    "company": "Hill's Pet Nutrition",
+    "normalizedName": "hills"
+  },
+  {
+    "name": "Catit",
+    "description": "Marque d'accessoires et de nourriture pour chats, reconnue pour ses produits innovants pour le bien-être félin, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: Catit",
+    "company": "Catit",
+    "normalizedName": "catit"
+  },
+  {
+    "name": "Zoë",
+    "description": "Marque de nourriture et accessoires pour animaux, mettant en avant l'innovation dans l'alimentation animale, appartenant au groupe américain Colgate‑Palmolive.",
+    "source": "Wikipedia: Zoë",
+    "company": "Zoë",
+    "normalizedName": "zoe"
   }
 ]
