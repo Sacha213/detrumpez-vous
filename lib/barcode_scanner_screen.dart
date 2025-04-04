@@ -9,8 +9,10 @@ import 'package:flutter/services.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:logger/logger.dart';
+import 'package:translator/translator.dart';
 
 final Logger logger = Logger();
+final GoogleTranslator translator = GoogleTranslator();
 
 class BarcodeScannerScreen extends StatefulWidget {
   const BarcodeScannerScreen({super.key});
@@ -66,7 +68,6 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
         .where((s) => s.isNotEmpty)
         .toList();
 
-
     // Pour chaque candidat, on le normalise et on cherche une correspondance
     for (final candidate in candidates) {
       final String normalizedCandidate = normalizeBrandName(candidate);
@@ -106,13 +107,16 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
   }
 
   /// Fonction pour normaliser un nom de marque
-String normalizeBrandName(String input) {
-  return removeDiacritics(input.toLowerCase()) // Supprimer les accents
-      .replaceAll(RegExp(r"[’‘`´®™]"), "") // Supprimer les caractères spéciaux
-      .replaceAll(RegExp(r"[\s\-‑]+"), "_") // Remplacer les espaces et tirets par des underscores
-      .replaceAll(RegExp(r"[^a-z0-9_]+"), "") // Supprimer tout sauf lettres, chiffres et underscores
-      .trim(); // Supprimer les espaces en début/fin
-}
+  String normalizeBrandName(String input) {
+    return removeDiacritics(input.toLowerCase()) // Supprimer les accents
+        .replaceAll(
+            RegExp(r"[’‘`´®™]"), "") // Supprimer les caractères spéciaux
+        .replaceAll(RegExp(r"[\s\-‑]+"),
+            "_") // Remplacer les espaces et tirets par des underscores
+        .replaceAll(RegExp(r"[^a-z0-9_]+"),
+            "") // Supprimer tout sauf lettres, chiffres et underscores
+        .trim(); // Supprimer les espaces en début/fin
+  }
 
   /// Exemple de fonction pour interroger l'API OpenBeautyFact.
   Future<String?> fetchFromOpenBeautyFact(String barcode) async {
@@ -233,14 +237,19 @@ String normalizeBrandName(String input) {
     final Map<String, dynamic> resultJson =
         await getBrandInfo(productData ?? "");
 
+    // Traduction de la description en fonction de la langue de l'utilisateur
+    String? desc;
+    if (resultJson["description"] != null) {
+      desc = await translateDescriptionIfNeeded(resultJson["description"]);
+    }
+
     setState(() {
       brand = (resultJson["name"]?.toString().isNotEmpty == true)
           ? resultJson["name"]
           : ((productData?.isNotEmpty == true)
               ? productData!
               : S.of(context).brandNotFound);
-      description =
-          resultJson["description"] ?? S.of(context).descriptionNotFound;
+      description = desc ?? S.of(context).descriptionNotFound;
       source = resultJson["source"] ?? S.of(context).sourceNotFound;
       isProductFound = productData != null;
       isProductFromUSA = resultJson.isNotEmpty;
@@ -250,6 +259,21 @@ String normalizeBrandName(String input) {
     if (isProductFound) {
       HapticFeedback.mediumImpact();
     }
+  }
+
+  /// Fonction qui traduit une chaîne de caractères si la langue cible n'est pas le français
+  Future<String> translateDescriptionIfNeeded(String text) async {
+    final String locale = Localizations.localeOf(context).languageCode;
+    if (locale != 'fr') {
+      try {
+        final translation = await translator.translate(text, to: locale);
+        return translation.text;
+      } catch (e) {
+        // En cas d'erreur, retourner le texte original
+        return text;
+      }
+    }
+    return text;
   }
 
   @override
