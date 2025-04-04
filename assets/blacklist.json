@@ -2044,6 +2044,13 @@
     "normalizedName": "coca_cola"
   },
   {
+    "name": "Coke ZÉRO®",
+    "description": "Version sans sucre de Coca‑Cola, lancée pour répondre aux attentes des consommateurs soucieux de leur consommation calorique.",
+    "source": "Wikipedia: The Coca‑Cola Company",
+    "company": "The Coca‑Cola Company",
+    "normalizedName": "coke_zero"
+  },
+  {
     "name": "Diet Coke",
     "description": "Version allégée de Coca‑Cola lancée en 1982, répondant à la demande américaine pour des boissons sans sucre et illustrant l'évolution des tendances santé aux USA.",
     "source": "Wikipedia: The Coca‑Cola Company",
