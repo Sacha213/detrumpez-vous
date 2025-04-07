@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:detrumpezvous/corner_painter.dart';
 import 'package:detrumpezvous/generated/l10n.dart';
@@ -10,6 +11,9 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:logger/logger.dart';
 import 'package:translator/translator.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:mailto/mailto.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 final Logger logger = Logger();
 final GoogleTranslator translator = GoogleTranslator();
@@ -47,12 +51,31 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     super.dispose();
   }
 
-  /// Charge le fichier JSON depuis les assets une seule fois.
+  // Retourne le fichier local mis à jour ou non
+  Future<File> _getLocalFile() async {
+    final directory = await getApplicationDocumentsDirectory();
+    return File('${directory.path}/blacklist.json');
+  }
+
+  // Méthode pour charger le fichier mis à jour (ou la version par défaut depuis assets)
   Future<void> loadBrands() async {
-    final String jsonStr = await rootBundle.loadString('assets/blacklist.json');
-    setState(() {
-      brandsIndex = json.decode(jsonStr);
-    });
+    final File localFile = await _getLocalFile();
+    try {
+      if (await localFile.exists()) {
+        final String contents = await localFile.readAsString();
+        brandsIndex = json.decode(contents);
+      } else {
+        // Si le fichier n'existe pas, chargez la version embarquée
+        final String jsonStr =
+            await rootBundle.loadString('assets/blacklist.json');
+        brandsIndex = json.decode(jsonStr);
+      }
+    } catch (e) {
+      // En cas d'erreur, retournez une liste vide ou gérez l'erreur comme vous le souhaitez
+      brandsIndex = [];
+    }
+
+    setState(() {});
 
     // Exemple de recherche d'informations de marque
     //await fetchProductInfo("5000112611762");
@@ -356,195 +379,256 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
             snap: true,
             builder: (context, scrollController) {
               return Container(
-                decoration: BoxDecoration(
-                  color: !isProductFound
-                      ? Colors.grey.shade100
-                      : (!isProductFromUSA
-                          ? Colors.green.shade100
-                          : Colors.red.shade100),
-                  borderRadius:
-                      const BorderRadius.vertical(top: Radius.circular(16)),
-                ),
-                padding: const EdgeInsets.only(top: 16, right: 16, left: 16),
-                child: SingleChildScrollView(
-                  controller: scrollController,
-                  child: Column(
-                    children: [
-                      // Indicateur de glissement style iOS
-                      Center(
-                        child: Container(
-                          width: 48,
-                          height: 6,
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade400,
-                            borderRadius: BorderRadius.circular(3),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      // Champ de recherche manuelle
-                      Center(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16.0, vertical: 8),
-                          child: CupertinoSearchTextField(
-                            controller: manualSearchController,
-                            placeholder: S.of(context).manualSearchPlaceholder,
-                            style: const TextStyle(fontSize: 16),
-                            backgroundColor: Colors.grey[200],
-                            borderRadius: BorderRadius.circular(12),
-                            onSubmitted: (value) async {
-                              final String brand = value.trim();
-                              if (brand.isNotEmpty) {
-                                await updateProductInfoDetails(brand);
-                              }
-                            },
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 12, vertical: 10),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      // Autres widgets d'affichage produit...
-                      Row(
-                        children: [
-                          Container(
-                            width: 96,
-                            height: 96,
-                            decoration: !isProductFound
-                                ? const BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.grey,
-                                  )
-                                : (!isProductFromUSA
-                                    ? const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.green,
-                                      )
-                                    : const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        image: DecorationImage(
-                                          image: AssetImage("assets/trump.jpg"),
-                                          fit: BoxFit.cover,
-                                        ),
-                                      )),
-                            child: !isProductFound
-                                ? const Icon(
-                                    Icons.question_mark,
-                                    size: 80,
-                                    color: Colors.white,
-                                  )
-                                : (!isProductFromUSA
-                                    ? const Icon(
-                                        Icons.check,
-                                        size: 80,
-                                        color: Colors.white,
-                                      )
-                                    : Container()),
-                          ),
-                          const SizedBox(width: 16),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  brand,
-                                  style: const TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                  textAlign: TextAlign.center,
-                                ),
-                                Text(
-                                    !isProductFound
-                                        ? S.of(context).unknownProductMessage
-                                        : (!isProductFromUSA
-                                            ? S.of(context).safeProductMessage
-                                            : S.of(context).usaProductMessage),
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: !isProductFound
-                                          ? Colors.grey
-                                          : (!isProductFromUSA
-                                              ? Colors.green
-                                              : Colors.red),
-                                    )),
-                                const SizedBox(height: 8),
-                                Container(
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 8),
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: !isProductFound
-                                            ? Colors.grey
-                                            : (!isProductFromUSA
-                                                ? Colors.green
-                                                : Colors.red),
-                                        width: 2),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Text(
-                                    !isProductFound
-                                        ? S.of(context).unknown
-                                        : (!isProductFromUSA
-                                            ? S.of(context).safe
-                                            : S.of(context).usa),
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: !isProductFound
-                                          ? Colors.grey
-                                          : (!isProductFromUSA
-                                              ? Colors.green
-                                              : Colors.red),
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 16),
-                      Text(
-                        description,
-                        textAlign: TextAlign.justify,
-                        style: const TextStyle(fontSize: 16),
-                      ),
-                      const SizedBox(height: 8),
-                      if (isProductFromUSA)
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "($source)",
-                              style: const TextStyle(
-                                  fontSize: 14, color: Colors.blue),
-                            ),
-                          ],
-                        ),
-                      const SizedBox(height: 80),
-                      Text(
-                        S.of(context).problemReportTitle,
-                        style: const TextStyle(fontSize: 14, color: Colors.red),
-                        textAlign: TextAlign.center,
-                      ),
-
-                      const SizedBox(height: 8),
-                      Text(
-                        S.of(context).problemReportMessage,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(fontSize: 14),
-                      ),
-                      const SizedBox(height: 8),
-                      const Text(
-                        "contact@detrumpez-vous.com",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 14, color: Colors.blue),
-                      ),
-                    ],
+                  decoration: BoxDecoration(
+                    color: !isProductFound
+                        ? Colors.grey.shade100
+                        : (!isProductFromUSA
+                            ? Colors.green.shade100
+                            : Colors.red.shade100),
+                    borderRadius:
+                        const BorderRadius.vertical(top: Radius.circular(16)),
                   ),
-                ),
-              );
+                  padding: const EdgeInsets.only(top: 16, right: 16, left: 16),
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      return SingleChildScrollView(
+                          controller: scrollController,
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(
+                                minHeight: constraints.maxHeight),
+                            child: IntrinsicHeight(
+                                child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                  Column(
+                                    children: [
+                                      // Indicateur de glissement style iOS
+                                      Center(
+                                        child: Container(
+                                          width: 48,
+                                          height: 6,
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey.shade400,
+                                            borderRadius:
+                                                BorderRadius.circular(3),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(height: 8),
+                                      // Champ de recherche manuelle
+                                      Center(
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 16.0, vertical: 8),
+                                          child: CupertinoSearchTextField(
+                                            controller: manualSearchController,
+                                            placeholder: S
+                                                .of(context)
+                                                .manualSearchPlaceholder,
+                                            style:
+                                                const TextStyle(fontSize: 16),
+                                            backgroundColor: Colors.grey[200],
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            onSubmitted: (value) async {
+                                              final String brand = value.trim();
+                                              if (brand.isNotEmpty) {
+                                                await updateProductInfoDetails(
+                                                    brand);
+                                              }
+                                            },
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 12, vertical: 10),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(height: 8),
+                                      // Autres widgets d'affichage produit...
+                                      Row(
+                                        children: [
+                                          Container(
+                                            width: 96,
+                                            height: 96,
+                                            decoration: !isProductFound
+                                                ? const BoxDecoration(
+                                                    shape: BoxShape.circle,
+                                                    color: Colors.grey,
+                                                  )
+                                                : (!isProductFromUSA
+                                                    ? const BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        color: Colors.green,
+                                                      )
+                                                    : const BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: DecorationImage(
+                                                          image: AssetImage(
+                                                              "assets/trump.jpg"),
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      )),
+                                            child: !isProductFound
+                                                ? const Icon(
+                                                    Icons.question_mark,
+                                                    size: 80,
+                                                    color: Colors.white,
+                                                  )
+                                                : (!isProductFromUSA
+                                                    ? const Icon(
+                                                        Icons.check,
+                                                        size: 80,
+                                                        color: Colors.white,
+                                                      )
+                                                    : Container()),
+                                          ),
+                                          const SizedBox(width: 16),
+                                          Expanded(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  brand,
+                                                  style: const TextStyle(
+                                                      fontSize: 20,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                                Text(
+                                                    !isProductFound
+                                                        ? S
+                                                            .of(context)
+                                                            .unknownProductMessage
+                                                        : (!isProductFromUSA
+                                                            ? S
+                                                                .of(context)
+                                                                .safeProductMessage
+                                                            : S
+                                                                .of(context)
+                                                                .usaProductMessage),
+                                                    style: TextStyle(
+                                                      fontSize: 14,
+                                                      color: !isProductFound
+                                                          ? Colors.grey
+                                                          : (!isProductFromUSA
+                                                              ? Colors.green
+                                                              : Colors.red),
+                                                    )),
+                                                const SizedBox(height: 8),
+                                                Container(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(horizontal: 8),
+                                                  decoration: BoxDecoration(
+                                                    border: Border.all(
+                                                        color: !isProductFound
+                                                            ? Colors.grey
+                                                            : (!isProductFromUSA
+                                                                ? Colors.green
+                                                                : Colors.red),
+                                                        width: 2),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8),
+                                                  ),
+                                                  child: Text(
+                                                    !isProductFound
+                                                        ? S.of(context).unknown
+                                                        : (!isProductFromUSA
+                                                            ? S.of(context).safe
+                                                            : S
+                                                                .of(context)
+                                                                .usa),
+                                                    style: TextStyle(
+                                                      fontSize: 20,
+                                                      color: !isProductFound
+                                                          ? Colors.grey
+                                                          : (!isProductFromUSA
+                                                              ? Colors.green
+                                                              : Colors.red),
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(height: 16),
+                                      Text(
+                                        description,
+                                        textAlign: TextAlign.justify,
+                                        style: const TextStyle(fontSize: 16),
+                                      ),
+                                      const SizedBox(height: 8),
+                                      if (isProductFromUSA)
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              "($source)",
+                                              style: const TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.blue),
+                                            ),
+                                          ],
+                                        ),
+                                    ],
+                                  ),
+                                  Column(
+                                    children: [
+                                      const SizedBox(
+                                        height: 16,
+                                      ),
+                                      Text(
+                                        S.of(context).problemReportTitle,
+                                        style: const TextStyle(
+                                            fontSize: 14, color: Colors.red),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                      const SizedBox(height: 8),
+                                      Text(
+                                        S.of(context).problemReportMessage,
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(fontSize: 14),
+                                      ),
+                                      const SizedBox(height: 8),
+                                      GestureDetector(
+                                        onTap: () async {
+                                          final mailtoLink = Mailto(
+                                            to: ['contact@detrumpez-vous.com'],
+                                            subject: 'Product Issue Report',
+                                            body:
+                                                'Hello,\n\nI would like to report a product issue:\n',
+                                          );
+                                          final String url = '$mailtoLink';
+                                          if (await canLaunch(url)) {
+                                            await launch(url);
+                                          } else {
+                                            debugPrint(
+                                                "Could not launch email client");
+                                          }
+                                        },
+                                        child: const Text(
+                                          "contact@detrumpez-vous.com",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              fontSize: 14, color: Colors.blue),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        height: 16,
+                                      ),
+                                    ],
+                                  )
+                                ])),
+                          ));
+                    },
+                  ));
             },
           ),
         ],
