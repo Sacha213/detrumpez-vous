@@ -2768,14 +2768,14 @@
     "name": "elmex",
     "description": "Marque de soins dentaires reconnue pour ses dentifrices et produits de prévention des caries, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: elmex",
-    "company": "elmex",
+    "company": "Colgate-Palmolive",
     "normalizedName": "elmex"
   },
   {
     "name": "méridol",
     "description": "Marque de soins bucco-dentaires proposant bains de bouche et dentifrices anti-douleur, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: Méridol",
-    "company": "Méridol",
+    "company": "Colgate-Palmolive",
     "normalizedName": "meridol"
   },
   {
@@ -2789,77 +2789,336 @@
     "name": "Sanex",
     "description": "Marque de soins corporels spécialisée dans l'hygiène personnelle et le bien-être de la peau, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: Sanex",
-    "company": "Sanex",
+    "company": "Colgate-Palmolive",
     "normalizedName": "sanex"
   },
   {
     "name": "Mennen",
     "description": "Marque classique de produits de soins personnels, notamment réputée pour ses déodorants et soins pour la peau, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: Mennen",
-    "company": "Mennen",
+    "company": "Colgate-Palmolive",
     "normalizedName": "mennen"
   },
   {
     "name": "Tahiti",
     "description": "Marque de gel douche et produits d'hygiène personnelle évoquant une sensation d'exotisme et de fraîcheur, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: Tahiti",
-    "company": "Tahiti",
+    "company": "Colgate-Palmolive",
     "normalizedName": "tahiti"
   },
   {
     "name": "La Croix",
     "description": "Marque de produits d'entretien ménager, notamment reconnue pour ses solutions à base de javel, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: La Croix (javel)",
-    "company": "La Croix",
+    "company": "Colgate-Palmolive",
     "normalizedName": "la_croix"
   },
   {
     "name": "Paic",
     "description": "Marque de produits de nettoyage, appréciée pour l'efficacité de ses détergents ménagers, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: Paic",
-    "company": "Paic",
+    "company": "Colgate-Palmolive",
     "normalizedName": "paic"
   },
   {
     "name": "Soupline",
     "description": "Marque d'adoucissant et produits de lessive, réputée pour protéger les tissus tout en assouplissant le linge, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: Soupline",
-    "company": "Soupline",
+    "company": "Colgate-Palmolive",
     "normalizedName": "soupline"
   },
   {
     "name": "Soft and Gentle",
     "description": "Marque de produits d'entretien ménager proposant notamment des adoucissants adaptés aux peaux sensibles, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: Soft and Gentle",
-    "company": "Soft and Gentle",
+    "company": "Colgate-Palmolive",
     "normalizedName": "soft_and_gentle"
   },
   {
     "name": "Ajax",
     "description": "Marque iconique de détergents, reconnue pour l'efficacité de ses nettoyants ménagers, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: Ajax",
-    "company": "Ajax",
+    "company": "Colgate-Palmolive",
     "normalizedName": "ajax"
   },
   {
     "name": "Hill's",
     "description": "Marque de produits vétérinaires et alimentaires pour animaux, connue pour ses formulations adaptées à la santé animale, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: Hill's Pet Nutrition",
-    "company": "Hill's Pet Nutrition",
+    "company": "Colgate-Palmolive",
     "normalizedName": "hills"
   },
   {
     "name": "Catit",
     "description": "Marque d'accessoires et de nourriture pour chats, reconnue pour ses produits innovants pour le bien-être félin, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: Catit",
-    "company": "Catit",
+    "company": "Colgate-Palmolive",
     "normalizedName": "catit"
   },
   {
     "name": "Zoë",
     "description": "Marque de nourriture et accessoires pour animaux, mettant en avant l'innovation dans l'alimentation animale, appartenant au groupe américain Colgate‑Palmolive.",
     "source": "Wikipedia: Zoë",
-    "company": "Zoë",
+    "company": "Colgate-Palmolive",
     "normalizedName": "zoe"
+  },
+  {
+    "name": "Tabasco",
+    "description": "Tabasco est une sauce piquante iconique produite par la McIlhenny Company, une entreprise américaine réputée pour ses condiments épicés et sa longue tradition d'innovation en saveurs.",
+    "source": "Wikipedia: Tabasco sauce",
+    "company": "McIlhenny Company",
+    "normalizedName": "tabasco"
+  },
+  {
+    "name": "Pepsi Max",
+    "description": "Pepsi Max est une boisson sans sucre proposée par PepsiCo, un groupe américain incontournable reconnu pour son large portefeuille de boissons et sa capacité d'innovation marketing.",
+    "source": "Wikipedia: Pepsi Max",
+    "company": "PepsiCo",
+    "normalizedName": "pepsi_max"
+  },
+  {
+    "name": "North Face",
+    "description": "The North Face est une marque américaine spécialisée dans les vêtements et équipements de plein air. Elle fait partie de VF Corporation, un leader américain dans le secteur de l'habillement technique et outdoor.",
+    "source": "Wikipedia: The North Face",
+    "company": "VF Corporation",
+    "normalizedName": "north_face"
+  },
+  {
+    "name": "Heudebert",
+    "description": "Heudebert est une marque française renommée dans le secteur alimentaire, qui fait aujourd'hui partie d'un groupe américain afin d'étendre sa présence mondiale.",
+    "source": "Wikipedia: Heudebert",
+    "company": "Mondelēz International",
+    "normalizedName": "heudebert"
+  },
+  {
+    "name": "Bénénuts",
+    "description": "Bénénuts est une marque commerciale appartenant au groupe américain PepsiCo, spécialisée dans la fabrication et la commercialisation de gâteaux apéritifs.",
+    "source": "Wikipedia: Bénénuts",
+    "company": "PepsiCo",
+    "normalizedName": "benenuts"
+  },
+  {
+    "name": "Belin",
+    "description": "Belin est une ancienne marque française de biscuits qui, au fil des ans, est devenue une gamme de biscuits appartenant à LU, filiale de Danone, avant d'être cédée en 2007 au groupe américain Mondelez International (issu d'une scission de l'américain Kraft Foods).",
+    "source": "Wikipedia: Belin",
+    "company": "Mondelez International",
+    "normalizedName": "belin"
+  },
+  {
+    "name": "Bénédicta",
+    "description": "Bénédicta (anciennement Bénédictin) est une marque commerciale spécialisée dans la fabrication de mayonnaises, de sauces culinaires et de sauces salades, appartenant au groupe Kraft Heinz, illustrant l'innovation et la tradition dans le secteur alimentaire.",
+    "source": "Wikipedia: Bénédicta",
+    "company": "Kraft Heinz",
+    "normalizedName": "benedicta"
+  },
+  {
+    "name": "L'Ourson",
+    "description": "Marque emblématique de LU, désormais propriété du groupe américain Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "lourson"
+  },
+  {
+    "name": "Petit Brun Extra",
+    "description": "Biscuit traditionnel de LU, une marque détenue par Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "petitbrunextra"
+  },
+  {
+    "name": "Gaufrettes Brun",
+    "description": "Produit historique de LU, aujourd’hui intégré à Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "gaufrettesbrun"
+  },
+  {
+    "name": "Petit Beurre",
+    "description": "Biscuit iconique de LU, désormais sous la bannière Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "petitbeurre"
+  },
+  {
+    "name": "Cookies Hello !",
+    "description": "Marque LU, appartenant actuellement au groupe américain Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "cookieshello"
+  },
+  {
+    "name": "Granola",
+    "description": "Biscuit au chocolat de LU, propriété de Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "granola"
+  },
+  {
+    "name": "Petits Cœurs",
+    "description": "Gâteaux LU, actuellement sous Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "petitscoeurs"
+  },
+  {
+    "name": "Pépito",
+    "description": "Biscuit chocolaté LU, marque du groupe Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "pepito"
+  },
+  {
+    "name": "Prince",
+    "description": "Gâteau fourré chocolat de LU, appartenant à Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "prince"
+  },
+  {
+    "name": "Mikado",
+    "description": "Bâtonnets chocolatés commercialisés par LU, sous Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "mikado"
+  },
+  {
+    "name": "Paille d'or",
+    "description": "Gaufrettes LU, rachetées avec LU par Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "pailleor"
+  },
+  {
+    "name": "Figolu",
+    "description": "Biscuits aux figues de LU, appartenant à Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "figolu"
+  },
+  {
+    "name": "Galettes Saint Sauveur",
+    "description": "Galettes LU, désormais propriété de Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "galettessaintsauveur"
+  },
+  {
+    "name": "REM",
+    "description": "Marque LU intégrée dans le portefeuille Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "rem"
+  },
+  {
+    "name": "Beurré nantais",
+    "description": "Spécialité LU, détenue par Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "beurrenantais"
+  },
+  {
+    "name": "Cent Wafers",
+    "description": "Wafers de LU, sous Mondelez International.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "centwafers"
+  },
+  {
+    "name": "Tuc",
+    "description": "Crackers salés LU, intégrés à Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "tuc"
+  },
+  {
+    "name": "Pim's",
+    "description": "Biscuits moelleux LU, marque appartenant à Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "pims"
+  },
+  {
+    "name": "Napolitain",
+    "description": "Gâteau LU célèbre, détenu par Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "napolitain"
+  },
+  {
+    "name": "Cracotte",
+    "description": "Produit croustillant LU, sous Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "cracotte"
+  },
+  {
+    "name": "Chamonix orange",
+    "description": "Gâteaux à l'orange LU, aujourd’hui Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "chamonixorange"
+  },
+  {
+    "name": "Petit écolier",
+    "description": "Célèbre biscuit LU au chocolat, propriété de Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "petitecolier"
+  },
+  {
+    "name": "Lulu",
+    "description": "Gâteaux en forme de barquette ou d’ourson LU, appartenant à Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "lulu"
+  },
+  {
+    "name": "Grany",
+    "description": "Barres céréalières LU, désormais détenues par Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "grany"
+  },
+  {
+    "name": "Belvita",
+    "description": "Petit-déjeuner LU sous la marque Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "belvita"
+  },
+  {
+    "name": "Palmito",
+    "description": "Biscuits feuilletés LU, rachetés par Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "palmito"
+  },
+  {
+    "name": "Kango",
+    "description": "Biscuits fourrés LU, aujourd’hui propriété de Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "kango"
+  },
+  {
+    "name": "Bastogne",
+    "description": "Biscuit LU d'origine belge, désormais Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "bastogne"
+  },
+  {
+    "name": "Pelletier",
+    "description": "Produits LU sous contrôle de Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "pelletier"
+  },
+  {
+    "name": "Vandame",
+    "description": "Marque LU, aujourd’hui dans le portefeuille Mondelez.",
+    "source": "Wikipedia: Mondelez International",
+    "company": "Mondelez",
+    "normalizedName": "vandame"
   }
 ]
