@@ -35,7 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "खाद्य ब्रांड दर्ज करें",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "यदि आपने अमेरिका से आने वाला उत्पाद पहचाना है तो कृपया रिपोर्ट करें, ताकि हम इसे अपनी सूची में जोड़ सकें।",
+      "हम परफेक्ट नहीं हैं और शायद सभी ब्रांडों की पहचान अभी तक नहीं हो पाई है। हालांकि, हमारे डेटाबेस में पहले से ही 400 से अधिक खाद्य ब्रांड शामिल हैं। यदि आपको ऐसा कोई उत्पाद मिलता है जो सूचीबद्ध नहीं है, तो कृपया ब्रांड का नाम हमें ईमेल करें ताकि हम अपनी सूची को अपडेट कर सकें। अकेले हम तेजी से आगे बढ़ते हैं, लेकिन मिलकर हम और भी दूर जा सकते हैं।",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "क्या उत्पाद में कोई समस्या है?",
@@ -43,7 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "productNotFound": MessageLookupByLibrary.simpleMessage("उत्पाद नहीं मिला"),
     "safe": MessageLookupByLibrary.simpleMessage("नहीं USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
-      "यह उत्पाद किसी अमेरिकी कंपनी से नहीं है!",
+      "यह उत्पाद ऐसा प्रतीत नहीं होता कि यह किसी अमेरिकी कंपनी का है।",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("स्रोत नहीं मिला"),
     "unknown": MessageLookupByLibrary.simpleMessage("अज्ञात"),

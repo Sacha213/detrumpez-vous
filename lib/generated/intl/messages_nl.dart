@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a it locale. All the
+// This is a library that provides messages for a nl locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,49 +18,47 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'it';
+  String get localeName => 'nl';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "Scansiona il codice a barre del tuo prodotto per scoprire se il marchio appartiene a un\'azienda americana.",
+      "Scan de barcode van uw product om te ontdekken of het merk eigendom is van een Amerikaans bedrijf.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage(
-      "Scansiona il codice a barre",
-    ),
-    "brandNotFound": MessageLookupByLibrary.simpleMessage(
-      "Marchio non trovato",
-    ),
-    "cancel": MessageLookupByLibrary.simpleMessage("Annulla"),
+    "appTitle": MessageLookupByLibrary.simpleMessage("Scan de barcode"),
+    "brandNotFound": MessageLookupByLibrary.simpleMessage("Merk niet gevonden"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Annuleren"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "Questo marchio non è presente nel nostro database di marchi americani.",
+      "Dit merk is niet opgenomen in onze Amerikaanse merkdatabase.",
     ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Inserisci una marca alimentare",
+      "Voer een levensmiddelenmerk in",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Non siamo perfetti e potremmo non aver ancora identificato tutti i marchi. Tuttavia, il nostro database include già oltre 400 marchi alimentari. Se trovi un prodotto proveniente dagli Stati Uniti che non è elencato, inviaci un\'email con il nome del marchio in modo da poter aggiornare la nostra lista. Da soli andiamo veloci, ma insieme possiamo andare oltre.",
+      "Wij zijn niet perfect en hebben mogelijk nog niet elk merk geïdentificeerd. Onze database bevat echter al meer dan 400 voedingsmerken. Als u een product uit de Verenigde Staten tegenkomt dat niet vermeld staat, stuur ons dan een e-mail met de merknaam zodat we onze lijst kunnen bijwerken. Alleen gaan we snel, maar samen komen we verder.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
-      "Problema con un prodotto?",
+      "Probleem met een product?",
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage(
-      "Prodotto non trovato",
+      "Product niet gevonden",
     ),
-    "safe": MessageLookupByLibrary.simpleMessage("NON USA"),
+    "safe": MessageLookupByLibrary.simpleMessage("NIET USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Questo prodotto non sembra provenire da un\'azienda americana.",
+      "Dit product lijkt niet afkomstig te zijn van een Amerikaans bedrijf.",
     ),
-    "sourceNotFound": MessageLookupByLibrary.simpleMessage("Fonte non trovata"),
-    "unknown": MessageLookupByLibrary.simpleMessage("Sconosciuto"),
+    "sourceNotFound": MessageLookupByLibrary.simpleMessage(
+      "Bron niet gevonden",
+    ),
+    "unknown": MessageLookupByLibrary.simpleMessage("ONBEKEND"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Il prodotto cercato non è stato trovato nel nostro database.",
+      "Het product waarnaar u zocht is niet in onze database gevonden.",
     ),
     "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Questo prodotto proviene da un\'azienda americana!",
+      "Dit product behoort tot een Amerikaans bedrijf!",
     ),
-    "validate": MessageLookupByLibrary.simpleMessage("Conferma"),
-    "welcome": MessageLookupByLibrary.simpleMessage("Benvenuto in"),
+    "validate": MessageLookupByLibrary.simpleMessage("Bevestigen"),
+    "welcome": MessageLookupByLibrary.simpleMessage("Welkom in"),
   };
 }

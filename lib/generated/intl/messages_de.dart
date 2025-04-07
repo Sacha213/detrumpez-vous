@@ -37,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Geben Sie eine Lebensmittelmarke ein",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Wenn Sie ein Produkt aus den USA identifiziert haben, melden Sie es bitte, damit wir es zu unserer Liste hinzufügen können.",
+      "Wir sind nicht perfekt und haben möglicherweise noch nicht alle Marken identifiziert. Unsere Datenbank enthält jedoch bereits über 400 Lebensmittelmarken. Wenn Sie ein Produkt aus den Vereinigten Staaten entdecken, das nicht aufgelistet ist, senden Sie uns bitte eine E-Mail mit dem Markennamen, damit wir unsere Liste aktualisieren können. Allein bewegen wir uns schnell, aber gemeinsam kommen wir weiter.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "Problem mit einem Produkt?",
@@ -47,7 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "safe": MessageLookupByLibrary.simpleMessage("NICHT USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Dieses Produkt stammt nicht von einem US-Unternehmen!",
+      "Dieses Produkt scheint nicht von einem amerikanischen Unternehmen zu stammen.",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage(
       "Quelle nicht gefunden",

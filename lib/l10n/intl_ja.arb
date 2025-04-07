@@ -1,0 +1,21 @@
+{
+  "@@locale": "ja",
+  "welcome": "ようこそ",
+  "appDescription": "製品のバーコードをスキャンして、そのブランドがアメリカの企業によって所有されているかどうかを確認してください。",
+  "appTitle": "バーコードをスキャンする",
+  "safe": "アメリカ以外",
+  "usa": "アメリカ",
+  "unknown": "不明",
+  "productNotFound": "製品が見つかりませんでした",
+  "brandNotFound": "ブランドが見つかりませんでした",
+  "manualSearchPlaceholder": "食品ブランドを入力してください",
+  "descriptionNotFound": "このブランドは私たちのアメリカブランドデータベースにありません。",
+  "sourceNotFound": "情報源が見つかりません",
+  "safeProductMessage": "この製品は、アメリカの企業のものではないようです。",
+  "usaProductMessage": "この製品はアメリカの企業に属しています！",
+  "unknownProductMessage": "ご指定の商品はデータベースに見つかりませんでした。",
+  "problemReportTitle": "製品に問題がありますか？",
+  "problemReportMessage": "私たちは完璧ではなく、すべてのブランドを識別できていない可能性があります。しかし、私たちのデータベースにはすでに400以上の食品ブランドが登録されています。もし、リストにないアメリカ製の製品を見つけた場合は、ブランド名を記載したメールをお送りください。単独では早く進めても、共に力を合わせればより遠くへ行けます。",
+  "cancel": "キャンセル",
+  "validate": "確認"
+}

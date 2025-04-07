@@ -11,11 +11,11 @@
   "manualSearchPlaceholder": "Digite uma marca alimentar",
   "descriptionNotFound": "Esta marca não está presente em nosso banco de dados de marcas americanas.",
   "sourceNotFound": "Fonte não encontrada",
-  "safeProductMessage": "Este produto não provém de uma empresa americana!",
+  "safeProductMessage": "Este produto não parece ser de uma empresa americana.",
   "usaProductMessage": "Este produto provém de uma empresa americana!",
   "unknownProductMessage": "O produto procurado não foi encontrado em nosso banco de dados.",
   "problemReportTitle": "Problema com um produto?",
-  "problemReportMessage": "Se você identificou um produto dos Estados Unidos, por favor, reporte-o para que possamos adicioná-lo à nossa lista.",
+  "problemReportMessage": "Não somos perfeitos e talvez ainda não tenhamos identificado todas as marcas. No entanto, nosso banco de dados já inclui mais de 400 marcas alimentares. Se você encontrar um produto dos Estados Unidos que não esteja listado, por favor, envie-nos um e-mail com o nome da marca para que possamos atualizar nossa lista. Sozinhos, nos movemos rápido, mas juntos podemos ir mais longe.",
   "cancel": "Cancelar",
   "validate": "Validar"
 }

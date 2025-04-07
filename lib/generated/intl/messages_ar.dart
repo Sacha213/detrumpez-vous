@@ -37,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "أدخل علامة تجارية غذائية",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "إذا حددت منتجاً من الولايات المتحدة، يرجى الإبلاغ عنه ليتسنى لنا إضافته إلى قائمتنا.",
+      "لسنا مثاليين وربما لم نقم بتحديد كل العلامات التجارية بعد. ومع ذلك، تحتوي قاعدة بياناتنا بالفعل على أكثر من 400 علامة تجارية غذائية. إذا صادفت منتجاً من الولايات المتحدة غير مدرج، يرجى إرسال بريد إلكتروني إلينا مع اسم العلامة التجارية حتى نتمكن من تحديث قائمتنا. بمفردنا نمضي قدماً بسرعة، لكن معاً نستطيع الذهاب أبعد.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "هل لديك مشكلة مع منتج؟",
@@ -45,7 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "productNotFound": MessageLookupByLibrary.simpleMessage("المنتج غير موجود"),
     "safe": MessageLookupByLibrary.simpleMessage("غير أمريكي"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
-      "هذا المنتج لا ينتمي إلى شركة أمريكية!",
+      "هذا المنتج لا يبدو أنه من شركة أمريكية.",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("المصدر غير موجود"),
     "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),

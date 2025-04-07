@@ -33,12 +33,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage("输入食品品牌"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "如果您发现来自美国的产品，请报告，以便我们将其添加到列表中。",
+      "我们并不完美，或许还没有识别出所有品牌。然而，我们的数据库已经包含了超过400个食品品牌。如果您发现某个美国产品未被收录，请通过邮件告知品牌名称，以便我们更新列表。单打独斗我们前进得快，但团结合作我们走得更远。",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage("产品存在问题？"),
     "productNotFound": MessageLookupByLibrary.simpleMessage("未找到产品"),
     "safe": MessageLookupByLibrary.simpleMessage("非美国"),
-    "safeProductMessage": MessageLookupByLibrary.simpleMessage("该产品不属于美国公司！"),
+    "safeProductMessage": MessageLookupByLibrary.simpleMessage(
+      "该产品似乎并非来自美国公司。",
+    ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("未找到来源"),
     "unknown": MessageLookupByLibrary.simpleMessage("未知"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(

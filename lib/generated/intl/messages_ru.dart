@@ -35,7 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Введите пищевой бренд",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Если вы обнаружили продукт из США, сообщите нам, чтобы мы могли добавить его в наш список.",
+      "Мы не идеальны и, возможно, ещё не определили все бренды. Однако наша база данных уже включает более 400 продовольственных брендов. Если вы обнаружите продукт из Соединенных Штатов, которого нет в списке, пожалуйста, пришлите нам письмо с названием бренда, чтобы мы могли обновить наш список. В одиночку мы действуем быстро, но вместе мы можем добиться большего.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "Проблема с продуктом?",
@@ -45,7 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "safe": MessageLookupByLibrary.simpleMessage("НE USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Этот продукт не принадлежит американской компании!",
+      "Этот продукт, по всей видимости, не принадлежит американской компании.",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage(
       "Источник не найден",

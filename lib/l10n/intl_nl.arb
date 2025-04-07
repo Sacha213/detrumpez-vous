@@ -1,0 +1,21 @@
+{
+  "@@locale": "nl",
+  "welcome": "Welkom in",
+  "appDescription": "Scan de barcode van uw product om te ontdekken of het merk eigendom is van een Amerikaans bedrijf.",
+  "appTitle": "Scan de barcode",
+  "safe": "NIET USA",
+  "usa": "USA",
+  "unknown": "ONBEKEND",
+  "productNotFound": "Product niet gevonden",
+  "brandNotFound": "Merk niet gevonden",
+  "manualSearchPlaceholder": "Voer een levensmiddelenmerk in",
+  "descriptionNotFound": "Dit merk is niet opgenomen in onze Amerikaanse merkdatabase.",
+  "sourceNotFound": "Bron niet gevonden",
+  "safeProductMessage": "Dit product lijkt niet afkomstig te zijn van een Amerikaans bedrijf.",
+  "usaProductMessage": "Dit product behoort tot een Amerikaans bedrijf!",
+  "unknownProductMessage": "Het product waarnaar u zocht is niet in onze database gevonden.",
+  "problemReportTitle": "Probleem met een product?",
+  "problemReportMessage": "Wij zijn niet perfect en hebben mogelijk nog niet elk merk geïdentificeerd. Onze database bevat echter al meer dan 400 voedingsmerken. Als u een product uit de Verenigde Staten tegenkomt dat niet vermeld staat, stuur ons dan een e-mail met de merknaam zodat we onze lijst kunnen bijwerken. Alleen gaan we snel, maar samen komen we verder.",
+  "cancel": "Annuleren",
+  "validate": "Bevestigen"
+}

@@ -145,10 +145,10 @@ class S {
     );
   }
 
-  /// `This product is not from an American company!`
+  /// `This product does not appear to be from an American company.`
   String get safeProductMessage {
     return Intl.message(
-      'This product is not from an American company!',
+      'This product does not appear to be from an American company.',
       name: 'safeProductMessage',
       desc: '',
       args: [],
@@ -185,10 +185,10 @@ class S {
     );
   }
 
-  /// `If you have identified a product from the United States, please report it so we can add it to our list.`
+  /// `We are not perfect and may not have identified every brand yet. However, our database already includes over 400 food brands. If you come across a product from the United States that isn’t listed, please send us an email with the brand name so we can update our list. Alone we move fast, but together we can go further.`
   String get problemReportMessage {
     return Intl.message(
-      'If you have identified a product from the United States, please report it so we can add it to our list.',
+      'We are not perfect and may not have identified every brand yet. However, our database already includes over 400 food brands. If you come across a product from the United States that isn’t listed, please send us an email with the brand name so we can update our list. Alone we move fast, but together we can go further.',
       name: 'problemReportMessage',
       desc: '',
       args: [],
@@ -218,6 +218,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
       Locale.fromSubtags(languageCode: 'fr'),
       Locale.fromSubtags(languageCode: 'hi'),
       Locale.fromSubtags(languageCode: 'it'),
+      Locale.fromSubtags(languageCode: 'ja'),
+      Locale.fromSubtags(languageCode: 'nl'),
       Locale.fromSubtags(languageCode: 'pt'),
       Locale.fromSubtags(languageCode: 'ru'),
       Locale.fromSubtags(languageCode: 'zh'),
