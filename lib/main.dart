@@ -41,6 +41,8 @@ class MyApp extends StatelessWidget {
         Locale('de', ''), // Allemand
         Locale('pt', ''), // Portugais
         Locale('it', ''), // Italien
+        Locale('nl', ''), // Néerlandais
+        Locale('ja', ''), // Japonais
       ],
       home:
           const SplashScreen(), // Utilisation du splash screen comme écran d'accueil
