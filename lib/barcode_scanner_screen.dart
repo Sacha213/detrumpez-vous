@@ -32,6 +32,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
   String description = S.current.descriptionNotFound;
   String source = S.current.sourceNotFound;
   bool isProductFromUSA = false;
+  bool manualSearchUsed = false;
   bool isProductFound = false; // indique si le produit est trouvé ou non
   List<dynamic> brandsIndex = [];
   bool isProcessing = false; // pour éviter plusieurs scans simultanés
@@ -229,6 +230,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     setState(() {
       isProcessing = true;
       barcode = code;
+      manualSearchUsed = false; // Réinitialisation ici
     });
 
     // Afficher une popup de chargement
@@ -434,6 +436,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                             onSubmitted: (value) async {
                                               final String brand = value.trim();
                                               if (brand.isNotEmpty) {
+                                                setState(() {
+                                                  manualSearchUsed = true;
+                                                });
                                                 await updateProductInfoDetails(
                                                     brand);
                                               }
@@ -564,6 +569,13 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                         style: const TextStyle(fontSize: 16),
                                       ),
                                       const SizedBox(height: 8),
+                                      if (!isProductFromUSA && manualSearchUsed)
+                                        Text(
+                                          S.of(context).searchWarning,
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                              fontSize: 14, color: Colors.red),
+                                        ),
                                       if (isProductFromUSA)
                                         Row(
                                           mainAxisAlignment:
@@ -577,6 +589,149 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                             ),
                                           ],
                                         ),
+                                      const SizedBox(height: 8),
+                                      CupertinoButton(
+                                        color: Colors.grey,
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 16, vertical: 12),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            const Icon(Icons.info_outline,
+                                                color: Colors.white, size: 16),
+                                            const SizedBox(width: 4),
+                                            Text(
+                                              S.of(context).viewCriteria,
+                                              style: const TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.white),
+                                            ),
+                                          ],
+                                        ),
+                                        onPressed: () {
+                                          showCupertinoDialog(
+                                            context: context,
+                                            builder: (context) {
+                                              return CupertinoAlertDialog(
+                                                title: Text(S
+                                                    .of(context)
+                                                    .companyCriteriaTitle),
+                                                content: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: [
+                                                    Text(S
+                                                        .of(context)
+                                                        .companyCriteriaContent),
+                                                    const SizedBox(height: 8),
+                                                    Column(
+                                                      children: [
+                                                        Container(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .symmetric(
+                                                                  horizontal:
+                                                                      8),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            border: Border.all(
+                                                                color: Colors
+                                                                    .green,
+                                                                width: 2),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8),
+                                                          ),
+                                                          child: Text(
+                                                            S.of(context).safe,
+                                                            style:
+                                                                const TextStyle(
+                                                              fontSize: 20,
+                                                              color:
+                                                                  Colors.green,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          S
+                                                              .of(context)
+                                                              .companySafeExplanation,
+                                                          style:
+                                                              const TextStyle(
+                                                                  fontSize: 14),
+                                                        ),
+                                                        const SizedBox(
+                                                            height: 8),
+                                                      ],
+                                                    ),
+                                                    const SizedBox(height: 8),
+                                                    Column(
+                                                      children: [
+                                                        Container(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .symmetric(
+                                                                  horizontal:
+                                                                      8),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            border: Border.all(
+                                                                color:
+                                                                    Colors.red,
+                                                                width: 2),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8),
+                                                          ),
+                                                          child: Text(
+                                                            S.of(context).usa,
+                                                            style:
+                                                                const TextStyle(
+                                                              fontSize: 20,
+                                                              color: Colors.red,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          S
+                                                              .of(context)
+                                                              .companyUsaExplanation,
+                                                          style:
+                                                              const TextStyle(
+                                                                  fontSize: 14),
+                                                        ),
+                                                        const SizedBox(
+                                                            height: 8),
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                                actions: [
+                                                  CupertinoDialogAction(
+                                                    isDefaultAction: true,
+                                                    textStyle: const TextStyle(
+                                                        fontSize: 14,
+                                                        color: Colors.grey),
+                                                    onPressed: () =>
+                                                        Navigator.pop(context),
+                                                    child: const Text("OK"),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        },
+                                      ),
                                     ],
                                   ),
                                   Column(
