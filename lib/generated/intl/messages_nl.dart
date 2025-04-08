@@ -28,6 +28,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTitle": MessageLookupByLibrary.simpleMessage("Scan de barcode"),
     "brandNotFound": MessageLookupByLibrary.simpleMessage("Merk niet gevonden"),
     "cancel": MessageLookupByLibrary.simpleMessage("Annuleren"),
+    "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
+      "Een merk wordt als Amerikaans beschouwd als het tot een Amerikaans concern behoort.",
+    ),
+    "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage(
+      "Criteria voor Amerikaanse bedrijven",
+    ),
+    "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
+      "Ben & Jerry\'s is een Amerikaans merk, maar werd in 2000 overgenomen door Unilever (een Anglo-Nederlandse multinational). Daarom wordt het merk niet als Amerikaans beschouwd.",
+    ),
+    "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
+      "Vahiné is een Frans merk, maar werd in 2000 overgenomen door de Amerikaanse groep McCormick. Daarom wordt het merk als Amerikaans beschouwd.",
+    ),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Dit merk is niet opgenomen in onze Amerikaanse merkdatabase.",
     ),
@@ -35,7 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Voer een levensmiddelenmerk in",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Wij zijn niet perfect en hebben mogelijk nog niet elk merk geïdentificeerd. Onze database bevat echter al meer dan 400 voedingsmerken. Als u een product uit de Verenigde Staten tegenkomt dat niet vermeld staat, stuur ons dan een e-mail met de merknaam zodat we onze lijst kunnen bijwerken. Alleen gaan we snel, maar samen komen we verder.",
+      "Onze database bevat al meer dan 300 merken, maar sommige moeten nog worden geïdentificeerd. Als u een Amerikaans product ziet dat niet vermeld staat, stuur ons dan een e-mail met de merknaam om onze lijst bij te werken.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "Probleem met een product?",
@@ -46,6 +58,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "safe": MessageLookupByLibrary.simpleMessage("NIET USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Dit product lijkt niet afkomstig te zijn van een Amerikaans bedrijf.",
+    ),
+    "searchWarning": MessageLookupByLibrary.simpleMessage(
+      "⚠️ Zorg ervoor dat je een voedselmerk correct gespeld invoert om fouten te voorkomen.",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage(
       "Bron niet gevonden",
@@ -59,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Dit product behoort tot een Amerikaans bedrijf!",
     ),
     "validate": MessageLookupByLibrary.simpleMessage("Bevestigen"),
+    "viewCriteria": MessageLookupByLibrary.simpleMessage("Toon criteria"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welkom in"),
   };
 }

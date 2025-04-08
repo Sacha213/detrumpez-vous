@@ -15,6 +15,13 @@
   "usaProductMessage": "This product is from an American company!",
   "unknownProductMessage": "The product you searched for was not found in our database.",
   "problemReportTitle": "Problem with a product?",
-  "problemReportMessage": "We are not perfect and may not have identified every brand yet. However, our database already includes over 400 food brands. If you come across a product from the United States that isn’t listed, please send us an email with the brand name so we can update our list. Alone we move fast, but together we can go further.",  "cancel": "Cancel",
-  "validate": "Validate"
+  "problemReportMessage": "Our database already contains over 300 brands, but some still remain to be identified. If you spot an American product not listed, please email us the brand name to update our list.",
+  "cancel":"Cancel",
+  "validate": "Validate",
+  "viewCriteria": "View Criteria",
+  "companyCriteriaTitle": "American Company Criteria",
+  "companyCriteriaContent": "A brand is considered American if it belongs to an American group.",
+  "companySafeExplanation": "Ben & Jerry's is an American brand but was acquired by Unilever (an Anglo-Dutch multinational) in 2000. Therefore, the brand is not considered American.",
+  "companyUsaExplanation": "Vahiné is a French brand but was acquired by the American group McCormick in 2000. Therefore, the brand is considered American.",
+  "searchWarning": "⚠️ Please ensure you enter a correctly spelled food brand to avoid errors."
 }

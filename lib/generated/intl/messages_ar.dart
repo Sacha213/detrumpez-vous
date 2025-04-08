@@ -30,6 +30,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "العلامة التجارية غير موجودة",
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
+      "يعتبر الماركة أمريكية إذا كانت تنتمي إلى مجموعة أمريكية.",
+    ),
+    "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage(
+      "معايير الشركة الأمريكية",
+    ),
+    "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
+      "Ben & Jerry\'s علامة تجارية أمريكية، ولكن تم الاستحواذ عليها من قبل Unilever (شركة متعددة الجنسيات Anglo–هولندية) في عام 2000. لذلك، لا تُعتبر العلامة أمريكية.",
+    ),
+    "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
+      "Vahiné علامة تجارية فرنسية، ولكن تم الاستحواذ عليها في عام 2000 من قبل مجموعة McCormick الأمريكية. وبالتالي تُعتبر العلامة أمريكية.",
+    ),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "هذه العلامة غير موجودة في قاعدة بيانات علاماتنا التجارية الأمريكية.",
     ),
@@ -37,7 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "أدخل علامة تجارية غذائية",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "لسنا مثاليين وربما لم نقم بتحديد كل العلامات التجارية بعد. ومع ذلك، تحتوي قاعدة بياناتنا بالفعل على أكثر من 400 علامة تجارية غذائية. إذا صادفت منتجاً من الولايات المتحدة غير مدرج، يرجى إرسال بريد إلكتروني إلينا مع اسم العلامة التجارية حتى نتمكن من تحديث قائمتنا. بمفردنا نمضي قدماً بسرعة، لكن معاً نستطيع الذهاب أبعد.",
+      "قاعدة بياناتنا تحتوي بالفعل على أكثر من 300 علامة تجارية، لكن لا يزال هناك بعض العلامات غير محددة. إذا لاحظت منتجًا أمريكيًا غير مدرج، يرجى إرسال بريد إلكتروني إلينا يحتوي على اسم العلامة التجارية لتحديث قائمتنا.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "هل لديك مشكلة مع منتج؟",
@@ -46,6 +58,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "safe": MessageLookupByLibrary.simpleMessage("غير أمريكي"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "هذا المنتج لا يبدو أنه من شركة أمريكية.",
+    ),
+    "searchWarning": MessageLookupByLibrary.simpleMessage(
+      "⚠️ يرجى التأكد من إدخال علامة تجارية للغذاء مكتوبة بشكل صحيح لتجنب الأخطاء.",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("المصدر غير موجود"),
     "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
@@ -57,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "هذا المنتج ينتمي إلى شركة أمريكية!",
     ),
     "validate": MessageLookupByLibrary.simpleMessage("تأكيد"),
+    "viewCriteria": MessageLookupByLibrary.simpleMessage("عرض المعايير"),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحبا بك في"),
   };
 }

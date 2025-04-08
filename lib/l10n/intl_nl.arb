@@ -15,7 +15,13 @@
   "usaProductMessage": "Dit product behoort tot een Amerikaans bedrijf!",
   "unknownProductMessage": "Het product waarnaar u zocht is niet in onze database gevonden.",
   "problemReportTitle": "Probleem met een product?",
-  "problemReportMessage": "Wij zijn niet perfect en hebben mogelijk nog niet elk merk geïdentificeerd. Onze database bevat echter al meer dan 400 voedingsmerken. Als u een product uit de Verenigde Staten tegenkomt dat niet vermeld staat, stuur ons dan een e-mail met de merknaam zodat we onze lijst kunnen bijwerken. Alleen gaan we snel, maar samen komen we verder.",
+  "problemReportMessage": "Onze database bevat al meer dan 300 merken, maar sommige moeten nog worden geïdentificeerd. Als u een Amerikaans product ziet dat niet vermeld staat, stuur ons dan een e-mail met de merknaam om onze lijst bij te werken.",
   "cancel": "Annuleren",
-  "validate": "Bevestigen"
+  "validate": "Bevestigen",
+  "viewCriteria": "Toon criteria",
+  "companyCriteriaTitle": "Criteria voor Amerikaanse bedrijven",
+  "companyCriteriaContent": "Een merk wordt als Amerikaans beschouwd als het tot een Amerikaans concern behoort.",
+  "companySafeExplanation": "Ben & Jerry's is een Amerikaans merk, maar werd in 2000 overgenomen door Unilever (een Anglo-Nederlandse multinational). Daarom wordt het merk niet als Amerikaans beschouwd.",
+  "companyUsaExplanation": "Vahiné is een Frans merk, maar werd in 2000 overgenomen door de Amerikaanse groep McCormick. Daarom wordt het merk als Amerikaans beschouwd.",
+  "searchWarning": "⚠️ Zorg ervoor dat je een voedselmerk correct gespeld invoert om fouten te voorkomen."
 }

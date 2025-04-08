@@ -28,6 +28,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTitle": MessageLookupByLibrary.simpleMessage("バーコードをスキャンする"),
     "brandNotFound": MessageLookupByLibrary.simpleMessage("ブランドが見つかりませんでした"),
     "cancel": MessageLookupByLibrary.simpleMessage("キャンセル"),
+    "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
+      "ブランドがアメリカのグループに属していれば、アメリカンブランドと見なされます。",
+    ),
+    "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage("アメリカ企業の基準"),
+    "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
+      "Ben & Jerry\'s はアメリカのブランドですが、2000年に Unilever（英蘭系多国籍企業）に買収されました。したがって、このブランドはアメリカと見なされません。",
+    ),
+    "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
+      "Vahiné はフランスのブランドですが、2000年にアメリカの McCormick グループに買収されました。したがって、このブランドはアメリカと見なされます。",
+    ),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "このブランドは私たちのアメリカブランドデータベースにありません。",
     ),
@@ -35,13 +45,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "食品ブランドを入力してください",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "私たちは完璧ではなく、すべてのブランドを識別できていない可能性があります。しかし、私たちのデータベースにはすでに400以上の食品ブランドが登録されています。もし、リストにないアメリカ製の製品を見つけた場合は、ブランド名を記載したメールをお送りください。単独では早く進めても、共に力を合わせればより遠くへ行けます。",
+      "当社のデータベースには既に300以上のブランドが登録されていますが、まだ識別されていないものもあります。もしリストにないアメリカ製品を見つけた場合は、ブランド名を記載したメールをお送りください。",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage("製品に問題がありますか？"),
     "productNotFound": MessageLookupByLibrary.simpleMessage("製品が見つかりませんでした"),
     "safe": MessageLookupByLibrary.simpleMessage("アメリカ以外"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "この製品は、アメリカの企業のものではないようです。",
+    ),
+    "searchWarning": MessageLookupByLibrary.simpleMessage(
+      "⚠️ エラーを避けるために、食品ブランドを正しく綴って入力してください。",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("情報源が見つかりません"),
     "unknown": MessageLookupByLibrary.simpleMessage("不明"),
@@ -53,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "この製品はアメリカの企業に属しています！",
     ),
     "validate": MessageLookupByLibrary.simpleMessage("確認"),
+    "viewCriteria": MessageLookupByLibrary.simpleMessage("基準を見る"),
     "welcome": MessageLookupByLibrary.simpleMessage("ようこそ"),
   };
 }

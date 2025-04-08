@@ -32,6 +32,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "Marca não encontrada",
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
+    "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
+      "Uma marca é considerada americana se pertencer a um grupo americano.",
+    ),
+    "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage(
+      "Critérios para empresas americanas",
+    ),
+    "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
+      "Ben & Jerry\'s é uma marca americana, mas foi adquirida pela Unilever (multinacional anglo-holandesa) em 2000. Portanto, a marca não é considerada americana.",
+    ),
+    "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
+      "Vahiné é uma marca francesa, mas foi adquirida pelo grupo americano McCormick em 2000. Portanto, a marca é considerada americana.",
+    ),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Esta marca não está presente em nosso banco de dados de marcas americanas.",
     ),
@@ -39,7 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Digite uma marca alimentar",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Não somos perfeitos e talvez ainda não tenhamos identificado todas as marcas. No entanto, nosso banco de dados já inclui mais de 400 marcas alimentares. Se você encontrar um produto dos Estados Unidos que não esteja listado, por favor, envie-nos um e-mail com o nome da marca para que possamos atualizar nossa lista. Sozinhos, nos movemos rápido, mas juntos podemos ir mais longe.",
+      "Nossa base já conta com mais de 300 marcas, mas algumas ainda precisam ser identificadas. Se você encontrar um produto dos Estados Unidos que não esteja listado, envie-nos um e-mail com o nome da marca para atualizar nossa lista.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "Problema com um produto?",
@@ -50,6 +62,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "safe": MessageLookupByLibrary.simpleMessage("NÃO USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Este produto não parece ser de uma empresa americana.",
+    ),
+    "searchWarning": MessageLookupByLibrary.simpleMessage(
+      "⚠️ Certifique-se de inserir uma marca de alimentos corretamente escrita para evitar erros.",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage(
       "Fonte não encontrada",
@@ -63,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Este produto provém de uma empresa americana!",
     ),
     "validate": MessageLookupByLibrary.simpleMessage("Validar"),
+    "viewCriteria": MessageLookupByLibrary.simpleMessage("Ver critérios"),
     "welcome": MessageLookupByLibrary.simpleMessage("Bem-vindo(a) a"),
   };
 }

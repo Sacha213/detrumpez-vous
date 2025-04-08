@@ -28,6 +28,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTitle": MessageLookupByLibrary.simpleMessage("बारकोड स्कैन करें"),
     "brandNotFound": MessageLookupByLibrary.simpleMessage("ब्रांड नहीं मिला"),
     "cancel": MessageLookupByLibrary.simpleMessage("रद्द करें"),
+    "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
+      "अगर कोई ब्रांड अमेरिकी समूह का हिस्सा है, तो उसे अमेरिकी माना जाता है।",
+    ),
+    "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage(
+      "अमेरिकी कंपनी मानदंड",
+    ),
+    "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
+      "Ben & Jerry\'s एक अमेरिकी ब्रांड है, लेकिन 2000 में इसे Unilever (एंग्लो-डच बहुराष्ट्रीय कंपनी) ने अधिग्रहित किया था। इसलिए, इस ब्रांड को अमेरिकी नहीं माना जाता।",
+    ),
+    "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
+      "Vahiné एक फ्रांसीसी ब्रांड है, लेकिन 2000 में इसे अमेरिकी McCormick समूह ने अधिग्रहित किया था। इसलिए, इस ब्रांड को अमेरिकी माना जाता है।",
+    ),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "यह ब्रांड हमारे अमेरिकी ब्रांड डेटाबेस में मौजूद नहीं है।",
     ),
@@ -35,7 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "खाद्य ब्रांड दर्ज करें",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "हम परफेक्ट नहीं हैं और शायद सभी ब्रांडों की पहचान अभी तक नहीं हो पाई है। हालांकि, हमारे डेटाबेस में पहले से ही 400 से अधिक खाद्य ब्रांड शामिल हैं। यदि आपको ऐसा कोई उत्पाद मिलता है जो सूचीबद्ध नहीं है, तो कृपया ब्रांड का नाम हमें ईमेल करें ताकि हम अपनी सूची को अपडेट कर सकें। अकेले हम तेजी से आगे बढ़ते हैं, लेकिन मिलकर हम और भी दूर जा सकते हैं।",
+      "हमारे डेटाबेस में पहले से ही 300 से अधिक ब्रांड शामिल हैं, लेकिन कुछ अभी भी पहचाने जाने बाकी हैं। यदि आप किसी अप्रदर्शित अमेरिकी उत्पाद को पाते हैं, तो कृपया ब्रांड का नाम लिखकर हमें ईमेल करें ताकि हम अपनी सूची को अपडेट कर सकें।",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "क्या उत्पाद में कोई समस्या है?",
@@ -44,6 +56,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "safe": MessageLookupByLibrary.simpleMessage("नहीं USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "यह उत्पाद ऐसा प्रतीत नहीं होता कि यह किसी अमेरिकी कंपनी का है।",
+    ),
+    "searchWarning": MessageLookupByLibrary.simpleMessage(
+      "⚠️ कृपया त्रुटियों से बचने के लिए एक सही ढंग से वर्तनी की गई खाद्य ब्रांड दर्ज करें।",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("स्रोत नहीं मिला"),
     "unknown": MessageLookupByLibrary.simpleMessage("अज्ञात"),
@@ -55,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "यह उत्पाद एक अमेरिकी कंपनी से है!",
     ),
     "validate": MessageLookupByLibrary.simpleMessage("सत्यापित करें"),
+    "viewCriteria": MessageLookupByLibrary.simpleMessage("मानदंड देखें"),
     "welcome": MessageLookupByLibrary.simpleMessage("आपका स्वागत है"),
   };
 }

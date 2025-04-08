@@ -185,10 +185,10 @@ class S {
     );
   }
 
-  /// `We are not perfect and may not have identified every brand yet. However, our database already includes over 400 food brands. If you come across a product from the United States that isn’t listed, please send us an email with the brand name so we can update our list. Alone we move fast, but together we can go further.`
+  /// `Our database already contains over 300 brands, but some still remain to be identified. If you spot an American product not listed, please email us the brand name to update our list.`
   String get problemReportMessage {
     return Intl.message(
-      'We are not perfect and may not have identified every brand yet. However, our database already includes over 400 food brands. If you come across a product from the United States that isn’t listed, please send us an email with the brand name so we can update our list. Alone we move fast, but together we can go further.',
+      'Our database already contains over 300 brands, but some still remain to be identified. If you spot an American product not listed, please email us the brand name to update our list.',
       name: 'problemReportMessage',
       desc: '',
       args: [],
@@ -203,6 +203,66 @@ class S {
   /// `Validate`
   String get validate {
     return Intl.message('Validate', name: 'validate', desc: '', args: []);
+  }
+
+  /// `View Criteria`
+  String get viewCriteria {
+    return Intl.message(
+      'View Criteria',
+      name: 'viewCriteria',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `American Company Criteria`
+  String get companyCriteriaTitle {
+    return Intl.message(
+      'American Company Criteria',
+      name: 'companyCriteriaTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A brand is considered American if it belongs to an American group.`
+  String get companyCriteriaContent {
+    return Intl.message(
+      'A brand is considered American if it belongs to an American group.',
+      name: 'companyCriteriaContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ben & Jerry's is an American brand but was acquired by Unilever (an Anglo-Dutch multinational) in 2000. Therefore, the brand is not considered American.`
+  String get companySafeExplanation {
+    return Intl.message(
+      'Ben & Jerry\'s is an American brand but was acquired by Unilever (an Anglo-Dutch multinational) in 2000. Therefore, the brand is not considered American.',
+      name: 'companySafeExplanation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vahiné is a French brand but was acquired by the American group McCormick in 2000. Therefore, the brand is considered American.`
+  String get companyUsaExplanation {
+    return Intl.message(
+      'Vahiné is a French brand but was acquired by the American group McCormick in 2000. Therefore, the brand is considered American.',
+      name: 'companyUsaExplanation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `⚠️ Please ensure you enter a correctly spelled food brand to avoid errors.`
+  String get searchWarning {
+    return Intl.message(
+      '⚠️ Please ensure you enter a correctly spelled food brand to avoid errors.',
+      name: 'searchWarning',
+      desc: '',
+      args: [],
+    );
   }
 }
 

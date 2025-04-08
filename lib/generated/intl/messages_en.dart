@@ -28,6 +28,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTitle": MessageLookupByLibrary.simpleMessage("Scan the barcode"),
     "brandNotFound": MessageLookupByLibrary.simpleMessage("Brand not found"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
+      "A brand is considered American if it belongs to an American group.",
+    ),
+    "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage(
+      "American Company Criteria",
+    ),
+    "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
+      "Ben & Jerry\'s is an American brand but was acquired by Unilever (an Anglo-Dutch multinational) in 2000. Therefore, the brand is not considered American.",
+    ),
+    "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
+      "Vahiné is a French brand but was acquired by the American group McCormick in 2000. Therefore, the brand is considered American.",
+    ),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "This brand is not in our American brand database.",
     ),
@@ -35,7 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter a grocery brand",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "We are not perfect and may not have identified every brand yet. However, our database already includes over 400 food brands. If you come across a product from the United States that isn’t listed, please send us an email with the brand name so we can update our list. Alone we move fast, but together we can go further.",
+      "Our database already contains over 300 brands, but some still remain to be identified. If you spot an American product not listed, please email us the brand name to update our list.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
       "Problem with a product?",
@@ -47,6 +59,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "This product does not appear to be from an American company.",
     ),
+    "searchWarning": MessageLookupByLibrary.simpleMessage(
+      "⚠️ Please ensure you enter a correctly spelled food brand to avoid errors.",
+    ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("Source not found"),
     "unknown": MessageLookupByLibrary.simpleMessage("UNKNOWN"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
@@ -57,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "This product is from an American company!",
     ),
     "validate": MessageLookupByLibrary.simpleMessage("Validate"),
+    "viewCriteria": MessageLookupByLibrary.simpleMessage("View Criteria"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome in"),
   };
 }

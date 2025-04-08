@@ -15,7 +15,13 @@
   "usaProductMessage": "¡Este producto proviene de una empresa estadounidense!",
   "unknownProductMessage": "El producto que buscó no se encuentra en nuestra base de datos.",
   "problemReportTitle": "¿Problema con un producto?",
-  "problemReportMessage": "No somos perfectos y es posible que aún no hayamos identificado todas las marcas. Sin embargo, nuestra base de datos ya incluye más de 400 marcas de alimentos. Si encuentras un producto de los Estados Unidos que no esté listado, por favor envíanos un correo electrónico con el nombre de la marca para que podamos actualizar nuestra lista. Solos avanzamos rápido, pero juntos podemos llegar más lejos.",
+  "problemReportMessage": "Nuestra base de datos ya cuenta con más de 300 marcas, pero aún hay algunas por identificar. Si encuentras un producto estadounidense que no esté listado, envíanos un correo electrónico con el nombre de la marca para actualizar nuestra lista.",
   "cancel": "Cancelar",
-  "validate": "Validar"
+  "validate": "Validar",
+  "viewCriteria": "Ver criterios",
+  "companyCriteriaTitle": "Criterios para empresas estadounidenses",
+  "companyCriteriaContent": "Una marca se considera estadounidense si pertenece a un grupo americano.",
+  "companySafeExplanation": "Ben & Jerry's es una marca estadounidense, pero fue adquirida por Unilever (una multinacional anglo-holandesa) en 2000. Por ello, la marca no se considera estadounidense.",
+  "companyUsaExplanation": "Vahiné es una marca francesa, pero fue adquirida por el grupo estadounidense McCormick en 2000. Por ello, la marca se considera estadounidense.",
+  "searchWarning": "⚠️ Asegúrese de ingresar una marca de alimentos correctamente escrita para evitar errores."
 }
