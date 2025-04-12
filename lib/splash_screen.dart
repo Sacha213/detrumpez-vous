@@ -30,19 +30,36 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   // Retourne le fichier local mis à jour ou non
-  Future<File> _getLocalFile() async {
+  Future<File> _getLocalFile(String file) async {
     final directory = await getApplicationDocumentsDirectory();
-    return File('${directory.path}/blacklist.json');
+    return File('${directory.path}/$file.json');
   }
 
   // Télécharge le fichier depuis GitHub et le sauvegarde localement
   Future<void> updateAndSaveBrands() async {
-    const String remoteUrl =
+    String remoteUrl =
         "https://raw.githubusercontent.com/Sacha213/detrumpez-vous/main/assets/blacklist.json";
     try {
       final response = await http.get(Uri.parse(remoteUrl));
       if (response.statusCode == 200) {
-        final File file = await _getLocalFile();
+        final File file = await _getLocalFile("blacklist");
+        // Sauvegarde la réponse dans le fichier local
+        await file.writeAsString(response.body);
+      } else {
+        // En cas d'erreur, on peut garder la version local "embarquée" si besoin
+        debugPrint(
+            "Erreur lors du téléchargement du fichier distant : ${response.statusCode}");
+      }
+    } catch (e) {
+      debugPrint("Exception lors du téléchargement : $e");
+    }
+
+    remoteUrl =
+        "https://raw.githubusercontent.com/Sacha213/detrumpez-vous/main/assets/whitelist.json";
+    try {
+      final response = await http.get(Uri.parse(remoteUrl));
+      if (response.statusCode == 200) {
+        final File file = await _getLocalFile("whitelist");
         // Sauvegarde la réponse dans le fichier local
         await file.writeAsString(response.body);
       } else {
@@ -54,8 +71,6 @@ class _SplashScreenState extends State<SplashScreen> {
       debugPrint("Exception lors du téléchargement : $e");
     }
   }
-
- 
 
   @override
   Widget build(BuildContext context) {

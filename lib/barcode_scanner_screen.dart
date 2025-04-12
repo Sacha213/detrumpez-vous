@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:detrumpezvous/add_product.dart';
 import 'package:http/http.dart' as http;
 import 'package:detrumpezvous/corner_painter.dart';
 import 'package:detrumpezvous/generated/l10n.dart';
@@ -14,6 +15,7 @@ import 'package:translator/translator.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:mailto/mailto.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 final Logger logger = Logger();
 final GoogleTranslator translator = GoogleTranslator();
@@ -34,8 +36,10 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
   bool isProductFromUSA = false;
   bool manualSearchUsed = false;
   bool isProductFound = false; // indique si le produit est trouvé ou non
-  List<dynamic> brandsIndex = [];
+  List<dynamic> blacklistIndex = [];
+  List<dynamic> whitelistIndex = [];
   bool isProcessing = false; // pour éviter plusieurs scans simultanés
+  bool isBrandInList = false; // pour savoir si le produit est dans une liste
 
   // Ajoutez ce contrôleur dans votre state:
   final TextEditingController manualSearchController = TextEditingController();
@@ -53,27 +57,43 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
   }
 
   // Retourne le fichier local mis à jour ou non
-  Future<File> _getLocalFile() async {
+  Future<File> _getLocalFile(String file) async {
     final directory = await getApplicationDocumentsDirectory();
-    return File('${directory.path}/blacklist.json');
+    return File('${directory.path}/$file.json');
   }
 
   // Méthode pour charger le fichier mis à jour (ou la version par défaut depuis assets)
   Future<void> loadBrands() async {
-    final File localFile = await _getLocalFile();
+    File localFile = await _getLocalFile("blacklist");
     try {
       if (await localFile.exists()) {
         final String contents = await localFile.readAsString();
-        brandsIndex = json.decode(contents);
+        blacklistIndex = json.decode(contents);
       } else {
         // Si le fichier n'existe pas, chargez la version embarquée
         final String jsonStr =
             await rootBundle.loadString('assets/blacklist.json');
-        brandsIndex = json.decode(jsonStr);
+        blacklistIndex = json.decode(jsonStr);
       }
     } catch (e) {
       // En cas d'erreur, retournez une liste vide ou gérez l'erreur comme vous le souhaitez
-      brandsIndex = [];
+      blacklistIndex = [];
+    }
+
+    localFile = await _getLocalFile("whitelist");
+    try {
+      if (await localFile.exists()) {
+        final String contents = await localFile.readAsString();
+        whitelistIndex = json.decode(contents);
+      } else {
+        // Si le fichier n'existe pas, chargez la version embarquée
+        final String jsonStr =
+            await rootBundle.loadString('assets/whitelist.json');
+        whitelistIndex = json.decode(jsonStr);
+      }
+    } catch (e) {
+      // En cas d'erreur, retournez une liste vide ou gérez l'erreur comme vous le souhaitez
+      whitelistIndex = [];
     }
 
     setState(() {});
@@ -97,7 +117,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
       final String normalizedCandidate = normalizeBrandName(candidate);
 
       try {
-        final Map<String, dynamic> found = brandsIndex.firstWhere((brand) {
+        final Map<String, dynamic> found = blacklistIndex.firstWhere((brand) {
           final String normalizedName =
               (brand["normalizedName"] ?? "").toString().toLowerCase();
           // On vérifie si le champ stocké est identique au candidat normalisé
@@ -109,6 +129,23 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
         }
       } catch (e) {
         // Au cas où on ne trouve rien pour ce candidat, on passe au suivant
+        continue;
+      }
+    }
+
+    // Si rien n'est trouvé dans blacklistIndex, recherche dans hitelistIndex
+    for (final candidate in candidates) {
+      final String normalizedCandidate = normalizeBrandName(candidate);
+      try {
+        final Map<String, dynamic> found = whitelistIndex.firstWhere((brand) {
+          final String normalizedName =
+              (brand["normalizedName"] ?? "").toString().toLowerCase();
+          return normalizedName == normalizedCandidate;
+        }, orElse: () => <String, dynamic>{});
+        if (found.isNotEmpty) {
+          return found;
+        }
+      } catch (e) {
         continue;
       }
     }
@@ -132,13 +169,17 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
 
   /// Fonction pour normaliser un nom de marque
   String normalizeBrandName(String input) {
-    return removeDiacritics(input.toLowerCase()) // Supprimer les accents
+    return removeDiacritics(input.toLowerCase().replaceAll(
+            RegExp(r'\band\b', caseSensitive: false),
+            "")) // Supprimer les accents et "and"
         .replaceAll(
             RegExp(r"[’‘`´®™]"), "") // Supprimer les caractères spéciaux
         .replaceAll(RegExp(r"[\s\-‑]+"),
             "_") // Remplacer les espaces et tirets par des underscores
         .replaceAll(RegExp(r"[^a-z0-9_]+"),
             "") // Supprimer tout sauf lettres, chiffres et underscores
+        .replaceAll(RegExp(r"_+"),
+            "_") // Remplacer plusieurs underscores consécutifs par un seul underscore
         .trim(); // Supprimer les espaces en début/fin
   }
 
@@ -277,8 +318,17 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
       description = desc ?? S.of(context).descriptionNotFound;
       source = resultJson["source"] ?? S.of(context).sourceNotFound;
       isProductFound = productData != null;
-      isProductFromUSA = resultJson.isNotEmpty;
+      isProductFromUSA = resultJson["origin"] == "USA";
+      isBrandInList = resultJson.isNotEmpty;
     });
+
+    // Si la marque n'est pas trouvée dans les listes, l'envoyer sur Firebase
+    if (!isBrandInList && productData != null && productData.isNotEmpty) {
+      await FirebaseFirestore.instance.collection('unknown_brands').add({
+        'brand_name': productData,
+        'timestamp': FieldValue.serverTimestamp(),
+      });
+    }
 
     // Déclenche un retour haptique (vibration légère)
     if (isProductFound) {
@@ -305,25 +355,6 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      //resizeToAvoidBottomInset: false,
-/*appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(2, 51, 153, 1.0),
-        title: Text(
-          S.of(context).appTitle,
-          style: const TextStyle(color: Colors.white),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 16.0),
-            child: Image.asset(
-              'assets/europe.png',
-              height: 64,
-              width: 64,
-            ),
-          ),
-        ],
-      ),*/
-
       body: Stack(
         children: [
           // La zone supérieure limitée à 70 % de l'écran
@@ -370,9 +401,166 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                     ],
                   ),
                 ),
+                if (!isProductFound && barcode.isNotEmpty)
+                  Positioned(
+                    bottom: 32,
+                    left: 0,
+                    right: 0,
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 300),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(32),
+                            color: Colors.blue,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(
+                                    0.15), // Ombre principale (plus légère)
+                                offset: const Offset(
+                                    2, 2), // Décalage réduit (x, y)
+                                blurRadius: 6, // Rayon de flou réduit
+                                spreadRadius:
+                                    0.5, // Expansion de l'ombre réduite
+                              ),
+                              BoxShadow(
+                                color: Colors.white.withOpacity(
+                                    0.5), // Ombre claire pour effet 3D
+                                offset: const Offset(
+                                    -2, -2), // Décalage inverse réduit
+                                blurRadius: 6, // Rayon de flou réduit
+                                spreadRadius:
+                                    0.5, // Expansion de l'ombre réduite
+                              ),
+                            ],
+                          ),
+                          child: CupertinoButton(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 32, vertical: 16),
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(32),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => AddProduct(
+                                    barcode: barcode,
+                                  ),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              S
+                                  .of(context)
+                                  .addProductButton, // Utilisation de la traduction
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  fontSize: 16, color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                Positioned(
+                  top: 40,
+                  right: 16,
+                  child: CupertinoButton(
+                    color: Colors.grey,
+                    padding: const EdgeInsets.all(0),
+                    borderRadius: BorderRadius.circular(32),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.info_outline, color: Colors.white, size: 32),
+                      ],
+                    ),
+                    onPressed: () {
+                      showCupertinoDialog(
+                        context: context,
+                        builder: (context) {
+                          return CupertinoAlertDialog(
+                            title: Text(S.of(context).companyCriteriaTitle),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(S.of(context).companyCriteriaContent),
+                                const SizedBox(height: 8),
+                                Column(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: Colors.green, width: 2),
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                      child: Text(
+                                        S.of(context).safe,
+                                        style: const TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.green,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      S.of(context).companySafeExplanation,
+                                      style: const TextStyle(fontSize: 14),
+                                    ),
+                                    const SizedBox(height: 8),
+                                  ],
+                                ),
+                                const SizedBox(height: 8),
+                                Column(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: Colors.red, width: 2),
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                      child: Text(
+                                        S.of(context).usa,
+                                        style: const TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.red,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      S.of(context).companyUsaExplanation,
+                                      style: const TextStyle(fontSize: 14),
+                                    ),
+                                    const SizedBox(height: 8),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            actions: [
+                              CupertinoDialogAction(
+                                isDefaultAction: true,
+                                textStyle: const TextStyle(
+                                    fontSize: 14, color: Colors.grey),
+                                onPressed: () => Navigator.pop(context),
+                                child: const Text("OK"),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
           ),
+
           // DraggableScrollableSheet toujours affiché en bas
           DraggableScrollableSheet(
             initialChildSize: 0.30,
@@ -569,7 +757,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                         style: const TextStyle(fontSize: 16),
                                       ),
                                       const SizedBox(height: 8),
-                                      if (!isProductFromUSA && manualSearchUsed)
+                                      if (!isBrandInList && manualSearchUsed)
                                         Text(
                                           S.of(context).searchWarning,
                                           textAlign: TextAlign.center,
@@ -589,149 +777,6 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                             ),
                                           ],
                                         ),
-                                      const SizedBox(height: 8),
-                                      CupertinoButton(
-                                        color: Colors.grey,
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 16, vertical: 12),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            const Icon(Icons.info_outline,
-                                                color: Colors.white, size: 16),
-                                            const SizedBox(width: 4),
-                                            Text(
-                                              S.of(context).viewCriteria,
-                                              style: const TextStyle(
-                                                  fontSize: 14,
-                                                  color: Colors.white),
-                                            ),
-                                          ],
-                                        ),
-                                        onPressed: () {
-                                          showCupertinoDialog(
-                                            context: context,
-                                            builder: (context) {
-                                              return CupertinoAlertDialog(
-                                                title: Text(S
-                                                    .of(context)
-                                                    .companyCriteriaTitle),
-                                                content: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    Text(S
-                                                        .of(context)
-                                                        .companyCriteriaContent),
-                                                    const SizedBox(height: 8),
-                                                    Column(
-                                                      children: [
-                                                        Container(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .symmetric(
-                                                                  horizontal:
-                                                                      8),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .green,
-                                                                width: 2),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8),
-                                                          ),
-                                                          child: Text(
-                                                            S.of(context).safe,
-                                                            style:
-                                                                const TextStyle(
-                                                              fontSize: 20,
-                                                              color:
-                                                                  Colors.green,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          S
-                                                              .of(context)
-                                                              .companySafeExplanation,
-                                                          style:
-                                                              const TextStyle(
-                                                                  fontSize: 14),
-                                                        ),
-                                                        const SizedBox(
-                                                            height: 8),
-                                                      ],
-                                                    ),
-                                                    const SizedBox(height: 8),
-                                                    Column(
-                                                      children: [
-                                                        Container(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .symmetric(
-                                                                  horizontal:
-                                                                      8),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border.all(
-                                                                color:
-                                                                    Colors.red,
-                                                                width: 2),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8),
-                                                          ),
-                                                          child: Text(
-                                                            S.of(context).usa,
-                                                            style:
-                                                                const TextStyle(
-                                                              fontSize: 20,
-                                                              color: Colors.red,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Text(
-                                                          S
-                                                              .of(context)
-                                                              .companyUsaExplanation,
-                                                          style:
-                                                              const TextStyle(
-                                                                  fontSize: 14),
-                                                        ),
-                                                        const SizedBox(
-                                                            height: 8),
-                                                      ],
-                                                    ),
-                                                  ],
-                                                ),
-                                                actions: [
-                                                  CupertinoDialogAction(
-                                                    isDefaultAction: true,
-                                                    textStyle: const TextStyle(
-                                                        fontSize: 14,
-                                                        color: Colors.grey),
-                                                    onPressed: () =>
-                                                        Navigator.pop(context),
-                                                    child: const Text("OK"),
-                                                  ),
-                                                ],
-                                              );
-                                            },
-                                          );
-                                        },
-                                      ),
                                     ],
                                   ),
                                   Column(
