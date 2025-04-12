@@ -2,7 +2,9 @@ import 'dart:io';
 import 'package:detrumpezvous/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'generated/l10n.dart'; // Classe générée pour les traductions
+import 'firebase_options.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -12,7 +14,9 @@ class MyHttpOverrides extends HttpOverrides {
   }
 }
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
   HttpOverrides.global = MyHttpOverrides();
   runApp(const MyApp());
 }
