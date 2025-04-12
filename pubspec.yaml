@@ -85,7 +85,6 @@ flutter:
   assets:
   - assets/blacklist.json
   - assets/trump.jpg
-  - assets/trump.png
   - assets/europe.png
   - assets/icon.png
   - assets/barcode.png
