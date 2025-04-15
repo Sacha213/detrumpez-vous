@@ -55,29 +55,24 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Welcome in`
+  /// `Welcome to`
   String get welcome {
-    return Intl.message('Welcome in', name: 'welcome', desc: '', args: []);
+    return Intl.message('Welcome to', name: 'welcome', desc: '', args: []);
   }
 
-  /// `Scan your product's barcode to discover if the brand is owned by an American company.`
+  /// `Scan your product's barcode to find out if the brand is owned by an American company.`
   String get appDescription {
     return Intl.message(
-      'Scan your product\'s barcode to discover if the brand is owned by an American company.',
+      'Scan your product\'s barcode to find out if the brand is owned by an American company.',
       name: 'appDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Scan the barcode`
+  /// `Scan Barcode`
   String get appTitle {
-    return Intl.message(
-      'Scan the barcode',
-      name: 'appTitle',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Scan Barcode', name: 'appTitle', desc: '', args: []);
   }
 
   /// `NOT USA`
@@ -115,20 +110,20 @@ class S {
     );
   }
 
-  /// `Enter a grocery brand`
+  /// `Enter a food brand`
   String get manualSearchPlaceholder {
     return Intl.message(
-      'Enter a grocery brand',
+      'Enter a food brand',
       name: 'manualSearchPlaceholder',
       desc: '',
       args: [],
     );
   }
 
-  /// `This brand is not in our American brand database.`
+  /// `This brand is not present in our database.`
   String get descriptionNotFound {
     return Intl.message(
-      'This brand is not in our American brand database.',
+      'This brand is not present in our database.',
       name: 'descriptionNotFound',
       desc: '',
       args: [],
@@ -145,20 +140,20 @@ class S {
     );
   }
 
-  /// `This product does not appear to be from an American company.`
+  /// `This product does not seem to come from an American company.`
   String get safeProductMessage {
     return Intl.message(
-      'This product does not appear to be from an American company.',
+      'This product does not seem to come from an American company.',
       name: 'safeProductMessage',
       desc: '',
       args: [],
     );
   }
 
-  /// `This product is from an American company!`
+  /// `This product comes from an American company!`
   String get usaProductMessage {
     return Intl.message(
-      'This product is from an American company!',
+      'This product comes from an American company!',
       name: 'usaProductMessage',
       desc: '',
       args: [],
@@ -175,10 +170,10 @@ class S {
     );
   }
 
-  /// `Problem with a product?`
+  /// `A problem with a product?`
   String get problemReportTitle {
     return Intl.message(
-      'Problem with a product?',
+      'A problem with a product?',
       name: 'problemReportTitle',
       desc: '',
       args: [],
@@ -205,10 +200,10 @@ class S {
     return Intl.message('Validate', name: 'validate', desc: '', args: []);
   }
 
-  /// `View Criteria`
+  /// `View criteria`
   String get viewCriteria {
     return Intl.message(
-      'View Criteria',
+      'View criteria',
       name: 'viewCriteria',
       desc: '',
       args: [],
@@ -235,40 +230,40 @@ class S {
     );
   }
 
-  /// `Ben & Jerry's is an American brand but was acquired by Unilever (an Anglo-Dutch multinational) in 2000. Therefore, the brand is not considered American.`
+  /// `Ben & Jerry's is an American brand but was acquired by Unilever (an Anglo-Dutch multinational) in 2000. Thus, the brand is not considered American.`
   String get companySafeExplanation {
     return Intl.message(
-      'Ben & Jerry\'s is an American brand but was acquired by Unilever (an Anglo-Dutch multinational) in 2000. Therefore, the brand is not considered American.',
+      'Ben & Jerry\'s is an American brand but was acquired by Unilever (an Anglo-Dutch multinational) in 2000. Thus, the brand is not considered American.',
       name: 'companySafeExplanation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Vahiné is a French brand but was acquired by the American group McCormick in 2000. Therefore, the brand is considered American.`
+  /// `Vahiné is a French brand but was acquired by the American group McCormick in 2000. Thus, the brand is considered American.`
   String get companyUsaExplanation {
     return Intl.message(
-      'Vahiné is a French brand but was acquired by the American group McCormick in 2000. Therefore, the brand is considered American.',
+      'Vahiné is a French brand but was acquired by the American group McCormick in 2000. Thus, the brand is considered American.',
       name: 'companyUsaExplanation',
       desc: '',
       args: [],
     );
   }
 
-  /// `⚠️ Please ensure you enter a correctly spelled food brand to avoid errors.`
+  /// `⚠️ Make sure to enter a correctly spelled food brand to avoid errors.`
   String get searchWarning {
     return Intl.message(
-      '⚠️ Please ensure you enter a correctly spelled food brand to avoid errors.',
+      '⚠️ Make sure to enter a correctly spelled food brand to avoid errors.',
       name: 'searchWarning',
       desc: '',
       args: [],
     );
   }
 
-  /// `Add Product`
+  /// `Add a product`
   String get addProductTitle {
     return Intl.message(
-      'Add Product',
+      'Add a product',
       name: 'addProductTitle',
       desc: '',
       args: [],
@@ -330,50 +325,50 @@ class S {
     );
   }
 
-  /// `Please fill in all the fields.`
+  /// `Please fill in all fields.`
   String get fillAllFields {
     return Intl.message(
-      'Please fill in all the fields.',
+      'Please fill in all fields.',
       name: 'fillAllFields',
       desc: '',
       args: [],
     );
   }
 
-  /// `Bar Code`
+  /// `Barcode`
   String get barcode {
-    return Intl.message('Bar Code', name: 'barcode', desc: '', args: []);
+    return Intl.message('Barcode', name: 'barcode', desc: '', args: []);
   }
 
-  /// `Product Name`
+  /// `Product name`
   String get productName {
     return Intl.message(
-      'Product Name',
+      'Product name',
       name: 'productName',
       desc: '',
       args: [],
     );
   }
 
-  /// `Enter product name`
+  /// `Enter the product name`
   String get productNamePlaceholder {
     return Intl.message(
-      'Enter product name',
+      'Enter the product name',
       name: 'productNamePlaceholder',
       desc: '',
       args: [],
     );
   }
 
-  /// `Brand Name`
+  /// `Brand name`
   String get brandName {
-    return Intl.message('Brand Name', name: 'brandName', desc: '', args: []);
+    return Intl.message('Brand name', name: 'brandName', desc: '', args: []);
   }
 
-  /// `Enter brand name`
+  /// `Ex: L'Oréal`
   String get brandNamePlaceholder {
     return Intl.message(
-      'Enter brand name',
+      'Ex: L\'Oréal',
       name: 'brandNamePlaceholder',
       desc: '',
       args: [],
@@ -385,15 +380,15 @@ class S {
     return Intl.message('Food', name: 'alimentation', desc: '', args: []);
   }
 
-  /// `Cosmetics`
+  /// `Cosmetic`
   String get cosmetique {
-    return Intl.message('Cosmetics', name: 'cosmetique', desc: '', args: []);
+    return Intl.message('Cosmetic', name: 'cosmetique', desc: '', args: []);
   }
 
-  /// `Pet Food`
+  /// `Pet food`
   String get alimentationAnimaux {
     return Intl.message(
-      'Pet Food',
+      'Pet food',
       name: 'alimentationAnimaux',
       desc: '',
       args: [],
@@ -405,11 +400,466 @@ class S {
     return Intl.message('Other', name: 'autre', desc: '', args: []);
   }
 
-  /// `Add the product`
+  /// `Add product`
   String get addProductButton {
     return Intl.message(
-      'Add the product',
+      'Add product',
       name: 'addProductButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report a problem`
+  String get reportProblemTitle {
+    return Intl.message(
+      'Report a problem',
+      name: 'reportProblemTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Help us improve the application`
+  String get reportProblemHelpUs {
+    return Intl.message(
+      'Help us improve the application',
+      name: 'reportProblemHelpUs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Describe the problem encountered with the product or application.`
+  String get reportProblemDescriptionPrompt {
+    return Intl.message(
+      'Describe the problem encountered with the product or application.',
+      name: 'reportProblemDescriptionPrompt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Describe the problem or error...`
+  String get reportProblemHintText {
+    return Intl.message(
+      'Describe the problem or error...',
+      name: 'reportProblemHintText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please describe the problem.`
+  String get reportProblemValidationErrorEmpty {
+    return Intl.message(
+      'Please describe the problem.',
+      name: 'reportProblemValidationErrorEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please provide more details (10 characters min).`
+  String get reportProblemValidationErrorLength {
+    return Intl.message(
+      'Please provide more details (10 characters min).',
+      name: 'reportProblemValidationErrorLength',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send report`
+  String get reportProblemSendButton {
+    return Intl.message(
+      'Send report',
+      name: 'reportProblemSendButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thank you! Your report has been sent.`
+  String get reportProblemSuccessMessage {
+    return Intl.message(
+      'Thank you! Your report has been sent.',
+      name: 'reportProblemSuccessMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error sending report. Please try again.`
+  String get reportProblemErrorMessage {
+    return Intl.message(
+      'Error sending report. Please try again.',
+      name: 'reportProblemErrorMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parent company`
+  String get parentCompanyLabel {
+    return Intl.message(
+      'Parent company',
+      name: 'parentCompanyLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Image source`
+  String get imageSourceTitle {
+    return Intl.message(
+      'Image source',
+      name: 'imageSourceTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose a source`
+  String get imageSourceMessage {
+    return Intl.message(
+      'Choose a source',
+      name: 'imageSourceMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camera`
+  String get camera {
+    return Intl.message('Camera', name: 'camera', desc: '', args: []);
+  }
+
+  /// `Gallery`
+  String get gallery {
+    return Intl.message('Gallery', name: 'gallery', desc: '', args: []);
+  }
+
+  /// `Please select a category.`
+  String get selectCategoryError {
+    return Intl.message(
+      'Please select a category.',
+      name: 'selectCategoryError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a photo.`
+  String get selectPhotoError {
+    return Intl.message(
+      'Please select a photo.',
+      name: 'selectPhotoError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sending information...`
+  String get sendingInfo {
+    return Intl.message(
+      'Sending information...',
+      name: 'sendingInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sending image...`
+  String get sendingImage {
+    return Intl.message(
+      'Sending image...',
+      name: 'sendingImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to send text information (status {statusCode}). Check logs for HTML response.`
+  String textSubmissionFailed(Object statusCode) {
+    return Intl.message(
+      'Failed to send text information (status $statusCode). Check logs for HTML response.',
+      name: 'textSubmissionFailed',
+      desc: '',
+      args: [statusCode],
+    );
+  }
+
+  /// `Error uploading image.`
+  String get imageUploadError {
+    return Intl.message(
+      'Error uploading image.',
+      name: 'imageUploadError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Text information was sent, but image upload failed.`
+  String get textDataSentButImageFailed {
+    return Intl.message(
+      'Text information was sent, but image upload failed.',
+      name: 'textDataSentButImageFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error during submission.`
+  String get submissionError {
+    return Intl.message(
+      'Error during submission.',
+      name: 'submissionError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product and image added successfully!`
+  String get productAndImageAddedSuccess {
+    return Intl.message(
+      'Product and image added successfully!',
+      name: 'productAndImageAddedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Barcode: `
+  String get barcodeLabel {
+    return Intl.message('Barcode: ', name: 'barcodeLabel', desc: '', args: []);
+  }
+
+  /// `Photo`
+  String get photo {
+    return Intl.message('Photo', name: 'photo', desc: '', args: []);
+  }
+
+  /// `Add a photo`
+  String get addPhoto {
+    return Intl.message('Add a photo', name: 'addPhoto', desc: '', args: []);
+  }
+
+  /// `Error selecting image`
+  String get imagePickError {
+    return Intl.message(
+      'Error selecting image',
+      name: 'imagePickError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add information`
+  String get addProductInfoTitle {
+    return Intl.message(
+      'Add information',
+      name: 'addProductInfoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Complete product information`
+  String get addProductInfoHeadline {
+    return Intl.message(
+      'Complete product information',
+      name: 'addProductInfoHeadline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Provide missing details for barcode: {barcode}`
+  String addProductInfoSubHeadline(Object barcode) {
+    return Intl.message(
+      'Provide missing details for barcode: $barcode',
+      name: 'addProductInfoSubHeadline',
+      desc: '',
+      args: [barcode],
+    );
+  }
+
+  /// `Brand *`
+  String get brandLabelRequired {
+    return Intl.message(
+      'Brand *',
+      name: 'brandLabelRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Main brand name`
+  String get brandHint {
+    return Intl.message(
+      'Main brand name',
+      name: 'brandHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description *`
+  String get descriptionLabelRequired {
+    return Intl.message(
+      'Description *',
+      name: 'descriptionLabelRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Short product description`
+  String get descriptionHint {
+    return Intl.message(
+      'Short product description',
+      name: 'descriptionHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parent company (Optional)`
+  String get parentCompanyLabelOptional {
+    return Intl.message(
+      'Parent company (Optional)',
+      name: 'parentCompanyLabelOptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name of the owning company`
+  String get parentCompanyHint {
+    return Intl.message(
+      'Name of the owning company',
+      name: 'parentCompanyHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Country of origin (Optional)`
+  String get originCountryLabelOptional {
+    return Intl.message(
+      'Country of origin (Optional)',
+      name: 'originCountryLabelOptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ex: France, USA, China...`
+  String get originCountryHint {
+    return Intl.message(
+      'Ex: France, USA, China...',
+      name: 'originCountryHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required.`
+  String get fieldRequiredError {
+    return Intl.message(
+      'This field is required.',
+      name: 'fieldRequiredError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add information`
+  String get addProductInfoButton {
+    return Intl.message(
+      'Add information',
+      name: 'addProductInfoButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thank you! Product information added.`
+  String get addProductInfoSuccess {
+    return Intl.message(
+      'Thank you! Product information added.',
+      name: 'addProductInfoSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error sending information. Please try again.`
+  String get addProductInfoError {
+    return Intl.message(
+      'Error sending information. Please try again.',
+      name: 'addProductInfoError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add information`
+  String get addInfoTitle {
+    return Intl.message(
+      'Add information',
+      name: 'addInfoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click here to complete the info`
+  String get addInfoSubtitle {
+    return Intl.message(
+      'Click here to complete the info',
+      name: 'addInfoSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report a problem`
+  String get reportProblemActionTitle {
+    return Intl.message(
+      'Report a problem',
+      name: 'reportProblemActionTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click here to report an issue`
+  String get reportProblemActionSubtitle {
+    return Intl.message(
+      'Click here to report an issue',
+      name: 'reportProblemActionSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How are companies classified?`
+  String get classificationInfoTitle {
+    return Intl.message(
+      'How are companies classified?',
+      name: 'classificationInfoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click here to discover our criteria`
+  String get classificationInfoSubtitle {
+    return Intl.message(
+      'Click here to discover our criteria',
+      name: 'classificationInfoSubtitle',
       desc: '',
       args: [],
     );

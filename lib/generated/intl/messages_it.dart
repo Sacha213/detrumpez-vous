@@ -20,69 +20,147 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'it';
 
+  static String m0(barcode) =>
+      "Fornisci i dettagli mancanti per il codice a barre: ${barcode}";
+
+  static String m1(statusCode) =>
+      "Invio informazioni di testo non riuscito (stato ${statusCode}). Controlla i log per la risposta HTML.";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addInfoSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Clicca qui per completare le informazioni",
+    ),
+    "addInfoTitle": MessageLookupByLibrary.simpleMessage(
+      "Aggiungi informazioni",
+    ),
+    "addPhoto": MessageLookupByLibrary.simpleMessage("Aggiungi una foto"),
     "addProductButton": MessageLookupByLibrary.simpleMessage(
       "Aggiungi prodotto",
     ),
     "addProductHelp": MessageLookupByLibrary.simpleMessage(
       "Aiutaci aggiungendo un prodotto al database",
     ),
-    "addProductTitle": MessageLookupByLibrary.simpleMessage(
-      "Aggiungi prodotto",
+    "addProductInfoButton": MessageLookupByLibrary.simpleMessage(
+      "Aggiungi informazioni",
     ),
-    "alimentation": MessageLookupByLibrary.simpleMessage("Cibo"),
+    "addProductInfoError": MessageLookupByLibrary.simpleMessage(
+      "Errore durante l\'invio delle informazioni. Si prega di riprovare.",
+    ),
+    "addProductInfoHeadline": MessageLookupByLibrary.simpleMessage(
+      "Completa informazioni prodotto",
+    ),
+    "addProductInfoSubHeadline": m0,
+    "addProductInfoSuccess": MessageLookupByLibrary.simpleMessage(
+      "Grazie! Informazioni prodotto aggiunte.",
+    ),
+    "addProductInfoTitle": MessageLookupByLibrary.simpleMessage(
+      "Aggiungi informazioni",
+    ),
+    "addProductTitle": MessageLookupByLibrary.simpleMessage(
+      "Aggiungi un prodotto",
+    ),
+    "alimentation": MessageLookupByLibrary.simpleMessage("Alimentari"),
     "alimentationAnimaux": MessageLookupByLibrary.simpleMessage(
-      "Cibo per animali",
+      "Alimenti per animali",
     ),
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "Scansiona il codice a barre del tuo prodotto per scoprire se il marchio appartiene a un\'azienda americana.",
+      "Scansiona il codice a barre del tuo prodotto per scoprire se il marchio è di proprietà di un\'azienda americana.",
     ),
     "appTitle": MessageLookupByLibrary.simpleMessage(
-      "Scansiona il codice a barre",
+      "Scansiona codice a barre",
     ),
     "autre": MessageLookupByLibrary.simpleMessage("Altro"),
     "barcode": MessageLookupByLibrary.simpleMessage("Codice a barre"),
+    "barcodeLabel": MessageLookupByLibrary.simpleMessage("Codice a barre: "),
+    "brandHint": MessageLookupByLibrary.simpleMessage(
+      "Nome del marchio principale",
+    ),
+    "brandLabelRequired": MessageLookupByLibrary.simpleMessage("Marchio *"),
     "brandName": MessageLookupByLibrary.simpleMessage("Nome del marchio"),
     "brandNamePlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Inserisci il nome del marchio",
+      "Es: L\'Oréal",
     ),
     "brandNotFound": MessageLookupByLibrary.simpleMessage(
       "Marchio non trovato",
     ),
+    "camera": MessageLookupByLibrary.simpleMessage("Fotocamera"),
     "cancel": MessageLookupByLibrary.simpleMessage("Annulla"),
     "category": MessageLookupByLibrary.simpleMessage("Categoria"),
+    "classificationInfoSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Clicca qui per scoprire i nostri criteri",
+    ),
+    "classificationInfoTitle": MessageLookupByLibrary.simpleMessage(
+      "Come vengono classificate le aziende?",
+    ),
     "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
       "Un marchio è considerato americano se appartiene a un gruppo americano.",
     ),
     "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage(
-      "Criteri per aziende americane",
+      "Criteri azienda americana",
     ),
     "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
-      "Ben & Jerry\'s è un marchio americano, ma è stato acquisito da Unilever (multinazionale anglo-olandese) nel 2000. Pertanto, il marchio non è considerato americano.",
+      "Ben & Jerry\'s è un marchio americano ma è stato acquisito da Unilever (multinazionale anglo-olandese) nel 2000. Pertanto, il marchio non è considerato americano.",
     ),
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
-      "Vahiné è un marchio francese, ma è stato acquisito dal gruppo americano McCormick nel 2000. Pertanto, il marchio è considerato americano.",
+      "Vahiné è un marchio francese ma è stato acquisito dal gruppo americano McCormick nel 2000. Pertanto, il marchio è considerato americano.",
     ),
     "cosmetique": MessageLookupByLibrary.simpleMessage("Cosmetici"),
+    "descriptionHint": MessageLookupByLibrary.simpleMessage(
+      "Breve descrizione del prodotto",
+    ),
+    "descriptionLabelRequired": MessageLookupByLibrary.simpleMessage(
+      "Descrizione *",
+    ),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "Questo marchio non è presente nel nostro database di marchi americani.",
+      "Questo marchio non è presente nel nostro database.",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "Si è verificato un errore durante l\'aggiunta del prodotto.",
     ),
     "errorTitle": MessageLookupByLibrary.simpleMessage("Errore"),
+    "fieldRequiredError": MessageLookupByLibrary.simpleMessage(
+      "Questo campo è obbligatorio.",
+    ),
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
-      "Per favore, compila tutti i campi.",
+      "Si prega di compilare tutti i campi.",
+    ),
+    "gallery": MessageLookupByLibrary.simpleMessage("Galleria"),
+    "imagePickError": MessageLookupByLibrary.simpleMessage(
+      "Errore nella selezione dell\'immagine",
+    ),
+    "imageSourceMessage": MessageLookupByLibrary.simpleMessage(
+      "Scegli una fonte",
+    ),
+    "imageSourceTitle": MessageLookupByLibrary.simpleMessage("Fonte immagine"),
+    "imageUploadError": MessageLookupByLibrary.simpleMessage(
+      "Errore durante il caricamento dell\'immagine.",
     ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Inserisci una marca alimentare",
+      "Inserisci un marchio alimentare",
     ),
+    "originCountryHint": MessageLookupByLibrary.simpleMessage(
+      "Es: Francia, USA, Cina...",
+    ),
+    "originCountryLabelOptional": MessageLookupByLibrary.simpleMessage(
+      "Paese di origine (Opzionale)",
+    ),
+    "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
+      "Nome della società proprietaria",
+    ),
+    "parentCompanyLabel": MessageLookupByLibrary.simpleMessage("Società madre"),
+    "parentCompanyLabelOptional": MessageLookupByLibrary.simpleMessage(
+      "Società madre (Opzionale)",
+    ),
+    "photo": MessageLookupByLibrary.simpleMessage("Foto"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "Possiamo commettere errori. Se ne noti uno, inviaci via e-mail il nome del marchio così possiamo aggiornare la nostra lista.",
+      "Possiamo commettere errori. Se ne trovi uno, inviaci un\'e-mail con il nome del marchio in modo che possiamo aggiornare il nostro elenco.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
-      "Problema con un prodotto?",
+      "Un problema con un prodotto?",
+    ),
+    "productAndImageAddedSuccess": MessageLookupByLibrary.simpleMessage(
+      "Prodotto e immagine aggiunti con successo!",
     ),
     "productName": MessageLookupByLibrary.simpleMessage("Nome del prodotto"),
     "productNamePlaceholder": MessageLookupByLibrary.simpleMessage(
@@ -90,6 +168,39 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage(
       "Prodotto non trovato",
+    ),
+    "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Clicca qui per segnalare un problema",
+    ),
+    "reportProblemActionTitle": MessageLookupByLibrary.simpleMessage(
+      "Segnala un problema",
+    ),
+    "reportProblemDescriptionPrompt": MessageLookupByLibrary.simpleMessage(
+      "Descrivi il problema riscontrato con il prodotto o l\'applicazione.",
+    ),
+    "reportProblemErrorMessage": MessageLookupByLibrary.simpleMessage(
+      "Errore durante l\'invio della segnalazione. Si prega di riprovare.",
+    ),
+    "reportProblemHelpUs": MessageLookupByLibrary.simpleMessage(
+      "Aiutaci a migliorare l\'applicazione",
+    ),
+    "reportProblemHintText": MessageLookupByLibrary.simpleMessage(
+      "Descrivi il problema o l\'errore...",
+    ),
+    "reportProblemSendButton": MessageLookupByLibrary.simpleMessage(
+      "Invia segnalazione",
+    ),
+    "reportProblemSuccessMessage": MessageLookupByLibrary.simpleMessage(
+      "Grazie! La tua segnalazione è stata inviata.",
+    ),
+    "reportProblemTitle": MessageLookupByLibrary.simpleMessage(
+      "Segnala un problema",
+    ),
+    "reportProblemValidationErrorEmpty": MessageLookupByLibrary.simpleMessage(
+      "Si prega di descrivere il problema.",
+    ),
+    "reportProblemValidationErrorLength": MessageLookupByLibrary.simpleMessage(
+      "Si prega di fornire maggiori dettagli (min. 10 caratteri).",
     ),
     "safe": MessageLookupByLibrary.simpleMessage("NON USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
@@ -101,23 +212,38 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectCategory": MessageLookupByLibrary.simpleMessage(
       "Seleziona una categoria",
     ),
+    "selectCategoryError": MessageLookupByLibrary.simpleMessage(
+      "Si prega di selezionare una categoria.",
+    ),
+    "selectPhotoError": MessageLookupByLibrary.simpleMessage(
+      "Si prega di selezionare una foto.",
+    ),
+    "sendingImage": MessageLookupByLibrary.simpleMessage("Invio immagine..."),
+    "sendingInfo": MessageLookupByLibrary.simpleMessage(
+      "Invio informazioni...",
+    ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("Fonte non trovata"),
+    "submissionError": MessageLookupByLibrary.simpleMessage(
+      "Errore durante l\'invio.",
+    ),
     "successMessage": MessageLookupByLibrary.simpleMessage(
       "Prodotto aggiunto con successo!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("Successo"),
-    "unknown": MessageLookupByLibrary.simpleMessage("Sconosciuto"),
+    "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
+      "Le informazioni di testo sono state inviate, ma il caricamento dell\'immagine è fallito.",
+    ),
+    "textSubmissionFailed": m1,
+    "unknown": MessageLookupByLibrary.simpleMessage("SCONOSCIUTO"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Il prodotto cercato non è stato trovato nel nostro database.",
+      "Il prodotto che hai cercato non è stato trovato nel nostro database.",
     ),
     "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
       "Questo prodotto proviene da un\'azienda americana!",
     ),
-    "validate": MessageLookupByLibrary.simpleMessage("Conferma"),
-    "viewCriteria": MessageLookupByLibrary.simpleMessage(
-      "Visualizza i criteri",
-    ),
+    "validate": MessageLookupByLibrary.simpleMessage("Convalida"),
+    "viewCriteria": MessageLookupByLibrary.simpleMessage("Vedi criteri"),
     "welcome": MessageLookupByLibrary.simpleMessage("Benvenuto in"),
   };
 }
