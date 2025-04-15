@@ -26,8 +26,12 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Nous avons besoin d'accéder à votre galerie pour sélectionner une photo du produit.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Camera permission is required for barcode scanning.</string>
+	<string>Nous avons besoin d'accéder à votre appareil photo pour prendre une photo du produit.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Accès au microphone requis pour la capture vidéo.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
