@@ -1,6 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:detrumpezvous/add_product.dart';
+import 'package:detrumpezvous/add_product_info_screen.dart';
+import 'package:detrumpezvous/criteria_screen.dart';
+import 'package:detrumpezvous/report_problem_screen.dart';
 import 'package:http/http.dart' as http;
 import 'package:detrumpezvous/corner_painter.dart';
 import 'package:detrumpezvous/generated/l10n.dart';
@@ -8,14 +11,16 @@ import 'package:diacritic/diacritic.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:in_app_review/in_app_review.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:logger/logger.dart';
 import 'package:translator/translator.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:mailto/mailto.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:country_flags/country_flags.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:math';
 
 final Logger logger = Logger();
 final GoogleTranslator translator = GoogleTranslator();
@@ -27,33 +32,110 @@ class BarcodeScannerScreen extends StatefulWidget {
   BarcodeScannerScreenState createState() => BarcodeScannerScreenState();
 }
 
-class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
+class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
+    with TickerProviderStateMixin {
   // Variables d'état
   String barcode = "";
   String brand = S.current.brandNotFound;
   String description = S.current.descriptionNotFound;
+  String parentCompany = S.current.unknown;
+  String originCountry = ""; // Nouvelle variable d'état pour le pays d'origine
+
   String source = S.current.sourceNotFound;
   bool isProductFromUSA = false;
   bool manualSearchUsed = false;
-  bool isProductFound = false; // indique si le produit est trouvé ou non
-  List<dynamic> blacklistIndex = [];
-  List<dynamic> whitelistIndex = [];
+  List<dynamic> brandlist = [];
   bool isProcessing = false; // pour éviter plusieurs scans simultanés
-  bool isBrandInList = false; // pour savoir si le produit est dans une liste
+  bool isBrandFound = false; // pour savoir si le produit est dans une liste
 
   // Ajoutez ce contrôleur dans votre state:
   final TextEditingController manualSearchController = TextEditingController();
+
+  final InAppReview inAppReview = InAppReview.instance;
+  int _safeScanCount = 0; // Compteur en mémoire
+  int _usaScanCount = 0; // Nouveau compteur pour les produits USA
+  bool _reviewHasBeenRequested =
+      false; // Pour ne demander qu'une fois par session/période
+
+  // Contrôleur pour l'animation de tremblement
+  late AnimationController _shakeController;
 
   @override
   void initState() {
     super.initState();
     loadBrands();
+    _loadCounters();
+
+    // Initialiser le contrôleur de tremblement
+    _shakeController = AnimationController(
+      duration: const Duration(milliseconds: 400), // Durée du tremblement
+      vsync: this, // Nécessite TickerProviderStateMixin
+    );
   }
 
   @override
   void dispose() {
     manualSearchController.dispose();
+    _shakeController
+        .dispose(); // Ne pas oublier de disposer le nouveau contrôleur
     super.dispose();
+  }
+
+  // Charger les compteurs depuis SharedPreferences
+  Future<void> _loadCounters() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _safeScanCount = prefs.getInt('safeScanCount') ?? 0;
+      _usaScanCount =
+          prefs.getInt('usaScanCount') ?? 0; // Charger le compteur USA
+      _reviewHasBeenRequested = prefs.getBool('reviewRequested') ?? false;
+    });
+  }
+
+  // Incrémenter le compteur Safe et le sauvegarder
+  Future<void> _incrementSafeScanCount() async {
+    final prefs = await SharedPreferences.getInstance();
+    _safeScanCount++;
+    await prefs.setInt('safeScanCount', _safeScanCount);
+    setState(() {});
+  }
+
+  // Incrémenter le compteur USA et le sauvegarder
+  Future<void> _incrementUsaScanCount() async {
+    final prefs = await SharedPreferences.getInstance();
+    _usaScanCount++;
+    await prefs.setInt(
+        'usaScanCount', _usaScanCount); // Sauvegarder le compteur USA
+    setState(() {});
+
+    // Déclencher l'animation de tremblement
+    _shakeController.forward(from: 0.0);
+  }
+
+  // Marquer que la demande a été faite
+  Future<void> _markReviewRequested() async {
+    final prefs = await SharedPreferences.getInstance();
+    _reviewHasBeenRequested = true;
+    await prefs.setBool('reviewRequested', true);
+    setState(() {});
+  }
+
+  // Fonction pour déclencher la demande d'avis (à appeler au bon moment)
+  Future<void> _requestReview() async {
+    if (await inAppReview.isAvailable()) {
+      inAppReview.requestReview();
+      await _markReviewRequested(); // Marquer comme demandé après l'appel
+    }
+  }
+
+  // Vérifie si les conditions sont remplies pour demander un avis
+  void _checkAndRequestReviewIfNeeded() {
+    // Ne demande pas si déjà demandé ou si le compte n'est pas atteint
+    // Demander après 3, 7, 15 scans "Safe" par exemple
+    if (!_reviewHasBeenRequested &&
+        (_safeScanCount == 7 || _safeScanCount == 21 || _safeScanCount == 73)) {
+      _requestReview();
+    }
   }
 
   // Retourne le fichier local mis à jour ou non
@@ -64,36 +146,20 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
 
   // Méthode pour charger le fichier mis à jour (ou la version par défaut depuis assets)
   Future<void> loadBrands() async {
-    File localFile = await _getLocalFile("blacklist");
+    File localFile = await _getLocalFile("brandlist");
     try {
       if (await localFile.exists()) {
         final String contents = await localFile.readAsString();
-        blacklistIndex = json.decode(contents);
+        brandlist = json.decode(contents);
       } else {
         // Si le fichier n'existe pas, chargez la version embarquée
         final String jsonStr =
-            await rootBundle.loadString('assets/blacklist.json');
-        blacklistIndex = json.decode(jsonStr);
+            await rootBundle.loadString('assets/brandlist.json');
+        brandlist = json.decode(jsonStr);
       }
     } catch (e) {
       // En cas d'erreur, retournez une liste vide ou gérez l'erreur comme vous le souhaitez
-      blacklistIndex = [];
-    }
-
-    localFile = await _getLocalFile("whitelist");
-    try {
-      if (await localFile.exists()) {
-        final String contents = await localFile.readAsString();
-        whitelistIndex = json.decode(contents);
-      } else {
-        // Si le fichier n'existe pas, chargez la version embarquée
-        final String jsonStr =
-            await rootBundle.loadString('assets/whitelist.json');
-        whitelistIndex = json.decode(jsonStr);
-      }
-    } catch (e) {
-      // En cas d'erreur, retournez une liste vide ou gérez l'erreur comme vous le souhaitez
-      whitelistIndex = [];
+      brandlist = [];
     }
 
     setState(() {});
@@ -117,7 +183,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
       final String normalizedCandidate = normalizeBrandName(candidate);
 
       try {
-        final Map<String, dynamic> found = blacklistIndex.firstWhere((brand) {
+        final Map<String, dynamic> found = brandlist.firstWhere((brand) {
           final String normalizedName =
               (brand["normalizedName"] ?? "").toString().toLowerCase();
           // On vérifie si le champ stocké est identique au candidat normalisé
@@ -129,23 +195,6 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
         }
       } catch (e) {
         // Au cas où on ne trouve rien pour ce candidat, on passe au suivant
-        continue;
-      }
-    }
-
-    // Si rien n'est trouvé dans blacklistIndex, recherche dans hitelistIndex
-    for (final candidate in candidates) {
-      final String normalizedCandidate = normalizeBrandName(candidate);
-      try {
-        final Map<String, dynamic> found = whitelistIndex.firstWhere((brand) {
-          final String normalizedName =
-              (brand["normalizedName"] ?? "").toString().toLowerCase();
-          return normalizedName == normalizedCandidate;
-        }, orElse: () => <String, dynamic>{});
-        if (found.isNotEmpty) {
-          return found;
-        }
-      } catch (e) {
         continue;
       }
     }
@@ -317,13 +366,26 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
               : S.of(context).brandNotFound);
       description = desc ?? S.of(context).descriptionNotFound;
       source = resultJson["source"] ?? S.of(context).sourceNotFound;
-      isProductFound = productData != null;
-      isProductFromUSA = resultJson["origin"] == "USA";
-      isBrandInList = resultJson.isNotEmpty;
+      parentCompany = resultJson["parentCompany"] ?? S.of(context).unknown;
+      originCountry =
+          resultJson["parentOrigin"] ?? ""; // Stocker le pays d'origine
+      isProductFromUSA = resultJson["parentOrigin"] == "US";
+      isBrandFound = resultJson.isNotEmpty;
     });
 
+    if (isBrandFound) {
+      if (!isProductFromUSA) {
+        // Produit "Safe" trouvé
+        await _incrementSafeScanCount();
+        _checkAndRequestReviewIfNeeded();
+      } else {
+        // Produit "USA" trouvé
+        await _incrementUsaScanCount(); // Incrémente le compteur USA
+      }
+    }
+
     // Si la marque n'est pas trouvée dans les listes, l'envoyer sur Firebase
-    if (!isBrandInList && productData != null && productData.isNotEmpty) {
+    if (!isBrandFound && productData != null && productData.isNotEmpty) {
       await FirebaseFirestore.instance.collection('unknown_brands').add({
         'brand_name': productData,
         'timestamp': FieldValue.serverTimestamp(),
@@ -331,8 +393,41 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     }
 
     // Déclenche un retour haptique (vibration légère)
-    if (isProductFound) {
+    if (isBrandFound) {
       HapticFeedback.mediumImpact();
+    } else if (productData == null || productData.isEmpty) {
+      // Utiliser WidgetsBinding pour s'assurer que le build est terminé
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        if (mounted) {
+          // Stocker le code-barres actuel avant d'ouvrir la sheet
+          final String currentBarcode = barcode;
+
+          // Attend que la bottom sheet soit fermée
+          await showModalBottomSheet(
+            context: context,
+            isScrollControlled:
+                true, // Important pour que la sheet s'adapte au clavier
+            backgroundColor:
+                Colors.grey.shade100, // Couleur de fond de la sheet
+            shape: const RoundedRectangleBorder(
+              // Coins arrondis
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            ),
+            builder: (BuildContext sheetContext) {
+              // Utiliser un contexte différent
+              return AddProduct(
+                  barcode: currentBarcode); // Passer le code-barres stocké
+            },
+          );
+
+          // Après la fermeture de la sheet, vérifier à nouveau si monté et réinitialiser
+          if (mounted) {
+            setState(() {
+              barcode = ""; // Réinitialise le code-barres
+            });
+          }
+        }
+      });
     }
   }
 
@@ -351,13 +446,49 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     return text;
   }
 
+  // Fonction helper pour obtenir le widget du drapeau
+  Widget _getFlagWidget(String countryCode) {
+    if (countryCode != "") {
+      try {
+        // Utilise le package country_flags pour afficher le drapeau
+        return CountryFlag.fromCountryCode(
+          countryCode,
+          height: 40,
+          width: 50, // Ajustez la largeur si nécessaire pour le ratio
+        );
+      } catch (e) {
+        // Si le code pays n'est pas valide pour le package
+        logger.w(
+            "Code pays '$countryCode' invalide pour le package country_flags: $e");
+        return const Icon(Icons.business, size: 40, color: Colors.grey);
+      }
+    } else {
+      // Si la valeur d'origine n'est pas dans notre map de conversion
+      logger.w("Code pays non trouvé dans la map pour: '$countryCode'");
+      return const Icon(Icons.business, size: 40, color: Colors.grey);
+    }
+  }
+
+  Color _getCounterColor(int count) {
+  // Définissez une valeur maximale pour atteindre le rouge complet
+  const double maxCountForFullRed = 100.0; // Ajustez cette valeur si nécessaire
+  // Calculez le facteur d'interpolation (entre 0.0 et 1.0)
+  final double t = (count / maxCountForFullRed).clamp(0.0, 1.0);
+  // Interpolez entre le noir et le rouge
+  return Color.lerp(Colors.black, Colors.red.shade700, t) ?? Colors.black; // Fournir une couleur par défaut
+}
+
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
+    final safeAreaPadding =
+        MediaQuery.of(context).padding; // Obtenir les paddings de la safe area
+
     return Scaffold(
       body: Stack(
         children: [
-          // La zone supérieure limitée à 70 % de l'écran
+          // La zone supérieure limitée à 70 % de l'écran (Scanner)
           Positioned(
             top: 0,
             left: 0,
@@ -377,189 +508,117 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                   },
                 ),
                 Center(
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      CustomPaint(
-                        size: const Size(280, 140),
-                        painter: CornerPainter(
-                          color: const Color(0xFFFDCC0B),
-                          lineWidth: 3,
-                          cornerLength: 20,
-                          cornerRadius: 8.0,
-                        ),
-                      ),
-                      Opacity(
-                        opacity: 0.5, // opacité de 80%
-                        child: Image.asset(
-                          "assets/barcode.png", // chemin de votre image PNG avec fond transparent
-                          width: 200, // ajustez la taille selon vos besoins
-                          height: 200,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                if (!isProductFound && barcode.isNotEmpty)
-                  Positioned(
-                    bottom: 32,
-                    left: 0,
-                    right: 0,
-                    child: Center(
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 300),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(32),
-                            color: Colors.blue,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(
-                                    0.15), // Ombre principale (plus légère)
-                                offset: const Offset(
-                                    2, 2), // Décalage réduit (x, y)
-                                blurRadius: 6, // Rayon de flou réduit
-                                spreadRadius:
-                                    0.5, // Expansion de l'ombre réduite
-                              ),
-                              BoxShadow(
-                                color: Colors.white.withOpacity(
-                                    0.5), // Ombre claire pour effet 3D
-                                offset: const Offset(
-                                    -2, -2), // Décalage inverse réduit
-                                blurRadius: 6, // Rayon de flou réduit
-                                spreadRadius:
-                                    0.5, // Expansion de l'ombre réduite
-                              ),
-                            ],
-                          ),
-                          child: CupertinoButton(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 32, vertical: 16),
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(32),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) => AddProduct(
-                                    barcode: barcode,
-                                  ),
-                                ),
-                              );
-                            },
-                            child: Text(
-                              S
-                                  .of(context)
-                                  .addProductButton, // Utilisation de la traduction
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                  fontSize: 16, color: Colors.white),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                Positioned(
-                  top: 40,
-                  right: 16,
-                  child: CupertinoButton(
-                    color: Colors.grey,
-                    padding: const EdgeInsets.all(0),
-                    borderRadius: BorderRadius.circular(32),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
+                  child: Column(mainAxisSize: MainAxisSize.min, children: [
+                    Stack(
+                      alignment: Alignment.center,
                       children: [
-                        Icon(Icons.info_outline, color: Colors.white, size: 32),
+                        CustomPaint(
+                          size: const Size(280, 140),
+                          painter: CornerPainter(
+                            color: const Color(0xFFFDCC0B),
+                            lineWidth: 3,
+                            cornerLength: 20,
+                            cornerRadius: 8.0,
+                          ),
+                        ),
+                        Opacity(
+                          opacity: 0.5, // opacité de 80%
+                          child: Image.asset(
+                            "assets/barcode.png", // chemin de votre image PNG avec fond transparent
+                            width: 200, // ajustez la taille selon vos besoins
+                            height: 200,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
                       ],
                     ),
-                    onPressed: () {
-                      showCupertinoDialog(
-                        context: context,
-                        builder: (context) {
-                          return CupertinoAlertDialog(
-                            title: Text(S.of(context).companyCriteriaTitle),
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(S.of(context).companyCriteriaContent),
-                                const SizedBox(height: 8),
-                                Column(
-                                  children: [
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 8),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Colors.green, width: 2),
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: Text(
-                                        S.of(context).safe,
-                                        style: const TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.green,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                    Text(
-                                      S.of(context).companySafeExplanation,
-                                      style: const TextStyle(fontSize: 14),
-                                    ),
-                                    const SizedBox(height: 8),
-                                  ],
-                                ),
-                                const SizedBox(height: 8),
-                                Column(
-                                  children: [
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 8),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Colors.red, width: 2),
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: Text(
-                                        S.of(context).usa,
-                                        style: const TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.red,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                    Text(
-                                      S.of(context).companyUsaExplanation,
-                                      style: const TextStyle(fontSize: 14),
-                                    ),
-                                    const SizedBox(height: 8),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            actions: [
-                              CupertinoDialogAction(
-                                isDefaultAction: true,
-                                textStyle: const TextStyle(
-                                    fontSize: 14, color: Colors.grey),
-                                onPressed: () => Navigator.pop(context),
-                                child: const Text("OK"),
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    },
-                  ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8.0, vertical: 4.0),
+                      child: const Text(
+                        "Scannez un code barre",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight:
+                              FontWeight.w500, // Légèrement plus visible
+                        ),
+                      ),
+                    ),
+                  ]),
                 ),
               ],
             ),
           ),
+
+          // --- NOUVEAU WIDGET COMPTEUR ---
+          Positioned(
+            top: safeAreaPadding.top + 10,
+            right: 15,
+            // Enveloppe avec AnimatedBuilder pour le tremblement
+            child: AnimatedBuilder(
+              animation: _shakeController,
+              builder: (context, child) {
+                // Calculer le décalage horizontal basé sur l'animation
+                // Utilise sin() pour un effet de va-et-vient
+                final double dx = sin(_shakeController.value * pi * 4) *
+                    4; // 4 cycles, amplitude 4 pixels
+                return Transform.translate(
+                  offset: Offset(dx, 0), // Applique le décalage horizontal
+                  child: child, // Le contenu original du compteur
+                );
+              },
+              // Le contenu original du compteur est maintenant le 'child' de AnimatedBuilder
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      spreadRadius: 1,
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const CircleAvatar(
+                      radius: 12,
+                      backgroundImage: AssetImage("assets/trump.jpg"),
+                    ),
+                    const SizedBox(width: 6),
+                    const Text("x"),
+                    const SizedBox(width: 4),
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      transitionBuilder:
+                          (Widget child, Animation<double> animation) {
+                        return FadeTransition(opacity: animation, child: child);
+                      },
+                      child: Text(
+                        "$_usaScanCount",
+                        key: ValueKey<int>(_usaScanCount),
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: _getCounterColor(_usaScanCount),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          // --- FIN NOUVEAU WIDGET COMPTEUR ---
 
           // DraggableScrollableSheet toujours affiché en bas
           DraggableScrollableSheet(
@@ -570,7 +629,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
             builder: (context, scrollController) {
               return Container(
                   decoration: BoxDecoration(
-                    color: !isProductFound
+                    color: !isBrandFound
                         ? Colors.grey.shade100
                         : (!isProductFromUSA
                             ? Colors.green.shade100
@@ -636,14 +695,22 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                           ),
                                         ),
                                       ),
+                                      if (!isBrandFound && manualSearchUsed)
+                                        Text(
+                                          S.of(context).searchWarning,
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                              fontSize: 14, color: Colors.red),
+                                        ),
                                       const SizedBox(height: 8),
                                       // Autres widgets d'affichage produit...
+
                                       Row(
                                         children: [
                                           Container(
                                             width: 96,
                                             height: 96,
-                                            decoration: !isProductFound
+                                            decoration: !isBrandFound
                                                 ? const BoxDecoration(
                                                     shape: BoxShape.circle,
                                                     color: Colors.grey,
@@ -661,7 +728,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                                           fit: BoxFit.cover,
                                                         ),
                                                       )),
-                                            child: !isProductFound
+                                            child: !isBrandFound
                                                 ? const Icon(
                                                     Icons.question_mark,
                                                     size: 80,
@@ -690,7 +757,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                                   textAlign: TextAlign.center,
                                                 ),
                                                 Text(
-                                                    !isProductFound
+                                                    !isBrandFound
                                                         ? S
                                                             .of(context)
                                                             .unknownProductMessage
@@ -703,7 +770,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                                                 .usaProductMessage),
                                                     style: TextStyle(
                                                       fontSize: 14,
-                                                      color: !isProductFound
+                                                      color: !isBrandFound
                                                           ? Colors.grey
                                                           : (!isProductFromUSA
                                                               ? Colors.green
@@ -715,7 +782,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                                       .symmetric(horizontal: 8),
                                                   decoration: BoxDecoration(
                                                     border: Border.all(
-                                                        color: !isProductFound
+                                                        color: !isBrandFound
                                                             ? Colors.grey
                                                             : (!isProductFromUSA
                                                                 ? Colors.green
@@ -726,7 +793,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                                             8),
                                                   ),
                                                   child: Text(
-                                                    !isProductFound
+                                                    !isBrandFound
                                                         ? S.of(context).unknown
                                                         : (!isProductFromUSA
                                                             ? S.of(context).safe
@@ -734,8 +801,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                                                 .of(context)
                                                                 .usa),
                                                     style: TextStyle(
-                                                      fontSize: 20,
-                                                      color: !isProductFound
+                                                      fontSize: 16,
+                                                      color: !isBrandFound
                                                           ? Colors.grey
                                                           : (!isProductFromUSA
                                                               ? Colors.green
@@ -750,6 +817,64 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                           ),
                                         ],
                                       ),
+                                      const SizedBox(height: 24),
+                                      Container(
+                                          // Ajout de la décoration pour les coins arrondis et l'ombre
+                                          decoration: BoxDecoration(
+                                            color: Colors
+                                                .white, // Conserve le fond blanc
+                                            borderRadius: BorderRadius.circular(
+                                                12), // Coins arrondis
+                                            boxShadow: [
+                                              // Ajout de l'ombre pour l'effet surélevé
+                                              BoxShadow(
+                                                color: Colors.grey.withOpacity(
+                                                    0.3), // Couleur de l'ombre
+                                                spreadRadius:
+                                                    1, // Étendue de l'ombre
+                                                blurRadius:
+                                                    5, // Flou de l'ombre
+                                                offset: const Offset(0,
+                                                    3), // Position de l'ombre (x, y)
+                                              ),
+                                            ],
+                                          ),
+                                          padding: const EdgeInsets.all(
+                                              12), // Ajout de padding interne
+                                          child: Row(children: [
+                                            // Vous pourriez ajouter une icône ici si pertinent
+                                            (originCountry != "")
+                                                ? _getFlagWidget(originCountry)
+                                                : const Icon(
+                                                    CupertinoIcons
+                                                        .building_2_fill,
+                                                    size: 40,
+                                                    color: Colors.grey),
+                                            const SizedBox(width: 12),
+                                            Expanded(
+                                                // Utiliser Expanded pour que la colonne prenne l'espace
+                                                child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start, // Aligner le texte à gauche
+                                                    children: [
+                                                  Text(
+                                                      S
+                                                          .of(context)
+                                                          .parentCompanyLabel,
+                                                      style: const TextStyle(
+                                                          fontSize: 16,
+                                                          fontWeight: FontWeight
+                                                              .bold)), // Style du titre
+                                                  const SizedBox(
+                                                      height:
+                                                          4), // Espace entre titre et valeur
+                                                  Text(parentCompany,
+                                                      style:const TextStyle(
+                                                          fontSize:
+                                                              14)) // Style de la valeur
+                                                ]))
+                                          ])),
                                       const SizedBox(height: 16),
                                       Text(
                                         description,
@@ -757,13 +882,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                         style: const TextStyle(fontSize: 16),
                                       ),
                                       const SizedBox(height: 8),
-                                      if (!isBrandInList && manualSearchUsed)
-                                        Text(
-                                          S.of(context).searchWarning,
-                                          textAlign: TextAlign.center,
-                                          style: const TextStyle(
-                                              fontSize: 14, color: Colors.red),
-                                        ),
+
                                       if (isProductFromUSA)
                                         Row(
                                           mainAxisAlignment:
@@ -779,49 +898,237 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                                         ),
                                     ],
                                   ),
+                                  const SizedBox(
+                                    height: 16,
+                                  ),
                                   Column(
                                     children: [
-                                      const SizedBox(
-                                        height: 16,
-                                      ),
-                                      Text(
-                                        S.of(context).problemReportTitle,
-                                        style: const TextStyle(
-                                            fontSize: 14, color: Colors.red),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                      const SizedBox(height: 8),
-                                      Text(
-                                        S.of(context).problemReportMessage,
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(fontSize: 14),
-                                      ),
-                                      const SizedBox(height: 8),
-                                      GestureDetector(
-                                        onTap: () async {
-                                          final mailtoLink = Mailto(
-                                            to: ['contact@detrumpez-vous.com'],
-                                            subject: 'Product Issue Report',
-                                            body:
-                                                'Hello,\n\nI would like to report a product issue:\n',
-                                          );
-                                          final String url = '$mailtoLink';
-                                          if (await canLaunch(url)) {
-                                            await launch(url);
-                                          } else {
-                                            debugPrint(
-                                                "Could not launch email client");
-                                          }
-                                        },
-                                        child: const Text(
-                                          "contact@detrumpez-vous.com",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              fontSize: 14, color: Colors.blue),
+                                      // Container avec coins arrondis et ombre
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color:
+                                              Colors.white, // Couleur de fond
+                                          borderRadius: BorderRadius.circular(
+                                              12), // Coins arrondis
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            // Première rangée cliquable
+                                            InkWell(
+                                              onTap: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        AddProductInfoScreen(
+                                                      barcode:
+                                                          barcode, // Passer le code-barres actuel
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                              // Pas de borderRadius ici car c'est un élément du milieu
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 16.0,
+                                                        vertical: 12.0),
+                                                child: Row(
+                                                  children: [
+                                                    const Icon(
+                                                      Icons
+                                                          .add_circle_outline, // Icône pour ajouter
+                                                      color: Colors
+                                                          .blueAccent, // Couleur différente
+                                                    ),
+                                                    const SizedBox(
+                                                        width: 16), // Espace
+                                                    Expanded(
+                                                      child: Column(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Text(
+                                                            S.of(context).addProductInfoTitle, // Nouveau titre
+                                                            style: const TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontSize: 16),
+                                                          ),
+                                                          Text(
+                                                            S.of(context).addInfoSubtitle, // Nouveau sous-titre
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey[600],
+                                                                fontSize: 14),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Icon(
+                                                        CupertinoIcons
+                                                            .chevron_right,
+                                                        color: Colors.grey[
+                                                            400]), // Chevron
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                            const Divider(
+                                                indent: 16,
+                                                endIndent: 16,
+                                                height: 1),
+                                            InkWell(
+                                              // Utilisation d'InkWell pour l'effet de clic
+                                              onTap: () {
+                                                // Naviguer vers la nouvelle page ReportProblemScreen
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        ReportProblemScreen(
+                                                      barcode:
+                                                          barcode, // Passer le code-barres actuel
+                                                      brand:
+                                                          brand, // Passer la marque actuelle
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                              borderRadius: const BorderRadius.only(
+                                                  topLeft: Radius.circular(12),
+                                                  topRight: Radius.circular(
+                                                      12)), // Arrondi correspondant au Container
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 16.0,
+                                                        vertical: 12.0),
+                                                child: Row(
+                                                  children: [
+                                                    const Icon(
+                                                      Icons
+                                                          .report_problem_outlined, // Icône plus pertinente
+                                                      color: Colors
+                                                          .redAccent, // Couleur de l'icône
+                                                    ),
+                                                    const SizedBox(
+                                                        width:
+                                                            16), // Espace entre icône et texte
+                                                    Expanded(
+                                                      // Pour que la colonne prenne l'espace restant
+                                                      child: Column(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start, // Aligner le texte à gauche
+                                                        children: [
+                                                          Text(
+                                                            S.of(context).reportProblemActionTitle, // Utiliser la nouvelle clé
+                                                            style: const TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontSize: 16),
+                                                          ),
+                                                          Text(
+                                                            S.of(context).reportProblemActionSubtitle, // Utiliser la nouvelle clé
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey[600],
+                                                                fontSize: 14),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Icon(
+                                                        CupertinoIcons
+                                                            .chevron_right,
+                                                        color: Colors.grey[
+                                                            400]), // Chevron plus discret
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                            const Divider(
+                                                indent: 16,
+                                                endIndent: 16,
+                                                height:
+                                                    1), // Séparateur avec retrait et hauteur réduite
+                                            // Deuxième rangée cliquable
+                                            InkWell(
+                                              // Utilisation d'InkWell pour l'effet de clic
+                                              onTap: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const CriteriaScreen(),
+                                                  ),
+                                                );
+                                              },
+                                              borderRadius: const BorderRadius.only(
+                                                  bottomLeft:
+                                                      Radius.circular(12),
+                                                  bottomRight: Radius.circular(
+                                                      12)), // Arrondi correspondant au Container
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 16.0,
+                                                        vertical: 12.0),
+                                                child: Row(
+                                                  children: [
+                                                    const Icon(
+                                                      Icons
+                                                          .info_outline, // Icône plus pertinente
+                                                      color: Colors
+                                                          .grey, // Couleur de l'icône
+                                                    ),
+                                                    const SizedBox(
+                                                        width:
+                                                            16), // Espace entre icône et texte
+                                                    Expanded(
+                                                      // Pour que la colonne prenne l'espace restant
+                                                      child: Column(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start, // Aligner le texte à gauche
+                                                        children: [
+                                                          Text(
+                                                            S.of(context).classificationInfoTitle, // Utiliser la nouvelle clé
+                                                            style: const TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontSize: 16),
+                                                          ),
+                                                          Text(
+                                                            S.of(context).classificationInfoSubtitle, // Utiliser la nouvelle clé
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .grey[600],
+                                                                fontSize: 14),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Icon(
+                                                        CupertinoIcons
+                                                            .chevron_right,
+                                                        color: Colors.grey[
+                                                            400]), // Chevron plus discret
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
+
                                       const SizedBox(
-                                        height: 16,
+                                        height: 32,
                                       ),
                                     ],
                                   )
