@@ -38,28 +38,11 @@ class _SplashScreenState extends State<SplashScreen> {
   // Télécharge le fichier depuis GitHub et le sauvegarde localement
   Future<void> updateAndSaveBrands() async {
     String remoteUrl =
-        "https://raw.githubusercontent.com/Sacha213/detrumpez-vous/main/assets/blacklist.json";
+        "https://raw.githubusercontent.com/Sacha213/detrumpez-vous/main/assets/brandlist.json";
     try {
       final response = await http.get(Uri.parse(remoteUrl));
       if (response.statusCode == 200) {
-        final File file = await _getLocalFile("blacklist");
-        // Sauvegarde la réponse dans le fichier local
-        await file.writeAsString(response.body);
-      } else {
-        // En cas d'erreur, on peut garder la version local "embarquée" si besoin
-        debugPrint(
-            "Erreur lors du téléchargement du fichier distant : ${response.statusCode}");
-      }
-    } catch (e) {
-      debugPrint("Exception lors du téléchargement : $e");
-    }
-
-    remoteUrl =
-        "https://raw.githubusercontent.com/Sacha213/detrumpez-vous/main/assets/whitelist.json";
-    try {
-      final response = await http.get(Uri.parse(remoteUrl));
-      if (response.statusCode == 200) {
-        final File file = await _getLocalFile("whitelist");
+        final File file = await _getLocalFile("brandlist");
         // Sauvegarde la réponse dans le fichier local
         await file.writeAsString(response.body);
       } else {
@@ -75,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(2, 51, 153, 1.0),
+      backgroundColor: Colors.cyan.shade50,
       body: SafeArea(
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 40),
@@ -88,7 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 height: 80,
                 width: 80,
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
@@ -113,7 +96,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Text(
                 S.of(context).welcome,
                 style: const TextStyle(
-                  color: Colors.white,
+                  //color: Colors.white,
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
@@ -121,7 +104,7 @@ class _SplashScreenState extends State<SplashScreen> {
               const Text(
                 "Détrumpez-vous!",
                 style: TextStyle(
-                  color: Colors.white,
+                  //color: Colors.white,
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
@@ -131,14 +114,14 @@ class _SplashScreenState extends State<SplashScreen> {
               Text(
                 S.of(context).appDescription,
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.grey,
                   fontSize: 16,
                 ),
                 textAlign: TextAlign.left,
               ),
               const SizedBox(height: 80),
               const Center(
-                child: CupertinoActivityIndicator(color: Colors.white),
+                child: CupertinoActivityIndicator(color: Colors.grey),
               ),
             ],
           ),
