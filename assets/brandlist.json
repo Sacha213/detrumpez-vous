@@ -12478,5 +12478,1877 @@
         "parentOrigin": "FR",
         "normalizedName": "picard",
         "source": "Picard Website/Wikipedia"
+    },
+    {
+        "name": "Pontarlier Anis",
+        "description": "Apéritif anisé",
+        "parentCompany": "Distillerie Guy",
+        "parentOrigin": "FR",
+        "normalizedName": "pontarlier_anis",
+        "source": "Distillerie Guy Website"
+    },
+    {
+        "name": "St Hubert",
+        "description": "Matière grasse végétale",
+        "parentCompany": "Beijing Sanyuan Foods Co., Ltd. / Fosun International Limited",
+        "parentOrigin": "CN",
+        "normalizedName": "st_hubert",
+        "source": "Wikipedia/Company Website"
+    },
+    {
+        "name": "Bridelight",
+        "description": "Beurre allégé",
+        "parentCompany": "Lactalis",
+        "parentOrigin": "FR",
+        "normalizedName": "bridelight",
+        "source": "Lactalis Website/Wikipedia"
+    },
+    {
+        "name": "Desperados",
+        "description": "Bière aromatisée",
+        "parentCompany": "Heineken N.V.",
+        "parentOrigin": "NL",
+        "normalizedName": "desperados",
+        "source": "Heineken Website/Wikipedia"
+    },
+    {
+        "name": "Golden Bridge",
+        "description": "Barres de céréales",
+        "parentCompany": "HACO Holding AG",
+        "parentOrigin": "AT",
+        "normalizedName": "golden_bridge",
+        "source": "HACO Website/Food Production Daily"
+    },
+    {
+        "name": "Pollen de fleurs Gabriel Perroneau",
+        "description": "Pollen de fleurs récolté par les abeilles",
+        "parentCompany": "Apidis",
+        "parentOrigin": "FR",
+        "normalizedName": "pollen_de_fleurs_gabriel_perroneau",
+        "source": "Apidis Website"
+    },
+    {
+        "name": "Simplement Bon et Bio",
+        "description": "Biscottes au Germe de Blé",
+        "parentCompany": "Brioche Pasquier",
+        "parentOrigin": "FR",
+        "normalizedName": "simplement_bon_et_bio",
+        "source": "Brioche Pasquier Website"
+    },
+    {
+        "name": "Timing Earl Grey",
+        "description": "Thé Earl Grey",
+        "parentCompany": "Les Mousquetaires",
+        "parentOrigin": "FR",
+        "normalizedName": "timing_earl_grey",
+        "source": "Wikipedia/Intermarché Website"
+    },
+    {
+        "name": "Boehli",
+        "description": "Biscuits salés pour l'apéritif",
+        "parentCompany": "Boehli SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "boehli",
+        "source": "Boehli Website"
+    },
+    {
+        "name": "Brets",
+        "description": "Chips de pommes de terre",
+        "parentCompany": "Altho SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "brets",
+        "source": "Altho Website/Brets Website"
+    },
+    {
+        "name": "La Phocéenne de Cosmétique",
+        "description": "Produits cosmétiques (ex: Le Petit Olivier)",
+        "parentCompany": "La Phocéenne de Cosmétique SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "la_phoceenne_de_cosmetique",
+        "source": "Company Website/Societe.com"
+    },
+    {
+        "name": "Le Pain des Fleurs",
+        "description": "Tartines craquantes biologiques",
+        "parentCompany": "Ecotone",
+        "parentOrigin": "FR",
+        "normalizedName": "le_pain_des_fleurs",
+        "source": "Ecotone Website/Wikipedia"
+    },
+    {
+        "name": "ProActiv",
+        "description": "Margarine",
+        "parentCompany": "Upfield",
+        "parentOrigin": "NL",
+        "normalizedName": "proactiv",
+        "source": "Upfield Website/Wikipedia"
+    },
+    {
+        "name": "Samyang",
+        "description": "Nouilles instantanées et produits alimentaires coréens",
+        "parentCompany": "Samyang Foods Co., Ltd.",
+        "parentOrigin": "KR",
+        "normalizedName": "samyang",
+        "source": "Samyang Foods Website/Wikipedia"
+    },
+    {
+        "name": "Antésite",
+        "description": "Concentré liquide à base de réglisse à diluer",
+        "parentCompany": "Antésite SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "antesite",
+        "source": "Antésite Website"
+    },
+    {
+        "name": "Duyvis",
+        "description": "Noix et snacks salés",
+        "parentCompany": "PepsiCo, Inc.",
+        "parentOrigin": "US",
+        "normalizedName": "duyvis",
+        "source": "PepsiCo Website/Wikipedia"
+    },
+    {
+        "name": "Spa",
+        "description": "Eau minérale naturelle et limonades",
+        "parentCompany": "Spadel SA",
+        "parentOrigin": "BE",
+        "normalizedName": "spa",
+        "source": "Spadel Website/Wikipedia"
+    },
+    {
+        "name": "Mamie Bio",
+        "description": "Produits alimentaires biologiques (confitures, compotes, etc.)",
+        "parentCompany": "Léa Nature",
+        "parentOrigin": "FR",
+        "normalizedName": "mamie_bio",
+        "source": "Léa Nature Website/Mamie Bio Website"
+    },
+    {
+        "name": "1664 Blonde",
+        "description": "Bière blonde",
+        "parentCompany": "Carlsberg Group",
+        "parentOrigin": "DK",
+        "normalizedName": "1664_blonde",
+        "source": "Carlsberg Group Website/Wikipedia"
+    },
+    {
+        "name": "Saguaro",
+        "description": "Eau de source (marque Lidl)",
+        "parentCompany": "Lidl Stiftung & Co. KG",
+        "parentOrigin": "DE",
+        "normalizedName": "saguaro",
+        "source": "Lidl Website/Wikipedia"
+    },
+    {
+        "name": "Maruja",
+        "description": "Produits alimentaires (olives, conserves)",
+        "parentCompany": "Ángel Camacho Alimentación, S.L.",
+        "parentOrigin": "ES",
+        "normalizedName": "maruja",
+        "source": "Ángel Camacho Website"
+    },
+    {
+        "name": "1664",
+        "description": "Bière",
+        "parentCompany": "Carlsberg Group",
+        "parentOrigin": "DK",
+        "normalizedName": "1664",
+        "source": "Carlsberg Group Website/Wikipedia"
+    },
+    {
+        "name": "Cotterley",
+        "description": "Boissons gazeuses (marque Intermarché)",
+        "parentCompany": "Les Mousquetaires",
+        "parentOrigin": "FR",
+        "normalizedName": "cotterley",
+        "source": "Intermarché Website/Wikipedia"
+    },
+    {
+        "name": "La Pâtelière",
+        "description": "Ingrédients pour pâtisserie (arômes, sucres, aides culinaires)",
+        "parentCompany": "Patrelle SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "la_pateliere",
+        "source": "La Pâtelière Website/Patrelle Website"
+    },
+    {
+        "name": "Le Guérandais",
+        "description": "Sel de Guérande",
+        "parentCompany": "Les Salines de Guérande (Coopérative)",
+        "parentOrigin": "FR",
+        "normalizedName": "le_guerandais",
+        "source": "Le Guérandais Website/Wikipedia"
+    },
+    {
+        "name": "Cultura",
+        "description": "Enseigne de distribution de biens culturels et créatifs",
+        "parentCompany": "Sodival",
+        "parentOrigin": "FR",
+        "normalizedName": "cultura",
+        "source": "Cultura Website/Wikipedia"
+    },
+    {
+        "name": "Real Nature",
+        "description": "Aliments pour animaux de compagnie (marque Fressnapf/Maxi Zoo)",
+        "parentCompany": "Fressnapf Holding SE",
+        "parentOrigin": "DE",
+        "normalizedName": "real_nature",
+        "source": "Maxi Zoo Website/Fressnapf Website"
+    },
+    {
+        "name": "Exacompta",
+        "description": "Articles de papeterie et de classement",
+        "parentCompany": "Exacompta Clairefontaine SA",
+        "parentOrigin": "FR",
+        "normalizedName": "exacompta",
+        "source": "Exacompta Website/Wikipedia"
+    },
+    {
+        "name": "Krisprolls",
+        "description": "Pains suédois grillés",
+        "parentCompany": "Pågen AB",
+        "parentOrigin": "SE",
+        "normalizedName": "krisprolls",
+        "source": "Krisprolls Website/Pågen Website"
+    },
+    {
+        "name": "Rummo",
+        "description": "Pâtes alimentaires italiennes",
+        "parentCompany": "Rummo S.p.A.",
+        "parentOrigin": "IT",
+        "normalizedName": "rummo",
+        "source": "Rummo Website/Wikipedia"
+    },
+    {
+        "name": "Orange",
+        "description": "Opérateur de télécommunications",
+        "parentCompany": "Orange S.A.",
+        "parentOrigin": "FR",
+        "normalizedName": "orange",
+        "source": "Orange Website/Wikipedia"
+    },
+    {
+        "name": "Kiabi",
+        "description": "Enseigne de prêt-à-porter",
+        "parentCompany": "Association Familiale Mulliez (AFM)",
+        "parentOrigin": "FR",
+        "normalizedName": "kiabi",
+        "source": "Kiabi Website/Wikipedia"
+    },
+    {
+        "name": "Sony",
+        "description": "Electronique grand public, jeux vidéo, divertissement",
+        "parentCompany": "Sony Group Corporation",
+        "parentOrigin": "JP",
+        "normalizedName": "sony",
+        "source": "Sony Website/Wikipedia"
+    },
+    {
+        "name": "Briau",
+        "description": "Fromage (type Saint-Paulin)",
+        "parentCompany": "Savencia Fromage & Dairy",
+        "parentOrigin": "FR",
+        "normalizedName": "briau",
+        "source": "Savencia Website/OpenFoodFacts"
+    },
+    {
+        "name": "Soignon",
+        "description": "Fromages et produits laitiers de chèvre",
+        "parentCompany": "Eurial (Filiale d'Agrial)",
+        "parentOrigin": "FR",
+        "normalizedName": "soignon",
+        "source": "Soignon Website/Agrial Website"
+    },
+    {
+        "name": "Fromagerie de Neufchâteau",
+        "description": "Fromages (ex: Caprice des Dieux)",
+        "parentCompany": "Savencia Fromage & Dairy",
+        "parentOrigin": "FR",
+        "normalizedName": "fromagerie_de_neufchateau",
+        "source": "Savencia Website/Wikipedia"
+    },
+    {
+        "name": "Tokapi",
+        "description": "Plateforme en ligne (NFTs, etc.)",
+        "parentCompany": "Tokapi GmbH",
+        "parentOrigin": "DE",
+        "normalizedName": "tokapi",
+        "source": "Tokapi Website/Crunchbase"
+    },
+    {
+        "name": "Gullón",
+        "description": "Biscuits",
+        "parentCompany": "Galletas Gullón S.A.",
+        "parentOrigin": "ES",
+        "normalizedName": "gullon",
+        "source": "Gullón Website/Wikipedia"
+    },
+    {
+        "name": "Bosch",
+        "description": "Technologie et services (électroménager, automobile, outils)",
+        "parentCompany": "Robert Bosch GmbH",
+        "parentOrigin": "DE",
+        "normalizedName": "bosch",
+        "source": "Bosch Website/Wikipedia"
+    },
+    {
+        "name": "Boch",
+        "description": "Arts de la table, céramique (partie de Villeroy & Boch)",
+        "parentCompany": "Villeroy & Boch AG",
+        "parentOrigin": "DE",
+        "normalizedName": "boch",
+        "source": "Villeroy & Boch Website/Wikipedia"
+    },
+    {
+        "name": "Dyson",
+        "description": "Appareils électroménagers (aspirateurs, purificateurs d'air, etc.)",
+        "parentCompany": "Dyson Ltd",
+        "parentOrigin": "SG",
+        "normalizedName": "dyson",
+        "source": "Dyson Website/Wikipedia"
+    },
+    {
+        "name": "Vivien Paille",
+        "description": "Légumes secs, riz, céréales, graines",
+        "parentCompany": "Soufflet Alimentaire (Groupe InVivo)",
+        "parentOrigin": "FR",
+        "normalizedName": "vivien_paille",
+        "source": "Vivien Paille Website/InVivo Group Website"
+    },
+    {
+        "name": "McCormick",
+        "description": "Épices, herbes, assaisonnements, arômes",
+        "parentCompany": "McCormick & Company, Inc.",
+        "parentOrigin": "US",
+        "normalizedName": "mccormick",
+        "source": "McCormick Website/Wikipedia"
+    },
+    {
+        "name": "Singha",
+        "description": "Bière thaïlandaise",
+        "parentCompany": "Boon Rawd Brewery Co., Ltd.",
+        "parentOrigin": "TH",
+        "normalizedName": "singha",
+        "source": "Singha Website/Wikipedia"
+    },
+    {
+        "name": "Meiji",
+        "description": "Produits laitiers, confiseries, produits pharmaceutiques",
+        "parentCompany": "Meiji Holdings Co., Ltd.",
+        "parentOrigin": "JP",
+        "normalizedName": "meiji",
+        "source": "Meiji Website/Wikipedia"
+    },
+    {
+        "name": "Woolworths",
+        "description": "Chaîne de supermarchés (Australie/Nouvelle-Zélande)",
+        "parentCompany": "Woolworths Group Limited",
+        "parentOrigin": "AU",
+        "normalizedName": "woolworths",
+        "source": "Woolworths Group Website/Wikipedia"
+    },
+    {
+        "name": "Dutch Mill",
+        "description": "Produits laitiers (yaourts à boire, lait)",
+        "parentCompany": "Dutch Mill Co., Ltd.",
+        "parentOrigin": "TH",
+        "normalizedName": "dutch_mill",
+        "source": "Dutch Mill Website/Wikipedia"
+    },
+    {
+        "name": "Tipiak",
+        "description": "Produits d'épicerie (couscous, aides culinaires) et plats cuisinés surgelés",
+        "parentCompany": "Tipiak SA",
+        "parentOrigin": "FR",
+        "normalizedName": "tipiak",
+        "source": "Tipiak Website/Wikipedia"
+    },
+    {
+        "name": "Le Brin d'Olivier",
+        "description": "Huile d'olive (marque Intermarché)",
+        "parentCompany": "Les Mousquetaires",
+        "parentOrigin": "FR",
+        "normalizedName": "le_brin_dolivier",
+        "source": "Intermarché Website/OpenFoodFacts"
+    },
+    {
+        "name": "Freeway Cola",
+        "description": "Cola (marque Lidl)",
+        "parentCompany": "Lidl Stiftung & Co. KG",
+        "parentOrigin": "DE",
+        "normalizedName": "freeway_cola",
+        "source": "Lidl Website/Wikipedia"
+    },
+    {
+        "name": "Carlsberg",
+        "description": "Bière",
+        "parentCompany": "Carlsberg Group",
+        "parentOrigin": "DK",
+        "normalizedName": "carlsberg",
+        "source": "Carlsberg Group Website/Wikipedia"
+    },
+    {
+        "name": "Fancy World",
+        "description": "Jouets et articles de fantaisie",
+        "parentCompany": "Fancy World Co., Ltd.",
+        "parentOrigin": "TH",
+        "normalizedName": "fancy_world",
+        "source": "Fancy World Website"
+    },
+    {
+        "name": "Bayer",
+        "description": "Produits pharmaceutiques, santé grand public, produits agricoles",
+        "parentCompany": "Bayer AG",
+        "parentOrigin": "DE",
+        "normalizedName": "bayer",
+        "source": "Bayer Website/Wikipedia"
+    },
+    {
+        "name": "Skippy",
+        "description": "Beurre de cacahuète",
+        "parentCompany": "Hormel Foods Corporation",
+        "parentOrigin": "US",
+        "normalizedName": "skippy",
+        "source": "Skippy Website/Hormel Foods Website"
+    },
+    {
+        "name": "Zapetti",
+        "description": "Plats cuisinés en conserve (raviolis, etc.)",
+        "parentCompany": "Cofigeo",
+        "parentOrigin": "FR",
+        "normalizedName": "zapetti",
+        "source": "Zapetti Website/Cofigeo Website"
+    },
+    {
+        "name": "Pernici",
+        "description": "Biscuits et pâtisseries italiennes",
+        "parentCompany": "Colussi Group S.p.A.",
+        "parentOrigin": "IT",
+        "normalizedName": "pernici",
+        "source": "Colussi Group Website/Wikipedia"
+    },
+    {
+        "name": "Santelmo",
+        "description": "Produits alimentaires (conserves, olives)",
+        "parentCompany": "Ángel Camacho Alimentación, S.L.",
+        "parentOrigin": "ES",
+        "normalizedName": "santelmo",
+        "source": "Ángel Camacho Website"
+    },
+    {
+        "name": "Armand Guy",
+        "description": "Spiritueux (Pontarlier-Anis)",
+        "parentCompany": "Distillerie Pierre Guy",
+        "parentOrigin": "FR",
+        "normalizedName": "armand_guy",
+        "source": "Distillerie Guy Website"
+    },
+    {
+        "name": "Gold River",
+        "description": "Whisky (marque Lidl)",
+        "parentCompany": "Lidl Stiftung & Co. KG",
+        "parentOrigin": "DE",
+        "normalizedName": "gold_river",
+        "source": "Lidl Website/WhiskyBase"
+    },
+    {
+        "name": "Moulin de Valdonne",
+        "description": "Sirops",
+        "parentCompany": "Routin SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "moulin_de_valdonne",
+        "source": "Moulin de Valdonne Website/Routin Website"
+    },
+    {
+        "name": "Saupiquet",
+        "description": "Conserves de poisson (thon, maquereau, sardines)",
+        "parentCompany": "Bolton Group",
+        "parentOrigin": "IT",
+        "normalizedName": "saupiquet",
+        "source": "Saupiquet Website/Bolton Group Website"
+    },
+    {
+        "name": "Vivi Kola",
+        "description": "Boisson gazeuse au cola suisse",
+        "parentCompany": "Vivi Kola AG",
+        "parentOrigin": "CH",
+        "normalizedName": "vivi_kola",
+        "source": "Vivi Kola Website/Wikipedia"
+    },
+    {
+        "name": "Budweiser",
+        "description": "Bière lager américaine",
+        "parentCompany": "Anheuser-Busch InBev SA/NV",
+        "parentOrigin": "BE",
+        "normalizedName": "budweiser",
+        "source": "Budweiser Website/AB InBev Website"
+    },
+    {
+        "name": "1664 0.0%",
+        "description": "Bière sans alcool",
+        "parentCompany": "Carlsberg Group",
+        "parentOrigin": "DK",
+        "normalizedName": "1664_00",
+        "source": "1664 Website/Carlsberg Group Website"
+    },
+    {
+        "name": "Björk",
+        "description": "Produits de soins naturels suédois",
+        "parentCompany": "Björk & Berries AB",
+        "parentOrigin": "SE",
+        "normalizedName": "bjork",
+        "source": "Björk & Berries Website"
+    },
+    {
+        "name": "Garibaldi",
+        "description": "Biscuits aux raisins secs",
+        "parentCompany": "Pladis (Yıldız Holding)",
+        "parentOrigin": "TR",
+        "normalizedName": "garibaldi",
+        "source": "Pladis Website/Wikipedia"
+    },
+    {
+        "name": "Bioetika",
+        "description": "Produits biologiques et naturels",
+        "parentCompany": "Bioetika S.r.l.",
+        "parentOrigin": "IT",
+        "normalizedName": "bioetika",
+        "source": "Bioetika Website"
+    },
+    {
+        "name": "Roger",
+        "description": "Produits laitiers (beurre, crème - marque Roger Rième)",
+        "parentCompany": "Laïta",
+        "parentOrigin": "FR",
+        "normalizedName": "roger",
+        "source": "Laïta Website/Roger Rième Website"
+    },
+    {
+        "name": "Isigny Sainte-Mère",
+        "description": "Produits laitiers AOP (beurre, crème, fromages)",
+        "parentCompany": "Coopérative Isigny Sainte-Mère",
+        "parentOrigin": "FR",
+        "normalizedName": "isigny_sainte_mere",
+        "source": "Isigny Sainte-Mère Website/Wikipedia"
+    },
+    {
+        "name": "Fleurance Nature",
+        "description": "Produits cosmétiques et compléments alimentaires bio",
+        "parentCompany": "Groupe Léa Nature",
+        "parentOrigin": "FR",
+        "normalizedName": "fleurance_nature",
+        "source": "Fleurance Nature Website/Léa Nature Website"
+    },
+    {
+        "name": "Zalando",
+        "description": "Plateforme de mode en ligne",
+        "parentCompany": "Zalando SE",
+        "parentOrigin": "DE",
+        "normalizedName": "zalando",
+        "source": "Zalando Website/Wikipedia"
+    },
+    {
+        "name": "Nobel",
+        "description": "Peintures et revêtements (potentiellement AkzoNobel)",
+        "parentCompany": "AkzoNobel N.V.",
+        "parentOrigin": "NL",
+        "normalizedName": "nobel",
+        "source": "Wikipedia/AkzoNobel Website"
+    },
+    {
+        "name": "Vernel",
+        "description": "Adoucissant textile",
+        "parentCompany": "Henkel AG & Co. KGaA",
+        "parentOrigin": "DE",
+        "normalizedName": "vernel",
+        "source": "Henkel Website/Wikipedia"
+    },
+    {
+        "name": "Kobo",
+        "description": "Liseuses électroniques et livres numériques",
+        "parentCompany": "Rakuten Group, Inc.",
+        "parentOrigin": "JP",
+        "normalizedName": "kobo",
+        "source": "Kobo Website/Wikipedia"
+    },
+    {
+        "name": "Alcampo",
+        "description": "Enseigne de grande distribution",
+        "parentCompany": "Auchan Holding SA",
+        "parentOrigin": "FR",
+        "normalizedName": "alcampo",
+        "source": "Auchan Website/Wikipedia"
+    },
+    {
+        "name": "D'aucy",
+        "description": "Conserves de légumes et plats cuisinés",
+        "parentCompany": "Eureden",
+        "parentOrigin": "FR",
+        "normalizedName": "daucy",
+        "source": "D'aucy Website/Eureden Website"
+    },
+    {
+        "name": "Faxe Kondi",
+        "description": "Boisson gazeuse",
+        "parentCompany": "Royal Unibrew A/S",
+        "parentOrigin": "DK",
+        "normalizedName": "faxe_kondi",
+        "source": "Royal Unibrew Website/Wikipedia"
+    },
+    {
+        "name": "Faxe",
+        "description": "Bière",
+        "parentCompany": "Royal Unibrew A/S",
+        "parentOrigin": "DK",
+        "normalizedName": "faxe",
+        "source": "Royal Unibrew Website/Wikipedia"
+    },
+    {
+        "name": "Jolly Cola",
+        "description": "Boisson gazeuse",
+        "parentCompany": "Brewery Vestfyen A/S",
+        "parentOrigin": "DK",
+        "normalizedName": "jolly_cola",
+        "source": "Wikipedia/Company Website"
+    },
+    {
+        "name": "Harboe",
+        "description": "Boissons (bières, sodas)",
+        "parentCompany": "Harboes Bryggeri A/S",
+        "parentOrigin": "DK",
+        "normalizedName": "harboe",
+        "source": "Harboe Website/Wikipedia"
+    },
+    {
+        "name": "Faxe Vinding",
+        "description": "Nom historique lié à la brasserie Faxe",
+        "parentCompany": "Royal Unibrew A/S",
+        "parentOrigin": "DK",
+        "normalizedName": "faxe_vinding",
+        "source": "Historical Brewery Information/Royal Unibrew Website"
+    },
+    {
+        "name": "Éthiquable",
+        "description": "Produits alimentaires issus du commerce équitable et bio",
+        "parentCompany": "Éthiquable SCOP SA",
+        "parentOrigin": "FR",
+        "normalizedName": "ethiquable",
+        "source": "Éthiquable Website/Wikipedia"
+    },
+    {
+        "name": "Granini",
+        "description": "Jus de fruits",
+        "parentCompany": "Eckes-Granini Group GmbH",
+        "parentOrigin": "DE",
+        "normalizedName": "granini",
+        "source": "Granini Website/Eckes-Granini Website"
+    },
+    {
+        "name": "Casino",
+        "description": "Enseigne de grande distribution et marque distributeur",
+        "parentCompany": "Casino Guichard-Perrachon S.A.",
+        "parentOrigin": "FR",
+        "normalizedName": "casino",
+        "source": "Casino Website/Wikipedia"
+    },
+    {
+        "name": "Oluf Lorentzen",
+        "description": "Distributeur alimentaire et marques propres",
+        "parentCompany": "Oluf Lorentzen AS",
+        "parentOrigin": "NO",
+        "normalizedName": "oluf_lorentzen",
+        "source": "Oluf Lorentzen Website"
+    },
+    {
+        "name": "Fides",
+        "description": "Aliments pour animaux de compagnie",
+        "parentCompany": "Group Depré",
+        "parentOrigin": "BE",
+        "normalizedName": "fides",
+        "source": "Fides Petfood Website/Group Depré Website"
+    },
+    {
+        "name": "Newman",
+        "description": "Produits alimentaires (Newman's Own)",
+        "parentCompany": "Newman's Own, Inc.",
+        "parentOrigin": "US",
+        "normalizedName": "newman",
+        "source": "Newman's Own Website/Wikipedia"
+    },
+    {
+        "name": "Ker Cadélac",
+        "description": "Pâtisseries industrielles",
+        "parentCompany": "Groupe Goûters Magiques",
+        "parentOrigin": "FR",
+        "normalizedName": "ker_cadelac",
+        "source": "Ker Cadélac Website/Goûters Magiques Website"
+    },
+    {
+        "name": "St Mamet",
+        "description": "Conserves de fruits",
+        "parentCompany": "Conserve Italia Soc. Coop. Agricola",
+        "parentOrigin": "IT",
+        "normalizedName": "st_mamet",
+        "source": "St Mamet Website/Conserve Italia Website"
+    },
+    {
+        "name": "Pompotes",
+        "description": "Compotes en gourde",
+        "parentCompany": "Andros Group",
+        "parentOrigin": "FR",
+        "normalizedName": "pompotes",
+        "source": "Pompotes Website/Andros Website"
+    },
+    {
+        "name": "Pom'Potes",
+        "description": "Compotes en gourde",
+        "parentCompany": "Andros Group",
+        "parentOrigin": "FR",
+        "normalizedName": "pompotes",
+        "source": "Pompotes Website/Andros Website"
+    },
+    {
+        "name": "Monique Ranou",
+        "description": "Marque distributeur (charcuterie, traiteur)",
+        "parentCompany": "Groupement Les Mousquetaires (ITM Entreprises S.A.)",
+        "parentOrigin": "FR",
+        "normalizedName": "monique_ranou",
+        "source": "Intermarché Website/Wikipedia"
+    },
+    {
+        "name": "Zara",
+        "description": "Prêt-à-porter",
+        "parentCompany": "Inditex (Industria de Diseño Textil, S.A.)",
+        "parentOrigin": "ES",
+        "normalizedName": "zara",
+        "source": "Zara Website/Inditex Website"
+    },
+    {
+        "name": "Bouton d'Or",
+        "description": "Marque distributeur (épicerie, produits laitiers)",
+        "parentCompany": "Groupement Les Mousquetaires (ITM Entreprises S.A.)",
+        "parentOrigin": "FR",
+        "normalizedName": "bouton_dor",
+        "source": "Intermarché Website/Wikipedia"
+    },
+    {
+        "name": "Tic Tac",
+        "description": "Confiserie",
+        "parentCompany": "Ferrero S.p.A.",
+        "parentOrigin": "IT",
+        "normalizedName": "tic_tac",
+        "source": "Tic Tac Website/Ferrero Website"
+    },
+    {
+        "name": "Albert Heijn",
+        "description": "Enseigne de grande distribution et marque distributeur",
+        "parentCompany": "Ahold Delhaize N.V.",
+        "parentOrigin": "NL",
+        "normalizedName": "albert_heijn",
+        "source": "Albert Heijn Website/Ahold Delhaize Website"
+    },
+    {
+        "name": "Tetley",
+        "description": "Thé",
+        "parentCompany": "Tata Consumer Products Limited",
+        "parentOrigin": "IN",
+        "normalizedName": "tetley",
+        "source": "Tetley Website/Tata Consumer Products Website"
+    },
+    {
+        "name": "Rohan",
+        "description": "Vêtements et équipements de plein air",
+        "parentCompany": "Rohan Designs Ltd",
+        "parentOrigin": "GB",
+        "normalizedName": "rohan",
+        "source": "Rohan Website/Wikipedia"
+    },
+    {
+        "name": "Dentamyl",
+        "description": "Marque distributeur (hygiène bucco-dentaire)",
+        "parentCompany": "Norma Lebensmittelfilialbetrieb Stiftung & Co. KG",
+        "parentOrigin": "DE",
+        "normalizedName": "dentamyl",
+        "source": "OpenFoodFacts/Norma Website"
+    },
+    {
+        "name": "Curver",
+        "description": "Articles ménagers en plastique",
+        "parentCompany": "BC Partners",
+        "parentOrigin": "GB",
+        "normalizedName": "curver",
+        "source": "Curver Website/Keter Group Website/BC Partners Website"
+    },
+    {
+        "name": "Cidre Sorre",
+        "description": "Cidre",
+        "parentCompany": "Cidrerie Sorre",
+        "parentOrigin": "FR",
+        "normalizedName": "cidre_sorre",
+        "source": "Cidre Sorre Website"
+    },
+    {
+        "name": "Grain de Sail",
+        "description": "Chocolat et café transportés à la voile",
+        "parentCompany": "Grain de Sail SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "grain_de_sail",
+        "source": "Grain de Sail Website"
+    },
+    {
+        "name": "Système U",
+        "description": "Enseigne de grande distribution et marque distributeur",
+        "parentCompany": "Système U Centrale Nationale",
+        "parentOrigin": "FR",
+        "normalizedName": "systeme_u",
+        "source": "Système U Website/Wikipedia"
+    },
+    {
+        "name": "Solevita",
+        "description": "Marque distributeur (jus de fruits, boissons)",
+        "parentCompany": "Lidl Stiftung & Co. KG",
+        "parentOrigin": "DE",
+        "normalizedName": "solevita",
+        "source": "Lidl Website/Wikipedia"
+    },
+    {
+        "name": "Campari",
+        "description": "Boisson alcoolisée apéritive",
+        "parentCompany": "Davide Campari-Milano N.V.",
+        "parentOrigin": "IT",
+        "normalizedName": "campari",
+        "source": "Campari Website/Wikipedia"
+    },
+    {
+        "name": "Ælred",
+        "description": "Bière artisanale",
+        "parentCompany": "Brasserie Ælred",
+        "parentOrigin": "FR",
+        "normalizedName": "aelred",
+        "source": "Ælred Website"
+    },
+    {
+        "name": "Hermès",
+        "description": "Marque de luxe (maroquinerie, prêt-à-porter, parfums)",
+        "parentCompany": "Hermès International S.A.",
+        "parentOrigin": "FR",
+        "normalizedName": "hermes",
+        "source": "Hermès Website/Wikipedia"
+    },
+    {
+        "name": "LVMH",
+        "description": "Groupe de luxe (possède de nombreuses marques)",
+        "parentCompany": "LVMH Moët Hennessy Louis Vuitton SE",
+        "parentOrigin": "FR",
+        "normalizedName": "lvmh",
+        "source": "LVMH Website/Wikipedia"
+    },
+    {
+        "name": "Erstein",
+        "description": "Sucre",
+        "parentCompany": "Cristal Union",
+        "parentOrigin": "FR",
+        "normalizedName": "erstein",
+        "source": "Erstein Website/Cristal Union Website"
+    },
+    {
+        "name": "Carambar",
+        "description": "Confiserie",
+        "parentCompany": "Eurazeo",
+        "parentOrigin": "FR",
+        "normalizedName": "carambar",
+        "source": "Carambar&Co Website/Eurazeo Website"
+    },
+    {
+        "name": "Connétable",
+        "description": "Conserves de poissons",
+        "parentCompany": "Chancerelle SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "connetable",
+        "source": "Connétable Website/Chancerelle Website"
+    },
+    {
+        "name": "Pressade",
+        "description": "Jus de fruits",
+        "parentCompany": "Britvic plc",
+        "parentOrigin": "GB",
+        "normalizedName": "pressade",
+        "source": "Pressade Website/Britvic Website"
+    },
+    {
+        "name": "Caraïbos",
+        "description": "Jus et nectars de fruits exotiques",
+        "parentCompany": "Britvic plc",
+        "parentOrigin": "GB",
+        "normalizedName": "caraibos",
+        "source": "Caraïbos Website/Britvic Website"
+    },
+    {
+        "name": "Cubanisto",
+        "description": "Bière aromatisée au rhum",
+        "parentCompany": "Anheuser-Busch InBev SA/NV",
+        "parentOrigin": "BE",
+        "normalizedName": "cubanisto",
+        "source": "Cubanisto Website/AB InBev Website"
+    },
+    {
+        "name": "River",
+        "description": "Marque distributeur (boissons)",
+        "parentCompany": "Aldi Einkauf GmbH & Co. oHG (Aldi Süd)",
+        "parentOrigin": "DE",
+        "normalizedName": "river",
+        "source": "Aldi Website/Wikipedia"
+    },
+    {
+        "name": "Champré",
+        "description": "Vin mousseux",
+        "parentCompany": "Viña Valdivieso S.A.",
+        "parentOrigin": "CL",
+        "normalizedName": "champre",
+        "source": "Valdivieso Website/Wine Retailer Sites"
+    },
+    {
+        "name": "Daco Bello",
+        "description": "Fruits secs",
+        "parentCompany": "Daco France SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "daco_bello",
+        "source": "Daco Bello Website"
+    },
+    {
+        "name": "Perlino",
+        "description": "Vins effervescents italiens",
+        "parentCompany": "La Martiniquaise-Bardinet",
+        "parentOrigin": "FR",
+        "normalizedName": "perlino",
+        "source": "Perlino Website/La Martiniquaise Website"
+    },
+    {
+        "name": "Briochin",
+        "description": "Produits d'entretien traditionnels",
+        "parentCompany": "Altaïr Group",
+        "parentOrigin": "FR",
+        "normalizedName": "briochin",
+        "source": "Le Briochin Website/Altaïr Group Website"
+    },
+    {
+        "name": "Patrimoine Gourmand",
+        "description": "Marque distributeur (produits du terroir)",
+        "parentCompany": "E.Leclerc",
+        "parentOrigin": "FR",
+        "normalizedName": "patrimoine_gourmand",
+        "source": "E.Leclerc Website/Wikipedia"
+    },
+    {
+        "name": "Boni",
+        "description": "Marque distributeur",
+        "parentCompany": "Colruyt Group N.V.",
+        "parentOrigin": "BE",
+        "normalizedName": "boni",
+        "source": "Colruyt Group Website/Wikipedia"
+    },
+    {
+        "name": "Ivoria",
+        "description": "Marque distributeur (café, chocolat)",
+        "parentCompany": "Groupement Les Mousquetaires (ITM Entreprises S.A.)",
+        "parentOrigin": "FR",
+        "normalizedName": "ivoria",
+        "source": "Intermarché Website/Wikipedia"
+    },
+    {
+        "name": "Kia",
+        "description": "Constructeur automobile",
+        "parentCompany": "Hyundai Motor Group",
+        "parentOrigin": "KR",
+        "normalizedName": "kia",
+        "source": "Kia Website/Wikipedia"
+    },
+    {
+        "name": "Pez",
+        "description": "Distributeurs de bonbons et bonbons",
+        "parentCompany": "Pez International GmbH",
+        "parentOrigin": "AT",
+        "normalizedName": "pez",
+        "source": "Pez Website/Wikipedia"
+    },
+    {
+        "name": "Caudalie",
+        "description": "Produits cosmétiques à base de vigne",
+        "parentCompany": "Caudalie SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "caudalie",
+        "source": "Caudalie Website/Wikipedia"
+    },
+    {
+        "name": "Gotxoki",
+        "description": "Produits alimentaires basques (Piment d'Espelette)",
+        "parentCompany": "Gotxoki SARL",
+        "parentOrigin": "FR",
+        "normalizedName": "gotxoki",
+        "source": "Gotxoki Website/Infogreffe"
+    },
+    {
+        "name": "Delhaize",
+        "description": "Enseigne de grande distribution et marque distributeur",
+        "parentCompany": "Ahold Delhaize N.V.",
+        "parentOrigin": "NL",
+        "normalizedName": "delhaize",
+        "source": "Delhaize Website/Ahold Delhaize Website"
+    },
+    {
+        "name": "Quick",
+        "description": "Chaîne de restauration rapide",
+        "parentCompany": "HIG Capital, LLC",
+        "parentOrigin": "US",
+        "normalizedName": "quick",
+        "source": "Quick Website/Wikipedia"
+    },
+    {
+        "name": "TooGood",
+        "description": "Application anti-gaspillage alimentaire (Too Good To Go)",
+        "parentCompany": "Too Good To Go ApS",
+        "parentOrigin": "DK",
+        "normalizedName": "toogood",
+        "source": "Too Good To Go Website/Wikipedia"
+    },
+    {
+        "name": "Lee Cooper",
+        "description": "Vêtements (jeanswear)",
+        "parentCompany": "Iconix Brand Group, Inc.",
+        "parentOrigin": "US",
+        "normalizedName": "lee_cooper",
+        "source": "Lee Cooper Website/Iconix Brand Group Website"
+    },
+    {
+        "name": "Airness",
+        "description": "Équipementier sportif",
+        "parentCompany": "Airness SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "airness",
+        "source": "Airness Website/Wikipedia"
+    },
+    {
+        "name": "Rauch",
+        "description": "Jus de fruits et boissons",
+        "parentCompany": "Rauch Fruchtsäfte GmbH & Co OG",
+        "parentOrigin": "AT",
+        "normalizedName": "rauch",
+        "source": "Rauch Website/Wikipedia"
+    },
+    {
+        "name": "La Baleine",
+        "description": "Sel de mer",
+        "parentCompany": "Salins Group",
+        "parentOrigin": "FR",
+        "normalizedName": "la_baleine",
+        "source": "La Baleine Website/Salins Group Website"
+    },
+    {
+        "name": "Monster",
+        "description": "Boisson énergisante",
+        "parentCompany": "Monster Beverage Corporation",
+        "parentOrigin": "US",
+        "normalizedName": "monster",
+        "source": "Monster Energy Website/Wikipedia"
+    },
+    {
+        "name": "Matines",
+        "description": "Œufs",
+        "parentCompany": "Avril Group",
+        "parentOrigin": "FR",
+        "normalizedName": "matines",
+        "source": "Matines Website/Avril Group Website"
+    },
+    {
+        "name": "Auchan Bio",
+        "description": "Marque distributeur (produits biologiques)",
+        "parentCompany": "Auchan Holding SA",
+        "parentOrigin": "FR",
+        "normalizedName": "auchan_bio",
+        "source": "Auchan Website/Wikipedia"
+    },
+    {
+        "name": "Vendôme",
+        "description": "Produits d'hygiène et de soin",
+        "parentCompany": "Bolton Group S.p.A.",
+        "parentOrigin": "IT",
+        "normalizedName": "vendome",
+        "source": "Wikipedia/Bolton Group Website"
+    },
+    {
+        "name": "Cien",
+        "description": "Marque distributeur (cosmétiques, soins)",
+        "parentCompany": "Lidl Stiftung & Co. KG",
+        "parentOrigin": "DE",
+        "normalizedName": "cien",
+        "source": "Lidl Website/Wikipedia"
+    },
+    {
+        "name": "Gibson's",
+        "description": "Gin",
+        "parentCompany": "La Martiniquaise-Bardinet",
+        "parentOrigin": "FR",
+        "normalizedName": "gibsons",
+        "source": "Gibson's Gin Website/La Martiniquaise Website"
+    },
+    {
+        "name": "Sanytol",
+        "description": "Produits désinfectants",
+        "parentCompany": "AC Marca Group S.L.",
+        "parentOrigin": "ES",
+        "normalizedName": "sanytol",
+        "source": "Sanytol Website/AC Marca Website"
+    },
+    {
+        "name": "Nut'ly",
+        "description": "Pâtes à tartiner et produits à base de noix",
+        "parentCompany": "Lucien Georgelin SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "nutly",
+        "source": "Lucien Georgelin Website/Retailer Sites"
+    },
+    {
+        "name": "Les Vergers St Joseph",
+        "description": "Jus de fruits",
+        "parentCompany": "LSDH (Laiterie de Saint-Denis-de-l'Hôtel)",
+        "parentOrigin": "FR",
+        "normalizedName": "les_vergers_st_joseph",
+        "source": "LSDH Website"
+    },
+    {
+        "name": "Whole Earth",
+        "description": "Produits alimentaires biologiques (beurre de cacahuète, boissons)",
+        "parentCompany": "PAI Partners",
+        "parentOrigin": "FR",
+        "normalizedName": "whole_earth",
+        "source": "Whole Earth Website/Ecotone Website/PAI Partners Website"
+    },
+    {
+        "name": "Maison Perrier",
+        "description": "Eau pétillante aromatisée",
+        "parentCompany": "Nestlé S.A.",
+        "parentOrigin": "CH",
+        "normalizedName": "maison_perrier",
+        "source": "Maison Perrier Website/Nestlé Website"
+    },
+    {
+        "name": "HG",
+        "description": "Produits de nettoyage et d'entretien",
+        "parentCompany": "Cobepa",
+        "parentOrigin": "BE",
+        "normalizedName": "hg",
+        "source": "HG Website/Cobepa Website"
+    },
+    {
+        "name": "Les Mousquetaires",
+        "description": "Groupement de distribution et marques distributeur",
+        "parentCompany": "Groupement Les Mousquetaires (ITM Entreprises S.A.)",
+        "parentOrigin": "FR",
+        "normalizedName": "les_mousquetaires",
+        "source": "Les Mousquetaires Website/Wikipedia"
+    },
+    {
+        "name": "La Belle-Îloise",
+        "description": "Conserves de poissons",
+        "parentCompany": "Conserverie La Belle-Îloise SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "la_belle_iloise",
+        "source": "La Belle-Îloise Website"
+    },
+    {
+        "name": "Sephora",
+        "description": "Distribution de parfums et cosmétiques",
+        "parentCompany": "LVMH Moët Hennessy Louis Vuitton SE",
+        "parentOrigin": "FR",
+        "normalizedName": "sephora",
+        "source": "Sephora Website/LVMH Website"
+    },
+    {
+        "name": "Carapelli",
+        "description": "Huile d'olive",
+        "parentCompany": "CVC Capital Partners",
+        "parentOrigin": "LU",
+        "normalizedName": "carapelli",
+        "source": "Carapelli Website/Deoleo Website/CVC Website"
+    },
+    {
+        "name": "Cirio",
+        "description": "Conserves de tomates et légumes",
+        "parentCompany": "Conserve Italia Soc. Coop. Agricola",
+        "parentOrigin": "IT",
+        "normalizedName": "cirio",
+        "source": "Cirio Website/Conserve Italia Website"
+    },
+    {
+        "name": "Rema 1000",
+        "description": "Enseigne de hard-discount et marque distributeur",
+        "parentCompany": "Reitan Handel AS",
+        "parentOrigin": "NO",
+        "normalizedName": "rema_1000",
+        "source": "Rema 1000 Website/Wikipedia"
+    },
+    {
+        "name": "Biovillage",
+        "description": "Marque distributeur (produits biologiques)",
+        "parentCompany": "E.Leclerc",
+        "parentOrigin": "FR",
+        "normalizedName": "biovillage",
+        "source": "E.Leclerc Website/Wikipedia"
+    },
+    {
+        "name": "Calanda",
+        "description": "Bière",
+        "parentCompany": "Heineken N.V.",
+        "parentOrigin": "NL",
+        "normalizedName": "calanda",
+        "source": "Calanda Website/Heineken Website"
+    },
+    {
+        "name": "Pure Via",
+        "description": "Édulcorants à base de stévia",
+        "parentCompany": "Whole Earth Brands, Inc.",
+        "parentOrigin": "US",
+        "normalizedName": "pure_via",
+        "source": "Pure Via Website/Whole Earth Brands Website"
+    },
+    {
+        "name": "Regain",
+        "description": "Marque distributeur (produits sportifs, nutrition)",
+        "parentCompany": "Groupement Les Mousquetaires (ITM Entreprises S.A.)",
+        "parentOrigin": "FR",
+        "normalizedName": "regain",
+        "source": "Intermarché Website/Wikipedia"
+    },
+    {
+        "name": "Sélection des Mousquetaires",
+        "description": "Marque distributeur (produits premium)",
+        "parentCompany": "Groupement Les Mousquetaires (ITM Entreprises S.A.)",
+        "parentOrigin": "FR",
+        "normalizedName": "selection_des_mousquetaires",
+        "source": "Intermarché Website/Wikipedia"
+    },
+    {
+        "name": "Popp",
+        "description": "Salades traiteur et produits fins",
+        "parentCompany": "Wernsing Food Family GmbH & Co. KG",
+        "parentOrigin": "DE",
+        "normalizedName": "popp",
+        "source": "Popp Feinkost Website/Wernsing Food Family Website"
+    },
+    {
+        "name": "Francine",
+        "description": "Farine",
+        "parentCompany": "VIVESCIA Industries",
+        "parentOrigin": "FR",
+        "normalizedName": "francine",
+        "source": "Francine Website/VIVESCIA Website"
+    },
+    {
+        "name": "Garancia",
+        "description": "Produits cosmétiques",
+        "parentCompany": "Laboratoires Expanscience",
+        "parentOrigin": "FR",
+        "normalizedName": "garancia",
+        "source": "Garancia Website/Expanscience Website"
+    },
+    {
+        "name": "Kaffe Kapslen",
+        "description": "Capsules de café compatibles",
+        "parentCompany": "KaffeKapslen ApS",
+        "parentOrigin": "DK",
+        "normalizedName": "kaffe_kapslen",
+        "source": "Kaffe Kapslen Website"
+    },
+    {
+        "name": "Eco+",
+        "description": "Marque distributeur (premier prix)",
+        "parentCompany": "E.Leclerc",
+        "parentOrigin": "FR",
+        "normalizedName": "eco",
+        "source": "E.Leclerc Website/Wikipedia"
+    },
+    {
+        "name": "Benco",
+        "description": "Boisson chocolatée en poudre",
+        "parentCompany": "GBfoods S.A.",
+        "parentOrigin": "ES",
+        "normalizedName": "benco",
+        "source": "Benco Website/GBfoods Website"
+    },
+    {
+        "name": "William Peel",
+        "description": "Whisky",
+        "parentCompany": "COFEPP (Compagnie Financière Européenne de Prises de Participation)",
+        "parentOrigin": "FR",
+        "normalizedName": "william_peel",
+        "source": "William Peel Website/COFEPP Website"
+    },
+    {
+        "name": "Coop",
+        "description": "Enseigne de grande distribution et marque distributeur (Suisse)",
+        "parentCompany": "Coop Group Genossenschaft",
+        "parentOrigin": "CH",
+        "normalizedName": "coop",
+        "source": "Coop Website/Wikipedia"
+    },
+    {
+        "name": "Parmentier",
+        "description": "Conserves de sardines",
+        "parentCompany": "Bolton Group S.p.A.",
+        "parentOrigin": "IT",
+        "normalizedName": "parmentier",
+        "source": "Parmentier Website/Bolton Group Website"
+    },
+    {
+        "name": "La Boulangère Bio",
+        "description": "Pains et viennoiseries biologiques",
+        "parentCompany": "Norac Foods",
+        "parentOrigin": "FR",
+        "normalizedName": "la_boulangere_bio",
+        "source": "La Boulangère Website/Norac Foods Website"
+    },
+    {
+        "name": "Crumbel",
+        "description": "Marque distributeur (biscuits, pâtisseries)",
+        "parentCompany": "Colruyt Group N.V.",
+        "parentOrigin": "BE",
+        "normalizedName": "crumbel",
+        "source": "Colruyt Group Website/OpenFoodFacts"
+    },
+    {
+        "name": "Monoprix Bio",
+        "description": "Marque distributeur (produits biologiques)",
+        "parentCompany": "Casino Guichard-Perrachon S.A.",
+        "parentOrigin": "FR",
+        "normalizedName": "monoprix_bio",
+        "source": "Monoprix Website/Wikipedia"
+    },
+    {
+        "name": "Justin Bridou",
+        "description": "Saucisson sec",
+        "parentCompany": "Cofigeo",
+        "parentOrigin": "FR",
+        "normalizedName": "justin_bridou",
+        "source": "Justin Bridou Website/Cofigeo Website"
+    },
+    {
+        "name": "Haugen-Gruppen",
+        "description": "Distributeur alimentaire et marques propres",
+        "parentCompany": "Haugen-Gruppen AS",
+        "parentOrigin": "NO",
+        "normalizedName": "haugen_gruppen",
+        "source": "Haugen-Gruppen Website"
+    },
+    {
+        "name": "Ifantis",
+        "description": "Produits alimentaires (charcuterie, salades)",
+        "parentCompany": "Ifantis Group S.A.",
+        "parentOrigin": "GR",
+        "normalizedName": "ifantis",
+        "source": "Ifantis Website/Wikipedia"
+    },
+    {
+        "name": "Babybel",
+        "description": "Fromage en portion individuelle",
+        "parentCompany": "Groupe Bel S.A.",
+        "parentOrigin": "FR",
+        "normalizedName": "babybel",
+        "source": "Babybel Website/Groupe Bel Website"
+    },
+    {
+        "name": "Kwak",
+        "description": "Bière belge",
+        "parentCompany": "Anheuser-Busch InBev SA/NV",
+        "parentOrigin": "BE",
+        "normalizedName": "kwak",
+        "source": "Wikipedia/AB InBev Website"
+    },
+    {
+        "name": "Révillon",
+        "description": "Chocolats (papillotes)",
+        "parentCompany": "Savencia Fromage & Dairy",
+        "parentOrigin": "FR",
+        "normalizedName": "revillon",
+        "source": "Révillon Chocolatier Website/Savencia Website"
+    },
+    {
+        "name": "Les Ruchers de Bourgogne",
+        "description": "Miel de Bourgogne (Nom utilisé par plusieurs producteurs locaux/potentiellement Famille Perronneau)",
+        "parentCompany": "Famille Perronneau Apiculteurs",
+        "parentOrigin": "FR",
+        "normalizedName": "les_ruchers_de_bourgogne",
+        "source": "Recherche Producteurs Locaux/Famille Perronneau"
+    },
+    {
+        "name": "Ekibio",
+        "description": "Distributeur de produits biologiques et écologiques",
+        "parentCompany": "PAI Partners",
+        "parentOrigin": "FR",
+        "normalizedName": "ekibio",
+        "source": "Ekibio Website/Ecotone Website/PAI Partners Website"
+    },
+    {
+        "name": "La Compagnie des Pruneaux",
+        "description": "Pruneaux d'Agen",
+        "parentCompany": "Maître Prunille SAS (France Prune)",
+        "parentOrigin": "FR",
+        "normalizedName": "la_compagnie_des_pruneaux",
+        "source": "Maître Prunille Website/France Prune Website"
+    },
+    {
+        "name": "Le Grand Prix",
+        "description": "Marque distributeur (snacks, boissons - Aldi probable)",
+        "parentCompany": "Aldi Einkauf GmbH & Co. oHG",
+        "parentOrigin": "DE",
+        "normalizedName": "le_grand_prix",
+        "source": "OpenFoodFacts/Aldi Website"
+    },
+    {
+        "name": "Le Petit Olivier",
+        "description": "Produits cosmétiques à base d'huile d'olive",
+        "parentCompany": "La Phocéenne de Cosmétique SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "le_petit_olivier",
+        "source": "Le Petit Olivier Website"
+    },
+    {
+        "name": "Qualité & Prix",
+        "description": "Marque distributeur",
+        "parentCompany": "Coop Group Genossenschaft",
+        "parentOrigin": "CH",
+        "normalizedName": "qualite_prix",
+        "source": "Coop Website/Wikipedia"
+    },
+    {
+        "name": "Pantene Pro-V",
+        "description": "Produits capillaires",
+        "parentCompany": "Procter & Gamble Company (P&G)",
+        "parentOrigin": "US",
+        "normalizedName": "pantene_pro_v",
+        "source": "Pantene Website/P&G Website"
+    },
+    {
+        "name": "Pöschl Tabak",
+        "description": "Tabac (principalement sans fumée)",
+        "parentCompany": "Pöschl Tabak GmbH & Co. KG",
+        "parentOrigin": "DE",
+        "normalizedName": "poschl_tabak",
+        "source": "Pöschl Tabak Website/Wikipedia"
+    },
+    {
+        "name": "Tablier Blanc",
+        "description": "Marque distributeur (aide culinaire, épicerie)",
+        "parentCompany": "Groupement Les Mousquetaires (ITM Entreprises S.A.)",
+        "parentOrigin": "FR",
+        "normalizedName": "tablier_blanc",
+        "source": "Intermarché Website/Wikipedia"
+    },
+    {
+        "name": "Holy Fruits",
+        "description": "Fruits secs",
+        "parentCompany": "Mondial Fruits Secs SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "holy_fruits",
+        "source": "Holy Fruits Website/Mondial Fruits Secs Website"
+    },
+    {
+        "name": "Vranken",
+        "description": "Champagne et vins",
+        "parentCompany": "Vranken-Pommery Monopole S.A.",
+        "parentOrigin": "FR",
+        "normalizedName": "vranken",
+        "source": "Vranken Pommery Website/Wikipedia"
+    },
+    {
+        "name": "Carrefour Bio",
+        "description": "Marque distributeur (produits biologiques)",
+        "parentCompany": "Carrefour S.A.",
+        "parentOrigin": "FR",
+        "normalizedName": "carrefour_bio",
+        "source": "Carrefour Website/Wikipedia"
+    },
+    {
+        "name": "Menguy's",
+        "description": "Produits pour apéritif (graines, fruits secs)",
+        "parentCompany": "Menguy's SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "menguys",
+        "source": "Menguy's Website"
+    },
+    {
+        "name": "Gayelord Hauser",
+        "description": "Produits diététiques et nutritionnels",
+        "parentCompany": "PAI Partners",
+        "parentOrigin": "FR",
+        "normalizedName": "gayelord_hauser",
+        "source": "Gayelord Hauser Website/Ecotone Website/PAI Partners Website"
+    },
+    {
+        "name": "Kusmi Tea",
+        "description": "Thé",
+        "parentCompany": "PAI Partners",
+        "parentOrigin": "FR",
+        "normalizedName": "kusmi_tea",
+        "source": "Kusmi Tea Website/Orientis Gourmet Website/PAI Partners Website"
+    },
+    {
+        "name": "Liebig",
+        "description": "Soupes",
+        "parentCompany": "GBfoods S.A.",
+        "parentOrigin": "ES",
+        "normalizedName": "liebig",
+        "source": "Liebig Website/GBfoods Website"
+    },
+    {
+        "name": "Georges Blanc",
+        "description": "Produits gastronomiques (plats préparés, épicerie fine)",
+        "parentCompany": "Groupe Georges Blanc",
+        "parentOrigin": "FR",
+        "normalizedName": "georges_blanc",
+        "source": "Georges Blanc Website"
+    },
+    {
+        "name": "Biocura",
+        "description": "Marque distributeur (cosmétiques)",
+        "parentCompany": "Aldi Einkauf GmbH & Co. oHG (Aldi Nord/Süd)",
+        "parentOrigin": "DE",
+        "normalizedName": "biocura",
+        "source": "Aldi Website/Wikipedia"
+    },
+    {
+        "name": "San Miguel",
+        "description": "Bière",
+        "parentCompany": "Mahou San Miguel S.A.",
+        "parentOrigin": "ES",
+        "normalizedName": "san_miguel",
+        "source": "San Miguel Website/Mahou San Miguel Website"
+    },
+    {
+        "name": "Marks & Spencer",
+        "description": "Enseigne de distribution et marque distributeur",
+        "parentCompany": "Marks and Spencer Group plc",
+        "parentOrigin": "GB",
+        "normalizedName": "marks_spencer",
+        "source": "Marks & Spencer Website/Wikipedia"
+    },
+    {
+        "name": "Blue Dragon",
+        "description": "Produits alimentaires asiatiques",
+        "parentCompany": "Associated British Foods plc (ABF)",
+        "parentOrigin": "GB",
+        "normalizedName": "blue_dragon",
+        "source": "Blue Dragon Website/ABF Website"
+    },
+    {
+        "name": "Crescent Pharma",
+        "description": "Produits pharmaceutiques génériques",
+        "parentCompany": "Crescent Pharma Limited",
+        "parentOrigin": "GB",
+        "normalizedName": "crescent_pharma",
+        "source": "Crescent Pharma Website"
+    },
+    {
+        "name": "Chin NutraCeuticals",
+        "description": "Produits nutraceutiques",
+        "parentCompany": "Shaanxi Chin NutraCeuticals Inc.",
+        "parentOrigin": "CN",
+        "normalizedName": "chin_nutraceuticals",
+        "source": "Company Website/Bloomberg"
+    },
+    {
+        "name": "Coca-Cola Zero",
+        "description": "Boisson gazeuse sans sucre",
+        "parentCompany": "The Coca-Cola Company",
+        "parentOrigin": "US",
+        "normalizedName": "coca_cola_zero",
+        "source": "Coca-Cola Website/Wikipedia"
+    },
+    {
+        "name": "Rio Mare",
+        "description": "Conserves de thon",
+        "parentCompany": "Bolton Group S.p.A.",
+        "parentOrigin": "IT",
+        "normalizedName": "rio_mare",
+        "source": "Rio Mare Website/Bolton Group Website"
+    },
+    {
+        "name": "Natali",
+        "description": "Produits alimentaires biologiques (aides culinaires)",
+        "parentCompany": "Natali SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "natali",
+        "source": "Natali Website"
+    },
+    {
+        "name": "Prosain",
+        "description": "Conserves et plats cuisinés biologiques",
+        "parentCompany": "Prosain SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "prosain",
+        "source": "Prosain Website"
+    },
+    {
+        "name": "Thiriet",
+        "description": "Produits surgelés",
+        "parentCompany": "Thiriet SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "thiriet",
+        "source": "Thiriet Website/Wikipedia"
+    },
+    {
+        "name": "Mackays",
+        "description": "Confitures et marmelades",
+        "parentCompany": "Mackays Ltd",
+        "parentOrigin": "GB",
+        "normalizedName": "mackays",
+        "source": "Mackays Website"
+    },
+    {
+        "name": "Hénaff",
+        "description": "Pâté et produits de charcuterie",
+        "parentCompany": "Jean Hénaff SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "henaff",
+        "source": "Hénaff Website/Wikipedia"
+    },
+    {
+        "name": "Unilever",
+        "description": "Groupe multinational de biens de consommation",
+        "parentCompany": "Unilever PLC",
+        "parentOrigin": "GB",
+        "normalizedName": "unilever",
+        "source": "Unilever Website/Wikipedia"
+    },
+    {
+        "name": "Lindt Excellence",
+        "description": "Tablettes de chocolat noir",
+        "parentCompany": "Chocoladefabriken Lindt & Sprüngli AG",
+        "parentOrigin": "CH",
+        "normalizedName": "lindt_excellence",
+        "source": "Lindt Website/Wikipedia"
+    },
+    {
+        "name": "Optisana",
+        "description": "Marque distributeur (produits de santé, vitamines)",
+        "parentCompany": "Lidl Stiftung & Co. KG",
+        "parentOrigin": "DE",
+        "normalizedName": "optisana",
+        "source": "Lidl Website/Wikipedia"
+    },
+    {
+        "name": "Staedtler",
+        "description": "Instruments d'écriture et de dessin",
+        "parentCompany": "Staedtler Mars GmbH & Co. KG",
+        "parentOrigin": "DE",
+        "normalizedName": "staedtler",
+        "source": "Staedtler Website/Wikipedia"
+    },
+    {
+        "name": "Moulin des Moines",
+        "description": "Produits alimentaires biologiques (farines, céréales)",
+        "parentCompany": "Moulin des Moines SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "moulin_des_moines",
+        "source": "Moulin des Moines Website"
+    },
+    {
+        "name": "Tönissteiner",
+        "description": "Eau minérale",
+        "parentCompany": "Privatbrunnen Tönissteiner Sprudel Dr. C. Kerstiens GmbH",
+        "parentOrigin": "DE",
+        "normalizedName": "tonissteiner",
+        "source": "Tönissteiner Website/Wikipedia"
+    },
+    {
+        "name": "Artiach",
+        "description": "Biscuits",
+        "parentCompany": "Adam Foods S.L.",
+        "parentOrigin": "ES",
+        "normalizedName": "artiach",
+        "source": "Artiach Website/Adam Foods Website"
+    },
+    {
+        "name": "Lotus",
+        "description": "Biscuits (spéculoos) et produits dérivés",
+        "parentCompany": "Lotus Bakeries NV",
+        "parentOrigin": "BE",
+        "normalizedName": "lotus",
+        "source": "Lotus Biscoff Website/Lotus Bakeries Website"
+    },
+    {
+        "name": "Sainte Lucie",
+        "description": "Aides culinaires (épices, décorations pâtissières)",
+        "parentCompany": "Sainte Lucie SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "sainte_lucie",
+        "source": "Sainte Lucie Website"
+    },
+    {
+        "name": "Somat",
+        "description": "Produits pour lave-vaisselle",
+        "parentCompany": "Henkel AG & Co. KGaA",
+        "parentOrigin": "DE",
+        "normalizedName": "somat",
+        "source": "Somat Website/Henkel Website"
+    },
+    {
+        "name": "Leffe",
+        "description": "Bière belge d'abbaye",
+        "parentCompany": "Anheuser-Busch InBev SA/NV",
+        "parentOrigin": "BE",
+        "normalizedName": "leffe",
+        "source": "Leffe Website/AB InBev Website"
+    },
+    {
+        "name": "Canaillou",
+        "description": "Marque distributeur (aliments pour animaux)",
+        "parentCompany": "Groupement Les Mousquetaires (ITM Entreprises S.A.)",
+        "parentOrigin": "FR",
+        "normalizedName": "canaillou",
+        "source": "Intermarché Website/Wikipedia"
+    },
+    {
+        "name": "Les 300 & Bio",
+        "description": "Produits laitiers biologiques",
+        "parentCompany": "Eurial (Agrial)",
+        "parentOrigin": "FR",
+        "normalizedName": "les_300_bio",
+        "source": "Eurial Website/Agrial Website"
+    },
+    {
+        "name": "Trader Joe's",
+        "description": "Enseigne de supermarchés",
+        "parentCompany": "Aldi Einkauf GmbH & Co. oHG (Aldi Nord)",
+        "parentOrigin": "DE",
+        "normalizedName": "trader_joes",
+        "source": "Trader Joe's Website/Wikipedia"
+    },
+    {
+        "name": "Henkel",
+        "description": "Groupe industriel (colles, détergents, cosmétiques)",
+        "parentCompany": "Henkel AG & Co. KGaA",
+        "parentOrigin": "DE",
+        "normalizedName": "henkel",
+        "source": "Henkel Website/Wikipedia"
+    },
+    {
+        "name": "Amira",
+        "description": "Riz Basmati et produits alimentaires",
+        "parentCompany": "Amira Nature Foods Ltd",
+        "parentOrigin": "AE",
+        "normalizedName": "amira",
+        "source": "Amira Website/Wikipedia"
+    },
+    {
+        "name": "Puget",
+        "description": "Huile d'olive",
+        "parentCompany": "Avril Group",
+        "parentOrigin": "FR",
+        "normalizedName": "puget",
+        "source": "Puget Website/Avril Group Website"
+    },
+    {
+        "name": "Juraflore",
+        "description": "Fromage (Comté)",
+        "parentCompany": "Lactalis",
+        "parentOrigin": "FR",
+        "normalizedName": "juraflore",
+        "source": "Wikipedia/Lactalis Website"
+    },
+    {
+        "name": "Saint Môret",
+        "description": "Fromage frais",
+        "parentCompany": "Savencia Fromage & Dairy",
+        "parentOrigin": "FR",
+        "normalizedName": "saint_moret",
+        "source": "Saint Môret Website/Savencia Website"
+    },
+    {
+        "name": "Côté Miel",
+        "description": "Miel",
+        "parentCompany": "Les Apiculteurs Associés",
+        "parentOrigin": "FR",
+        "normalizedName": "cote_miel",
+        "source": "Les Apiculteurs Associés Website"
+    },
+    {
+        "name": "Edgard Cooper",
+        "description": "Aliments pour chiens et chats",
+        "parentCompany": "Edgard & Cooper Foundation",
+        "parentOrigin": "BE",
+        "normalizedName": "edgard_cooper",
+        "source": "Edgard Cooper Website"
+    },
+    {
+        "name": "Scheppach",
+        "description": "Machines et outils pour le bois et le jardin",
+        "parentCompany": "Scheppach GmbH",
+        "parentOrigin": "DE",
+        "normalizedName": "scheppach",
+        "source": "Scheppach Website/Wikipedia"
+    },
+    {
+        "name": "Inés Rosales",
+        "description": "Biscuits traditionnels espagnols (tortas)",
+        "parentCompany": "Inés Rosales S.A.U.",
+        "parentOrigin": "ES",
+        "normalizedName": "ines_rosales",
+        "source": "Inés Rosales Website"
+    },
+    {
+        "name": "Borges",
+        "description": "Huiles d'olive, vinaigres, fruits secs",
+        "parentCompany": "Borges International Group S.L.U.",
+        "parentOrigin": "ES",
+        "normalizedName": "borges",
+        "source": "Borges Website/Wikipedia"
+    },
+    {
+        "name": "Sondey",
+        "description": "Marque distributeur (biscuits, gâteaux)",
+        "parentCompany": "Lidl Stiftung & Co. KG",
+        "parentOrigin": "DE",
+        "normalizedName": "sondey",
+        "source": "Lidl Website/Wikipedia"
+    },
+    {
+        "name": "Lea & Perrins",
+        "description": "Sauce Worcestershire",
+        "parentCompany": "Kraft Heinz Company",
+        "parentOrigin": "US",
+        "normalizedName": "lea_perrins",
+        "source": "Lea & Perrins Website/Kraft Heinz Website"
+    },
+    {
+        "name": "Canderel",
+        "description": "Édulcorants",
+        "parentCompany": "Whole Earth Brands, Inc.",
+        "parentOrigin": "US",
+        "normalizedName": "canderel",
+        "source": "Canderel Website/Whole Earth Brands Website"
+    },
+    {
+        "name": "Foster Farms",
+        "description": "Volaille",
+        "parentCompany": "Foster Farms LLC",
+        "parentOrigin": "US",
+        "normalizedName": "foster_farms",
+        "source": "Foster Farms Website/Wikipedia"
+    },
+    {
+        "name": "Bloch",
+        "description": "Articles de danse",
+        "parentCompany": "Auguste Bloch SAS",
+        "parentOrigin": "FR",
+        "normalizedName": "bloch",
+        "source": "Bloch Website/Wikipedia"
+    },
+    {
+        "name": "Bach",
+        "description": "Fleurs de Bach (remèdes floraux)",
+        "parentCompany": "Nelsons & Co Ltd",
+        "parentOrigin": "GB",
+        "normalizedName": "bach",
+        "source": "Bach Flower Remedies Website/Nelsons Website"
     }
 ]
