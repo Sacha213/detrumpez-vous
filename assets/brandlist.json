@@ -5880,14 +5880,6 @@
         "parentOrigin": "FR"
     },
     {
-        "name": "Vittel",
-        "description": "Vittel (produits de beauté) est une licence gérée par LaSCAD (L'Oréal). Appartenant au groupe français L'Oréal, elle n'est pas américaine.",
-        "source": "Wikipedia: L'Oréal",
-        "parentCompany": "L'Oréal",
-        "normalizedName": "vittel",
-        "parentOrigin": "FR"
-    },
-    {
         "name": "Elsève",
         "description": "Elsève (Elvive, Elvital) est une marque de soins capillaires de L'Oréal Paris. Marque française appartenant au groupe français L'Oréal, elle n'est pas américaine.",
         "source": "Wikipedia: L'Oréal",
