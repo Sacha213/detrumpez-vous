@@ -4891,7 +4891,7 @@
         "name": "Monoprix",
         "description": "Monoprix est une enseigne française de grande distribution. Appartenant au groupe Casino (français), cette marque n'est pas américaine.",
         "source": "Wikipedia: Monoprix",
-        "parentCompany": "Monoprix",
+        "parentCompany": "Casino Guichard-Perrachon S.A.",
         "normalizedName": "monoprix",
         "parentOrigin": "FR"
     },
@@ -11298,7 +11298,7 @@
     {
         "name": "Aldi",
         "description": "Chaîne allemande de supermarchés hard-discount et marque distributeur.",
-        "parentCompany": "Aldi Nord / Aldi Süd",
+        "parentCompany": "Aldi",
         "parentOrigin": "DE",
         "normalizedName": "aldi",
         "source": "Aldi Website"
@@ -11306,7 +11306,7 @@
     {
         "name": "Les Pâtissades",
         "description": "Marque distributeur de pâtisseries (Aldi).",
-        "parentCompany": "Aldi Nord / Aldi Süd",
+        "parentCompany": "Aldi",
         "parentOrigin": "DE",
         "normalizedName": "les_patissades",
         "source": "Web Search/Aldi Context"
@@ -11314,7 +11314,7 @@
     {
         "name": "Tante Odile",
         "description": "Marque distributeur de produits régionaux/divers (Aldi).",
-        "parentCompany": "Aldi Nord / Aldi Süd",
+        "parentCompany": "Aldi",
         "parentOrigin": "DE",
         "normalizedName": "tante_odile",
         "source": "Web Search/Aldi Context"
@@ -11682,7 +11682,7 @@
     {
         "name": "Chabrior",
         "description": "Marque distributeur de biscuits, céréales, etc. (Intermarché).",
-        "parentCompany": "Les Mousquetaires / Intermarché",
+        "parentCompany": "Les Mousquetaires",
         "parentOrigin": "FR",
         "normalizedName": "chabrior",
         "source": "Intermarché Website"
@@ -15710,5 +15710,157 @@
         "parentOrigin": "CL",
         "normalizedName": "casillero_del_diablo",
         "source": "Wikipedia Casillero Del Diablo"
+    },
+    {
+        "name": "Alpina Savoie",
+        "description": "Alpina Savoie est une entreprise française spécialisée dans le secteur agroalimentaire et plus particulièrement dans la production de pâtes.",
+        "parentCompany": "Aster Développement",
+        "parentOrigin": "FR",
+        "normalizedName": "alpina_savoie",
+        "source": "Wikipedia Alpina Savoie"
+    },
+    {
+        "name": "Oncle Ben's",
+        "description": "Marque de riz (anciennement Uncle Ben's) par Mars, symbole de l'innovation américaine dans les produits alimentaires pratiques.",
+        "source": "Wikipedia: Mars, Incorporated",
+        "parentCompany": "Mars",
+        "normalizedName": "oncle_bens",
+        "parentOrigin": "US"
+    },
+    {
+        "name": "My Vay",
+        "description": "Panés tomates mozzarella",
+        "parentCompany": "Cité Marine",
+        "parentOrigin": "FR",
+        "normalizedName": "my_vay",
+        "source": "User added informations"
+    },
+    {
+        "name": "B&S",
+        "description": "B&S est une gamme complète de fruits secs et de graines grillées salées conditionnée dans des barquettes hermétiques.",
+        "parentCompany": "AGIDRA",
+        "parentOrigin": "FR",
+        "normalizedName": "bs",
+        "source": "Site officiel AGIDRA"
+    },
+    {
+        "name": "Dakatine",
+        "description": "Marque française de pâte de cacahuète.",
+        "parentCompany": "Diester",
+        "parentOrigin": "FR",
+        "normalizedName": "dakatine",
+        "source": "Wikipedia: Dakatine"
+    },
+    {
+        "name": "Miel de fleurs",
+        "description": "Marque de miel de fleurs.",
+        "parentCompany": "Vacher & Co",
+        "parentOrigin": "FR",
+        "normalizedName": "miel_de_fleurs",
+        "source": "Site officiel Vacher & Co"
+    },
+    {
+        "name": "Phare d'Eckmül",
+        "description": "Marque française de conserves de poisson.",
+        "parentCompany": "Phare d'Eckmül",
+        "parentOrigin": "FR",
+        "normalizedName": "phare_deckmul",
+        "source": "Wikipedia: Phare d'Eckmül"
+    },
+    {
+        "name": "Le Marsigny",
+        "description": "Marque de charcuterie d'Aldi.",
+        "parentCompany": "Aldi",
+        "parentOrigin": "FR",
+        "normalizedName": "le_marsigny",
+        "source": "Site officiel d'Aldi"
+    },
+    {
+        "name": "Sea salt grinder",
+        "description": "Marque d’outil pour moudre le sel marin.",
+        "parentCompany": "MC Cormick",
+        "parentOrigin": "FR",
+        "normalizedName": "sea_salt_grinder",
+        "source": "User added informations"
+    },
+    {
+        "name": "Hélène Grèce Authentique",
+        "description": "Hélène Grèce Authentique est une marque française spécialisée dans l'importation et la distribution de produits grecs authentiques : huiles d'olive, olives, miels, fromages et spécialités artisanales. Elle valorise le savoir-faire traditionnel grec à travers une sélection rigoureuse de producteurs locaux.",
+        "parentCompany": "Délices Grecs",
+        "parentOrigin": "FR",
+        "normalizedName": "helene_grece_authentique",
+        "source": "Site officiel Délices Grecs"
+    },
+    {
+        "name": "Milsani",
+        "description": "Marque distributeur de produits laitiers (Lidl).",
+        "parentCompany": "Lidl",
+        "parentOrigin": "DE",
+        "normalizedName": "milsani",
+        "source": "Site officiel Lidl"
+    },
+    {
+        "name": "Les 3 Meuniers",
+        "description": "Marque française de farine.",
+        "parentCompany": "Les Mousquetaires",
+        "parentOrigin": "FR",
+        "normalizedName": "les_3_meuniers",
+        "source": "Intermarché"
+    },
+    {
+        "name": "Les Assaisonnements Briard – Moutarde de Meaux",
+        "description": "Moutarde de Meaux, condiments traditionnels.",
+        "parentCompany": "Les Assaisonnements Briard",
+        "parentOrigin": "FR",
+        "normalizedName": "les_assaisonnements_briard_moutarde_de_meaux",
+        "source": "Wikipedia: Moutarde de Meaux"
+    },
+    {
+        "name": "Demak Up Cocoon",
+        "description": "Gamme de cotons démaquillants Cocoon.",
+        "parentCompany": "Procter & Gamble",
+        "parentOrigin": "US",
+        "normalizedName": "demak_up_cocoon",
+        "source": "Site officiel Demak’Up"
+    },
+    {
+        "name": "Domédia",
+        "description": "Marque maison et loisir d'intermarché.",
+        "parentCompany": "Les Mousquetaires",
+        "parentOrigin": "FR",
+        "normalizedName": "domedia",
+        "source": "Site officiel d'Intermarché"
+    },
+    {
+        "name": "Yves Rocher",
+        "description": "Yves Rocher est une entreprise française de cosmétiques fondée par Yves Rocher",
+        "parentCompany": "Groupe Rocher",
+        "parentOrigin": "FR",
+        "normalizedName": "yves_rocher",
+        "source": "Wikipedia: Yves Rocher"
+    },
+    {
+        "name": "Naturalia",
+        "description": "Naturalia France est une enseigne de distribution française spécialisée dans les produits issus de l'agriculture biologique",
+        "parentCompany": "Casino Guichard-Perrachon S.A.",
+        "parentOrigin": "FR",
+        "normalizedName": "naturalia",
+        "source": "Wikipedia: Naturalia"
+    },
+    {
+        "name": "Bubble Go",
+        "description": "Bubble tea wild strawberry",
+        "parentCompany": "Food Partner CO SA",
+        "parentOrigin": "BE",
+        "normalizedName": "bubble_go",
+        "source": "User added informations"
+    },
+    {
+        "name": "SPAM",
+        "description": "Chopped pork and ham",
+        "parentCompany": "Danish Crown Foods",
+        "parentOrigin": "DK",
+        "normalizedName": "spam",
+        "source": "User added informations"
     }
 ]
