@@ -80,8 +80,8 @@
   "descriptionHint": "Breve descrizione del prodotto",
   "parentCompanyLabelOptional": "Società madre (Opzionale)",
   "parentCompanyHint": "Nome della società proprietaria",
-  "originCountryLabelOptional": "Paese di origine (Opzionale)",
-  "originCountryHint": "Es: Francia, USA, Cina...",
+  "parentOriginLabelOptional": "Paese di origine (Opzionale)",
+  "parentOriginHint": "Es: Francia, USA, Cina...",
   "fieldRequiredError": "Questo campo è obbligatorio.",
   "addProductInfoButton": "Aggiungi informazioni",
   "addProductInfoSuccess": "Grazie! Informazioni prodotto aggiunte.",
@@ -91,5 +91,6 @@
   "reportProblemActionTitle": "Segnala un problema",
   "reportProblemActionSubtitle": "Clicca qui per segnalare un problema",
   "classificationInfoTitle": "Come vengono classificate le aziende?",
-  "classificationInfoSubtitle": "Clicca qui per scoprire i nostri criteri"
+  "classificationInfoSubtitle": "Clicca qui per scoprire i nostri criteri",
+  "companyLabel": "Azienda"
 }

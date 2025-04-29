@@ -80,8 +80,8 @@
   "descriptionHint": "وصف قصير للمنتج",
   "parentCompanyLabelOptional": "الشركة الأم (اختياري)",
   "parentCompanyHint": "اسم الشركة المالكة",
-  "originCountryLabelOptional": "بلد المنشأ (اختياري)",
-  "originCountryHint": "مثال: فرنسا، الولايات المتحدة، الصين...",
+  "parentOriginLabelOptional": "بلد المنشأ (اختياري)",
+  "parentOriginHint": "مثال: فرنسا، الولايات المتحدة، الصين...",
   "fieldRequiredError": "هذا الحقل مطلوب.",
   "addProductInfoButton": "إضافة المعلومات",
   "addProductInfoSuccess": "شكراً لك! تمت إضافة معلومات المنتج.",
@@ -91,5 +91,6 @@
   "reportProblemActionTitle": "الإبلاغ عن مشكلة",
   "reportProblemActionSubtitle": "انقر هنا للإبلاغ عن مشكلة",
   "classificationInfoTitle": "كيف يتم تصنيف الشركات؟",
-  "classificationInfoSubtitle": "انقر هنا لاكتشاف معاييرنا"
+  "classificationInfoSubtitle": "انقر هنا لاكتشاف معاييرنا",
+  "companyLabel": "شركة"
 }

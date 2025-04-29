@@ -93,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage(
       "Kriterien für amerikanische Unternehmen",
     ),
+    "companyLabel": MessageLookupByLibrary.simpleMessage("Unternehmen"),
     "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
       "Ben & Jerry\'s ist eine amerikanische Marke, wurde aber im Jahr 2000 von Unilever (einem britisch-niederländischen multinationalen Konzern) übernommen. Daher gilt die Marke nicht als amerikanisch.",
     ),
@@ -133,12 +134,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Geben Sie eine Lebensmittelmarke ein",
     ),
-    "originCountryHint": MessageLookupByLibrary.simpleMessage(
-      "Z.B.: Frankreich, USA, China...",
-    ),
-    "originCountryLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "Herkunftsland (Optional)",
-    ),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "Name des Eigentümerunternehmens",
     ),
@@ -147,6 +142,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "parentCompanyLabelOptional": MessageLookupByLibrary.simpleMessage(
       "Muttergesellschaft (Optional)",
+    ),
+    "parentOriginHint": MessageLookupByLibrary.simpleMessage(
+      "Z.B.: Frankreich, USA, China...",
+    ),
+    "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
+      "Herkunftsland (Optional)",
     ),
     "photo": MessageLookupByLibrary.simpleMessage("Foto"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(

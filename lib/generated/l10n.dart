@@ -510,6 +510,11 @@ class S {
     );
   }
 
+  /// `Company`
+  String get companyLabel {
+    return Intl.message('Company', name: 'companyLabel', desc: '', args: []);
+  }
+
   /// `Image source`
   String get imageSourceTitle {
     return Intl.message(
@@ -746,20 +751,20 @@ class S {
   }
 
   /// `Country of origin (Optional)`
-  String get originCountryLabelOptional {
+  String get parentOriginLabelOptional {
     return Intl.message(
       'Country of origin (Optional)',
-      name: 'originCountryLabelOptional',
+      name: 'parentOriginLabelOptional',
       desc: '',
       args: [],
     );
   }
 
   /// `Ex: France, USA, China...`
-  String get originCountryHint {
+  String get parentOriginHint {
     return Intl.message(
       'Ex: France, USA, China...',
-      name: 'originCountryHint',
+      name: 'parentOriginHint',
       desc: '',
       args: [],
     );

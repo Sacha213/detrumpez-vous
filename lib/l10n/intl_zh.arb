@@ -80,8 +80,8 @@
   "descriptionHint": "简短的产品描述",
   "parentCompanyLabelOptional": "母公司（可选）",
   "parentCompanyHint": "所有公司的名称",
-  "originCountryLabelOptional": "原产国（可选）",
-  "originCountryHint": "例如：法国、美国、中国...",
+  "parentOriginLabelOptional": "原产国（可选）",
+  "parentOriginHint": "例如：法国、美国、中国...",
   "fieldRequiredError": "此字段是必填字段。",
   "addProductInfoButton": "添加信息",
   "addProductInfoSuccess": "谢谢！产品信息已添加。",
@@ -91,5 +91,6 @@
   "reportProblemActionTitle": "报告问题",
   "reportProblemActionSubtitle": "点击此处报告问题",
   "classificationInfoTitle": "公司如何分类？",
-  "classificationInfoSubtitle": "点击此处了解我们的标准"
+  "classificationInfoSubtitle": "点击此处了解我们的标准",
+  "companyLabel": "公司"
 }

@@ -93,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage(
       "معايير الشركة الأمريكية",
     ),
+    "companyLabel": MessageLookupByLibrary.simpleMessage("شركة"),
     "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
       "Ben & Jerry\'s علامة تجارية أمريكية ولكن تم الاستحواذ عليها من قبل Unilever (شركة متعددة الجنسيات بريطانية هولندية) في عام 2000. وبالتالي، لا تعتبر العلامة التجارية أمريكية.",
     ),
@@ -127,18 +128,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "أدخل علامة تجارية غذائية",
     ),
-    "originCountryHint": MessageLookupByLibrary.simpleMessage(
-      "مثال: فرنسا، الولايات المتحدة، الصين...",
-    ),
-    "originCountryLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "بلد المنشأ (اختياري)",
-    ),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "اسم الشركة المالكة",
     ),
     "parentCompanyLabel": MessageLookupByLibrary.simpleMessage("الشركة الأم"),
     "parentCompanyLabelOptional": MessageLookupByLibrary.simpleMessage(
       "الشركة الأم (اختياري)",
+    ),
+    "parentOriginHint": MessageLookupByLibrary.simpleMessage(
+      "مثال: فرنسا، الولايات المتحدة، الصين...",
+    ),
+    "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
+      "بلد المنشأ (اختياري)",
     ),
     "photo": MessageLookupByLibrary.simpleMessage("صورة"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(

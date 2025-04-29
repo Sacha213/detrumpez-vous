@@ -80,8 +80,8 @@
   "descriptionHint": "संक्षिप्त उत्पाद विवरण",
   "parentCompanyLabelOptional": "मूल कंपनी (वैकल्पिक)",
   "parentCompanyHint": "मालिक कंपनी का नाम",
-  "originCountryLabelOptional": "मूल देश (वैकल्पिक)",
-  "originCountryHint": "उदाहरण: फ्रांस, यूएसए, चीन...",
+  "parentOriginLabelOptional": "मूल देश (वैकल्पिक)",
+  "parentOriginHint": "उदाहरण: फ्रांस, यूएसए, चीन...",
   "fieldRequiredError": "यह फ़ील्ड आवश्यक है।",
   "addProductInfoButton": "जानकारी जोड़ें",
   "addProductInfoSuccess": "धन्यवाद! उत्पाद जानकारी जोड़ी गई।",
@@ -91,5 +91,6 @@
   "reportProblemActionTitle": "समस्या की रिपोर्ट करें",
   "reportProblemActionSubtitle": "समस्या की रिपोर्ट करने के लिए यहां क्लिक करें",
   "classificationInfoTitle": "कंपनियों को कैसे वर्गीकृत किया जाता है?",
-  "classificationInfoSubtitle": "हमारे मानदंड जानने के लिए यहां क्लिक करें"
+  "classificationInfoSubtitle": "हमारे मानदंड जानने के लिए यहां क्लिक करें",
+  "companyLabel": "कंपनी"
 }

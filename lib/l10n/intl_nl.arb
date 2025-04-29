@@ -80,8 +80,8 @@
   "descriptionHint": "Korte productbeschrijving",
   "parentCompanyLabelOptional": "Moederbedrijf (Optioneel)",
   "parentCompanyHint": "Naam van het eigenaarsbedrijf",
-  "originCountryLabelOptional": "Land van herkomst (Optioneel)",
-  "originCountryHint": "Bijv.: Frankrijk, VS, China...",
+  "parentOriginLabelOptional": "Land van herkomst (Optioneel)",
+  "parentOriginHint": "Bijv.: Frankrijk, VS, China...",
   "fieldRequiredError": "Dit veld is verplicht.",
   "addProductInfoButton": "Informatie toevoegen",
   "addProductInfoSuccess": "Bedankt! Productinformatie toegevoegd.",
@@ -91,5 +91,6 @@
   "reportProblemActionTitle": "Probleem melden",
   "reportProblemActionSubtitle": "Klik hier om een probleem te melden",
   "classificationInfoTitle": "Hoe worden bedrijven geclassificeerd?",
-  "classificationInfoSubtitle": "Klik hier om onze criteria te ontdekken"
+  "classificationInfoSubtitle": "Klik hier om onze criteria te ontdekken",
+  "companyLabel": "Bedrijf"
 }

@@ -28,6 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addInfoSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Cliquez ici pour compléter les infos",
+    ),
     "addInfoTitle": MessageLookupByLibrary.simpleMessage(
       "Ajouter des informations",
     ),
@@ -92,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage(
       "Critères d\'entreprise américaine",
     ),
+    "companyLabel": MessageLookupByLibrary.simpleMessage("Entreprise"),
     "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
       "Ben & jerry est une marque américaine mais a été rachetée par Unilever (multinationale anglo-néerlandaise) en 2000. Ainsi la marque n\'est pas considérée comme américaine.",
     ),
@@ -134,18 +138,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Entrez une marque alimentaire",
     ),
-    "originCountryHint": MessageLookupByLibrary.simpleMessage(
-      "Ex: France, USA, Chine...",
-    ),
-    "originCountryLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "Pays d\'origine (Optionnel)",
-    ),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "Nom de l\'entreprise propriétaire",
     ),
     "parentCompanyLabel": MessageLookupByLibrary.simpleMessage("Société mère"),
     "parentCompanyLabelOptional": MessageLookupByLibrary.simpleMessage(
       "Société mère (Optionnel)",
+    ),
+    "parentOriginHint": MessageLookupByLibrary.simpleMessage(
+      "Ex: France, USA, Chine...",
+    ),
+    "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
+      "Pays d\'origine (Optionnel)",
     ),
     "photo": MessageLookupByLibrary.simpleMessage("Photo"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(

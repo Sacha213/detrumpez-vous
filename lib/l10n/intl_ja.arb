@@ -80,8 +80,8 @@
   "descriptionHint": "簡単な製品説明",
   "parentCompanyLabelOptional": "親会社（オプション）",
   "parentCompanyHint": "所有会社の名前",
-  "originCountryLabelOptional": "原産国（オプション）",
-  "originCountryHint": "例：フランス、アメリカ、中国...",
+  "parentOriginLabelOptional": "原産国（オプション）",
+  "parentOriginHint": "例：フランス、アメリカ、中国...",
   "fieldRequiredError": "このフィールドは必須です。",
   "addProductInfoButton": "情報を追加",
   "addProductInfoSuccess": "ありがとうございます！製品情報が追加されました。",
@@ -91,5 +91,6 @@
   "reportProblemActionTitle": "問題を報告",
   "reportProblemActionSubtitle": "ここをクリックして問題を報告してください",
   "classificationInfoTitle": "企業はどのように分類されますか？",
-  "classificationInfoSubtitle": "ここをクリックして基準を確認してください"
+  "classificationInfoSubtitle": "ここをクリックして基準を確認してください",
+  "companyLabel": "会社"
 }

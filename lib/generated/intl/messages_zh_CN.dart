@@ -65,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "如果一个品牌属于美国集团，则该品牌被视为美国品牌。",
     ),
     "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage("美国公司标准"),
+    "companyLabel": MessageLookupByLibrary.simpleMessage("公司"),
     "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
       "Ben & Jerry\'s 是一个美国品牌，但在 2000 年被联合利华（一家英荷跨国公司）收购。因此，该品牌不被视为美国品牌。",
     ),
@@ -87,14 +88,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageSourceTitle": MessageLookupByLibrary.simpleMessage("图片来源"),
     "imageUploadError": MessageLookupByLibrary.simpleMessage("上传图片时出错。"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage("输入食品品牌"),
-    "originCountryHint": MessageLookupByLibrary.simpleMessage("例如：法国、美国、中国..."),
-    "originCountryLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "原产国（可选）",
-    ),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage("所有公司的名称"),
     "parentCompanyLabel": MessageLookupByLibrary.simpleMessage("母公司"),
     "parentCompanyLabelOptional": MessageLookupByLibrary.simpleMessage(
       "母公司（可选）",
+    ),
+    "parentOriginHint": MessageLookupByLibrary.simpleMessage("例如：法国、美国、中国..."),
+    "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
+      "原产国（可选）",
     ),
     "photo": MessageLookupByLibrary.simpleMessage("照片"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(

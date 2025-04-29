@@ -80,8 +80,8 @@
   "descriptionHint": "Краткое описание продукта",
   "parentCompanyLabelOptional": "Материнская компания (Необязательно)",
   "parentCompanyHint": "Название компании-владельца",
-  "originCountryLabelOptional": "Страна происхождения (Необязательно)",
-  "originCountryHint": "Пример: Франция, США, Китай...",
+  "parentOriginLabelOptional": "Страна происхождения (Необязательно)",
+  "parentOriginHint": "Пример: Франция, США, Китай...",
   "fieldRequiredError": "Это поле обязательно для заполнения.",
   "addProductInfoButton": "Добавить информацию",
   "addProductInfoSuccess": "Спасибо! Информация о продукте добавлена.",
@@ -91,5 +91,6 @@
   "reportProblemActionTitle": "Сообщить о проблеме",
   "reportProblemActionSubtitle": "Нажмите здесь, чтобы сообщить о проблеме",
   "classificationInfoTitle": "Как классифицируются компании?",
-  "classificationInfoSubtitle": "Нажмите здесь, чтобы ознакомиться с нашими критериями"
+  "classificationInfoSubtitle": "Нажмите здесь, чтобы ознакомиться с нашими критериями",
+  "companyLabel": "Компания"
 }

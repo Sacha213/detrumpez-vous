@@ -76,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "ブランドがアメリカのグループに属している場合、そのブランドはアメリカのものと見なされます。",
     ),
     "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage("アメリカ企業の基準"),
+    "companyLabel": MessageLookupByLibrary.simpleMessage("会社"),
     "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
       "Ben & Jerry\'sはアメリカのブランドですが、2000年にユニリーバ（英蘭の多国籍企業）に買収されました。したがって、このブランドはアメリカのものとは見なされません。",
     ),
@@ -104,16 +105,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "食品ブランドを入力してください",
     ),
-    "originCountryHint": MessageLookupByLibrary.simpleMessage(
-      "例：フランス、アメリカ、中国...",
-    ),
-    "originCountryLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "原産国（オプション）",
-    ),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage("所有会社の名前"),
     "parentCompanyLabel": MessageLookupByLibrary.simpleMessage("親会社"),
     "parentCompanyLabelOptional": MessageLookupByLibrary.simpleMessage(
       "親会社（オプション）",
+    ),
+    "parentOriginHint": MessageLookupByLibrary.simpleMessage(
+      "例：フランス、アメリカ、中国...",
+    ),
+    "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
+      "原産国（オプション）",
     ),
     "photo": MessageLookupByLibrary.simpleMessage("写真"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(

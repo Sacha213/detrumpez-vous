@@ -85,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage(
       "अमेरिकी कंपनी मानदंड",
     ),
+    "companyLabel": MessageLookupByLibrary.simpleMessage("कंपनी"),
     "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
       "बेन एंड जेरी एक अमेरिकी ब्रांड है, लेकिन इसे 2000 में यूनिलीवर (एक एंग्लो-डच बहुराष्ट्रीय) द्वारा अधिग्रहित किया गया था। इस प्रकार, ब्रांड को अमेरिकी नहीं माना जाता है।",
     ),
@@ -123,18 +124,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "एक खाद्य ब्रांड दर्ज करें",
     ),
-    "originCountryHint": MessageLookupByLibrary.simpleMessage(
-      "उदाहरण: फ्रांस, यूएसए, चीन...",
-    ),
-    "originCountryLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "मूल देश (वैकल्पिक)",
-    ),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "मालिक कंपनी का नाम",
     ),
     "parentCompanyLabel": MessageLookupByLibrary.simpleMessage("मूल कंपनी"),
     "parentCompanyLabelOptional": MessageLookupByLibrary.simpleMessage(
       "मूल कंपनी (वैकल्पिक)",
+    ),
+    "parentOriginHint": MessageLookupByLibrary.simpleMessage(
+      "उदाहरण: फ्रांस, यूएसए, चीन...",
+    ),
+    "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
+      "मूल देश (वैकल्पिक)",
     ),
     "photo": MessageLookupByLibrary.simpleMessage("तस्वीर"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(

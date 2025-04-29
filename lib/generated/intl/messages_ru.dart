@@ -91,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage(
       "Критерии американской компании",
     ),
+    "companyLabel": MessageLookupByLibrary.simpleMessage("Компания"),
     "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
       "Ben & Jerry\'s — американский бренд, но в 2000 году он был приобретен Unilever (англо-голландской транснациональной корпорацией). Таким образом, бренд не считается американским.",
     ),
@@ -133,12 +134,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Введите бренд продуктов питания",
     ),
-    "originCountryHint": MessageLookupByLibrary.simpleMessage(
-      "Пример: Франция, США, Китай...",
-    ),
-    "originCountryLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "Страна происхождения (Необязательно)",
-    ),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "Название компании-владельца",
     ),
@@ -147,6 +142,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "parentCompanyLabelOptional": MessageLookupByLibrary.simpleMessage(
       "Материнская компания (Необязательно)",
+    ),
+    "parentOriginHint": MessageLookupByLibrary.simpleMessage(
+      "Пример: Франция, США, Китай...",
+    ),
+    "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
+      "Страна происхождения (Необязательно)",
     ),
     "photo": MessageLookupByLibrary.simpleMessage("Фото"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
