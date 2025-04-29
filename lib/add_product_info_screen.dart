@@ -9,10 +9,18 @@ final Logger logger = Logger();
 
 class AddProductInfoScreen extends StatefulWidget {
   final String barcode;
+  final String initialBrand;
+  final String initialDescription;
+  final String initialParentCompany;
+  final String initialparentOrigin;
 
   const AddProductInfoScreen({
     super.key,
     required this.barcode,
+    this.initialBrand = '',
+    this.initialDescription = '',
+    this.initialParentCompany = '',
+    this.initialparentOrigin = '',
   });
 
   @override
@@ -24,10 +32,19 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
   final TextEditingController brandController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController parentCompanyController = TextEditingController();
-  final TextEditingController originCountryController = TextEditingController();
+  final TextEditingController parentOriginController = TextEditingController();
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isSending = false;
+
+  @override
+  void initState() {
+    super.initState();
+    brandController.text = widget.initialBrand;
+    descriptionController.text = widget.initialDescription;
+    parentCompanyController.text = widget.initialParentCompany;
+    parentOriginController.text = widget.initialparentOrigin;
+  }
 
   @override
   void dispose() {
@@ -35,7 +52,7 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
     brandController.dispose();
     descriptionController.dispose();
     parentCompanyController.dispose();
-    originCountryController.dispose();
+    parentOriginController.dispose();
     super.dispose();
   }
 
@@ -50,7 +67,7 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
       final String brand = brandController.text.trim();
       final String description = descriptionController.text.trim();
       final String parentCompany = parentCompanyController.text.trim();
-      final String originCountry = originCountryController.text.trim();
+      final String parentOrigin = parentOriginController.text.trim();
 
       try {
         // Cache le clavier
@@ -62,7 +79,7 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
           'brand': brand,
           'description': description,
           'parent_company': parentCompany, // Nom de champ cohérent
-          'origin_country': originCountry, // Nom de champ cohérent
+          'parent_origin': parentOrigin, // Nom de champ cohérent
           'timestamp': FieldValue.serverTimestamp(),
           // Tu pourrais ajouter l'ID utilisateur si tu as l'authentification
           // 'userId': FirebaseAuth.instance.currentUser?.uid,
@@ -203,9 +220,9 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
                   isOptional: true, // Ce champ est optionnel
                 ),
                 _buildTextField(
-                  controller: originCountryController,
-                  label: s.originCountryLabelOptional, // Utiliser S
-                  hint: s.originCountryHint, // Utiliser S
+                  controller: parentOriginController,
+                  label: s.parentOriginLabelOptional, // Utiliser S
+                  hint: s.parentOriginHint, // Utiliser S
                   icon: Icons.flag_outlined,
                   isOptional: true, // Ce champ est optionnel
                 ),
