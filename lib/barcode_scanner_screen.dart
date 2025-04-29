@@ -39,7 +39,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   String brand = S.current.brandNotFound;
   String description = S.current.descriptionNotFound;
   String parentCompany = S.current.unknown;
-  String originCountry = ""; // Nouvelle variable d'état pour le pays d'origine
+  String company = S.current.unknown;
+  String parentOrigin = ""; // Nouvelle variable d'état pour le pays d'origine
 
   String source = S.current.sourceNotFound;
   bool isProductFromUSA = false;
@@ -367,7 +368,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
       description = desc ?? S.of(context).descriptionNotFound;
       source = resultJson["source"] ?? S.of(context).sourceNotFound;
       parentCompany = resultJson["parentCompany"] ?? S.of(context).unknown;
-      originCountry =
+      company = resultJson["company"] ?? S.of(context).unknown;
+      parentOrigin =
           resultJson["parentOrigin"] ?? ""; // Stocker le pays d'origine
       isProductFromUSA = resultJson["parentOrigin"] == "US";
       isBrandFound = resultJson.isNotEmpty;
@@ -385,7 +387,10 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     }
 
     // Si la marque n'est pas trouvée dans les listes, l'envoyer sur Firebase
-    if (!isBrandFound && productData != null && productData.isNotEmpty) {
+    if (!isBrandFound &&
+        productData != null &&
+        productData.isNotEmpty &&
+        !manualSearchUsed) {
       await FirebaseFirestore.instance.collection('unknown_brands').add({
         'brand_name': productData,
         'timestamp': FieldValue.serverTimestamp(),
@@ -470,14 +475,15 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   }
 
   Color _getCounterColor(int count) {
-  // Définissez une valeur maximale pour atteindre le rouge complet
-  const double maxCountForFullRed = 100.0; // Ajustez cette valeur si nécessaire
-  // Calculez le facteur d'interpolation (entre 0.0 et 1.0)
-  final double t = (count / maxCountForFullRed).clamp(0.0, 1.0);
-  // Interpolez entre le noir et le rouge
-  return Color.lerp(Colors.black, Colors.red.shade700, t) ?? Colors.black; // Fournir une couleur par défaut
-}
-
+    // Définissez une valeur maximale pour atteindre le rouge complet
+    const double maxCountForFullRed =
+        100.0; // Ajustez cette valeur si nécessaire
+    // Calculez le facteur d'interpolation (entre 0.0 et 1.0)
+    final double t = (count / maxCountForFullRed).clamp(0.0, 1.0);
+    // Interpolez entre le noir et le rouge
+    return Color.lerp(Colors.black, Colors.red.shade700, t) ??
+        Colors.black; // Fournir une couleur par défaut
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -515,7 +521,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                         CustomPaint(
                           size: const Size(280, 140),
                           painter: CornerPainter(
-                            color: const Color(0xFFFDCC0B),
+                            color: Colors.grey,
                             lineWidth: 3,
                             cornerLength: 20,
                             cornerRadius: 8.0,
@@ -841,39 +847,83 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                           ),
                                           padding: const EdgeInsets.all(
                                               12), // Ajout de padding interne
-                                          child: Row(children: [
-                                            // Vous pourriez ajouter une icône ici si pertinent
-                                            (originCountry != "")
-                                                ? _getFlagWidget(originCountry)
-                                                : const Icon(
-                                                    CupertinoIcons
-                                                        .building_2_fill,
-                                                    size: 40,
-                                                    color: Colors.grey),
-                                            const SizedBox(width: 12),
-                                            Expanded(
-                                                // Utiliser Expanded pour que la colonne prenne l'espace
-                                                child: Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start, // Aligner le texte à gauche
-                                                    children: [
-                                                  Text(
-                                                      S
-                                                          .of(context)
-                                                          .parentCompanyLabel,
-                                                      style: const TextStyle(
-                                                          fontSize: 16,
-                                                          fontWeight: FontWeight
-                                                              .bold)), // Style du titre
-                                                  const SizedBox(
-                                                      height:
-                                                          4), // Espace entre titre et valeur
-                                                  Text(parentCompany,
-                                                      style:const TextStyle(
-                                                          fontSize:
-                                                              14)) // Style de la valeur
-                                                ]))
+                                          child: Column(children: [
+                                            Row(children: [
+                                              // Vous pourriez ajouter une icône ici si pertinent
+                                              (parentOrigin != "")
+                                                  ? _getFlagWidget(
+                                                      parentOrigin)
+                                                  : const Icon(
+                                                      CupertinoIcons
+                                                          .building_2_fill,
+                                                      size: 40,
+                                                      color: Colors.grey),
+                                              const SizedBox(width: 12),
+                                              Expanded(
+                                                  // Utiliser Expanded pour que la colonne prenne l'espace
+                                                  child: Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start, // Aligner le texte à gauche
+                                                      children: [
+                                                    Text(
+                                                        S
+                                                            .of(context)
+                                                            .parentCompanyLabel,
+                                                        style: const TextStyle(
+                                                            fontSize: 16,
+                                                            fontWeight: FontWeight
+                                                                .bold)), // Style du titre
+                                                    const SizedBox(
+                                                        height:
+                                                            4), // Espace entre titre et valeur
+                                                    Text(parentCompany,
+                                                        style: const TextStyle(
+                                                            fontSize:
+                                                                14)) // Style de la valeur
+                                                  ]))
+                                            ]),
+                                            const SizedBox(height: 8),
+                                            const Divider(
+                                                indent: 16,
+                                                endIndent: 16,
+                                                height: 1),
+                                            const SizedBox(height: 8),
+                                            Row(children: [
+                                              // Vous pourriez ajouter une icône ici si pertinent
+                                              (parentOrigin != "")
+                                                  ? _getFlagWidget(
+                                                      parentOrigin)
+                                                  : const Icon(
+                                                      CupertinoIcons
+                                                          .building_2_fill,
+                                                      size: 32,
+                                                      color: Colors.grey),
+                                              const SizedBox(width: 12),
+                                              Expanded(
+                                                  // Utiliser Expanded pour que la colonne prenne l'espace
+                                                  child: Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start, // Aligner le texte à gauche
+                                                      children: [
+                                                    Text(
+                                                        S
+                                                            .of(context)
+                                                            .companyLabel,
+                                                        style: const TextStyle(
+                                                            fontSize: 16,
+                                                            fontWeight: FontWeight
+                                                                .bold)), // Style du titre
+                                                    const SizedBox(
+                                                        height:
+                                                            4), // Espace entre titre et valeur
+                                                    Text(company,
+                                                        style: const TextStyle(
+                                                            fontSize:
+                                                                14)) // Style de la valeur
+                                                  ]))
+                                            ])
                                           ])),
                                       const SizedBox(height: 16),
                                       Text(
@@ -921,9 +971,14 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                   MaterialPageRoute(
                                                     builder: (context) =>
                                                         AddProductInfoScreen(
-                                                      barcode:
-                                                          barcode, // Passer le code-barres actuel
-                                                    ),
+                                                            barcode: barcode,
+                                                            initialBrand: brand,
+                                                            initialDescription:
+                                                                description,
+                                                            initialParentCompany:
+                                                                parentCompany,
+                                                            initialparentOrigin:
+                                                                parentOrigin),
                                                   ),
                                                 );
                                               },
@@ -950,7 +1005,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            S.of(context).addProductInfoTitle, // Nouveau titre
+                                                            S
+                                                                .of(context)
+                                                                .addProductInfoTitle, // Nouveau titre
                                                             style: const TextStyle(
                                                                 fontWeight:
                                                                     FontWeight
@@ -958,7 +1015,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                 fontSize: 16),
                                                           ),
                                                           Text(
-                                                            S.of(context).addInfoSubtitle, // Nouveau sous-titre
+                                                            S
+                                                                .of(context)
+                                                                .addInfoSubtitle, // Nouveau sous-titre
                                                             style: TextStyle(
                                                                 color: Colors
                                                                     .grey[600],
@@ -997,7 +1056,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                   ),
                                                 );
                                               },
-                                              borderRadius: const BorderRadius.only(
+                                              borderRadius: const BorderRadius
+                                                  .only(
                                                   topLeft: Radius.circular(12),
                                                   topRight: Radius.circular(
                                                       12)), // Arrondi correspondant au Container
@@ -1025,7 +1085,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                 .start, // Aligner le texte à gauche
                                                         children: [
                                                           Text(
-                                                            S.of(context).reportProblemActionTitle, // Utiliser la nouvelle clé
+                                                            S
+                                                                .of(context)
+                                                                .reportProblemActionTitle, // Utiliser la nouvelle clé
                                                             style: const TextStyle(
                                                                 fontWeight:
                                                                     FontWeight
@@ -1033,7 +1095,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                 fontSize: 16),
                                                           ),
                                                           Text(
-                                                            S.of(context).reportProblemActionSubtitle, // Utiliser la nouvelle clé
+                                                            S
+                                                                .of(context)
+                                                                .reportProblemActionSubtitle, // Utiliser la nouvelle clé
                                                             style: TextStyle(
                                                                 color: Colors
                                                                     .grey[600],
@@ -1068,7 +1132,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                   ),
                                                 );
                                               },
-                                              borderRadius: const BorderRadius.only(
+                                              borderRadius: const BorderRadius
+                                                  .only(
                                                   bottomLeft:
                                                       Radius.circular(12),
                                                   bottomRight: Radius.circular(
@@ -1097,7 +1162,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                 .start, // Aligner le texte à gauche
                                                         children: [
                                                           Text(
-                                                            S.of(context).classificationInfoTitle, // Utiliser la nouvelle clé
+                                                            S
+                                                                .of(context)
+                                                                .classificationInfoTitle, // Utiliser la nouvelle clé
                                                             style: const TextStyle(
                                                                 fontWeight:
                                                                     FontWeight
@@ -1105,7 +1172,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                 fontSize: 16),
                                                           ),
                                                           Text(
-                                                            S.of(context).classificationInfoSubtitle, // Utiliser la nouvelle clé
+                                                            S
+                                                                .of(context)
+                                                                .classificationInfoSubtitle, // Utiliser la nouvelle clé
                                                             style: TextStyle(
                                                                 color: Colors
                                                                     .grey[600],
