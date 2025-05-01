@@ -11,6 +11,7 @@ class AddProductInfoScreen extends StatefulWidget {
   final String barcode;
   final String initialBrand;
   final String initialDescription;
+  final String initialOrigin;
   final String initialParentCompany;
   final String initialparentOrigin;
 
@@ -19,6 +20,7 @@ class AddProductInfoScreen extends StatefulWidget {
     required this.barcode,
     this.initialBrand = '',
     this.initialDescription = '',
+    this.initialOrigin = '',
     this.initialParentCompany = '',
     this.initialparentOrigin = '',
   });
@@ -31,6 +33,7 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
   // Contrôleurs pour chaque champ
   final TextEditingController brandController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
+    final TextEditingController originController = TextEditingController();
   final TextEditingController parentCompanyController = TextEditingController();
   final TextEditingController parentOriginController = TextEditingController();
 
@@ -42,6 +45,7 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
     super.initState();
     brandController.text = widget.initialBrand;
     descriptionController.text = widget.initialDescription;
+    originController.text = widget.initialOrigin;
     parentCompanyController.text = widget.initialParentCompany;
     parentOriginController.text = widget.initialparentOrigin;
   }
@@ -51,6 +55,7 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
     // Dispose tous les contrôleurs
     brandController.dispose();
     descriptionController.dispose();
+    originController.dispose();
     parentCompanyController.dispose();
     parentOriginController.dispose();
     super.dispose();
@@ -66,6 +71,7 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
 
       final String brand = brandController.text.trim();
       final String description = descriptionController.text.trim();
+      final String origin = originController.text.trim();
       final String parentCompany = parentCompanyController.text.trim();
       final String parentOrigin = parentOriginController.text.trim();
 
@@ -78,8 +84,9 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
           'barcode': widget.barcode,
           'brand': brand,
           'description': description,
-          'parent_company': parentCompany, // Nom de champ cohérent
-          'parent_origin': parentOrigin, // Nom de champ cohérent
+          'origin': origin, 
+          'parent_company': parentCompany, 
+          'parent_origin': parentOrigin,
           'timestamp': FieldValue.serverTimestamp(),
           // Tu pourrais ajouter l'ID utilisateur si tu as l'authentification
           // 'userId': FirebaseAuth.instance.currentUser?.uid,
@@ -211,6 +218,11 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
                   hint: s.descriptionHint, // Utiliser S
                   icon: Icons.description_outlined,
                   maxLines: 3, // Permet plus de texte pour la description
+                ),_buildTextField(
+                  controller: originController,
+                  label: s.originLabel, // Utiliser S
+                  hint: s.parentOriginHint, // Utiliser S
+                  icon: Icons.flag_outlined,
                 ),
                 _buildTextField(
                   controller: parentCompanyController,
