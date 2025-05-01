@@ -128,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "أدخل علامة تجارية غذائية",
     ),
+    "originLabel": MessageLookupByLibrary.simpleMessage("بلد المنشأ"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "اسم الشركة المالكة",
     ),
@@ -139,7 +140,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "مثال: فرنسا، الولايات المتحدة، الصين...",
     ),
     "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "بلد المنشأ (اختياري)",
+      "بلد منشأ الشركة الأم (اختياري)",
     ),
     "photo": MessageLookupByLibrary.simpleMessage("صورة"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(

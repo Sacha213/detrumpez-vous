@@ -138,6 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Entrez une marque alimentaire",
     ),
+    "originLabel": MessageLookupByLibrary.simpleMessage("Pays d\'origine"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "Nom de l\'entreprise propriétaire",
     ),
@@ -149,7 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ex: France, USA, Chine...",
     ),
     "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "Pays d\'origine (Optionnel)",
+      "Pays d\'origine de la société mère (Facultatif)",
     ),
     "photo": MessageLookupByLibrary.simpleMessage("Photo"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(

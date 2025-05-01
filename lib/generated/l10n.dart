@@ -750,10 +750,20 @@ class S {
     );
   }
 
-  /// `Country of origin (Optional)`
+  /// `Country of origin`
+  String get originLabel {
+    return Intl.message(
+      'Country of origin',
+      name: 'originLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parent company's country of origin (Optional)`
   String get parentOriginLabelOptional {
     return Intl.message(
-      'Country of origin (Optional)',
+      'Parent company\'s country of origin (Optional)',
       name: 'parentOriginLabelOptional',
       desc: '',
       args: [],

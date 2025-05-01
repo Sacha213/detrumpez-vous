@@ -105,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "食品ブランドを入力してください",
     ),
+    "originLabel": MessageLookupByLibrary.simpleMessage("原産国"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage("所有会社の名前"),
     "parentCompanyLabel": MessageLookupByLibrary.simpleMessage("親会社"),
     "parentCompanyLabelOptional": MessageLookupByLibrary.simpleMessage(
@@ -114,7 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "例：フランス、アメリカ、中国...",
     ),
     "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "原産国（オプション）",
+      "親会社の原産国（任意）",
     ),
     "photo": MessageLookupByLibrary.simpleMessage("写真"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(

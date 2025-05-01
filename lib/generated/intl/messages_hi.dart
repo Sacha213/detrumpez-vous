@@ -124,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "एक खाद्य ब्रांड दर्ज करें",
     ),
+    "originLabel": MessageLookupByLibrary.simpleMessage("मूल देश"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "मालिक कंपनी का नाम",
     ),
@@ -135,7 +136,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "उदाहरण: फ्रांस, यूएसए, चीन...",
     ),
     "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "मूल देश (वैकल्पिक)",
+      "मूल कंपनी का मूल देश (वैकल्पिक)",
     ),
     "photo": MessageLookupByLibrary.simpleMessage("तस्वीर"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
