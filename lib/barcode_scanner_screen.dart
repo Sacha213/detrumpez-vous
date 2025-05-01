@@ -40,7 +40,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   String description = S.current.descriptionNotFound;
   String parentCompany = S.current.unknown;
   String company = S.current.unknown;
-  String parentOrigin = ""; // Nouvelle variable d'état pour le pays d'origine
+  String parentOrigin = "";
+  String origin = "";
 
   String source = S.current.sourceNotFound;
   bool isProductFromUSA = false;
@@ -57,6 +58,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   int _usaScanCount = 0; // Nouveau compteur pour les produits USA
   bool _reviewHasBeenRequested =
       false; // Pour ne demander qu'une fois par session/période
+  bool _isTrumpShowed = true;
 
   // Contrôleur pour l'animation de tremblement
   late AnimationController _shakeController;
@@ -86,6 +88,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   Future<void> _loadCounters() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
+      _isTrumpShowed =
+          prefs.getBool('isTrumpShowed') ?? true; // Charger l'état de Trump
       _safeScanCount = prefs.getInt('safeScanCount') ?? 0;
       _usaScanCount =
           prefs.getInt('usaScanCount') ?? 0; // Charger le compteur USA
@@ -369,6 +373,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
       source = resultJson["source"] ?? S.of(context).sourceNotFound;
       parentCompany = resultJson["parentCompany"] ?? S.of(context).unknown;
       company = resultJson["company"] ?? S.of(context).unknown;
+      origin = resultJson["origin"] ?? "";
       parentOrigin =
           resultJson["parentOrigin"] ?? ""; // Stocker le pays d'origine
       isProductFromUSA = resultJson["parentOrigin"] == "US";
@@ -562,68 +567,79 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
 
           // --- NOUVEAU WIDGET COMPTEUR ---
           Positioned(
-            top: safeAreaPadding.top + 10,
-            right: 15,
-            // Enveloppe avec AnimatedBuilder pour le tremblement
-            child: AnimatedBuilder(
-              animation: _shakeController,
-              builder: (context, child) {
-                // Calculer le décalage horizontal basé sur l'animation
-                // Utilise sin() pour un effet de va-et-vient
-                final double dx = sin(_shakeController.value * pi * 4) *
-                    4; // 4 cycles, amplitude 4 pixels
-                return Transform.translate(
-                  offset: Offset(dx, 0), // Applique le décalage horizontal
-                  child: child, // Le contenu original du compteur
-                );
-              },
-              // Le contenu original du compteur est maintenant le 'child' de AnimatedBuilder
-              child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      spreadRadius: 1,
-                      blurRadius: 4,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const CircleAvatar(
-                      radius: 12,
-                      backgroundImage: AssetImage("assets/trump.jpg"),
-                    ),
-                    const SizedBox(width: 6),
-                    const Text("x"),
-                    const SizedBox(width: 4),
-                    AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 300),
-                      transitionBuilder:
-                          (Widget child, Animation<double> animation) {
-                        return FadeTransition(opacity: animation, child: child);
-                      },
-                      child: Text(
-                        "$_usaScanCount",
-                        key: ValueKey<int>(_usaScanCount),
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: _getCounterColor(_usaScanCount),
+              top: safeAreaPadding.top + 10,
+              right: 15,
+              // Enveloppe avec AnimatedBuilder pour le tremblement
+              child: GestureDetector(
+                onTap: () async {
+                  final prefs = await SharedPreferences.getInstance();
+                  setState(() {
+                    _isTrumpShowed = !_isTrumpShowed;
+                  });
+                  await prefs.setBool('isTrumpShowed', !_isTrumpShowed);
+                },
+                child: AnimatedBuilder(
+                  animation: _shakeController,
+                  builder: (context, child) {
+                    // Calculer le décalage horizontal basé sur l'animation
+                    // Utilise sin() pour un effet de va-et-vient
+                    final double dx = sin(_shakeController.value * pi * 4) *
+                        4; // 4 cycles, amplitude 4 pixels
+                    return Transform.translate(
+                      offset: Offset(dx, 0), // Applique le décalage horizontal
+                      child: child, // Le contenu original du compteur
+                    );
+                  },
+                  // Le contenu original du compteur est maintenant le 'child' de AnimatedBuilder
+                  child: Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          spreadRadius: 1,
+                          blurRadius: 4,
+                          offset: const Offset(0, 2),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        CircleAvatar(
+                          radius: 12,
+                          backgroundImage: (_isTrumpShowed)
+                              ? const AssetImage("assets/trump.jpg")
+                              : const AssetImage("assets/usa.png"),
+                        ),
+                        const SizedBox(width: 6),
+                        const Text("x"),
+                        const SizedBox(width: 4),
+                        AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 300),
+                          transitionBuilder:
+                              (Widget child, Animation<double> animation) {
+                            return FadeTransition(
+                                opacity: animation, child: child);
+                          },
+                          child: Text(
+                            "$_usaScanCount",
+                            key: ValueKey<int>(_usaScanCount),
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: _getCounterColor(_usaScanCount),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          ),
+              )),
           // --- FIN NOUVEAU WIDGET COMPTEUR ---
 
           // DraggableScrollableSheet toujours affiché en bas
@@ -713,40 +729,63 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
 
                                       Row(
                                         children: [
-                                          Container(
-                                            width: 96,
-                                            height: 96,
-                                            decoration: !isBrandFound
-                                                ? const BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    color: Colors.grey,
-                                                  )
-                                                : (!isProductFromUSA
-                                                    ? const BoxDecoration(
-                                                        shape: BoxShape.circle,
-                                                        color: Colors.green,
-                                                      )
-                                                    : const BoxDecoration(
-                                                        shape: BoxShape.circle,
-                                                        image: DecorationImage(
-                                                          image: AssetImage(
-                                                              "assets/trump.jpg"),
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      )),
-                                            child: !isBrandFound
-                                                ? const Icon(
-                                                    Icons.question_mark,
-                                                    size: 80,
-                                                    color: Colors.white,
-                                                  )
-                                                : (!isProductFromUSA
-                                                    ? const Icon(
-                                                        Icons.check,
-                                                        size: 80,
-                                                        color: Colors.white,
-                                                      )
-                                                    : Container()),
+                                          GestureDetector(
+                                            onTap: () async {
+                                              if (isBrandFound &&
+                                                  isProductFromUSA) {
+                                                final prefs =
+                                                    await SharedPreferences
+                                                        .getInstance();
+                                                setState(() {
+                                                  _isTrumpShowed =
+                                                      !_isTrumpShowed;
+                                                });
+                                                await prefs.setBool(
+                                                    'isTrumpShowed',
+                                                    !_isTrumpShowed);
+                                              }
+                                            },
+                                            child: Container(
+                                              width: 96,
+                                              height: 96,
+                                              decoration: !isBrandFound
+                                                  ? const BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      color: Colors.grey,
+                                                    )
+                                                  : (!isProductFromUSA
+                                                      ? const BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                          color: Colors.green,
+                                                        )
+                                                      : BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                          image:
+                                                              DecorationImage(
+                                                            image: (_isTrumpShowed)
+                                                                ? const AssetImage(
+                                                                    "assets/trump.jpg")
+                                                                : const AssetImage(
+                                                                    "assets/usa.png"),
+                                                            fit: BoxFit.cover,
+                                                          ),
+                                                        )),
+                                              child: !isBrandFound
+                                                  ? const Icon(
+                                                      Icons.question_mark,
+                                                      size: 80,
+                                                      color: Colors.white,
+                                                    )
+                                                  : (!isProductFromUSA
+                                                      ? const Icon(
+                                                          Icons.check,
+                                                          size: 80,
+                                                          color: Colors.white,
+                                                        )
+                                                      : Container()),
+                                            ),
                                           ),
                                           const SizedBox(width: 16),
                                           Expanded(
@@ -851,12 +890,11 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                             Row(children: [
                                               // Vous pourriez ajouter une icône ici si pertinent
                                               (parentOrigin != "")
-                                                  ? _getFlagWidget(
-                                                      parentOrigin)
+                                                  ? _getFlagWidget(parentOrigin)
                                                   : const Icon(
                                                       CupertinoIcons
                                                           .building_2_fill,
-                                                      size: 40,
+                                                      size: 32,
                                                       color: Colors.grey),
                                               const SizedBox(width: 12),
                                               Expanded(
@@ -876,7 +914,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                 .bold)), // Style du titre
                                                     const SizedBox(
                                                         height:
-                                                            4), // Espace entre titre et valeur
+                                                            2), // Espace entre titre et valeur
                                                     Text(parentCompany,
                                                         style: const TextStyle(
                                                             fontSize:
@@ -891,9 +929,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                             const SizedBox(height: 8),
                                             Row(children: [
                                               // Vous pourriez ajouter une icône ici si pertinent
-                                              (parentOrigin != "")
-                                                  ? _getFlagWidget(
-                                                      parentOrigin)
+                                              (origin != "")
+                                                  ? _getFlagWidget(origin)
                                                   : const Icon(
                                                       CupertinoIcons
                                                           .building_2_fill,
@@ -917,7 +954,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                 .bold)), // Style du titre
                                                     const SizedBox(
                                                         height:
-                                                            4), // Espace entre titre et valeur
+                                                            2), // Espace entre titre et valeur
                                                     Text(company,
                                                         style: const TextStyle(
                                                             fontSize:
@@ -975,6 +1012,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                             initialBrand: brand,
                                                             initialDescription:
                                                                 description,
+                                                            initialOrigin:
+                                                                origin,
                                                             initialParentCompany:
                                                                 parentCompany,
                                                             initialparentOrigin:
