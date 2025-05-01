@@ -90,9 +90,9 @@ flutter:
   assets:
   - assets/brandlist.json
   - assets/trump.jpg
-  - assets/europe.png
   - assets/icon.png
   - assets/barcode.png
+  - assets/usa.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
