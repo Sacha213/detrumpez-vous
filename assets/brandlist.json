@@ -17842,5 +17842,49 @@
         "normalizedName": "spam",
         "source": "User added informations",
         "origin": "US"
+    },{
+        "name": "Cointreau",
+        "description": "Liqueur d'écorce d'orange triple sec",
+        "parentCompany": "Rémy Cointreau",
+        "parentOrigin": "FR",
+        "normalizedName": "cointreau",
+        "source": "https://en.wikipedia.org/wiki/Cointreau",
+        "origin": "FR"
+    },
+    {
+        "name": "wattwiller",
+        "description": "Eau minérale naturelle",
+        "parentCompany": "Spadel",
+        "parentOrigin": "BE",
+        "normalizedName": "wattwiller",
+        "source": "https://en.wikipedia.org/wiki/Spadel",
+        "origin": "FR"
+    },
+    {
+        "name": "terra delyssa",
+        "description": "Huile d'olive vierge extra",
+        "parentCompany": "Compagnie des Huileries Alimentaires de Sfax (CHAS)",
+        "parentOrigin": "TN",
+        "normalizedName": "terra_delyssa",
+        "source": "https://www.delyssa.com",
+        "origin": "TN"
+    },
+    {
+        "name": "Michel et Augustin",
+        "description": "Yaourts, biscuits, mousses au chocolat, jus de fruits, sablés",
+        "parentCompany": "Danone",
+        "parentOrigin": "FR",
+        "normalizedName": "michel_et_augustin",
+        "source": "https://en.wikipedia.org/wiki/Michel_et_Augustin",
+        "origin": "FR"
+    },
+    {
+        "name": "La Fermière",
+        "description": "Yaourts et desserts lactés artisanaux",
+        "parentCompany": "Tarpinian",
+        "parentOrigin": "FR",
+        "normalizedName": "la_fermiere",
+        "source": "https://fr.wikipedia.org/wiki/La_Fermière_(marque)",
+        "origin": "FR"
     }
 ]
