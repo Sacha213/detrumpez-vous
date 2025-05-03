@@ -161,6 +161,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "この製品はアメリカ企業のものではないようです。",
     ),
+    "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage("バーコードをスキャン"),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
       "⚠️ エラーを避けるために、正しく綴られた食品ブランドを入力してください。",
     ),

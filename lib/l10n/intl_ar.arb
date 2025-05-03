@@ -93,5 +93,6 @@
   "reportProblemActionSubtitle": "انقر هنا للإبلاغ عن مشكلة",
   "classificationInfoTitle": "كيف يتم تصنيف الشركات؟",
   "classificationInfoSubtitle": "انقر هنا لاكتشاف معاييرنا",
-  "companyLabel": "شركة"
+  "companyLabel": "شركة",
+  "scanBarcodeLabel": "امسح الرمز الشريطي"
 }

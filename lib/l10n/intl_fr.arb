@@ -93,5 +93,6 @@
   "classificationInfoTitle": "Comment les entreprises sont-elles classées ?",
   "classificationInfoSubtitle": "Cliquez ici pour découvrir nos critères",
   "addInfoSubtitle": "Cliquez ici pour compléter les infos",
-  "companyLabel": "Entreprise"
+  "companyLabel": "Entreprise",
+  "scanBarcodeLabel": "Scan a barcode"
 }

@@ -93,5 +93,6 @@
   "reportProblemActionSubtitle": "点击此处报告问题",
   "classificationInfoTitle": "公司如何分类？",
   "classificationInfoSubtitle": "点击此处了解我们的标准",
-  "companyLabel": "公司"
+  "companyLabel": "公司",
+  "scanBarcodeLabel": "扫描条形码"
 }

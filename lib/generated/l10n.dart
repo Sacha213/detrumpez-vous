@@ -879,6 +879,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Scan a barcode`
+  String get scanBarcodeLabel {
+    return Intl.message(
+      'Scan a barcode',
+      name: 'scanBarcodeLabel',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

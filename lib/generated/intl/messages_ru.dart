@@ -204,6 +204,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Этот продукт, похоже, не от американской компании.",
     ),
+    "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage(
+      "Сканируйте штрих‑код",
+    ),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
       "⚠️ Убедитесь, что вы вводите правильно написанный бренд продуктов питания, чтобы избежать ошибок.",
     ),

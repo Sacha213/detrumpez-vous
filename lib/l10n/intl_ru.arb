@@ -93,5 +93,6 @@
   "reportProblemActionSubtitle": "Нажмите здесь, чтобы сообщить о проблеме",
   "classificationInfoTitle": "Как классифицируются компании?",
   "classificationInfoSubtitle": "Нажмите здесь, чтобы ознакомиться с нашими критериями",
-  "companyLabel": "Компания"
+  "companyLabel": "Компания",
+  "scanBarcodeLabel": "Сканируйте штрих‑код"
 }

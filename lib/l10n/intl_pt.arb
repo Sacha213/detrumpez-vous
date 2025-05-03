@@ -93,5 +93,6 @@
   "reportProblemActionSubtitle": "Clique aqui para reportar um problema",
   "classificationInfoTitle": "Como as empresas são classificadas?",
   "classificationInfoSubtitle": "Clique aqui para descobrir nossos critérios",
-  "companyLabel": "Empresa"
+  "companyLabel": "Empresa",
+  "scanBarcodeLabel": "Escaneie um código de barras"
 }

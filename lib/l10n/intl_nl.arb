@@ -93,5 +93,6 @@
   "reportProblemActionSubtitle": "Klik hier om een probleem te melden",
   "classificationInfoTitle": "Hoe worden bedrijven geclassificeerd?",
   "classificationInfoSubtitle": "Klik hier om onze criteria te ontdekken",
-  "companyLabel": "Bedrijf"
+  "companyLabel": "Bedrijf",
+  "scanBarcodeLabel": "Scan een streepjescode"
 }

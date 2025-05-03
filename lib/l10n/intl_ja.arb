@@ -93,5 +93,6 @@
   "reportProblemActionSubtitle": "ここをクリックして問題を報告してください",
   "classificationInfoTitle": "企業はどのように分類されますか？",
   "classificationInfoSubtitle": "ここをクリックして基準を確認してください",
-  "companyLabel": "会社"
+  "companyLabel": "会社",
+  "scanBarcodeLabel": "バーコードをスキャン"
 }

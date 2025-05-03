@@ -134,6 +134,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "safe": MessageLookupByLibrary.simpleMessage("非美国"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage("该产品似乎不属于美国公司。"),
+    "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage("扫描条形码"),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
       "⚠️ 请确保输入拼写正确的食品品牌，以避免错误。",
     ),

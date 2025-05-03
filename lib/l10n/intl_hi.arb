@@ -93,5 +93,6 @@
   "reportProblemActionSubtitle": "समस्या की रिपोर्ट करने के लिए यहां क्लिक करें",
   "classificationInfoTitle": "कंपनियों को कैसे वर्गीकृत किया जाता है?",
   "classificationInfoSubtitle": "हमारे मानदंड जानने के लिए यहां क्लिक करें",
-  "companyLabel": "कंपनी"
+  "companyLabel": "कंपनी",
+  "scanBarcodeLabel": "बारकोड स्कैन करें"
 }
