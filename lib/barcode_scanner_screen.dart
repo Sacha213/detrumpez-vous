@@ -50,6 +50,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   bool isProcessing = false; // pour éviter plusieurs scans simultanés
   bool isBrandFound = false; // pour savoir si le produit est dans une liste
 
+  bool _isBottomSheetOpen = false; // Empêche l’ouverture en double
+
   // Ajoutez ce contrôleur dans votre state:
   final TextEditingController manualSearchController = TextEditingController();
 
@@ -372,7 +374,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
       description = desc ?? S.of(context).descriptionNotFound;
       source = resultJson["source"] ?? S.of(context).sourceNotFound;
       parentCompany = resultJson["parentCompany"] ?? S.of(context).unknown;
-      company = resultJson["company"] ?? S.of(context).unknown;
+      company = resultJson["name"] ?? S.of(context).unknown;
       origin = resultJson["origin"] ?? "";
       parentOrigin =
           resultJson["parentOrigin"] ?? ""; // Stocker le pays d'origine
@@ -412,23 +414,27 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
           // Stocker le code-barres actuel avant d'ouvrir la sheet
           final String currentBarcode = barcode;
 
-          // Attend que la bottom sheet soit fermée
-          await showModalBottomSheet(
-            context: context,
-            isScrollControlled:
-                true, // Important pour que la sheet s'adapte au clavier
-            backgroundColor:
-                Colors.grey.shade100, // Couleur de fond de la sheet
-            shape: const RoundedRectangleBorder(
-              // Coins arrondis
-              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-            ),
-            builder: (BuildContext sheetContext) {
-              // Utiliser un contexte différent
-              return AddProduct(
-                  barcode: currentBarcode); // Passer le code-barres stocké
-            },
-          );
+          if (!_isBottomSheetOpen) {
+            _isBottomSheetOpen = true;
+            // Attend que la bottom sheet soit fermée
+            await showModalBottomSheet(
+              context: context,
+              isScrollControlled:
+                  true, // Important pour que la sheet s'adapte au clavier
+              backgroundColor:
+                  Colors.grey.shade100, // Couleur de fond de la sheet
+              shape: const RoundedRectangleBorder(
+                // Coins arrondis
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+              ),
+              builder: (BuildContext sheetContext) {
+                // Utiliser un contexte différent
+                return AddProduct(
+                    barcode: currentBarcode); // Passer le code-barres stocké
+              },
+            );
+            _isBottomSheetOpen = false;
+          }
 
           // Après la fermeture de la sheet, vérifier à nouveau si monté et réinitialiser
           if (mounted) {
@@ -550,9 +556,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                       ),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 8.0, vertical: 4.0),
-                      child: const Text(
-                        "Scannez un code barre",
-                        style: TextStyle(
+                      child: Text(
+                        S.of(context).scanBarcodeLabel,
+                        style: const TextStyle(
                           color: Colors.white,
                           fontWeight:
                               FontWeight.w500, // Légèrement plus visible
