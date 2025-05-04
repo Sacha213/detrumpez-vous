@@ -135,6 +135,7 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16.0), // Espace entre les champs
       child: TextFormField(
+        textCapitalization: TextCapitalization.sentences,
         controller: controller,
         maxLines: maxLines,
         keyboardType:
