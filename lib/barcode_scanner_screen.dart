@@ -49,6 +49,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   List<dynamic> brandlist = [];
   bool isProcessing = false; // pour éviter plusieurs scans simultanés
   bool isBrandFound = false; // pour savoir si le produit est dans une liste
+  bool isIngredientsOriginFromUS = false; // pour savoir si l'origine est US
 
   bool _isBottomSheetOpen = false; // Empêche l’ouverture en double
 
@@ -172,7 +173,33 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     setState(() {});
 
     // Exemple de recherche d'informations de marque
-    //await fetchProductInfo("5000112611762");
+    await fetchProductInfo("20724696090");
+  }
+
+  /// Vérifie si la chaîne passée correspond aux États‑Unis,
+  /// en acceptant plusieurs variantes orthographiques/linguistiques.
+  bool checkOrigin(String origin) {
+    final norm = removeDiacritics(origin.trim().toLowerCase());
+    const usaVariants = {
+      'us',
+      'usa',
+      'u.s.',
+      'u.s.a.',
+      'usa.',
+      'the united states',
+      'the united states of america',
+      'us of a',
+      'america',
+      'les etats unis',
+      'les etats-unis',
+      'united states',
+      'united states of america',
+      'united states america',
+      'etats unis',
+      'etats-unis',
+      'etatsunis',
+    };
+    return usaVariants.contains(norm);
   }
 
   /// Recherche une information de marque par fuzzy match.
@@ -212,7 +239,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
 
   /// Récupère les informations d'un produit depuis plusieurs API.
   Future<void> fetchProductInfo(String barcode) async {
-    String? productData = await fetchFromOpenFoodFact(barcode);
+    List<String?>? foodFactData = await fetchFromOpenFoodFact(barcode);
+    String? productData = foodFactData?[0];
+    String? origin = foodFactData?[1];
 
     productData ??= await fetchFromOpenBeautyFact(barcode);
 
@@ -220,7 +249,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
 
     productData ??= await fetchFromOpenProductFact(barcode);
 
-    await updateProductInfoDetails(productData);
+    await updateProductInfoDetails(productData, origin ?? "");
   }
 
   /// Fonction pour normaliser un nom de marque
@@ -259,7 +288,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   }
 
   /// Interroge l'API OpenFoodFacts pour récupérer les informations d'un produit.
-  Future<String?> fetchFromOpenFoodFact(String barcode) async {
+  Future<List<String?>?> fetchFromOpenFoodFact(String barcode) async {
     OpenFoodAPIConfiguration.userAgent = UserAgent(
       name: "DeTrumpez-VousApp",
       version: "1.0.0",
@@ -270,13 +299,18 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
       barcode,
       version: ProductQueryVersion.v3,
       language: OpenFoodFactsLanguage.FRENCH,
-      fields: [ProductField.NAME, ProductField.BRANDS, ProductField.COUNTRIES],
+      fields: [
+        ProductField.NAME,
+        ProductField.BRANDS,
+        ProductField.COUNTRIES,
+        ProductField.ALL
+      ],
     );
     final ProductResultV3 resultFood =
         await OpenFoodAPIClient.getProductV3(config);
 
     if (resultFood.product != null && resultFood.product?.brands != null) {
-      return resultFood.product?.brands;
+      return [resultFood.product?.brands, resultFood.product?.origins];
     }
     return null;
   }
@@ -354,7 +388,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     });
   }
 
-  Future<void> updateProductInfoDetails(String? productData) async {
+  Future<void> updateProductInfoDetails(
+      String? productData, String ingredientsOrigin) async {
     // Recherche d'informations de marque basée sur le champ 'brands'
     final Map<String, dynamic> resultJson =
         await getBrandInfo(productData ?? "");
@@ -380,6 +415,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
           resultJson["parentOrigin"] ?? ""; // Stocker le pays d'origine
       isProductFromUSA = resultJson["parentOrigin"] == "US";
       isBrandFound = resultJson.isNotEmpty;
+      isIngredientsOriginFromUS = checkOrigin(ingredientsOrigin);
     });
 
     if (isBrandFound) {
@@ -394,7 +430,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     }
 
     // Si la marque n'est pas trouvée dans les listes, l'envoyer sur Firebase
-    if (!isBrandFound &&
+    /*if (!isBrandFound &&
         productData != null &&
         productData.isNotEmpty &&
         !manualSearchUsed) {
@@ -402,7 +438,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
         'brand_name': productData,
         'timestamp': FieldValue.serverTimestamp(),
       });
-    }
+    }*/
 
     // Déclenche un retour haptique (vibration légère)
     if (isBrandFound) {
@@ -419,6 +455,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
             // Attend que la bottom sheet soit fermée
             await showModalBottomSheet(
               context: context,
+              enableDrag: true, // Autorise la fermeture en glissant vers le bas
+              isDismissible: true, // Autorise le tap en dehors pour fermer
               isScrollControlled:
                   true, // Important pour que la sheet s'adapte au clavier
               backgroundColor:
@@ -429,8 +467,12 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
               ),
               builder: (BuildContext sheetContext) {
                 // Utiliser un contexte différent
-                return AddProduct(
-                    barcode: currentBarcode); // Passer le code-barres stocké
+                return FractionallySizedBox(
+                  heightFactor: 0.85, // 75% de la hauteur de l'écran
+                  child: AddProduct(
+                    barcode: currentBarcode,
+                  ),
+                ); // Passer le code-barres stocké
               },
             );
             _isBottomSheetOpen = false;
@@ -715,7 +757,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                   manualSearchUsed = true;
                                                 });
                                                 await updateProductInfoDetails(
-                                                    brand);
+                                                    brand, "");
                                               }
                                             },
                                             padding: const EdgeInsets.symmetric(
@@ -893,46 +935,54 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                           padding: const EdgeInsets.all(
                                               12), // Ajout de padding interne
                                           child: Column(children: [
-                                            Row(children: [
-                                              // Vous pourriez ajouter une icône ici si pertinent
-                                              (parentOrigin != "")
-                                                  ? _getFlagWidget(parentOrigin)
-                                                  : const Icon(
-                                                      CupertinoIcons
-                                                          .building_2_fill,
-                                                      size: 32,
-                                                      color: Colors.grey),
-                                              const SizedBox(width: 12),
-                                              Expanded(
-                                                  // Utiliser Expanded pour que la colonne prenne l'espace
-                                                  child: Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start, // Aligner le texte à gauche
-                                                      children: [
-                                                    Text(
-                                                        S
-                                                            .of(context)
-                                                            .parentCompanyLabel,
-                                                        style: const TextStyle(
-                                                            fontSize: 16,
-                                                            fontWeight: FontWeight
-                                                                .bold)), // Style du titre
-                                                    const SizedBox(
-                                                        height:
-                                                            2), // Espace entre titre et valeur
-                                                    Text(parentCompany,
-                                                        style: const TextStyle(
-                                                            fontSize:
-                                                                14)) // Style de la valeur
-                                                  ]))
-                                            ]),
-                                            const SizedBox(height: 8),
-                                            const Divider(
-                                                indent: 16,
-                                                endIndent: 16,
-                                                height: 1),
-                                            const SizedBox(height: 8),
+                                            (parentOrigin != "")
+                                                ? Column(children: [
+                                                    Row(children: [
+                                                      // Vous pourriez ajouter une icône ici si pertinent
+                                                      (parentOrigin != "")
+                                                          ? _getFlagWidget(
+                                                              parentOrigin)
+                                                          : const Icon(
+                                                              CupertinoIcons
+                                                                  .building_2_fill,
+                                                              size: 32,
+                                                              color:
+                                                                  Colors.grey),
+                                                      const SizedBox(width: 12),
+                                                      Expanded(
+                                                          // Utiliser Expanded pour que la colonne prenne l'espace
+                                                          child: Column(
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start, // Aligner le texte à gauche
+                                                              children: [
+                                                            Text(
+                                                                S
+                                                                    .of(context)
+                                                                    .parentCompanyLabel,
+                                                                style: const TextStyle(
+                                                                    fontSize:
+                                                                        16,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold)), // Style du titre
+                                                            const SizedBox(
+                                                                height:
+                                                                    2), // Espace entre titre et valeur
+                                                            Text(parentCompany,
+                                                                style: const TextStyle(
+                                                                    fontSize:
+                                                                        14)) // Style de la valeur
+                                                          ]))
+                                                    ]),
+                                                    const SizedBox(height: 8),
+                                                    const Divider(
+                                                        indent: 16,
+                                                        endIndent: 16,
+                                                        height: 1),
+                                                    const SizedBox(height: 8),
+                                                  ])
+                                                : Container(),
                                             Row(children: [
                                               // Vous pourriez ajouter une icône ici si pertinent
                                               (origin != "")
@@ -966,7 +1016,48 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                             fontSize:
                                                                 14)) // Style de la valeur
                                                   ]))
-                                            ])
+                                            ]),
+                                            (isIngredientsOriginFromUS)
+                                                ? Column(
+                                                    children: [
+                                                      const SizedBox(height: 8),
+                                                      const Divider(
+                                                          indent: 16,
+                                                          endIndent: 16,
+                                                          height: 1),
+                                                      const SizedBox(height: 8),
+                                                      Row(children: [
+                                                        // Vous pourriez ajouter une icône ici si pertinent
+                                                        _getFlagWidget("US"),
+                                                        const SizedBox(
+                                                            width: 12),
+                                                        Expanded(
+                                                            // Utiliser Expanded pour que la colonne prenne l'espace
+                                                            child: Column(
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start, // Aligner le texte à gauche
+                                                                children: [
+                                                              Text(
+                                                                  "Origine des ingrédients",
+                                                                  style: const TextStyle(
+                                                                      fontSize:
+                                                                          16,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold)), // Style du titre
+                                                              const SizedBox(
+                                                                  height:
+                                                                      2), // Espace entre titre et valeur
+                                                              Text("USA",
+                                                                  style: const TextStyle(
+                                                                      fontSize:
+                                                                          14)) // Style de la valeur
+                                                            ]))
+                                                      ])
+                                                    ],
+                                                  )
+                                                : Container()
                                           ])),
                                       const SizedBox(height: 16),
                                       Text(
@@ -1015,15 +1106,26 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                     builder: (context) =>
                                                         AddProductInfoScreen(
                                                             barcode: barcode,
-                                                            initialBrand: brand,
+                                                            initialBrand:
+                                                                (isBrandFound)
+                                                                    ? brand
+                                                                    : "",
                                                             initialDescription:
-                                                                description,
+                                                                (isBrandFound)
+                                                                    ? description
+                                                                    : "",
                                                             initialOrigin:
-                                                                origin,
+                                                                (isBrandFound)
+                                                                    ? origin
+                                                                    : "",
                                                             initialParentCompany:
-                                                                parentCompany,
+                                                                (isBrandFound)
+                                                                    ? parentCompany
+                                                                    : "",
                                                             initialparentOrigin:
-                                                                parentOrigin),
+                                                                (isBrandFound)
+                                                                    ? parentOrigin
+                                                                    : ""),
                                                   ),
                                                 );
                                               },
