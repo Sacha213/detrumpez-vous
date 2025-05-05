@@ -32,6 +32,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "जानकारी पूरी करने के लिए यहां क्लिक करें",
     ),
     "addInfoTitle": MessageLookupByLibrary.simpleMessage("जानकारी जोड़ें"),
+    "addIngredientPhoto": MessageLookupByLibrary.simpleMessage(
+      "सामग्री की फोटो जोड़ें",
+    ),
     "addPhoto": MessageLookupByLibrary.simpleMessage("एक तस्वीर जोड़ें"),
     "addProductButton": MessageLookupByLibrary.simpleMessage("उत्पाद जोड़ें"),
     "addProductHelp": MessageLookupByLibrary.simpleMessage(
@@ -120,6 +123,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageSourceTitle": MessageLookupByLibrary.simpleMessage("छवि स्रोत"),
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "छवि अपलोड करने में त्रुटि।",
+    ),
+    "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
+      "सामग्री की उत्पत्ति",
     ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "एक खाद्य ब्रांड दर्ज करें",

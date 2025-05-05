@@ -94,5 +94,7 @@
   "classificationInfoTitle": "企業はどのように分類されますか？",
   "classificationInfoSubtitle": "ここをクリックして基準を確認してください",
   "companyLabel": "会社",
+  "ingredientsOriginLabel": "原材料の産地",
+  "addIngredientPhoto": "成分の写真を追加",
   "scanBarcodeLabel": "バーコードをスキャン"
 }

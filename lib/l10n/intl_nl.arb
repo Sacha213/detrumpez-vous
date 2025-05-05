@@ -94,5 +94,7 @@
   "classificationInfoTitle": "Hoe worden bedrijven geclassificeerd?",
   "classificationInfoSubtitle": "Klik hier om onze criteria te ontdekken",
   "companyLabel": "Bedrijf",
+  "ingredientsOriginLabel": "Afkomst van ingrediënten",
+  "addIngredientPhoto": "Afbeelding van ingrediënten toevoegen",
   "scanBarcodeLabel": "Scan een streepjescode"
 }

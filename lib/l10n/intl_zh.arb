@@ -94,5 +94,7 @@
   "classificationInfoTitle": "公司如何分类？",
   "classificationInfoSubtitle": "点击此处了解我们的标准",
   "companyLabel": "公司",
+  "ingredientsOriginLabel": "配料来源",
+  "addIngredientPhoto": "添加配料照片",
   "scanBarcodeLabel": "扫描条形码"
 }

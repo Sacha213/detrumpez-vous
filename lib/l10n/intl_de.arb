@@ -94,5 +94,7 @@
   "classificationInfoTitle": "Wie werden Unternehmen klassifiziert?",
   "classificationInfoSubtitle": "Klicken Sie hier, um unsere Kriterien zu entdecken",
   "companyLabel": "Unternehmen",
+  "ingredientsOriginLabel": "Herkunft der Zutaten",
+  "addIngredientPhoto": "Foto der Zutaten hinzufügen",
   "scanBarcodeLabel": "Scannen Sie einen Barcode"
 }

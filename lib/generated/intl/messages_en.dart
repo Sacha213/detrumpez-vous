@@ -32,6 +32,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Click here to complete the info",
     ),
     "addInfoTitle": MessageLookupByLibrary.simpleMessage("Add information"),
+    "addIngredientPhoto": MessageLookupByLibrary.simpleMessage(
+      "Add ingredient photo",
+    ),
     "addPhoto": MessageLookupByLibrary.simpleMessage("Add a photo"),
     "addProductButton": MessageLookupByLibrary.simpleMessage("Add product"),
     "addProductHelp": MessageLookupByLibrary.simpleMessage(
@@ -122,6 +125,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageSourceTitle": MessageLookupByLibrary.simpleMessage("Image source"),
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "Error uploading image.",
+    ),
+    "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
+      "Ingredients origin",
     ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Enter a food brand",

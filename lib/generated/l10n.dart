@@ -889,6 +889,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Ingredients origin`
+  String get ingredientsOriginLabel {
+    return Intl.message(
+      'Ingredients origin',
+      name: 'ingredientsOriginLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add ingredient photo`
+  String get addIngredientPhoto {
+    return Intl.message(
+      'Add ingredient photo',
+      name: 'addIngredientPhoto',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

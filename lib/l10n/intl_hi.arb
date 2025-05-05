@@ -94,5 +94,7 @@
   "classificationInfoTitle": "कंपनियों को कैसे वर्गीकृत किया जाता है?",
   "classificationInfoSubtitle": "हमारे मानदंड जानने के लिए यहां क्लिक करें",
   "companyLabel": "कंपनी",
+  "ingredientsOriginLabel": "सामग्री की उत्पत्ति",
+  "addIngredientPhoto": "सामग्री की फोटो जोड़ें",
   "scanBarcodeLabel": "बारकोड स्कैन करें"
 }

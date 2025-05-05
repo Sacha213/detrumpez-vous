@@ -32,6 +32,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "انقر هنا لإكمال المعلومات",
     ),
     "addInfoTitle": MessageLookupByLibrary.simpleMessage("إضافة معلومات"),
+    "addIngredientPhoto": MessageLookupByLibrary.simpleMessage(
+      "إضافة صورة للمكونات",
+    ),
     "addPhoto": MessageLookupByLibrary.simpleMessage("إضافة صورة"),
     "addProductButton": MessageLookupByLibrary.simpleMessage("إضافة المنتج"),
     "addProductHelp": MessageLookupByLibrary.simpleMessage(
@@ -124,6 +127,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageSourceTitle": MessageLookupByLibrary.simpleMessage("مصدر الصورة"),
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "خطأ أثناء تحميل الصورة.",
+    ),
+    "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
+      "مصدر المكونات",
     ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "أدخل علامة تجارية غذائية",

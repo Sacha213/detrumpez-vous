@@ -94,5 +94,7 @@
   "classificationInfoTitle": "كيف يتم تصنيف الشركات؟",
   "classificationInfoSubtitle": "انقر هنا لاكتشاف معاييرنا",
   "companyLabel": "شركة",
+  "ingredientsOriginLabel": "مصدر المكونات",
+  "addIngredientPhoto": "إضافة صورة للمكونات",
   "scanBarcodeLabel": "امسح الرمز الشريطي"
 }

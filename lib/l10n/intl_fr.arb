@@ -94,5 +94,7 @@
   "classificationInfoSubtitle": "Cliquez ici pour découvrir nos critères",
   "addInfoSubtitle": "Cliquez ici pour compléter les infos",
   "companyLabel": "Entreprise",
+  "ingredientsOriginLabel": "Origine des ingrédients",
+  "addIngredientPhoto": "Ajouter une photo des ingrédients",
   "scanBarcodeLabel": "Scannez un code-barres"
 }

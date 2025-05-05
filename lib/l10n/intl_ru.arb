@@ -94,5 +94,7 @@
   "classificationInfoTitle": "Как классифицируются компании?",
   "classificationInfoSubtitle": "Нажмите здесь, чтобы ознакомиться с нашими критериями",
   "companyLabel": "Компания",
+  "ingredientsOriginLabel": "Происхождение ингредиентов",
+  "addIngredientPhoto": "Добавить фото ингредиентов",
   "scanBarcodeLabel": "Сканируйте штрих‑код"
 }

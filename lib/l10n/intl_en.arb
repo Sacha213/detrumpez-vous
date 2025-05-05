@@ -93,5 +93,7 @@
   "reportProblemActionSubtitle": "Click here to report an issue",
   "classificationInfoTitle": "How are companies classified?",
   "classificationInfoSubtitle": "Click here to discover our criteria",
-  "scanBarcodeLabel": "Scan a barcode"
+  "scanBarcodeLabel": "Scan a barcode",
+  "ingredientsOriginLabel": "Ingredients origin",
+  "addIngredientPhoto": "Add ingredient photo"
 }

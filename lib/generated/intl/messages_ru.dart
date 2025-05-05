@@ -32,6 +32,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Нажмите здесь, чтобы дополнить информацию",
     ),
     "addInfoTitle": MessageLookupByLibrary.simpleMessage("Добавить информацию"),
+    "addIngredientPhoto": MessageLookupByLibrary.simpleMessage(
+      "Добавить фото ингредиентов",
+    ),
     "addPhoto": MessageLookupByLibrary.simpleMessage("Добавить фото"),
     "addProductButton": MessageLookupByLibrary.simpleMessage(
       "Добавить продукт",
@@ -130,6 +133,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "Ошибка при загрузке изображения.",
+    ),
+    "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
+      "Происхождение ингредиентов",
     ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Введите бренд продуктов питания",

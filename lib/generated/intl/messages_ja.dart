@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "ここをクリックして情報を完成させてください",
     ),
     "addInfoTitle": MessageLookupByLibrary.simpleMessage("情報を追加"),
+    "addIngredientPhoto": MessageLookupByLibrary.simpleMessage("成分の写真を追加"),
     "addPhoto": MessageLookupByLibrary.simpleMessage("写真を追加"),
     "addProductButton": MessageLookupByLibrary.simpleMessage("製品を追加"),
     "addProductHelp": MessageLookupByLibrary.simpleMessage(
@@ -102,6 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "画像のアップロード中にエラーが発生しました。",
     ),
+    "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage("原材料の産地"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "食品ブランドを入力してください",
     ),

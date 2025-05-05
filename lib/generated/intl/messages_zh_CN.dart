@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "addInfoSubtitle": MessageLookupByLibrary.simpleMessage("点击此处完成信息"),
     "addInfoTitle": MessageLookupByLibrary.simpleMessage("添加信息"),
+    "addIngredientPhoto": MessageLookupByLibrary.simpleMessage("添加配料照片"),
     "addPhoto": MessageLookupByLibrary.simpleMessage("添加照片"),
     "addProductButton": MessageLookupByLibrary.simpleMessage("添加产品"),
     "addProductHelp": MessageLookupByLibrary.simpleMessage("通过向数据库添加产品来帮助我们"),
@@ -87,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageSourceMessage": MessageLookupByLibrary.simpleMessage("选择一个来源"),
     "imageSourceTitle": MessageLookupByLibrary.simpleMessage("图片来源"),
     "imageUploadError": MessageLookupByLibrary.simpleMessage("上传图片时出错。"),
+    "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage("配料来源"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage("输入食品品牌"),
     "originLabel": MessageLookupByLibrary.simpleMessage("原产国"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage("所有公司的名称"),
