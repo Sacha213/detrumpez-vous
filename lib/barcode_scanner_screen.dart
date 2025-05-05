@@ -17,7 +17,6 @@ import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:logger/logger.dart';
 import 'package:translator/translator.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:country_flags/country_flags.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:math';
@@ -173,7 +172,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     setState(() {});
 
     // Exemple de recherche d'informations de marque
-    await fetchProductInfo("20724696090");
+    //await fetchProductInfo("20724696090");
   }
 
   /// Vérifie si la chaîne passée correspond aux États‑Unis,
@@ -1039,7 +1038,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                         .start, // Aligner le texte à gauche
                                                                 children: [
                                                               Text(
-                                                                  "Origine des ingrédients",
+                                                                  S.of(context).ingredientsOriginLabel,
                                                                   style: const TextStyle(
                                                                       fontSize:
                                                                           16,
@@ -1049,8 +1048,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                               const SizedBox(
                                                                   height:
                                                                       2), // Espace entre titre et valeur
-                                                              Text("USA",
-                                                                  style: const TextStyle(
+                                                              const Text("USA",
+                                                                  style: TextStyle(
                                                                       fontSize:
                                                                           14)) // Style de la valeur
                                                             ]))
