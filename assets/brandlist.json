@@ -20292,6 +20292,15 @@
           "origin": "AT" 
         },
         {
+            "name": "Red Bull", 
+            "description": "Marque autrichienne de boisson énergisante.",
+            "source": "Wikipedia: Red Bull",
+            "parentCompany": "Red Bull GmbH", 
+            "normalizedName": "red bullorginal",
+            "parentOrigin": "AT", 
+            "origin": "AT" 
+          },
+        {
           "name": "Alpen", 
           "description": "Marque britannique de muesli et barres de céréales.",
           "source": "Wikipedia: Alpen (cereal)",
