@@ -23,12 +23,16 @@ class ReportProblemScreen extends StatefulWidget {
 
 class _ReportProblemScreenState extends State<ReportProblemScreen> {
   final TextEditingController commentController = TextEditingController();
+  final TextEditingController emailController =
+      TextEditingController(); // Nouveau contrôleur pour l'email
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isSending = false;
 
   @override
   void dispose() {
     commentController.dispose();
+    emailController
+        .dispose(); // N'oubliez pas de disposer le nouveau contrôleur
     super.dispose();
   }
 
@@ -39,17 +43,24 @@ class _ReportProblemScreenState extends State<ReportProblemScreen> {
       });
 
       final String comments = commentController.text.trim();
+      final String email = emailController.text.trim(); // Récupérer l'email
 
       try {
         // Cache le clavier
         FocusScope.of(context).unfocus();
 
-        await FirebaseFirestore.instance.collection('comments').add({
+        Map<String, dynamic> reportData = {
           'comments': comments,
           'timestamp': FieldValue.serverTimestamp(),
-          'barcode': widget.barcode, // Utilise widget.barcode
-          'reported_brand': widget.brand, // Utilise widget.brand
-        });
+          'barcode': widget.barcode,
+          'reported_brand': widget.brand,
+        };
+
+        if (email.isNotEmpty) {
+          reportData['user_email'] = email; // Ajouter l'email s'il est fourni
+        }
+
+        await FirebaseFirestore.instance.collection('comments').add(reportData);
 
         // Vérifie si le widget est toujours monté avant d'afficher la SnackBar ou de pop
         if (!mounted) return;
@@ -88,9 +99,10 @@ class _ReportProblemScreenState extends State<ReportProblemScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context); // Pour un accès plus facile
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.of(context).reportProblemTitle), // Utiliser S.current ici
+        title: Text(s.reportProblemTitle), // Utiliser S.current ici
         backgroundColor: Colors.white, // Ou la couleur de ton thème
         foregroundColor: Colors.black, // Couleur du titre et de l'icône retour
         elevation: 1, // Légère ombre
@@ -106,31 +118,71 @@ class _ReportProblemScreenState extends State<ReportProblemScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  S.of(context).reportProblemHelpUs, // Utiliser S.current ici
+                  s.reportProblemHelpUs, // Utiliser S.current ici
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  S
-                      .of(context)
-                      .reportProblemDescriptionPrompt, // Utiliser S.current ici
+                  s.reportProblemDescriptionPrompt, // Utiliser S.current ici
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: Colors.grey.shade600,
                       ),
                 ),
                 const SizedBox(height: 24), // Espace augmenté
+                // Champ Email (Optionnel)
+                TextFormField(
+                  controller: emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  textInputAction: TextInputAction.next,
+                  decoration: InputDecoration(
+                    labelText: s
+                        .reportProblemEmailLabel, // Nouvelle clé de localisation
+                    hintText: s
+                        .reportProblemEmailHint, // Nouvelle clé de localisation
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(
+                          color: Theme.of(context).primaryColor, width: 1.5),
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey.shade50,
+                    contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 12),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return null; // Champ optionnel, donc valide si vide
+                    }
+                    // Validation simple du format de l'email
+                    final emailRegex = RegExp(
+                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+                    if (!emailRegex.hasMatch(value)) {
+                      return s
+                          .reportProblemEmailInvalid; // Nouvelle clé de localisation
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(
+                    height: 16), // Espace avant le champ de commentaire
+
+                // Champ Commentaire
                 TextFormField(
                   controller: commentController,
-                  maxLines: 6, // Un peu plus de lignes
+                  maxLines: 6,
                   minLines: 4,
                   keyboardType: TextInputType.multiline,
                   textInputAction: TextInputAction.newline,
                   decoration: InputDecoration(
-                    hintText: S
-                        .of(context)
-                        .reportProblemHintText, // Utiliser S.current ici
+                    hintText: s.reportProblemHintText,
+                    labelText: s
+                        .reportProblemCommentLabel, // Nouvelle clé de localisation
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(color: Colors.grey.shade300),
@@ -147,14 +199,12 @@ class _ReportProblemScreenState extends State<ReportProblemScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
-                      return S
-                          .of(context)
+                      return s
                           .reportProblemValidationErrorEmpty; // Utiliser S.current ici
                     }
                     if (value.trim().length < 10) {
                       // Validation de longueur minimale
-                      return S
-                          .of(context)
+                      return s
                           .reportProblemValidationErrorLength; // Utiliser S.current ici
                     }
                     return null;
@@ -173,7 +223,7 @@ class _ReportProblemScreenState extends State<ReportProblemScreen> {
                         ? const CupertinoActivityIndicator(color: Colors.white)
                         : Text(
                             // Utiliser S.current ici
-                            S.of(context).reportProblemSendButton,
+                            s.reportProblemSendButton,
                             style: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
