@@ -165,8 +165,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "reportProblemActionTitle": MessageLookupByLibrary.simpleMessage(
       "समस्या की रिपोर्ट करें",
     ),
+    "reportProblemCommentLabel": MessageLookupByLibrary.simpleMessage(
+      "आपकी टिप्पणियाँ",
+    ),
     "reportProblemDescriptionPrompt": MessageLookupByLibrary.simpleMessage(
       "उत्पाद या एप्लिकेशन के साथ आई समस्या का वर्णन करें।",
+    ),
+    "reportProblemEmailHint": MessageLookupByLibrary.simpleMessage(
+      "यदि आप फॉलो-अप चाहते हैं तो अपना ईमेल दर्ज करें",
+    ),
+    "reportProblemEmailInvalid": MessageLookupByLibrary.simpleMessage(
+      "कृपया एक मान्य ईमेल पता दर्ज करें।",
+    ),
+    "reportProblemEmailLabel": MessageLookupByLibrary.simpleMessage(
+      "आपका ईमेल (वैकल्पिक)",
     ),
     "reportProblemErrorMessage": MessageLookupByLibrary.simpleMessage(
       "रिपोर्ट भेजने में त्रुटि। कृपया पुन: प्रयास करें।",

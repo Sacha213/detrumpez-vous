@@ -909,6 +909,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Your Email (Optional)`
+  String get reportProblemEmailLabel {
+    return Intl.message(
+      'Your Email (Optional)',
+      name: 'reportProblemEmailLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email if you'd like a follow-up`
+  String get reportProblemEmailHint {
+    return Intl.message(
+      'Enter your email if you\'d like a follow-up',
+      name: 'reportProblemEmailHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email address.`
+  String get reportProblemEmailInvalid {
+    return Intl.message(
+      'Please enter a valid email address.',
+      name: 'reportProblemEmailInvalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your comments`
+  String get reportProblemCommentLabel {
+    return Intl.message(
+      'Your comments',
+      name: 'reportProblemCommentLabel',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

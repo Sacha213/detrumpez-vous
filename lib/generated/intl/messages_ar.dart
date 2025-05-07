@@ -169,8 +169,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "reportProblemActionTitle": MessageLookupByLibrary.simpleMessage(
       "الإبلاغ عن مشكلة",
     ),
+    "reportProblemCommentLabel": MessageLookupByLibrary.simpleMessage(
+      "تعليقاتك",
+    ),
     "reportProblemDescriptionPrompt": MessageLookupByLibrary.simpleMessage(
       "صف المشكلة التي واجهتها مع المنتج أو التطبيق.",
+    ),
+    "reportProblemEmailHint": MessageLookupByLibrary.simpleMessage(
+      "أدخل بريدك الإلكتروني إذا كنت ترغب في متابعة",
+    ),
+    "reportProblemEmailInvalid": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال عنوان بريد إلكتروني صالح.",
+    ),
+    "reportProblemEmailLabel": MessageLookupByLibrary.simpleMessage(
+      "بريدك الإلكتروني (اختياري)",
     ),
     "reportProblemErrorMessage": MessageLookupByLibrary.simpleMessage(
       "خطأ في إرسال التقرير. يرجى المحاولة مرة أخرى.",

@@ -96,5 +96,9 @@
   "companyLabel": "Empresa",
   "ingredientsOriginLabel": "Origen de los ingredientes",
   "addIngredientPhoto": "Agregar foto de ingredientes",
-  "scanBarcodeLabel": "Scannez un code‑barres"
+  "scanBarcodeLabel": "Scannez un code‑barres",
+  "reportProblemEmailLabel": "Tu correo electrónico (Opcional)",
+  "reportProblemEmailHint": "Ingresa tu correo electrónico si deseas un seguimiento",
+  "reportProblemEmailInvalid": "Por favor, ingresa una dirección de correo electrónico válida.",
+  "reportProblemCommentLabel": "Tus comentarios"
 }

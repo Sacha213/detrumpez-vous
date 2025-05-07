@@ -183,8 +183,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "reportProblemActionTitle": MessageLookupByLibrary.simpleMessage(
       "Segnala un problema",
     ),
+    "reportProblemCommentLabel": MessageLookupByLibrary.simpleMessage(
+      "I tuoi commenti",
+    ),
     "reportProblemDescriptionPrompt": MessageLookupByLibrary.simpleMessage(
       "Descrivi il problema riscontrato con il prodotto o l\'applicazione.",
+    ),
+    "reportProblemEmailHint": MessageLookupByLibrary.simpleMessage(
+      "Inserisci la tua email se desideri un follow-up",
+    ),
+    "reportProblemEmailInvalid": MessageLookupByLibrary.simpleMessage(
+      "Per favore, inserisci un indirizzo email valido.",
+    ),
+    "reportProblemEmailLabel": MessageLookupByLibrary.simpleMessage(
+      "La tua email (Opzionale)",
     ),
     "reportProblemErrorMessage": MessageLookupByLibrary.simpleMessage(
       "Errore durante l\'invio della segnalazione. Si prega di riprovare.",

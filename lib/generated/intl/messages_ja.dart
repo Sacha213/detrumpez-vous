@@ -136,8 +136,20 @@ class MessageLookup extends MessageLookupByLibrary {
       "ここをクリックして問題を報告してください",
     ),
     "reportProblemActionTitle": MessageLookupByLibrary.simpleMessage("問題を報告"),
+    "reportProblemCommentLabel": MessageLookupByLibrary.simpleMessage(
+      "あなたのコメント",
+    ),
     "reportProblemDescriptionPrompt": MessageLookupByLibrary.simpleMessage(
       "製品またはアプリケーションで発生した問題を説明してください。",
+    ),
+    "reportProblemEmailHint": MessageLookupByLibrary.simpleMessage(
+      "フォローアップをご希望の場合はメールアドレスを入力してください",
+    ),
+    "reportProblemEmailInvalid": MessageLookupByLibrary.simpleMessage(
+      "有効なメールアドレスを入力してください。",
+    ),
+    "reportProblemEmailLabel": MessageLookupByLibrary.simpleMessage(
+      "メールアドレス (任意)",
     ),
     "reportProblemErrorMessage": MessageLookupByLibrary.simpleMessage(
       "レポートの送信中にエラーが発生しました。もう一度お試しください。",

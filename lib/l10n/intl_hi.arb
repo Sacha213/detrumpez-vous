@@ -96,5 +96,9 @@
   "companyLabel": "कंपनी",
   "ingredientsOriginLabel": "सामग्री की उत्पत्ति",
   "addIngredientPhoto": "सामग्री की फोटो जोड़ें",
-  "scanBarcodeLabel": "बारकोड स्कैन करें"
+  "scanBarcodeLabel": "बारकोड स्कैन करें",
+  "reportProblemEmailLabel": "आपका ईमेल (वैकल्पिक)",
+  "reportProblemEmailHint": "यदि आप फॉलो-अप चाहते हैं तो अपना ईमेल दर्ज करें",
+  "reportProblemEmailInvalid": "कृपया एक मान्य ईमेल पता दर्ज करें।",
+  "reportProblemCommentLabel": "आपकी टिप्पणियाँ"
 }

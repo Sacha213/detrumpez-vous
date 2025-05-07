@@ -175,8 +175,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "reportProblemActionTitle": MessageLookupByLibrary.simpleMessage(
       "Probleem melden",
     ),
+    "reportProblemCommentLabel": MessageLookupByLibrary.simpleMessage(
+      "Uw opmerkingen",
+    ),
     "reportProblemDescriptionPrompt": MessageLookupByLibrary.simpleMessage(
       "Beschrijf het probleem met het product of de applicatie.",
+    ),
+    "reportProblemEmailHint": MessageLookupByLibrary.simpleMessage(
+      "Voer uw e-mailadres in als u een follow-up wilt",
+    ),
+    "reportProblemEmailInvalid": MessageLookupByLibrary.simpleMessage(
+      "Voer een geldig e-mailadres in.",
+    ),
+    "reportProblemEmailLabel": MessageLookupByLibrary.simpleMessage(
+      "Uw e-mailadres (Optioneel)",
     ),
     "reportProblemErrorMessage": MessageLookupByLibrary.simpleMessage(
       "Fout bij het verzenden van het rapport. Probeer het opnieuw.",

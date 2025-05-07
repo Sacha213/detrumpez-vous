@@ -96,5 +96,9 @@
   "companyLabel": "Компания",
   "ingredientsOriginLabel": "Происхождение ингредиентов",
   "addIngredientPhoto": "Добавить фото ингредиентов",
-  "scanBarcodeLabel": "Сканируйте штрих‑код"
+  "scanBarcodeLabel": "Сканируйте штрих‑код",
+  "reportProblemEmailLabel": "Ваш Email (Необязательно)",
+  "reportProblemEmailHint": "Введите ваш Email, если хотите получить ответ",
+  "reportProblemEmailInvalid": "Пожалуйста, введите действительный адрес электронной почты.",
+  "reportProblemCommentLabel": "Ваши комментарии"
 }

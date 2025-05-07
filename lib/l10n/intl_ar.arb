@@ -96,5 +96,9 @@
   "companyLabel": "شركة",
   "ingredientsOriginLabel": "مصدر المكونات",
   "addIngredientPhoto": "إضافة صورة للمكونات",
-  "scanBarcodeLabel": "امسح الرمز الشريطي"
+  "scanBarcodeLabel": "امسح الرمز الشريطي",
+  "reportProblemEmailLabel": "بريدك الإلكتروني (اختياري)",
+  "reportProblemEmailHint": "أدخل بريدك الإلكتروني إذا كنت ترغب في متابعة",
+  "reportProblemEmailInvalid": "الرجاء إدخال عنوان بريد إلكتروني صالح.",
+  "reportProblemCommentLabel": "تعليقاتك"
 }

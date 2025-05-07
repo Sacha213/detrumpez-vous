@@ -96,5 +96,9 @@
   "companyLabel": "公司",
   "ingredientsOriginLabel": "配料来源",
   "addIngredientPhoto": "添加配料照片",
-  "scanBarcodeLabel": "扫描条形码"
+  "scanBarcodeLabel": "扫描条形码",
+  "reportProblemEmailLabel": "您的电子邮件 (可选)",
+  "reportProblemEmailHint": "如果您希望收到回复，请输入您的电子邮件",
+  "reportProblemEmailInvalid": "请输入有效的电子邮件地址。",
+  "reportProblemCommentLabel": "您的评论"
 }

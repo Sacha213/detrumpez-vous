@@ -115,8 +115,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "点击此处报告问题",
     ),
     "reportProblemActionTitle": MessageLookupByLibrary.simpleMessage("报告问题"),
+    "reportProblemCommentLabel": MessageLookupByLibrary.simpleMessage("您的评论"),
     "reportProblemDescriptionPrompt": MessageLookupByLibrary.simpleMessage(
       "描述产品或应用程序遇到的问题。",
+    ),
+    "reportProblemEmailHint": MessageLookupByLibrary.simpleMessage(
+      "如果您希望收到回复，请输入您的电子邮件",
+    ),
+    "reportProblemEmailInvalid": MessageLookupByLibrary.simpleMessage(
+      "请输入有效的电子邮件地址。",
+    ),
+    "reportProblemEmailLabel": MessageLookupByLibrary.simpleMessage(
+      "您的电子邮件 (可选)",
     ),
     "reportProblemErrorMessage": MessageLookupByLibrary.simpleMessage(
       "发送报告时出错。请重试。",

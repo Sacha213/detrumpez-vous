@@ -96,5 +96,9 @@
   "companyLabel": "Bedrijf",
   "ingredientsOriginLabel": "Afkomst van ingrediënten",
   "addIngredientPhoto": "Afbeelding van ingrediënten toevoegen",
-  "scanBarcodeLabel": "Scan een streepjescode"
+  "scanBarcodeLabel": "Scan een streepjescode",
+  "reportProblemEmailLabel": "Uw e-mailadres (Optioneel)",
+  "reportProblemEmailHint": "Voer uw e-mailadres in als u een follow-up wilt",
+  "reportProblemEmailInvalid": "Voer een geldig e-mailadres in.",
+  "reportProblemCommentLabel": "Uw opmerkingen"
 }

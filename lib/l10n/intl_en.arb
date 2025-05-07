@@ -95,5 +95,9 @@
   "classificationInfoSubtitle": "Click here to discover our criteria",
   "scanBarcodeLabel": "Scan a barcode",
   "ingredientsOriginLabel": "Ingredients origin",
-  "addIngredientPhoto": "Add ingredient photo"
+  "addIngredientPhoto": "Add ingredient photo",
+  "reportProblemEmailLabel": "Your Email (Optional)",
+  "reportProblemEmailHint": "Enter your email if you'd like a follow-up",
+  "reportProblemEmailInvalid": "Please enter a valid email address.",
+  "reportProblemCommentLabel": "Your comments"
 }

@@ -179,8 +179,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "reportProblemActionTitle": MessageLookupByLibrary.simpleMessage(
       "Сообщить о проблеме",
     ),
+    "reportProblemCommentLabel": MessageLookupByLibrary.simpleMessage(
+      "Ваши комментарии",
+    ),
     "reportProblemDescriptionPrompt": MessageLookupByLibrary.simpleMessage(
       "Опишите проблему, возникшую с продуктом или приложением.",
+    ),
+    "reportProblemEmailHint": MessageLookupByLibrary.simpleMessage(
+      "Введите ваш Email, если хотите получить ответ",
+    ),
+    "reportProblemEmailInvalid": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, введите действительный адрес электронной почты.",
+    ),
+    "reportProblemEmailLabel": MessageLookupByLibrary.simpleMessage(
+      "Ваш Email (Необязательно)",
     ),
     "reportProblemErrorMessage": MessageLookupByLibrary.simpleMessage(
       "Ошибка при отправке отчета. Пожалуйста, попробуйте еще раз.",

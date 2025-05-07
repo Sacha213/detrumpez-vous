@@ -96,5 +96,9 @@
   "companyLabel": "会社",
   "ingredientsOriginLabel": "原材料の産地",
   "addIngredientPhoto": "成分の写真を追加",
-  "scanBarcodeLabel": "バーコードをスキャン"
+  "scanBarcodeLabel": "バーコードをスキャン",
+  "reportProblemEmailLabel": "メールアドレス (任意)",
+  "reportProblemEmailHint": "フォローアップをご希望の場合はメールアドレスを入力してください",
+  "reportProblemEmailInvalid": "有効なメールアドレスを入力してください。",
+  "reportProblemCommentLabel": "あなたのコメント"
 }
