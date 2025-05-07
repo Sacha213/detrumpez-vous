@@ -51,6 +51,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   bool isIngredientsOriginFromUS = false; // pour savoir si l'origine est US
 
   bool _isBottomSheetOpen = false; // Empêche l’ouverture en double
+  bool _isSheetExpanded = false;
 
   // Ajoutez ce contrôleur dans votre state:
   final TextEditingController manualSearchController = TextEditingController();
@@ -64,6 +65,21 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
 
   // Contrôleur pour l'animation de tremblement
   late AnimationController _shakeController;
+
+  final MobileScannerController mobileScannerController =
+      MobileScannerController(
+    formats: [
+      BarcodeFormat.ean13,
+      BarcodeFormat.codebar,
+      BarcodeFormat.ean8,
+      BarcodeFormat.upcA,
+      BarcodeFormat.upcE,
+      BarcodeFormat.code128,
+      BarcodeFormat.code39,
+      BarcodeFormat.code93,
+      BarcodeFormat.itf,
+    ],
+  );
 
   @override
   void initState() {
@@ -211,6 +227,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
         .where((s) => s.isNotEmpty)
         .toList();
 
+    Map<String, dynamic>? americanMatch; // Pour stocker une correspondance américaine si trouvée
+    Map<String, dynamic>? notAmericanMatch;
+
     // Pour chaque candidat, on le normalise et on cherche une correspondance
     for (final candidate in candidates) {
       final String normalizedCandidate = normalizeBrandName(candidate);
@@ -224,7 +243,13 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
         }, orElse: () => <String, dynamic>{} // Littérale typée
             );
         if (found.isNotEmpty) {
-          return found;
+
+          if(found["parentOrigin"] == "US" || found["origin"] == "US"){
+            americanMatch = found;
+          }
+          else{
+            notAmericanMatch = found;
+          }
         }
       } catch (e) {
         // Au cas où on ne trouve rien pour ce candidat, on passe au suivant
@@ -232,8 +257,18 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
       }
     }
 
-    // Si aucun des candidats ne correspond, on renvoie un Map vide
+    if(americanMatch != null){
+      return americanMatch;
+    }
+    else if (notAmericanMatch != null){
+      return notAmericanMatch;
+    }
+    else{
+// Si aucun des candidats ne correspond, on renvoie un Map vide
     return <String, dynamic>{};
+    }
+
+    
   }
 
   /// Récupère les informations d'un produit depuis plusieurs API.
@@ -418,6 +453,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     });
 
     if (isBrandFound) {
+      HapticFeedback.mediumImpact();
       if (!isProductFromUSA) {
         // Produit "Safe" trouvé
         await _incrementSafeScanCount();
@@ -443,48 +479,62 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     if (isBrandFound) {
       HapticFeedback.mediumImpact();
     } else if (productData == null || productData.isEmpty) {
-      // Utiliser WidgetsBinding pour s'assurer que le build est terminé
-      WidgetsBinding.instance.addPostFrameCallback((_) async {
-        if (mounted) {
-          // Stocker le code-barres actuel avant d'ouvrir la sheet
-          final String currentBarcode = barcode;
+      // --- MODIFICATION ICI ---
+      // Vérifier si la sheet n'est PAS déjà ouverte OU en cours d'ouverture AVANT de programmer le callback
+      if (!_isBottomSheetOpen) {
+        // Marquer immédiatement que l'ouverture est en cours pour éviter les appels concurrents
+        _isBottomSheetOpen = true;
 
-          if (!_isBottomSheetOpen) {
-            _isBottomSheetOpen = true;
-            // Attend que la bottom sheet soit fermée
-            await showModalBottomSheet(
-              context: context,
-              enableDrag: true, // Autorise la fermeture en glissant vers le bas
-              isDismissible: true, // Autorise le tap en dehors pour fermer
-              isScrollControlled:
-                  true, // Important pour que la sheet s'adapte au clavier
-              backgroundColor:
-                  Colors.grey.shade100, // Couleur de fond de la sheet
-              shape: const RoundedRectangleBorder(
-                // Coins arrondis
-                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-              ),
-              builder: (BuildContext sheetContext) {
-                // Utiliser un contexte différent
-                return FractionallySizedBox(
-                  heightFactor: 0.85, // 75% de la hauteur de l'écran
-                  child: AddProduct(
-                    barcode: currentBarcode,
-                  ),
-                ); // Passer le code-barres stocké
-              },
-            );
+        WidgetsBinding.instance.addPostFrameCallback((_) async {
+          // Vérifier si le widget est toujours monté DANS le callback
+          if (mounted) {
+            final String currentBarcode = barcode; // Stocker avant l'await
+
+            try {
+              // Attend que la bottom sheet soit fermée
+              await showModalBottomSheet(
+                context: context,
+                enableDrag: true,
+                isDismissible: true,
+                isScrollControlled: true,
+                backgroundColor: Colors.grey.shade100,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                ),
+                builder: (BuildContext sheetContext) {
+                  return FractionallySizedBox(
+                    heightFactor: 0.85,
+                    child: AddProduct(
+                      barcode: currentBarcode,
+                    ),
+                  );
+                },
+              );
+            } finally {
+              // Ce bloc s'exécute même si showModalBottomSheet lève une exception
+              // ou si l'utilisateur ferme la sheet.
+
+              // Important : Remettre le flag à false UNIQUEMENT APRES la fermeture
+              // et vérifier si le widget est toujours monté
+              if (mounted) {
+                _isBottomSheetOpen = false; // Permettre une nouvelle ouverture
+                setState(() {
+                  barcode = ""; // Réinitialise le code-barres après fermeture
+                });
+              } else {
+                // Si le widget n'est plus monté pendant que la sheet était ouverte,
+                // il faut quand même réinitialiser le flag pour éviter un blocage
+                // si l'écran est recréé plus tard.
+                _isBottomSheetOpen = false;
+              }
+            }
+          } else {
+            // Si le widget n'est plus monté au moment où le callback s'exécute,
+            // il faut s'assurer que le flag est remis à false.
             _isBottomSheetOpen = false;
           }
-
-          // Après la fermeture de la sheet, vérifier à nouveau si monté et réinitialiser
-          if (mounted) {
-            setState(() {
-              barcode = ""; // Réinitialise le code-barres
-            });
-          }
-        }
-      });
+        });
+      } // Fin du if (!_isBottomSheetOpen)
     }
   }
 
@@ -555,9 +605,13 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
             child: Stack(
               children: [
                 MobileScanner(
+                  controller: mobileScannerController,
                   onDetect: (BarcodeCapture capture) {
                     final List<Barcode> barcodes = capture.barcodes;
-                    if (barcodes.isNotEmpty && !isProcessing) {
+                    if (barcodes.isNotEmpty &&
+                        !isProcessing &&
+                        !_isBottomSheetOpen &&
+                        !_isSheetExpanded) {
                       final String code = barcodes.first.rawValue ?? '';
                       if (code.isNotEmpty) {
                         onBarcodeDetected(code);
@@ -690,344 +744,287 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
           // --- FIN NOUVEAU WIDGET COMPTEUR ---
 
           // DraggableScrollableSheet toujours affiché en bas
-          DraggableScrollableSheet(
-            initialChildSize: 0.30,
-            minChildSize: 0.30,
-            maxChildSize: 0.90,
-            snap: true,
-            builder: (context, scrollController) {
-              return Container(
-                  decoration: BoxDecoration(
-                    color: !isBrandFound
-                        ? Colors.grey.shade100
-                        : (!isProductFromUSA
-                            ? Colors.green.shade100
-                            : Colors.red.shade100),
-                    borderRadius:
-                        const BorderRadius.vertical(top: Radius.circular(16)),
-                  ),
-                  padding: const EdgeInsets.only(top: 16, right: 16, left: 16),
-                  child: LayoutBuilder(
-                    builder: (context, constraints) {
-                      return SingleChildScrollView(
-                          controller: scrollController,
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(
-                                minHeight: constraints.maxHeight),
-                            child: IntrinsicHeight(
-                                child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                  Column(
-                                    children: [
-                                      // Indicateur de glissement style iOS
-                                      Center(
-                                        child: Container(
-                                          width: 48,
-                                          height: 6,
-                                          decoration: BoxDecoration(
-                                            color: Colors.grey.shade400,
-                                            borderRadius:
-                                                BorderRadius.circular(3),
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(height: 8),
-                                      // Champ de recherche manuelle
-                                      Center(
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 16.0, vertical: 8),
-                                          child: CupertinoSearchTextField(
-                                            controller: manualSearchController,
-                                            placeholder: S
-                                                .of(context)
-                                                .manualSearchPlaceholder,
-                                            style:
-                                                const TextStyle(fontSize: 16),
-                                            backgroundColor: Colors.grey[200],
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            onSubmitted: (value) async {
-                                              final String brand = value.trim();
-                                              if (brand.isNotEmpty) {
-                                                setState(() {
-                                                  manualSearchUsed = true;
-                                                });
-                                                await updateProductInfoDetails(
-                                                    brand, "");
-                                              }
-                                            },
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 12, vertical: 10),
-                                          ),
-                                        ),
-                                      ),
-                                      if (!isBrandFound && manualSearchUsed)
-                                        Text(
-                                          S.of(context).searchWarning,
-                                          textAlign: TextAlign.center,
-                                          style: const TextStyle(
-                                              fontSize: 14, color: Colors.red),
-                                        ),
-                                      const SizedBox(height: 8),
-                                      // Autres widgets d'affichage produit...
-
-                                      Row(
-                                        children: [
-                                          GestureDetector(
-                                            onTap: () async {
-                                              if (isBrandFound &&
-                                                  isProductFromUSA) {
-                                                final prefs =
-                                                    await SharedPreferences
-                                                        .getInstance();
-                                                setState(() {
-                                                  _isTrumpShowed =
-                                                      !_isTrumpShowed;
-                                                });
-                                                await prefs.setBool(
-                                                    'isTrumpShowed',
-                                                    !_isTrumpShowed);
-                                              }
-                                            },
-                                            child: Container(
-                                              width: 96,
-                                              height: 96,
-                                              decoration: !isBrandFound
-                                                  ? const BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                      color: Colors.grey,
-                                                    )
-                                                  : (!isProductFromUSA
-                                                      ? const BoxDecoration(
-                                                          shape:
-                                                              BoxShape.circle,
-                                                          color: Colors.green,
-                                                        )
-                                                      : BoxDecoration(
-                                                          shape:
-                                                              BoxShape.circle,
-                                                          image:
-                                                              DecorationImage(
-                                                            image: (_isTrumpShowed)
-                                                                ? const AssetImage(
-                                                                    "assets/trump.jpg")
-                                                                : const AssetImage(
-                                                                    "assets/usa.png"),
-                                                            fit: BoxFit.cover,
-                                                          ),
-                                                        )),
-                                              child: !isBrandFound
-                                                  ? const Icon(
-                                                      Icons.question_mark,
-                                                      size: 80,
-                                                      color: Colors.white,
-                                                    )
-                                                  : (!isProductFromUSA
-                                                      ? const Icon(
-                                                          Icons.check,
-                                                          size: 80,
-                                                          color: Colors.white,
-                                                        )
-                                                      : Container()),
+          NotificationListener<DraggableScrollableNotification>(
+            onNotification: (notification) {
+              // Vérifie si la sheet est proche de sa taille maximale
+              final bool expanded = notification.extent >
+                  (notification.maxExtent - 0.05); // Seuil de 5%
+              if (expanded != _isSheetExpanded) {
+                setState(() {
+                  _isSheetExpanded = expanded;
+                });
+              }
+              return true; // Indique que la notification a été gérée
+            },
+            child: DraggableScrollableSheet(
+              initialChildSize: 0.30,
+              minChildSize: 0.30,
+              maxChildSize: 0.90,
+              snap: true,
+              builder: (context, scrollController) {
+                return Container(
+                    decoration: BoxDecoration(
+                      color: !isBrandFound
+                          ? Colors.grey.shade100
+                          : (!isProductFromUSA
+                              ? Colors.green.shade100
+                              : Colors.red.shade100),
+                      borderRadius:
+                          const BorderRadius.vertical(top: Radius.circular(16)),
+                    ),
+                    padding:
+                        const EdgeInsets.only(top: 16, right: 16, left: 16),
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        return SingleChildScrollView(
+                            controller: scrollController,
+                            child: ConstrainedBox(
+                              constraints: BoxConstraints(
+                                  minHeight: constraints.maxHeight),
+                              child: IntrinsicHeight(
+                                  child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                    Column(
+                                      children: [
+                                        // Indicateur de glissement style iOS
+                                        Center(
+                                          child: Container(
+                                            width: 48,
+                                            height: 6,
+                                            decoration: BoxDecoration(
+                                              color: Colors.grey.shade400,
+                                              borderRadius:
+                                                  BorderRadius.circular(3),
                                             ),
                                           ),
-                                          const SizedBox(width: 16),
-                                          Expanded(
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  brand,
-                                                  style: const TextStyle(
-                                                      fontSize: 20,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                  textAlign: TextAlign.center,
-                                                ),
-                                                Text(
-                                                    !isBrandFound
-                                                        ? S
-                                                            .of(context)
-                                                            .unknownProductMessage
-                                                        : (!isProductFromUSA
-                                                            ? S
-                                                                .of(context)
-                                                                .safeProductMessage
-                                                            : S
-                                                                .of(context)
-                                                                .usaProductMessage),
-                                                    style: TextStyle(
-                                                      fontSize: 14,
-                                                      color: !isBrandFound
-                                                          ? Colors.grey
+                                        ),
+                                        const SizedBox(height: 8),
+                                        // Champ de recherche manuelle
+                                        Center(
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 16.0, vertical: 8),
+                                            child: CupertinoSearchTextField(
+                                              controller:
+                                                  manualSearchController,
+                                              placeholder: S
+                                                  .of(context)
+                                                  .manualSearchPlaceholder,
+                                              style:
+                                                  const TextStyle(fontSize: 16),
+                                              backgroundColor: Colors.grey[200],
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              onSubmitted: (value) async {
+                                                final String brand =
+                                                    value.trim();
+                                                if (brand.isNotEmpty) {
+                                                  setState(() {
+                                                    manualSearchUsed = true;
+                                                  });
+                                                  await updateProductInfoDetails(
+                                                      brand, "");
+                                                }
+                                              },
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 12,
+                                                      vertical: 10),
+                                            ),
+                                          ),
+                                        ),
+                                        if (!isBrandFound && manualSearchUsed)
+                                          Text(
+                                            S.of(context).searchWarning,
+                                            textAlign: TextAlign.center,
+                                            style: const TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.red),
+                                          ),
+                                        const SizedBox(height: 8),
+                                        // Autres widgets d'affichage produit...
+
+                                        Row(
+                                          children: [
+                                            GestureDetector(
+                                              onTap: () async {
+                                                if (isBrandFound &&
+                                                    isProductFromUSA) {
+                                                  final prefs =
+                                                      await SharedPreferences
+                                                          .getInstance();
+                                                  setState(() {
+                                                    _isTrumpShowed =
+                                                        !_isTrumpShowed;
+                                                  });
+                                                  await prefs.setBool(
+                                                      'isTrumpShowed',
+                                                      !_isTrumpShowed);
+                                                }
+                                              },
+                                              child: Container(
+                                                width: 96,
+                                                height: 96,
+                                                decoration: !isBrandFound
+                                                    ? const BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        color: Colors.grey,
+                                                      )
+                                                    : (!isProductFromUSA
+                                                        ? const BoxDecoration(
+                                                            shape:
+                                                                BoxShape.circle,
+                                                            color: Colors.green,
+                                                          )
+                                                        : BoxDecoration(
+                                                            shape:
+                                                                BoxShape.circle,
+                                                            image:
+                                                                DecorationImage(
+                                                              image: (_isTrumpShowed)
+                                                                  ? const AssetImage(
+                                                                      "assets/trump.jpg")
+                                                                  : const AssetImage(
+                                                                      "assets/usa.png"),
+                                                              fit: BoxFit.cover,
+                                                            ),
+                                                          )),
+                                                child: !isBrandFound
+                                                    ? const Icon(
+                                                        Icons.question_mark,
+                                                        size: 80,
+                                                        color: Colors.white,
+                                                      )
+                                                    : (!isProductFromUSA
+                                                        ? const Icon(
+                                                            Icons.check,
+                                                            size: 80,
+                                                            color: Colors.white,
+                                                          )
+                                                        : Container()),
+                                              ),
+                                            ),
+                                            const SizedBox(width: 16),
+                                            Expanded(
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    brand,
+                                                    style: const TextStyle(
+                                                        fontSize: 20,
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                    textAlign: TextAlign.center,
+                                                  ),
+                                                  Text(
+                                                      !isBrandFound
+                                                          ? S
+                                                              .of(context)
+                                                              .unknownProductMessage
                                                           : (!isProductFromUSA
-                                                              ? Colors.green
-                                                              : Colors.red),
-                                                    )),
-                                                const SizedBox(height: 8),
-                                                Container(
-                                                  padding: const EdgeInsets
-                                                      .symmetric(horizontal: 8),
-                                                  decoration: BoxDecoration(
-                                                    border: Border.all(
+                                                              ? S
+                                                                  .of(context)
+                                                                  .safeProductMessage
+                                                              : S
+                                                                  .of(context)
+                                                                  .usaProductMessage),
+                                                      style: TextStyle(
+                                                        fontSize: 14,
                                                         color: !isBrandFound
                                                             ? Colors.grey
                                                             : (!isProductFromUSA
                                                                 ? Colors.green
                                                                 : Colors.red),
-                                                        width: 2),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8),
-                                                  ),
-                                                  child: Text(
-                                                    !isBrandFound
-                                                        ? S.of(context).unknown
-                                                        : (!isProductFromUSA
-                                                            ? S.of(context).safe
-                                                            : S
-                                                                .of(context)
-                                                                .usa),
-                                                    style: TextStyle(
-                                                      fontSize: 16,
-                                                      color: !isBrandFound
-                                                          ? Colors.grey
+                                                      )),
+                                                  const SizedBox(height: 8),
+                                                  Container(
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        horizontal: 8),
+                                                    decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color: !isBrandFound
+                                                              ? Colors.grey
+                                                              : (!isProductFromUSA
+                                                                  ? Colors.green
+                                                                  : Colors.red),
+                                                          width: 2),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8),
+                                                    ),
+                                                    child: Text(
+                                                      !isBrandFound
+                                                          ? S
+                                                              .of(context)
+                                                              .unknown
                                                           : (!isProductFromUSA
-                                                              ? Colors.green
-                                                              : Colors.red),
-                                                      fontWeight:
-                                                          FontWeight.bold,
+                                                              ? S
+                                                                  .of(context)
+                                                                  .safe
+                                                              : S
+                                                                  .of(context)
+                                                                  .usa),
+                                                      style: TextStyle(
+                                                        fontSize: 16,
+                                                        color: !isBrandFound
+                                                            ? Colors.grey
+                                                            : (!isProductFromUSA
+                                                                ? Colors.green
+                                                                : Colors.red),
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
                                                     ),
                                                   ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 24),
+                                        Container(
+                                            // Ajout de la décoration pour les coins arrondis et l'ombre
+                                            decoration: BoxDecoration(
+                                              color: Colors
+                                                  .white, // Conserve le fond blanc
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      12), // Coins arrondis
+                                              boxShadow: [
+                                                // Ajout de l'ombre pour l'effet surélevé
+                                                BoxShadow(
+                                                  color: Colors.grey.withOpacity(
+                                                      0.3), // Couleur de l'ombre
+                                                  spreadRadius:
+                                                      1, // Étendue de l'ombre
+                                                  blurRadius:
+                                                      5, // Flou de l'ombre
+                                                  offset: const Offset(0,
+                                                      3), // Position de l'ombre (x, y)
                                                 ),
                                               ],
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                      const SizedBox(height: 24),
-                                      Container(
-                                          // Ajout de la décoration pour les coins arrondis et l'ombre
-                                          decoration: BoxDecoration(
-                                            color: Colors
-                                                .white, // Conserve le fond blanc
-                                            borderRadius: BorderRadius.circular(
-                                                12), // Coins arrondis
-                                            boxShadow: [
-                                              // Ajout de l'ombre pour l'effet surélevé
-                                              BoxShadow(
-                                                color: Colors.grey.withOpacity(
-                                                    0.3), // Couleur de l'ombre
-                                                spreadRadius:
-                                                    1, // Étendue de l'ombre
-                                                blurRadius:
-                                                    5, // Flou de l'ombre
-                                                offset: const Offset(0,
-                                                    3), // Position de l'ombre (x, y)
-                                              ),
-                                            ],
-                                          ),
-                                          padding: const EdgeInsets.all(
-                                              12), // Ajout de padding interne
-                                          child: Column(children: [
-                                            (parentOrigin != "")
-                                                ? Column(children: [
-                                                    Row(children: [
-                                                      // Vous pourriez ajouter une icône ici si pertinent
-                                                      (parentOrigin != "")
-                                                          ? _getFlagWidget(
-                                                              parentOrigin)
-                                                          : const Icon(
-                                                              CupertinoIcons
-                                                                  .building_2_fill,
-                                                              size: 32,
-                                                              color:
-                                                                  Colors.grey),
-                                                      const SizedBox(width: 12),
-                                                      Expanded(
-                                                          // Utiliser Expanded pour que la colonne prenne l'espace
-                                                          child: Column(
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start, // Aligner le texte à gauche
-                                                              children: [
-                                                            Text(
-                                                                S
-                                                                    .of(context)
-                                                                    .parentCompanyLabel,
-                                                                style: const TextStyle(
-                                                                    fontSize:
-                                                                        16,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold)), // Style du titre
-                                                            const SizedBox(
-                                                                height:
-                                                                    2), // Espace entre titre et valeur
-                                                            Text(parentCompany,
-                                                                style: const TextStyle(
-                                                                    fontSize:
-                                                                        14)) // Style de la valeur
-                                                          ]))
-                                                    ]),
-                                                    const SizedBox(height: 8),
-                                                    const Divider(
-                                                        indent: 16,
-                                                        endIndent: 16,
-                                                        height: 1),
-                                                    const SizedBox(height: 8),
-                                                  ])
-                                                : Container(),
-                                            Row(children: [
-                                              // Vous pourriez ajouter une icône ici si pertinent
-                                              (origin != "")
-                                                  ? _getFlagWidget(origin)
-                                                  : const Icon(
-                                                      CupertinoIcons
-                                                          .building_2_fill,
-                                                      size: 32,
-                                                      color: Colors.grey),
-                                              const SizedBox(width: 12),
-                                              Expanded(
-                                                  // Utiliser Expanded pour que la colonne prenne l'espace
-                                                  child: Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start, // Aligner le texte à gauche
-                                                      children: [
-                                                    Text(
-                                                        S
-                                                            .of(context)
-                                                            .companyLabel,
-                                                        style: const TextStyle(
-                                                            fontSize: 16,
-                                                            fontWeight: FontWeight
-                                                                .bold)), // Style du titre
-                                                    const SizedBox(
-                                                        height:
-                                                            2), // Espace entre titre et valeur
-                                                    Text(company,
-                                                        style: const TextStyle(
-                                                            fontSize:
-                                                                14)) // Style de la valeur
-                                                  ]))
-                                            ]),
-                                            (isIngredientsOriginFromUS)
-                                                ? Column(
-                                                    children: [
-                                                      const SizedBox(height: 8),
-                                                      const Divider(
-                                                          indent: 16,
-                                                          endIndent: 16,
-                                                          height: 1),
-                                                      const SizedBox(height: 8),
+                                            padding: const EdgeInsets.all(
+                                                12), // Ajout de padding interne
+                                            child: Column(children: [
+                                              (parentOrigin != "")
+                                                  ? Column(children: [
                                                       Row(children: [
                                                         // Vous pourriez ajouter une icône ici si pertinent
-                                                        _getFlagWidget("US"),
+                                                        (parentOrigin != "")
+                                                            ? _getFlagWidget(
+                                                                parentOrigin)
+                                                            : const Icon(
+                                                                CupertinoIcons
+                                                                    .building_2_fill,
+                                                                size: 32,
+                                                                color: Colors
+                                                                    .grey),
                                                         const SizedBox(
                                                             width: 12),
                                                         Expanded(
@@ -1038,7 +1035,10 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                         .start, // Aligner le texte à gauche
                                                                 children: [
                                                               Text(
-                                                                  S.of(context).ingredientsOriginLabel,
+                                                                  S
+                                                                      .of(
+                                                                          context)
+                                                                      .parentCompanyLabel,
                                                                   style: const TextStyle(
                                                                       fontSize:
                                                                           16,
@@ -1048,310 +1048,400 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                               const SizedBox(
                                                                   height:
                                                                       2), // Espace entre titre et valeur
-                                                              const Text("USA",
-                                                                  style: TextStyle(
+                                                              Text(
+                                                                  parentCompany,
+                                                                  style: const TextStyle(
                                                                       fontSize:
                                                                           14)) // Style de la valeur
                                                             ]))
-                                                      ])
+                                                      ]),
+                                                      const SizedBox(height: 8),
+                                                      const Divider(
+                                                          indent: 16,
+                                                          endIndent: 16,
+                                                          height: 1),
+                                                      const SizedBox(height: 8),
+                                                    ])
+                                                  : Container(),
+                                              Row(children: [
+                                                // Vous pourriez ajouter une icône ici si pertinent
+                                                (origin != "")
+                                                    ? _getFlagWidget(origin)
+                                                    : const Icon(
+                                                        CupertinoIcons
+                                                            .building_2_fill,
+                                                        size: 32,
+                                                        color: Colors.grey),
+                                                const SizedBox(width: 12),
+                                                Expanded(
+                                                    // Utiliser Expanded pour que la colonne prenne l'espace
+                                                    child: Column(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start, // Aligner le texte à gauche
+                                                        children: [
+                                                      Text(
+                                                          S
+                                                              .of(context)
+                                                              .companyLabel,
+                                                          style: const TextStyle(
+                                                              fontSize: 16,
+                                                              fontWeight: FontWeight
+                                                                  .bold)), // Style du titre
+                                                      const SizedBox(
+                                                          height:
+                                                              2), // Espace entre titre et valeur
+                                                      Text(company,
+                                                          style: const TextStyle(
+                                                              fontSize:
+                                                                  14)) // Style de la valeur
+                                                    ]))
+                                              ]),
+                                              (isIngredientsOriginFromUS)
+                                                  ? Column(
+                                                      children: [
+                                                        const SizedBox(
+                                                            height: 8),
+                                                        const Divider(
+                                                            indent: 16,
+                                                            endIndent: 16,
+                                                            height: 1),
+                                                        const SizedBox(
+                                                            height: 8),
+                                                        Row(children: [
+                                                          // Vous pourriez ajouter une icône ici si pertinent
+                                                          _getFlagWidget("US"),
+                                                          const SizedBox(
+                                                              width: 12),
+                                                          Expanded(
+                                                              // Utiliser Expanded pour que la colonne prenne l'espace
+                                                              child: Column(
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start, // Aligner le texte à gauche
+                                                                  children: [
+                                                                Text(
+                                                                    S
+                                                                        .of(
+                                                                            context)
+                                                                        .ingredientsOriginLabel,
+                                                                    style: const TextStyle(
+                                                                        fontSize:
+                                                                            16,
+                                                                        fontWeight:
+                                                                            FontWeight.bold)), // Style du titre
+                                                                const SizedBox(
+                                                                    height:
+                                                                        2), // Espace entre titre et valeur
+                                                                const Text(
+                                                                    "USA",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            14)) // Style de la valeur
+                                                              ]))
+                                                        ])
+                                                      ],
+                                                    )
+                                                  : Container()
+                                            ])),
+                                        const SizedBox(height: 16),
+                                        Text(
+                                          description,
+                                          textAlign: TextAlign.justify,
+                                          style: const TextStyle(fontSize: 16),
+                                        ),
+                                        const SizedBox(height: 8),
+
+                                        if (isProductFromUSA)
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                "($source)",
+                                                style: const TextStyle(
+                                                    fontSize: 14,
+                                                    color: Colors.blue),
+                                              ),
+                                            ],
+                                          ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 16,
+                                    ),
+                                    Column(
+                                      children: [
+                                        // Container avec coins arrondis et ombre
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            color:
+                                                Colors.white, // Couleur de fond
+                                            borderRadius: BorderRadius.circular(
+                                                12), // Coins arrondis
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              // Première rangée cliquable
+                                              InkWell(
+                                                onTap: () {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) => AddProductInfoScreen(
+                                                          barcode: barcode,
+                                                          initialBrand:
+                                                              (isBrandFound)
+                                                                  ? brand
+                                                                  : "",
+                                                          initialDescription:
+                                                              (isBrandFound)
+                                                                  ? description
+                                                                  : "",
+                                                          initialOrigin:
+                                                              (isBrandFound)
+                                                                  ? origin
+                                                                  : "",
+                                                          initialParentCompany:
+                                                              (isBrandFound)
+                                                                  ? parentCompany
+                                                                  : "",
+                                                          initialparentOrigin:
+                                                              (isBrandFound)
+                                                                  ? parentOrigin
+                                                                  : ""),
+                                                    ),
+                                                  );
+                                                },
+                                                // Pas de borderRadius ici car c'est un élément du milieu
+                                                child: Padding(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 16.0,
+                                                      vertical: 12.0),
+                                                  child: Row(
+                                                    children: [
+                                                      const Icon(
+                                                        Icons
+                                                            .add_circle_outline, // Icône pour ajouter
+                                                        color: Colors
+                                                            .blueAccent, // Couleur différente
+                                                      ),
+                                                      const SizedBox(
+                                                          width: 16), // Espace
+                                                      Expanded(
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              S
+                                                                  .of(context)
+                                                                  .addProductInfoTitle, // Nouveau titre
+                                                              style: const TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontSize: 16),
+                                                            ),
+                                                            Text(
+                                                              S
+                                                                  .of(context)
+                                                                  .addInfoSubtitle, // Nouveau sous-titre
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                          .grey[
+                                                                      600],
+                                                                  fontSize: 14),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Icon(
+                                                          CupertinoIcons
+                                                              .chevron_right,
+                                                          color: Colors.grey[
+                                                              400]), // Chevron
                                                     ],
-                                                  )
-                                                : Container()
-                                          ])),
-                                      const SizedBox(height: 16),
-                                      Text(
-                                        description,
-                                        textAlign: TextAlign.justify,
-                                        style: const TextStyle(fontSize: 16),
-                                      ),
-                                      const SizedBox(height: 8),
+                                                  ),
+                                                ),
+                                              ),
+                                              const Divider(
+                                                  indent: 16,
+                                                  endIndent: 16,
+                                                  height: 1),
+                                              InkWell(
+                                                // Utilisation d'InkWell pour l'effet de clic
+                                                onTap: () {
+                                                  // Naviguer vers la nouvelle page ReportProblemScreen
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          ReportProblemScreen(
+                                                        barcode:
+                                                            barcode, // Passer le code-barres actuel
+                                                        brand:
+                                                            brand, // Passer la marque actuelle
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                                borderRadius: const BorderRadius
+                                                    .only(
+                                                    topLeft:
+                                                        Radius.circular(12),
+                                                    topRight: Radius.circular(
+                                                        12)), // Arrondi correspondant au Container
+                                                child: Padding(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 16.0,
+                                                      vertical: 12.0),
+                                                  child: Row(
+                                                    children: [
+                                                      const Icon(
+                                                        Icons
+                                                            .report_problem_outlined, // Icône plus pertinente
+                                                        color: Colors
+                                                            .redAccent, // Couleur de l'icône
+                                                      ),
+                                                      const SizedBox(
+                                                          width:
+                                                              16), // Espace entre icône et texte
+                                                      Expanded(
+                                                        // Pour que la colonne prenne l'espace restant
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start, // Aligner le texte à gauche
+                                                          children: [
+                                                            Text(
+                                                              S
+                                                                  .of(context)
+                                                                  .reportProblemActionTitle, // Utiliser la nouvelle clé
+                                                              style: const TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontSize: 16),
+                                                            ),
+                                                            Text(
+                                                              S
+                                                                  .of(context)
+                                                                  .reportProblemActionSubtitle, // Utiliser la nouvelle clé
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                          .grey[
+                                                                      600],
+                                                                  fontSize: 14),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Icon(
+                                                          CupertinoIcons
+                                                              .chevron_right,
+                                                          color: Colors.grey[
+                                                              400]), // Chevron plus discret
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              const Divider(
+                                                  indent: 16,
+                                                  endIndent: 16,
+                                                  height:
+                                                      1), // Séparateur avec retrait et hauteur réduite
+                                              // Deuxième rangée cliquable
+                                              InkWell(
+                                                // Utilisation d'InkWell pour l'effet de clic
+                                                onTap: () {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const CriteriaScreen(),
+                                                    ),
+                                                  );
+                                                },
+                                                borderRadius: const BorderRadius
+                                                    .only(
+                                                    bottomLeft:
+                                                        Radius.circular(12),
+                                                    bottomRight: Radius.circular(
+                                                        12)), // Arrondi correspondant au Container
+                                                child: Padding(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 16.0,
+                                                      vertical: 12.0),
+                                                  child: Row(
+                                                    children: [
+                                                      const Icon(
+                                                        Icons
+                                                            .info_outline, // Icône plus pertinente
+                                                        color: Colors
+                                                            .grey, // Couleur de l'icône
+                                                      ),
+                                                      const SizedBox(
+                                                          width:
+                                                              16), // Espace entre icône et texte
+                                                      Expanded(
+                                                        // Pour que la colonne prenne l'espace restant
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start, // Aligner le texte à gauche
+                                                          children: [
+                                                            Text(
+                                                              S
+                                                                  .of(context)
+                                                                  .classificationInfoTitle, // Utiliser la nouvelle clé
+                                                              style: const TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontSize: 16),
+                                                            ),
+                                                            Text(
+                                                              S
+                                                                  .of(context)
+                                                                  .classificationInfoSubtitle, // Utiliser la nouvelle clé
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                          .grey[
+                                                                      600],
+                                                                  fontSize: 14),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Icon(
+                                                          CupertinoIcons
+                                                              .chevron_right,
+                                                          color: Colors.grey[
+                                                              400]), // Chevron plus discret
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
 
-                                      if (isProductFromUSA)
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              "($source)",
-                                              style: const TextStyle(
-                                                  fontSize: 14,
-                                                  color: Colors.blue),
-                                            ),
-                                          ],
+                                        const SizedBox(
+                                          height: 32,
                                         ),
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    height: 16,
-                                  ),
-                                  Column(
-                                    children: [
-                                      // Container avec coins arrondis et ombre
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color:
-                                              Colors.white, // Couleur de fond
-                                          borderRadius: BorderRadius.circular(
-                                              12), // Coins arrondis
-                                        ),
-                                        child: Column(
-                                          children: [
-                                            // Première rangée cliquable
-                                            InkWell(
-                                              onTap: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        AddProductInfoScreen(
-                                                            barcode: barcode,
-                                                            initialBrand:
-                                                                (isBrandFound)
-                                                                    ? brand
-                                                                    : "",
-                                                            initialDescription:
-                                                                (isBrandFound)
-                                                                    ? description
-                                                                    : "",
-                                                            initialOrigin:
-                                                                (isBrandFound)
-                                                                    ? origin
-                                                                    : "",
-                                                            initialParentCompany:
-                                                                (isBrandFound)
-                                                                    ? parentCompany
-                                                                    : "",
-                                                            initialparentOrigin:
-                                                                (isBrandFound)
-                                                                    ? parentOrigin
-                                                                    : ""),
-                                                  ),
-                                                );
-                                              },
-                                              // Pas de borderRadius ici car c'est un élément du milieu
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        horizontal: 16.0,
-                                                        vertical: 12.0),
-                                                child: Row(
-                                                  children: [
-                                                    const Icon(
-                                                      Icons
-                                                          .add_circle_outline, // Icône pour ajouter
-                                                      color: Colors
-                                                          .blueAccent, // Couleur différente
-                                                    ),
-                                                    const SizedBox(
-                                                        width: 16), // Espace
-                                                    Expanded(
-                                                      child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            S
-                                                                .of(context)
-                                                                .addProductInfoTitle, // Nouveau titre
-                                                            style: const TextStyle(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                                fontSize: 16),
-                                                          ),
-                                                          Text(
-                                                            S
-                                                                .of(context)
-                                                                .addInfoSubtitle, // Nouveau sous-titre
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .grey[600],
-                                                                fontSize: 14),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                    Icon(
-                                                        CupertinoIcons
-                                                            .chevron_right,
-                                                        color: Colors.grey[
-                                                            400]), // Chevron
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                            const Divider(
-                                                indent: 16,
-                                                endIndent: 16,
-                                                height: 1),
-                                            InkWell(
-                                              // Utilisation d'InkWell pour l'effet de clic
-                                              onTap: () {
-                                                // Naviguer vers la nouvelle page ReportProblemScreen
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        ReportProblemScreen(
-                                                      barcode:
-                                                          barcode, // Passer le code-barres actuel
-                                                      brand:
-                                                          brand, // Passer la marque actuelle
-                                                    ),
-                                                  ),
-                                                );
-                                              },
-                                              borderRadius: const BorderRadius
-                                                  .only(
-                                                  topLeft: Radius.circular(12),
-                                                  topRight: Radius.circular(
-                                                      12)), // Arrondi correspondant au Container
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        horizontal: 16.0,
-                                                        vertical: 12.0),
-                                                child: Row(
-                                                  children: [
-                                                    const Icon(
-                                                      Icons
-                                                          .report_problem_outlined, // Icône plus pertinente
-                                                      color: Colors
-                                                          .redAccent, // Couleur de l'icône
-                                                    ),
-                                                    const SizedBox(
-                                                        width:
-                                                            16), // Espace entre icône et texte
-                                                    Expanded(
-                                                      // Pour que la colonne prenne l'espace restant
-                                                      child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start, // Aligner le texte à gauche
-                                                        children: [
-                                                          Text(
-                                                            S
-                                                                .of(context)
-                                                                .reportProblemActionTitle, // Utiliser la nouvelle clé
-                                                            style: const TextStyle(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                                fontSize: 16),
-                                                          ),
-                                                          Text(
-                                                            S
-                                                                .of(context)
-                                                                .reportProblemActionSubtitle, // Utiliser la nouvelle clé
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .grey[600],
-                                                                fontSize: 14),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                    Icon(
-                                                        CupertinoIcons
-                                                            .chevron_right,
-                                                        color: Colors.grey[
-                                                            400]), // Chevron plus discret
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                            const Divider(
-                                                indent: 16,
-                                                endIndent: 16,
-                                                height:
-                                                    1), // Séparateur avec retrait et hauteur réduite
-                                            // Deuxième rangée cliquable
-                                            InkWell(
-                                              // Utilisation d'InkWell pour l'effet de clic
-                                              onTap: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        const CriteriaScreen(),
-                                                  ),
-                                                );
-                                              },
-                                              borderRadius: const BorderRadius
-                                                  .only(
-                                                  bottomLeft:
-                                                      Radius.circular(12),
-                                                  bottomRight: Radius.circular(
-                                                      12)), // Arrondi correspondant au Container
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        horizontal: 16.0,
-                                                        vertical: 12.0),
-                                                child: Row(
-                                                  children: [
-                                                    const Icon(
-                                                      Icons
-                                                          .info_outline, // Icône plus pertinente
-                                                      color: Colors
-                                                          .grey, // Couleur de l'icône
-                                                    ),
-                                                    const SizedBox(
-                                                        width:
-                                                            16), // Espace entre icône et texte
-                                                    Expanded(
-                                                      // Pour que la colonne prenne l'espace restant
-                                                      child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start, // Aligner le texte à gauche
-                                                        children: [
-                                                          Text(
-                                                            S
-                                                                .of(context)
-                                                                .classificationInfoTitle, // Utiliser la nouvelle clé
-                                                            style: const TextStyle(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                                fontSize: 16),
-                                                          ),
-                                                          Text(
-                                                            S
-                                                                .of(context)
-                                                                .classificationInfoSubtitle, // Utiliser la nouvelle clé
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .grey[600],
-                                                                fontSize: 14),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                    Icon(
-                                                        CupertinoIcons
-                                                            .chevron_right,
-                                                        color: Colors.grey[
-                                                            400]), // Chevron plus discret
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-
-                                      const SizedBox(
-                                        height: 32,
-                                      ),
-                                    ],
-                                  )
-                                ])),
-                          ));
-                    },
-                  ));
-            },
+                                      ],
+                                    )
+                                  ])),
+                            ));
+                      },
+                    ));
+              },
+            ),
           ),
         ],
       ),
