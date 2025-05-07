@@ -14193,7 +14193,7 @@
         "origin": "NL"
     },
     {
-        "name": "Spa",
+        "name": "SPA",
         "description": "Eau minérale naturelle et limonades",
         "parentCompany": "Spadel SA",
         "parentOrigin": "BE",
@@ -22354,5 +22354,2938 @@
             "normalizedName": "hitschler",
             "parentOrigin": "DE",
             "origin": "DE"
+          },
+          {
+            "name": "Dr. Oetker",
+            "description": "Entreprise alimentaire allemande proposant une vaste gamme de produits, notamment des préparations pour gâteaux, des pizzas surgelées et des desserts.",
+            "source": "Wikipedia: Dr. Oetker",
+            "parentCompany": "Dr. Oetker",
+            "normalizedName": "dr_oetker",
+            "parentOrigin": "DE",
+            "origin": "DE"
+        },{
+            "name": "Carbonell",
+            "description": "Marque espagnole d'huile d'olive.",
+            "source": "Wikipedia: Carbonell (olive oil)",
+            "parentCompany": "Deoleo, S.A.",
+            "normalizedName": "carbonell",
+            "parentOrigin": "ES",
+            "origin": "ES"
+          },
+          {
+            "name": "Trois Rivières",
+            "description": "Marque martiniquaise de rhum agricole.",
+            "source": "Wikipedia: Trois Rivières (rhum)",
+            "parentCompany": "Bellonnie & Bourdillon Successeurs (BBS)",
+            "normalizedName": "trois_rivieres",
+            "parentOrigin": "MQ",
+            "origin": "MQ"
+          },
+          {
+            "name": "Bonaqua",
+            "description": "Marque d'eau embouteillée appartenant à The Coca-Cola Company.",
+            "source": "Wikipedia: Bonaqua",
+            "parentCompany": "The Coca-Cola Company",
+            "normalizedName": "bonaquathe_coca_cola_company",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Cocio",
+            "description": "Marque danoise de lait chocolaté.",
+            "source": "Wikipedia: Cocio",
+            "parentCompany": "Arla Foods",
+            "normalizedName": "cocio",
+            "parentOrigin": "DK",
+            "origin": "DK"
+          },
+          {
+            "name": "Glen Moray",
+            "description": "Marque écossaise de whisky single malt du Speyside.",
+            "source": "Wikipedia: Glen Moray distillery",
+            "parentCompany": "La Martiniquaise-Bardinet",
+            "normalizedName": "glen_moray",
+            "parentOrigin": "FR",
+            "origin": "GB"
+          },
+          {
+            "name": "Sun Chips",
+            "description": "Marque de chips multigrains ondulées, produite par Frito-Lay.",
+            "source": "Wikipedia: Sun Chips",
+            "parentCompany": "Frito-Lay (PepsiCo)",
+            "normalizedName": "sun_chips",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Spotify",
+            "description": "Service suédois de streaming musical et de podcasts.",
+            "source": "Wikipedia: Spotify",
+            "parentCompany": "Spotify Technology S.A.",
+            "normalizedName": "spotify",
+            "parentOrigin": "LU",
+            "origin": "SE"
+          },
+          {
+            "name": "Chio",
+            "description": "Marque allemande de snacks salés (chips, etc.), appartenant à Intersnack.",
+            "source": "Wikipedia: Chio Chips",
+            "parentCompany": "Intersnack",
+            "normalizedName": "chio",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "More Nutrition",
+            "description": "Marque allemande de produits nutritionnels et compléments alimentaires.",
+            "source": "Website: More Nutrition",
+            "parentCompany": "The Quality Group GmbH",
+            "normalizedName": "more_nutrition",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Radenska",
+            "description": "Marque slovène d'eau minérale naturelle.",
+            "source": "Wikipedia: Radenska",
+            "parentCompany": "Kofola ČeskoSlovensko a.s.",
+            "normalizedName": "radenska",
+            "parentOrigin": "CZ",
+            "origin": "SI"
+          },
+          {
+            "name": "Good Protein",
+            "description": "Marque canadienne de poudre de protéines.",
+            "source": "Website: Good Protein",
+            "parentCompany": "Good Protein",
+            "normalizedName": "good_protein",
+            "parentOrigin": "CA",
+            "origin": "CA"
+          },
+          {
+            "name": "ALSTERTOR",
+            "description": "Marque allemande de moutarde de style Düsseldorf.",
+            "source": "Website: Euro-American Brands",
+            "parentCompany": "Euro-American Brands, LLC",
+            "normalizedName": "alstertor",
+            "parentOrigin": "US",
+            "origin": "DE"
+          },
+          {
+            "name": "La Banderita",
+            "description": "Marque américaine de tortillas.",
+            "source": "Website: Olé Mexican Foods",
+            "parentCompany": "Olé Mexican Foods Inc.",
+            "normalizedName": "la_banderita",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "St Dalfour",
+            "description": "Marque française de confitures et produits à base de fruits.",
+            "source": "Wikipedia: St. Dalfour",
+            "parentCompany": "St. Dalfour SAS",
+            "normalizedName": "st_dalfour",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "anthap uk Ltd",
+            "description": "Marque britannique de produits alimentaires (noix, fruits secs).",
+            "source": "Website: Anthap",
+            "parentCompany": "Anthap UK Ltd",
+            "normalizedName": "anthap_uk_ltd",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Loop",
+            "description": "Entreprise québécoise de jus et sodas faits à partir de fruits et légumes invendus.",
+            "source": "Website: Loop Mission",
+            "parentCompany": "Loop Mission",
+            "normalizedName": "loop",
+            "parentOrigin": "CA",
+            "origin": "CA"
+          },
+          {
+            "name": "Boogie Wipes",
+            "description": "Marque américaine de lingettes salines pour le nez des enfants.",
+            "source": "Website: Boogie Wipes",
+            "parentCompany": "Eleeo Brands",
+            "normalizedName": "boogie_wipes",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Bragg",
+            "description": "Marque américaine de produits de santé naturels (vinaigre de cidre, assaisonnements).",
+            "source": "Wikipedia: Bragg Live Food Products",
+            "parentCompany": "Swander Pace Capital",
+            "normalizedName": "bragg",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Garnier Skin Active",
+            "description": "Gamme de produits de soins de la peau de la marque Garnier.",
+            "source": "Website: Garnier",
+            "parentCompany": "L'Oréal",
+            "normalizedName": "garnier_skin_active",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Portland",
+            "description": "Marque de gros sel marin.",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "portland",
+            "parentOrigin": "ES",
+            "origin": "ES"
+          },
+          {
+            "name": "Angie's Artisan Treats LLC",
+            "description": "Marque américaine de popcorn (Boomchickapop).",
+            "source": "Wikipedia: Angie's Boomchickapop",
+            "parentCompany": "Conagra Brands",
+            "normalizedName": "angies_artisan_treats_llc",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Famille Mary",
+            "description": "Marque française de produits de la ruche (miel, gelée royale, pollen).",
+            "source": "Wikipedia: Famille Mary",
+            "parentCompany": "Famille Mary",
+            "normalizedName": "famille_mary",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Frank’s RedHot",
+            "description": "Marque américaine de sauce piquante.",
+            "source": "Wikipedia: Frank's RedHot",
+            "parentCompany": "McCormick & Company",
+            "normalizedName": "franks",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Fruitist",
+            "description": "Marque de fruits frais (myrtilles).",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "fruitist",
+            "parentOrigin": "MX",
+            "origin": "MX"
+          },
+          {
+            "name": "San Benedetto",
+            "description": "Marque italienne d'eau minérale et boissons.",
+            "source": "Wikipedia: Acqua Minerale San Benedetto",
+            "parentCompany": "Acqua Minerale San Benedetto S.p.A.",
+            "normalizedName": "san_benedetto",
+            "parentOrigin": "IT",
+            "origin": "IT"
+          },
+          {
+            "name": "Essentia",
+            "description": "Marque américaine d'eau alcaline ionisée.",
+            "source": "Wikipedia: Essentia Water",
+            "parentCompany": "Nestlé",
+            "normalizedName": "essentia",
+            "parentOrigin": "CH",
+            "origin": "US"
+          },
+          {
+            "name": "Hell Energy Magyarország kft",
+            "description": "Marque hongroise de boisson énergisante.",
+            "source": "Wikipedia: Hell Energy Drink",
+            "parentCompany": "Hell Energy Kft.",
+            "normalizedName": "hell_energy_magyarorszag_kft",
+            "parentOrigin": "HU",
+            "origin": "HU"
+          },
+          {
+            "name": "mymuesli AG",
+            "description": "Entreprise allemande de muesli personnalisable.",
+            "source": "Wikipedia: Mymuesli",
+            "parentCompany": "mymuesli AG",
+            "normalizedName": "mymuesli_ag",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Aquafina",
+            "description": "Marque d'eau purifiée produite par PepsiCo.",
+            "source": "Wikipedia: Aquafina",
+            "parentCompany": "PepsiCo",
+            "normalizedName": "aquafina",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Weihenstephan",
+            "description": "Marque allemande de produits laitiers appartenant à la laiterie bavaroise d'État.",
+            "source": "Wikipedia: Molkerei Weihenstephan",
+            "parentCompany": "Unternehmensgruppe Theo Müller",
+            "normalizedName": "weihenstephan",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Wicked Sister",
+            "description": "Marque australienne de desserts.",
+            "source": "Website: Wicked Sister",
+            "parentCompany": "Wicked Sister Pty Ltd",
+            "normalizedName": "wicked_sister",
+            "parentOrigin": "AU",
+            "origin": "AU"
+          },
+          {
+            "name": "Gut bio",
+            "description": "Marque distributeur de produits biologiques d'Aldi.",
+            "source": "Website: Aldi",
+            "parentCompany": "Aldi Nord / Aldi Süd",
+            "normalizedName": "gut_bio",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Barissimo",
+            "description": "Marque distributeur de café d'Aldi.",
+            "source": "Website: Aldi",
+            "parentCompany": "Aldi Nord / Aldi Süd",
+            "normalizedName": "barissimo",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "'Z Bregov",
+            "description": "Marque croate de produits laitiers.",
+            "source": "Website: Vindija",
+            "parentCompany": "Vindija d.d.",
+            "normalizedName": "z_bregov",
+            "parentOrigin": "HR",
+            "origin": "HR"
+          },
+          {
+            "name": "Favrichon",
+            "description": "Marque française de céréales biologiques.",
+            "source": "Website: Favrichon",
+            "parentCompany": "Favrichon & Vignon",
+            "normalizedName": "favrichon",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Grenade",
+            "description": "Marque britannique de barres protéinées et nutrition sportive.",
+            "source": "Wikipedia: Grenade (company)",
+            "parentCompany": "Mondelēz International",
+            "normalizedName": "grenade",
+            "parentOrigin": "US",
+            "origin": "GB"
+          },
+          {
+            "name": "Remia",
+            "description": "Marque néerlandaise de sauces, margarines et graisses de friture.",
+            "source": "Wikipedia: Remia",
+            "parentCompany": "Remia C.V.",
+            "normalizedName": "remia",
+            "parentOrigin": "NL",
+            "origin": "NL"
+          },
+          {
+            "name": "Arla Foods amba",
+            "description": "Coopérative laitière dano-suédoise.",
+            "source": "Wikipedia: Arla Foods",
+            "parentCompany": "Arla Foods amba",
+            "normalizedName": "arla_foods_amba",
+            "parentOrigin": "DK",
+            "origin": "DK"
+          },
+          {
+            "name": "Vitabiotics",
+            "description": "Entreprise britannique de compléments alimentaires vitaminés.",
+            "source": "Wikipedia: Vitabiotics",
+            "parentCompany": "Vitabiotics Ltd.",
+            "normalizedName": "vitabiotics",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Compliments",
+            "description": "Marque distributeur de Sobeys, chaîne de supermarchés canadienne.",
+            "source": "Wikipedia: Sobeys",
+            "parentCompany": "Sobeys Inc.",
+            "normalizedName": "compliments",
+            "parentOrigin": "CA",
+            "origin": "CA"
+          },
+          {
+            "name": "Nichols",
+            "description": "Entreprise britannique de boissons non alcoolisées, productrice de Vimto.",
+            "source": "Wikipedia: Nichols plc",
+            "parentCompany": "Nichols plc",
+            "normalizedName": "nichols",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Boots",
+            "description": "Chaîne britannique de pharmacies et de produits de santé et beauté.",
+            "source": "Wikipedia: Boots (company)",
+            "parentCompany": "Walgreens Boots Alliance",
+            "normalizedName": "boots",
+            "parentOrigin": "US",
+            "origin": "GB"
+          },
+          {
+            "name": "Uncle Tony’s",
+            "description": "Marque australienne de flocons d'avoine.",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "uncle_tonys",
+            "parentOrigin": "AU",
+            "origin": "AU"
+          },
+          {
+            "name": "Jumbo",
+            "description": "Chaîne néerlandaise de supermarchés.",
+            "source": "Wikipedia: Jumbo (supermarket)",
+            "parentCompany": "Jumbo Groep Holding B.V.",
+            "normalizedName": "jumbo",
+            "parentOrigin": "NL",
+            "origin": "NL"
+          },
+          {
+            "name": "Botalòn",
+            "description": "Marque vénézuélienne de café moulu.",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "botalon",
+            "parentOrigin": "VE",
+            "origin": "VE"
+          },
+          {
+            "name": "Al’fez",
+            "description": "Marque britannique de produits alimentaires du Moyen-Orient.",
+            "source": "Website: Al'fez",
+            "parentCompany": "AB World Foods (Associated British Foods)",
+            "normalizedName": "alfez",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Rewe Beste Wahl",
+            "description": "Marque distributeur de qualité de la chaîne allemande Rewe.",
+            "source": "Wikipedia: Rewe Group",
+            "parentCompany": "Rewe Group",
+            "normalizedName": "rewe_beste_wahl",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Gamers Only",
+            "description": "Marque allemande de boissons en poudre pour joueurs.",
+            "source": "Website: Gamers Only",
+            "parentCompany": "Famous Brands GmbH",
+            "normalizedName": "gamers_only",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Farmer",
+            "description": "Marque suisse de barres de céréales, appartenant à Migros.",
+            "source": "Website: Migros",
+            "parentCompany": "Migros",
+            "normalizedName": "farmer",
+            "parentOrigin": "CH",
+            "origin": "CH"
+          },
+          {
+            "name": "Heller & Strauss GMBH",
+            "description": "Entreprise autrichienne de confiseries.",
+            "source": "Website: Heller & Strauss",
+            "parentCompany": "Heller & Strauss GMBH",
+            "normalizedName": "heller_strauss_gmbh",
+            "parentOrigin": "AT",
+            "origin": "AT"
+          },
+          {
+            "name": "Grether's Pastilles Blackcurrant",
+            "description": "Marque suisse de pastilles pour la gorge.",
+            "source": "Wikipedia: Grether's Pastilles",
+            "parentCompany": "Doetsch Grether AG",
+            "normalizedName": "grethers_pastilles_blackcurrant",
+            "parentOrigin": "CH",
+            "origin": "CH"
+          },
+          {
+            "name": "Club-Mate",
+            "description": "Boisson gazeuse allemande à base de maté.",
+            "source": "Wikipedia: Club-Mate",
+            "parentCompany": "Brauerei Loscher GmbH & Co. KG",
+            "normalizedName": "club_mate",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Fritz-Kola",
+            "description": "Marque allemande de sodas (kola, limonades).",
+            "source": "Wikipedia: Fritz-Kola",
+            "parentCompany": "fritz-kulturgüter GmbH",
+            "normalizedName": "fritz_cola",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Lanjarón",
+            "description": "Marque espagnole d'eau minérale.",
+            "source": "Wikipedia: Lanjarón (water)",
+            "parentCompany": "Aguas Danone S.A.",
+            "normalizedName": "lanjaron",
+            "parentOrigin": "FR",
+            "origin": "ES"
+          },
+          {
+            "name": "Nactalia Bio",
+            "description": "Marque française de lait infantile biologique.",
+            "source": "Website: Nactalia",
+            "parentCompany": "Sodiaal",
+            "normalizedName": "nactalia_bio",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Casas de Hualdo",
+            "description": "Marque espagnole d'huile d'olive extra vierge biologique.",
+            "source": "Website: Casas de Hualdo",
+            "parentCompany": "Casas de Hualdo",
+            "normalizedName": "casas_d_hualdo",
+            "parentOrigin": "ES",
+            "origin": "ES"
+          },
+          {
+            "name": "Zaanse mayonaise",
+            "description": "Marque néerlandaise de mayonnaise.",
+            "source": "Website: Van Wijngaarden",
+            "parentCompany": "Van Wijngaarden BV",
+            "normalizedName": "zaanse_mayonaise",
+            "parentOrigin": "NL",
+            "origin": "NL"
+          },
+          {
+            "name": "Drano",
+            "description": "Marque américaine de déboucheurs de canalisations.",
+            "source": "Wikipedia: Drano",
+            "parentCompany": "S. C. Johnson & Son",
+            "normalizedName": "drano",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Nuage",
+            "description": "Marque britannique de produits de soins de la peau.",
+            "source": "Website: Nuage",
+            "parentCompany": "Healthpoint Ltd",
+            "normalizedName": "nuage",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Zirkulin",
+            "description": "Marque allemande de produits de santé naturels (psyllium).",
+            "source": "Website: Zirkulin",
+            "parentCompany": "Roha Arzneimittel GmbH",
+            "normalizedName": "zirkulin",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Averna",
+            "description": "Marque italienne d'amer (liqueur).",
+            "source": "Wikipedia: Amaro Averna",
+            "parentCompany": "Campari Group",
+            "normalizedName": "averna",
+            "parentOrigin": "IT",
+            "origin": "IT"
+          },
+          {
+            "name": "Jameson",
+            "description": "Marque irlandaise de whiskey.",
+            "source": "Wikipedia: Jameson Irish Whiskey",
+            "parentCompany": "Pernod Ricard",
+            "normalizedName": "jameson",
+            "parentOrigin": "FR",
+            "origin": "IE"
+          },
+          {
+            "name": "Kaloyiannis-Koutsikos SA",
+            "description": "Producteur grec d'Ouzo 12.",
+            "source": "Wikipedia: Ouzo 12",
+            "parentCompany": "Campari Group",
+            "normalizedName": "kaloyiannis_koutsikos_sa",
+            "parentOrigin": "IT",
+            "origin": "GR"
+          },
+          {
+            "name": "Vittoria",
+            "description": "Marque australienne de café.",
+            "source": "Wikipedia: Vittoria Coffee",
+            "parentCompany": "Vittoria Food & Beverage",
+            "normalizedName": "vittoria",
+            "parentOrigin": "AU",
+            "origin": "AU"
+          },
+          {
+            "name": "Mamos",
+            "description": "Marque grecque de bière.",
+            "source": "Wikipedia: Mamos beer",
+            "parentCompany": "Athenian Brewery (Heineken)",
+            "normalizedName": "mamos",
+            "parentOrigin": "NL",
+            "origin": "GR"
+          },
+          {
+            "name": "Doppio Tratto Primitivo Puglia",
+            "description": "Vin italien de la région des Pouilles.",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "doppio_tratto_primitivo_puglia",
+            "parentOrigin": "IT",
+            "origin": "IT"
+          },
+          {
+            "name": "Mikrotik",
+            "description": "Entreprise lettone de matériel et logiciels réseau.",
+            "source": "Wikipedia: MikroTik",
+            "parentCompany": "Mikrotīkls SIA",
+            "normalizedName": "mikrotik",
+            "parentOrigin": "LV",
+            "origin": "LV"
+          },
+          {
+            "name": "Böklunder",
+            "description": "Marque allemande de saucisses et produits carnés.",
+            "source": "Wikipedia: Böklunder",
+            "parentCompany": "Zur Mühlen Gruppe (Tönnies)",
+            "normalizedName": "boklunder",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Lao Gan Ma",
+            "description": "Marque chinoise de sauces chili.",
+            "source": "Wikipedia: Lao Gan Ma",
+            "parentCompany": "Laoganma Special Flavour Foodstuffs Company",
+            "normalizedName": "lao_gan_ma",
+            "parentOrigin": "CN",
+            "origin": "CN"
+          },
+          {
+            "name": "Mingles",
+            "description": "Marque allemande de confiseries (bonbons à la menthe).",
+            "source": "Website: WIHA GmbH",
+            "parentCompany": "WIHA GmbH",
+            "normalizedName": "mingles",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "KP Snacks",
+            "description": "Entreprise britannique de snacks (chips, noix).",
+            "source": "Wikipedia: KP Snacks",
+            "parentCompany": "Intersnack",
+            "normalizedName": "kp_snacks",
+            "parentOrigin": "DE",
+            "origin": "GB"
+          },
+          {
+            "name": "Ming chu",
+            "description": "Marque allemande d'huile de sésame.",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "ming_chu",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "LG",
+            "description": "Conglomérat sud-coréen d'électronique, produits chimiques et télécommunications.",
+            "source": "Wikipedia: LG Corporation",
+            "parentCompany": "LG Corporation",
+            "normalizedName": "lg",
+            "parentOrigin": "KR",
+            "origin": "KR"
+          },
+          {
+            "name": "Wagtastic",
+            "description": "Marque britannique de friandises pour chiens.",
+            "source": "Website: Good Boy",
+            "parentCompany": "Armitage Pet Care (Branded Consumer Goods Group)",
+            "normalizedName": "wagtastic",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "SURIG",
+            "description": "Marque allemande d'essence de vinaigre.",
+            "source": "Wikipedia: Surig Essig-Essenz",
+            "parentCompany": "Speyer & Grund GmbH & Co. KG",
+            "normalizedName": "surig",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "HITCHCOCK",
+            "description": "Marque allemande de jus de fruits.",
+            "source": "Website: Hitchcock",
+            "parentCompany": "Valensina GmbH",
+            "normalizedName": "hitchcock",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Marcel's Green Soap",
+            "description": "Marque néerlandaise de produits d'entretien écologiques.",
+            "source": "Website: Marcel's Green Soap",
+            "parentCompany": "The Green Soap Company",
+            "normalizedName": "marcels",
+            "parentOrigin": "NL",
+            "origin": "NL"
+          },
+          {
+            "name": "Loscher GmbH",
+            "description": "Brasserie allemande, productrice de Club-Mate.",
+            "source": "Wikipedia: Brauerei Loscher",
+            "parentCompany": "Brauerei Loscher GmbH & Co. KG",
+            "normalizedName": "loscher_gmbh",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Ringnes",
+            "description": "Brasserie norvégienne et marque de bière.",
+            "source": "Wikipedia: Ringnes",
+            "parentCompany": "Carlsberg Group",
+            "normalizedName": "ringnes",
+            "parentOrigin": "DK",
+            "origin": "NO"
+          },
+          {
+            "name": "Stabilo Boss",
+            "description": "Marque allemande de surligneurs.",
+            "source": "Wikipedia: Stabilo Boss",
+            "parentCompany": "Schwan-Stabilo",
+            "normalizedName": "stabilo_boss",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Bakers",
+            "description": "Marque américaine de chocolat à pâtisser.",
+            "source": "Wikipedia: Baker's Chocolate",
+            "parentCompany": "Kraft Heinz",
+            "normalizedName": "bakers",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Dawtona",
+            "description": "Marque polonaise de conserves de légumes et ketchup.",
+            "source": "Website: Dawtona",
+            "parentCompany": "Dawtona Sp. z o.o.",
+            "normalizedName": "dawtona",
+            "parentOrigin": "PL",
+            "origin": "PL"
+          },
+          {
+            "name": "Barebells Functional Foods AB",
+            "description": "Marque suédoise de barres protéinées et produits fonctionnels.",
+            "source": "Wikipedia: Barebells",
+            "parentCompany": "Vitamin Well AB",
+            "normalizedName": "barebells_functional_foods_ab",
+            "parentOrigin": "SE",
+            "origin": "SE"
+          },
+          {
+            "name": "ECCO",
+            "description": "Entreprise danoise de chaussures et accessoires en cuir.",
+            "source": "Wikipedia: ECCO (company)",
+            "parentCompany": "ECCO Sko A/S",
+            "normalizedName": "ecco",
+            "parentOrigin": "DK",
+            "origin": "DK"
+          },
+          {
+            "name": "Red River",
+            "description": "Marque canadienne de céréales chaudes.",
+            "source": "Wikipedia: Red River Cereal",
+            "parentCompany": "Smucker Foods of Canada Corp. (The J.M. Smucker Company)",
+            "normalizedName": "red_river",
+            "parentOrigin": "US",
+            "origin": "CA"
+          },
+          {
+            "name": "Envia (Lidl)",
+            "description": "Marque distributeur de produits laitiers de Lidl.",
+            "source": "Website: Lidl",
+            "parentCompany": "Lidl Stiftung & Co. KG",
+            "normalizedName": "envia_lidl",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Mayflower",
+            "description": "Marque britannique de condiments et ingrédients asiatiques.",
+            "source": "Website: Mayflower",
+            "parentCompany": "Kingasia Foods Ltd",
+            "normalizedName": "mayflower",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Geniusz plus",
+            "description": "Marque de pistaches.",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "geniusz_plus",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "McIntosh of Strathmore",
+            "description": "Marque écossaise de plats préparés (macaroni au fromage).",
+            "source": "Website: McIntosh Foods",
+            "parentCompany": "Strathmore Foods Ltd",
+            "normalizedName": "mcintosh_of_strathmoe",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Bahlsen",
+            "description": "Entreprise allemande de biscuits et produits de boulangerie.",
+            "source": "Wikipedia: Bahlsen",
+            "parentCompany": "Bahlsen GmbH & Co. KG",
+            "normalizedName": "bahlsen",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Kewpie",
+            "description": "Entreprise japonaise de produits alimentaires, célèbre pour sa mayonnaise.",
+            "source": "Wikipedia: Kewpie",
+            "parentCompany": "Kewpie Corporation",
+            "normalizedName": "kewpie",
+            "parentOrigin": "JP",
+            "origin": "JP"
+          },
+          {
+            "name": "Peter Larsen Kaffe",
+            "description": "Marque danoise de café.",
+            "source": "Website: Peter Larsen Kaffe",
+            "parentCompany": "Löfbergs Lila AB",
+            "normalizedName": "peter_larsen_kaffe",
+            "parentOrigin": "SE",
+            "origin": "DK"
+          },
+          {
+            "name": "Jupiler",
+            "description": "Marque belge de bière pils.",
+            "source": "Wikipedia: Jupiler",
+            "parentCompany": "AB InBev",
+            "normalizedName": "jupiler",
+            "parentOrigin": "BE",
+            "origin": "BE"
+          },
+          {
+            "name": "Hoogstraten",
+            "description": "Coopérative belge de producteurs de fraises et légumes.",
+            "source": "Website: Coöperatie Hoogstraten",
+            "parentCompany": "Coöperatie Hoogstraten CV",
+            "normalizedName": "hoogstraten",
+            "parentOrigin": "BE",
+            "origin": "BE"
+          },
+          {
+            "name": "Hoegaarden",
+            "description": "Marque belge de bière blanche.",
+            "source": "Wikipedia: Hoegaarden Brewery",
+            "parentCompany": "AB InBev",
+            "normalizedName": "hoegaarden",
+            "parentOrigin": "BE",
+            "origin": "BE"
+          },
+          {
+            "name": "El Tony Mate",
+            "description": "Marque suisse de boisson énergisante à base de maté.",
+            "source": "Website: El Tony Mate",
+            "parentCompany": "Intelligentfood Schweiz AG",
+            "normalizedName": "el_tony_mate",
+            "parentOrigin": "CH",
+            "origin": "CH"
+          },
+          {
+            "name": "Kordaat",
+            "description": "Marque de bière néerlandaise (Lidl).",
+            "source": "Scan",
+            "parentCompany": "Lidl Stiftung & Co. KG",
+            "normalizedName": "kordaat",
+            "parentOrigin": "DE",
+            "origin": "NL"
+          },
+          {
+            "name": "Cafe Sol",
+            "description": "Marque irlandaise de chips (Dunnes Stores).",
+            "source": "Scan",
+            "parentCompany": "Dunnes Stores",
+            "normalizedName": "cafe_sol",
+            "parentOrigin": "IE",
+            "origin": "IE"
+          },
+          {
+            "name": "Vieira",
+            "description": "Marque portugaise de biscuits.",
+            "source": "Website: Vieira de Castro",
+            "parentCompany": "Vieira de Castro S.A.",
+            "normalizedName": "vieira",
+            "parentOrigin": "PT",
+            "origin": "PT"
+          },
+          {
+            "name": "Mac Heaven",
+            "description": "Marque suédoise de macaroni au fromage.",
+            "source": "Scan",
+            "parentCompany": "US Grocer AB",
+            "normalizedName": "mac_heaven",
+            "parentOrigin": "SE",
+            "origin": "SE"
+          },
+          {
+            "name": "Kikkoman soy sauce",
+            "description": "Marque japonaise de sauce soja.",
+            "source": "Wikipedia: Kikkoman",
+            "parentCompany": "Kikkoman Corporation",
+            "normalizedName": "kikkoman_soy_sauce",
+            "parentOrigin": "JP",
+            "origin": "JP"
+          },
+          {
+            "name": "Rhodia",
+            "description": "Marque française de papeterie (bloc-notes).",
+            "source": "Wikipedia: Rhodia (notebooks)",
+            "parentCompany": "Clairefontaine Rhodia (Exacompta Clairefontaine)",
+            "normalizedName": "rhodia",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Rowse",
+            "description": "Marque britannique de miel.",
+            "source": "Wikipedia: Rowse Honey",
+            "parentCompany": "Valeo Foods",
+            "normalizedName": "rowse",
+            "parentOrigin": "IE",
+            "origin": "GB"
+          },
+          {
+            "name": "Sunpat",
+            "description": "Marque britannique de beurre de cacahuète.",
+            "source": "Wikipedia: Sun-Pat",
+            "parentCompany": "Hain Celestial Group",
+            "normalizedName": "sunpat",
+            "parentOrigin": "US",
+            "origin": "GB"
+          },
+          {
+            "name": "Gerolsteiner",
+            "description": "Marque allemande d'eau minérale.",
+            "source": "Wikipedia: Gerolsteiner Brunnen",
+            "parentCompany": "Gerolsteiner Brunnen GmbH & Co. KG",
+            "normalizedName": "gerolsteiner",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Soap & Glory",
+            "description": "Marque britannique de produits de beauté et de bain.",
+            "source": "Wikipedia: Soap & Glory",
+            "parentCompany": "Walgreens Boots Alliance",
+            "normalizedName": "soap_glory",
+            "parentOrigin": "US",
+            "origin": "GB"
+          },
+          {
+            "name": "Pelagonia",
+            "description": "Marque macédonienne de produits alimentaires (conserves, ajvar).",
+            "source": "Website: Pelagonia",
+            "parentCompany": "Pelagonia Food Ltd",
+            "normalizedName": "pelagonia",
+            "parentOrigin": "MK",
+            "origin": "MK"
+          },
+          {
+            "name": "Landliebe",
+            "description": "Marque allemande de produits laitiers et desserts.",
+            "source": "Wikipedia: Landliebe",
+            "parentCompany": "Unternehmensgruppe Theo Müller",
+            "normalizedName": "landliebe",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Carr's",
+            "description": "Marque britannique de biscuits et crackers.",
+            "source": "Wikipedia: Carr's",
+            "parentCompany": "Pladis (Yıldız Holding)",
+            "normalizedName": "cares",
+            "parentOrigin": "TR",
+            "origin": "GB"
+          },
+          {
+            "name": "Sambal Oelek",
+            "description": "Pâte de piment indonésienne.",
+            "source": "Wikipedia: Sambal",
+            "parentCompany": "Huy Fong Foods (populaire aux USA) / Divers fabricants",
+            "normalizedName": "sambel_oelek",
+            "parentOrigin": "ID",
+            "origin": "ID"
+          },
+          {
+            "name": "Stubb's",
+            "description": "Marque américaine de sauces barbecue et marinades.",
+            "source": "Wikipedia: Stubb's Legendary Bar-B-Q",
+            "parentCompany": "McCormick & Company",
+            "normalizedName": "stubbs",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Aurada",
+            "description": "Marque espagnole de biscuits.",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "aurada",
+            "parentOrigin": "ES",
+            "origin": "ES"
+          },
+          {
+            "name": "Nellie & Joe's",
+            "description": "Marque américaine de jus de citron vert de Key West.",
+            "source": "Website: Nellie & Joe's",
+            "parentCompany": "Concord Foods LLC",
+            "normalizedName": "nellie_joes",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "A. Vogel / Bioforce",
+            "description": "Marque suisse de produits de santé naturels et phytothérapie.",
+            "source": "Wikipedia: Alfred Vogel",
+            "parentCompany": "Bioforce AG",
+            "normalizedName": "a_vogel_bioforce",
+            "parentOrigin": "CH",
+            "origin": "CH"
+          },
+          {
+            "name": "A. Vogel production, Bioforce",
+            "description": "Marque suisse de produits de santé naturels (Herbamare).",
+            "source": "Wikipedia: Alfred Vogel",
+            "parentCompany": "Bioforce AG",
+            "normalizedName": "a_vogel_production_bioforce",
+            "parentOrigin": "CH",
+            "origin": "CH"
+          },
+          {
+            "name": "Moleskine",
+            "description": "Marque italienne de carnets et produits de papeterie.",
+            "source": "Wikipedia: Moleskine",
+            "parentCompany": "D'Ieteren",
+            "normalizedName": "moleskine",
+            "parentOrigin": "BE",
+            "origin": "IT"
+          },
+          {
+            "name": "Optimel",
+            "description": "Marque néerlandaise de produits laitiers sans matière grasse et sans sucres ajoutés.",
+            "source": "Wikipedia: FrieslandCampina",
+            "parentCompany": "FrieslandCampina",
+            "normalizedName": "optimel",
+            "parentOrigin": "NL",
+            "origin": "NL"
+          },
+          {
+            "name": "Deep River Snacks",
+            "description": "Marque américaine de chips kettle-cooked.",
+            "source": "Wikipedia: Deep River Snacks",
+            "parentCompany": "Arbor Investments",
+            "normalizedName": "deep_river",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Fini",
+            "description": "Marque espagnole de confiseries.",
+            "source": "Wikipedia: Fini Golosinas",
+            "parentCompany": "Grupo Sánchez Cano",
+            "normalizedName": "fini",
+            "parentOrigin": "ES",
+            "origin": "ES"
+          },
+          {
+            "name": "Graza",
+            "description": "Marque américaine d'huile d'olive en bouteilles compressibles.",
+            "source": "Website: Graza",
+            "parentCompany": "Graza Inc.",
+            "normalizedName": "graza",
+            "parentOrigin": "US",
+            "origin": "ES"
+          },
+          {
+            "name": "Mister Choc",
+            "description": "Marque distributeur de chocolats et confiseries de Lidl.",
+            "source": "Website: Lidl",
+            "parentCompany": "Lidl Stiftung & Co. KG",
+            "normalizedName": "mister_choc",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Vahdam",
+            "description": "Marque indienne de thés.",
+            "source": "Website: Vahdam Teas",
+            "parentCompany": "Vahdam Teas Private Limited",
+            "normalizedName": "vahdam",
+            "parentOrigin": "IN",
+            "origin": "IN"
+          },
+          {
+            "name": "Penaten",
+            "description": "Marque allemande de produits de soins pour bébés.",
+            "source": "Wikipedia: Penaten",
+            "parentCompany": "Johnson & Johnson",
+            "normalizedName": "penaten",
+            "parentOrigin": "US",
+            "origin": "DE"
+          },
+          {
+            "name": "ZETA",
+            "description": "Marque suédoise de produits alimentaires méditerranéens (huile d'olive).",
+            "source": "Website: Zeta",
+            "parentCompany": "Di Luca & Di Luca AB",
+            "normalizedName": "zeta",
+            "parentOrigin": "SE",
+            "origin": "SE"
+          },
+          {
+            "name": "Atora",
+            "description": "Marque britannique de suif râpé.",
+            "source": "Wikipedia: Atora",
+            "parentCompany": "Premier Foods",
+            "normalizedName": "atora",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Arvid Nordquist",
+            "description": "Entreprise familiale suédoise de café et produits alimentaires.",
+            "source": "Wikipedia: Arvid Nordquist",
+            "parentCompany": "Arvid Nordquist HAB",
+            "normalizedName": "arvid_nordqvist",
+            "parentOrigin": "SE",
+            "origin": "SE"
+          },
+          {
+            "name": "Goya",
+            "description": "Entreprise américaine de produits alimentaires hispaniques et latinos.",
+            "source": "Wikipedia: Goya Foods",
+            "parentCompany": "Goya Foods, Inc.",
+            "normalizedName": "goya",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Augustiner-Bräu München",
+            "description": "Brasserie munichoise traditionnelle.",
+            "source": "Wikipedia: Augustiner-Bräu",
+            "parentCompany": "Augustiner-Bräu Wagner KG",
+            "normalizedName": "augustinerbrau_munchen",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Nando's",
+            "description": "Chaîne sud-africaine de restaurants et marque de sauces peri-peri.",
+            "source": "Wikipedia: Nando's",
+            "parentCompany": "Nando's Group Holdings Ltd",
+            "normalizedName": "nandos",
+            "parentOrigin": "ZA",
+            "origin": "ZA"
+          },
+          {
+            "name": "Lamb Weston",
+            "description": "Entreprise américaine de produits à base de pommes de terre (frites).",
+            "source": "Wikipedia: Lamb Weston Holdings",
+            "parentCompany": "Lamb Weston Holdings, Inc.",
+            "normalizedName": "lamb_weston",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Caesar Cardini's",
+            "description": "Marque américaine de vinaigrette César.",
+            "source": "Wikipedia: Caesar Cardini",
+            "parentCompany": "T. Marzetti Company (Lancaster Colony Corporation)",
+            "normalizedName": "caesar_cardinis",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Bezoya",
+            "description": "Marque espagnole d'eau minérale.",
+            "source": "Website: Bezoya",
+            "parentCompany": "Calidad Pascual S.A.U.",
+            "normalizedName": "bezoya",
+            "parentOrigin": "ES",
+            "origin": "ES"
+          },
+          {
+            "name": "Kwatta",
+            "description": "Ancienne marque néerlando-belge de chocolat, aujourd'hui principalement vermicelles.",
+            "source": "Wikipedia: Kwatta",
+            "parentCompany": "HAK (acquis par KDV Group)",
+            "normalizedName": "kwatta",
+            "parentOrigin": "NL",
+            "origin": "NL"
+          },
+          {
+            "name": "MetaMUCIL",
+            "description": "Marque américaine de compléments alimentaires à base de psyllium.",
+            "source": "Wikipedia: Metamucil",
+            "parentCompany": "Procter & Gamble",
+            "normalizedName": "metamucil",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Kavli",
+            "description": "Groupe alimentaire norvégien (mayonnaise, fromage à tartiner).",
+            "source": "Wikipedia: Kavli",
+            "parentCompany": "Kavli Holding AS",
+            "normalizedName": "kavli",
+            "parentOrigin": "NO",
+            "origin": "NO"
+          },
+          {
+            "name": "Batiste",
+            "description": "Marque britannique de shampooing sec.",
+            "source": "Wikipedia: Batiste (brand)",
+            "parentCompany": "Church & Dwight",
+            "normalizedName": "batiste",
+            "parentOrigin": "US",
+            "origin": "GB"
+          },
+          {
+            "name": "Star Drink",
+            "description": "Marque distributeur de boissons de Netto Marken-Discount.",
+            "source": "Scan",
+            "parentCompany": "Netto Marken-Discount (Edeka Group)",
+            "normalizedName": "star_drink",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Tymbark",
+            "description": "Marque polonaise de jus de fruits, nectars et boissons.",
+            "source": "Wikipedia: Tymbark",
+            "parentCompany": "Maspex",
+            "normalizedName": "tymbark",
+            "parentOrigin": "PL",
+            "origin": "PL"
+          },
+          {
+            "name": "S Budget",
+            "description": "Marque distributeur économique de Spar.",
+            "source": "Wikipedia: Spar (retailer)",
+            "parentCompany": "Spar",
+            "normalizedName": "s_budget",
+            "parentOrigin": "NL",
+            "origin": "AT"
+          },
+          {
+            "name": "Turtle",
+            "description": "Marque belge de céréales biologiques pour petit-déjeuner.",
+            "source": "Website: Turtle Cereals",
+            "parentCompany": "Turtle bv",
+            "normalizedName": "turtle",
+            "parentOrigin": "BE",
+            "origin": "BE"
+          },
+          {
+            "name": "Fyffes",
+            "description": "Entreprise irlandaise de distribution de fruits tropicaux (bananes, ananas).",
+            "source": "Wikipedia: Fyffes",
+            "parentCompany": "Sumitomo Corporation",
+            "normalizedName": "fyffes",
+            "parentOrigin": "JP",
+            "origin": "IE"
+          },
+          {
+            "name": "HTH",
+            "description": "Marque suédoise de produits de soins de la peau.",
+            "source": "Website: HTH Original",
+            "parentCompany": "Orkla Care AB",
+            "normalizedName": "hth",
+            "parentOrigin": "SE",
+            "origin": "SE"
+          },
+          {
+            "name": "J&B",
+            "description": "Marque écossaise de blended Scotch whisky.",
+            "source": "Wikipedia: J&B",
+            "parentCompany": "Diageo",
+            "normalizedName": "jb",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Penny",
+            "description": "Chaîne allemande de supermarchés discount, filiale de Rewe Group.",
+            "source": "Wikipedia: Penny (supermarket)",
+            "parentCompany": "Rewe Group",
+            "normalizedName": "penny",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Albin Michel",
+            "description": "Maison d'édition française.",
+            "source": "Wikipedia: Éditions Albin Michel",
+            "parentCompany": "Éditions Albin Michel S.A.",
+            "normalizedName": "albin_michel",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Maryland",
+            "description": "Marque allemande de fruits secs et noix.",
+            "source": "Website: Maryland",
+            "parentCompany": "Maryland Trockenfrucht Vertriebs GmbH",
+            "normalizedName": "maryland",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Martin Hot Sauce",
+            "description": "Marque française de sauces piquantes artisanales.",
+            "source": "Website: Martin Hot Sauce",
+            "parentCompany": "Martin Hot Sauce",
+            "normalizedName": "martin_hot_sauce",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Orkla Confectionery & Snacks",
+            "description": "Division confiserie et snacks du groupe norvégien Orkla.",
+            "source": "Wikipedia: Orkla Group",
+            "parentCompany": "Orkla ASA",
+            "normalizedName": "orkla_confectionery_snacks",
+            "parentOrigin": "NO",
+            "origin": "NO"
+          },
+          {
+            "name": "Michelin",
+            "description": "Entreprise française de fabrication de pneumatiques.",
+            "source": "Wikipedia: Michelin",
+            "parentCompany": "Compagnie Générale des Établissements Michelin SCA",
+            "normalizedName": "michelin",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Spreequell Mineralbrunnen GmbH",
+            "description": "Producteur allemand d'eau minérale et boissons.",
+            "source": "Website: Spreequell",
+            "parentCompany": "RhönSprudel Gruppe",
+            "normalizedName": "spreequell_mineralbrunnen_gmbh",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Werder Feinkost",
+            "description": "Marque allemande de ketchup et sauces.",
+            "source": "Wikipedia: Werder Feinkost",
+            "parentCompany": "Werder Feinkost GmbH",
+            "normalizedName": "werder_frucht",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Lahaina",
+            "description": "Marque de chili crisp (huile pimentée croustillante).",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "lahaina",
+            "parentOrigin": "CN",
+            "origin": "CN"
+          },
+          {
+            "name": "Winston",
+            "description": "Marque américaine de cigarettes.",
+            "source": "Wikipedia: Winston (cigarette)",
+            "parentCompany": "ITG Brands (Imperial Brands) / Japan Tobacco International",
+            "normalizedName": "winston",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Caramulo",
+            "description": "Marque portugaise d'eau de source.",
+            "source": "Website: Água do Caramulo",
+            "parentCompany": "Sociedade da Água de Caramulo, S.A.",
+            "normalizedName": "caramulo",
+            "parentOrigin": "PT",
+            "origin": "PT"
+          },
+          {
+            "name": "Le Grazie",
+            "description": "Marque distributeur de produits de boulangerie d'Esselunga (Colomba).",
+            "source": "Website: Esselunga",
+            "parentCompany": "Esselunga S.p.A.",
+            "normalizedName": "le_grazie",
+            "parentOrigin": "IT",
+            "origin": "IT"
+          },
+          {
+            "name": "SalzburgMilch",
+            "description": "Coopérative laitière autrichienne.",
+            "source": "Wikipedia: SalzburgMilch",
+            "parentCompany": "SalzburgMilch GmbH",
+            "normalizedName": "salzburgmilch",
+            "parentOrigin": "AT",
+            "origin": "AT"
+          },
+          {
+            "name": "Deliplus",
+            "description": "Marque distributeur de produits de beauté et d'hygiène de Mercadona.",
+            "source": "Website: Mercadona",
+            "parentCompany": "Mercadona S.A.",
+            "normalizedName": "deliplus",
+            "parentOrigin": "ES",
+            "origin": "ES"
+          },
+          {
+            "name": "Fever-Tree",
+            "description": "Marque britannique de mélangeurs premium (tonics, ginger beer).",
+            "source": "Wikipedia: Fever-Tree",
+            "parentCompany": "Fevertree Drinks plc",
+            "normalizedName": "fever_tree",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "De'Longhi Nescafé Dolce Gusto",
+            "description": "Machine à café à capsules co-marquée.",
+            "source": "Wikipedia: Dolce Gusto",
+            "parentCompany": "De'Longhi / Nestlé",
+            "normalizedName": "delonghi_dolce_gusto_nescafe",
+            "parentOrigin": "IT/CH",
+            "origin": "IT/CH"
+          },
+          {
+            "name": "Bick’s",
+            "description": "Marque canadienne de cornichons et condiments.",
+            "source": "Wikipedia: Bick's",
+            "parentCompany": "The J.M. Smucker Company",
+            "normalizedName": "bicks",
+            "parentOrigin": "US",
+            "origin": "CA"
+          },
+          {
+            "name": "Vitalis",
+            "description": "Marque portugaise d'eau minérale.",
+            "source": "Website: Vitalis",
+            "parentCompany": "Unicer (Super Bock Group)",
+            "normalizedName": "vitalis",
+            "parentOrigin": "PT",
+            "origin": "PT"
+          },
+          {
+            "name": "Grilstad (for NorgesGruppen)",
+            "description": "Pâté de foie norvégien produit par Grilstad pour NorgesGruppen.",
+            "source": "Scan",
+            "parentCompany": "NorgesGruppen ASA / Grilstad AS",
+            "normalizedName": "produsert_av_grilstad_as_norge_for_norgesgruppen_forbrukerkontakt_unil_as_pb_290_skoyen_no_0213_oslo_wwwunilno",
+            "parentOrigin": "NO",
+            "origin": "NO"
+          },
+          {
+            "name": "Earth's Own",
+            "description": "Marque canadienne de boissons végétales (lait d'avoine).",
+            "source": "Website: Earth's Own",
+            "parentCompany": "Agrifoods International Cooperative Ltd.",
+            "normalizedName": "earths_own",
+            "parentOrigin": "CA",
+            "origin": "CA"
+          },
+          {
+            "name": "Vitamin Well",
+            "description": "Marque suédoise de boissons vitaminées.",
+            "source": "Wikipedia: Vitamin Well",
+            "parentCompany": "Vitamin Well Group AB",
+            "normalizedName": "vitamin_well",
+            "parentOrigin": "SE",
+            "origin": "SE"
+          },
+          {
+            "name": "Afri-Cola",
+            "description": "Marque allemande de cola.",
+            "source": "Wikipedia: Afri-Cola",
+            "parentCompany": "Mineralbrunnen Überkingen-Teinach GmbH & Co. KGaA",
+            "normalizedName": "afri_cola",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Guerrero",
+            "description": "Marque américaine de tortillas et produits mexicains.",
+            "source": "Wikipedia: Guerrero (brand)",
+            "parentCompany": "Gruma (Mission Foods)",
+            "normalizedName": "guerrero",
+            "parentOrigin": "MX",
+            "origin": "US"
+          },
+          {
+            "name": "Bad Reichenhaller Jodsalz",
+            "description": "Marque allemande de sel iodé.",
+            "source": "Wikipedia: Bad Reichenhaller",
+            "parentCompany": "Südwestdeutsche Salzwerke AG",
+            "normalizedName": "jod_salz",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Torani",
+            "description": "Marque américaine de sirops aromatisés.",
+            "source": "Wikipedia: Torani",
+            "parentCompany": "R. Torre & Company, Inc.",
+            "normalizedName": "torani",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Uni-ball",
+            "description": "Marque japonaise d'instruments d'écriture.",
+            "source": "Wikipedia: Uni-ball",
+            "parentCompany": "Mitsubishi Pencil Company",
+            "normalizedName": "uni_ball",
+            "parentOrigin": "JP",
+            "origin": "JP"
+          },
+          {
+            "name": "Erdinger Alkoholfrei",
+            "description": "Bière blanche allemande sans alcool.",
+            "source": "Wikipedia: Erdinger",
+            "parentCompany": "Privatbrauerei Erdinger Weißbräu Werner Brombach GmbH",
+            "normalizedName": "erdinger",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Dulano",
+            "description": "Marque distributeur de charcuterie de Lidl.",
+            "source": "Website: Lidl",
+            "parentCompany": "Lidl Stiftung & Co. KG",
+            "normalizedName": "dulano",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "YR Sauce",
+            "description": "Marque irlandaise de sauce brune épicée.",
+            "source": "Website: YR Sauce",
+            "parentCompany": "Primeline Sales & Marketing",
+            "normalizedName": "yr",
+            "parentOrigin": "IE",
+            "origin": "IE"
+          },
+          {
+            "name": "General Mills",
+            "description": "Multinationale américaine de produits alimentaires (céréales, snacks).",
+            "source": "Wikipedia: General Mills",
+            "parentCompany": "General Mills, Inc.",
+            "normalizedName": "general_mills",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Ferrero Canada",
+            "description": "Filiale canadienne du groupe italien Ferrero (Nutella).",
+            "source": "Wikipedia: Ferrero (company)",
+            "parentCompany": "Ferrero S.p.A.",
+            "normalizedName": "ferrero_canada",
+            "parentOrigin": "IT",
+            "origin": "CA"
+          },
+          {
+            "name": "Miller High Life",
+            "description": "Marque américaine de bière lager.",
+            "source": "Wikipedia: Miller High Life",
+            "parentCompany": "Molson Coors Beverage Company",
+            "normalizedName": "miller_high_life",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Bauducco Choco Biscuit",
+            "description": "Marque brésilienne de biscuits au chocolat.",
+            "source": "Website: Bauducco",
+            "parentCompany": "Pandurata Alimentos Ltda.",
+            "normalizedName": "bauducco_choco_biscuit",
+            "parentOrigin": "BR",
+            "origin": "BR"
+          },
+          {
+            "name": "Sun Bum",
+            "description": "Marque américaine de produits de protection solaire et soins capillaires.",
+            "source": "Wikipedia: Sun Bum",
+            "parentCompany": "SC Johnson",
+            "normalizedName": "sun_bum",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Dove Men+Care",
+            "description": "Gamme de produits de soins pour hommes de la marque Dove.",
+            "source": "Wikipedia: Dove (brand)",
+            "parentCompany": "Unilever",
+            "normalizedName": "dove_mencare",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Nature’s Path",
+            "description": "Marque canadienne de céréales et aliments biologiques.",
+            "source": "Wikipedia: Nature's Path",
+            "parentCompany": "Nature's Path Foods",
+            "normalizedName": "natures_path",
+            "parentOrigin": "CA",
+            "origin": "CA"
+          },
+          {
+            "name": "Heineken",
+            "description": "Brasserie néerlandaise et marque de bière internationale.",
+            "source": "Wikipedia: Heineken N.V.",
+            "parentCompany": "Heineken N.V.",
+            "normalizedName": "heineken",
+            "parentOrigin": "NL",
+            "origin": "NL"
+          },
+          {
+            "name": "AGROS",
+            "description": "Marque portugaise de produits laitiers.",
+            "source": "Website: Agros",
+            "parentCompany": "Lactogal Produtos Alimentares, S.A.",
+            "normalizedName": "agros",
+            "parentOrigin": "PT",
+            "origin": "PT"
+          },
+          {
+            "name": "BEGA",
+            "description": "Entreprise australienne de produits alimentaires (fromage, beurre).",
+            "source": "Wikipedia: Bega Cheese",
+            "parentCompany": "Bega Cheese Limited",
+            "normalizedName": "bega",
+            "parentOrigin": "AU",
+            "origin": "AU"
+          },
+          {
+            "name": "Fabulicious",
+            "description": "Marque néo-zélandaise de confiseries (réglisse).",
+            "source": "Website: RJ's Licorice",
+            "parentCompany": "RJ’s Licorice (NZ) Ltd",
+            "normalizedName": "fabulicious",
+            "parentOrigin": "NZ",
+            "origin": "NZ"
+          },
+          {
+            "name": "Cheetos Flamin' Hot",
+            "description": "Variété épicée des snacks Cheetos.",
+            "source": "Wikipedia: Cheetos",
+            "parentCompany": "Frito-Lay (PepsiCo)",
+            "normalizedName": "cheetos_flaming_hot",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Shamrock Farms",
+            "description": "Marque américaine de produits laitiers.",
+            "source": "Wikipedia: Shamrock Farms",
+            "parentCompany": "Shamrock Foods Company",
+            "normalizedName": "shamrock",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Aquaphor",
+            "description": "Marque américaine de produits de soins de la peau.",
+            "source": "Wikipedia: Aquaphor",
+            "parentCompany": "Beiersdorf Inc.",
+            "normalizedName": "aquaphor",
+            "parentOrigin": "DE",
+            "origin": "US"
+          },
+          {
+            "name": "Wiberg GmbH",
+            "description": "Entreprise autrichienne d'épices et assaisonnements.",
+            "source": "Wikipedia: Wiberg",
+            "parentCompany": "Frutarom (IFF)",
+            "normalizedName": "wiberg_gmbh",
+            "parentOrigin": "US",
+            "origin": "AT"
+          },
+          {
+            "name": "Vita D'or (Lidl)",
+            "description": "Marque distributeur d'huiles et graisses de Lidl.",
+            "source": "Website: Lidl",
+            "parentCompany": "Lidl Stiftung & Co. KG",
+            "normalizedName": "lidi_vita_dor_vitador",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "dmBio",
+            "description": "Marque distributeur de produits biologiques de dm-drogerie markt.",
+            "source": "Wikipedia: dm-drogerie markt",
+            "parentCompany": "dm-drogerie markt GmbH + Co. KG",
+            "normalizedName": "dm_bio",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Penny Markt GmbH",
+            "description": "Chaîne allemande de supermarchés discount, filiale de Rewe Group.",
+            "source": "Wikipedia: Penny (supermarket)",
+            "parentCompany": "Rewe Group",
+            "normalizedName": "penny_markt_gmbh",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Sedita",
+            "description": "Marque slovaque de biscuits et gaufrettes.",
+            "source": "Website: Sedita",
+            "parentCompany": "I.D.C. Holding, a.s.",
+            "normalizedName": "sedita",
+            "parentOrigin": "SK",
+            "origin": "SK"
+          },
+          {
+            "name": "Kroger",
+            "description": "Chaîne américaine de supermarchés et marque distributeur.",
+            "source": "Wikipedia: Kroger",
+            "parentCompany": "The Kroger Co.",
+            "normalizedName": "kroger",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Monin",
+            "description": "Marque française de sirops, liqueurs et purées de fruits.",
+            "source": "Wikipedia: Monin",
+            "parentCompany": "Georges Monin SAS",
+            "normalizedName": "monin",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Croma",
+            "description": "Marque néerlandaise de matière grasse pour la cuisson.",
+            "source": "Website: Croma",
+            "parentCompany": "Upfield",
+            "normalizedName": "croma",
+            "parentOrigin": "NL",
+            "origin": "NL"
+          },
+          {
+            "name": "JLab Audio",
+            "description": "Marque américaine d'écouteurs et produits audio.",
+            "source": "Wikipedia: JLab Audio",
+            "parentCompany": "JLab Audio",
+            "normalizedName": "jlab_audio",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Celestial Seasonings",
+            "description": "Marque américaine de thés et tisanes.",
+            "source": "Wikipedia: Celestial Seasonings",
+            "parentCompany": "Hain Celestial Group",
+            "normalizedName": "celestial_seasonings",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Sure",
+            "description": "Marque britannique d'anti-transpirants (également connue sous Rexona/Degree).",
+            "source": "Wikipedia: Rexona",
+            "parentCompany": "Unilever",
+            "normalizedName": "sure",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "SO'BiO étic",
+            "description": "Marque française de cosmétiques biologiques et naturels.",
+            "source": "Wikipedia: Léa Nature",
+            "parentCompany": "Léa Nature",
+            "normalizedName": "sobio_etic",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Martin-Pouret",
+            "description": "Maître vinaigrier français d'Orléans.",
+            "source": "Wikipedia: Martin-Pouret",
+            "parentCompany": "Martin-Pouret SAS",
+            "normalizedName": "martin_pouret",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "AgfaPhoto GmbH",
+            "description": "Marque allemande de produits photographiques.",
+            "source": "Wikipedia: AgfaPhoto",
+            "parentCompany": "AgfaPhoto Holding GmbH (sous licence)",
+            "normalizedName": "agfaphoto_gmbh",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Sainsbury's",
+            "description": "Chaîne britannique de supermarchés et marque distributeur.",
+            "source": "Wikipedia: Sainsbury's",
+            "parentCompany": "J Sainsbury plc",
+            "normalizedName": "sainsburys",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Jacoby",
+            "description": "Marque allemande de jus de fruits biologiques.",
+            "source": "Website: Jacoby Bio-Säfte",
+            "parentCompany": "Jacoby GmbH",
+            "normalizedName": "jacoby",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Den Gamle Fabrik",
+            "description": "Marque danoise de confitures.",
+            "source": "Wikipedia: Den Gamle Fabrik",
+            "parentCompany": "Orkla Foods Danmark",
+            "normalizedName": "aden_gamble_fabrik",
+            "parentOrigin": "DK",
+            "origin": "DK"
+          },
+          {
+            "name": "BOB",
+            "description": "Marque suédoise de confitures, jus et sirops.",
+            "source": "Wikipedia: BOB (brand)",
+            "parentCompany": "Orkla Foods Sverige AB",
+            "normalizedName": "bob",
+            "parentOrigin": "SE",
+            "origin": "SE"
+          },
+          {
+            "name": "Bahadourian",
+            "description": "Épicerie fine française spécialisée dans les produits orientaux.",
+            "source": "Wikipedia: Bahadourian",
+            "parentCompany": "Bahadourian SAS",
+            "normalizedName": "bahadourian",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Oddlygood",
+            "description": "Marque finlandaise de produits végétaux (à base d'avoine).",
+            "source": "Website: Oddlygood Global",
+            "parentCompany": "Valio Oy / Oddlygood Global",
+            "normalizedName": "oddlygood",
+            "parentOrigin": "FI",
+            "origin": "FI"
+          },
+          {
+            "name": "Marli",
+            "description": "Marque finlandaise de jus et boissons.",
+            "source": "Wikipedia: Marli",
+            "parentCompany": "Eckes-Granini Finland Oy Ab",
+            "normalizedName": "marli",
+            "parentOrigin": "FI",
+            "origin": "FI"
+          },
+          {
+            "name": "Dave & Jon's",
+            "description": "Marque suédoise de dattes et snacks à base de dattes.",
+            "source": "Website: Dave & Jon's",
+            "parentCompany": "Dave & Jon's AB",
+            "normalizedName": "dave_jons",
+            "parentOrigin": "SE",
+            "origin": "SE"
+          },
+          {
+            "name": "Kulta Katriina",
+            "description": "Marque finlandaise de café.",
+            "source": "Wikipedia: Meira",
+            "parentCompany": "Meira Oy (UCC Ueshima Coffee Co.)",
+            "normalizedName": "kulta_katriina",
+            "parentOrigin": "JP",
+            "origin": "FI"
+          },
+          {
+            "name": "Lemonaid",
+            "description": "Marque allemande de limonades et thés glacés biologiques et équitables.",
+            "source": "Wikipedia: Lemonaid Beverages",
+            "parentCompany": "Lemonaid Beverages GmbH",
+            "normalizedName": "lemonaid",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Planteur des Tropiques",
+            "description": "Marque distributeur de café d'Intermarché.",
+            "source": "Scan",
+            "parentCompany": "Intermarché (Les Mousquetaires)",
+            "normalizedName": "planteur_des_tropiques",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "PerfectDraft",
+            "description": "Système de tireuse à bière domestique.",
+            "source": "Wikipedia: PerfectDraft",
+            "parentCompany": "AB InBev",
+            "normalizedName": "perfect_draft",
+            "parentOrigin": "BE",
+            "origin": "BE"
+          },
+          {
+            "name": "Affligem",
+            "description": "Marque belge de bière d'abbaye.",
+            "source": "Wikipedia: Affligem Brewery",
+            "parentCompany": "Heineken N.V.",
+            "normalizedName": "affligem",
+            "parentOrigin": "NL",
+            "origin": "BE"
+          },
+          {
+            "name": "Sumol+Compal",
+            "description": "Entreprise portugaise de boissons (jus, nectars, sodas).",
+            "source": "Wikipedia: Sumol + Compal",
+            "parentCompany": "Sumol + Compal S.A.",
+            "normalizedName": "sumol_compal",
+            "parentOrigin": "PT",
+            "origin": "PT"
+          },
+          {
+            "name": "Khao Shong",
+            "description": "Marque thaïlandaise de café et snacks à base de noix.",
+            "source": "Website: Khao Shong",
+            "parentCompany": "Khao Shong Industry 1979 Co., Ltd.",
+            "normalizedName": "khao_shong",
+            "parentOrigin": "TH",
+            "origin": "TH"
+          },
+          {
+            "name": "Matilde Vicenzi",
+            "description": "Marque italienne de pâtisseries fines (amaretti, savoiardi).",
+            "source": "Wikipedia: Matilde Vicenzi",
+            "parentCompany": "Vicenzi S.p.A.",
+            "normalizedName": "vincenzi",
+            "parentOrigin": "IT",
+            "origin": "IT"
+          },
+          {
+            "name": "Il Viaggiator Goloso",
+            "description": "Marque distributeur de produits gourmets d'Unes (et U2 Supermercato).",
+            "source": "Website: Il Viaggiator Goloso",
+            "parentCompany": "Unes Supermercati (Finiper Group)",
+            "normalizedName": "il_viaggiator_goloso",
+            "parentOrigin": "IT",
+            "origin": "IT"
+          },
+          {
+            "name": "Isana",
+            "description": "Marque distributeur de produits de soins de Rossmann.",
+            "source": "Wikipedia: Rossmann (company)",
+            "parentCompany": "Dirk Rossmann GmbH",
+            "normalizedName": "isana",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Kirks",
+            "description": "Marque australienne de boissons gazeuses.",
+            "source": "Wikipedia: Kirks",
+            "parentCompany": "Coca-Cola Europacific Partners",
+            "normalizedName": "kirks",
+            "parentOrigin": "GB",
+            "origin": "AU"
+          },
+          {
+            "name": "Loyd",
+            "description": "Marque polonaise de thés et infusions.",
+            "source": "Website: Loyd Tea",
+            "parentCompany": "Mokate S.A.",
+            "normalizedName": "loyd",
+            "parentOrigin": "PL",
+            "origin": "PL"
+          },
+          {
+            "name": "Pokawa",
+            "description": "Chaîne française de restaurants de poké bowls.",
+            "source": "Website: Pokawa",
+            "parentCompany": "Pokawa",
+            "normalizedName": "pokawa",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Eat Real Lentil Chips",
+            "description": "Marque britannique de snacks à base de lentilles.",
+            "source": "Website: Eat Real Snacks",
+            "parentCompany": "Eat Real (Symphony Foods)",
+            "normalizedName": "lentil_chips",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Vio",
+            "description": "Marque allemande d'eau minérale et boissons biologiques (Coca-Cola).",
+            "source": "Wikipedia: Vio (brand)",
+            "parentCompany": "The Coca-Cola Company",
+            "normalizedName": "vio",
+            "parentOrigin": "US",
+            "origin": "DE"
+          },
+          {
+            "name": "Folgers",
+            "description": "Marque américaine de café.",
+            "source": "Wikipedia: Folgers",
+            "parentCompany": "The J.M. Smucker Company",
+            "normalizedName": "folgers",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Polarbröd",
+            "description": "Entreprise familiale suédoise de pain plat.",
+            "source": "Wikipedia: Polarbröd",
+            "parentCompany": "Polarbröd AB",
+            "normalizedName": "polarbrod",
+            "parentOrigin": "SE",
+            "origin": "SE"
+          },
+          {
+            "name": "Center Shock",
+            "description": "Marque de chewing-gums acidulés.",
+            "source": "Wikipedia: Center Shock",
+            "parentCompany": "Perfetti Van Melle",
+            "normalizedName": "center_shock",
+            "parentOrigin": "IT",
+            "origin": "IT"
+          },
+          {
+            "name": "Taylors of Harrogate",
+            "description": "Entreprise familiale britannique de thés et cafés.",
+            "source": "Wikipedia: Taylors of Harrogate",
+            "parentCompany": "Bettys & Taylors Group Ltd.",
+            "normalizedName": "taylors_of_harrogate",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Adelholzener Active O2",
+            "description": "Boisson allemande à base d'eau minérale et d'oxygène.",
+            "source": "Wikipedia: Adelholzener Alpenquellen",
+            "parentCompany": "Adelholzener Alpenquellen GmbH",
+            "normalizedName": "adelholzener_active_o2",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Vitaplus",
+            "description": "Marque de compléments alimentaires (vitamines effervescentes).",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "vitaplus",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Le Cavalier",
+            "description": "Marque française de fromage râpé (Emmental).",
+            "source": "Scan",
+            "parentCompany": "Société Fromagère de Charchigné (Groupe Lactalis)",
+            "normalizedName": "le_cavalier",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Vita Cola",
+            "description": "Marque allemande de cola.",
+            "source": "Wikipedia: Vita Cola",
+            "parentCompany": "Thüringer Waldquell Mineralbrunnen GmbH (Hassia Gruppe)",
+            "normalizedName": "vita_cola",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Sakata",
+            "description": "Marque australienne de crackers de riz.",
+            "source": "Wikipedia: Sakata (company)",
+            "parentCompany": "PepsiCo",
+            "normalizedName": "sakata",
+            "parentOrigin": "US",
+            "origin": "AU"
+          },
+          {
+            "name": "Sinebrychoff Brewery",
+            "description": "Brasserie finlandaise.",
+            "source": "Wikipedia: Sinebrychoff",
+            "parentCompany": "Carlsberg Group",
+            "normalizedName": "sinebrychoff_brewery",
+            "parentOrigin": "DK",
+            "origin": "FI"
+          },
+          {
+            "name": "Utz",
+            "description": "Marque américaine de snacks (chips, bretzels).",
+            "source": "Wikipedia: Utz Quality Foods",
+            "parentCompany": "Utz Brands, Inc.",
+            "normalizedName": "utz",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "San Benedetto S.p.A.",
+            "description": "Entreprise italienne d'eau minérale et boissons.",
+            "source": "Wikipedia: Acqua Minerale San Benedetto",
+            "parentCompany": "Acqua Minerale San Benedetto S.p.A.",
+            "normalizedName": "benedetto_spa",
+            "parentOrigin": "IT",
+            "origin": "IT"
+          },
+          {
+            "name": "Terea Turquoise",
+            "description": "Marque de sticks de tabac chauffé pour IQOS.",
+            "source": "Website: IQOS",
+            "parentCompany": "Philip Morris International",
+            "normalizedName": "terea_turquoise",
+            "parentOrigin": "US",
+            "origin": "CH"
+          },
+          {
+            "name": "Pullmoll",
+            "description": "Marque allemande de pastilles pour la gorge.",
+            "source": "Wikipedia: Pullmoll",
+            "parentCompany": "Zertus GmbH",
+            "normalizedName": "pullmoll",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "World’s Best Cat Litter",
+            "description": "Marque américaine de litière pour chats à base de maïs.",
+            "source": "Website: World's Best Cat Litter",
+            "parentCompany": "Kent Pet Group (Kent Corporation)",
+            "normalizedName": "worlds_best_cat_litter",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Rainett",
+            "description": "Marque française de produits d'entretien écologiques (Frosch en Allemagne).",
+            "source": "Wikipedia: Werner & Mertz",
+            "parentCompany": "Werner & Mertz",
+            "normalizedName": "rainett",
+            "parentOrigin": "DE",
+            "origin": "FR"
+          },
+          {
+            "name": "Flensburger",
+            "description": "Brasserie allemande du Schleswig-Holstein.",
+            "source": "Wikipedia: Flensburger Brauerei",
+            "parentCompany": "Flensburger Brauerei Emil Petersen GmbH & Co. KG",
+            "normalizedName": "flensburger",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Alpecin",
+            "description": "Marque allemande de shampooings et soins capillaires.",
+            "source": "Wikipedia: Dr. Kurt Wolff GmbH & Co. KG",
+            "parentCompany": "Dr. Kurt Wolff GmbH & Co. KG",
+            "normalizedName": "alpecin",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Scheepjes",
+            "description": "Marque néerlandaise de fils à tricoter et crocheter.",
+            "source": "Website: Scheepjes",
+            "parentCompany": "De Bondt B.V.",
+            "normalizedName": "scheepjes",
+            "parentOrigin": "NL",
+            "origin": "NL"
+          },
+          {
+            "name": "Reese’s Puffs Minis",
+            "description": "Variété de céréales Reese's Puffs.",
+            "source": "Wikipedia: Reese's Puffs",
+            "parentCompany": "General Mills",
+            "normalizedName": "reeses_puffs_minis",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Jacob's (Ireland)",
+            "description": "Marque irlandaise de biscuits et crackers.",
+            "source": "Wikipedia: Jacob's (biscuit manufacturer)",
+            "parentCompany": "Valeo Foods",
+            "normalizedName": "jacobs_ireland",
+            "parentOrigin": "IE",
+            "origin": "IE"
+          },
+          {
+            "name": "Relentless",
+            "description": "Marque britannique de boisson énergisante.",
+            "source": "Wikipedia: Relentless (drink)",
+            "parentCompany": "The Coca-Cola Company",
+            "normalizedName": "relentless",
+            "parentOrigin": "US",
+            "origin": "GB"
+          },
+          {
+            "name": "Dare",
+            "description": "Entreprise canadienne de biscuits, crackers et confiseries.",
+            "source": "Wikipedia: Dare Foods",
+            "parentCompany": "Dare Foods Limited",
+            "normalizedName": "dare",
+            "parentOrigin": "CA",
+            "origin": "CA"
+          },
+          {
+            "name": "Cathedral City",
+            "description": "Marque britannique de fromage cheddar.",
+            "source": "Wikipedia: Cathedral City (cheese)",
+            "parentCompany": "Saputo Inc.",
+            "normalizedName": "cathedral_city",
+            "parentOrigin": "CA",
+            "origin": "GB"
+          },
+          {
+            "name": "Aquiva",
+            "description": "Marque distributeur d'eau de Penny/Rewe.",
+            "source": "Scan",
+            "parentCompany": "Rewe Group",
+            "normalizedName": "aquiva",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Serra da Estrela",
+            "description": "Marque portugaise d'eau minérale.",
+            "source": "Website: Água Serra da Estrela",
+            "parentCompany": "Sumol + Compal",
+            "normalizedName": "serra_da_estrela",
+            "parentOrigin": "PT",
+            "origin": "PT"
+          },
+          {
+            "name": "Uriage",
+            "description": "Marque française de produits dermo-cosmétiques à base d'eau thermale.",
+            "source": "Wikipedia: Uriage Thermal Water",
+            "parentCompany": "Puig",
+            "normalizedName": "uriage",
+            "parentOrigin": "ES",
+            "origin": "FR"
+          },
+          {
+            "name": "Hunky Dorys",
+            "description": "Marque irlandaise de chips.",
+            "source": "Wikipedia: Hunky Dorys",
+            "parentCompany": "Tayto Snacks (Intersnack)",
+            "normalizedName": "hunky_dorys",
+            "parentOrigin": "DE",
+            "origin": "IE"
+          },
+          {
+            "name": "Charles Vignon",
+            "description": "Marque française de champagne.",
+            "source": "Website: Champagne Charles Vignon",
+            "parentCompany": "Champagne Charles Vignon",
+            "normalizedName": "charles_vignon",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Astra",
+            "description": "Marque de margarine.",
+            "source": "Wikipedia: Astra (margarine)",
+            "parentCompany": "Upfield",
+            "normalizedName": "astra",
+            "parentOrigin": "NL",
+            "origin": "FR"
+          },
+          {
+            "name": "Terra Nostra",
+            "description": "Marque portugaise de produits laitiers (lait, beurre, fromage).",
+            "source": "Website: Terra Nostra",
+            "parentCompany": "Bel Group",
+            "normalizedName": "terra_nostra",
+            "parentOrigin": "FR",
+            "origin": "PT"
+          },
+          {
+            "name": "Nova Açores",
+            "description": "Marque portugaise (Açores) de produits laitiers.",
+            "source": "Website: Nova Açores",
+            "parentCompany": "Unileite",
+            "normalizedName": "nova_acores",
+            "parentOrigin": "PT",
+            "origin": "PT"
+          },
+          {
+            "name": "Colona",
+            "description": "Marque belge de sauces.",
+            "source": "Website: Colona",
+            "parentCompany": "Colona S.A.",
+            "normalizedName": "colona",
+            "parentOrigin": "BE",
+            "origin": "BE"
+          },
+          {
+            "name": "Wrigley’s",
+            "description": "Marque américaine de chewing-gums et confiseries.",
+            "source": "Wikipedia: Wrigley Company",
+            "parentCompany": "Mars, Incorporated",
+            "normalizedName": "wrigleys",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Wawel",
+            "description": "Entreprise polonaise de confiseries.",
+            "source": "Wikipedia: Wawel (company)",
+            "parentCompany": "Wawel SA",
+            "normalizedName": "wawel",
+            "parentOrigin": "PL",
+            "origin": "PL"
+          },
+          {
+            "name": "HAK",
+            "description": "Marque néerlandaise de légumes et légumineuses en conserve.",
+            "source": "Wikipedia: HAK (company)",
+            "parentCompany": "KDV Group",
+            "normalizedName": "hak",
+            "parentOrigin": "RU",
+            "origin": "NL"
+          },
+          {
+            "name": "Rügenwalder Mühle",
+            "description": "Entreprise allemande de produits carnés et alternatives végétales.",
+            "source": "Wikipedia: Rügenwalder Mühle",
+            "parentCompany": "Rügenwalder Mühle Carl Müller GmbH & Co. KG",
+            "normalizedName": "rugenwalder_muhle",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Spendrups",
+            "description": "Brasserie familiale suédoise.",
+            "source": "Wikipedia: Spendrups",
+            "parentCompany": "Spendrups Bryggeri AB",
+            "normalizedName": "spendrups",
+            "parentOrigin": "SE",
+            "origin": "SE"
+          },
+          {
+            "name": "Piraquê",
+            "description": "Marque brésilienne de biscuits, pâtes et snacks.",
+            "source": "Wikipedia: Piraquê",
+            "parentCompany": "M. Dias Branco",
+            "normalizedName": "piraque",
+            "parentOrigin": "BR",
+            "origin": "BR"
+          },
+          {
+            "name": "Mora",
+            "description": "Marque néerlandaise de snacks surgelés.",
+            "source": "Wikipedia: Mora (brand)",
+            "parentCompany": "Van Geloven (McCain Foods)",
+            "normalizedName": "mora",
+            "parentOrigin": "CA",
+            "origin": "NL"
+          },
+          {
+            "name": "Gü",
+            "description": "Marque britannique de desserts réfrigérés haut de gamme.",
+            "source": "Wikipedia: Gü",
+            "parentCompany": "Exponent Private Equity",
+            "normalizedName": "gu",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "Pearl Milling Company",
+            "description": "Marque américaine de mélanges à crêpes et sirops (anciennement Aunt Jemima).",
+            "source": "Wikipedia: Pearl Milling Company",
+            "parentCompany": "PepsiCo",
+            "normalizedName": "pearl_milling",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Concorp Jirnsum BV",
+            "description": "Fabricant néerlandais de confiseries (Autodrop, Oldtimers).",
+            "source": "Website: Concorp",
+            "parentCompany": "Concorp International BV",
+            "normalizedName": "concorp_jirnsum_bv",
+            "parentOrigin": "NL",
+            "origin": "NL"
+          },
+          {
+            "name": "Ferrara Candy Company",
+            "description": "Entreprise américaine de confiseries.",
+            "source": "Wikipedia: Ferrara Candy Company",
+            "parentCompany": "Ferrero Group",
+            "normalizedName": "ferrara_candy",
+            "parentOrigin": "IT",
+            "origin": "US"
+          },
+          {
+            "name": "Zeisner",
+            "description": "Marque allemande de ketchup et sauces.",
+            "source": "Website: Zeisner",
+            "parentCompany": "Zeisner Feinkost GmbH & Co. KG",
+            "normalizedName": "zeisner",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Cantu",
+            "description": "Marque américaine de produits capillaires pour cheveux texturés.",
+            "source": "Website: Cantu Beauty",
+            "parentCompany": "PDC Brands (Knowlton Development Corporation)",
+            "normalizedName": "cantu",
+            "parentOrigin": "CA",
+            "origin": "US"
+          },
+          {
+            "name": "Scan",
+            "description": "Marque suédoise de produits carnés.",
+            "source": "Wikipedia: HKScan",
+            "parentCompany": "HKScan Oyj",
+            "normalizedName": "scan_sweden",
+            "parentOrigin": "FI",
+            "origin": "SE"
+          },
+          {
+            "name": "Netto",
+            "description": "Chaîne de supermarchés discount et marque distributeur.",
+            "source": "Wikipedia: Netto (brand)",
+            "parentCompany": "Salling Group (DK) / Edeka Group (DE)",
+            "normalizedName": "netto",
+            "parentOrigin": "DK",
+            "origin": "DK"
+          },
+          {
+            "name": "Römerquelle",
+            "description": "Marque autrichienne d'eau minérale.",
+            "source": "Wikipedia: Römerquelle",
+            "parentCompany": "The Coca-Cola Company",
+            "normalizedName": "romerquelle",
+            "parentOrigin": "US",
+            "origin": "AT"
+          },
+          {
+            "name": "Donat Mg",
+            "description": "Marque slovène d'eau minérale naturelle riche en magnésium.",
+            "source": "Wikipedia: Donat Mg",
+            "parentCompany": "Atlantic Grupa",
+            "normalizedName": "donat",
+            "parentOrigin": "HR",
+            "origin": "SI"
+          },
+          {
+            "name": "Papa Joe’s",
+            "description": "Marque distributeur de sauces (mayonnaise, ketchup) d'Edeka.",
+            "source": "Scan",
+            "parentCompany": "Edeka Zentrale AG & Co. KG",
+            "normalizedName": "papa_joes",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Mercadona",
+            "description": "Chaîne espagnole de supermarchés et marque distributeur.",
+            "source": "Wikipedia: Mercadona",
+            "parentCompany": "Mercadona S.A.",
+            "normalizedName": "mercadona",
+            "parentOrigin": "ES",
+            "origin": "ES"
+          },
+          {
+            "name": "Space Raiders",
+            "description": "Marque britannique de snacks de maïs soufflé.",
+            "source": "Wikipedia: Space Raiders",
+            "parentCompany": "KP Snacks (Intersnack)",
+            "normalizedName": "space_raiders",
+            "parentOrigin": "DE",
+            "origin": "GB"
+          },
+          {
+            "name": "Club",
+            "description": "Marque irlandaise de boissons gazeuses.",
+            "source": "Wikipedia: Club (drink)",
+            "parentCompany": "Britvic plc",
+            "normalizedName": "club",
+            "parentOrigin": "GB",
+            "origin": "IE"
+          },
+          {
+            "name": "Grandes Distilleries Peureux",
+            "description": "Distillerie française (kirsch, griottes).",
+            "source": "Wikipedia: Grandes Distilleries Peureux",
+            "parentCompany": "Grandes Distilleries Peureux S.A.",
+            "normalizedName": "grandes_distilleries_peureux",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Sainsbury’s",
+            "description": "Chaîne britannique de supermarchés et marque distributeur.",
+            "source": "Wikipedia: Sainsbury's",
+            "parentCompany": "J Sainsbury plc",
+            "normalizedName": "sainsuburys",
+            "parentOrigin": "GB",
+            "origin": "GB"
+          },
+          {
+            "name": "P&W",
+            "description": "Marque danoise de rémoulade et condiments.",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "pw",
+            "parentOrigin": "DK",
+            "origin": "DK"
+          },
+          {
+            "name": "Peroni",
+            "description": "Marque italienne de bière.",
+            "source": "Wikipedia: Peroni Brewery",
+            "parentCompany": "Asahi Group Holdings",
+            "normalizedName": "peroni",
+            "parentOrigin": "JP",
+            "origin": "IT"
+          },
+          {
+            "name": "Fox’s Biscuits",
+            "description": "Marque britannique de biscuits.",
+            "source": "Wikipedia: Fox's Biscuits",
+            "parentCompany": "Ferrero Group",
+            "normalizedName": "foxs",
+            "parentOrigin": "IT",
+            "origin": "GB"
+          },
+          {
+            "name": "Wikana",
+            "description": "Marque allemande de biscuits (Keks).",
+            "source": "Wikipedia: Wikana",
+            "parentCompany": "Wikana Keks und Nahrungsmittel GmbH",
+            "normalizedName": "wikana",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Peninsular",
+            "description": "Marque portugaise de moutarde.",
+            "source": "Scan",
+            "parentCompany": "Mendes Gonçalves S.A.",
+            "normalizedName": "peninsular",
+            "parentOrigin": "PT",
+            "origin": "PT"
+          },
+          {
+            "name": "Basse Nuts",
+            "description": "Entreprise canadienne de noix et fruits secs.",
+            "source": "Website: Bassé Nuts",
+            "parentCompany": "Bassé Nuts Inc.",
+            "normalizedName": "basse_nuts",
+            "parentOrigin": "CA",
+            "origin": "CA"
+          },
+          {
+            "name": "GamerSupps",
+            "description": "Marque américaine de boissons énergisantes en poudre pour joueurs.",
+            "source": "Website: Gamer Supps",
+            "parentCompany": "Gamer Supps LLC",
+            "normalizedName": "gamersupps",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "GrillSmoke",
+            "description": "Marque américaine de fumée liquide.",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "grillsmoke",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "ESN",
+            "description": "Marque allemande de nutrition sportive.",
+            "source": "Website: ESN",
+            "parentCompany": "Fitmart GmbH & Co. KG (The Quality Group)",
+            "normalizedName": "esn",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "Eyguebelle",
+            "description": "Marque française de sirops et liqueurs.",
+            "source": "Wikipedia: Eyguebelle",
+            "parentCompany": "Eyguebelle SAS",
+            "normalizedName": "eyguebelle",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Sweet Corner",
+            "description": "Marque portugaise de confiseries (caramels).",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "sweet_corner",
+            "parentOrigin": "PT",
+            "origin": "PT"
+          },
+          {
+            "name": "Naturis",
+            "description": "Marque espagnole d'eau gazeuse.",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "naturis",
+            "parentOrigin": "ES",
+            "origin": "ES"
+          },
+          {
+            "name": "Andrex",
+            "description": "Marque britannique de papier toilette.",
+            "source": "Wikipedia: Andrex",
+            "parentCompany": "Kimberly-Clark",
+            "normalizedName": "andrex",
+            "parentOrigin": "US",
+            "origin": "GB"
+          },
+          {
+            "name": "Loveli",
+            "description": "Marque néerlandaise de déodorants et soins naturels.",
+            "source": "Website: Loveli",
+            "parentCompany": "Loveli Care BV",
+            "normalizedName": "loveli",
+            "parentOrigin": "NL",
+            "origin": "NL"
+          },
+          {
+            "name": "Vidal",
+            "description": "Entreprise espagnole de confiseries.",
+            "source": "Wikipedia: Vidal Golosinas",
+            "parentCompany": "Vidal Golosinas S.A.",
+            "normalizedName": "vidal",
+            "parentOrigin": "ES",
+            "origin": "ES"
+          },
+          {
+            "name": "Newfoundland Chocolate Company",
+            "description": "Entreprise canadienne de chocolat artisanal.",
+            "source": "Website: Newfoundland Chocolate Company",
+            "parentCompany": "Newfoundland Chocolate Company",
+            "normalizedName": "newfoundland_chocolate_company",
+            "parentOrigin": "CA",
+            "origin": "CA"
+          },
+          {
+            "name": "Hero",
+            "description": "Groupe alimentaire suisse (confitures, aliments pour bébés).",
+            "source": "Wikipedia: Hero Group",
+            "parentCompany": "Hero Group",
+            "normalizedName": "hero",
+            "parentOrigin": "CH",
+            "origin": "CH"
+          },
+          {
+            "name": "Coosur",
+            "description": "Marque espagnole d'huile d'olive et sauces.",
+            "source": "Website: Coosur",
+            "parentCompany": "Acesur (Aceites del Sur-Coosur S.A.)",
+            "normalizedName": "coosur",
+            "parentOrigin": "ES",
+            "origin": "ES"
+          },
+          {
+            "name": "Smirnoff",
+            "description": "Marque russe de vodka, aujourd'hui propriété de Diageo.",
+            "source": "Wikipedia: Smirnoff",
+            "parentCompany": "Diageo",
+            "normalizedName": "smirnoff",
+            "parentOrigin": "GB",
+            "origin": "RU"
+          },
+          {
+            "name": "Jamieson",
+            "description": "Marque canadienne de vitamines et compléments alimentaires.",
+            "source": "Wikipedia: Jamieson Laboratories",
+            "parentCompany": "Jamieson Wellness Inc.",
+            "normalizedName": "jamieson",
+            "parentOrigin": "CA",
+            "origin": "CA"
+          },
+          {
+            "name": "YOUCOOK",
+            "description": "Marque allemande de plats préparés frais d'inspiration asiatique.",
+            "source": "Website: YOUCOOK",
+            "parentCompany": "YOUCOOK GmbH (Gründer)",
+            "normalizedName": "youcook",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "F&N",
+            "description": "Conglomérat singapourien de boissons et produits laitiers.",
+            "source": "Wikipedia: Fraser and Neave",
+            "parentCompany": "Fraser and Neave, Limited",
+            "normalizedName": "fn",
+            "parentOrigin": "SG",
+            "origin": "SG"
+          },
+          {
+            "name": "Asahi",
+            "description": "Groupe brassicole et de boissons japonais.",
+            "source": "Wikipedia: Asahi Group Holdings",
+            "parentCompany": "Asahi Group Holdings, Ltd.",
+            "normalizedName": "asahi",
+            "parentOrigin": "JP",
+            "origin": "JP"
+          },
+          {
+            "name": "POM",
+            "description": "Marque canadienne de pain.",
+            "source": "Wikipedia: Canada Bread Company",
+            "parentCompany": "Grupo Bimbo",
+            "normalizedName": "pom",
+            "parentOrigin": "MX",
+            "origin": "CA"
+          },
+          {
+            "name": "Astro",
+            "description": "Marque canadienne de yogourts.",
+            "source": "Wikipedia: Lactalis Canada",
+            "parentCompany": "Lactalis Canada (Lactalis Group)",
+            "normalizedName": "astro",
+            "parentOrigin": "FR",
+            "origin": "CA"
+          },
+          {
+            "name": "Québon",
+            "description": "Marque canadienne de produits laitiers.",
+            "source": "Wikipedia: Agropur",
+            "parentCompany": "Agropur Cooperative",
+            "normalizedName": "quebon",
+            "parentOrigin": "CA",
+            "origin": "CA"
+          },
+          {
+            "name": "Mezzetta",
+            "description": "Marque américaine de piments marinés, olives et condiments.",
+            "source": "Website: Mezzetta",
+            "parentCompany": "G.L. Mezzetta, Inc.",
+            "normalizedName": "mezzetta",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Tradition",
+            "description": "Marque canadienne de jus et limonades.",
+            "source": "Website: A. Lassonde Inc.",
+            "parentCompany": "A. Lassonde Inc.",
+            "normalizedName": "tradition",
+            "parentOrigin": "CA",
+            "origin": "CA"
+          },
+          {
+            "name": "TheraBreath",
+            "description": "Marque américaine de produits d'hygiène bucco-dentaire.",
+            "source": "Wikipedia: TheraBreath",
+            "parentCompany": "Church & Dwight",
+            "normalizedName": "therabreath",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Cérébos",
+            "description": "Marque française de sel.",
+            "source": "Wikipedia: Cérébos",
+            "parentCompany": "Salins Group",
+            "normalizedName": "cerebos",
+            "parentOrigin": "FR",
+            "origin": "FR"
+          },
+          {
+            "name": "Freez",
+            "description": "Marque de boissons gazeuses aromatisées.",
+            "source": "Scan",
+            "parentCompany": "UNKNOWN",
+            "normalizedName": "freez",
+            "parentOrigin": "CY",
+            "origin": "CY"
+          },
+          {
+            "name": "Jeff de Bruges",
+            "description": "Chocolatier franco-belge.",
+            "source": "Wikipedia: Jeff de Bruges",
+            "parentCompany": "Jeff de Bruges Diffusion SAS",
+            "normalizedName": "jeff_de_bruges",
+            "parentOrigin": "FR",
+            "origin": "BE"
+          },
+          {
+            "name": "Ja! Natürlich",
+            "description": "Marque distributeur de produits biologiques de Rewe en Autriche.",
+            "source": "Wikipedia: Ja! Natürlich",
+            "parentCompany": "Rewe International AG",
+            "normalizedName": "ja",
+            "parentOrigin": "AT",
+            "origin": "AT"
+          },
+          {
+            "name": "Tine SA",
+            "description": "Coopérative laitière norvégienne.",
+            "source": "Wikipedia: Tine (company)",
+            "parentCompany": "Tine BA",
+            "normalizedName": "tine_sa",
+            "parentOrigin": "NO",
+            "origin": "NO"
+          },
+          {
+            "name": "MayTea",
+            "description": "Marque française de thés glacés.",
+            "source": "Website: MayTea",
+            "parentCompany": "Suntory Beverage & Food Europe",
+            "normalizedName": "may_tea",
+            "parentOrigin": "JP",
+            "origin": "FR"
+          },
+          {
+            "name": "Arboga",
+            "description": "Marque suédoise de bière.",
+            "source": "Scan",
+            "parentCompany": "Galatea AB (Martin & Servera)",
+            "normalizedName": "arboga",
+            "parentOrigin": "SE",
+            "origin": "SE"
+          },
+          {
+            "name": "Quarantini",
+            "description": "Marque allemande de gin.",
+            "source": "Website: Quarantini Gin",
+            "parentCompany": "Quarantini Social Dry Gin GmbH",
+            "normalizedName": "quarantini",
+            "parentOrigin": "DE",
+            "origin": "DE"
+          },
+          {
+            "name": "BiFi",
+            "description": "Marque allemande de snacks à base de salami.",
+            "source": "Wikipedia: BiFi",
+            "parentCompany": "Jack Link's (LSI Germany GmbH)",
+            "normalizedName": "bifi",
+            "parentOrigin": "US",
+            "origin": "DE"
+          },
+          {
+            "name": "Emmi",
+            "description": "Groupe laitier suisse.",
+            "source": "Wikipedia: Emmi AG",
+            "parentCompany": "Emmi AG",
+            "normalizedName": "emmi",
+            "parentOrigin": "CH",
+            "origin": "CH"
+          },
+          {
+            "name": "Color Wow",
+            "description": "Marque américaine de produits capillaires.",
+            "source": "Website: Color Wow",
+            "parentCompany": "Federici Brands LLC",
+            "normalizedName": "colorwow",
+            "parentOrigin": "US",
+            "origin": "US"
+          },
+          {
+            "name": "Nemlig.com",
+            "description": "Supermarché en ligne danois et marque distributeur.",
+            "source": "Wikipedia: Nemlig.com",
+            "parentCompany": "Intervare A/S",
+            "normalizedName": "nemlig",
+            "parentOrigin": "DK",
+            "origin": "DK"
+          },
+          {
+            "name": "Manteiga Primor",
+            "description": "Marque portugaise de beurre.",
+            "source": "Scan",
+            "parentCompany": "Lactogal Produtos Alimentares, S.A.",
+            "normalizedName": "manteiga_primor",
+            "parentOrigin": "PT",
+            "origin": "PT"
+          },
+          {
+            "name": "Delicata",
+            "description": "Marque distributeur de chocolat d'Albert Heijn.",
+            "source": "Website: Albert Heijn",
+            "parentCompany": "Albert Heijn (Ahold Delhaize)",
+            "normalizedName": "delicata",
+            "parentOrigin": "NL",
+            "origin": "NL"
+          },
+          {
+            "name": "LU Cracottes",
+            "description": "Marque française de tartines craquantes au froment.",
+            "source": "Wikipedia: LU (biscuits)",
+            "parentCompany": "Mondelēz International",
+            "normalizedName": "lu_cracottes",
+            "parentOrigin": "US",
+            "origin": "FR"
+          },
+          {
+            "name": "Ovomaltine",
+            "description": "Marque suisse de produits à base de malt d'orge (poudre, biscuits).",
+            "source": "Wikipedia: Ovomaltine",
+            "parentCompany": "Associated British Foods",
+            "normalizedName": "ovomaltine",
+            "parentOrigin": "GB",
+            "origin": "CH"
+          },
+          {
+            "name": "Auvernou",
+            "description": "Marque française de saucissons secs.",
+            "source": "Website: Auvernou",
+            "parentCompany": "Salaisons du Lignon (Groupe Loste Tradi-France)",
+            "normalizedName": "auvernou",
+            "parentOrigin": "FR",
+            "origin": "FR"
           }
 ]
