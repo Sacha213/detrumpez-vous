@@ -44,3 +44,6 @@ app.*.map.json
 brandsToAdd.json
 lib/add_product.dart
 lib/test.dart
+
+# Ignorer le fichier google-services.json
+android/app/google-services.json
