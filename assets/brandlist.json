@@ -11117,7 +11117,7 @@
     {
         "name": "Strepsils",
         "description": "Pastilles contre le mal de gorge.",
-        "parentCompany": "Reckitt",
+        "parentCompany": "Reckitt Group",
         "parentOrigin": "GB",
         "normalizedName": "strepsils",
         "source": "Wikipedia/Reckitt Website",
@@ -12952,12 +12952,12 @@
     },
     {
         "name": "Santa Maria",
-        "description": "Marque finlandaise d'épices et produits Tex-Mex/World Food.",
+        "description": "Marque suédoise d'épices et produits Tex-Mex/World Food, appartenant au groupe finlandais Paulig.",
         "parentCompany": "Paulig Group",
         "parentOrigin": "FI",
         "normalizedName": "santa_maria",
         "source": "Santa Maria Website/Paulig Group Website",
-        "origin": "FI"
+        "origin": "SE"
     },
     {
         "name": "Oka",
@@ -17863,7 +17863,7 @@
         "normalizedName": "spam",
         "source": "Wikipedia : Spam (food)",
         "origin": "US"
-       },
+    },
     {
         "name": "Cointreau",
         "description": "Liqueur d'écorce d'orange triple sec",
@@ -25315,5 +25315,2974 @@
         "normalizedName": "koukakis",
         "parentOrigin": "GR",
         "origin": "GR"
-    }
+    },{
+        "name": "CAFÉ ROYAL",
+        "description": "Kaffee Vertrieb",
+        "source": "Wikipedia: CAFÉ ROYAL",
+        "parentCompany": "Delicia AG",
+        "normalizedName": "cafe_royal",
+        "parentOrigin": "CH",
+        "origin": "CH"
+      },
+      {
+        "name": "La fournée dorée",
+        "description": "Brioche tranchée",
+        "source": "Wikipedia: La fournée dorée",
+        "parentCompany": "",
+        "normalizedName": "la_fournee_doree",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Zonnatura",
+        "description": "Biological",
+        "source": "Wikipedia: Zonnatura",
+        "parentCompany": "",
+        "normalizedName": "zonnatura",
+        "parentOrigin": "",
+        "origin": "NL"
+      },
+      {
+        "name": "Spring Harghita",
+        "description": "Water",
+        "source": "Wikipedia: Spring Harghita",
+        "parentCompany": "",
+        "normalizedName": "spring_harghita",
+        "parentOrigin": "RO",
+        "origin": "RO"
+      },
+      {
+        "name": "Sanitarium",
+        "description": "Marmite",
+        "source": "Wikipedia: Sanitarium",
+        "parentCompany": "Sanitarium",
+        "normalizedName": "sanitarium",
+        "parentOrigin": "AU",
+        "origin": "AU"
+      },
+      {
+        "name": "Saveurs de nos régions",
+        "description": "Confiture de fraises d’Aquitaine",
+        "source": "Wikipedia: Saveurs de nos régions",
+        "parentCompany": "Lidl France",
+        "normalizedName": "saveurs_de_nos_regions",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Pohjolan Meijeri",
+        "description": "Milk",
+        "source": "Wikipedia: Pohjolan Meijeri",
+        "parentCompany": "",
+        "normalizedName": "pohjolan_meijeri",
+        "parentOrigin": "",
+        "origin": "FI"
+      },
+      {
+        "name": "Kruidvat",
+        "description": "Sort of drugstore started in The Netherlands in 1975",
+        "source": "Wikipedia: Kruidvat",
+        "parentCompany": "",
+        "normalizedName": "kruidvat",
+        "parentOrigin": "",
+        "origin": "NL"
+      },
+      {
+        "name": "Mineralbrunnen Krumbach Gmbh",
+        "description": "Mineralwasser, still",
+        "source": "Wikipedia: Mineralbrunnen Krumbach Gmbh",
+        "parentCompany": "",
+        "normalizedName": "mineralbrunnen_krumbach_gmbh",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Up",
+        "description": "Água de nascente",
+        "source": "Wikipedia: Up",
+        "parentCompany": "",
+        "normalizedName": "up",
+        "parentOrigin": "PT",
+        "origin": "PT"
+      },
+      {
+        "name": "Gelatelli",
+        "description": "High protein cookies & cream ice cream",
+        "source": "Wikipedia: Gelatelli",
+        "parentCompany": "Lidl",
+        "normalizedName": "gelatelli",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Lubella",
+        "description": "Wholegrain Penne Pasta",
+        "source": "Wikipedia: Lubella",
+        "parentCompany": "MW Food",
+        "normalizedName": "lubella",
+        "parentOrigin": "PL",
+        "origin": "PL"
+      },
+      {
+        "name": "Monchique",
+        "description": "Água engarrafada",
+        "source": "Wikipedia: Monchique",
+        "parentCompany": "Sociedade da Água de Monchique, SA",
+        "normalizedName": "monchique",
+        "parentOrigin": "PT",
+        "origin": "PT"
+      },
+      {
+        "name": "Dorset Cereals",
+        "description": "Muesli",
+        "source": "Wikipedia: Dorset Cereals",
+        "parentCompany": "",
+        "normalizedName": "dorset_cereals",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Hertog Jan",
+        "description": "Bier",
+        "source": "Wikipedia: Hertog Jan",
+        "parentCompany": "",
+        "normalizedName": "hertog_jan",
+        "parentOrigin": "",
+        "origin": "NL"
+      },
+      {
+        "name": "Sant’Anna",
+        "description": "Acqua Minerale Naturale Owned by the Bertone brothers (Alberto and Fabrizio) and the Osella family. The 55% of the company is controlled by Italian holding Fibe.",
+        "source": "Wikipedia: Sant’Anna",
+        "parentCompany": "Fibe holding",
+        "normalizedName": "santanna",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Ortiz",
+        "description": "Filetes de caballa",
+        "source": "Wikipedia: Ortiz",
+        "parentCompany": "",
+        "normalizedName": "ortiz",
+        "parentOrigin": "",
+        "origin": "ES"
+      },
+      {
+        "name": "Teapigs",
+        "description": "Tea importer and processor",
+        "source": "Wikipedia: Teapigs",
+        "parentCompany": "",
+        "normalizedName": "teapigs",
+        "parentOrigin": "",
+        "origin": "EU"
+      },
+      {
+        "name": "Vicenzi group",
+        "description": "Cookies",
+        "source": "Wikipedia: Vicenzi group",
+        "parentCompany": "",
+        "normalizedName": "vicenzi_group",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "Wood link",
+        "description": "Mangeoire classique pour loriot",
+        "source": "Wikipedia: Wood link",
+        "parentCompany": "",
+        "normalizedName": "wood_link",
+        "parentOrigin": "",
+        "origin": "CN"
+      },
+      {
+        "name": "Palmer's",
+        "description": "Cocoa Butter formula",
+        "source": "Wikipedia: Palmer's",
+        "parentCompany": "E.T.Browne Drug co",
+        "normalizedName": "palmers",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Robinsons",
+        "description": "British fruit drink brand",
+        "source": "Wikipedia: Robinsons",
+        "parentCompany": "Carlsberg A/S",
+        "normalizedName": "robinsons",
+        "parentOrigin": "DK",
+        "origin": "GB"
+      },
+      {
+        "name": "Highland Spring",
+        "description": "Scottish bottled spring water company",
+        "source": "Wikipedia: Highland Spring",
+        "parentCompany": "",
+        "normalizedName": "highland_spring",
+        "parentOrigin": "AE",
+        "origin": "GB"
+      },
+      {
+        "name": "Plantation",
+        "description": "Original Dark Rum",
+        "source": "Wikipedia: Plantation",
+        "parentCompany": "Maison Ferrand",
+        "normalizedName": "plantation",
+        "parentOrigin": "FR",
+        "origin": "BB"
+      },
+      {
+        "name": "Almitas",
+        "description": "Stevia Édulcorant naturel",
+        "source": "Wikipedia: Almitas",
+        "parentCompany": "",
+        "normalizedName": "almitas",
+        "parentOrigin": "AT",
+        "origin": "DE"
+      },
+      {
+        "name": "Yutaka",
+        "description": "Mirin",
+        "source": "Wikipedia: Yutaka",
+        "parentCompany": "",
+        "normalizedName": "yutaka",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Viva",
+        "description": "Viva chips",
+        "source": "Wikipedia: Viva",
+        "parentCompany": "",
+        "normalizedName": "viva",
+        "parentOrigin": "RO",
+        "origin": "RO"
+      },
+      {
+        "name": "3Bit",
+        "description": "Embrace the wonders of cream with this 3Bit bar! Layered with a crunchy wafer-like inside and creamy, melt-in-your-mouth nougat cream and then covered with sweet milk chocolate, you'll be biting at the Bit for more of this bar!",
+        "source": "Wikipedia: 3Bit",
+        "parentCompany": "Mondelez International",
+        "normalizedName": "3bit",
+        "parentOrigin": "US",
+        "origin": "CZ"
+      },
+      {
+        "name": "La droguerie écologique",
+        "description": "Bidon 1L savon noir concentré",
+        "source": "Wikipedia: La droguerie écologique",
+        "parentCompany": "",
+        "normalizedName": "la_droguerie_ecologique",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Jucee",
+        "description": "Cordial",
+        "source": "Wikipedia: Jucee",
+        "parentCompany": "",
+        "normalizedName": "jucee",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Thayers",
+        "description": "Facial Toner",
+        "source": "Wikipedia: Thayers",
+        "parentCompany": "L'Oréal",
+        "normalizedName": "thayers",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Hipp",
+        "description": "Baby food",
+        "source": "Wikipedia: Hipp",
+        "parentCompany": "",
+        "normalizedName": "hipp",
+        "parentOrigin": "",
+        "origin": "CH"
+      },
+      {
+        "name": "Guru",
+        "description": "Boisson énergisante",
+        "source": "Wikipedia: Guru",
+        "parentCompany": "Guru Beverage",
+        "normalizedName": "guru",
+        "parentOrigin": "",
+        "origin": "CA"
+      },
+      {
+        "name": "Myprotein",
+        "description": "Creatine Monohydrate",
+        "source": "Wikipedia: Myprotein",
+        "parentCompany": "THG Nutrition Limited",
+        "normalizedName": "myprotein",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "dm-Drogeriemarkt GmbH + Co. KG",
+        "description": "Bio Erdnusscreme mit Erdnussstückchen Erdnüsse nicht aus EU",
+        "source": "Wikipedia: dm-Drogeriemarkt GmbH + Co. KG",
+        "parentCompany": "dm-Drogeriemarkt GmbH + Co. KG",
+        "normalizedName": "dm_drogeriemarkt_gmbh_co_kg",
+        "parentOrigin": "DE",
+        "origin": "Non-EU"
+      },
+      {
+        "name": "Raska",
+        "description": "Milk",
+        "source": "Wikipedia: Raska",
+        "parentCompany": "MBM",
+        "normalizedName": "raska",
+        "parentOrigin": "FO",
+        "origin": "FO"
+      },
+      {
+        "name": "Ja!/Rewe",
+        "description": "Süße Mandeln, ganze Kerne, nicht blanchiert",
+        "source": "Wikipedia: Ja!/Rewe",
+        "parentCompany": "",
+        "normalizedName": "jarewe",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Karūna",
+        "description": "Dark chocolate 43% cocoa",
+        "source": "Wikipedia: Karūna",
+        "parentCompany": "",
+        "normalizedName": "karuna",
+        "parentOrigin": "",
+        "origin": "LT"
+      },
+      {
+        "name": "Bundaberg",
+        "description": "Ginger beer",
+        "source": "Wikipedia: Bundaberg",
+        "parentCompany": "Bundaberg brewed drinks PTY LTD",
+        "normalizedName": "bundaberg",
+        "parentOrigin": "AU",
+        "origin": "AU"
+      },
+      {
+        "name": "Schwartau",
+        "description": "Marmalade.",
+        "source": "Wikipedia: Schwartau",
+        "parentCompany": "Schwartauer Werke",
+        "normalizedName": "schwartau",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "La muretaine",
+        "description": "Bière ambrée",
+        "source": "Wikipedia: La muretaine",
+        "parentCompany": "Le Veilleur de bière",
+        "normalizedName": "la_muretaine",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Daunat",
+        "description": "Snacking",
+        "source": "Wikipedia: Daunat",
+        "parentCompany": "Groupe Norac",
+        "normalizedName": "daunat",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Sam’s Cola",
+        "description": "Sam’s Cola - diet - caffeine free",
+        "source": "Wikipedia: Sam’s Cola",
+        "parentCompany": "Walmart",
+        "normalizedName": "sams_cola",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Cap'n crunch",
+        "description": "Cap'n crunch's crunch berries",
+        "source": "Wikipedia: Cap'n crunch",
+        "parentCompany": "Quaker oats",
+        "normalizedName": "capn_crunch",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "S&B",
+        "description": "Manufacturer of Japanese food products and spices.",
+        "source": "Wikipedia: S&B",
+        "parentCompany": "S&B Foods Inc.",
+        "normalizedName": "sb",
+        "parentOrigin": "JP",
+        "origin": "JP"
+      },
+      {
+        "name": "La pie qui chante",
+        "description": "Bonbons",
+        "source": "Wikipedia: La pie qui chante",
+        "parentCompany": "Carambar & co",
+        "normalizedName": "la_pie_qui_chante",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Bettergoods",
+        "description": "Restaurant style chicken wings with brown sugar bbq dry rub the lightly breaded fully cooked chicken wing sections with sweet brown sugar BBQ dry rub packet",
+        "source": "Wikipedia: Bettergoods",
+        "parentCompany": "Walmart",
+        "normalizedName": "bettergoods",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "BECHEROVKA",
+        "description": "Herbal Liqueur",
+        "source": "Wikipedia: BECHEROVKA",
+        "parentCompany": "",
+        "normalizedName": "becherovka",
+        "parentOrigin": "",
+        "origin": "CZ"
+      },
+      {
+        "name": "Ultra Pro",
+        "description": "Premium Card Sleeves, 100 pieces, 2½”×3½”",
+        "source": "Wikipedia: Ultra Pro",
+        "parentCompany": "Ultra PRO",
+        "normalizedName": "ultra_pro",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Kuchenmeister",
+        "description": "Gâteau marbré",
+        "source": "Wikipedia: Kuchenmeister",
+        "parentCompany": "Kuchenmeister GMBH",
+        "normalizedName": "kuchenmeister",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Wieder",
+        "description": "Protein powder",
+        "source": "Wikipedia: Wieder",
+        "parentCompany": "",
+        "normalizedName": "wieder",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Korn Mühle",
+        "description": "Schocko Müsli",
+        "source": "Wikipedia: Korn Mühle",
+        "parentCompany": "",
+        "normalizedName": "korn_muhle",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Carat",
+        "description": "Suppengrün",
+        "source": "Wikipedia: Carat",
+        "parentCompany": "Netto",
+        "normalizedName": "carat",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Koawach",
+        "description": "Cacao powder",
+        "source": "Wikipedia: Koawach",
+        "parentCompany": "",
+        "normalizedName": "koawach",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Polar",
+        "description": "Drinks",
+        "source": "Wikipedia: Polar",
+        "parentCompany": "",
+        "normalizedName": "polar",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Primor",
+        "description": "Marca de manteiga portuguesa",
+        "source": "Wikipedia: Primor",
+        "parentCompany": "Lactogal Produtos Alimentares S.A.",
+        "normalizedName": "primor",
+        "parentOrigin": "PT",
+        "origin": "PT"
+      },
+      {
+        "name": "VOSS",
+        "description": "eau minérale naturelle",
+        "source": "Wikipedia: VOSS",
+        "parentCompany": "",
+        "normalizedName": "voss",
+        "parentOrigin": "",
+        "origin": "NO"
+      },
+      {
+        "name": "Royal Club",
+        "description": "Soft drinks and juices",
+        "source": "Wikipedia: Royal Club",
+        "parentCompany": "",
+        "normalizedName": "royal_club",
+        "parentOrigin": "",
+        "origin": "NL"
+      },
+      {
+        "name": "Covererd Bridge",
+        "description": "Chips",
+        "source": "Wikipedia: Covererd Bridge",
+        "parentCompany": "",
+        "normalizedName": "covererd_bridge",
+        "parentOrigin": "",
+        "origin": "CA"
+      },
+      {
+        "name": "Red Band",
+        "description": "Winegums and candy",
+        "source": "Wikipedia: Red Band",
+        "parentCompany": "Cloetta AB",
+        "normalizedName": "red_band",
+        "parentOrigin": "SE",
+        "origin": "SE"
+      },
+      {
+        "name": "Lance Inc.",
+        "description": "Lance, Inc. is an American brand of snack foods owned by the Snyder's-Lance company headquartered in Charlotte, North Carolina. As of 2018, Snyder's-Lance is owned by Campbell Soup Company (now The Campbell’s Company).",
+        "source": "Wikipedia: Lance Inc.",
+        "parentCompany": "The Campbell’s Company",
+        "normalizedName": "lance_inc",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Whittard",
+        "description": "Hot Chocolate, Tea and Coffee Vendor",
+        "source": "Wikipedia: Whittard",
+        "parentCompany": "United Kingdom",
+        "normalizedName": "whittard",
+        "parentOrigin": "GB",
+        "origin": "DE"
+      },
+      {
+        "name": "Border",
+        "description": "Biscuits",
+        "source": "Wikipedia: Border",
+        "parentCompany": "",
+        "normalizedName": "border",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Rakusen's",
+        "description": "Flame Baked Matzo Crackers",
+        "source": "Wikipedia: Rakusen's",
+        "parentCompany": "Rakusens Limited",
+        "normalizedName": "rakusens",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Kägi Fret",
+        "description": "Chocolate wafer biscuits",
+        "source": "Wikipedia: Kägi Fret",
+        "parentCompany": "Kägi Söhne AG",
+        "normalizedName": "kagi_fret",
+        "parentOrigin": "CH",
+        "origin": "CH"
+      },
+      {
+        "name": "Mr Kipling",
+        "description": "Bakery goods",
+        "source": "Wikipedia: Mr Kipling",
+        "parentCompany": "Premier foods plc",
+        "normalizedName": "mr_kipling",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Gallo",
+        "description": "Azeite",
+        "source": "Wikipedia: Gallo",
+        "parentCompany": "",
+        "normalizedName": "gallo",
+        "parentOrigin": "PT",
+        "origin": "PT"
+      },
+      {
+        "name": "Zagori",
+        "description": "Table water",
+        "source": "Wikipedia: Zagori",
+        "parentCompany": "",
+        "normalizedName": "zagori",
+        "parentOrigin": "",
+        "origin": "GR"
+      },
+      {
+        "name": "BULLIT",
+        "description": "Energydrink with caffeine, taurine and sugar. Produced in Germany North-rhine-Westphalia.",
+        "source": "Wikipedia: BULLIT",
+        "parentCompany": "",
+        "normalizedName": "bullit",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Matilde Vicenzi",
+        "description": "Vicenzi Group",
+        "source": "Wikipedia: Matilde Vicenzi",
+        "parentCompany": "",
+        "normalizedName": "matilde_vicenzi",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "RUF Lebensmittel KG",
+        "description": "Die RUF Lebensmittelwerk KG mit Sitz in der niedersächsischen Stadt Quakenbrück ist ein Lebensmittelhersteller von Backzutaten, Desserts, Dekorartikeln, Gelatine, Soßenbindern und Backmischungen. Die Produkte werden unter der Marke RUF angeboten. Darüber hinaus produziert RUF auch für Verarbeiter im Foodservice und für die Industrie im In- und Ausland. - Wikipedia 07.05.2025",
+        "source": "Wikipedia: RUF Lebensmittel KG",
+        "parentCompany": "",
+        "normalizedName": "ruf_lebensmittel_kg",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Mary’s crackers",
+        "description": "Crackers",
+        "source": "Wikipedia: Mary’s crackers",
+        "parentCompany": "",
+        "normalizedName": "marys_crackers",
+        "parentOrigin": "",
+        "origin": "CA"
+      },
+      {
+        "name": "Prana",
+        "description": "Chia pudding",
+        "source": "Wikipedia: Prana",
+        "parentCompany": "Prana Biovegan Inc.",
+        "normalizedName": "prana",
+        "parentOrigin": "CA",
+        "origin": "CA"
+      },
+      {
+        "name": "Dorset Cereal",
+        "description": "Muesli",
+        "source": "Wikipedia: Dorset Cereal",
+        "parentCompany": "Dorset Cereals",
+        "normalizedName": "dorset_cereal",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Tempo",
+        "description": "Tempo Taschentücher in Vorratsbox",
+        "source": "Wikipedia: Tempo",
+        "parentCompany": "Essity",
+        "normalizedName": "tempo",
+        "parentOrigin": "SE",
+        "origin": "DE"
+      },
+      {
+        "name": "Takis",
+        "description": "Rolled Taco Snack",
+        "source": "Wikipedia: Takis",
+        "parentCompany": "Barcel Espana",
+        "normalizedName": "takis",
+        "parentOrigin": "ES",
+        "origin": "ES"
+      },
+      {
+        "name": "Skinny Pop",
+        "description": "Popcorn",
+        "source": "Wikipedia: Skinny Pop",
+        "parentCompany": "The Hershey Company",
+        "normalizedName": "skinny_pop",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Calbee",
+        "description": "Pizza Potato Chips",
+        "source": "Wikipedia: Calbee",
+        "parentCompany": "Calbee, Inc.",
+        "normalizedName": "calbee",
+        "parentOrigin": "JP",
+        "origin": "CN"
+      },
+      {
+        "name": "Calbee America, Inc.",
+        "description": "Jagariko (じゃがりこ) Hokkaido Butter flavored potato sticks",
+        "source": "Wikipedia: Calbee America, Inc.",
+        "parentCompany": "Calbee Inc.",
+        "normalizedName": "calbee_america_inc",
+        "parentOrigin": "JP",
+        "origin": "JP"
+      },
+      {
+        "name": "Dukat",
+        "description": "Milk",
+        "source": "Wikipedia: Dukat",
+        "parentCompany": "Lactalis",
+        "normalizedName": "dukat",
+        "parentOrigin": "FR",
+        "origin": "HR"
+      },
+      {
+        "name": "Frulite",
+        "description": "Juice",
+        "source": "Wikipedia: Frulite",
+        "parentCompany": "Coca cola",
+        "normalizedName": "frulite",
+        "parentOrigin": "US",
+        "origin": "GR"
+      },
+      {
+        "name": "Johma",
+        "description": "Brood producten.",
+        "source": "Wikipedia: Johma",
+        "parentCompany": "Johma",
+        "normalizedName": "johma",
+        "parentOrigin": "NL",
+        "origin": "NL"
+      },
+      {
+        "name": "Henry Lambert GmbH & Co. KG",
+        "description": "An assortment of cookies",
+        "source": "Wikipedia: Henry Lambert GmbH & Co. KG",
+        "parentCompany": "",
+        "normalizedName": "henry_lambert_gmbh_co_kg",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Kimbo",
+        "description": "Coffee pods",
+        "source": "Wikipedia: Kimbo",
+        "parentCompany": "Kimbo",
+        "normalizedName": "kimbo",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Fiducial",
+        "description": "Fournitures de bureau",
+        "source": "Wikipedia: Fiducial",
+        "parentCompany": "",
+        "normalizedName": "fiducial",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Sterzing-Vipiteno",
+        "description": "Yoghurt",
+        "source": "Wikipedia: Sterzing-Vipiteno",
+        "parentCompany": "",
+        "normalizedName": "sterzing_vipiteno",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "Nuxe",
+        "description": "Crème mains et ongles",
+        "source": "Wikipedia: Nuxe",
+        "parentCompany": "Laboratoire Nuxe",
+        "normalizedName": "nuxe",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Lucart",
+        "description": "recycled tissues",
+        "source": "Wikipedia: Lucart",
+        "parentCompany": "",
+        "normalizedName": "lucart",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "Latitude 65°",
+        "description": "Carbonated caffeinated drink",
+        "source": "Wikipedia: Latitude 65°",
+        "parentCompany": "Latitude 65 AB",
+        "normalizedName": "latitude_65",
+        "parentOrigin": "SE",
+        "origin": "SE"
+      },
+      {
+        "name": "FlapJack",
+        "description": "British rolled oat bar with raspberries and strawberries",
+        "source": "Wikipedia: FlapJack",
+        "parentCompany": "9Brand foods limited",
+        "normalizedName": "flapjack",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "La Casera",
+        "description": "La Casera es una marca de refrescos española. Fue fundada en 1949 por la familia Duffo. En la actualidad es propiedad de la empresa Suntory Beverage & Food Europe, perteneciente al grupo japonés Suntory.",
+        "source": "Wikipedia: La Casera",
+        "parentCompany": "Suntory Group",
+        "normalizedName": "la_casera",
+        "parentOrigin": "JP",
+        "origin": "ES"
+      },
+      {
+        "name": "Lajkonik",
+        "description": "Snack",
+        "source": "Wikipedia: Lajkonik",
+        "parentCompany": "Lorenz",
+        "normalizedName": "lajkonik",
+        "parentOrigin": "DE",
+        "origin": "PL"
+      },
+      {
+        "name": "Satori",
+        "description": "Table water",
+        "source": "Wikipedia: Satori",
+        "parentCompany": "",
+        "normalizedName": "satori",
+        "parentOrigin": "",
+        "origin": "GR"
+      },
+      {
+        "name": "Gräfschäfter",
+        "description": "Dinkel Sandwich (Toast Brot)",
+        "source": "Wikipedia: Gräfschäfter",
+        "parentCompany": "Backländer GmbH",
+        "normalizedName": "grafschafter",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "LUX",
+        "description": "Gel douche",
+        "source": "Wikipedia: LUX",
+        "parentCompany": "Unilever",
+        "normalizedName": "lux",
+        "parentOrigin": "",
+        "origin": "GR"
+      },
+      {
+        "name": "o.b.",
+        "description": "Tampons",
+        "source": "Wikipedia: o.b.",
+        "parentCompany": "Johnson & Johnson",
+        "normalizedName": "ob",
+        "parentOrigin": "US",
+        "origin": "EU"
+      },
+      {
+        "name": "Consenza",
+        "description": "Wafflemix",
+        "source": "Wikipedia: Consenza",
+        "parentCompany": "",
+        "normalizedName": "consenza",
+        "parentOrigin": "",
+        "origin": "NL"
+      },
+      {
+        "name": "Sa",
+        "description": "Fromage à pâte molle",
+        "source": "Wikipedia: Sa",
+        "parentCompany": "",
+        "normalizedName": "sa",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Valfrutta",
+        "description": "Maïs doux bio 285g",
+        "source": "Wikipedia: Valfrutta",
+        "parentCompany": "",
+        "normalizedName": "valfrutta",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Aqua libra",
+        "description": "Flavoured sparkling water",
+        "source": "Wikipedia: Aqua libra",
+        "parentCompany": "",
+        "normalizedName": "aqua_libra",
+        "parentOrigin": "",
+        "origin": "IE"
+      },
+      {
+        "name": "Pastis 51",
+        "description": "Le 51 est une boisson anisée au pastis créée en 1951 par la société Pernod.",
+        "source": "Wikipedia: Pastis 51",
+        "parentCompany": "Pernod Ricard",
+        "normalizedName": "pastis_51",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Hipro",
+        "description": "Proteïne producten",
+        "source": "Wikipedia: Hipro",
+        "parentCompany": "Danone",
+        "normalizedName": "hipro",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Alipende",
+        "description": "Cola Bebida carbonatada",
+        "source": "Wikipedia: Alipende",
+        "parentCompany": "Coceda sl",
+        "normalizedName": "alipende",
+        "parentOrigin": "ES",
+        "origin": "ES"
+      },
+      {
+        "name": "Elovena",
+        "description": "Annospikapuuro Omena, Mustikka & Vadelma / Snabbgröt Äpple, blåbär & hallon",
+        "source": "Wikipedia: Elovena",
+        "parentCompany": "",
+        "normalizedName": "elovena",
+        "parentOrigin": "",
+        "origin": "FI"
+      },
+      {
+        "name": "Jua",
+        "description": "Crunchy Cashews herbes de Provence",
+        "source": "Wikipedia: Jua",
+        "parentCompany": "",
+        "normalizedName": "jua",
+        "parentOrigin": "",
+        "origin": "BE"
+      },
+      {
+        "name": "Zippo",
+        "description": "A Zippo lighter is a reusable metal lighter produced by Zippo Manufacturing Company of Bradford, Pennsylvania, United States",
+        "source": "Wikipedia: Zippo",
+        "parentCompany": "",
+        "normalizedName": "zippo",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "La molisana",
+        "description": "Pesto al basilico",
+        "source": "Wikipedia: La molisana",
+        "parentCompany": "",
+        "normalizedName": "la_molisana",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "Zyla",
+        "description": "Fizzy drink",
+        "source": "Wikipedia: Zyla",
+        "parentCompany": "Spadel",
+        "normalizedName": "zyla",
+        "parentOrigin": "",
+        "origin": "BE"
+      },
+      {
+        "name": "Fino",
+        "description": "Sarantis Group is a multinational consumer products company with strong presence in Eastern Europe",
+        "source": "Wikipedia: Fino",
+        "parentCompany": "",
+        "normalizedName": "fino",
+        "parentOrigin": "",
+        "origin": "GR"
+      },
+      {
+        "name": "Deroni",
+        "description": "Romanian rice company",
+        "source": "Wikipedia: Deroni",
+        "parentCompany": "",
+        "normalizedName": "deroni",
+        "parentOrigin": "",
+        "origin": "RO"
+      },
+      {
+        "name": "Krina",
+        "description": "Bulgarian company",
+        "source": "Wikipedia: Krina",
+        "parentCompany": "",
+        "normalizedName": "krina",
+        "parentOrigin": "",
+        "origin": "BG"
+      },
+      {
+        "name": "Maison Colibri",
+        "description": "Biscuiterie",
+        "source": "Wikipedia: Maison Colibri",
+        "parentCompany": "",
+        "normalizedName": "maison_colibri",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Riso Scotti",
+        "description": "Riso Scotti S.p.A. is an Italian multinational food company that groups together companies specializing in the cultivation, processing and transformation of rice and pasta.",
+        "source": "Wikipedia: Riso Scotti",
+        "parentCompany": "",
+        "normalizedName": "riso_scotti",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "Bulmers’",
+        "description": "Irish Cider alcohol",
+        "source": "Wikipedia: Bulmers’",
+        "parentCompany": "C&C Group",
+        "normalizedName": "bulmers",
+        "parentOrigin": "",
+        "origin": "IE"
+      },
+      {
+        "name": "Mondelēz International",
+        "description": "Mondelez International, Inc. is an American multinational confectionery, food, holding, beverage and snack food company based in Chicago.",
+        "source": "Wikipedia: Mondelēz International",
+        "parentCompany": "",
+        "normalizedName": "mondelez_international",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Nutline",
+        "description": "Romanian food company",
+        "source": "Wikipedia: Nutline",
+        "parentCompany": "",
+        "normalizedName": "nutline",
+        "parentOrigin": "",
+        "origin": "RO"
+      },
+      {
+        "name": "Alka",
+        "description": "Alka is a group of food manufacturing companies in Romania, established in 1994",
+        "source": "Wikipedia: Alka",
+        "parentCompany": "",
+        "normalizedName": "alka",
+        "parentOrigin": "",
+        "origin": "RO"
+      },
+      {
+        "name": "Happy mrs Jersey",
+        "description": "Icecream",
+        "source": "Wikipedia: Happy mrs Jersey",
+        "parentCompany": "",
+        "normalizedName": "happy_mrs_jersey",
+        "parentOrigin": "",
+        "origin": "NL"
+      },
+      {
+        "name": "Budweiser Budvar",
+        "description": "Budweiser Budvar (Czech: Budějovický Budvar) is a brand of beer (and a brewery) that is made in the city of České Budějovice in Southern Bohemia, Czech Republic.",
+        "source": "Wikipedia: Budweiser Budvar",
+        "parentCompany": "",
+        "normalizedName": "budweiser_budvar",
+        "parentOrigin": "",
+        "origin": "CZ"
+      },
+      {
+        "name": "Corona",
+        "description": "Mexikanische Biermarke",
+        "source": "Wikipedia: Corona",
+        "parentCompany": "Anheuser-Busch InBev",
+        "normalizedName": "corona",
+        "parentOrigin": "BE",
+        "origin": "DE"
+      },
+      {
+        "name": "BAMA",
+        "description": "Autumncrisp grapes",
+        "source": "Wikipedia: BAMA",
+        "parentCompany": "Exportadora subsole",
+        "normalizedName": "bama",
+        "parentOrigin": "CL",
+        "origin": "CL"
+      },
+      {
+        "name": "eurostar",
+        "description": "Train tranel",
+        "source": "Wikipedia: eurostar",
+        "parentCompany": "",
+        "normalizedName": "eurostar",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Prozis",
+        "description": "comprehensive range of sports nutrition,fitness apparel, and well-being products,",
+        "source": "Wikipedia: Prozis",
+        "parentCompany": "Prozis",
+        "normalizedName": "prozis",
+        "parentOrigin": "PT",
+        "origin": "PT"
+      },
+      {
+        "name": "Wotsits",
+        "description": "Flavoured Corn Puffs",
+        "source": "Wikipedia: Wotsits",
+        "parentCompany": "Walkers",
+        "normalizedName": "wotsits",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Mills",
+        "description": "Mills Peanut Butter is a popular spread for bread, which can be used both alone and in combination with other spreads, such as jam. It can also be used in many dinner dishes, and to add a nice touch to breakfast cereals, cakes, sauces and biscuits, among other things.",
+        "source": "Wikipedia: Mills",
+        "parentCompany": "Agra",
+        "normalizedName": "mills",
+        "parentOrigin": "NO",
+        "origin": "NO"
+      },
+      {
+        "name": "Beauvais tomat Ketchup",
+        "description": "Uden tilsat sukker",
+        "source": "Wikipedia: Beauvais tomat Ketchup",
+        "parentCompany": "Orkla",
+        "normalizedName": "beauvais_tomat_ketchup",
+        "parentOrigin": "DK",
+        "origin": "DK"
+      },
+      {
+        "name": "Philip Morris",
+        "description": "TEREA - Warmed tabaco",
+        "source": "Wikipedia: Philip Morris",
+        "parentCompany": "",
+        "normalizedName": "philip_morris",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Birra Moretti",
+        "description": "Pale lager beer",
+        "source": "Wikipedia: Birra Moretti",
+        "parentCompany": "Heineken",
+        "normalizedName": "birra_moretti",
+        "parentOrigin": "NL",
+        "origin": "IT"
+      },
+      {
+        "name": "Chocomel - Cécémel",
+        "description": "Boissons lactée chocolat",
+        "source": "Wikipedia: Chocomel - Cécémel",
+        "parentCompany": "Campina",
+        "normalizedName": "chocomel_cecemel",
+        "parentOrigin": "NL",
+        "origin": "BE"
+      },
+      {
+        "name": "Ambev",
+        "description": "Brasilian Brand",
+        "source": "Wikipedia: Ambev",
+        "parentCompany": "",
+        "normalizedName": "ambev",
+        "parentOrigin": "",
+        "origin": "BR"
+      },
+      {
+        "name": "Frey",
+        "description": "Petit beurre chocolate biscuits",
+        "source": "Wikipedia: Frey",
+        "parentCompany": "Migros",
+        "normalizedName": "frey",
+        "parentOrigin": "CH",
+        "origin": "CH"
+      },
+      {
+        "name": "De Hoorn",
+        "description": "Belgian Beer",
+        "source": "Wikipedia: De Hoorn",
+        "parentCompany": "Palm NV",
+        "normalizedName": "de_hoorn",
+        "parentOrigin": "BE",
+        "origin": "BE"
+      },
+      {
+        "name": "Cryppakretail",
+        "description": "Icepak",
+        "source": "Wikipedia: Cryppakretail",
+        "parentCompany": "",
+        "normalizedName": "cryppakretail",
+        "parentOrigin": "CA",
+        "origin": "CA"
+      },
+      {
+        "name": "Cornet",
+        "description": "Beer",
+        "source": "Wikipedia: Cornet",
+        "parentCompany": "Royal Swinkels",
+        "normalizedName": "cornet",
+        "parentOrigin": "NL",
+        "origin": "BE"
+      },
+      {
+        "name": "Zanetti",
+        "description": "Parmigiano Reggiano",
+        "source": "Wikipedia: Zanetti",
+        "parentCompany": "",
+        "normalizedName": "zanetti",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "Zeina AB",
+        "description": "Hummus triangle.",
+        "source": "Wikipedia: Zeina AB",
+        "parentCompany": "Evanoff Holding AB",
+        "normalizedName": "zeina_ab",
+        "parentOrigin": "SE",
+        "origin": "SE"
+      },
+      {
+        "name": "AB InBev",
+        "description": "Corona Cero, non-alcoholic beer",
+        "source": "Wikipedia: AB InBev",
+        "parentCompany": "Grupo Modelo",
+        "normalizedName": "ab_inbev",
+        "parentOrigin": "MX",
+        "origin": "BE"
+      },
+      {
+        "name": "Wherry Amber Ale",
+        "description": "Sweet malty and grapefruit hops creating a fresh and zesty rich amber ale",
+        "source": "Wikipedia: Wherry Amber Ale",
+        "parentCompany": "Woodfordes Brewery.",
+        "normalizedName": "wherry_amber_ale",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Eat natural",
+        "description": "Oats",
+        "source": "Wikipedia: Eat natural",
+        "parentCompany": "Lema BV",
+        "normalizedName": "eat_natural",
+        "parentOrigin": "",
+        "origin": "NL"
+      },
+      {
+        "name": "Hello Panda",
+        "description": "Biscuiterie japonaise",
+        "source": "Wikipedia: Hello Panda",
+        "parentCompany": "",
+        "normalizedName": "hello_panda",
+        "parentOrigin": "",
+        "origin": "JP"
+      },
+      {
+        "name": "Aldi stores Ireland ltd",
+        "description": "UHT Custard",
+        "source": "Wikipedia: Aldi stores Ireland ltd",
+        "parentCompany": "Aldi",
+        "normalizedName": "aldi_stores_ireland_ltd",
+        "parentOrigin": "DE",
+        "origin": "IE"
+      },
+      {
+        "name": "Balea",
+        "description": "Urea Fusscreme",
+        "source": "Wikipedia: Balea",
+        "parentCompany": "dm-drogerie markt",
+        "normalizedName": "balea",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Dove Men",
+        "description": "Dove men + care advanced",
+        "source": "Wikipedia: Dove Men",
+        "parentCompany": "Unilever",
+        "normalizedName": "dove_men",
+        "parentOrigin": "GB",
+        "origin": "NL"
+      },
+      {
+        "name": "Donto dent",
+        "description": "Donto dent brillant weiss",
+        "source": "Wikipedia: Donto dent",
+        "parentCompany": "Dm-drogerie Markt",
+        "normalizedName": "donto_dent",
+        "parentOrigin": "DE",
+        "origin": "AT"
+      },
+      {
+        "name": "Kodan",
+        "description": "Koda Tinktur forte",
+        "source": "Wikipedia: Kodan",
+        "parentCompany": "Schülke & Mayr GmbH",
+        "normalizedName": "kodan",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "NEQI",
+        "description": "NEQI professional hair care conditioner APRÉS shampoo",
+        "source": "Wikipedia: NEQI",
+        "parentCompany": "New Flag GmbH",
+        "normalizedName": "neqi",
+        "parentOrigin": "DE",
+        "origin": "IT"
+      },
+      {
+        "name": "Pocari Sweat",
+        "description": "Pocari Sweat is a Japanese sports drink, manufactured by Otsuka Pharmaceutical.",
+        "source": "Wikipedia: Pocari Sweat",
+        "parentCompany": "Otsuka Pharmaceutical",
+        "normalizedName": "pocari_sweat",
+        "parentOrigin": "JP",
+        "origin": "JP"
+      },
+      {
+        "name": "Jason's",
+        "description": "Bread",
+        "source": "Wikipedia: Jason's",
+        "parentCompany": "",
+        "normalizedName": "jasons",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Lavera",
+        "description": "Lavera naturkosmetik Butterfly",
+        "source": "Wikipedia: Lavera",
+        "parentCompany": "Laverana GmbH & Co. KG",
+        "normalizedName": "lavera",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Nagellack Entferner",
+        "description": "Elkos body Nagellack Entferner",
+        "source": "Wikipedia: Nagellack Entferner",
+        "parentCompany": "Edeka",
+        "normalizedName": "nagellack_entferner",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Musa",
+        "description": "Mayonesa",
+        "source": "Wikipedia: Musa",
+        "parentCompany": "Agroalimentaria Musa S.L.",
+        "normalizedName": "musa",
+        "parentOrigin": "ES",
+        "origin": "ES"
+      },
+      {
+        "name": "Salsa El Yucateco",
+        "description": "Salsa picante",
+        "source": "Wikipedia: Salsa El Yucateco",
+        "parentCompany": "El Yucateco Salsas y Condimentos S.A",
+        "normalizedName": "salsa_el_yucateco",
+        "parentOrigin": "MX",
+        "origin": "MX"
+      },
+      {
+        "name": "Hola Cola Zero",
+        "description": "Cola",
+        "source": "Wikipedia: Hola Cola Zero",
+        "parentCompany": "Coceda SL",
+        "normalizedName": "hola_cola_zero",
+        "parentOrigin": "ES",
+        "origin": "ES"
+      },
+      {
+        "name": "Sasha",
+        "description": "Mineral water",
+        "source": "Wikipedia: Sasha",
+        "parentCompany": "",
+        "normalizedName": "sasha",
+        "parentOrigin": "",
+        "origin": "NL"
+      },
+      {
+        "name": "Iso Sport Vindija",
+        "description": "Iso Sport izotonik negazorani",
+        "source": "Wikipedia: Iso Sport Vindija",
+        "parentCompany": "",
+        "normalizedName": "iso_sport_vindija",
+        "parentOrigin": "",
+        "origin": "HR"
+      },
+      {
+        "name": "Dmbio",
+        "description": "Berg linsen",
+        "source": "Wikipedia: Dmbio",
+        "parentCompany": "dm-drogerie markt",
+        "normalizedName": "dmbio",
+        "parentOrigin": "DE",
+        "origin": "TR"
+      },
+      {
+        "name": "Biozentrale",
+        "description": "Bio Zentrale bio Kids kakao drink",
+        "source": "Wikipedia: Biozentrale",
+        "parentCompany": "Bio Zentrale Naturprodukte GmbH",
+        "normalizedName": "biozentrale",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Bio wagner",
+        "description": "Pommes Gewürzsalz",
+        "source": "Wikipedia: Bio wagner",
+        "parentCompany": "Wagner Gewürze GmbH",
+        "normalizedName": "bio_wagner",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Ostmann",
+        "description": "Nelken",
+        "source": "Wikipedia: Ostmann",
+        "parentCompany": "Ostmann GmbH",
+        "normalizedName": "ostmann",
+        "parentOrigin": "DE",
+        "origin": "ID"
+      },
+      {
+        "name": "Demeter Campo verde",
+        "description": "Demeter Campo Verde Condimento Bianco",
+        "source": "Wikipedia: Demeter Campo verde",
+        "parentCompany": "Campo verde GmbH",
+        "normalizedName": "demeter_campo_verde",
+        "parentOrigin": "DE",
+        "origin": "IT"
+      },
+      {
+        "name": "Giuseppe cremonini",
+        "description": "Giuseppe Cremonini Aceto Balsamico di modena",
+        "source": "Wikipedia: Giuseppe cremonini",
+        "parentCompany": "Acetaia guiseppe Cremonini Srl",
+        "normalizedName": "giuseppe_cremonini",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Landfreude",
+        "description": "Landfreude Fadennester",
+        "source": "Wikipedia: Landfreude",
+        "parentCompany": "Buck GmbH",
+        "normalizedName": "landfreude",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Bio",
+        "description": "Bio AldiFarfalle Vollkorn",
+        "source": "Wikipedia: Bio",
+        "parentCompany": "Aldi Süd",
+        "normalizedName": "bio",
+        "parentOrigin": "DE",
+        "origin": "IT"
+      },
+      {
+        "name": "K Favourites",
+        "description": "K Favorites Maccheroni",
+        "source": "Wikipedia: K Favourites",
+        "parentCompany": "Kaufland",
+        "normalizedName": "k_favourites",
+        "parentOrigin": "DE",
+        "origin": "IT"
+      },
+      {
+        "name": "Agava",
+        "description": "Agava Tortenguss",
+        "source": "Wikipedia: Agava",
+        "parentCompany": "Sonnentracht GmbH",
+        "normalizedName": "agava",
+        "parentOrigin": "DE",
+        "origin": "AT"
+      },
+      {
+        "name": "Jim Beam",
+        "description": "Jim Beam Kentucky Straight Bourbon Whiskey",
+        "source": "Wikipedia: Jim Beam",
+        "parentCompany": "James B. Beam Distilling Co. Beam",
+        "normalizedName": "jim_beam",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Südzucker",
+        "description": "Bio Rübenzucker",
+        "source": "Wikipedia: Südzucker",
+        "parentCompany": "SÜD Zucker AG",
+        "normalizedName": "sudzucker",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Yumyum",
+        "description": "Beef Flavour",
+        "source": "Wikipedia: Yumyum",
+        "parentCompany": "Wan Thai Foods Industry Company Limited",
+        "normalizedName": "yumyum",
+        "parentOrigin": "TH",
+        "origin": "TH"
+      },
+      {
+        "name": "Cosmos Organic",
+        "description": "BP 30159 - 94533 Rungis Cedex - France",
+        "source": "Wikipedia: Cosmos Organic",
+        "parentCompany": "Cooperative U Enseigne",
+        "normalizedName": "cosmos_organic",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Barrs",
+        "description": "Fizzy drink.",
+        "source": "Wikipedia: Barrs",
+        "parentCompany": "A. G. Barr ltd",
+        "normalizedName": "barrs",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Benecol",
+        "description": "Spread",
+        "source": "Wikipedia: Benecol",
+        "parentCompany": "Raisio Group",
+        "normalizedName": "benecol",
+        "parentOrigin": "FI",
+        "origin": "GB"
+      },
+      {
+        "name": "O’Tacos",
+        "description": "O'Tacos is a French fast food chain, therefore owned by Belgian company QSRP.",
+        "source": "Wikipedia: O’Tacos",
+        "parentCompany": "QSRP",
+        "normalizedName": "otacos",
+        "parentOrigin": "BE",
+        "origin": "FR"
+      },
+      {
+        "name": "Calpico",
+        "description": "Lychee non-carbonated beverage",
+        "source": "Wikipedia: Calpico",
+        "parentCompany": "",
+        "normalizedName": "calpico",
+        "parentOrigin": "",
+        "origin": "JP"
+      },
+      {
+        "name": "Mr. Noodles Beef",
+        "description": "Beef flavoured ramen noodles",
+        "source": "Wikipedia: Mr. Noodles Beef",
+        "parentCompany": "Anderson Watts LTD",
+        "normalizedName": "mr_noodles_beef",
+        "parentOrigin": "CA",
+        "origin": "CA"
+      },
+      {
+        "name": "Staff Classic Chilli",
+        "description": "Chilli with beans",
+        "source": "Wikipedia: Staff Classic Chilli",
+        "parentCompany": "Hormel",
+        "normalizedName": "staff_classic_chilli",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Sunkist",
+        "description": "Sunkist",
+        "source": "Wikipedia: Sunkist",
+        "parentCompany": "Sunkist Growers inc",
+        "normalizedName": "sunkist",
+        "parentOrigin": "US",
+        "origin": "AU"
+      },
+      {
+        "name": "Sabarot",
+        "description": "Sabarot has been a specialist in pulses and cereals since 1819. Exported all over the world, A.O.P. Lentille verte du Puy and Petit Épeautre du Velay are its emblematic products. It is also a specialist in woodland mushrooms and the European leader in canned snails. Based in the Haute-Loire since its beginnings, the family business is now represented by Antoine Wassner, the 7th generation.",
+        "source": "Wikipedia: Sabarot",
+        "parentCompany": "Sabarot",
+        "normalizedName": "sabarot",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Vitacat (Aldi Stores Ltd)",
+        "description": "Yummies Tasty Sticks cat treats.",
+        "source": "Wikipedia: Vitacat (Aldi Stores Ltd)",
+        "parentCompany": "",
+        "normalizedName": "vitacat_aldi_stores_ltd",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Chavroux",
+        "description": "Pur chèvre (fromage frais)",
+        "source": "Wikipedia: Chavroux",
+        "parentCompany": "Fromarsac",
+        "normalizedName": "chavroux",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Moncalm",
+        "description": "Water",
+        "source": "Wikipedia: Moncalm",
+        "parentCompany": "",
+        "normalizedName": "moncalm",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Trapunzel",
+        "description": "Peanut butter",
+        "source": "Wikipedia: Trapunzel",
+        "parentCompany": "",
+        "normalizedName": "trapunzel",
+        "parentOrigin": "",
+        "origin": "EU"
+      },
+      {
+        "name": "Sportness dm",
+        "description": "Protein gums",
+        "source": "Wikipedia: Sportness dm",
+        "parentCompany": "",
+        "normalizedName": "sportness_dm",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Finncrisp",
+        "description": "Sourdough Rye Thins",
+        "source": "Wikipedia: Finncrisp",
+        "parentCompany": "",
+        "normalizedName": "finncrisp",
+        "parentOrigin": "",
+        "origin": "FI"
+      },
+      {
+        "name": "Kin Food",
+        "description": "Entrecôte Yakiniku with Rice",
+        "source": "Wikipedia: Kin Food",
+        "parentCompany": "",
+        "normalizedName": "kin_food",
+        "parentOrigin": "",
+        "origin": "SE"
+      },
+      {
+        "name": "French’s",
+        "description": "Classic yellow mustard",
+        "source": "Wikipedia: French’s",
+        "parentCompany": "",
+        "normalizedName": "frenchs",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Autodrop",
+        "description": "Cola & cadillacs",
+        "source": "Wikipedia: Autodrop",
+        "parentCompany": "",
+        "normalizedName": "autodrop",
+        "parentOrigin": "",
+        "origin": "NL"
+      },
+      {
+        "name": "DEIT",
+        "description": "Erfrischungsgetränk",
+        "source": "Wikipedia: DEIT",
+        "parentCompany": "Vilsa-Brunnen Otto Rodekohr GmbH",
+        "normalizedName": "deit",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "BBH",
+        "description": "Energi drink",
+        "source": "Wikipedia: BBH",
+        "parentCompany": "",
+        "normalizedName": "bbh",
+        "parentOrigin": "",
+        "origin": "NL"
+      },
+      {
+        "name": "Vitakraft AG",
+        "description": "Pet food and snacks",
+        "source": "Wikipedia: Vitakraft AG",
+        "parentCompany": "",
+        "normalizedName": "vitakraft_ag",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "St Môret",
+        "description": "Marque commerciale française d'une série de fromages industriels à pâte fraiche",
+        "source": "Wikipedia: St Môret",
+        "parentCompany": "Savencia Fromage & Dairy",
+        "normalizedName": "st_moret",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Charles & Alice",
+        "description": "Charles & Alice est un leader français de la fabrication et de la distribution de compotes et de desserts aux fruits.",
+        "source": "Wikipedia: Charles & Alice",
+        "parentCompany": "Charle & Alice Group",
+        "normalizedName": "charles_alice",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Suntory",
+        "description": "Beers, liquors and soft drinks",
+        "source": "Wikipedia: Suntory",
+        "parentCompany": "Ssuntory",
+        "normalizedName": "suntory",
+        "parentOrigin": "JP",
+        "origin": "JP"
+      },
+      {
+        "name": "Bulla Dairy Foods",
+        "description": "Dairy processor",
+        "source": "Wikipedia: Bulla Dairy Foods",
+        "parentCompany": "",
+        "normalizedName": "bulla_dairy_foods",
+        "parentOrigin": "",
+        "origin": "AU"
+      },
+      {
+        "name": "Whittaker’s",
+        "description": "Chocolates",
+        "source": "Wikipedia: Whittaker’s",
+        "parentCompany": "",
+        "normalizedName": "whittakers",
+        "parentOrigin": "",
+        "origin": "NZ"
+      },
+      {
+        "name": "Yebisu",
+        "description": "Beer",
+        "source": "Wikipedia: Yebisu",
+        "parentCompany": "Sapporo Brewery",
+        "normalizedName": "yebisu",
+        "parentOrigin": "JP",
+        "origin": "JP"
+      },
+      {
+        "name": "Sapporo Beer",
+        "description": "Beer",
+        "source": "Wikipedia: Sapporo Beer",
+        "parentCompany": "Sapporo Brewery",
+        "normalizedName": "sapporo_beer",
+        "parentOrigin": "JP",
+        "origin": "JP"
+      },
+      {
+        "name": "Pokka",
+        "description": "Soft drinks",
+        "source": "Wikipedia: Pokka",
+        "parentCompany": "Sapporo Holdings",
+        "normalizedName": "pokka",
+        "parentOrigin": "JP",
+        "origin": "JP"
+      },
+      {
+        "name": "bonÀrea",
+        "description": "Galletas rellenas de crema sabor chocolate",
+        "source": "Wikipedia: bonÀrea",
+        "parentCompany": "",
+        "normalizedName": "bonarea",
+        "parentOrigin": "",
+        "origin": "ES"
+      },
+      {
+        "name": "Cuétara",
+        "description": "Bolachas marinheiras clássicas",
+        "source": "Wikipedia: Cuétara",
+        "parentCompany": "",
+        "normalizedName": "cuetara",
+        "parentOrigin": "",
+        "origin": "PT"
+      },
+      {
+        "name": "Fiorentini",
+        "description": "Azienda centenaria di Torino, vendita prodotti biologici, dietetici e quelli per intolleranze alimentari.",
+        "source": "Wikipedia: Fiorentini",
+        "parentCompany": "",
+        "normalizedName": "fiorentini",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Salutem",
+        "description": "Granola integral com frutos secos",
+        "source": "Wikipedia: Salutem",
+        "parentCompany": "",
+        "normalizedName": "salutem",
+        "parentOrigin": "",
+        "origin": "PT"
+      },
+      {
+        "name": "KP Snacks Limited",
+        "description": "McCoy's crinkle cut crisps",
+        "source": "Wikipedia: KP Snacks Limited",
+        "parentCompany": "Intersnack Group GmbH & Co. KG",
+        "normalizedName": "kp_snacks_limited",
+        "parentOrigin": "DE",
+        "origin": "GB"
+      },
+      {
+        "name": "Kmetija Burger",
+        "description": "Vloženi izdelki",
+        "source": "Wikipedia: Kmetija Burger",
+        "parentCompany": "",
+        "normalizedName": "kmetija_burger",
+        "parentOrigin": "",
+        "origin": "SI"
+      },
+      {
+        "name": "Sayanara",
+        "description": "Toothpick",
+        "source": "Wikipedia: Sayanara",
+        "parentCompany": "",
+        "normalizedName": "sayanara",
+        "parentOrigin": "",
+        "origin": "SI"
+      },
+      {
+        "name": "Wolf River",
+        "description": "Honey",
+        "source": "Wikipedia: Wolf River",
+        "parentCompany": "",
+        "normalizedName": "wolf_river",
+        "parentOrigin": "",
+        "origin": "CA"
+      },
+      {
+        "name": "Grefusa",
+        "description": "Tijuana mix",
+        "source": "Wikipedia: Grefusa",
+        "parentCompany": "",
+        "normalizedName": "grefusa",
+        "parentOrigin": "",
+        "origin": "ES"
+      },
+      {
+        "name": "Löwensenf",
+        "description": "Senf",
+        "source": "Wikipedia: Löwensenf",
+        "parentCompany": "Edeka",
+        "normalizedName": "lowensenf",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Cock Brand",
+        "description": "Sweet Chili Sauce for Chicken",
+        "source": "Wikipedia: Cock Brand",
+        "parentCompany": "",
+        "normalizedName": "cock_brand",
+        "parentOrigin": "",
+        "origin": "TH"
+      },
+      {
+        "name": "Fewel’s",
+        "description": "CALIFORNIA SEEDLESS RAISINS",
+        "source": "Wikipedia: Fewel’s",
+        "parentCompany": "",
+        "normalizedName": "fewels",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Rotkäppchen",
+        "description": "Rotkäppchensekt Trocken",
+        "source": "Wikipedia: Rotkäppchen",
+        "parentCompany": "",
+        "normalizedName": "rotkappchen",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Pedras Salgadas",
+        "description": "Água com gás natural",
+        "source": "Wikipedia: Pedras Salgadas",
+        "parentCompany": "Pedras Salgadas",
+        "normalizedName": "pedras_salgadas",
+        "parentOrigin": "PT",
+        "origin": "PT"
+      },
+      {
+        "name": "Gösser",
+        "description": "Softdrink mit Zitronengeschmack, ohne Alkohol",
+        "source": "Wikipedia: Gösser",
+        "parentCompany": "BRAU UNION",
+        "normalizedName": "gosser",
+        "parentOrigin": "AT",
+        "origin": "AT"
+      },
+      {
+        "name": "Valentina",
+        "description": "Mexican hot sauce, extra hot",
+        "source": "Wikipedia: Valentina",
+        "parentCompany": "Salsa Tamazula",
+        "normalizedName": "valentina",
+        "parentOrigin": "MX",
+        "origin": "MX"
+      },
+      {
+        "name": "Toque du chef",
+        "description": "Tanjine de bœuf",
+        "source": "Wikipedia: Toque du chef",
+        "parentCompany": "Lou Traiteur",
+        "normalizedName": "toque_du_chef",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Saskia",
+        "description": "Eau minerale Mineralwasser",
+        "source": "Wikipedia: Saskia",
+        "parentCompany": "Lidl",
+        "normalizedName": "saskia",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Star",
+        "description": "Sughi pronti",
+        "source": "Wikipedia: Star",
+        "parentCompany": "",
+        "normalizedName": "star",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Penn State",
+        "description": "Pretzels",
+        "source": "Wikipedia: Penn State",
+        "parentCompany": "Tayto",
+        "normalizedName": "penn_state",
+        "parentOrigin": "IE",
+        "origin": "IE"
+      },
+      {
+        "name": "Flahavan’s",
+        "description": "Porridge",
+        "source": "Wikipedia: Flahavan’s",
+        "parentCompany": "Flahavan and sons limited",
+        "normalizedName": "flahavans",
+        "parentOrigin": "IE",
+        "origin": "IE"
+      },
+      {
+        "name": "Chosen foods",
+        "description": "Avocado oil, huile d'avocat, aceite de aguacate. Made in Mexico.",
+        "source": "Wikipedia: Chosen foods",
+        "parentCompany": "Butterfly equity",
+        "normalizedName": "chosen_foods",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Mother earth",
+        "description": "Vinegar 14390 Chantilly Crossing Ln, Chantilly, Virginia, 20151, United States",
+        "source": "Wikipedia: Mother earth",
+        "parentCompany": "Mother earth",
+        "normalizedName": "mother_earth",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Fruitables",
+        "description": "Doug treats",
+        "source": "Wikipedia: Fruitables",
+        "parentCompany": "",
+        "normalizedName": "fruitables",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Flame baked",
+        "description": "Pita Brot Angeblich in Griechenland hergestellt",
+        "source": "Wikipedia: Flame baked",
+        "parentCompany": "Aldente GmbH",
+        "normalizedName": "flame_baked",
+        "parentOrigin": "GR",
+        "origin": "DE"
+      },
+      {
+        "name": "Pfanner",
+        "description": "Mango Passion fruit Orange juice",
+        "source": "Wikipedia: Pfanner",
+        "parentCompany": "Hermann Pfanner GmbH",
+        "normalizedName": "pfanner",
+        "parentOrigin": "AT",
+        "origin": "AT"
+      },
+      {
+        "name": "GloryFeel",
+        "description": "Kalium Kapseln aus Kaliumcitrat 270 Stück",
+        "source": "Wikipedia: GloryFeel",
+        "parentCompany": "GloryFeel GmbH Hamburg",
+        "normalizedName": "gloryfeel",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Lindor",
+        "description": "Chocolate",
+        "source": "Wikipedia: Lindor",
+        "parentCompany": "Lindt",
+        "normalizedName": "lindor",
+        "parentOrigin": "CH",
+        "origin": "CH"
+      },
+      {
+        "name": "Hip Pop",
+        "description": "Boisson pétillante aux fruits - pêche et mangue",
+        "source": "Wikipedia: Hip Pop",
+        "parentCompany": "",
+        "normalizedName": "hip_pop",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Tilda",
+        "description": "Tilda Pure Original Basmati Rice",
+        "source": "Wikipedia: Tilda",
+        "parentCompany": "Ebro Foods",
+        "normalizedName": "tilda",
+        "parentOrigin": "ES",
+        "origin": "GB"
+      },
+      {
+        "name": "ROWENTA",
+        "description": "Ferro de Engomar",
+        "source": "Wikipedia: ROWENTA",
+        "parentCompany": "",
+        "normalizedName": "rowenta",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Cola",
+        "description": "Drink",
+        "source": "Wikipedia: Cola",
+        "parentCompany": "",
+        "normalizedName": "cola",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Tsingtao",
+        "description": "Bière",
+        "source": "Wikipedia: Tsingtao",
+        "parentCompany": "",
+        "normalizedName": "tsingtao",
+        "parentOrigin": "",
+        "origin": "CN"
+      },
+      {
+        "name": "Karo Pharma AB",
+        "description": "Decubal Lips & dry spots balm.",
+        "source": "Wikipedia: Karo Pharma AB",
+        "parentCompany": "Teva Pharmaceuticals",
+        "normalizedName": "karo_pharma_ab",
+        "parentOrigin": "IL",
+        "origin": "SE"
+      },
+      {
+        "name": "Continental",
+        "description": "Soup Sensations. Freeze dried soup. Vietnamese chicken & Shitake mushroom with vermicelli noodles",
+        "source": "Wikipedia: Continental",
+        "parentCompany": "Unilever",
+        "normalizedName": "continental",
+        "parentOrigin": "",
+        "origin": "AU"
+      },
+      {
+        "name": "Lakewood",
+        "description": "Pineapple cranberry juice",
+        "source": "Wikipedia: Lakewood",
+        "parentCompany": "",
+        "normalizedName": "lakewood",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Gut & Günstig",
+        "description": "Kaffee Filter",
+        "source": "Wikipedia: Gut & Günstig",
+        "parentCompany": "Edeka",
+        "normalizedName": "gut_gunstig",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Privatbrauerei Kiesling",
+        "description": "small private owned brewery",
+        "source": "Wikipedia: Privatbrauerei Kiesling",
+        "parentCompany": "",
+        "normalizedName": "privatbrauerei_kiesling",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Amica Chips",
+        "description": "Patatine Eldorada grigliata",
+        "source": "Wikipedia: Amica Chips",
+        "parentCompany": "Amica Chips S. P. A.",
+        "normalizedName": "amica_chips",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Flora Food Group",
+        "description": "Spreadable creem cheese",
+        "source": "Wikipedia: Flora Food Group",
+        "parentCompany": "",
+        "normalizedName": "flora_food_group",
+        "parentOrigin": "",
+        "origin": "NL"
+      },
+      {
+        "name": "Lurpak",
+        "description": "Spreadable Salted Butter",
+        "source": "Wikipedia: Lurpak",
+        "parentCompany": "Arla Foods",
+        "normalizedName": "lurpak",
+        "parentOrigin": "DK",
+        "origin": "DK"
+      },
+      {
+        "name": "Robots",
+        "description": "Dark Rye Crispbread",
+        "source": "Wikipedia: Robots",
+        "parentCompany": "Associated British Foods",
+        "normalizedName": "robots",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Conad",
+        "description": "Società cooperativa della grande distribuzione",
+        "source": "Wikipedia: Conad",
+        "parentCompany": "",
+        "normalizedName": "conad",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Novi",
+        "description": "Crema Novi",
+        "source": "Wikipedia: Novi",
+        "parentCompany": "",
+        "normalizedName": "novi",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "AXA",
+        "description": "Müsli",
+        "source": "Wikipedia: AXA",
+        "parentCompany": "",
+        "normalizedName": "axa",
+        "parentOrigin": "",
+        "origin": "SE"
+      },
+      {
+        "name": "Mlekpol",
+        "description": "A Polish diary brand",
+        "source": "Wikipedia: Mlekpol",
+        "parentCompany": "",
+        "normalizedName": "mlekpol",
+        "parentOrigin": "",
+        "origin": "PL"
+      },
+      {
+        "name": "Alce Nero S.p.A.",
+        "description": "Bevanda all’avena 500ml",
+        "source": "Wikipedia: Alce Nero S.p.A.",
+        "parentCompany": "",
+        "normalizedName": "alce_nero_spa",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "Conad S.C.",
+        "description": "Croissant al Pistacchio",
+        "source": "Wikipedia: Conad S.C.",
+        "parentCompany": "",
+        "normalizedName": "conad_sc",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "Heartlight",
+        "description": "Canola oil",
+        "source": "Wikipedia: Heartlight",
+        "parentCompany": "Richardson Oilseed Products",
+        "normalizedName": "heartlight",
+        "parentOrigin": "CA",
+        "origin": "CA"
+      },
+      {
+        "name": "Milaf",
+        "description": "Cola",
+        "source": "Wikipedia: Milaf",
+        "parentCompany": "Al Madinah Heritage Company",
+        "normalizedName": "milaf",
+        "parentOrigin": "SA",
+        "origin": "SA"
+      },
+      {
+        "name": "Sana-sol",
+        "description": "Iron + C vitamin suppliment",
+        "source": "Wikipedia: Sana-sol",
+        "parentCompany": "Orkla Care A/S",
+        "normalizedName": "sana_sol",
+        "parentOrigin": "DK",
+        "origin": "FI"
+      },
+      {
+        "name": "Ron Santiago de Cuba",
+        "description": "White rum",
+        "source": "Wikipedia: Ron Santiago de Cuba",
+        "parentCompany": "Corporación Cuba Ron SA",
+        "normalizedName": "ron_santiago_de_cuba",
+        "parentOrigin": "CU",
+        "origin": "CU"
+      },
+      {
+        "name": "Havana Club",
+        "description": "Rum",
+        "source": "Wikipedia: Havana Club",
+        "parentCompany": "Havana Club International",
+        "normalizedName": "havana_club",
+        "parentOrigin": "CU",
+        "origin": "CU"
+      },
+      {
+        "name": "Der General",
+        "description": "Haushaltsrriniger",
+        "source": "Wikipedia: Der General",
+        "parentCompany": "Henkel",
+        "normalizedName": "der_general",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Red Phoenix",
+        "description": "Roasted sesame mayo",
+        "source": "Wikipedia: Red Phoenix",
+        "parentCompany": "",
+        "normalizedName": "red_phoenix",
+        "parentOrigin": "",
+        "origin": "NL"
+      },
+      {
+        "name": "Avelada S.A.",
+        "description": "Vin blanc Casal Garcia",
+        "source": "Wikipedia: Avelada S.A.",
+        "parentCompany": "",
+        "normalizedName": "avelada_sa",
+        "parentOrigin": "",
+        "origin": "PT"
+      },
+      {
+        "name": "Nomen",
+        "description": "Couscous",
+        "source": "Wikipedia: Nomen",
+        "parentCompany": "Nomen foods",
+        "normalizedName": "nomen",
+        "parentOrigin": "ES",
+        "origin": "ES"
+      },
+      {
+        "name": "MrBeast Feastables",
+        "description": "Schokoladentafel",
+        "source": "Wikipedia: MrBeast Feastables",
+        "parentCompany": "MrBeast",
+        "normalizedName": "mrbeast_feastables",
+        "parentOrigin": "US",
+        "origin": "DE"
+      },
+      {
+        "name": "Guardian Weekly Magazine",
+        "description": "Weekly magazine by Guardian Media",
+        "source": "Wikipedia: Guardian Weekly Magazine",
+        "parentCompany": "Tortoise Media Limited",
+        "normalizedName": "guardian_weekly_magazine",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Hochland",
+        "description": "They sell dairy products such as cheese, cream cheese, etc.",
+        "source": "Wikipedia: Hochland",
+        "parentCompany": "",
+        "normalizedName": "hochland",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Pavesi",
+        "description": "Azienda di biscotti.",
+        "source": "Wikipedia: Pavesi",
+        "parentCompany": "Barilla",
+        "normalizedName": "pavesi",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Orogel",
+        "description": "Orogel è un'azienda cooperativa italiana attiva nel settore alimentare fondata a Cesena e con sedi in diverse zone d'Italia.",
+        "source": "Wikipedia: Orogel",
+        "parentCompany": "Orogel",
+        "normalizedName": "orogel",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Beretta",
+        "description": "Azienda di salumi italiana.",
+        "source": "Wikipedia: Beretta",
+        "parentCompany": "Fratelli Beretta",
+        "normalizedName": "beretta",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Auricchio",
+        "description": "Azienda di formaggi italiana",
+        "source": "Wikipedia: Auricchio",
+        "parentCompany": "Auricchio",
+        "normalizedName": "auricchio",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Consilia",
+        "description": "Prodotti italiani",
+        "source": "Wikipedia: Consilia",
+        "parentCompany": "Consilia",
+        "normalizedName": "consilia",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Cuomo",
+        "description": "Caseificio italiano.",
+        "source": "Wikipedia: Cuomo",
+        "parentCompany": "Granarolo",
+        "normalizedName": "cuomo",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Pettinicchio",
+        "description": "Caseificio italiano.",
+        "source": "Wikipedia: Pettinicchio",
+        "parentCompany": "Granarolo",
+        "normalizedName": "pettinicchio",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Zuegg",
+        "description": "Azienda di confetture italiana.",
+        "source": "Wikipedia: Zuegg",
+        "parentCompany": "Zuegg",
+        "normalizedName": "zuegg",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Ronco",
+        "description": "Vini italiani.",
+        "source": "Wikipedia: Ronco",
+        "parentCompany": "Ronco",
+        "normalizedName": "ronco",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Madri",
+        "description": "Lager beer",
+        "source": "Wikipedia: Madri",
+        "parentCompany": "Molson Coors",
+        "normalizedName": "madri",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Bucee",
+        "description": "Bebida de piña exprimida",
+        "source": "Wikipedia: Bucee",
+        "parentCompany": "Bucee",
+        "normalizedName": "bucee",
+        "parentOrigin": "ES",
+        "origin": "ES"
+      },
+      {
+        "name": "Huberto Alimentación, S.L.U.",
+        "description": "Bebida de piña exprimida",
+        "source": "Wikipedia: Huberto Alimentación, S.L.U.",
+        "parentCompany": "Bucee",
+        "normalizedName": "huberto_alimentacion_slu",
+        "parentOrigin": "ES",
+        "origin": "ES"
+      },
+      {
+        "name": "mondo italiano",
+        "description": "Grated cheese",
+        "source": "Wikipedia: mondo italiano",
+        "parentCompany": "netto marken discount",
+        "normalizedName": "mondo_italiano",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Brooke’s",
+        "description": "Thick and Creamy Mangi yogurt",
+        "source": "Wikipedia: Brooke’s",
+        "parentCompany": "Aldi",
+        "normalizedName": "brookes",
+        "parentOrigin": "DE",
+        "origin": ""
+      },
+      {
+        "name": "Annas",
+        "description": "Ginger cookies",
+        "source": "Wikipedia: Annas",
+        "parentCompany": "Lotus Bakeries",
+        "normalizedName": "annas",
+        "parentOrigin": "BE",
+        "origin": "SE"
+      },
+      {
+        "name": "Alain Nu",
+        "description": "Energy drink",
+        "source": "Wikipedia: Alain Nu",
+        "parentCompany": "",
+        "normalizedName": "alain_nu",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Stiehl",
+        "description": "Bier - Märzenbier",
+        "source": "Wikipedia: Stiehl",
+        "parentCompany": "",
+        "normalizedName": "stiehl",
+        "parentOrigin": "",
+        "origin": "AT"
+      },
+      {
+        "name": "Oro di Parma",
+        "description": "Tomatenmark, dreifach konzentriert",
+        "source": "Wikipedia: Oro di Parma",
+        "parentCompany": "Hengstenberg GmbH & Co. KG",
+        "normalizedName": "oro_di_parma",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "ener bio",
+        "description": "dinkel sticks",
+        "source": "Wikipedia: ener bio",
+        "parentCompany": "",
+        "normalizedName": "ener_bio",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Disaronno Originale",
+        "description": "Mandellikör",
+        "source": "Wikipedia: Disaronno Originale",
+        "parentCompany": "",
+        "normalizedName": "disaronno_originale",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "VALFRUTA",
+        "description": "puree de tomates double concentrée biologique",
+        "source": "Wikipedia: VALFRUTA",
+        "parentCompany": "conserves France",
+        "normalizedName": "valfruta",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "VOGEL",
+        "description": "Sels aromatisés et compléments alimentaires. Roggwil (Suisse), à Elburg (Pays-Bas) et à Colmar (France).",
+        "source": "Wikipedia: VOGEL",
+        "parentCompany": "",
+        "normalizedName": "vogel",
+        "parentOrigin": "",
+        "origin": "CH"
+      },
+      {
+        "name": "Alelor",
+        "description": "Condiments, fabriqué en Alsace",
+        "source": "Wikipedia: Alelor",
+        "parentCompany": "",
+        "normalizedName": "alelor",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Mantequilla Asturiana",
+        "description": "Mantequilla sin sal",
+        "source": "Wikipedia: Mantequilla Asturiana",
+        "parentCompany": "Corporación Alimentaria Peña Santa SA",
+        "normalizedName": "mantequilla_asturiana",
+        "parentOrigin": "ES",
+        "origin": "ES"
+      },
+      {
+        "name": "Carabao",
+        "description": "Energy drinks",
+        "source": "Wikipedia: Carabao",
+        "parentCompany": "Carabao Trading Co Ltd",
+        "normalizedName": "carabao",
+        "parentOrigin": "",
+        "origin": "TH"
+      },
+      {
+        "name": "Grand Italia",
+        "description": "Penne (pasta)",
+        "source": "Wikipedia: Grand Italia",
+        "parentCompany": "GrandFood",
+        "normalizedName": "grand_italia",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "Martin",
+        "description": "Sauve pimentée 100% France",
+        "source": "Wikipedia: Martin",
+        "parentCompany": "Maison Martin",
+        "normalizedName": "martin",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Clairol",
+        "description": "Hair dye",
+        "source": "Wikipedia: Clairol",
+        "parentCompany": "Wella",
+        "normalizedName": "clairol",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Neohealar",
+        "description": "Ointment",
+        "source": "Wikipedia: Neohealar",
+        "parentCompany": "Hikma",
+        "normalizedName": "neohealar",
+        "parentOrigin": "JO",
+        "origin": "JO"
+      },
+      {
+        "name": "Les jardins de Gaïa",
+        "description": "Vente de thé, de tisane...",
+        "source": "Wikipedia: Les jardins de Gaïa",
+        "parentCompany": "",
+        "normalizedName": "les_jardins_de_gaia",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "John Frieda",
+        "description": "Fritz ease Wunderkerzen",
+        "source": "Wikipedia: John Frieda",
+        "parentCompany": "Kao Corporation",
+        "normalizedName": "john_frieda",
+        "parentOrigin": "JP",
+        "origin": "DE"
+      },
+      {
+        "name": "Envia",
+        "description": "Lait de la marque distributeur Lidl",
+        "source": "Wikipedia: Envia",
+        "parentCompany": "Lidl",
+        "normalizedName": "envia",
+        "parentOrigin": "DE",
+        "origin": "FR"
+      },
+      {
+        "name": "Laiterie de Verneuil",
+        "description": "Coopérative indépendante, la Laiterie Verneuil Touraine-Berry collecte depuis plus de cent ans le lait de vache et de chèvre auprès de 136 exploitations locales, garantissant des produits laitiers naturels de haute qualité, 100% français. La Laiterie Verneuil, c'est surtout un collectif d'hommes et de femmes impliqués au quotidien, dévoués à leur métier, au terroir et à leurs troupeaux.",
+        "source": "Wikipedia: Laiterie de Verneuil",
+        "parentCompany": "",
+        "normalizedName": "laiterie_de_verneuil",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "BN",
+        "description": "La Biscuiterie nantaise (BN) est une biscuiterie industrielle française.",
+        "source": "Wikipedia: BN",
+        "parentCompany": "Yıldız Holding",
+        "normalizedName": "bn",
+        "parentOrigin": "TR",
+        "origin": "FR"
+      },
+      {
+        "name": "Girolomini",
+        "description": "riso carnaroli",
+        "source": "Wikipedia: Girolomini",
+        "parentCompany": "",
+        "normalizedName": "girolomini",
+        "parentOrigin": "",
+        "origin": "IT"
+      },
+      {
+        "name": "Cécémel",
+        "description": "Chocolade melk",
+        "source": "Wikipedia: Cécémel",
+        "parentCompany": "FrieslandCampina",
+        "normalizedName": "cecemel",
+        "parentOrigin": "NL",
+        "origin": "NL"
+      },
+      {
+        "name": "National Foods",
+        "description": "Pickle",
+        "source": "Wikipedia: National Foods",
+        "parentCompany": "",
+        "normalizedName": "national_foods",
+        "parentOrigin": "",
+        "origin": "PK"
+      },
+      {
+        "name": "KÖLLN",
+        "description": "Instanz Hafrrflocken",
+        "source": "Wikipedia: KÖLLN",
+        "parentCompany": "",
+        "normalizedName": "kolln",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Danao",
+        "description": "Sell drinks made from fruit juice concentrate and milk. Branch brought in France by Eclor-CCLF, the drinks subsidiary of the French agri-good cooperative Agrial",
+        "source": "Wikipedia: Danao",
+        "parentCompany": "Danone",
+        "normalizedName": "danao",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "PBFit",
+        "description": "Classic Roasted Peanut Powder",
+        "source": "Wikipedia: PBFit",
+        "parentCompany": "BetterBody Foods",
+        "normalizedName": "pbfit",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Cross",
+        "description": "Writing instruments",
+        "source": "Wikipedia: Cross",
+        "parentCompany": "",
+        "normalizedName": "cross",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Kidibul",
+        "description": "Kidibul, een populaire alcoholvrije mousserende drank, wordt geproduceerd door de Belgische familie Stassen.",
+        "source": "Wikipedia: Kidibul",
+        "parentCompany": "",
+        "normalizedName": "kidibul",
+        "parentOrigin": "",
+        "origin": "BE"
+      },
+      {
+        "name": "Dolix",
+        "description": "Olio italiano",
+        "source": "Wikipedia: Dolix",
+        "parentCompany": "Dolix",
+        "normalizedName": "dolix",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Adrien Gagnon",
+        "description": "Magnesium [100mg]",
+        "source": "Wikipedia: Adrien Gagnon",
+        "parentCompany": "Canada",
+        "normalizedName": "adrien_gagnon",
+        "parentOrigin": "CA",
+        "origin": "CA"
+      },
+      {
+        "name": "Gaffel",
+        "description": "Bière",
+        "source": "Wikipedia: Gaffel",
+        "parentCompany": "",
+        "normalizedName": "gaffel",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Centrale del Latte",
+        "description": "Azienda di latte italiana.",
+        "source": "Wikipedia: Centrale del Latte",
+        "parentCompany": "Centrale del Latte",
+        "normalizedName": "centrale_del_latte",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Saclà",
+        "description": "Azienda di sottaceti italiana.",
+        "source": "Wikipedia: Saclà",
+        "parentCompany": "Saclà",
+        "normalizedName": "sacla",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Delpierre",
+        "description": "Risotto aux crevettes",
+        "source": "Wikipedia: Delpierre",
+        "parentCompany": "Labeyrie fine foods",
+        "normalizedName": "delpierre",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Green shoot",
+        "description": "Gazpacho",
+        "source": "Wikipedia: Green shoot",
+        "parentCompany": "",
+        "normalizedName": "green_shoot",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Jeep",
+        "description": "Car",
+        "source": "Wikipedia: Jeep",
+        "parentCompany": "",
+        "normalizedName": "jeep",
+        "parentOrigin": "",
+        "origin": "ES"
+      },
+      {
+        "name": "Hitschies",
+        "description": "German Sweets brand",
+        "source": "Wikipedia: Hitschies",
+        "parentCompany": "",
+        "normalizedName": "hitschies",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Redpath",
+        "description": "Granulated sugar",
+        "source": "Wikipedia: Redpath",
+        "parentCompany": "",
+        "normalizedName": "redpath",
+        "parentOrigin": "CA",
+        "origin": "CA"
+      },
+      {
+        "name": "Famille bougrier",
+        "description": "Vin de france",
+        "source": "Wikipedia: Famille bougrier",
+        "parentCompany": "",
+        "normalizedName": "famille_bougrier",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Iron Bru 1901",
+        "description": "Original Irn Bru",
+        "source": "Wikipedia: Iron Bru 1901",
+        "parentCompany": "Barr Ltd",
+        "normalizedName": "iron_bru_1901",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Wilkin & Sons ltd",
+        "description": "Tawny Orange Marmalade",
+        "source": "Wikipedia: Wilkin & Sons ltd",
+        "parentCompany": "",
+        "normalizedName": "wilkin_sons_ltd",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Cerides",
+        "description": "Grupo Haricaman",
+        "source": "Wikipedia: Cerides",
+        "parentCompany": "Grupo Haricaman",
+        "normalizedName": "cerides",
+        "parentOrigin": "ES",
+        "origin": "ES"
+      },
+      {
+        "name": "Mack's",
+        "description": "Soft foam earplugs",
+        "source": "Wikipedia: Mack's",
+        "parentCompany": "McKeon Products Inc",
+        "normalizedName": "macks",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Zyrtec",
+        "description": "Zyrtec 10 mg",
+        "source": "Wikipedia: Zyrtec",
+        "parentCompany": "Aesica Pharmaceuticals S.r.l.",
+        "normalizedName": "zyrtec",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Philip Morris Brands",
+        "description": "Cigarette",
+        "source": "Wikipedia: Philip Morris Brands",
+        "parentCompany": "",
+        "normalizedName": "philip_morris_brands",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Kernel seasons",
+        "description": "Popcorn flavoring",
+        "source": "Wikipedia: Kernel seasons",
+        "parentCompany": "",
+        "normalizedName": "kernel_seasons",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "Mapple Joe",
+        "description": "Sirop d'érable",
+        "source": "Wikipedia: Mapple Joe",
+        "parentCompany": "Famille Michaud Apiculteurs",
+        "normalizedName": "mapple_joe",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Yummy",
+        "description": "Dino nuggets",
+        "source": "Wikipedia: Yummy",
+        "parentCompany": "",
+        "normalizedName": "yummy",
+        "parentOrigin": "",
+        "origin": "CA"
+      },
+      {
+        "name": "Brookside",
+        "description": "Chocolate",
+        "source": "Wikipedia: Brookside",
+        "parentCompany": "Hershey",
+        "normalizedName": "brookside",
+        "parentOrigin": "",
+        "origin": "CA"
+      },
+      {
+        "name": "Orlando",
+        "description": "Friandises pour chien",
+        "source": "Wikipedia: Orlando",
+        "parentCompany": "Lidl",
+        "normalizedName": "orlando",
+        "parentOrigin": "DE",
+        "origin": "IE"
+      },
+      {
+        "name": "Asropa Food GmbH",
+        "description": "Süße Chilisoße für Brathähnchen",
+        "source": "Wikipedia: Asropa Food GmbH",
+        "parentCompany": "",
+        "normalizedName": "asropa_food_gmbh",
+        "parentOrigin": "",
+        "origin": "TH"
+      },
+      {
+        "name": "Diama",
+        "description": "Sliced peaches",
+        "source": "Wikipedia: Diama",
+        "parentCompany": "Pilaros",
+        "normalizedName": "diama",
+        "parentOrigin": "",
+        "origin": "GR"
+      },
+      {
+        "name": "Choceur",
+        "description": "Aldi choco biscuit chocolate",
+        "source": "Wikipedia: Choceur",
+        "parentCompany": "",
+        "normalizedName": "choceur",
+        "parentOrigin": "",
+        "origin": "DE"
+      },
+      {
+        "name": "Biolane",
+        "description": "Basé à Montaigu en France",
+        "source": "Wikipedia: Biolane",
+        "parentCompany": "Bc partners",
+        "normalizedName": "biolane",
+        "parentOrigin": "GB",
+        "origin": "FR"
+      },
+      {
+        "name": "Got2b",
+        "description": "Sprühkleber/Freeze Haarlack",
+        "source": "Wikipedia: Got2b",
+        "parentCompany": "",
+        "normalizedName": "got2b",
+        "parentOrigin": "",
+        "origin": "US"
+      },
+      {
+        "name": "La Reine Jeanne",
+        "description": "Calissons d'Aix",
+        "source": "Wikipedia: La Reine Jeanne",
+        "parentCompany": "",
+        "normalizedName": "la_reine_jeanne",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "ViO Bio Limo",
+        "description": "Bio Limonaden",
+        "source": "Wikipedia: ViO Bio Limo",
+        "parentCompany": "Coca-Cola",
+        "normalizedName": "vio_bio_limo",
+        "parentOrigin": "US",
+        "origin": "DE"
+      },
+      {
+        "name": "DRUZHKIVSKA",
+        "description": "They sell halva in different quantities either with vanilla flavour or cocoa.",
+        "source": "Wikipedia: DRUZHKIVSKA",
+        "parentCompany": "Sweet Life Company",
+        "normalizedName": "druzhkivska",
+        "parentOrigin": "UA",
+        "origin": "UA"
+      },
+      {
+        "name": "Mockingbird Raw Press",
+        "description": "Cold pressed juices",
+        "source": "Wikipedia: Mockingbird Raw Press",
+        "parentCompany": "",
+        "normalizedName": "mockingbird_raw_press",
+        "parentOrigin": "",
+        "origin": "GB"
+      }
 ]
