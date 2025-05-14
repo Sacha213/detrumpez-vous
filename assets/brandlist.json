@@ -2946,7 +2946,7 @@
         "name": "Monster Energy",
         "description": "Monster Energy, souvent abrégée en Monster est une boisson américaine énergisante lancée par Hansen Natural en 2002.",
         "source": "Wikipedia: Monster Energy",
-        "parentCompany": "The Coca‑Cola Company",
+        "parentCompany": "Monster Beverage Corporation",
         "normalizedName": "monster_energy",
         "parentOrigin": "US",
         "origin": "US"
@@ -4092,7 +4092,9 @@
         "parentCompany": "Alphabet Inc.",
         "normalizedName": "google",
         "parentOrigin": "US",
-        "origin": "US"
+        "origin": "US",
+        "democratContribution":13950000,
+        "republicanContribution":1610000
     },
     {
         "name": "Head and shoulders",
@@ -28284,5 +28286,23 @@
         "normalizedName": "mockingbird_raw_press",
         "parentOrigin": "",
         "origin": "GB"
-      }
+      },
+      {
+        "name": "Sunny Delight",
+        "description": "Orange-flavored drink",
+        "source": "Wikipedia: Sunny Delight",
+        "parentCompany": "Harvest Hill Beverage Company",
+        "normalizedName": "sunny_delight",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "FELIX Austria",
+        "description": "Austrian food company, part of the Orkla ASA group since 1995. Acquired Bioquelle in 2015.",
+        "source": "User-provided text snippet",
+        "parentCompany": "Orkla ASA",
+        "normalizedName": "felix_austria",
+        "parentOrigin": "NO",
+        "origin": "AT"
+    }
 ]
