@@ -376,28 +376,23 @@ class S {
   }
 
   /// `Food`
-  String get alimentation {
-    return Intl.message('Food', name: 'alimentation', desc: '', args: []);
+  String get food {
+    return Intl.message('Food', name: 'food', desc: '', args: []);
   }
 
-  /// `Cosmetic`
-  String get cosmetique {
-    return Intl.message('Cosmetic', name: 'cosmetique', desc: '', args: []);
+  /// `Beauty`
+  String get beauty {
+    return Intl.message('Beauty', name: 'beauty', desc: '', args: []);
   }
 
   /// `Pet food`
-  String get alimentationAnimaux {
-    return Intl.message(
-      'Pet food',
-      name: 'alimentationAnimaux',
-      desc: '',
-      args: [],
-    );
+  String get petFood {
+    return Intl.message('Pet food', name: 'petFood', desc: '', args: []);
   }
 
   /// `Other`
-  String get autre {
-    return Intl.message('Other', name: 'autre', desc: '', args: []);
+  String get other {
+    return Intl.message('Other', name: 'other', desc: '', args: []);
   }
 
   /// `Add product`
@@ -480,10 +475,10 @@ class S {
     );
   }
 
-  /// `Thank you! Your report has been sent.`
+  /// `Thank you! Your report has been submitted for review and will be processed within 48 hours.`
   String get reportProblemSuccessMessage {
     return Intl.message(
-      'Thank you! Your report has been sent.',
+      'Thank you! Your report has been submitted for review and will be processed within 48 hours.',
       name: 'reportProblemSuccessMessage',
       desc: '',
       args: [],
@@ -800,10 +795,10 @@ class S {
     );
   }
 
-  /// `Thank you! Product information added.`
+  /// `Thank you! Your product information has been submitted for review and will be added within 48 hours.`
   String get addProductInfoSuccess {
     return Intl.message(
-      'Thank you! Product information added.',
+      'Thank you! Your product information has been submitted for review and will be added within 48 hours.',
       name: 'addProductInfoSuccess',
       desc: '',
       args: [],
@@ -949,6 +944,221 @@ class S {
       args: [],
     );
   }
+
+  /// `Political Contributions 2024`
+  String get politicalContributionsTitle {
+    return Intl.message(
+      'Political Contributions 2024',
+      name: 'politicalContributionsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get editContributionsButtonLabel {
+    return Intl.message(
+      'Edit',
+      name: 'editContributionsButtonLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No political contributions yet.`
+  String get noPoliticalContributionsYet {
+    return Intl.message(
+      'No political contributions yet.',
+      name: 'noPoliticalContributionsYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Democrats`
+  String get democratsLabel {
+    return Intl.message(
+      'Democrats',
+      name: 'democratsLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Republicans`
+  String get republicansLabel {
+    return Intl.message(
+      'Republicans',
+      name: 'republicansLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Alternatives`
+  String get alternativesLabel {
+    return Intl.message(
+      'Alternatives',
+      name: 'alternativesLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Propose an alternative`
+  String get proposeAlternativeHint {
+    return Intl.message(
+      'Propose an alternative',
+      name: 'proposeAlternativeHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thank you! Your alternative has been submitted for review and will be processed within 48 hours.`
+  String get alternativeSubmittedMessage {
+    return Intl.message(
+      'Thank you! Your alternative has been submitted for review and will be processed within 48 hours.',
+      name: 'alternativeSubmittedMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error sending: {error}`
+  String alternativeSubmitErrorMessage(Object error) {
+    return Intl.message(
+      'Error sending: $error',
+      name: 'alternativeSubmitErrorMessage',
+      desc: '',
+      args: [error],
+    );
+  }
+
+  /// `No alternatives yet.`
+  String get noAlternativesYet {
+    return Intl.message(
+      'No alternatives yet.',
+      name: 'noAlternativesYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit the political contributions for the American presidency election 2024`
+  String get editContributionsSubtitle {
+    return Intl.message(
+      'Edit the political contributions for the American presidency election 2024',
+      name: 'editContributionsSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can find the contribution amounts for the 2024 US election on the Open Secret website.`
+  String get contributionsInfoText {
+    return Intl.message(
+      'You can find the contribution amounts for the 2024 US election on the Open Secret website.',
+      name: 'contributionsInfoText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Democrat Contributions`
+  String get democratContributionsLabel {
+    return Intl.message(
+      'Democrat Contributions',
+      name: 'democratContributionsLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount (Democrats)`
+  String get democratContributionsHint {
+    return Intl.message(
+      'Amount (Democrats)',
+      name: 'democratContributionsHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Republican Contributions`
+  String get republicanContributionsLabel {
+    return Intl.message(
+      'Republican Contributions',
+      name: 'republicanContributionsLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount (Republicans)`
+  String get republicanContributionsHint {
+    return Intl.message(
+      'Amount (Republicans)',
+      name: 'republicanContributionsHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Contributions`
+  String get saveContributionsButton {
+    return Intl.message(
+      'Save Contributions',
+      name: 'saveContributionsButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saving contributions...`
+  String get savingContributions {
+    return Intl.message(
+      'Saving contributions...',
+      name: 'savingContributions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thank you! Your contributions have been submitted for review and will be processed within 48 hours.`
+  String get contributionsSavedSuccess {
+    return Intl.message(
+      'Thank you! Your contributions have been submitted for review and will be processed within 48 hours.',
+      name: 'contributionsSavedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error saving contributions.`
+  String get contributionsSaveError {
+    return Intl.message(
+      'Error saving contributions.',
+      name: 'contributionsSaveError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid number.`
+  String get invalidNumberError {
+    return Intl.message(
+      'Please enter a valid number.',
+      name: 'invalidNumberError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OK`
+  String get okButtonLabel {
+    return Intl.message('OK', name: 'okButtonLabel', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -958,6 +1168,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
+      Locale.fromSubtags(languageCode: 'da'),
       Locale.fromSubtags(languageCode: 'de'),
       Locale.fromSubtags(languageCode: 'es'),
       Locale.fromSubtags(languageCode: 'fr'),

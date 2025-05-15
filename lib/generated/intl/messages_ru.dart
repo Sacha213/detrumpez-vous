@@ -23,7 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(barcode) =>
       "Предоставьте недостающие данные для штрих-кода: ${barcode}";
 
-  static String m1(statusCode) =>
+  static String m1(error) => "Ошибка при отправке: ${error}";
+
+  static String m2(statusCode) =>
       "Не удалось отправить текстовую информацию (статус ${statusCode}). Проверьте логи для ответа HTML.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -59,17 +61,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "Добавить информацию",
     ),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("Добавить продукт"),
-    "alimentation": MessageLookupByLibrary.simpleMessage("Продукты питания"),
-    "alimentationAnimaux": MessageLookupByLibrary.simpleMessage(
-      "Корм для животных",
+    "alternativeSubmitErrorMessage": m1,
+    "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
+      "Ваша альтернатива отправлена на проверку",
     ),
+    "alternativesLabel": MessageLookupByLibrary.simpleMessage("Альтернативы"),
     "appDescription": MessageLookupByLibrary.simpleMessage(
       "Отсканируйте штрих-код вашего продукта, чтобы узнать, принадлежит ли бренд американской компании.",
     ),
     "appTitle": MessageLookupByLibrary.simpleMessage("Сканировать штрих-код"),
-    "autre": MessageLookupByLibrary.simpleMessage("Другое"),
     "barcode": MessageLookupByLibrary.simpleMessage("Штрих-код"),
     "barcodeLabel": MessageLookupByLibrary.simpleMessage("Штрих-код: "),
+    "beauty": MessageLookupByLibrary.simpleMessage("Красота"),
     "brandHint": MessageLookupByLibrary.simpleMessage(
       "Основное название бренда",
     ),
@@ -101,7 +104,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
       "Vahiné — французский бренд, но в 2000 году он был приобретен американской группой McCormick. Таким образом, бренд считается американским.",
     ),
-    "cosmetique": MessageLookupByLibrary.simpleMessage("Косметика"),
+    "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
+      "Вы можете найти суммы взносов для выборов в США 2024 года на сайте Open Secret.",
+    ),
+    "contributionsSaveError": MessageLookupByLibrary.simpleMessage(
+      "Ошибка при сохранении взносов.",
+    ),
+    "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
+      "Спасибо! Ваши взносы были отправлены на проверку и будут обработаны в течение 48 часов.",
+    ),
+    "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
+      "Сумма (демократы)",
+    ),
+    "democratContributionsLabel": MessageLookupByLibrary.simpleMessage(
+      "Взносы демократов",
+    ),
+    "democratsLabel": MessageLookupByLibrary.simpleMessage("Демократы"),
     "descriptionHint": MessageLookupByLibrary.simpleMessage(
       "Краткое описание продукта",
     ),
@@ -110,6 +128,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Этого бренда нет в нашей базе данных.",
+    ),
+    "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage(
+      "Изменить",
+    ),
+    "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Редактировать политические взносы для президентских выборов в США 2024 года",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "Произошла ошибка при добавлении продукта.",
@@ -121,6 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, заполните все поля.",
     ),
+    "food": MessageLookupByLibrary.simpleMessage("Еда"),
     "gallery": MessageLookupByLibrary.simpleMessage("Галерея"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "Ошибка при выборе изображения",
@@ -137,10 +162,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
       "Происхождение ингредиентов",
     ),
+    "invalidNumberError": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, введите действительное число.",
+    ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Введите бренд продуктов питания",
     ),
+    "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
+      "Пока нет альтернатив.",
+    ),
+    "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
+      "Пока нет политических взносов.",
+    ),
+    "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
     "originLabel": MessageLookupByLibrary.simpleMessage("Страна происхождения"),
+    "other": MessageLookupByLibrary.simpleMessage("Другое"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "Название компании-владельца",
     ),
@@ -156,7 +192,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
       "Страна происхождения материнской компании (Необязательно)",
     ),
+    "petFood": MessageLookupByLibrary.simpleMessage("Корм для животных"),
     "photo": MessageLookupByLibrary.simpleMessage("Фото"),
+    "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
+      "Политические взносы 2024",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "Мы можем ошибаться. Если вы заметили ошибку, пожалуйста, напишите нам название бренда по электронной почте, чтобы мы могли обновить наш список.",
     ),
@@ -172,6 +212,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage(
       "Продукт не найден",
+    ),
+    "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
+      "Предложить альтернативу",
     ),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "Нажмите здесь, чтобы сообщить о проблеме",
@@ -218,9 +261,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "reportProblemValidationErrorLength": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, предоставьте больше деталей (мин. 10 символов).",
     ),
+    "republicanContributionsHint": MessageLookupByLibrary.simpleMessage(
+      "Сумма (республиканцы)",
+    ),
+    "republicanContributionsLabel": MessageLookupByLibrary.simpleMessage(
+      "Взносы республиканцев",
+    ),
+    "republicansLabel": MessageLookupByLibrary.simpleMessage("Республиканцы"),
     "safe": MessageLookupByLibrary.simpleMessage("НЕ США"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Этот продукт, похоже, не от американской компании.",
+    ),
+    "saveContributionsButton": MessageLookupByLibrary.simpleMessage(
+      "Сохранить взносы",
+    ),
+    "savingContributions": MessageLookupByLibrary.simpleMessage(
+      "Сохранение взносов...",
     ),
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage(
       "Сканируйте штрих‑код",
@@ -256,7 +312,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "Текстовая информация отправлена, но загрузка изображения не удалась.",
     ),
-    "textSubmissionFailed": m1,
+    "textSubmissionFailed": m2,
     "unknown": MessageLookupByLibrary.simpleMessage("НЕИЗВЕСТНО"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "Продукт, который вы искали, не найден в нашей базе данных.",

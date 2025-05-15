@@ -23,7 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(barcode) =>
       "बारकोड के लिए गुम विवरण प्रदान करें: ${barcode}";
 
-  static String m1(statusCode) =>
+  static String m1(error) => "भेजने में त्रुटि: ${error}";
+
+  static String m2(statusCode) =>
       "पाठ जानकारी भेजने में विफल (स्थिति ${statusCode})। HTML प्रतिक्रिया के लिए लॉग जांचें।";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -51,21 +53,24 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "addProductInfoSubHeadline": m0,
     "addProductInfoSuccess": MessageLookupByLibrary.simpleMessage(
-      "धन्यवाद! उत्पाद जानकारी जोड़ी गई।",
+      "धन्यवाद! आपकी उत्पाद जानकारी समीक्षा के लिए भेज दी गई है और इसे 48 घंटों के भीतर जोड़ा जाएगा।",
     ),
     "addProductInfoTitle": MessageLookupByLibrary.simpleMessage(
       "जानकारी जोड़ें",
     ),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("एक उत्पाद जोड़ें"),
-    "alimentation": MessageLookupByLibrary.simpleMessage("भोजन"),
-    "alimentationAnimaux": MessageLookupByLibrary.simpleMessage("पालतू भोजन"),
+    "alternativeSubmitErrorMessage": m1,
+    "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
+      "धन्यवाद! आपका विकल्प समीक्षा के लिए भेज दिया गया है और इसे 48 घंटों के भीतर संसाधित किया जाएगा।",
+    ),
+    "alternativesLabel": MessageLookupByLibrary.simpleMessage("विकल्प"),
     "appDescription": MessageLookupByLibrary.simpleMessage(
       "यह जानने के लिए अपने उत्पाद का बारकोड स्कैन करें कि क्या ब्रांड किसी अमेरिकी कंपनी के स्वामित्व में है।",
     ),
     "appTitle": MessageLookupByLibrary.simpleMessage("बारकोड स्कैन करें"),
-    "autre": MessageLookupByLibrary.simpleMessage("अन्य"),
     "barcode": MessageLookupByLibrary.simpleMessage("बारकोड"),
     "barcodeLabel": MessageLookupByLibrary.simpleMessage("बारकोड: "),
+    "beauty": MessageLookupByLibrary.simpleMessage("सौंदर्य"),
     "brandHint": MessageLookupByLibrary.simpleMessage("मुख्य ब्रांड नाम"),
     "brandLabelRequired": MessageLookupByLibrary.simpleMessage("ब्रांड *"),
     "brandName": MessageLookupByLibrary.simpleMessage("ब्रांड का नाम"),
@@ -95,13 +100,34 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
       "वाहिन एक फ्रांसीसी ब्रांड है, लेकिन इसे 2000 में अमेरिकी समूह मैककॉर्मिक द्वारा अधिग्रहित किया गया था। इस प्रकार, ब्रांड को अमेरिकी माना जाता है।",
     ),
-    "cosmetique": MessageLookupByLibrary.simpleMessage("सौंदर्य प्रसाधन"),
+    "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
+      "आप 2024 अमेरिकी चुनाव के लिए योगदान राशि Open Secret वेबसाइट पर पा सकते हैं।",
+    ),
+    "contributionsSaveError": MessageLookupByLibrary.simpleMessage(
+      "योगदान सहेजने में त्रुटि।",
+    ),
+    "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
+      "धन्यवाद! आपके योगदान को समीक्षा के लिए भेज दिया गया है और इसे 48 घंटों के भीतर संसाधित किया जाएगा।",
+    ),
+    "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
+      "राशि (डेमोक्रेट)",
+    ),
+    "democratContributionsLabel": MessageLookupByLibrary.simpleMessage(
+      "डेमोक्रेट योगदान",
+    ),
+    "democratsLabel": MessageLookupByLibrary.simpleMessage("डेमोक्रेट्स"),
     "descriptionHint": MessageLookupByLibrary.simpleMessage(
       "संक्षिप्त उत्पाद विवरण",
     ),
     "descriptionLabelRequired": MessageLookupByLibrary.simpleMessage("विवरण *"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "यह ब्रांड हमारे डेटाबेस में मौजूद नहीं है।",
+    ),
+    "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage(
+      "संपादित करें",
+    ),
+    "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
+      "2024 के अमेरिकी राष्ट्रपति चुनाव के लिए राजनीतिक योगदान संपादित करें",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "उत्पाद जोड़ते समय एक त्रुटि हुई।",
@@ -113,6 +139,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
       "कृपया सभी फ़ील्ड भरें।",
     ),
+    "food": MessageLookupByLibrary.simpleMessage("खाद्य पदार्थ"),
     "gallery": MessageLookupByLibrary.simpleMessage("गैलरी"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "छवि चुनने में त्रुटि",
@@ -127,10 +154,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
       "सामग्री की उत्पत्ति",
     ),
+    "invalidNumberError": MessageLookupByLibrary.simpleMessage(
+      "कृपया एक मान्य संख्या दर्ज करें।",
+    ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "एक खाद्य ब्रांड दर्ज करें",
     ),
+    "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
+      "अभी तक कोई विकल्प नहीं।",
+    ),
+    "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
+      "अभी तक कोई राजनीतिक योगदान नहीं।",
+    ),
+    "okButtonLabel": MessageLookupByLibrary.simpleMessage("ठीक है"),
     "originLabel": MessageLookupByLibrary.simpleMessage("मूल देश"),
+    "other": MessageLookupByLibrary.simpleMessage("अन्य"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "मालिक कंपनी का नाम",
     ),
@@ -144,7 +182,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
       "मूल कंपनी का मूल देश (वैकल्पिक)",
     ),
+    "petFood": MessageLookupByLibrary.simpleMessage("पालतू जानवरों का खाना"),
     "photo": MessageLookupByLibrary.simpleMessage("तस्वीर"),
+    "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
+      "राजनीतिक योगदान 2024",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "हम गलतियाँ कर सकते हैं। यदि आपको कोई त्रुटि मिलती है, तो कृपया हमें ब्रांड का नाम ईमेल करें ताकि हम अपनी सूची अपडेट कर सकें।",
     ),
@@ -159,6 +201,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "उत्पाद का नाम दर्ज करें",
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage("उत्पाद नहीं मिला"),
+    "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
+      "एक विकल्प प्रस्तावित करें",
+    ),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "समस्या की रिपोर्ट करने के लिए यहां क्लिक करें",
     ),
@@ -193,7 +238,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "रिपोर्ट भेजें",
     ),
     "reportProblemSuccessMessage": MessageLookupByLibrary.simpleMessage(
-      "धन्यवाद! आपकी रिपोर्ट भेज दी गई है।",
+      "धन्यवाद! आपकी रिपोर्ट समीक्षा के लिए भेज दी गई है और इसे 48 घंटों के भीतर संसाधित किया जाएगा।",
     ),
     "reportProblemTitle": MessageLookupByLibrary.simpleMessage(
       "समस्या की रिपोर्ट करें",
@@ -204,9 +249,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "reportProblemValidationErrorLength": MessageLookupByLibrary.simpleMessage(
       "कृपया अधिक विवरण प्रदान करें (न्यूनतम 10 अक्षर)।",
     ),
+    "republicanContributionsHint": MessageLookupByLibrary.simpleMessage(
+      "राशि (रिपब्लिकन)",
+    ),
+    "republicanContributionsLabel": MessageLookupByLibrary.simpleMessage(
+      "रिपब्लिकन योगदान",
+    ),
+    "republicansLabel": MessageLookupByLibrary.simpleMessage("रिपब्लिकन्स"),
     "safe": MessageLookupByLibrary.simpleMessage("यूएसए नहीं"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "ऐसा लगता है कि यह उत्पाद किसी अमेरिकी कंपनी का नहीं है।",
+    ),
+    "saveContributionsButton": MessageLookupByLibrary.simpleMessage(
+      "योगदान सहेजें",
+    ),
+    "savingContributions": MessageLookupByLibrary.simpleMessage(
+      "योगदान सहेज रहे हैं...",
     ),
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage(
       "बारकोड स्कैन करें",
@@ -238,7 +296,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "पाठ जानकारी भेजी गई थी, लेकिन छवि अपलोड विफल रही।",
     ),
-    "textSubmissionFailed": m1,
+    "textSubmissionFailed": m2,
     "unknown": MessageLookupByLibrary.simpleMessage("अज्ञात"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "आपके द्वारा खोजा गया उत्पाद हमारे डेटाबेस में नहीं मिला।",
@@ -247,7 +305,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
       "यह उत्पाद एक अमेरिकी कंपनी का है!",
     ),
-    "validate": MessageLookupByLibrary.simpleMessage("मान्य करें"),
+    "validate": MessageLookupByLibrary.simpleMessage("सत्यापित करें"),
     "viewCriteria": MessageLookupByLibrary.simpleMessage("मानदंड देखें"),
     "welcome": MessageLookupByLibrary.simpleMessage("में आपका स्वागत है"),
   };

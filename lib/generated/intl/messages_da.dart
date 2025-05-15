@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a nl locale. All the
+// This is a library that provides messages for a da locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,307 +18,297 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'nl';
+  String get localeName => 'da';
 
   static String m0(barcode) =>
-      "Geef ontbrekende details voor barcode: ${barcode}";
+      "Angiv manglende detaljer for stregkode: ${barcode}";
 
-  static String m1(error) => "Fout bij verzenden: ${error}";
+  static String m1(error) => "Fejl ved afsendelse: ${error}";
 
   static String m2(statusCode) =>
-      "Verzenden van tekstinformatie mislukt (status ${statusCode}). Controleer logs voor HTML-antwoord.";
+      "Kunne ikke sende tekstinformation (status ${statusCode}). Tjek logfiler for HTML-svar.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "addInfoSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Klik hier om de info aan te vullen",
+      "Klik her for at udfylde oplysningerne",
     ),
-    "addInfoTitle": MessageLookupByLibrary.simpleMessage(
-      "Informatie toevoegen",
-    ),
+    "addInfoTitle": MessageLookupByLibrary.simpleMessage("Tilføj information"),
     "addIngredientPhoto": MessageLookupByLibrary.simpleMessage(
-      "Afbeelding van ingrediënten toevoegen",
+      "Tilføj billede af ingredienser",
     ),
-    "addPhoto": MessageLookupByLibrary.simpleMessage("Foto toevoegen"),
-    "addProductButton": MessageLookupByLibrary.simpleMessage(
-      "Product toevoegen",
-    ),
+    "addPhoto": MessageLookupByLibrary.simpleMessage("Tilføj et foto"),
+    "addProductButton": MessageLookupByLibrary.simpleMessage("Tilføj produkt"),
     "addProductHelp": MessageLookupByLibrary.simpleMessage(
-      "Help ons door een product aan de database toe te voegen",
+      "Hjælp os ved at tilføje et produkt til databasen",
     ),
     "addProductInfoButton": MessageLookupByLibrary.simpleMessage(
-      "Informatie toevoegen",
+      "Tilføj information",
     ),
     "addProductInfoError": MessageLookupByLibrary.simpleMessage(
-      "Fout bij het verzenden van informatie. Probeer het opnieuw.",
+      "Fejl ved afsendelse af information. Prøv venligst igen.",
     ),
     "addProductInfoHeadline": MessageLookupByLibrary.simpleMessage(
-      "Productinformatie aanvullen",
+      "Udfyld produktinformation",
     ),
     "addProductInfoSubHeadline": m0,
     "addProductInfoSuccess": MessageLookupByLibrary.simpleMessage(
-      "Bedankt! Productinformatie toegevoegd.",
+      "Tak! Dine produktinformationer er blevet sendt til gennemgang og vil blive tilføjet inden for 48 timer.",
     ),
     "addProductInfoTitle": MessageLookupByLibrary.simpleMessage(
-      "Informatie toevoegen",
+      "Tilføj information",
     ),
     "addProductTitle": MessageLookupByLibrary.simpleMessage(
-      "Product toevoegen",
+      "Tilføj et produkt",
     ),
     "alternativeSubmitErrorMessage": m1,
     "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
-      "Je alternatief is ingediend voor beoordeling",
+      "Tak! Dit alternativ er blevet sendt til gennemgang og vil blive behandlet inden for 48 timer.",
     ),
-    "alternativesLabel": MessageLookupByLibrary.simpleMessage("Alternatieven"),
+    "alternativesLabel": MessageLookupByLibrary.simpleMessage("Alternativer"),
     "appDescription": MessageLookupByLibrary.simpleMessage(
-      "Scan de barcode van uw product om te zien of het merk eigendom is van een Amerikaans bedrijf.",
+      "Scan stregkoden på dit produkt for at finde ud af, om mærket ejes af et amerikansk firma.",
     ),
-    "appTitle": MessageLookupByLibrary.simpleMessage("Scan barcode"),
-    "barcode": MessageLookupByLibrary.simpleMessage("Barcode"),
-    "barcodeLabel": MessageLookupByLibrary.simpleMessage("Barcode: "),
-    "beauty": MessageLookupByLibrary.simpleMessage("Schoonheid"),
-    "brandHint": MessageLookupByLibrary.simpleMessage("Hoofdmerknaam"),
-    "brandLabelRequired": MessageLookupByLibrary.simpleMessage("Merk *"),
-    "brandName": MessageLookupByLibrary.simpleMessage("Merknaam"),
+    "appTitle": MessageLookupByLibrary.simpleMessage("Scan stregkode"),
+    "barcode": MessageLookupByLibrary.simpleMessage("Stregkode"),
+    "barcodeLabel": MessageLookupByLibrary.simpleMessage("Stregkode: "),
+    "beauty": MessageLookupByLibrary.simpleMessage("Skønhed"),
+    "brandHint": MessageLookupByLibrary.simpleMessage("Hovedmærkenavn"),
+    "brandLabelRequired": MessageLookupByLibrary.simpleMessage("Mærke *"),
+    "brandName": MessageLookupByLibrary.simpleMessage("Mærkenavn"),
     "brandNamePlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Bijv.: L\'Oréal",
+      "F.eks.: L\'Oréal",
     ),
-    "brandNotFound": MessageLookupByLibrary.simpleMessage("Merk niet gevonden"),
-    "camera": MessageLookupByLibrary.simpleMessage("Camera"),
-    "cancel": MessageLookupByLibrary.simpleMessage("Annuleren"),
-    "category": MessageLookupByLibrary.simpleMessage("Categorie"),
+    "brandNotFound": MessageLookupByLibrary.simpleMessage("Mærke ikke fundet"),
+    "camera": MessageLookupByLibrary.simpleMessage("Kamera"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Annuller"),
+    "category": MessageLookupByLibrary.simpleMessage("Kategori"),
     "classificationInfoSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Klik hier om onze criteria te ontdekken",
+      "Klik her for at opdage vores kriterier",
     ),
     "classificationInfoTitle": MessageLookupByLibrary.simpleMessage(
-      "Hoe worden bedrijven geclassificeerd?",
+      "Hvordan klassificeres firmaer?",
     ),
     "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
-      "Een merk wordt als Amerikaans beschouwd als het tot een Amerikaanse groep behoort.",
+      "Et mærke betragtes som amerikansk, hvis det tilhører en amerikansk koncern.",
     ),
     "companyCriteriaTitle": MessageLookupByLibrary.simpleMessage(
-      "Criteria Amerikaans bedrijf",
+      "Kriterier for amerikanske firmaer",
     ),
-    "companyLabel": MessageLookupByLibrary.simpleMessage("Bedrijf"),
+    "companyLabel": MessageLookupByLibrary.simpleMessage("Firma"),
     "companySafeExplanation": MessageLookupByLibrary.simpleMessage(
-      "Ben & Jerry\'s is een Amerikaans merk, maar werd in 2000 overgenomen door Unilever (een Brits-Nederlandse multinational). Het merk wordt dus niet als Amerikaans beschouwd.",
+      "Ben & Jerry\'s er et amerikansk mærke, men blev opkøbt af Unilever (en anglo-hollandsk multinational) i 2000. Derfor betragtes mærket ikke som amerikansk.",
     ),
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
-      "Vahiné is een Frans merk, maar werd in 2000 overgenomen door de Amerikaanse groep McCormick. Het merk wordt dus als Amerikaans beschouwd.",
+      "Vahiné er et fransk mærke, men blev opkøbt af den amerikanske koncern McCormick i 2000. Derfor betragtes mærket som amerikansk.",
     ),
     "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
-      "U kunt de bijdragebedragen voor de Amerikaanse verkiezingen van 2024 vinden op de Open Secret-website.",
+      "Du kan finde bidragsbeløbene til det amerikanske valg 2024 på Open Secret-webstedet.",
     ),
     "contributionsSaveError": MessageLookupByLibrary.simpleMessage(
-      "Fout bij het opslaan van bijdragen.",
+      "Fejl ved gemning af bidrag.",
     ),
     "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
-      "Bedankt! Uw bijdragen zijn ter beoordeling ingediend en worden binnen 48 uur verwerkt.",
+      "Tak! Dine bidrag er blevet sendt til gennemgang og vil blive behandlet inden for 48 timer.",
     ),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
-      "Bedrag (Democraten)",
+      "Beløb (Demokrater)",
     ),
     "democratContributionsLabel": MessageLookupByLibrary.simpleMessage(
-      "Democratische Bijdragen",
+      "Demokratiske bidrag",
     ),
-    "democratsLabel": MessageLookupByLibrary.simpleMessage("Democraten"),
+    "democratsLabel": MessageLookupByLibrary.simpleMessage("Demokrater"),
     "descriptionHint": MessageLookupByLibrary.simpleMessage(
-      "Korte productbeschrijving",
+      "Kort produktbeskrivelse",
     ),
     "descriptionLabelRequired": MessageLookupByLibrary.simpleMessage(
-      "Beschrijving *",
+      "Beskrivelse *",
     ),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
-      "Dit merk is niet aanwezig in onze database.",
+      "Dette mærke findes ikke i vores database.",
     ),
     "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage(
-      "Bewerken",
+      "Rediger",
     ),
     "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Bewerk de politieke bijdragen voor de Amerikaanse presidentsverkiezingen van 2024",
+      "Rediger de politiske bidrag til det amerikanske præsidentvalg 2024",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
-      "Er is een fout opgetreden bij het toevoegen van het product.",
+      "Der opstod en fejl under tilføjelsen af produktet.",
     ),
-    "errorTitle": MessageLookupByLibrary.simpleMessage("Fout"),
+    "errorTitle": MessageLookupByLibrary.simpleMessage("Fejl"),
     "fieldRequiredError": MessageLookupByLibrary.simpleMessage(
-      "Dit veld is verplicht.",
+      "Dette felt er påkrævet.",
     ),
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
-      "Vul alstublieft alle velden in.",
+      "Udfyld venligst alle felter.",
     ),
-    "food": MessageLookupByLibrary.simpleMessage("Voedsel"),
-    "gallery": MessageLookupByLibrary.simpleMessage("Galerij"),
+    "food": MessageLookupByLibrary.simpleMessage("Mad"),
+    "gallery": MessageLookupByLibrary.simpleMessage("Galleri"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
-      "Fout bij het selecteren van de afbeelding",
+      "Fejl ved valg af billede",
     ),
-    "imageSourceMessage": MessageLookupByLibrary.simpleMessage("Kies een bron"),
-    "imageSourceTitle": MessageLookupByLibrary.simpleMessage("Afbeeldingsbron"),
+    "imageSourceMessage": MessageLookupByLibrary.simpleMessage("Vælg en kilde"),
+    "imageSourceTitle": MessageLookupByLibrary.simpleMessage("Billedkilde"),
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
-      "Fout bij het uploaden van de afbeelding.",
+      "Fejl ved upload af billede.",
     ),
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
-      "Afkomst van ingrediënten",
+      "Ingrediensernes oprindelse",
     ),
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
-      "Voer een geldig nummer in.",
+      "Indtast venligst et gyldigt nummer.",
     ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Voer een voedingsmerk in",
+      "Indtast et fødevaremærke",
     ),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
-      "Nog geen alternatieven.",
+      "Ingen alternativer endnu.",
     ),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
-      "Nog geen politieke bijdragen.",
+      "Ingen politiske bidrag endnu.",
     ),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
-    "originLabel": MessageLookupByLibrary.simpleMessage("Land van herkomst"),
-    "other": MessageLookupByLibrary.simpleMessage("Overig"),
+    "originLabel": MessageLookupByLibrary.simpleMessage("Oprindelsesland"),
+    "other": MessageLookupByLibrary.simpleMessage("Andet"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
-      "Naam van het eigenaarsbedrijf",
+      "Navn på ejerselskab",
     ),
-    "parentCompanyLabel": MessageLookupByLibrary.simpleMessage("Moederbedrijf"),
+    "parentCompanyLabel": MessageLookupByLibrary.simpleMessage("Moderselskab"),
     "parentCompanyLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "Moederbedrijf (Optioneel)",
+      "Moderselskab (valgfrit)",
     ),
     "parentOriginHint": MessageLookupByLibrary.simpleMessage(
-      "Bijv.: Frankrijk, VS, China...",
+      "F.eks.: Frankrig, USA, Kina...",
     ),
     "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
-      "Land van herkomst van het moederbedrijf (Optioneel)",
+      "Moderselskabets oprindelsesland (valgfrit)",
     ),
-    "petFood": MessageLookupByLibrary.simpleMessage("Dierenvoeding"),
+    "petFood": MessageLookupByLibrary.simpleMessage("Dyrefoder"),
     "photo": MessageLookupByLibrary.simpleMessage("Foto"),
     "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
-      "Politieke bijdragen 2024",
+      "Politiske bidrag 2024",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
-      "We kunnen fouten maken. Als u er een ziet, stuur ons dan een e-mail met de merknaam zodat we onze lijst kunnen bijwerken.",
+      "Vi kan lave fejl. Hvis du opdager en, så send os venligst mærkenavnet via e-mail, så vi kan opdatere vores liste.",
     ),
     "problemReportTitle": MessageLookupByLibrary.simpleMessage(
-      "Een probleem met een product?",
+      "Et problem med et produkt?",
     ),
     "productAndImageAddedSuccess": MessageLookupByLibrary.simpleMessage(
-      "Product en afbeelding succesvol toegevoegd!",
+      "Produkt og billede tilføjet med succes!",
     ),
-    "productName": MessageLookupByLibrary.simpleMessage("Productnaam"),
+    "productName": MessageLookupByLibrary.simpleMessage("Produktnavn"),
     "productNamePlaceholder": MessageLookupByLibrary.simpleMessage(
-      "Voer de productnaam in",
+      "Indtast produktnavnet",
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage(
-      "Product niet gevonden",
+      "Produkt ikke fundet",
     ),
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
-      "Stel een alternatief voor",
+      "Foreslå et alternativ",
     ),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
-      "Klik hier om een probleem te melden",
+      "Klik her for at rapportere et problem",
     ),
     "reportProblemActionTitle": MessageLookupByLibrary.simpleMessage(
-      "Probleem melden",
+      "Rapporter et problem",
     ),
     "reportProblemCommentLabel": MessageLookupByLibrary.simpleMessage(
-      "Uw opmerkingen",
+      "Dine kommentarer",
     ),
     "reportProblemDescriptionPrompt": MessageLookupByLibrary.simpleMessage(
-      "Beschrijf het probleem met het product of de applicatie.",
+      "Beskriv problemet med produktet eller applikationen.",
     ),
     "reportProblemEmailHint": MessageLookupByLibrary.simpleMessage(
-      "Voer uw e-mailadres in als u een follow-up wilt",
+      "Indtast din e-mail, hvis du ønsker opfølgning",
     ),
     "reportProblemEmailInvalid": MessageLookupByLibrary.simpleMessage(
-      "Voer een geldig e-mailadres in.",
+      "Indtast venligst en gyldig e-mailadresse.",
     ),
     "reportProblemEmailLabel": MessageLookupByLibrary.simpleMessage(
-      "Uw e-mailadres (Optioneel)",
+      "Din e-mail (valgfrit)",
     ),
     "reportProblemErrorMessage": MessageLookupByLibrary.simpleMessage(
-      "Fout bij het verzenden van het rapport. Probeer het opnieuw.",
+      "Fejl ved afsendelse af rapport. Prøv venligst igen.",
     ),
     "reportProblemHelpUs": MessageLookupByLibrary.simpleMessage(
-      "Help ons de applicatie te verbeteren",
+      "Hjælp os med at forbedre applikationen",
     ),
     "reportProblemHintText": MessageLookupByLibrary.simpleMessage(
-      "Beschrijf het probleem of de fout...",
+      "Beskriv problemet eller fejlen...",
     ),
     "reportProblemSendButton": MessageLookupByLibrary.simpleMessage(
-      "Rapport verzenden",
+      "Send rapport",
     ),
     "reportProblemSuccessMessage": MessageLookupByLibrary.simpleMessage(
-      "Bedankt! Uw rapport is verzonden.",
+      "Tak! Din rapport er blevet sendt til gennemgang og vil blive behandlet inden for 48 timer.",
     ),
     "reportProblemTitle": MessageLookupByLibrary.simpleMessage(
-      "Probleem melden",
+      "Rapporter et problem",
     ),
     "reportProblemValidationErrorEmpty": MessageLookupByLibrary.simpleMessage(
-      "Beschrijf alstublieft het probleem.",
+      "Beskriv venligst problemet.",
     ),
     "reportProblemValidationErrorLength": MessageLookupByLibrary.simpleMessage(
-      "Geef alstublieft meer details (min. 10 tekens).",
+      "Giv venligst flere detaljer (mindst 10 tegn).",
     ),
     "republicanContributionsHint": MessageLookupByLibrary.simpleMessage(
-      "Bedrag (Republikeinen)",
+      "Beløb (Republikanere)",
     ),
     "republicanContributionsLabel": MessageLookupByLibrary.simpleMessage(
-      "Republikeinse Bijdragen",
+      "Republikanske bidrag",
     ),
-    "republicansLabel": MessageLookupByLibrary.simpleMessage("Republikeinen"),
-    "safe": MessageLookupByLibrary.simpleMessage("NIET VS"),
+    "republicansLabel": MessageLookupByLibrary.simpleMessage("Republikanere"),
+    "safe": MessageLookupByLibrary.simpleMessage("IKKE USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Dit product lijkt niet afkomstig te zijn van een Amerikaans bedrijf.",
+      "Dette produkt ser ikke ud til at komme fra et amerikansk firma.",
     ),
     "saveContributionsButton": MessageLookupByLibrary.simpleMessage(
-      "Bijdragen opslaan",
+      "Gem bidrag",
     ),
     "savingContributions": MessageLookupByLibrary.simpleMessage(
-      "Bijdragen opslaan...",
+      "Gemmer bidrag...",
     ),
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage(
-      "Scan een streepjescode",
+      "Scan en stregkode",
     ),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
-      "⚠️ Zorg ervoor dat u een correct gespeld voedingsmerk invoert om fouten te voorkomen.",
+      "⚠️ Sørg for at indtaste et korrekt stavet fødevaremærke for at undgå fejl.",
     ),
-    "selectCategory": MessageLookupByLibrary.simpleMessage(
-      "Selecteer een categorie",
-    ),
+    "selectCategory": MessageLookupByLibrary.simpleMessage("Vælg en kategori"),
     "selectCategoryError": MessageLookupByLibrary.simpleMessage(
-      "Selecteer alstublieft een categorie.",
+      "Vælg venligst en kategori.",
     ),
     "selectPhotoError": MessageLookupByLibrary.simpleMessage(
-      "Selecteer alstublieft een foto.",
+      "Vælg venligst et billede.",
     ),
-    "sendingImage": MessageLookupByLibrary.simpleMessage(
-      "Afbeelding verzenden...",
-    ),
+    "sendingImage": MessageLookupByLibrary.simpleMessage("Sender billede..."),
     "sendingInfo": MessageLookupByLibrary.simpleMessage(
-      "Informatie verzenden...",
+      "Sender information...",
     ),
-    "sourceNotFound": MessageLookupByLibrary.simpleMessage(
-      "Bron niet gevonden",
-    ),
+    "sourceNotFound": MessageLookupByLibrary.simpleMessage("Kilde ikke fundet"),
     "submissionError": MessageLookupByLibrary.simpleMessage(
-      "Fout tijdens het verzenden.",
+      "Fejl under indsendelse.",
     ),
     "successMessage": MessageLookupByLibrary.simpleMessage(
-      "Product succesvol toegevoegd!",
+      "Produkt tilføjet med succes!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("Succes"),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
-      "Tekstinformatie is verzonden, maar het uploaden van de afbeelding is mislukt.",
+      "Tekstinformation blev sendt, men billedupload mislykkedes.",
     ),
     "textSubmissionFailed": m2,
-    "unknown": MessageLookupByLibrary.simpleMessage("ONBEKEND"),
+    "unknown": MessageLookupByLibrary.simpleMessage("UKENDT"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Het gezochte product is niet gevonden in onze database.",
+      "Det produkt, du søgte efter, blev ikke fundet i vores database.",
     ),
-    "usa": MessageLookupByLibrary.simpleMessage("VS"),
+    "usa": MessageLookupByLibrary.simpleMessage("USA"),
     "usaProductMessage": MessageLookupByLibrary.simpleMessage(
-      "Dit product is afkomstig van een Amerikaans bedrijf!",
+      "Dette produkt kommer fra et amerikansk firma!",
     ),
-    "validate": MessageLookupByLibrary.simpleMessage("Valideren"),
-    "viewCriteria": MessageLookupByLibrary.simpleMessage("Bekijk criteria"),
-    "welcome": MessageLookupByLibrary.simpleMessage("Welkom bij"),
+    "validate": MessageLookupByLibrary.simpleMessage("Bekræft"),
+    "viewCriteria": MessageLookupByLibrary.simpleMessage("Se kriterier"),
+    "welcome": MessageLookupByLibrary.simpleMessage("Velkommen til"),
   };
 }

@@ -23,7 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(barcode) =>
       "قدم التفاصيل المفقودة للرمز الشريطي: ${barcode}";
 
-  static String m1(statusCode) =>
+  static String m1(error) => "भेजने में त्रुटि: ${error}";
+
+  static String m2(statusCode) =>
       "فشل إرسال المعلومات النصية (الحالة ${statusCode}). تحقق من السجلات للحصول على استجابة HTML.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -51,23 +53,24 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "addProductInfoSubHeadline": m0,
     "addProductInfoSuccess": MessageLookupByLibrary.simpleMessage(
-      "شكراً لك! تمت إضافة معلومات المنتج.",
+      "شكرًا لك! تم إرسال معلومات المنتج الخاصة بك للمراجعة وستتم إضافتها في غضون 48 ساعة.",
     ),
     "addProductInfoTitle": MessageLookupByLibrary.simpleMessage(
       "إضافة معلومات",
     ),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("إضافة منتج"),
-    "alimentation": MessageLookupByLibrary.simpleMessage("طعام"),
-    "alimentationAnimaux": MessageLookupByLibrary.simpleMessage(
-      "طعام الحيوانات الأليفة",
+    "alternativeSubmitErrorMessage": m1,
+    "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
+      "आपका विकल्प समीक्षा के लिए भेज दिया गया है",
     ),
+    "alternativesLabel": MessageLookupByLibrary.simpleMessage("विकल्प"),
     "appDescription": MessageLookupByLibrary.simpleMessage(
       "امسح الرمز الشريطي لمنتجك لمعرفة ما إذا كانت العلامة التجارية مملوكة لشركة أمريكية.",
     ),
     "appTitle": MessageLookupByLibrary.simpleMessage("مسح الرمز الشريطي"),
-    "autre": MessageLookupByLibrary.simpleMessage("آخر"),
     "barcode": MessageLookupByLibrary.simpleMessage("الرمز الشريطي"),
     "barcodeLabel": MessageLookupByLibrary.simpleMessage("الرمز الشريطي: "),
+    "beauty": MessageLookupByLibrary.simpleMessage("جمال"),
     "brandHint": MessageLookupByLibrary.simpleMessage(
       "اسم العلامة التجارية الرئيسي",
     ),
@@ -103,11 +106,32 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
       "Vahiné علامة تجارية فرنسية ولكن تم الاستحواذ عليها من قبل مجموعة McCormick الأمريكية في عام 2000. وبالتالي، تعتبر العلامة التجارية أمريكية.",
     ),
-    "cosmetique": MessageLookupByLibrary.simpleMessage("مستحضرات تجميل"),
+    "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
+      "يمكنك العثور على مبالغ المساهمات لانتخابات الولايات المتحدة 2024 على موقع Open Secret.",
+    ),
+    "contributionsSaveError": MessageLookupByLibrary.simpleMessage(
+      "خطأ أثناء حفظ المساهمات.",
+    ),
+    "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
+      "شكرًا لك! تم إرسال مساهماتك للمراجعة وستتم معالجتها في غضون 48 ساعة.",
+    ),
+    "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
+      "المبلغ (الديمقراطيون)",
+    ),
+    "democratContributionsLabel": MessageLookupByLibrary.simpleMessage(
+      "مساهمات الديمقراطيين",
+    ),
+    "democratsLabel": MessageLookupByLibrary.simpleMessage("डेमोक्रेट"),
     "descriptionHint": MessageLookupByLibrary.simpleMessage("وصف قصير للمنتج"),
     "descriptionLabelRequired": MessageLookupByLibrary.simpleMessage("الوصف *"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "هذه العلامة التجارية غير موجودة في قاعدة بياناتنا.",
+    ),
+    "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage(
+      "संपादित करें",
+    ),
+    "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
+      "تعديل المساهمات السياسية للانتخابات الرئاسية الأمريكية لعام 2024",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ أثناء إضافة المنتج.",
@@ -119,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
       "يرجى ملء جميع الحقول.",
     ),
+    "food": MessageLookupByLibrary.simpleMessage("طعام"),
     "gallery": MessageLookupByLibrary.simpleMessage("المعرض"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "خطأ في اختيار الصورة",
@@ -131,10 +156,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
       "مصدر المكونات",
     ),
+    "invalidNumberError": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم صالح.",
+    ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "أدخل علامة تجارية غذائية",
     ),
+    "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
+      "अभी तक कोई विकल्प नहीं।",
+    ),
+    "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
+      "अभी तक कोई राजनीतिक योगदान नहीं।",
+    ),
+    "okButtonLabel": MessageLookupByLibrary.simpleMessage("موافق"),
     "originLabel": MessageLookupByLibrary.simpleMessage("بلد المنشأ"),
+    "other": MessageLookupByLibrary.simpleMessage("أخرى"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "اسم الشركة المالكة",
     ),
@@ -148,7 +184,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
       "بلد منشأ الشركة الأم (اختياري)",
     ),
+    "petFood": MessageLookupByLibrary.simpleMessage("طعام الحيوانات"),
     "photo": MessageLookupByLibrary.simpleMessage("صورة"),
+    "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
+      "राजनीतिक योगदान 2024",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "قد نرتكب أخطاء. إذا لاحظت خطأً، يرجى مراسلتنا باسم العلامة التجارية عبر البريد الإلكتروني حتى نتمكن من تحديث قائمتنا.",
     ),
@@ -163,6 +203,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "أدخل اسم المنتج",
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage("المنتج غير موجود"),
+    "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
+      "एक विकल्प प्रस्तावित करें",
+    ),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "انقر هنا للإبلاغ عن مشكلة",
     ),
@@ -197,7 +240,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "إرسال التقرير",
     ),
     "reportProblemSuccessMessage": MessageLookupByLibrary.simpleMessage(
-      "شكراً لك! تم إرسال تقريرك.",
+      "شكرًا لك! تم إرسال تقريرك للمراجعة وسيتم معالجته في غضون 48 ساعة.",
     ),
     "reportProblemTitle": MessageLookupByLibrary.simpleMessage(
       "الإبلاغ عن مشكلة",
@@ -208,9 +251,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "reportProblemValidationErrorLength": MessageLookupByLibrary.simpleMessage(
       "يرجى تقديم المزيد من التفاصيل (10 أحرف على الأقل).",
     ),
+    "republicanContributionsHint": MessageLookupByLibrary.simpleMessage(
+      "المبلغ (الجمهوريون)",
+    ),
+    "republicanContributionsLabel": MessageLookupByLibrary.simpleMessage(
+      "مساهمات الجمهوريين",
+    ),
+    "republicansLabel": MessageLookupByLibrary.simpleMessage("रिपब्लिकन"),
     "safe": MessageLookupByLibrary.simpleMessage("ليس أمريكي"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "لا يبدو أن هذا المنتج يأتي من شركة أمريكية.",
+    ),
+    "saveContributionsButton": MessageLookupByLibrary.simpleMessage(
+      "حفظ المساهمات",
+    ),
+    "savingContributions": MessageLookupByLibrary.simpleMessage(
+      "جارٍ حفظ المساهمات...",
     ),
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage(
       "امسح الرمز الشريطي",
@@ -242,7 +298,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "تم إرسال المعلومات النصية، ولكن فشل تحميل الصورة.",
     ),
-    "textSubmissionFailed": m1,
+    "textSubmissionFailed": m2,
     "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "المنتج الذي بحثت عنه غير موجود في قاعدة بياناتنا.",

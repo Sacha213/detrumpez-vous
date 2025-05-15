@@ -22,7 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(barcode) => "バーコードの不足している詳細を提供してください：${barcode}";
 
-  static String m1(statusCode) =>
+  static String m1(error) => "送信エラー：${error}";
+
+  static String m2(statusCode) =>
       "テキスト情報の送信に失敗しました（ステータス ${statusCode}）。HTML応答についてはログを確認してください。";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -50,15 +52,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "addProductInfoTitle": MessageLookupByLibrary.simpleMessage("情報を追加"),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("製品を追加"),
-    "alimentation": MessageLookupByLibrary.simpleMessage("食品"),
-    "alimentationAnimaux": MessageLookupByLibrary.simpleMessage("ペットフード"),
+    "alternativeSubmitErrorMessage": m1,
+    "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
+      "代替案が確認のため送信されました",
+    ),
+    "alternativesLabel": MessageLookupByLibrary.simpleMessage("代替案"),
     "appDescription": MessageLookupByLibrary.simpleMessage(
       "製品のバーコードをスキャンして、そのブランドがアメリカ企業によって所有されているかどうかを確認します。",
     ),
     "appTitle": MessageLookupByLibrary.simpleMessage("バーコードをスキャン"),
-    "autre": MessageLookupByLibrary.simpleMessage("その他"),
     "barcode": MessageLookupByLibrary.simpleMessage("バーコード"),
     "barcodeLabel": MessageLookupByLibrary.simpleMessage("バーコード："),
+    "beauty": MessageLookupByLibrary.simpleMessage("美容"),
     "brandHint": MessageLookupByLibrary.simpleMessage("主なブランド名"),
     "brandLabelRequired": MessageLookupByLibrary.simpleMessage("ブランド *"),
     "brandName": MessageLookupByLibrary.simpleMessage("ブランド名"),
@@ -84,11 +89,30 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
       "Vahinéはフランスのブランドですが、2000年にアメリカのマコーミックグループに買収されました。したがって、このブランドはアメリカのものと見なされます。",
     ),
-    "cosmetique": MessageLookupByLibrary.simpleMessage("化粧品"),
+    "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
+      "2024年の米国選挙の寄付額は、Open Secretのウェブサイトで確認できます。",
+    ),
+    "contributionsSaveError": MessageLookupByLibrary.simpleMessage(
+      "寄付の保存中にエラーが発生しました。",
+    ),
+    "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
+      "ありがとうございます！あなたの寄付は審査のために送信され、48時間以内に処理されます。",
+    ),
+    "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
+      "金額（民主党）",
+    ),
+    "democratContributionsLabel": MessageLookupByLibrary.simpleMessage(
+      "民主党の寄付",
+    ),
+    "democratsLabel": MessageLookupByLibrary.simpleMessage("民主党"),
     "descriptionHint": MessageLookupByLibrary.simpleMessage("簡単な製品説明"),
     "descriptionLabelRequired": MessageLookupByLibrary.simpleMessage("説明 *"),
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "このブランドはデータベースに存在しません。",
+    ),
+    "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage("編集"),
+    "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
+      "2024年アメリカ大統領選挙の政治献金を編集",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage("製品の追加中にエラーが発生しました。"),
     "errorTitle": MessageLookupByLibrary.simpleMessage("エラー"),
@@ -96,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
       "すべてのフィールドに入力してください。",
     ),
+    "food": MessageLookupByLibrary.simpleMessage("食品"),
     "gallery": MessageLookupByLibrary.simpleMessage("ギャラリー"),
     "imagePickError": MessageLookupByLibrary.simpleMessage("画像の選択中にエラーが発生しました"),
     "imageSourceMessage": MessageLookupByLibrary.simpleMessage("ソースを選択してください"),
@@ -104,10 +129,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "画像のアップロード中にエラーが発生しました。",
     ),
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage("原材料の産地"),
+    "invalidNumberError": MessageLookupByLibrary.simpleMessage(
+      "有効な数字を入力してください。",
+    ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "食品ブランドを入力してください",
     ),
+    "noAlternativesYet": MessageLookupByLibrary.simpleMessage("まだ代替案はありません。"),
+    "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
+      "まだ政治献金はありません。",
+    ),
+    "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
     "originLabel": MessageLookupByLibrary.simpleMessage("原産国"),
+    "other": MessageLookupByLibrary.simpleMessage("その他"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage("所有会社の名前"),
     "parentCompanyLabel": MessageLookupByLibrary.simpleMessage("親会社"),
     "parentCompanyLabelOptional": MessageLookupByLibrary.simpleMessage(
@@ -119,7 +153,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "parentOriginLabelOptional": MessageLookupByLibrary.simpleMessage(
       "親会社の原産国（任意）",
     ),
+    "petFood": MessageLookupByLibrary.simpleMessage("ペットフード"),
     "photo": MessageLookupByLibrary.simpleMessage("写真"),
+    "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
+      "政治献金 2024",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "間違いを犯す可能性があります。間違いを見つけた場合は、リストを更新できるようにブランド名をメールでお知らせください。",
     ),
@@ -132,6 +170,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "製品名を入力してください",
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage("製品が見つかりません"),
+    "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage("代替案を提案"),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "ここをクリックして問題を報告してください",
     ),
@@ -171,10 +210,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "reportProblemValidationErrorLength": MessageLookupByLibrary.simpleMessage(
       "詳細を提供してください（最低10文字）。",
     ),
+    "republicanContributionsHint": MessageLookupByLibrary.simpleMessage(
+      "金額（共和党）",
+    ),
+    "republicanContributionsLabel": MessageLookupByLibrary.simpleMessage(
+      "共和党の寄付",
+    ),
+    "republicansLabel": MessageLookupByLibrary.simpleMessage("共和党"),
     "safe": MessageLookupByLibrary.simpleMessage("非米国"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "この製品はアメリカ企業のものではないようです。",
     ),
+    "saveContributionsButton": MessageLookupByLibrary.simpleMessage("寄付を保存"),
+    "savingContributions": MessageLookupByLibrary.simpleMessage("寄付を保存中..."),
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage("バーコードをスキャン"),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
       "⚠️ エラーを避けるために、正しく綴られた食品ブランドを入力してください。",
@@ -193,7 +241,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "テキスト情報は送信されましたが、画像のアップロードに失敗しました。",
     ),
-    "textSubmissionFailed": m1,
+    "textSubmissionFailed": m2,
     "unknown": MessageLookupByLibrary.simpleMessage("不明"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "検索した製品はデータベースに見つかりませんでした。",
