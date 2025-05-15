@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:detrumpezvous/add_product.dart';
 import 'package:detrumpezvous/add_product_info_screen.dart';
 import 'package:detrumpezvous/criteria_screen.dart';
+import 'package:detrumpezvous/edit_contribution_screen.dart';
 import 'package:detrumpezvous/report_problem_screen.dart';
 import 'package:http/http.dart' as http;
 import 'package:detrumpezvous/corner_painter.dart';
@@ -12,6 +14,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:in_app_review/in_app_review.dart';
+import 'package:intl/intl.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:logger/logger.dart';
@@ -41,6 +44,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   String company = S.current.unknown;
   String parentOrigin = "";
   String origin = "";
+  String normalizedName = "";
 
   String source = S.current.sourceNotFound;
   bool isProductFromUSA = false;
@@ -53,6 +57,11 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   bool _isBottomSheetOpen = false; // Empêche l’ouverture en double
   bool _isSheetExpanded = false;
 
+  int _contributionScore = 0; // Score de contribution
+
+  int _democratContribution = 0;
+  int _republicanContribution = 0;
+
   // Ajoutez ce contrôleur dans votre state:
   final TextEditingController manualSearchController = TextEditingController();
 
@@ -62,6 +71,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   bool _reviewHasBeenRequested =
       false; // Pour ne demander qu'une fois par session/période
   bool _isTrumpShowed = true;
+
+  bool _considerAsAmerican = false;
+  bool _isFlashOn = false; // Par défaut, le flash est désactivé
 
   // Contrôleur pour l'animation de tremblement
   late AnimationController _shakeController;
@@ -81,6 +93,11 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     ],
   );
 
+  List<String> _alternatives = [];
+
+  final TextEditingController _newAlternativeController =
+      TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -96,10 +113,20 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
 
   @override
   void dispose() {
+    _newAlternativeController.dispose();
     manualSearchController.dispose();
     _shakeController
         .dispose(); // Ne pas oublier de disposer le nouveau contrôleur
     super.dispose();
+  }
+
+  Future<void> _incrementContributionScore(int points) async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _contributionScore += points; // Ajoute les points au score actuel
+    });
+    await prefs.setInt(
+        'contributionScore', _contributionScore); // Sauvegarde le score
   }
 
   // Charger les compteurs depuis SharedPreferences
@@ -112,6 +139,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
       _usaScanCount =
           prefs.getInt('usaScanCount') ?? 0; // Charger le compteur USA
       _reviewHasBeenRequested = prefs.getBool('reviewRequested') ?? false;
+      _considerAsAmerican = prefs.getBool('considerAsAmerican') ?? false;
+      _contributionScore = prefs.getInt('contributionScore') ?? 0;
     });
   }
 
@@ -227,7 +256,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
         .where((s) => s.isNotEmpty)
         .toList();
 
-    Map<String, dynamic>? americanMatch; // Pour stocker une correspondance américaine si trouvée
+    Map<String, dynamic>?
+        americanMatch; // Pour stocker une correspondance américaine si trouvée
     Map<String, dynamic>? notAmericanMatch;
 
     // Pour chaque candidat, on le normalise et on cherche une correspondance
@@ -243,11 +273,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
         }, orElse: () => <String, dynamic>{} // Littérale typée
             );
         if (found.isNotEmpty) {
-
-          if(found["parentOrigin"] == "US" || found["origin"] == "US"){
+          if (found["parentOrigin"] == "US" || found["origin"] == "US") {
             americanMatch = found;
-          }
-          else{
+          } else {
             notAmericanMatch = found;
           }
         }
@@ -257,18 +285,14 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
       }
     }
 
-    if(americanMatch != null){
+    if (americanMatch != null) {
       return americanMatch;
-    }
-    else if (notAmericanMatch != null){
+    } else if (notAmericanMatch != null) {
       return notAmericanMatch;
-    }
-    else{
+    } else {
 // Si aucun des candidats ne correspond, on renvoie un Map vide
-    return <String, dynamic>{};
+      return <String, dynamic>{};
     }
-
-    
   }
 
   /// Récupère les informations d'un produit depuis plusieurs API.
@@ -435,6 +459,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     }
 
     setState(() {
+      normalizedName = resultJson["normalizedName"] ?? "";
       brand = (resultJson["name"]?.toString().isNotEmpty == true)
           ? resultJson["name"]
           : ((productData?.isNotEmpty == true)
@@ -448,8 +473,19 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
       parentOrigin =
           resultJson["parentOrigin"] ?? ""; // Stocker le pays d'origine
       isProductFromUSA = resultJson["parentOrigin"] == "US";
+
       isBrandFound = resultJson.isNotEmpty;
       isIngredientsOriginFromUS = checkOrigin(ingredientsOrigin);
+
+      _democratContribution = resultJson["democratContribution"] ?? 0;
+      _republicanContribution = resultJson["republicanContribution"] ?? 0;
+
+      _alternatives = resultJson["alternatives"] ?? [];
+
+      if (_considerAsAmerican &&
+          (origin == "US" || isIngredientsOriginFromUS)) {
+        isProductFromUSA = true;
+      }
     });
 
     if (isBrandFound) {
@@ -510,6 +546,10 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                   );
                 },
               );
+              final prefs = await SharedPreferences.getInstance();
+              setState(() {
+                _contributionScore = prefs.getInt('contributionScore') ?? 0;
+              });
             } finally {
               // Ce bloc s'exécute même si showModalBottomSheet lève une exception
               // ou si l'utilisateur ferme la sheet.
@@ -585,6 +625,168 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     // Interpolez entre le noir et le rouge
     return Color.lerp(Colors.black, Colors.red.shade700, t) ??
         Colors.black; // Fournir une couleur par défaut
+  }
+
+  Widget _buildPartyContributionGauge(BuildContext context) {
+    final int totalPartyContributions =
+        _democratContribution + _republicanContribution;
+
+    return GestureDetector(
+      onTap: () {
+        // Ouvrir la page d'édition des contributions
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => EditContributionsScreen(
+              initialDemocratContribution: _democratContribution,
+              initialRepublicanContribution: _republicanContribution,
+              companyName: company,
+              normalizedName: normalizedName,
+            ),
+          ),
+        ).then((_) async {
+          // Recharger les contributions après la fermeture de la page
+          final prefs = await SharedPreferences.getInstance();
+          setState(() {
+            _contributionScore = prefs.getInt('contributionScore') ?? 0;
+          });
+        });
+      },
+      child: Container(
+        margin: const EdgeInsets.only(top: 16.0),
+        padding: const EdgeInsets.all(12.0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              blurRadius: 5,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  S
+                      .of(context)
+                      .politicalContributionsTitle,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium
+                      ?.copyWith(fontWeight: FontWeight.bold),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 4.0),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.grey.shade300,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: Text(S.of(context).editContributionsButtonLabel,
+                      style: TextStyle(
+                        color: Colors.grey.shade700,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      )),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            if (totalPartyContributions == 0)
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Text(
+                    S.of(context).noPoliticalContributionsYet,
+                    style: TextStyle(color: Colors.grey[600]),
+                  ),
+                ),
+              )
+            else
+              ClipRRect(
+                borderRadius: BorderRadius.circular(4),
+                child: Row(
+                  children: [
+                    if (_democratContribution > 0)
+                      Expanded(
+                        flex: _democratContribution,
+                        child: Container(
+                          height: 20,
+                          color: Colors.blue.shade700,
+                        ),
+                      ),
+                    if (_republicanContribution > 0)
+                      Expanded(
+                        flex: _republicanContribution,
+                        child: Container(
+                          height: 20,
+                          color: Colors.red.shade700,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      S
+                          .of(context)
+                          .democratsLabel, 
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.blue.shade700,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      "${NumberFormat('#,##0').format(_democratContribution)} \$",
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.blue.shade700,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      S
+                          .of(context)
+                          .republicansLabel,
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.red.shade700,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      "${NumberFormat('#,##0').format(_republicanContribution)} \$",
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.red.shade700,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
@@ -665,11 +867,108 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
               ],
             ),
           ),
+          Positioned(
+            top: safeAreaPadding.top + 10,
+            left: 15, // Positionné à gauche
+            child: GestureDetector(
+              onTap: () {},
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade50, // Fond bleu clair
+                  borderRadius: BorderRadius.circular(20), // Coins arrondis
+                  border: Border.all(
+                    color: Colors.blue.shade300, // Bordure bleue
+                    width: 1.0, // Réduction de l'épaisseur de la bordure
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      spreadRadius: 1,
+                      blurRadius: 3, // Réduction du flou
+                      offset: const Offset(0, 1), // Réduction de l'ombre
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CircleAvatar(
+                      radius: 10, // Réduction de la taille de l'avatar
+                      backgroundColor: Colors.blue.shade100, // Fond bleu clair
+                      child: const Icon(
+                        Icons
+                            .star, // Icône étoile pour symboliser la contribution
+                        color: Colors.blue, // Couleur bleue pour l'icône
+                        size: 14, // Réduction de la taille de l'icône
+                      ),
+                    ),
+                    const SizedBox(
+                        width:
+                            6), // Réduction de l'espace entre l'icône et le texte
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      transitionBuilder:
+                          (Widget child, Animation<double> animation) {
+                        return FadeTransition(opacity: animation, child: child);
+                      },
+                      child: Text(
+                        "$_contributionScore",
+                        key: ValueKey<int>(_contributionScore),
+                        style: const TextStyle(
+                          fontSize: 14, // Réduction de la taille du texte
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue, // Couleur bleue pour le score
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+// Bouton pour activer/désactiver le flash
+          Positioned(
+            top: safeAreaPadding.top + 10,
+            right: 15,
+            child: GestureDetector(
+              onTap: () async {
+                setState(() {
+                  _isFlashOn = !_isFlashOn; // Inverse l'état du flash
+                });
+                mobileScannerController
+                    .toggleTorch(); // Active/désactive le flash
+              },
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      spreadRadius: 1,
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: Icon(
+                  _isFlashOn
+                      ? Icons.flash_on // Icône pour flash activé
+                      : Icons.flash_off, // Icône pour flash désactivé
+                  color: Colors.black,
+                  size: 20,
+                ),
+              ),
+            ),
+          ),
 
           // --- NOUVEAU WIDGET COMPTEUR ---
+
           Positioned(
               top: safeAreaPadding.top + 10,
-              right: 15,
+              right: 64,
               // Enveloppe avec AnimatedBuilder pour le tremblement
               child: GestureDetector(
                 onTap: () async {
@@ -772,8 +1071,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                       borderRadius:
                           const BorderRadius.vertical(top: Radius.circular(16)),
                     ),
-                    padding:
-                        const EdgeInsets.only(top: 16, right: 16, left: 16),
+                    padding: const EdgeInsets.only(right: 16, left: 16),
                     child: LayoutBuilder(
                       builder: (context, constraints) {
                         return SingleChildScrollView(
@@ -789,6 +1087,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                     Column(
                                       children: [
                                         // Indicateur de glissement style iOS
+                                        const SizedBox(
+                                          height: 16,
+                                        ),
                                         Center(
                                           child: Container(
                                             width: 48,
@@ -1053,7 +1354,32 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                   style: const TextStyle(
                                                                       fontSize:
                                                                           14)) // Style de la valeur
-                                                            ]))
+                                                            ])),
+                                                        Container(
+                                                          width: 20,
+                                                          height: 20,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color:
+                                                                (parentOrigin ==
+                                                                        "US")
+                                                                    ? Colors.red
+                                                                    : Colors
+                                                                        .green,
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
+                                                          child: Icon(
+                                                            (parentOrigin ==
+                                                                    "US")
+                                                                ? CupertinoIcons
+                                                                    .clear
+                                                                : CupertinoIcons
+                                                                    .check_mark,
+                                                            size: 12,
+                                                            color: Colors.white,
+                                                          ),
+                                                        ),
                                                       ]),
                                                       const SizedBox(height: 8),
                                                       const Divider(
@@ -1095,7 +1421,25 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                           style: const TextStyle(
                                                               fontSize:
                                                                   14)) // Style de la valeur
-                                                    ]))
+                                                    ])),
+                                                Container(
+                                                  width: 20,
+                                                  height: 20,
+                                                  decoration: BoxDecoration(
+                                                    color: (origin == "US")
+                                                        ? Colors.red
+                                                        : Colors.green,
+                                                    shape: BoxShape.circle,
+                                                  ),
+                                                  child: Icon(
+                                                    (origin == "US")
+                                                        ? CupertinoIcons.clear
+                                                        : CupertinoIcons
+                                                            .check_mark,
+                                                    size: 12,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
                                               ]),
                                               (isIngredientsOriginFromUS)
                                                   ? Column(
@@ -1138,38 +1482,303 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                     style: TextStyle(
                                                                         fontSize:
                                                                             14)) // Style de la valeur
-                                                              ]))
+                                                              ])),
+                                                          Container(
+                                                            width: 20,
+                                                            height: 20,
+                                                            decoration:
+                                                                const BoxDecoration(
+                                                              color: Colors.red,
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                            ),
+                                                            child: const Icon(
+                                                              CupertinoIcons
+                                                                  .clear,
+                                                              size: 12,
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                          ),
                                                         ])
                                                       ],
                                                     )
-                                                  : Container()
+                                                  : Container(),
                                             ])),
-                                        const SizedBox(height: 16),
+
+                                        if (isBrandFound)
+                                          _buildPartyContributionGauge(context),
+                                        const SizedBox(height: 8),
                                         Text(
                                           description,
                                           textAlign: TextAlign.justify,
                                           style: const TextStyle(fontSize: 16),
                                         ),
                                         const SizedBox(height: 8),
-
-                                        if (isProductFromUSA)
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                "($source)",
-                                                style: const TextStyle(
-                                                    fontSize: 14,
-                                                    color: Colors.blue),
-                                              ),
-                                            ],
-                                          ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              "($source)",
+                                              style: const TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.blue),
+                                            ),
+                                          ],
+                                        ),
                                       ],
                                     ),
                                     const SizedBox(
-                                      height: 16,
+                                      height: 24,
                                     ),
+
+// Container arrondi blanc pour la liste des alternatives
+                                    (isProductFromUSA)
+                                        ? Container(
+                                            width: double.infinity,
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 8),
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.grey
+                                                      .withOpacity(0.3),
+                                                  blurRadius: 5,
+                                                  offset: const Offset(0, 2),
+                                                ),
+                                              ],
+                                            ),
+                                            child: Column(
+                                              children: [
+                                                Container(
+                                                  margin:
+                                                      const EdgeInsets.only(left: 16),
+                                                  alignment:
+                                                      Alignment.centerLeft,
+                                                  child: Text(
+                                                    S
+                                                        .of(context)
+                                                        .alternativesLabel,
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .titleMedium
+                                                        ?.copyWith(
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 8),
+                                                (_alternatives.isNotEmpty)
+                                                    ? SingleChildScrollView(
+                                                        scrollDirection:
+                                                            Axis.horizontal,
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .symmetric(
+                                                                horizontal: 8),
+                                                        child: Row(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            for (var i = 0;
+                                                                i <
+                                                                    _alternatives
+                                                                        .length;
+                                                                i += 2) ...[
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .min,
+                                                                children:
+                                                                    _alternatives
+                                                                        .skip(i)
+                                                                        .take(2)
+                                                                        .map((alt) =>
+                                                                            Padding(
+                                                                              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 6),
+                                                                              child: Container(
+                                                                                width: 100,
+                                                                                padding: const EdgeInsets.all(8),
+                                                                                decoration: BoxDecoration(
+                                                                                  color: Colors.blue.shade50,
+                                                                                  borderRadius: BorderRadius.circular(8),
+                                                                                  border: Border.all(color: Colors.blue.shade200),
+                                                                                ),
+                                                                                child: Center(
+                                                                                  child: Text(
+                                                                                    alt,
+                                                                                    textAlign: TextAlign.center,
+                                                                                    style: const TextStyle(fontSize: 14),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ))
+                                                                        .toList(),
+                                                              ),
+                                                              const SizedBox(
+                                                                  width:
+                                                                      12), // Espace entre les colonnes
+                                                            ],
+                                                            const SizedBox(
+                                                                height: 8),
+                                                          ],
+                                                        ),
+                                                      )
+                                                    : Container(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                                bottom: 8),
+                                                        child: Text(
+                                                          S
+                                                              .of(context)
+                                                              .noAlternativesYet,
+                                                          style:
+                                                              const TextStyle(
+                                                                  fontSize: 14,
+                                                                  color: Colors
+                                                                      .grey),
+                                                        ),
+                                                      ),
+                                                Container(
+                                                  margin: const EdgeInsets
+                                                      .symmetric(
+                                                    horizontal: 16,
+                                                  ),
+                                                  /*padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 12,
+                                                      vertical: 8),
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    CupertinoColors.systemGrey6,
+                                                borderRadius:
+                                                    BorderRadius.circular(12),
+                                                border: Border.all(
+                                                  color:
+                                                      CupertinoColors.separator,
+                                                  width: 0.5,
+                                                ),
+                                              ),*/
+                                                  child: Row(
+                                                    children: [
+                                                      Expanded(
+                                                        child:
+                                                            CupertinoTextField(
+                                                          controller:
+                                                              _newAlternativeController,
+                                                          placeholder: S
+                                                              .of(context)
+                                                              .proposeAlternativeHint,
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .symmetric(
+                                                                  horizontal:
+                                                                      12,
+                                                                  vertical: 8),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color:
+                                                                CupertinoColors
+                                                                    .white,
+                                                            border: Border.all(
+                                                                color: CupertinoColors
+                                                                    .systemGrey4,
+                                                                width: 0.5),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      const SizedBox(width: 8),
+                                                      CupertinoButton(
+                                                        padding:
+                                                            EdgeInsets.zero,
+                                                        child: const Icon(
+                                                          CupertinoIcons
+                                                              .add_circled_solid,
+                                                          color: CupertinoColors
+                                                              .activeBlue,
+                                                          size: 28,
+                                                        ),
+                                                        onPressed: () async {
+                                                          final alt =
+                                                              _newAlternativeController
+                                                                  .text
+                                                                  .trim();
+                                                          if (alt.isEmpty) {
+                                                            return;
+                                                          }
+
+                                                          // Préparer les données
+                                                          final normalizedBrand =
+                                                              normalizeBrandName(
+                                                                  brand);
+                                                          final data = {
+                                                            'barcode': barcode,
+                                                            'brand': brand,
+                                                            'normalizedName':
+                                                                normalizedBrand,
+                                                            'alternative': alt,
+                                                            'timestamp': FieldValue
+                                                                .serverTimestamp(),
+                                                          };
+
+                                                          // Envoyer dans Firestore
+                                                          try {
+                                                            await FirebaseFirestore
+                                                                .instance
+                                                                .collection(
+                                                                    'brand_alternatives') // ou le nom de votre collection
+                                                                .add(data);
+
+                                                            // Mettre à jour localement l’affichage
+                                                            setState(() {
+                                                              _newAlternativeController
+                                                                  .clear();
+                                                            });
+
+                                                            _incrementContributionScore(
+                                                                5); // Incrémenter le score de contribution
+
+                                                            ScaffoldMessenger
+                                                                    .of(context)
+                                                                .showSnackBar(
+                                                              SnackBar(
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .green,
+                                                                  content: Text(S
+                                                                      .of(context)
+                                                                      .alternativeSubmittedMessage)),
+                                                            );
+                                                          } catch (e) {
+                                                            // Gérer l’erreur si besoin
+                                                            ScaffoldMessenger
+                                                                    .of(context)
+                                                                .showSnackBar(
+                                                              SnackBar(
+                                                                  content: Text(
+                                                                      '${S.of(context).alternativeSubmitErrorMessage} $e')),
+                                                            );
+                                                          }
+                                                        },
+                                                      ),
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                            ))
+                                        : Container(),
+                                    const SizedBox(height: 40),
                                     Column(
                                       children: [
                                         // Container avec coins arrondis et ombre
@@ -1211,7 +1820,17 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                                   ? parentOrigin
                                                                   : ""),
                                                     ),
-                                                  );
+                                                  ).then((_) async {
+                                                    final prefs =
+                                                        await SharedPreferences
+                                                            .getInstance();
+                                                    setState(() {
+                                                      _contributionScore =
+                                                          prefs.getInt(
+                                                                  'contributionScore') ??
+                                                              0;
+                                                    });
+                                                  });
                                                 },
                                                 // Pas de borderRadius ici car c'est un élément du milieu
                                                 child: Padding(
@@ -1286,7 +1905,17 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                             brand, // Passer la marque actuelle
                                                       ),
                                                     ),
-                                                  );
+                                                  ).then((_) async {
+                                                    final prefs =
+                                                        await SharedPreferences
+                                                            .getInstance();
+                                                    setState(() {
+                                                      _contributionScore =
+                                                          prefs.getInt(
+                                                                  'contributionScore') ??
+                                                              0;
+                                                    });
+                                                  });
                                                 },
                                                 borderRadius: const BorderRadius
                                                     .only(
@@ -1364,7 +1993,18 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                       builder: (context) =>
                                                           const CriteriaScreen(),
                                                     ),
-                                                  );
+                                                  ).then((value) async {
+                                                    // Recharger la page après le retour
+                                                    final prefs =
+                                                        await SharedPreferences
+                                                            .getInstance();
+                                                    setState(() {
+                                                      _considerAsAmerican =
+                                                          prefs.getBool(
+                                                                  'considerAsAmerican') ??
+                                                              false;
+                                                    });
+                                                  });
                                                 },
                                                 borderRadius: const BorderRadius
                                                     .only(
