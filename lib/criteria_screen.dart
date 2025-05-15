@@ -1,8 +1,30 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:detrumpezvous/generated/l10n.dart'; // Import pour la localisation
+import 'package:detrumpezvous/generated/l10n.dart';
+import 'package:shared_preferences/shared_preferences.dart'; // Import pour la localisation
 
-class CriteriaScreen extends StatelessWidget {
+class CriteriaScreen extends StatefulWidget {
   const CriteriaScreen({super.key});
+
+  @override
+  State<CriteriaScreen> createState() => _CriteriaScreenState();
+}
+
+class _CriteriaScreenState extends State<CriteriaScreen> {
+  bool _considerAsAmerican = false; // État du bouton On/Off
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPreference();
+  }
+
+  Future<void> _loadPreference() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _considerAsAmerican = prefs.getBool('considerAsAmerican') ?? false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +36,17 @@ class CriteriaScreen extends StatelessWidget {
         elevation: 1, // Légère ombre
       ),
       backgroundColor: Colors.white, // Fond de la page
-      body: SingleChildScrollView( // Permet le défilement si le contenu est long
+      body: SingleChildScrollView(
+        // Permet le défilement si le contenu est long
         padding: const EdgeInsets.all(20.0), // Padding autour du contenu
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start, // Aligner à gauche
           children: [
             Text(
               S.of(context).companyCriteriaContent,
-              style: Theme.of(context).textTheme.bodyLarge, // Style pour le texte principal
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge, // Style pour le texte principal
             ),
             const SizedBox(height: 24), // Espace plus grand
 
@@ -41,7 +66,37 @@ class CriteriaScreen extends StatelessWidget {
               explanation: S.of(context).companyUsaExplanation,
               color: Colors.red,
             ),
-             const SizedBox(height: 20), // Espace en bas
+            const SizedBox(height: 20), // Espace en bas
+            // Ajout du bouton On/Off
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  child: Text(
+                    "Consider as American if linked to the USA", // Nouvelle clé de localisation
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                    maxLines: 2, // Limite le texte à une ligne
+                    overflow: TextOverflow
+                        .ellipsis, // Ajoute des points de suspension si le texte est trop long
+                  ),
+                ),
+                CupertinoSwitch(
+                  value: _considerAsAmerican,
+                  activeColor: Colors.red, // Couleur active (rouge pour USA)
+                  onChanged: (bool value) async {
+                    setState(() {
+                      _considerAsAmerican = value;
+                    });
+                    final prefs = await SharedPreferences.getInstance();
+                    await prefs.setBool('considerAsAmerican', value);
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(
+                height: 24), // Espace entre le bouton et les sections
           ],
         ),
       ),
@@ -84,8 +139,8 @@ class CriteriaScreen extends StatelessWidget {
           Text(
             explanation,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              height: 1.4, // Interligne pour meilleure lisibilité
-            ),
+                  height: 1.4, // Interligne pour meilleure lisibilité
+                ),
           ),
         ],
       ),
