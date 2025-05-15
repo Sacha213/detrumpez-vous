@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:logger/logger.dart'; // Assure-toi d'importer Logger si tu l'utilises
-import 'package:detrumpezvous/generated/l10n.dart'; // Importer S
+import 'package:detrumpezvous/generated/l10n.dart';
+import 'package:shared_preferences/shared_preferences.dart'; // Importer S
 
 // Récupère l'instance du logger (si tu l'utilises ailleurs)
 final Logger logger = Logger();
@@ -27,6 +28,13 @@ class _ReportProblemScreenState extends State<ReportProblemScreen> {
       TextEditingController(); // Nouveau contrôleur pour l'email
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isSending = false;
+  int _contributionScore = 0; // Score de contribution
+
+  @override
+  void initState() {
+    super.initState();
+    _loadCounters(); // Charge les compteurs, y compris _contributionScore
+  }
 
   @override
   void dispose() {
@@ -34,6 +42,23 @@ class _ReportProblemScreenState extends State<ReportProblemScreen> {
     emailController
         .dispose(); // N'oubliez pas de disposer le nouveau contrôleur
     super.dispose();
+  }
+
+  Future<void> _loadCounters() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _contributionScore =
+          prefs.getInt('contributionScore') ?? 0; // Charge le score
+    });
+  }
+
+  Future<void> _incrementContributionScore(int points) async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _contributionScore += points; // Ajoute les points au score actuel
+    });
+    await prefs.setInt(
+        'contributionScore', _contributionScore); // Sauvegarde le score
   }
 
   Future<void> _sendReport() async {
@@ -72,6 +97,8 @@ class _ReportProblemScreenState extends State<ReportProblemScreen> {
             backgroundColor: Colors.green,
           ),
         );
+
+        _incrementContributionScore(5);
 
         // Ferme la page après succès
         Navigator.pop(context);
