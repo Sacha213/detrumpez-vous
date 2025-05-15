@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:logger/logger.dart'; // Assure-toi d'importer Logger
-import 'package:detrumpezvous/generated/l10n.dart'; // Importer S
+import 'package:detrumpezvous/generated/l10n.dart';
+import 'package:shared_preferences/shared_preferences.dart'; // Importer S
 
 // Récupère l'instance du logger
 final Logger logger = Logger();
@@ -33,12 +34,13 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
   // Contrôleurs pour chaque champ
   final TextEditingController brandController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
-    final TextEditingController originController = TextEditingController();
+  final TextEditingController originController = TextEditingController();
   final TextEditingController parentCompanyController = TextEditingController();
   final TextEditingController parentOriginController = TextEditingController();
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isSending = false;
+  int _contributionScore = 0; // Score de contribution
 
   @override
   void initState() {
@@ -48,6 +50,7 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
     originController.text = widget.initialOrigin;
     parentCompanyController.text = widget.initialParentCompany;
     parentOriginController.text = widget.initialparentOrigin;
+    _loadCounters();
   }
 
   @override
@@ -59,6 +62,23 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
     parentCompanyController.dispose();
     parentOriginController.dispose();
     super.dispose();
+  }
+
+  Future<void> _loadCounters() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _contributionScore =
+          prefs.getInt('contributionScore') ?? 0; // Charge le score
+    });
+  }
+
+  Future<void> _incrementContributionScore(int points) async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _contributionScore += points; // Ajoute les points au score actuel
+    });
+    await prefs.setInt(
+        'contributionScore', _contributionScore); // Sauvegarde le score
   }
 
   Future<void> _submitProductInfo() async {
@@ -84,8 +104,8 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
           'barcode': widget.barcode,
           'brand': brand,
           'description': description,
-          'origin': origin, 
-          'parent_company': parentCompany, 
+          'origin': origin,
+          'parent_company': parentCompany,
           'parent_origin': parentOrigin,
           'timestamp': FieldValue.serverTimestamp(),
           // Tu pourrais ajouter l'ID utilisateur si tu as l'authentification
@@ -100,6 +120,8 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
             backgroundColor: Colors.green,
           ),
         );
+
+        _incrementContributionScore(10); // Incrémente le score de contribution
 
         Navigator.pop(context); // Ferme la page
       } catch (e) {
@@ -219,7 +241,8 @@ class _AddProductInfoScreenState extends State<AddProductInfoScreen> {
                   hint: s.descriptionHint, // Utiliser S
                   icon: Icons.description_outlined,
                   maxLines: 3, // Permet plus de texte pour la description
-                ),_buildTextField(
+                ),
+                _buildTextField(
                   controller: originController,
                   label: s.originLabel, // Utiliser S
                   hint: s.parentOriginHint, // Utiliser S
