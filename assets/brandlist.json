@@ -418,7 +418,7 @@
         "description": "Shampooing anti-pelliculaire développé par P&G, emblématique de l'innovation américaine en soins capillaires.",
         "source": "Wikipedia: Procter & Gamble",
         "parentCompany": "Procter & Gamble",
-        "normalizedName": "head_shoulders",
+        "normalizedName": "head_and_shoulders",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -1255,7 +1255,7 @@
         "description": "Produit de General Mills qui reflète l'innovation américaine en matière de produits de commodité.",
         "source": "Wikipedia: General Mills",
         "parentCompany": "General Mills",
-        "normalizedName": "knack_back",
+        "normalizedName": "knack_and_back",
         "parentOrigin": "US",
         "origin": "DE"
     },
@@ -1858,7 +1858,7 @@
         "description": "Confiserie mondialement reconnue, née aux États-Unis et propriété de Mars, symbole de l'innovation américaine en chocolat.",
         "source": "Wikipedia: Mars, Incorporated",
         "parentCompany": "Mars",
-        "normalizedName": "mms",
+        "normalizedName": "mandms",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -2272,7 +2272,7 @@
         "description": "Produit phare de Kraft, symbole de la cuisine américaine avec sa version 'boxed dinner' très populaire aux USA.",
         "source": "Wikipedia: Kraft Foods Group",
         "parentCompany": "Kraft",
-        "normalizedName": "kraft_macaroni_fromage",
+        "normalizedName": "kraft_macaroni_and_fromage",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -2425,7 +2425,7 @@
         "description": "Marque de soins dermatologiques développée aux USA par Johnson & Johnson, dédiée aux soins du visage.",
         "source": "Wikipedia: Johnson & Johnson",
         "parentCompany": "Johnson & Johnson",
-        "normalizedName": "clean_clear",
+        "normalizedName": "clean_and_clear",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -4097,20 +4097,11 @@
         "republicanContribution":1610000
     },
     {
-        "name": "Head and shoulders",
-        "description": "Marque américaine de shampooing anti-pelliculaire appartenant à Procter & Gamble.",
-        "source": "Wikipedia: Procter & Gamble",
-        "parentCompany": "Procter & Gamble",
-        "normalizedName": "head_shoulders",
-        "parentOrigin": "US",
-        "origin": "US"
-    },
-    {
         "name": "Johnson and Johnson",
         "description": "Groupe américain majeur dans les soins de santé et produits de consommation.",
         "source": "Wikipedia: Johnson & Johnson",
         "parentCompany": "Johnson & Johnson",
-        "normalizedName": "johnson_johnson",
+        "normalizedName": "johnson_and_johnson",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -4164,7 +4155,7 @@
         "description": "Groupe américain leader dans les produits de consommation, derrière de nombreuses marques iconiques.",
         "source": "Wikipedia: Procter & Gamble",
         "parentCompany": "Procter & Gamble",
-        "normalizedName": "procter_gamble",
+        "normalizedName": "procter_and_gamble",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -4416,7 +4407,7 @@
         "description": "Chaîne américaine de soins corporels et parfumerie, reconnue pour ses innovations en bien-être.",
         "source": "Wikipedia: Bath & Body Works",
         "parentCompany": "Bath & Body Works",
-        "normalizedName": "bath_body_works",
+        "normalizedName": "bath_and_body_works",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -4659,7 +4650,7 @@
         "description": "Entreprise américaine de télécommunications, leader en services de communication.",
         "source": "Wikipedia: AT&T",
         "parentCompany": "AT&T Inc.",
-        "normalizedName": "att",
+        "normalizedName": "atandt",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -4740,7 +4731,7 @@
         "description": "Marque américaine de vêtements, célèbre pour son style casual et son image de marque distinctive.",
         "source": "Wikipedia: Abercrombie & Fitch",
         "parentCompany": "Abercrombie & Fitch",
-        "normalizedName": "abercrombie_fitch",
+        "normalizedName": "abercrombie_and_fitch",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -5542,7 +5533,7 @@
         "source": "Wikipedia: Unilever",
         "parentCompany": "Unilever",
         "parentOrigin": "GB",
-        "normalizedName": "ben_jerrys",
+        "normalizedName": "ben_and_jerrys",
         "origin": "US"
     },
     {
@@ -5704,7 +5695,7 @@
         "source": "Wikipedia: Unilever",
         "parentCompany": "Unilever",
         "parentOrigin": "GB",
-        "normalizedName": "hellmanns_best_foods",
+        "normalizedName": "hellmanns_and_best_foods",
         "origin": "US"
     },
     {
@@ -5866,7 +5857,7 @@
         "source": "Wikipedia: Unilever",
         "parentCompany": "Unilever",
         "parentOrigin": "GB",
-        "normalizedName": "love_beauty_planet",
+        "normalizedName": "love_beauty_and_planet",
         "origin": "US"
     },
     {
@@ -5991,7 +5982,7 @@
         "description": "Dark and Lovely est une marque de soins capillaires. Bien qu'originaire des États-Unis, elle appartient au groupe L'Oréal (basé en France) et n'est donc pas une marque américaine indépendante.",
         "source": "Wikipedia: L'Oréal",
         "parentCompany": "L'Oréal",
-        "normalizedName": "dark_lovely",
+        "normalizedName": "dark_and_lovely",
         "parentOrigin": "FR",
         "origin": "US"
     },
@@ -6360,7 +6351,7 @@
         "description": "Viktor & Rolf est une maison de couture néerlandaise. Ses parfums sont sous licence de L'Oréal Luxe, une division du groupe L'Oréal (basé en France), et ne sont donc pas américains.",
         "source": "Wikipedia: L'Oréal Luxe",
         "parentCompany": "L'Oréal Luxe",
-        "normalizedName": "viktor_rolf",
+        "normalizedName": "viktor_and_rolf",
         "parentOrigin": "FR",
         "origin": "NL"
     },
@@ -8601,7 +8592,7 @@
         "description": "Ancienne marque de biscuits. Marque historique, appartenance incertaine (possiblement liée à Nestlé/Rowntree).",
         "source": "Historical Brands",
         "parentCompany": "Nestlé",
-        "normalizedName": "gray_dunn_biscuits",
+        "normalizedName": "gray_and_dunn_biscuits",
         "parentOrigin": "CH",
         "origin": "GB"
     },
@@ -9087,7 +9078,7 @@
         "description": "Gamme de produits laitiers allégés en sucres et matières grasses, appartenant au groupe français Danone.",
         "parentCompany": "Danone",
         "parentOrigin": "FR",
-        "normalizedName": "light_free",
+        "normalizedName": "light_and_free",
         "source": "Wikipedia : Danone",
         "origin": "FR"
     },
@@ -9276,7 +9267,7 @@
         "description": "Marque britannique de nutrition infantile, appartenant au groupe français Danone.",
         "parentCompany": "Danone",
         "parentOrigin": "FR",
-        "normalizedName": "cowgate",
+        "normalizedName": "cowandgate",
         "source": "Wikipedia : Danone",
         "origin": "GB"
     },
@@ -9850,10 +9841,10 @@
     {
         "name": "Parodontax",
         "description": "Dentifrice pour la santé des gencives.",
-        "parentCompany": "Haleon",
-        "parentOrigin": "DE",
+        "parentCompany": "GlaxoSmithKline",
+        "parentOrigin": "GB",
         "normalizedName": "parodontax",
-        "source": "Wikipedia/Haleon Website",
+        "source": "Wikipedia GlaxoSmithKline",
         "origin": "DE"
     },
     {
@@ -12516,7 +12507,7 @@
         "description": "Multinationale américaine de biens de consommation.",
         "parentCompany": "Procter & Gamble Co.",
         "parentOrigin": "US",
-        "normalizedName": "procter_gamble_as",
+        "normalizedName": "procter_and_gamble_as",
         "source": "P&G Website",
         "origin": "US"
     },
@@ -12595,7 +12586,7 @@
     {
         "name": "Wasa",
         "description": "Marque suédoise de pain croustillant (Knäckebröd).",
-        "parentCompany": "Barilla Group G. e R. Fratelli S.p.A.",
+        "parentCompany": "Barilla",
         "parentOrigin": "IT",
         "normalizedName": "wasa",
         "source": "Wasa Website/Barilla Website",
@@ -12840,7 +12831,7 @@
         "description": "Marque belge de sauces et condiments.",
         "parentCompany": "GB Foods, S.A.U.",
         "parentOrigin": "ES",
-        "normalizedName": "dl_devos_lemmens",
+        "normalizedName": "dandl_devos_lemmens",
         "source": "D&L Website/GB Foods Website",
         "origin": "BE"
     },
@@ -13173,7 +13164,7 @@
         "description": "Marque française de produits céréaliers bio.",
         "parentCompany": "Ecotone (via Bjorg et Compagnie)",
         "parentOrigin": "NL",
-        "normalizedName": "terres_cereales_bio",
+        "normalizedName": "terres_and_cereales_bio",
         "source": "Ecotone Website",
         "origin": "FR"
     },
@@ -13524,7 +13515,7 @@
         "description": "Marque américaine d'outillage et d'électroménager.",
         "parentCompany": "Stanley Black & Decker, Inc.",
         "parentOrigin": "US",
-        "normalizedName": "black_decker",
+        "normalizedName": "black_and_decker",
         "source": "Black & Decker Website/Stanley Black & Decker Website",
         "origin": "US"
     },
@@ -13765,10 +13756,10 @@
     {
         "name": "Jacquot",
         "description": "Marque française de chocolats et confiseries.",
-        "parentCompany": "Cémoi SA",
-        "parentOrigin": "FR",
+        "parentCompany": "Sweet Products",
+        "parentOrigin": "BE",
         "normalizedName": "jacquot",
-        "source": "Cémoi Website",
+        "source": "Wikipedia : Cémoi",
         "origin": "FR"
     },
     {
@@ -15666,7 +15657,7 @@
         "description": "Marque distributeur",
         "parentCompany": "Coop Group Genossenschaft",
         "parentOrigin": "CH",
-        "normalizedName": "qualite_prix",
+        "normalizedName": "qualite_and_prix",
         "source": "Coop Website/Wikipedia",
         "origin": "CH"
     },
@@ -15792,7 +15783,7 @@
         "description": "Enseigne de distribution et marque distributeur",
         "parentCompany": "Marks and Spencer Group plc",
         "parentOrigin": "GB",
-        "normalizedName": "marks_spencer",
+        "normalizedName": "marks_and_spencer",
         "source": "Marks & Spencer Website/Wikipedia",
         "origin": "GB"
     },
@@ -15999,7 +15990,7 @@
         "description": "Produits laitiers biologiques",
         "parentCompany": "Eurial (Agrial)",
         "parentOrigin": "FR",
-        "normalizedName": "les_300_bio",
+        "normalizedName": "les_300_and_bio",
         "source": "Eurial Website/Agrial Website",
         "origin": "FR"
     },
@@ -16116,7 +16107,7 @@
         "description": "Sauce Worcestershire",
         "parentCompany": "Kraft Heinz Company",
         "parentOrigin": "US",
-        "normalizedName": "lea_perrins",
+        "normalizedName": "lea_and_perrins",
         "source": "Lea & Perrins Website/Kraft Heinz Website",
         "origin": "GB"
     },
@@ -17176,7 +17167,7 @@
     {
         "name": "Crownfield",
         "description": "Marque de distributeur (Céréales - Lidl).",
-        "parentCompany": "Schwarz Gruppe",
+        "parentCompany": "Lidl (Schwarz Gruppe)",
         "parentOrigin": "DE",
         "normalizedName": "crownfield",
         "source": "Wikipedia Schwarz Gruppe",
@@ -17529,7 +17520,7 @@
         "description": "Marque française de céréales bio.",
         "parentCompany": "Favrichon & Vignon SAS",
         "parentOrigin": "FR",
-        "normalizedName": "favrichon_vignon",
+        "normalizedName": "favrichon_and_vignon",
         "source": "Wikipedia Favrichon & Vignon",
         "origin": "FR"
     },
@@ -17727,7 +17718,7 @@
         "description": "B&S est une gamme complète de fruits secs et de graines grillées salées conditionnée dans des barquettes hermétiques.",
         "parentCompany": "AGIDRA",
         "parentOrigin": "FR",
-        "normalizedName": "bs",
+        "normalizedName": "bands",
         "source": "Site officiel AGIDRA",
         "origin": "FR"
     },
@@ -18060,7 +18051,7 @@
         "description": "Marque distributeur de Target Corporation.",
         "source": "Wikipedia: Target Corporation",
         "parentCompany": "Target Corporation",
-        "normalizedName": "good_gather",
+        "normalizedName": "good_and_gather",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -19176,7 +19167,7 @@
         "description": "Marque distributeur d'entrée de gamme de la chaîne allemande Edeka.",
         "source": "Wikipedia: Edeka",
         "parentCompany": "Edeka Zentrale Stiftung & Co. KG",
-        "normalizedName": "edeka_gut_gunstig",
+        "normalizedName": "edeka_gut_and_gunstig",
         "parentOrigin": "DE",
         "origin": "DE"
     },
@@ -19995,7 +19986,7 @@
         "description": "Maison d'édition américaine majeure.",
         "source": "Wikipedia: Simon & Schuster",
         "parentCompany": "Kohlberg Kravis Roberts (KKR)",
-        "normalizedName": "simon_schuster",
+        "normalizedName": "simon_and_schuster",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -20175,7 +20166,7 @@
         "description": "Marque distributeur alimentaire de Marks & Spencer.",
         "source": "Wikipedia: Marks & Spencer",
         "parentCompany": "Marks and Spencer plc",
-        "normalizedName": "m_s",
+        "normalizedName": "mands",
         "parentOrigin": "GB",
         "origin": "GB"
     },
@@ -20202,7 +20193,7 @@
         "description": "Marque américaine de produits à base de bicarbonate de soude (lessive, dentifrice, litière...).",
         "source": "Wikipedia: Arm & Hammer",
         "parentCompany": "Church & Dwight Co., Inc.",
-        "normalizedName": "arm_hammer",
+        "normalizedName": "arm_and_hammer",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -20769,7 +20760,7 @@
         "description": "Marque américaine de thés fins.",
         "source": "Wikipedia: Harney & Sons",
         "parentCompany": "Harney & Sons Fine Teas",
-        "normalizedName": "harney_sons_fine_teas",
+        "normalizedName": "harney_and_sons_fine_teas",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -21022,6 +21013,15 @@
         "source": "Wikipedia: Tesco",
         "parentCompany": "Tesco plc",
         "normalizedName": "tesco",
+        "parentOrigin": "GB",
+        "origin": "GB"
+    },
+    {
+        "name": "Stockwell & Co",
+        "description": "Marque propre de Tesco proposant des produits alimentaires abordables et de qualité.",
+        "source": "Site officiel de Tesco",
+        "parentCompany": "Tesco plc",
+        "normalizedName": "stockwell_and_co",
         "parentOrigin": "GB",
         "origin": "GB"
     },
@@ -21453,7 +21453,7 @@
         "description": "Multinationale américaine de biens de consommation.",
         "source": "Wikipedia: Procter & Gamble",
         "parentCompany": "Procter & Gamble Co.",
-        "normalizedName": "pg",
+        "normalizedName": "pandg",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -22199,8 +22199,8 @@
         "name": "Devos & Lemmens (D&L)",
         "description": "Marque belge de sauces (mayonnaise, condiments).",
         "source": "Wikipedia: Devos Lemmens",
-        "parentCompany": "Continental Foods (GB Foods)",
-        "normalizedName": "devos_lemmens",
+        "parentCompany": "GB Foods",
+        "normalizedName": "devos_and_lemmens",
         "parentOrigin": "ES",
         "origin": "BE"
     },
@@ -22812,7 +22812,7 @@
         "description": "Entreprise autrichienne de confiseries.",
         "source": "Website: Heller & Strauss",
         "parentCompany": "Heller & Strauss GMBH",
-        "normalizedName": "heller_strauss_gmbh",
+        "normalizedName": "heller_and_strauss_gmbh",
         "parentOrigin": "AT",
         "origin": "AT"
     },
@@ -23316,7 +23316,7 @@
         "description": "Marque britannique de produits de beauté et de bain.",
         "source": "Wikipedia: Soap & Glory",
         "parentCompany": "Walgreens Boots Alliance",
-        "normalizedName": "soap_glory",
+        "normalizedName": "soap_and_glory",
         "parentOrigin": "US",
         "origin": "GB"
     },
@@ -23379,7 +23379,7 @@
         "description": "Marque américaine de jus de citron vert de Key West.",
         "source": "Website: Nellie & Joe's",
         "parentCompany": "Concord Foods LLC",
-        "normalizedName": "nellie_joes",
+        "normalizedName": "nellie_and_joes",
         "parentOrigin": "US",
         "origin": "US"
     },
@@ -23649,7 +23649,7 @@
         "description": "Marque écossaise de blended Scotch whisky.",
         "source": "Wikipedia: J&B",
         "parentCompany": "Diageo",
-        "normalizedName": "jb",
+        "normalizedName": "jandb",
         "parentOrigin": "GB",
         "origin": "GB"
     },
@@ -23694,7 +23694,7 @@
         "description": "Division confiserie et snacks du groupe norvégien Orkla.",
         "source": "Wikipedia: Orkla Group",
         "parentCompany": "Orkla ASA",
-        "normalizedName": "orkla_confectionery_snacks",
+        "normalizedName": "orkla_confectionery_and_snacks",
         "parentOrigin": "NO",
         "origin": "NO"
     },
@@ -24234,7 +24234,7 @@
         "description": "Marque suédoise de dattes et snacks à base de dattes.",
         "source": "Website: Dave & Jon's",
         "parentCompany": "Dave & Jon's AB",
-        "normalizedName": "dave_jons",
+        "normalizedName": "dave_and_jons",
         "parentOrigin": "SE",
         "origin": "SE"
     },
@@ -24488,7 +24488,7 @@
         "parentCompany": "Philip Morris International",
         "normalizedName": "terea_turquoise",
         "parentOrigin": "US",
-        "origin": "CH"
+        "origin": "US"
     },
     {
         "name": "Pullmoll",
@@ -24881,8 +24881,8 @@
         "name": "P&W",
         "description": "Marque danoise de rémoulade et condiments.",
         "source": "Scan",
-        "parentCompany": "UNKNOWN",
-        "normalizedName": "pw",
+        "parentCompany": "",
+        "normalizedName": "pandw",
         "parentOrigin": "DK",
         "origin": "DK"
     },
@@ -25071,7 +25071,7 @@
         "description": "Conglomérat singapourien de boissons et produits laitiers.",
         "source": "Wikipedia: Fraser and Neave",
         "parentCompany": "Fraser and Neave, Limited",
-        "normalizedName": "fn",
+        "normalizedName": "fandn",
         "parentOrigin": "SG",
         "origin": "SG"
     },
@@ -25718,7 +25718,7 @@
         "description": "Manufacturer of Japanese food products and spices.",
         "source": "Wikipedia: S&B",
         "parentCompany": "S&B Foods Inc.",
-        "normalizedName": "sb",
+        "normalizedName": "sandb",
         "parentOrigin": "JP",
         "origin": "JP"
       },
@@ -26060,7 +26060,7 @@
         "description": "An assortment of cookies",
         "source": "Wikipedia: Henry Lambert GmbH & Co. KG",
         "parentCompany": "",
-        "normalizedName": "henry_lambert_gmbh_co_kg",
+        "normalizedName": "henry_lambert_gmbh_and_co_kg",
         "parentOrigin": "",
         "origin": "DE"
       },
@@ -27032,7 +27032,7 @@
         "description": "Charles & Alice est un leader français de la fabrication et de la distribution de compotes et de desserts aux fruits.",
         "source": "Wikipedia: Charles & Alice",
         "parentCompany": "Charle & Alice Group",
-        "normalizedName": "charles_alice",
+        "normalizedName": "charles_and_alice",
         "parentOrigin": "FR",
         "origin": "FR"
       },
@@ -27419,7 +27419,7 @@
         "description": "Kaffee Filter",
         "source": "Wikipedia: Gut & Günstig",
         "parentCompany": "Edeka",
-        "normalizedName": "gut_gunstig",
+        "normalizedName": "gut_and_gunstig",
         "parentOrigin": "DE",
         "origin": "DE"
       },
@@ -28121,7 +28121,7 @@
         "description": "Tawny Orange Marmalade",
         "source": "Wikipedia: Wilkin & Sons ltd",
         "parentCompany": "",
-        "normalizedName": "wilkin_sons_ltd",
+        "normalizedName": "wilkin_and_sons_ltd",
         "parentOrigin": "",
         "origin": "GB"
       },
@@ -28304,5 +28304,23 @@
         "normalizedName": "felix_austria",
         "parentOrigin": "NO",
         "origin": "AT"
+    },
+    {
+        "name": "Jolly Cola",
+        "description": "Marque danoise de soda, souvent considérée comme une alternative locale au Coca-Cola.",
+        "parentCompany": "Royal Unibrew",
+        "parentOrigin": "DK",
+        "normalizedName": "jolly cola",
+        "source": "Jolly Cola Website/Royal Unibrew Website",
+        "origin": "DK"
+    },
+    {
+        "name": "Simply...",
+        "description": "Simply est une marque de distributeur de Lidl, proposant une gamme de produits alimentaires et de boissons à prix abordables.",
+        "source": "Site officiel de Lidl",
+        "parentCompany": "Lidl",
+        "normalizedName": "simply...",
+        "parentOrigin": "DE",
+        "origin": "DE"
     }
 ]
