@@ -312,9 +312,9 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
 
   /// Fonction pour normaliser un nom de marque
   String normalizeBrandName(String input) {
-    return removeDiacritics(input.toLowerCase().replaceAll(
-            RegExp(r'\band\b', caseSensitive: false),
-            "")) // Supprimer les accents et "and"
+    return removeDiacritics(input.toLowerCase()
+    .replaceAll(
+            "&", "and")) // Transformer les "&" en "and"
         .replaceAll(
             RegExp(r"[’‘`´®™]"), "") // Supprimer les caractères spéciaux
         .replaceAll(RegExp(r"[\s\-‑]+"),
