@@ -28322,5 +28322,1184 @@
         "normalizedName": "simply...",
         "parentOrigin": "DE",
         "origin": "DE"
-    }
+    },
+    {
+        "name": "Hasbro",
+        "description": "Multinational toy and board game company.",
+        "source": "Wikipedia",
+        "parentCompany": "Hasbro, Inc.",
+        "normalizedName": "hasbro",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Physiodose",
+        "description": "Brand of saline solution products.",
+        "source": "Laboratoires Gilbert website",
+        "parentCompany": "Laboratoires Gilbert",
+        "normalizedName": "physiodose",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Bionade",
+        "description": "Brand of non-alcoholic, organically fermented and carbonated beverages.",
+        "source": "Wikipedia",
+        "parentCompany": "HassiaGruppe",
+        "normalizedName": "bionade",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Nude",
+        "description": "Brazilian brand of oat-based milk alternatives.",
+        "source": "Brand website",
+        "parentCompany": "Nude.",
+        "normalizedName": "nude",
+        "parentOrigin": "BR",
+        "origin": "BR"
+      },
+      {
+        "name": "Sartori",
+        "description": "Family-owned company specializing in artisan cheeses.",
+        "source": "Wikipedia",
+        "parentCompany": "Sartori Company",
+        "normalizedName": "sartori",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Meijer",
+        "description": "American superstore chain; this entry refers to a Meijer-branded product.",
+        "source": "Wikipedia",
+        "parentCompany": "Meijer Inc.",
+        "normalizedName": "meijer",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "MadeGood",
+        "description": "Brand of organic, allergy-friendly snacks.",
+        "source": "Brand website",
+        "parentCompany": "Riverside Natural Foods Ltd.",
+        "normalizedName": "made_good_red_velvet_soft_baked_cookies",
+        "parentOrigin": "CA",
+        "origin": "CA"
+      },
+      {
+        "name": "Adelholzener",
+        "description": "German brand of mineral water and healing water.",
+        "source": "Wikipedia",
+        "parentCompany": "Adelholzener Alpenquellen GmbH",
+        "normalizedName": "adelholzener",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Grupo Lala",
+        "description": "Mexican dairy company.",
+        "source": "Wikipedia",
+        "parentCompany": "Grupo Lala, S.A.B. de C.V.",
+        "normalizedName": "grupo_lala",
+        "parentOrigin": "MX",
+        "origin": "MX"
+      },
+      {
+        "name": "Perfetti Van Melle",
+        "description": "Italian-Dutch multinational confectionery and gum company.",
+        "source": "Wikipedia",
+        "parentCompany": "Perfetti Van Melle S.p.A.",
+        "normalizedName": "perfetti_van_melle",
+        "parentOrigin": "NL",
+        "origin": "NL"
+      },
+      {
+        "name": "La Belle Chaurienne",
+        "description": "Brand of cassoulet and French prepared meals, produced by Conserverie du Languedoc.",
+        "source": "Brand website",
+        "parentCompany": "Arterris",
+        "normalizedName": "conserverie_du_languedoc",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Alani Nu",
+        "description": "Brand of energy drinks, protein products, and supplements.",
+        "source": "Brand website",
+        "parentCompany": "Congo Brands",
+        "normalizedName": "alani",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Sugar Twin",
+        "description": "Brand of artificial sweeteners.",
+        "source": "Wikipedia",
+        "parentCompany": "B&G Foods",
+        "normalizedName": "sugar_twin",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Churu",
+        "description": "Brand of cat treats, including Churu Bites.",
+        "source": "Brand website",
+        "parentCompany": "Inaba Foods Company",
+        "normalizedName": "churu_bites",
+        "parentOrigin": "JP",
+        "origin": "JP"
+      },
+      {
+        "name": "Sharwood's",
+        "description": "British brand of Asian food products, including cooking sauces.",
+        "source": "Wikipedia",
+        "parentCompany": "Premier Foods plc",
+        "normalizedName": "shareoods",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Sharwood's",
+        "description": "British brand of Asian food products, including cooking sauces.",
+        "source": "Wikipedia",
+        "parentCompany": "Premier Foods plc",
+        "normalizedName": "sharwoods",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Laqueuille",
+        "description": "Brand of spring water, often sold by E.Leclerc.",
+        "source": "Retailer website",
+        "parentCompany": "Mouvement E.Leclerc (via Scamark)",
+        "normalizedName": "laqueuille",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Rocks",
+        "description": "British brand of organic squashes and cordials.",
+        "source": "Brand website",
+        "parentCompany": "SHS Group",
+        "normalizedName": "rocks",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Maruchan",
+        "description": "Brand of instant ramen noodles and other Japanese food products.",
+        "source": "Wikipedia",
+        "parentCompany": "Toyo Suisan Kaisha, Ltd.",
+        "normalizedName": "maruchan_inc",
+        "parentOrigin": "JP",
+        "origin": "JP"
+      },
+      {
+        "name": "M&M's Minis",
+        "description": "Smaller version of M&M's chocolate candies.",
+        "source": "Wikipedia",
+        "parentCompany": "Mars, Incorporated",
+        "normalizedName": "mandms_minis",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Carré Frais",
+        "description": "French brand of fresh, lightly salted cheese.",
+        "source": "Brand website",
+        "parentCompany": "Savencia Fromage & Dairy",
+        "normalizedName": "carre_frais",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Kamill",
+        "description": "German brand of hand and nail creams.",
+        "source": "Brand website",
+        "parentCompany": "Burnus GmbH",
+        "normalizedName": "kamill",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Eurospin",
+        "description": "Italian discount store chain; this entry refers to an Eurospin-branded product.",
+        "source": "Wikipedia",
+        "parentCompany": "Eurospin Italia S.p.A.",
+        "normalizedName": "eurospin_italia_spa",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Buderim Ginger",
+        "description": "Australian company known for ginger products.",
+        "source": "Wikipedia",
+        "parentCompany": "Buderim Group Limited",
+        "normalizedName": "buderim_ginger",
+        "parentOrigin": "AU",
+        "origin": "AU"
+      },
+      {
+        "name": "Bendicks",
+        "description": "British brand of dark chocolates, known for Bittermints.",
+        "source": "Wikipedia",
+        "parentCompany": "August Storck KG",
+        "normalizedName": "bendicks",
+        "parentOrigin": "DE",
+        "origin": "GB"
+      },
+      {
+        "name": "GUM",
+        "description": "Brand of oral hygiene products.",
+        "source": "Wikipedia",
+        "parentCompany": "Sunstar Group",
+        "normalizedName": "gum",
+        "parentOrigin": "JP",
+        "origin": "US"
+      },
+      {
+        "name": "Mont Roucous",
+        "description": "French brand of natural mineral water.",
+        "source": "Wikipedia",
+        "parentCompany": "Danone S.A.",
+        "normalizedName": "mont_roucous",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Rotring",
+        "description": "German brand of technical drawing instruments and writing tools.",
+        "source": "Wikipedia",
+        "parentCompany": "Newell Brands",
+        "normalizedName": "rotring",
+        "parentOrigin": "US",
+        "origin": "DE"
+      },
+      {
+        "name": "Egelykke",
+        "description": "Danish dairy brand, associated with Salling Group and Arla Foods.",
+        "source": "Retailer information",
+        "parentCompany": "Salling Group / Arla Foods",
+        "normalizedName": "egelykke",
+        "parentOrigin": "DK",
+        "origin": "DK"
+      },
+      {
+        "name": "Salatmesteren",
+        "description": "Danish brand of salads and dressings.",
+        "source": "Brand website",
+        "parentCompany": "Good Food Group A/S",
+        "normalizedName": "salatmesteren",
+        "parentOrigin": "DK",
+        "origin": "DK"
+      },
+      {
+        "name": "Marigold",
+        "description": "British brand of health foods, including Engevita nutritional yeast.",
+        "source": "Brand website",
+        "parentCompany": "Marigold Health Foods Ltd.",
+        "normalizedName": "marigold",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Lorina",
+        "description": "French brand of artisanal lemonade.",
+        "source": "Wikipedia",
+        "parentCompany": "Royal Unibrew A/S",
+        "normalizedName": "lorina",
+        "parentOrigin": "DK",
+        "origin": "FR"
+      },
+      {
+        "name": "Lergrytan",
+        "description": "Swedish brand of cold sauces from Jämtland.",
+        "source": "Brand website",
+        "parentCompany": "Lergrytan i Kluk AB",
+        "normalizedName": "lergrytan",
+        "parentOrigin": "SE",
+        "origin": "SE"
+      },
+      {
+        "name": "Mercurochrome",
+        "description": "French brand of first aid and healthcare products.",
+        "source": "Wikipedia",
+        "parentCompany": "Groupe Urgo",
+        "normalizedName": "mercurochrome",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Jozo",
+        "description": "Dutch brand of salt products.",
+        "source": "Wikipedia",
+        "parentCompany": "Nouryon",
+        "normalizedName": "jozo",
+        "parentOrigin": "NL",
+        "origin": "NL"
+      },
+      {
+        "name": "Uchibori",
+        "description": "Japanese brand of vinegar.",
+        "source": "Brand website",
+        "parentCompany": "Uchibori Jōzō K.K.",
+        "normalizedName": "uchibori",
+        "parentOrigin": "JP",
+        "origin": "JP"
+      },
+      {
+        "name": "OUTLAWZ FOOD",
+        "description": "Swiss company making plant-based food products.",
+        "source": "Brand website",
+        "parentCompany": "Outlawz Food AG",
+        "normalizedName": "outlawz_food",
+        "parentOrigin": "CH",
+        "origin": "CH"
+      },
+      {
+        "name": "Burt's Bees",
+        "description": "American brand of personal care products.",
+        "source": "Wikipedia",
+        "parentCompany": "The Clorox Company",
+        "normalizedName": "burts_bees",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Barkleys",
+        "description": "Brand of mints with an American-inspired image.",
+        "source": "Brand website",
+        "parentCompany": "Tuttle & Company B.V.",
+        "normalizedName": "barkleys",
+        "parentOrigin": "NL",
+        "origin": "NL"
+      },
+      {
+        "name": "Chupa Chups",
+        "description": "Spanish brand of lollipops and other confectionery.",
+        "source": "Wikipedia",
+        "parentCompany": "Perfetti Van Melle S.p.A.",
+        "normalizedName": "chupa_chupps",
+        "parentOrigin": "NL",
+        "origin": "ES"
+      },
+      {
+        "name": "Elle & Vire",
+        "description": "French brand of dairy products.",
+        "source": "Wikipedia",
+        "parentCompany": "Savencia Fromage & Dairy",
+        "normalizedName": "elleandvire",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Hemelinger Bier",
+        "description": "German beer brand.",
+        "source": "Brauerei website",
+        "parentCompany": "Hofbrauhaus Wolters GmbH",
+        "normalizedName": "hemelinger_bier",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Hemelinger",
+        "description": "German beer brand.",
+        "source": "Brauerei website",
+        "parentCompany": "Hofbrauhaus Wolters GmbH",
+        "normalizedName": "hemelinger",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "La Tua Farina",
+        "description": "Italian brand of flour, including polenta.",
+        "source": "Brand website",
+        "parentCompany": "Molino Pasini S.p.A.",
+        "normalizedName": "la_tua_farina",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Blue Keld",
+        "description": "British brand of spring water and flavored drinks.",
+        "source": "Brand website",
+        "parentCompany": "Blue Keld Ltd.",
+        "normalizedName": "blue_keld",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Corine de Farme",
+        "description": "French brand of cosmetic and personal care products.",
+        "source": "Wikipedia",
+        "parentCompany": "Laboratoires Sarbec",
+        "normalizedName": "corine_de_farmer",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Yörem",
+        "description": "Brand of Turkish and oriental food products.",
+        "source": "Distributor websites",
+        "parentCompany": "",
+        "normalizedName": "yorem",
+        "parentOrigin": "",
+        "origin": "TR"
+      },
+      {
+        "name": "Die Käsemacher",
+        "description": "Austrian company producing cheese specialties.",
+        "source": "Brand website",
+        "parentCompany": "Die Käsemacher GmbH",
+        "normalizedName": "die_kasemacher",
+        "parentOrigin": "AT",
+        "origin": "AT"
+      },
+      {
+        "name": "Meister Proper",
+        "description": "German brand name for Mr. Clean/Flash, a brand of cleaning products.",
+        "source": "Wikipedia",
+        "parentCompany": "Procter & Gamble",
+        "normalizedName": "meister_proper",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Merci",
+        "description": "German brand of chocolate.",
+        "source": "Wikipedia",
+        "parentCompany": "August Storck KG",
+        "normalizedName": "merci",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Bio Zentrale",
+        "description": "German brand of organic food products.",
+        "source": "Brand website",
+        "parentCompany": "Bio-Zentrale Naturprodukte GmbH",
+        "normalizedName": "bio_zentrale",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Rila",
+        "description": "German brand importing and distributing international food specialties.",
+        "source": "Brand website",
+        "parentCompany": "Rila Feinkost-Importe GmbH & Co. KG",
+        "normalizedName": "rila",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Berief",
+        "description": "German brand of plant-based food products, including soy milk.",
+        "source": "Brand website",
+        "parentCompany": "Berief Food GmbH",
+        "normalizedName": "berief",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Hovis",
+        "description": "British brand of flour and bread; this entry refers to Hovis biscuits.",
+        "source": "Wikipedia",
+        "parentCompany": "Endless LLP (Hovis Ltd)",
+        "normalizedName": "hovis",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Valfleuri",
+        "description": "French brand of Alsatian pasta.",
+        "source": "Brand website",
+        "parentCompany": "Pâtes Valfleuri SAS",
+        "normalizedName": "valfleuri",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Intenso",
+        "description": "German brand of storage media and consumer electronics.",
+        "source": "Brand website",
+        "parentCompany": "Intenso International GmbH",
+        "normalizedName": "intenso",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Pêcheries Sétoises",
+        "description": "French brand of anchovy products.",
+        "source": "Product packaging",
+        "parentCompany": "",
+        "normalizedName": "pecheries_setoises",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Lucky Strike",
+        "description": "American brand of cigarettes.",
+        "source": "Wikipedia",
+        "parentCompany": "British American Tobacco",
+        "normalizedName": "lucky_strike_red_big_pack",
+        "parentOrigin": "GB",
+        "origin": "US"
+      },
+      {
+        "name": "Trumpf Schokolade",
+        "description": "German brand of chocolate.",
+        "source": "Wikipedia",
+        "parentCompany": "Ludwig Schokolade GmbH & Co. KG (Krüger Gruppe)",
+        "normalizedName": "trumpf_schokolade",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Centrale del Latte di Roma",
+        "description": "Italian dairy company.",
+        "source": "Wikipedia",
+        "parentCompany": "Centrale del Latte di Roma S.p.A.",
+        "normalizedName": "centrale_del_latte_di_roma",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Selex",
+        "description": "Italian retail group and brand for private label products.",
+        "source": "Wikipedia",
+        "parentCompany": "Selex Gruppo Commerciale S.p.A.",
+        "normalizedName": "selex",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Simmenthal",
+        "description": "Italian brand of canned meat.",
+        "source": "Wikipedia",
+        "parentCompany": "Bolton Group",
+        "normalizedName": "simmenthal",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Patrona",
+        "description": "Mexican company producing edible vegetable oils.",
+        "source": "Company information",
+        "parentCompany": "Industrial Patrona S.A. de C.V.",
+        "normalizedName": "patrona",
+        "parentOrigin": "MX",
+        "origin": "MX"
+      },
+      {
+        "name": "Icebreaker",
+        "description": "New Zealand brand of merino wool outdoor and sports apparel.",
+        "source": "Wikipedia",
+        "parentCompany": "VF Corporation",
+        "normalizedName": "icebreaker",
+        "parentOrigin": "US",
+        "origin": "NZ"
+      },
+      {
+        "name": "Leo",
+        "description": "Thai beer brand.",
+        "source": "Wikipedia",
+        "parentCompany": "Boon Rawd Brewery",
+        "normalizedName": "leo",
+        "parentOrigin": "TH",
+        "origin": "TH"
+      },
+      {
+        "name": "Dreyer",
+        "description": "German brand of honey.",
+        "source": "Product packaging",
+        "parentCompany": "Fürsten- επίπεδο Reform Vertriebs GmbH",
+        "normalizedName": "dreyer",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Giordano",
+        "description": "Italian wine producer and distributor.",
+        "source": "Brand website",
+        "parentCompany": "Italian Wine Brands S.p.A.",
+        "normalizedName": "giordno",
+        "parentOrigin": "IT",
+        "origin": "IT"
+      },
+      {
+        "name": "Promat",
+        "description": "Brand for hand tools, workshop equipment, and precision tools.",
+        "source": "Brand website",
+        "parentCompany": "Nordwest Handel AG",
+        "normalizedName": "promat",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Avonmore",
+        "description": "Irish brand of dairy products.",
+        "source": "Wikipedia",
+        "parentCompany": "Glanbia plc",
+        "normalizedName": "avonmore",
+        "parentOrigin": "IE",
+        "origin": "IE"
+      },
+      {
+        "name": "Sourcy",
+        "description": "Dutch brand of mineral water.",
+        "source": "Wikipedia",
+        "parentCompany": "Vrumona (Heineken N.V.)",
+        "normalizedName": "sourcy",
+        "parentOrigin": "NL",
+        "origin": "NL"
+      },
+      {
+        "name": "Benefiber",
+        "description": "Brand of prebiotic fiber supplements.",
+        "source": "Wikipedia",
+        "parentCompany": "Haleon",
+        "normalizedName": "benefiber",
+        "parentOrigin": "GB",
+        "origin": "US"
+      },
+      {
+        "name": "Naked Juice",
+        "description": "American brand of juices and smoothies.",
+        "source": "Wikipedia",
+        "parentCompany": "PAI Partners",
+        "normalizedName": "naked_juice",
+        "parentOrigin": "FR",
+        "origin": "US"
+      },
+      {
+        "name": "Merba",
+        "description": "Dutch bakery producing cookies and pastries.",
+        "source": "Brand website",
+        "parentCompany": "Merba B.V.",
+        "normalizedName": "merba",
+        "parentOrigin": "NL",
+        "origin": "NL"
+      },
+      {
+        "name": "WellAware",
+        "description": "Swedish brand of health supplements and protein products.",
+        "source": "Brand website",
+        "parentCompany": "WellAware Nutrition AB",
+        "normalizedName": "wellaware",
+        "parentOrigin": "SE",
+        "origin": "SE"
+      },
+      {
+        "name": "St Pierre",
+        "description": "International brand of brioche and other bakery products.",
+        "source": "Brand website",
+        "parentCompany": "St Pierre Groupe",
+        "normalizedName": "st_pierre",
+        "parentOrigin": "GB",
+        "origin": "FR"
+      },
+      {
+        "name": "Biscoff",
+        "description": "Brand name for Lotus Bakeries' speculoos cookies and products.",
+        "source": "Wikipedia",
+        "parentCompany": "Lotus Bakeries",
+        "normalizedName": "biscoff",
+        "parentOrigin": "BE",
+        "origin": "BE"
+      },
+      {
+        "name": "Les Crudettes",
+        "description": "French brand of pre-packaged salads and raw vegetables.",
+        "source": "Brand website",
+        "parentCompany": "LSDH (Laiterie de Saint-Denis-de-l'Hôtel)",
+        "normalizedName": "les_crudettes",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Waldquelle",
+        "description": "Austrian brand of mineral water.",
+        "source": "Wikipedia",
+        "parentCompany": "Waldquelle Kobersdorf GmbH",
+        "normalizedName": "waldquelle",
+        "parentOrigin": "AT",
+        "origin": "AT"
+      },
+      {
+        "name": "Childs Farm",
+        "description": "British brand of toiletries for babies and children.",
+        "source": "Brand website",
+        "parentCompany": "PZ Cussons",
+        "normalizedName": "childs_farm",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "De Kroket",
+        "description": "Dutch brand of croquettes and other snacks.",
+        "source": "Product information",
+        "parentCompany": "Frio Food Snacks B.V.",
+        "normalizedName": "de_krojet",
+        "parentOrigin": "NL",
+        "origin": "NL"
+      },
+      {
+        "name": "TAWA",
+        "description": "Brand of cigarettes.",
+        "source": "Industry information",
+        "parentCompany": "Japan Tobacco International (JTI)",
+        "normalizedName": "tawa",
+        "parentOrigin": "JP",
+        "origin": "DE"
+      },
+      {
+        "name": "Joya",
+        "description": "Austrian brand of plant-based dairy alternatives (previously 'Jol').",
+        "source": "Brand website",
+        "parentCompany": "Mona Naturprodukte GmbH",
+        "normalizedName": "jol",
+        "parentOrigin": "AT",
+        "origin": "AT"
+      },
+      {
+        "name": "Ramlösa",
+        "description": "Swedish brand of mineral water.",
+        "source": "Wikipedia",
+        "parentCompany": "Carlsberg Group",
+        "normalizedName": "ramlsa",
+        "parentOrigin": "DK",
+        "origin": "SE"
+      },
+      {
+        "name": "The Gym Kitchen",
+        "description": "British brand of high-protein ready meals and food products.",
+        "source": "Brand website",
+        "parentCompany": "The Gym Kitchen",
+        "normalizedName": "the_gym_kitchen",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Golden Circle",
+        "description": "Australian brand of canned fruit, fruit juices, and cordials.",
+        "source": "Wikipedia",
+        "parentCompany": "Kraft Heinz",
+        "normalizedName": "golden_circle",
+        "parentOrigin": "US",
+        "origin": "AU"
+      },
+      {
+        "name": "Delta Foods S.A.",
+        "description": "Greek dairy and food company.",
+        "source": "Wikipedia",
+        "parentCompany": "CVC Capital Partners",
+        "normalizedName": "delta_sa",
+        "parentOrigin": "LU",
+        "origin": "GR"
+      },
+      {
+        "name": "Bill & John",
+        "description": "Brand of peanut butter.",
+        "source": "Product information",
+        "parentCompany": "Groco Food GmbH",
+        "normalizedName": "bill_and_john",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Koninklijke ERU",
+        "description": "Dutch brand of processed cheese spreads.",
+        "source": "Brand website",
+        "parentCompany": "ERU Group B.V.",
+        "normalizedName": "koninklijke_zerk",
+        "parentOrigin": "NL",
+        "origin": "NL"
+      },
+      {
+        "name": "NOA pflanzlich genießen",
+        "description": "German brand of plant-based spreads and food products.",
+        "source": "Brand website",
+        "parentCompany": "Karwendel-Werke Huber GmbH & Co. KG",
+        "normalizedName": "noa_pflanzlich_genieen",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Alterra",
+        "description": "German brand of natural cosmetics, often sold by Rossmann.",
+        "source": "Retailer website",
+        "parentCompany": "Dirk Rossmann GmbH",
+        "normalizedName": "alterra",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Red Bowl",
+        "description": "Thai brand of herbal inhalers.",
+        "source": "Product information",
+        "parentCompany": "",
+        "normalizedName": "red_bow",
+        "parentOrigin": "",
+        "origin": "TH"
+      },
+      {
+        "name": "Biscotto",
+        "description": "Private label brand for biscuits, often associated with Aldi.",
+        "source": "Retailer information",
+        "parentCompany": "Aldi Nord / Aldi Süd",
+        "normalizedName": "biscotto",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Jia Jia",
+        "description": "Brand of soy sauce and condiments, likely from Hong Kong or China.",
+        "source": "Product information",
+        "parentCompany": "",
+        "normalizedName": "jia",
+        "parentOrigin": "",
+        "origin": "HK"
+      },
+      {
+        "name": "Moulin Méjane",
+        "description": "French producer of virgin walnut oil.",
+        "source": "Producer information",
+        "parentCompany": "Moulin Méjane",
+        "normalizedName": "moulin_mejane",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Vitrex",
+        "description": "German brand of mineral water.",
+        "source": "Brand website",
+        "parentCompany": "Schwarzwald-Sprudel GmbH (Edeka Südwest)",
+        "normalizedName": "vitrex",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Focuswater",
+        "description": "Swiss brand of vitamin water.",
+        "source": "Brand website",
+        "parentCompany": "Rivella Group",
+        "normalizedName": "focus_water",
+        "parentOrigin": "CH",
+        "origin": "CH"
+      },
+      {
+        "name": "Bon Chef",
+        "description": "Swiss brand, often a private label of Migros, for soups and other food products.",
+        "source": "Retailer website",
+        "parentCompany": "Migros Genossenschafts-Bund",
+        "normalizedName": "bon_chef",
+        "parentOrigin": "CH",
+        "origin": "CH"
+      },
+      {
+        "name": "Brita",
+        "description": "German company specializing in water filtration products.",
+        "source": "Wikipedia",
+        "parentCompany": "Brita GmbH",
+        "normalizedName": "brita",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Continente Seleção",
+        "description": "Premium private label brand of Continente, a Portuguese hypermarket chain.",
+        "source": "Retailer website",
+        "parentCompany": "Sonae MC",
+        "normalizedName": "continente_selecao",
+        "parentOrigin": "PT",
+        "origin": "PT"
+      },
+      {
+        "name": "Belmont",
+        "description": "Private label brand for biscuits, often associated with Aldi.",
+        "source": "Retailer information",
+        "parentCompany": "Aldi Stores Ltd (UK & Ireland)",
+        "normalizedName": "belmont",
+        "parentOrigin": "DE",
+        "origin": "GB"
+      },
+      {
+        "name": "High Speed Sport iso",
+        "description": "German brand of isotonic sports drinks.",
+        "source": "Producer website",
+        "parentCompany": "Husumer Mineralbrunnen HMB GmbH & Co. KG",
+        "normalizedName": "high_speed_sport_iso",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Kenco",
+        "description": "British brand of coffee.",
+        "source": "Wikipedia",
+        "parentCompany": "JDE Peet's N.V.",
+        "normalizedName": "kenco",
+        "parentOrigin": "NL",
+        "origin": "GB"
+      },
+      {
+        "name": "Bachelors Smash",
+        "description": "British brand of instant mashed potato.",
+        "source": "Wikipedia",
+        "parentCompany": "Premier Foods plc",
+        "normalizedName": "bachelors_smash",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Talisker",
+        "description": "Brand of single malt Scotch whisky.",
+        "source": "Wikipedia",
+        "parentCompany": "Diageo plc",
+        "normalizedName": "talisker",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Flying Power",
+        "description": "Energy drink brand, often sold by Aldi.",
+        "source": "Retailer information",
+        "parentCompany": "Aldi Nord / Aldi Süd",
+        "normalizedName": "flaing_power",
+        "parentOrigin": "DE",
+        "origin": "PL"
+      },
+      {
+        "name": "Cook's Matches",
+        "description": "Brand of kitchen safety matches.",
+        "source": "Product information",
+        "parentCompany": "Swedish Match",
+        "normalizedName": "cookks_matches",
+        "parentOrigin": "SE",
+        "origin": "SE"
+      },
+      {
+        "name": "Tess",
+        "description": "Brand of tea or food products (context dependent).",
+        "source": "Product information",
+        "parentCompany": "",
+        "normalizedName": "tess",
+        "parentOrigin": "",
+        "origin": "GB"
+      },
+      {
+        "name": "Sonko",
+        "description": "Polish brand and producer of rice cakes, crisps, and other grain products.",
+        "source": "Brand website",
+        "parentCompany": "Sonko Sp. z o.o. (part of NP Foods Group)",
+        "normalizedName": "sonko",
+        "parentOrigin": "LV",
+        "origin": "PL"
+      },
+      {
+        "name": "Green Cola",
+        "description": "Greek brand of cola with stevia.",
+        "source": "Wikipedia",
+        "parentCompany": "Green Cola Hellas S.A.",
+        "normalizedName": "green_cola_hellas",
+        "parentOrigin": "GR",
+        "origin": "GR"
+      },
+      {
+        "name": "Caprice des Dieux",
+        "description": "French brand of soft, oval-shaped cheese.",
+        "source": "Wikipedia",
+        "parentCompany": "Savencia Fromage & Dairy",
+        "normalizedName": "caprice_des_dieux",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Guloso",
+        "description": "Portuguese brand of tomato products.",
+        "source": "Brand website",
+        "parentCompany": "Sugal Group",
+        "normalizedName": "guloso",
+        "parentOrigin": "PT",
+        "origin": "PT"
+      },
+      {
+        "name": "Keen",
+        "description": "American brand of footwear and outdoor accessories.",
+        "source": "Wikipedia",
+        "parentCompany": "Keen Utility (Keen, Inc.)",
+        "normalizedName": "keen",
+        "parentOrigin": "US",
+        "origin": "US"
+      },
+      {
+        "name": "Edmond Fallot",
+        "description": "French producer of mustard, based in Burgundy.",
+        "source": "Brand website",
+        "parentCompany": "La Moutarderie Fallot S.A.S.",
+        "normalizedName": "edmond_fallot",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Bigallet",
+        "description": "French producer of syrups, liqueurs, and aperitifs.",
+        "source": "Brand website",
+        "parentCompany": "Bigallet S.A.S.",
+        "normalizedName": "bigallet",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Autour du Riz",
+        "description": "French brand specializing in organic rice and Asian food products.",
+        "source": "Brand website",
+        "parentCompany": "Autour du Riz",
+        "normalizedName": "autour_du_riz",
+        "parentOrigin": "FR",
+        "origin": "FR"
+      },
+      {
+        "name": "Hema",
+        "description": "Dutch variety store chain; this entry refers to a Hema-branded product.",
+        "source": "Wikipedia",
+        "parentCompany": "Hema B.V.",
+        "normalizedName": "hema",
+        "parentOrigin": "NL",
+        "origin": "NL"
+      },
+      {
+        "name": "Picnic",
+        "description": "Dutch online supermarket offering home delivery.",
+        "source": "Wikipedia",
+        "parentCompany": "Picnic International B.V.",
+        "normalizedName": "picnic",
+        "parentOrigin": "NL",
+        "origin": "NL"
+      },
+      {
+        "name": "Earth's Own",
+        "description": "Canadian brand of plant-based beverages.",
+        "source": "Brand website",
+        "parentCompany": "Agrifoods International Cooperative Ltd.",
+        "normalizedName": "earth_own",
+        "parentOrigin": "CA",
+        "origin": "CA"
+      },
+      {
+        "name": "Teurgoule",
+        "description": "Traditional rice pudding specialty from Normandy, France.",
+        "source": "Culinary references",
+        "parentCompany": "",
+        "normalizedName": "teurgoule",
+        "parentOrigin": "",
+        "origin": "FR"
+      },
+      {
+        "name": "Bärenmarke",
+        "description": "German brand of dairy products, especially condensed milk and fresh milk.",
+        "source": "Wikipedia",
+        "parentCompany": "Hochwald Foods GmbH",
+        "normalizedName": "barenmarke",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "Go-Tan",
+        "description": "Dutch brand of Indonesian and Asian food products.",
+        "source": "Brand website",
+        "parentCompany": "Go-Tan B.V.",
+        "normalizedName": "go_tan",
+        "parentOrigin": "NL",
+        "origin": "NL"
+      },
+      {
+        "name": "Belas",
+        "description": "Greek brand of feta cheese and other dairy products.",
+        "source": "Brand website",
+        "parentCompany": "Belas Foods S.A.",
+        "normalizedName": "belas",
+        "parentOrigin": "GR",
+        "origin": "GR"
+      },
+      {
+        "name": "Almdudler",
+        "description": "Austrian brand of a sweetened herbal lemonade.",
+        "source": "Wikipedia",
+        "parentCompany": "Almdudler Limonade A. & S. Klein GmbH & Co KG",
+        "normalizedName": "almdudler",
+        "parentOrigin": "AT",
+        "origin": "AT"
+      },
+      {
+        "name": "Chipeño",
+        "description": "Swiss brand of sauces, likely chili or jalapeño based.",
+        "source": "Product information",
+        "parentCompany": "",
+        "normalizedName": "chipeno",
+        "parentOrigin": "",
+        "origin": "CH"
+      },
+      {
+        "name": "Hybrid Health",
+        "description": "Brand of food supplements.",
+        "source": "Company information",
+        "parentCompany": "Elite Brand Supply Ltd",
+        "normalizedName": "hybrid_health",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "John West",
+        "description": "Brand of canned fish products.",
+        "source": "Wikipedia",
+        "parentCompany": "Thai Union Group",
+        "normalizedName": "john_west",
+        "parentOrigin": "TH",
+        "origin": "GB"
+      },
+      {
+        "name": "Kaiser",
+        "description": "Austrian brand of throat lozenges and candies.",
+        "source": "Brand website",
+        "parentCompany": "Fr. Kaiser GmbH",
+        "normalizedName": "kaiser",
+        "parentOrigin": "AT",
+        "origin": "AT"
+      },
+      {
+        "name": "Hahnemühle",
+        "description": "German paper manufacturing company, known for fine art papers.",
+        "source": "Wikipedia",
+        "parentCompany": "Hahnemühle FineArt GmbH",
+        "normalizedName": "hahnemuhle",
+        "parentOrigin": "DE",
+        "origin": "DE"
+      },
+      {
+        "name": "The Pink Stuff",
+        "description": "British brand of cleaning products.",
+        "source": "Brand website",
+        "parentCompany": "Star Brands Ltd.",
+        "normalizedName": "the_pink_stuff",
+        "parentOrigin": "GB",
+        "origin": "GB"
+      },
+      {
+        "name": "Chickapea",
+        "description": "Canadian brand of high-protein pasta made from chickpeas and lentils.",
+        "source": "Brand website",
+        "parentCompany": "Chickapea",
+        "normalizedName": "chickapea",
+        "parentOrigin": "CA",
+        "origin": "CA"
+      },
+      {
+        "name": "Maybelline New York",
+        "description": "American brand of makeup products.",
+        "source": "Wikipedia",
+        "parentCompany": "L'Oréal S.A.",
+        "normalizedName": "maybelline_new_york",
+        "parentOrigin": "FR",
+        "origin": "US"
+      }
 ]

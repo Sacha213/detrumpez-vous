@@ -246,7 +246,10 @@ class _EditContributionsScreenState extends State<EditContributionsScreen> {
                   onPressed: _isSubmitting ? null : _submitContributions,
                   child: _isSubmitting
                       ? const CupertinoActivityIndicator(color: Colors.white)
-                      : Text(s.saveContributionsButton),
+                      : Text(
+                          s.saveContributionsButton,
+                          textAlign: TextAlign.center,
+                        ),
                 ),
               ),
             ],
