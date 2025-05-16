@@ -19,13 +19,13 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     // Met à jour le fichier blacklist depuis GitHub puis navigue vers BarcodeScannerScreen
     updateAndSaveBrands().then((_) {
-      Future.delayed(const Duration(seconds: 2), () {
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => const BarcodeScannerScreen()),
-          (route) => false,
-        );
-      });
+      //Future.delayed(const Duration(seconds: 2), () {
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const BarcodeScannerScreen()),
+        (route) => false,
+      );
+      //});
     });
   }
 
