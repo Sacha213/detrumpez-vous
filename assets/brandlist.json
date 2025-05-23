@@ -4463,7 +4463,9 @@
         "parentCompany": "Apple Inc.",
         "normalizedName": "apple",
         "parentOrigin": "US",
-        "origin": "US"
+        "origin": "US",
+        "democratContribution": 4701347,
+        "republicanContribution": 234173
     },
     {
         "name": "Microsoft",
@@ -11120,7 +11122,7 @@
     {
         "name": "Dettol",
         "description": "Produits antiseptiques et désinfectants.",
-        "parentCompany": "Reckitt",
+        "parentCompany": "Reckitt Benckiser Ltd",
         "parentOrigin": "GB",
         "normalizedName": "dettol",
         "source": "Wikipedia/Reckitt Website",
@@ -16234,7 +16236,7 @@
     {
         "name": "SC Johnson",
         "description": "Groupe américain de produits d'entretien et de consommation.",
-        "parentCompany": "SC Johnson",
+        "parentCompany": "Johnson family enterprises",
         "parentOrigin": "US",
         "normalizedName": "sc_johnson",
         "source": "Wikipedia SC Johnson",
@@ -25904,7 +25906,7 @@
         "name": "Whittard",
         "description": "Hot Chocolate, Tea and Coffee Vendor",
         "source": "Wikipedia: Whittard",
-        "parentCompany": "United Kingdom",
+        "parentCompany": "Epic Private Equity",
         "normalizedName": "whittard",
         "parentOrigin": "GB",
         "origin": "DE"
@@ -29060,7 +29062,7 @@
         "origin": "AT"
     },
     {
-        "name": "Childs Farm",
+        "name": "Child's Farm",
         "description": "British brand of toiletries for babies and children.",
         "source": "Brand website",
         "parentCompany": "PZ Cussons",
@@ -29124,7 +29126,7 @@
     },
     {
         "name": "Delta Foods S.A.",
-        "description": "Greek dairy and food company.",
+        "description": "Delta S.A. is a Greek dairy company founded in Athens in 1952 by Aristides Daskalopoulos. It is a member of the Vivartia group, which since 2020 belongs to CVC Capital Partners, based in Luxembourg.",
         "source": "Wikipedia",
         "parentCompany": "CVC Capital Partners",
         "normalizedName": "delta_sa",
@@ -29168,7 +29170,7 @@
         "origin": "DE"
     },
     {
-        "name": "Red Bowl",
+        "name": "Red Bow",
         "description": "Thai brand of herbal inhalers.",
         "source": "Product information",
         "parentCompany": "",
@@ -29186,7 +29188,7 @@
         "origin": "DE"
     },
     {
-        "name": "Jia Jia",
+        "name": "Jia",
         "description": "Brand of soy sauce and condiments, likely from Hong Kong or China.",
         "source": "Product information",
         "parentCompany": "",
@@ -29303,7 +29305,7 @@
         "origin": "PL"
     },
     {
-        "name": "Cook's Matches",
+        "name": "Cookk's Matches",
         "description": "Brand of kitchen safety matches.",
         "source": "Product information",
         "parentCompany": "Swedish Match",
@@ -29330,7 +29332,7 @@
         "origin": "PL"
     },
     {
-        "name": "Green Cola",
+        "name": "Green Cola Hellas",
         "description": "Greek brand of cola with stevia.",
         "source": "Wikipedia",
         "parentCompany": "Green Cola Hellas S.A.",
@@ -29342,7 +29344,7 @@
         "name": "Caprice des Dieux",
         "description": "French brand of soft, oval-shaped cheese.",
         "source": "Wikipedia",
-        "parentCompany": "Savencia Fromage & Dairy",
+        "parentCompany": "Savencia Fromage et Dairy",
         "normalizedName": "caprice_des_dieux",
         "parentOrigin": "FR",
         "origin": "FR"
@@ -29411,7 +29413,7 @@
         "origin": "NL"
     },
     {
-        "name": "Earth's Own",
+        "name": "Earth Own",
         "description": "Canadian brand of plant-based beverages.",
         "source": "Brand website",
         "parentCompany": "Agrifoods International Cooperative Ltd.",
