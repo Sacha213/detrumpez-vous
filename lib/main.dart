@@ -3,6 +3,7 @@ import 'package:detrumpezvous/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'generated/l10n.dart'; // Classe générée pour les traductions
 import 'firebase_options.dart';
 
@@ -16,18 +17,48 @@ class MyHttpOverrides extends HttpOverrides {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   HttpOverrides.global = MyHttpOverrides();
-  runApp(const MyApp());
+  final prefs = await SharedPreferences.getInstance();
+  final code = prefs.getString('languageCode');
+  runApp(MyApp(initialLocale: code == null ? null : Locale(code)));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  final Locale? initialLocale;
+  const MyApp({super.key, this.initialLocale});
+
+  static void setLocale(BuildContext context, Locale newLocale) {
+    final state = context.findAncestorStateOfType<MyAppState>();
+    state?._changeLocale(newLocale);
+  }
+
+  @override
+  MyAppState createState() => MyAppState();
+}
+
+class MyAppState extends State<MyApp> {
+  Locale? _locale;
+  @override
+  void initState() {
+    super.initState();
+    _locale = widget.initialLocale;
+  }
+
+  Future<void> _changeLocale(Locale locale) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('languageCode', locale.languageCode);
+    setState(() => _locale = locale);
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      locale: _locale,
+
       localizationsDelegates: const [
         S.delegate, // Classe générée pour les traductions
         GlobalMaterialLocalizations.delegate,
