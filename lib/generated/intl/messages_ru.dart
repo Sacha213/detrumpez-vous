@@ -25,7 +25,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "Ошибка при отправке: ${error}";
 
-  static String m2(statusCode) =>
+  static String m2(details) =>
+      "Не удалось загрузить фото ингредиентов: ${details}";
+
+  static String m3(details) =>
+      "Не удалось загрузить фото таблицы питания: ${details}";
+
+  static String m4(statusCode) =>
       "Не удалось отправить текстовую информацию (статус ${statusCode}). Проверьте логи для ответа HTML.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -104,6 +110,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
       "Vahiné — французский бренд, но в 2000 году он был приобретен американской группой McCormick. Таким образом, бренд считается американским.",
     ),
+    "considerAsAmericanIfLinkedToUSA": MessageLookupByLibrary.simpleMessage(
+      "Считать американским, если связано с США",
+    ),
+    "contribution": MessageLookupByLibrary.simpleMessage("Вклад"),
     "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
       "Вы можете найти суммы взносов для выборов в США 2024 года на сайте Open Secret.",
     ),
@@ -112,6 +122,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
       "Спасибо! Ваши взносы были отправлены на проверку и будут обработаны в течение 48 часов.",
+    ),
+    "contributorModeInfo": MessageLookupByLibrary.simpleMessage(
+      "Подробнее о режиме участника",
+    ),
+    "counter": MessageLookupByLibrary.simpleMessage("Счетчик"),
+    "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "Счетчик успешно сброшен",
+    ),
+    "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
+      "Страны происхождения",
     ),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "Сумма (демократы)",
@@ -129,11 +149,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Этого бренда нет в нашей базе данных.",
     ),
+    "display": MessageLookupByLibrary.simpleMessage("Экран"),
     "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage(
       "Изменить",
     ),
     "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
       "Редактировать политические взносы для президентских выборов в США 2024 года",
+    ),
+    "enableBoycottMode": MessageLookupByLibrary.simpleMessage(
+      "Включить режим бойкота",
+    ),
+    "enableContributorMode": MessageLookupByLibrary.simpleMessage(
+      "Включить режим участника",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "Произошла ошибка при добавлении продукта.",
@@ -145,8 +172,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, заполните все поля.",
     ),
+    "followUsOnInstagram": MessageLookupByLibrary.simpleMessage(
+      "Подписаться на нас в Instagram",
+    ),
     "food": MessageLookupByLibrary.simpleMessage("Еда"),
     "gallery": MessageLookupByLibrary.simpleMessage("Галерея"),
+    "general": MessageLookupByLibrary.simpleMessage("Общие"),
+    "however": MessageLookupByLibrary.simpleMessage("Однако"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "Ошибка при выборе изображения",
     ),
@@ -159,23 +191,37 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "Ошибка при загрузке изображения.",
     ),
+    "ingredientPhotoUploadFailed": m2,
+    "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
+      "Ингредиенты (необязательно)",
+    ),
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
       "Происхождение ингредиентов",
     ),
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, введите действительное число.",
     ),
+    "languageSelection": MessageLookupByLibrary.simpleMessage("Выбор языка"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Введите бренд",
     ),
+    "mode": MessageLookupByLibrary.simpleMessage("Режим"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "Пока нет альтернатив.",
     ),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "Пока нет политических взносов.",
     ),
+    "nutritionPhotoUploadFailed": m3,
+    "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage(
+      "Таблица пищевой ценности",
+    ),
+    "ok": MessageLookupByLibrary.simpleMessage("ОК"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
     "originLabel": MessageLookupByLibrary.simpleMessage("Страна происхождения"),
+    "originOfIngredients": MessageLookupByLibrary.simpleMessage(
+      "Происхождение ингредиентов",
+    ),
     "other": MessageLookupByLibrary.simpleMessage("Другое"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "Название компании-владельца",
@@ -197,6 +243,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
       "Политические взносы 2024",
     ),
+    "preferences": MessageLookupByLibrary.simpleMessage("Настройки"),
+    "preferencesScreenTitle": MessageLookupByLibrary.simpleMessage("Настройки"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "Мы можем ошибаться. Если вы заметили ошибку, пожалуйста, напишите нам название бренда по электронной почте, чтобы мы могли обновить наш список.",
     ),
@@ -215,6 +263,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "Предложить альтернативу",
+    ),
+    "reportProblem": MessageLookupByLibrary.simpleMessage(
+      "Сообщить о проблеме",
     ),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "Нажмите здесь, чтобы сообщить о проблеме",
@@ -268,6 +319,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Взносы республиканцев",
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("Республиканцы"),
+    "reset": MessageLookupByLibrary.simpleMessage("Сброс"),
+    "resetCounter": MessageLookupByLibrary.simpleMessage("Сбросить счетчик"),
     "safe": MessageLookupByLibrary.simpleMessage("НЕ США"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Этот продукт, похоже, не от американской компании.",
@@ -281,6 +334,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage(
       "Сканируйте штрих‑код",
     ),
+    "scoresResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "Результаты успешно сброшены",
+    ),
+    "searchCountryPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Поиск страны",
+    ),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
       "⚠️ Убедитесь, что вы вводите правильно написанный бренд продуктов питания, чтобы избежать ошибок.",
     ),
@@ -290,6 +349,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectCategoryError": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, выберите категорию.",
     ),
+    "selectCountry": MessageLookupByLibrary.simpleMessage(
+      "Выберите страну/страны…",
+    ),
+    "selectIngredientPhotoError": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, выберите фото ингредиентов.",
+    ),
+    "selectNutritionPhotoError": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, выберите фото таблицы питательных веществ.",
+    ),
+    "selectOriginCountries": MessageLookupByLibrary.simpleMessage(
+      "Выберите страны происхождения",
+    ),
     "selectPhotoError": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, выберите фото.",
     ),
@@ -298,6 +369,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "sendingInfo": MessageLookupByLibrary.simpleMessage(
       "Отправка информации...",
+    ),
+    "settingsTitle": MessageLookupByLibrary.simpleMessage("Настройки"),
+    "showTrumpHead": MessageLookupByLibrary.simpleMessage(
+      "Показать голову Трампа",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage(
       "Источник не найден",
@@ -309,10 +384,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "Продукт успешно добавлен!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("Успех"),
+    "supportCommunity": MessageLookupByLibrary.simpleMessage(
+      "Поддержка и сообщество",
+    ),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "Текстовая информация отправлена, но загрузка изображения не удалась.",
     ),
-    "textSubmissionFailed": m2,
+    "textSubmissionFailed": m4,
+    "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
+      "Не удалось открыть Instagram",
+    ),
+    "unableToOpenLink": MessageLookupByLibrary.simpleMessage(
+      "Не удалось открыть ссылку",
+    ),
     "unknown": MessageLookupByLibrary.simpleMessage("НЕИЗВЕСТНО"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "Продукт, который вы искали, не найден в нашей базе данных.",
@@ -323,6 +407,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "validate": MessageLookupByLibrary.simpleMessage("Подтвердить"),
     "viewCriteria": MessageLookupByLibrary.simpleMessage("Посмотреть критерии"),
+    "visitWebsite": MessageLookupByLibrary.simpleMessage("Посетить наш сайт"),
     "welcome": MessageLookupByLibrary.simpleMessage("Добро пожаловать в"),
   };
 }

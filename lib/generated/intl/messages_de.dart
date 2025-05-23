@@ -25,7 +25,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "Fehler beim Senden: ${error}";
 
-  static String m2(statusCode) =>
+  static String m2(details) =>
+      "Upload des Zutatenfotos fehlgeschlagen: ${details}";
+
+  static String m3(details) =>
+      "Upload des Nährwertfotos fehlgeschlagen: ${details}";
+
+  static String m4(statusCode) =>
       "Fehler beim Senden der Textinformationen (Status ${statusCode}). Überprüfen Sie die Logs für die HTML-Antwort.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -108,6 +114,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
       "Vahiné ist eine französische Marke, wurde aber im Jahr 2000 von der amerikanischen Gruppe McCormick übernommen. Daher gilt die Marke als amerikanisch.",
     ),
+    "considerAsAmericanIfLinkedToUSA": MessageLookupByLibrary.simpleMessage(
+      "Als amerikanisch betrachten, wenn mit den USA verknüpft",
+    ),
+    "contribution": MessageLookupByLibrary.simpleMessage("Beitrag"),
     "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
       "Sie finden die Beitragssummen für die US-Wahl 2024 auf der Website Open Secret.",
     ),
@@ -116,6 +126,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
       "Vielen Dank! Ihre Beiträge wurden zur Überprüfung eingereicht und werden innerhalb von 48 Stunden bearbeitet.",
+    ),
+    "contributorModeInfo": MessageLookupByLibrary.simpleMessage(
+      "Weitere Infos zum Beitragsmodus",
+    ),
+    "counter": MessageLookupByLibrary.simpleMessage("Zähler"),
+    "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "Zähler erfolgreich zurückgesetzt",
+    ),
+    "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
+      "Herkunftsländer",
     ),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "Betrag (Demokraten)",
@@ -133,11 +153,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Diese Marke ist nicht in unserer Datenbank vorhanden.",
     ),
+    "display": MessageLookupByLibrary.simpleMessage("Anzeige"),
     "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage(
       "Bearbeiten",
     ),
     "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
       "Bearbeiten Sie die politischen Beiträge für die US-Präsidentschaftswahl 2024",
+    ),
+    "enableBoycottMode": MessageLookupByLibrary.simpleMessage(
+      "Boykottmodus aktivieren",
+    ),
+    "enableContributorMode": MessageLookupByLibrary.simpleMessage(
+      "Beitragsmodus aktivieren",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "Beim Hinzufügen des Produkts ist ein Fehler aufgetreten.",
@@ -149,8 +176,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
       "Bitte füllen Sie alle Felder aus.",
     ),
+    "followUsOnInstagram": MessageLookupByLibrary.simpleMessage(
+      "Folge uns auf Instagram",
+    ),
     "food": MessageLookupByLibrary.simpleMessage("Lebensmittel"),
     "gallery": MessageLookupByLibrary.simpleMessage("Galerie"),
+    "general": MessageLookupByLibrary.simpleMessage("Allgemein"),
+    "however": MessageLookupByLibrary.simpleMessage("Allerdings"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "Fehler bei der Bildauswahl",
     ),
@@ -161,23 +193,37 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "Fehler beim Hochladen des Bildes.",
     ),
+    "ingredientPhotoUploadFailed": m2,
+    "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
+      "Zutaten (optional)",
+    ),
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
       "Herkunft der Zutaten",
     ),
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "Bitte geben Sie eine gültige Zahl ein.",
     ),
+    "languageSelection": MessageLookupByLibrary.simpleMessage("Sprachauswahl"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Geben Sie eine Marke ein",
     ),
+    "mode": MessageLookupByLibrary.simpleMessage("Modus"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "Noch keine Alternativen.",
     ),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "Noch keine politischen Beiträge.",
     ),
+    "nutritionPhotoUploadFailed": m3,
+    "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage(
+      "Nährwerttabelle",
+    ),
+    "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
     "originLabel": MessageLookupByLibrary.simpleMessage("Herkunftsland"),
+    "originOfIngredients": MessageLookupByLibrary.simpleMessage(
+      "Herkunft der Zutaten",
+    ),
     "other": MessageLookupByLibrary.simpleMessage("Andere"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "Name des Eigentümerunternehmens",
@@ -199,6 +245,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
       "Politische Beiträge 2024",
     ),
+    "preferences": MessageLookupByLibrary.simpleMessage("Präferenzen"),
+    "preferencesScreenTitle": MessageLookupByLibrary.simpleMessage(
+      "Präferenzen",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "Wir können Fehler machen. Wenn Sie einen entdecken, senden Sie uns bitte den Markennamen per E-Mail, damit wir unsere Liste aktualisieren können.",
     ),
@@ -218,6 +268,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "Alternative vorschlagen",
     ),
+    "reportProblem": MessageLookupByLibrary.simpleMessage("Problem melden"),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "Klicken Sie hier, um ein Problem zu melden",
     ),
@@ -270,6 +321,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Republikanische Beiträge",
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("Republikaner"),
+    "reset": MessageLookupByLibrary.simpleMessage("Zurücksetzen"),
+    "resetCounter": MessageLookupByLibrary.simpleMessage("Zähler zurücksetzen"),
     "safe": MessageLookupByLibrary.simpleMessage("NICHT USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Dieses Produkt scheint nicht von einem amerikanischen Unternehmen zu stammen.",
@@ -283,6 +336,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage(
       "Scannen Sie einen Barcode",
     ),
+    "scoresResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "Punkte erfolgreich zurückgesetzt",
+    ),
+    "searchCountryPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Nach einem Land suchen",
+    ),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
       "⚠️ Stellen Sie sicher, dass Sie eine korrekt geschriebene Lebensmittelmarke eingeben, um Fehler zu vermeiden.",
     ),
@@ -292,6 +351,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "selectCategoryError": MessageLookupByLibrary.simpleMessage(
       "Bitte wählen Sie eine Kategorie.",
     ),
+    "selectCountry": MessageLookupByLibrary.simpleMessage(
+      "Land/Länder auswählen…",
+    ),
+    "selectIngredientPhotoError": MessageLookupByLibrary.simpleMessage(
+      "Bitte wählen Sie ein Foto für die Zutaten aus.",
+    ),
+    "selectNutritionPhotoError": MessageLookupByLibrary.simpleMessage(
+      "Bitte wählen Sie ein Foto für die Nährwerttabelle aus.",
+    ),
+    "selectOriginCountries": MessageLookupByLibrary.simpleMessage(
+      "Herkunftsländer auswählen",
+    ),
     "selectPhotoError": MessageLookupByLibrary.simpleMessage(
       "Bitte wählen Sie ein Foto.",
     ),
@@ -300,6 +371,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "sendingInfo": MessageLookupByLibrary.simpleMessage(
       "Informationen werden gesendet...",
+    ),
+    "settingsTitle": MessageLookupByLibrary.simpleMessage("Einstellungen"),
+    "showTrumpHead": MessageLookupByLibrary.simpleMessage(
+      "Trumps Kopf anzeigen",
     ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage(
       "Quelle nicht gefunden",
@@ -311,10 +386,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "Produkt erfolgreich hinzugefügt!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("Erfolg"),
+    "supportCommunity": MessageLookupByLibrary.simpleMessage(
+      "Support & Community",
+    ),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "Textinformationen wurden gesendet, aber das Hochladen des Bildes ist fehlgeschlagen.",
     ),
-    "textSubmissionFailed": m2,
+    "textSubmissionFailed": m4,
+    "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
+      "Instagram konnte nicht geöffnet werden",
+    ),
+    "unableToOpenLink": MessageLookupByLibrary.simpleMessage(
+      "Link konnte nicht geöffnet werden",
+    ),
     "unknown": MessageLookupByLibrary.simpleMessage("UNBEKANNT"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "Das gesuchte Produkt wurde nicht in unserer Datenbank gefunden.",
@@ -325,6 +409,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "validate": MessageLookupByLibrary.simpleMessage("Validieren"),
     "viewCriteria": MessageLookupByLibrary.simpleMessage("Kriterien anzeigen"),
+    "visitWebsite": MessageLookupByLibrary.simpleMessage(
+      "Unsere Website besuchen",
+    ),
     "welcome": MessageLookupByLibrary.simpleMessage("Willkommen bei"),
   };
 }

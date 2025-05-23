@@ -25,7 +25,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "Fejl ved afsendelse: ${error}";
 
-  static String m2(statusCode) =>
+  static String m2(details) =>
+      "Upload af ingrediensfoto mislykkedes: ${details}";
+
+  static String m3(details) =>
+      "Upload af næringstabelbillede mislykkedes: ${details}";
+
+  static String m4(statusCode) =>
       "Kunne ikke sende tekstinformation (status ${statusCode}). Tjek logfiler for HTML-svar.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -102,6 +108,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
       "Vahiné er et fransk mærke, men blev opkøbt af den amerikanske koncern McCormick i 2000. Derfor betragtes mærket som amerikansk.",
     ),
+    "considerAsAmericanIfLinkedToUSA": MessageLookupByLibrary.simpleMessage(
+      "Betragt som amerikansk, hvis forbundet med USA",
+    ),
+    "contribution": MessageLookupByLibrary.simpleMessage("Bidrag"),
     "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
       "Du kan finde bidragsbeløbene til det amerikanske valg 2024 på Open Secret-webstedet.",
     ),
@@ -110,6 +120,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
       "Tak! Dine bidrag er blevet sendt til gennemgang og vil blive behandlet inden for 48 timer.",
+    ),
+    "contributorModeInfo": MessageLookupByLibrary.simpleMessage(
+      "Mere info om bidragertilstand",
+    ),
+    "counter": MessageLookupByLibrary.simpleMessage("Tæller"),
+    "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "Tæller nulstillet",
+    ),
+    "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
+      "Oprindelseslande",
     ),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "Beløb (Demokrater)",
@@ -127,11 +147,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Dette mærke findes ikke i vores database.",
     ),
+    "display": MessageLookupByLibrary.simpleMessage("Visning"),
     "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage(
       "Rediger",
     ),
     "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
       "Rediger de politiske bidrag til det amerikanske præsidentvalg 2024",
+    ),
+    "enableBoycottMode": MessageLookupByLibrary.simpleMessage(
+      "Aktivér boykottilstand",
+    ),
+    "enableContributorMode": MessageLookupByLibrary.simpleMessage(
+      "Aktivér bidragertilstand",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "Der opstod en fejl under tilføjelsen af produktet.",
@@ -143,8 +170,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
       "Udfyld venligst alle felter.",
     ),
+    "followUsOnInstagram": MessageLookupByLibrary.simpleMessage(
+      "Følg os på Instagram",
+    ),
     "food": MessageLookupByLibrary.simpleMessage("Mad"),
     "gallery": MessageLookupByLibrary.simpleMessage("Galleri"),
+    "general": MessageLookupByLibrary.simpleMessage("Generelt"),
+    "however": MessageLookupByLibrary.simpleMessage("Dog"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "Fejl ved valg af billede",
     ),
@@ -153,23 +185,35 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "Fejl ved upload af billede.",
     ),
+    "ingredientPhotoUploadFailed": m2,
+    "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
+      "Ingredienser (valgfrit)",
+    ),
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
       "Ingrediensernes oprindelse",
     ),
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "Indtast venligst et gyldigt nummer.",
     ),
+    "languageSelection": MessageLookupByLibrary.simpleMessage("Sprogvalg"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Indtast et mærke",
     ),
+    "mode": MessageLookupByLibrary.simpleMessage("Tilstand"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "Ingen alternativer endnu.",
     ),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "Ingen politiske bidrag endnu.",
     ),
+    "nutritionPhotoUploadFailed": m3,
+    "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage("Næringstabel"),
+    "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
     "originLabel": MessageLookupByLibrary.simpleMessage("Oprindelsesland"),
+    "originOfIngredients": MessageLookupByLibrary.simpleMessage(
+      "Ingrediensernes oprindelse",
+    ),
     "other": MessageLookupByLibrary.simpleMessage("Andet"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "Navn på ejerselskab",
@@ -189,6 +233,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
       "Politiske bidrag 2024",
     ),
+    "preferences": MessageLookupByLibrary.simpleMessage("Præferencer"),
+    "preferencesScreenTitle": MessageLookupByLibrary.simpleMessage(
+      "Præferencer",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "Vi kan lave fejl. Hvis du opdager en, så send os venligst mærkenavnet via e-mail, så vi kan opdatere vores liste.",
     ),
@@ -207,6 +255,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "Foreslå et alternativ",
+    ),
+    "reportProblem": MessageLookupByLibrary.simpleMessage(
+      "Rapportér et problem",
     ),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "Klik her for at rapportere et problem",
@@ -260,6 +311,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Republikanske bidrag",
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("Republikanere"),
+    "reset": MessageLookupByLibrary.simpleMessage("Nulstil"),
+    "resetCounter": MessageLookupByLibrary.simpleMessage("Nulstil tæller"),
     "safe": MessageLookupByLibrary.simpleMessage("IKKE USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Dette produkt ser ikke ud til at komme fra et amerikansk firma.",
@@ -273,12 +326,28 @@ class MessageLookup extends MessageLookupByLibrary {
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage(
       "Scan en stregkode",
     ),
+    "scoresResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "Score nulstillet",
+    ),
+    "searchCountryPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Søg efter et land",
+    ),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
       "⚠️ Sørg for at indtaste et korrekt stavet fødevaremærke for at undgå fejl.",
     ),
     "selectCategory": MessageLookupByLibrary.simpleMessage("Vælg en kategori"),
     "selectCategoryError": MessageLookupByLibrary.simpleMessage(
       "Vælg venligst en kategori.",
+    ),
+    "selectCountry": MessageLookupByLibrary.simpleMessage("Vælg land(e)…"),
+    "selectIngredientPhotoError": MessageLookupByLibrary.simpleMessage(
+      "Vælg venligst et billede til ingredienserne.",
+    ),
+    "selectNutritionPhotoError": MessageLookupByLibrary.simpleMessage(
+      "Vælg venligst et billede af næringstabellen.",
+    ),
+    "selectOriginCountries": MessageLookupByLibrary.simpleMessage(
+      "Vælg oprindelseslande",
     ),
     "selectPhotoError": MessageLookupByLibrary.simpleMessage(
       "Vælg venligst et billede.",
@@ -287,6 +356,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "sendingInfo": MessageLookupByLibrary.simpleMessage(
       "Sender information...",
     ),
+    "settingsTitle": MessageLookupByLibrary.simpleMessage("Indstillinger"),
+    "showTrumpHead": MessageLookupByLibrary.simpleMessage("Vis Trumps hoved"),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("Kilde ikke fundet"),
     "submissionError": MessageLookupByLibrary.simpleMessage(
       "Fejl under indsendelse.",
@@ -295,10 +366,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "Produkt tilføjet med succes!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("Succes"),
+    "supportCommunity": MessageLookupByLibrary.simpleMessage(
+      "Support & fællesskab",
+    ),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "Tekstinformation blev sendt, men billedupload mislykkedes.",
     ),
-    "textSubmissionFailed": m2,
+    "textSubmissionFailed": m4,
+    "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
+      "Kan ikke åbne Instagram",
+    ),
+    "unableToOpenLink": MessageLookupByLibrary.simpleMessage(
+      "Kan ikke åbne link",
+    ),
     "unknown": MessageLookupByLibrary.simpleMessage("UKENDT"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "Det produkt, du søgte efter, blev ikke fundet i vores database.",
@@ -309,6 +389,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "validate": MessageLookupByLibrary.simpleMessage("Bekræft"),
     "viewCriteria": MessageLookupByLibrary.simpleMessage("Se kriterier"),
+    "visitWebsite": MessageLookupByLibrary.simpleMessage(
+      "Besøg vores hjemmeside",
+    ),
     "welcome": MessageLookupByLibrary.simpleMessage("Velkommen til"),
   };
 }

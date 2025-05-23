@@ -1159,6 +1159,331 @@ class S {
   String get okButtonLabel {
     return Intl.message('OK', name: 'okButtonLabel', desc: '', args: []);
   }
+
+  /// `Origin of Ingredients`
+  String get originOfIngredients {
+    return Intl.message(
+      'Origin of Ingredients',
+      name: 'originOfIngredients',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select country/countries...`
+  String get selectCountry {
+    return Intl.message(
+      'Select country/countries...',
+      name: 'selectCountry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a photo for the ingredients.`
+  String get selectIngredientPhotoError {
+    return Intl.message(
+      'Please select a photo for the ingredients.',
+      name: 'selectIngredientPhotoError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a photo for the nutrition table.`
+  String get selectNutritionPhotoError {
+    return Intl.message(
+      'Please select a photo for the nutrition table.',
+      name: 'selectNutritionPhotoError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ingredients photo upload failed: {details}`
+  String ingredientPhotoUploadFailed(Object details) {
+    return Intl.message(
+      'Ingredients photo upload failed: $details',
+      name: 'ingredientPhotoUploadFailed',
+      desc: '',
+      args: [details],
+    );
+  }
+
+  /// `Nutrition photo upload failed: {details}`
+  String nutritionPhotoUploadFailed(Object details) {
+    return Intl.message(
+      'Nutrition photo upload failed: $details',
+      name: 'nutritionPhotoUploadFailed',
+      desc: '',
+      args: [details],
+    );
+  }
+
+  /// `However`
+  String get however {
+    return Intl.message('However', name: 'however', desc: '', args: []);
+  }
+
+  /// `OK`
+  String get ok {
+    return Intl.message('OK', name: 'ok', desc: '', args: []);
+  }
+
+  /// `Nutrition Fact`
+  String get nutritionTablePhoto {
+    return Intl.message(
+      'Nutrition Fact',
+      name: 'nutritionTablePhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ingredients (optional)`
+  String get ingredientsOptional {
+    return Intl.message(
+      'Ingredients (optional)',
+      name: 'ingredientsOptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select origin countries`
+  String get selectOriginCountries {
+    return Intl.message(
+      'Select origin countries',
+      name: 'selectOriginCountries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Origin Countries`
+  String get countrySelectionScreenTitle {
+    return Intl.message(
+      'Origin Countries',
+      name: 'countrySelectionScreenTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for a country`
+  String get searchCountryPlaceholder {
+    return Intl.message(
+      'Search for a country',
+      name: 'searchCountryPlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settingsTitle {
+    return Intl.message('Settings', name: 'settingsTitle', desc: '', args: []);
+  }
+
+  /// `General`
+  String get general {
+    return Intl.message('General', name: 'general', desc: '', args: []);
+  }
+
+  /// `Language selection`
+  String get languageSelection {
+    return Intl.message(
+      'Language selection',
+      name: 'languageSelection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preferences`
+  String get preferences {
+    return Intl.message('Preferences', name: 'preferences', desc: '', args: []);
+  }
+
+  /// `Contribution`
+  String get contribution {
+    return Intl.message(
+      'Contribution',
+      name: 'contribution',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enable contributor mode`
+  String get enableContributorMode {
+    return Intl.message(
+      'Enable contributor mode',
+      name: 'enableContributorMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More info on contributor mode`
+  String get contributorModeInfo {
+    return Intl.message(
+      'More info on contributor mode',
+      name: 'contributorModeInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Support & Community`
+  String get supportCommunity {
+    return Intl.message(
+      'Support & Community',
+      name: 'supportCommunity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Visit our website`
+  String get visitWebsite {
+    return Intl.message(
+      'Visit our website',
+      name: 'visitWebsite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to open link`
+  String get unableToOpenLink {
+    return Intl.message(
+      'Unable to open link',
+      name: 'unableToOpenLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Follow us on Instagram`
+  String get followUsOnInstagram {
+    return Intl.message(
+      'Follow us on Instagram',
+      name: 'followUsOnInstagram',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unable to open Instagram`
+  String get unableToOpenInstagram {
+    return Intl.message(
+      'Unable to open Instagram',
+      name: 'unableToOpenInstagram',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report a problem`
+  String get reportProblem {
+    return Intl.message(
+      'Report a problem',
+      name: 'reportProblem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preferences`
+  String get preferencesScreenTitle {
+    return Intl.message(
+      'Preferences',
+      name: 'preferencesScreenTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Display`
+  String get display {
+    return Intl.message('Display', name: 'display', desc: '', args: []);
+  }
+
+  /// `Show Trump’s head`
+  String get showTrumpHead {
+    return Intl.message(
+      'Show Trump’s head',
+      name: 'showTrumpHead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Counter`
+  String get counter {
+    return Intl.message('Counter', name: 'counter', desc: '', args: []);
+  }
+
+  /// `Reset counter`
+  String get resetCounter {
+    return Intl.message(
+      'Reset counter',
+      name: 'resetCounter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Counter reset successfully`
+  String get counterResetSuccess {
+    return Intl.message(
+      'Counter reset successfully',
+      name: 'counterResetSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset`
+  String get reset {
+    return Intl.message('Reset', name: 'reset', desc: '', args: []);
+  }
+
+  /// `Scores reset successfully`
+  String get scoresResetSuccess {
+    return Intl.message(
+      'Scores reset successfully',
+      name: 'scoresResetSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mode`
+  String get mode {
+    return Intl.message('Mode', name: 'mode', desc: '', args: []);
+  }
+
+  /// `Enable boycott mode`
+  String get enableBoycottMode {
+    return Intl.message(
+      'Enable boycott mode',
+      name: 'enableBoycottMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Consider as American if linked to the USA`
+  String get considerAsAmericanIfLinkedToUSA {
+    return Intl.message(
+      'Consider as American if linked to the USA',
+      name: 'considerAsAmericanIfLinkedToUSA',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

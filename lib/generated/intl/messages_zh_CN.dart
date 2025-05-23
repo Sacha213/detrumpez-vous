@@ -24,7 +24,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "发送出错：${error}";
 
-  static String m2(statusCode) => "发送文本信息失败（状态 ${statusCode}）。检查日志以获取 HTML 响应。";
+  static String m2(details) => "配料照片上传失败：${details}";
+
+  static String m3(details) => "营养表照片上传失败：${details}";
+
+  static String m4(statusCode) => "发送文本信息失败（状态 ${statusCode}）。检查日志以获取 HTML 响应。";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -78,6 +82,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
       "Vahiné 是一个法国品牌，但在 2000 年被美国 McCormick 集团收购。因此，该品牌被视为美国品牌。",
     ),
+    "considerAsAmericanIfLinkedToUSA": MessageLookupByLibrary.simpleMessage(
+      "如果与美国相关联，则视为美国人",
+    ),
+    "contribution": MessageLookupByLibrary.simpleMessage("贡献"),
     "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
       "您可以在 Open Secret 网站上找到 2024 年美国大选的贡献金额。",
     ),
@@ -85,6 +93,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
       "谢谢！您的贡献已提交审核，将在48小时内处理。",
     ),
+    "contributorModeInfo": MessageLookupByLibrary.simpleMessage("有关贡献者模式的更多信息"),
+    "counter": MessageLookupByLibrary.simpleMessage("计数器"),
+    "counterResetSuccess": MessageLookupByLibrary.simpleMessage("计数器已成功重置"),
+    "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage("原产国"),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "金额（民主党）",
     ),
@@ -95,29 +107,45 @@ class MessageLookup extends MessageLookupByLibrary {
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "我们的数据库中不存在此品牌。",
     ),
+    "display": MessageLookupByLibrary.simpleMessage("显示"),
     "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage("编辑"),
     "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
       "编辑 2024 年美国总统选举的政治捐款",
     ),
+    "enableBoycottMode": MessageLookupByLibrary.simpleMessage("启用抵制模式"),
+    "enableContributorMode": MessageLookupByLibrary.simpleMessage("启用贡献者模式"),
     "errorMessage": MessageLookupByLibrary.simpleMessage("添加产品时出错。"),
     "errorTitle": MessageLookupByLibrary.simpleMessage("错误"),
     "fieldRequiredError": MessageLookupByLibrary.simpleMessage("此字段是必填字段。"),
     "fillAllFields": MessageLookupByLibrary.simpleMessage("请填写所有字段。"),
+    "followUsOnInstagram": MessageLookupByLibrary.simpleMessage(
+      "在 Instagram 上关注我们",
+    ),
     "food": MessageLookupByLibrary.simpleMessage("食品"),
     "gallery": MessageLookupByLibrary.simpleMessage("相册"),
+    "general": MessageLookupByLibrary.simpleMessage("常规"),
+    "however": MessageLookupByLibrary.simpleMessage("但是"),
     "imagePickError": MessageLookupByLibrary.simpleMessage("选择图片时出错"),
     "imageSourceMessage": MessageLookupByLibrary.simpleMessage("选择一个来源"),
     "imageSourceTitle": MessageLookupByLibrary.simpleMessage("图片来源"),
     "imageUploadError": MessageLookupByLibrary.simpleMessage("上传图片时出错。"),
+    "ingredientPhotoUploadFailed": m2,
+    "ingredientsOptional": MessageLookupByLibrary.simpleMessage("配料（可选）"),
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage("配料来源"),
     "invalidNumberError": MessageLookupByLibrary.simpleMessage("请输入有效的数字。"),
+    "languageSelection": MessageLookupByLibrary.simpleMessage("语言选择"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage("输入品牌"),
+    "mode": MessageLookupByLibrary.simpleMessage("模式"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage("尚无替代方案。"),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "尚无政治捐款。",
     ),
+    "nutritionPhotoUploadFailed": m3,
+    "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage("营养表"),
+    "ok": MessageLookupByLibrary.simpleMessage("确定"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("确定"),
     "originLabel": MessageLookupByLibrary.simpleMessage("原产国"),
+    "originOfIngredients": MessageLookupByLibrary.simpleMessage("原料来源"),
     "other": MessageLookupByLibrary.simpleMessage("其他"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage("所有公司的名称"),
     "parentCompanyLabel": MessageLookupByLibrary.simpleMessage("母公司"),
@@ -133,6 +161,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
       "政治捐款 2024",
     ),
+    "preferences": MessageLookupByLibrary.simpleMessage("偏好设置"),
+    "preferencesScreenTitle": MessageLookupByLibrary.simpleMessage("偏好设置"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "我们可能会犯错。如果您发现错误，请通过电子邮件将品牌名称发送给我们，以便我们更新列表。",
     ),
@@ -144,6 +174,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "productNamePlaceholder": MessageLookupByLibrary.simpleMessage("输入产品名称"),
     "productNotFound": MessageLookupByLibrary.simpleMessage("未找到产品"),
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage("提出替代方案"),
+    "reportProblem": MessageLookupByLibrary.simpleMessage("报告问题"),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "点击此处报告问题",
     ),
@@ -184,27 +215,46 @@ class MessageLookup extends MessageLookupByLibrary {
       "共和党贡献",
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("共和党人"),
+    "reset": MessageLookupByLibrary.simpleMessage("重置"),
+    "resetCounter": MessageLookupByLibrary.simpleMessage("重置计数器"),
     "safe": MessageLookupByLibrary.simpleMessage("非美国"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage("该产品似乎不属于美国公司。"),
     "saveContributionsButton": MessageLookupByLibrary.simpleMessage("保存贡献"),
     "savingContributions": MessageLookupByLibrary.simpleMessage("正在保存贡献..."),
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage("扫描条形码"),
+    "scoresResetSuccess": MessageLookupByLibrary.simpleMessage("分数已成功重置"),
+    "searchCountryPlaceholder": MessageLookupByLibrary.simpleMessage("搜索国家"),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
       "⚠️ 请确保输入拼写正确的食品品牌，以避免错误。",
     ),
     "selectCategory": MessageLookupByLibrary.simpleMessage("选择一个类别"),
     "selectCategoryError": MessageLookupByLibrary.simpleMessage("请选择一个类别。"),
+    "selectCountry": MessageLookupByLibrary.simpleMessage("选择国家/地区…"),
+    "selectIngredientPhotoError": MessageLookupByLibrary.simpleMessage(
+      "请选择配料照片。",
+    ),
+    "selectNutritionPhotoError": MessageLookupByLibrary.simpleMessage(
+      "请选择营养表照片。",
+    ),
+    "selectOriginCountries": MessageLookupByLibrary.simpleMessage("选择原产国"),
     "selectPhotoError": MessageLookupByLibrary.simpleMessage("请选择一张照片。"),
     "sendingImage": MessageLookupByLibrary.simpleMessage("正在发送图片..."),
     "sendingInfo": MessageLookupByLibrary.simpleMessage("正在发送信息..."),
+    "settingsTitle": MessageLookupByLibrary.simpleMessage("设置"),
+    "showTrumpHead": MessageLookupByLibrary.simpleMessage("显示特朗普头像"),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("未找到来源"),
     "submissionError": MessageLookupByLibrary.simpleMessage("提交过程中出错。"),
     "successMessage": MessageLookupByLibrary.simpleMessage("产品添加成功！"),
     "successTitle": MessageLookupByLibrary.simpleMessage("成功"),
+    "supportCommunity": MessageLookupByLibrary.simpleMessage("支持与社区"),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "文本信息已发送，但图片上传失败。",
     ),
-    "textSubmissionFailed": m2,
+    "textSubmissionFailed": m4,
+    "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
+      "无法打开 Instagram",
+    ),
+    "unableToOpenLink": MessageLookupByLibrary.simpleMessage("无法打开链接"),
     "unknown": MessageLookupByLibrary.simpleMessage("未知"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "您搜索的产品在我们的数据库中未找到。",
@@ -213,6 +263,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "usaProductMessage": MessageLookupByLibrary.simpleMessage("该产品来自一家美国公司！"),
     "validate": MessageLookupByLibrary.simpleMessage("验证"),
     "viewCriteria": MessageLookupByLibrary.simpleMessage("查看标准"),
+    "visitWebsite": MessageLookupByLibrary.simpleMessage("访问我们的网站"),
     "welcome": MessageLookupByLibrary.simpleMessage("欢迎来到"),
   };
 }

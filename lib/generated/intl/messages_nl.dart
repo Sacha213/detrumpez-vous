@@ -25,7 +25,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "Fout bij verzenden: ${error}";
 
-  static String m2(statusCode) =>
+  static String m2(details) => "Upload ingrediëntenfoto mislukt: ${details}";
+
+  static String m3(details) => "Upload voedingswaardefoto mislukt: ${details}";
+
+  static String m4(statusCode) =>
       "Verzenden van tekstinformatie mislukt (status ${statusCode}). Controleer logs voor HTML-antwoord.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -106,6 +110,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
       "Vahiné is een Frans merk, maar werd in 2000 overgenomen door de Amerikaanse groep McCormick. Het merk wordt dus als Amerikaans beschouwd.",
     ),
+    "considerAsAmericanIfLinkedToUSA": MessageLookupByLibrary.simpleMessage(
+      "Als Amerikaans beschouwen als verbonden met de VS",
+    ),
+    "contribution": MessageLookupByLibrary.simpleMessage("Bijdrage"),
     "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
       "U kunt de bijdragebedragen voor de Amerikaanse verkiezingen van 2024 vinden op de Open Secret-website.",
     ),
@@ -114,6 +122,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
       "Bedankt! Uw bijdragen zijn ter beoordeling ingediend en worden binnen 48 uur verwerkt.",
+    ),
+    "contributorModeInfo": MessageLookupByLibrary.simpleMessage(
+      "Meer info over de bijdragermodus",
+    ),
+    "counter": MessageLookupByLibrary.simpleMessage("Teller"),
+    "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "Teller succesvol gereset",
+    ),
+    "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
+      "Herkomstlanden",
     ),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "Bedrag (Democraten)",
@@ -131,11 +149,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "Dit merk is niet aanwezig in onze database.",
     ),
+    "display": MessageLookupByLibrary.simpleMessage("Weergave"),
     "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage(
       "Bewerken",
     ),
     "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
       "Bewerk de politieke bijdragen voor de Amerikaanse presidentsverkiezingen van 2024",
+    ),
+    "enableBoycottMode": MessageLookupByLibrary.simpleMessage(
+      "Boycotmodus inschakelen",
+    ),
+    "enableContributorMode": MessageLookupByLibrary.simpleMessage(
+      "Bijdragermodus inschakelen",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "Er is een fout opgetreden bij het toevoegen van het product.",
@@ -147,8 +172,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
       "Vul alstublieft alle velden in.",
     ),
+    "followUsOnInstagram": MessageLookupByLibrary.simpleMessage(
+      "Volg ons op Instagram",
+    ),
     "food": MessageLookupByLibrary.simpleMessage("Voedsel"),
     "gallery": MessageLookupByLibrary.simpleMessage("Galerij"),
+    "general": MessageLookupByLibrary.simpleMessage("Algemeen"),
+    "however": MessageLookupByLibrary.simpleMessage("Echter"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "Fout bij het selecteren van de afbeelding",
     ),
@@ -157,23 +187,39 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "Fout bij het uploaden van de afbeelding.",
     ),
+    "ingredientPhotoUploadFailed": m2,
+    "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
+      "Ingrediënten (optioneel)",
+    ),
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
       "Afkomst van ingrediënten",
     ),
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "Voer een geldig nummer in.",
     ),
+    "languageSelection": MessageLookupByLibrary.simpleMessage(
+      "Taal selecteren",
+    ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Voer een merk in",
     ),
+    "mode": MessageLookupByLibrary.simpleMessage("Modus"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "Nog geen alternatieven.",
     ),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "Nog geen politieke bijdragen.",
     ),
+    "nutritionPhotoUploadFailed": m3,
+    "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage(
+      "Voedingswaardetabel",
+    ),
+    "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
     "originLabel": MessageLookupByLibrary.simpleMessage("Land van herkomst"),
+    "originOfIngredients": MessageLookupByLibrary.simpleMessage(
+      "Oorsprong van ingrediënten",
+    ),
     "other": MessageLookupByLibrary.simpleMessage("Overig"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "Naam van het eigenaarsbedrijf",
@@ -192,6 +238,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "photo": MessageLookupByLibrary.simpleMessage("Foto"),
     "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
       "Politieke bijdragen 2024",
+    ),
+    "preferences": MessageLookupByLibrary.simpleMessage("Voorkeuren"),
+    "preferencesScreenTitle": MessageLookupByLibrary.simpleMessage(
+      "Voorkeuren",
     ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "We kunnen fouten maken. Als u er een ziet, stuur ons dan een e-mail met de merknaam zodat we onze lijst kunnen bijwerken.",
@@ -212,6 +262,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "Stel een alternatief voor",
     ),
+    "reportProblem": MessageLookupByLibrary.simpleMessage("Meld een probleem"),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "Klik hier om een probleem te melden",
     ),
@@ -264,6 +315,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Republikeinse Bijdragen",
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("Republikeinen"),
+    "reset": MessageLookupByLibrary.simpleMessage("Reset"),
+    "resetCounter": MessageLookupByLibrary.simpleMessage("Teller resetten"),
     "safe": MessageLookupByLibrary.simpleMessage("NIET VS"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Dit product lijkt niet afkomstig te zijn van een Amerikaans bedrijf.",
@@ -277,6 +330,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage(
       "Scan een streepjescode",
     ),
+    "scoresResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "Scores succesvol gereset",
+    ),
+    "searchCountryPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Zoek naar een land",
+    ),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
       "⚠️ Zorg ervoor dat u een correct gespeld voedingsmerk invoert om fouten te voorkomen.",
     ),
@@ -285,6 +344,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectCategoryError": MessageLookupByLibrary.simpleMessage(
       "Selecteer alstublieft een categorie.",
+    ),
+    "selectCountry": MessageLookupByLibrary.simpleMessage(
+      "Selecteer land(en)…",
+    ),
+    "selectIngredientPhotoError": MessageLookupByLibrary.simpleMessage(
+      "Selecteer een foto voor de ingrediënten.",
+    ),
+    "selectNutritionPhotoError": MessageLookupByLibrary.simpleMessage(
+      "Selecteer een foto voor de voedingswaardetabel.",
+    ),
+    "selectOriginCountries": MessageLookupByLibrary.simpleMessage(
+      "Selecteer herkomstlanden",
     ),
     "selectPhotoError": MessageLookupByLibrary.simpleMessage(
       "Selecteer alstublieft een foto.",
@@ -295,6 +366,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "sendingInfo": MessageLookupByLibrary.simpleMessage(
       "Informatie verzenden...",
     ),
+    "settingsTitle": MessageLookupByLibrary.simpleMessage("Instellingen"),
+    "showTrumpHead": MessageLookupByLibrary.simpleMessage("Toon Trumps hoofd"),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage(
       "Bron niet gevonden",
     ),
@@ -305,10 +378,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "Product succesvol toegevoegd!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("Succes"),
+    "supportCommunity": MessageLookupByLibrary.simpleMessage(
+      "Ondersteuning & community",
+    ),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "Tekstinformatie is verzonden, maar het uploaden van de afbeelding is mislukt.",
     ),
-    "textSubmissionFailed": m2,
+    "textSubmissionFailed": m4,
+    "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
+      "Kan Instagram niet openen",
+    ),
+    "unableToOpenLink": MessageLookupByLibrary.simpleMessage(
+      "Kan link niet openen",
+    ),
     "unknown": MessageLookupByLibrary.simpleMessage("ONBEKEND"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "Het gezochte product is niet gevonden in onze database.",
@@ -319,6 +401,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "validate": MessageLookupByLibrary.simpleMessage("Valideren"),
     "viewCriteria": MessageLookupByLibrary.simpleMessage("Bekijk criteria"),
+    "visitWebsite": MessageLookupByLibrary.simpleMessage("Bezoek onze website"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welkom bij"),
   };
 }

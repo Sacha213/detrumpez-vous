@@ -25,7 +25,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "भेजने में त्रुटि: ${error}";
 
-  static String m2(statusCode) =>
+  static String m2(details) => "सामग्री फोटो अपलोड विफल: ${details}";
+
+  static String m3(details) => "पोषण तालिका फोटो अपलोड विफल: ${details}";
+
+  static String m4(statusCode) =>
       "पाठ जानकारी भेजने में विफल (स्थिति ${statusCode})। HTML प्रतिक्रिया के लिए लॉग जांचें।";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -100,6 +104,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
       "वाहिन एक फ्रांसीसी ब्रांड है, लेकिन इसे 2000 में अमेरिकी समूह मैककॉर्मिक द्वारा अधिग्रहित किया गया था। इस प्रकार, ब्रांड को अमेरिकी माना जाता है।",
     ),
+    "considerAsAmericanIfLinkedToUSA": MessageLookupByLibrary.simpleMessage(
+      "यदि अमेरिका से जुड़ा हो तो अमेरिकी के रूप में मानें",
+    ),
+    "contribution": MessageLookupByLibrary.simpleMessage("योगदान"),
     "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
       "आप 2024 अमेरिकी चुनाव के लिए योगदान राशि Open Secret वेबसाइट पर पा सकते हैं।",
     ),
@@ -108,6 +116,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
       "धन्यवाद! आपके योगदान को समीक्षा के लिए भेज दिया गया है और इसे 48 घंटों के भीतर संसाधित किया जाएगा।",
+    ),
+    "contributorModeInfo": MessageLookupByLibrary.simpleMessage(
+      "योगदानकर्ता मोड के बारे में अधिक जानकारी",
+    ),
+    "counter": MessageLookupByLibrary.simpleMessage("गिनती"),
+    "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "गिनती सफलतापूर्वक रीसेट हुई",
+    ),
+    "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
+      "मूल देश",
     ),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "राशि (डेमोक्रेट)",
@@ -123,11 +141,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "यह ब्रांड हमारे डेटाबेस में मौजूद नहीं है।",
     ),
+    "display": MessageLookupByLibrary.simpleMessage("दिखावट"),
     "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage(
       "संपादित करें",
     ),
     "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
       "2024 के अमेरिकी राष्ट्रपति चुनाव के लिए राजनीतिक योगदान संपादित करें",
+    ),
+    "enableBoycottMode": MessageLookupByLibrary.simpleMessage(
+      "बहिष्कार मोड सक्षम करें",
+    ),
+    "enableContributorMode": MessageLookupByLibrary.simpleMessage(
+      "योगदानकर्ता मोड सक्षम करें",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "उत्पाद जोड़ते समय एक त्रुटि हुई।",
@@ -139,8 +164,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
       "कृपया सभी फ़ील्ड भरें।",
     ),
+    "followUsOnInstagram": MessageLookupByLibrary.simpleMessage(
+      "Instagram पर फॉलो करें",
+    ),
     "food": MessageLookupByLibrary.simpleMessage("खाद्य पदार्थ"),
     "gallery": MessageLookupByLibrary.simpleMessage("गैलरी"),
+    "general": MessageLookupByLibrary.simpleMessage("सामान्य"),
+    "however": MessageLookupByLibrary.simpleMessage("हालाँकि"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "छवि चुनने में त्रुटि",
     ),
@@ -151,23 +181,35 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "छवि अपलोड करने में त्रुटि।",
     ),
+    "ingredientPhotoUploadFailed": m2,
+    "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
+      "सामग्री (वैकल्पिक)",
+    ),
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
       "सामग्री की उत्पत्ति",
     ),
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "कृपया एक मान्य संख्या दर्ज करें।",
     ),
+    "languageSelection": MessageLookupByLibrary.simpleMessage("भाषा चयन"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "एक ब्रांड दर्ज करें",
     ),
+    "mode": MessageLookupByLibrary.simpleMessage("मोड"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "अभी तक कोई विकल्प नहीं।",
     ),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "अभी तक कोई राजनीतिक योगदान नहीं।",
     ),
+    "nutritionPhotoUploadFailed": m3,
+    "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage("पोषण तालिका"),
+    "ok": MessageLookupByLibrary.simpleMessage("ठीक है"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("ठीक है"),
     "originLabel": MessageLookupByLibrary.simpleMessage("मूल देश"),
+    "originOfIngredients": MessageLookupByLibrary.simpleMessage(
+      "सामग्री का स्रोत",
+    ),
     "other": MessageLookupByLibrary.simpleMessage("अन्य"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "मालिक कंपनी का नाम",
@@ -187,6 +229,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
       "राजनीतिक योगदान 2024",
     ),
+    "preferences": MessageLookupByLibrary.simpleMessage("प्राथमिकताएँ"),
+    "preferencesScreenTitle": MessageLookupByLibrary.simpleMessage(
+      "प्राथमिकताएँ",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "हम गलतियाँ कर सकते हैं। यदि आपको कोई त्रुटि मिलती है, तो कृपया हमें ब्रांड का नाम ईमेल करें ताकि हम अपनी सूची अपडेट कर सकें।",
     ),
@@ -203,6 +249,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "productNotFound": MessageLookupByLibrary.simpleMessage("उत्पाद नहीं मिला"),
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "एक विकल्प प्रस्तावित करें",
+    ),
+    "reportProblem": MessageLookupByLibrary.simpleMessage(
+      "समस्या रिपोर्ट करें",
     ),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "समस्या की रिपोर्ट करने के लिए यहां क्लिक करें",
@@ -256,6 +305,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "रिपब्लिकन योगदान",
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("रिपब्लिकन्स"),
+    "reset": MessageLookupByLibrary.simpleMessage("रीसेट"),
+    "resetCounter": MessageLookupByLibrary.simpleMessage("गिनती रीसेट करें"),
     "safe": MessageLookupByLibrary.simpleMessage("यूएसए नहीं"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "ऐसा लगता है कि यह उत्पाद किसी अमेरिकी कंपनी का नहीं है।",
@@ -269,12 +320,28 @@ class MessageLookup extends MessageLookupByLibrary {
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage(
       "बारकोड स्कैन करें",
     ),
+    "scoresResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "स्कोर सफलतापूर्वक रीसेट हुए",
+    ),
+    "searchCountryPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "देश खोजें",
+    ),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
       "⚠️ त्रुटियों से बचने के लिए सही वर्तनी वाला खाद्य ब्रांड दर्ज करना सुनिश्चित करें।",
     ),
     "selectCategory": MessageLookupByLibrary.simpleMessage("एक श्रेणी चुनें"),
     "selectCategoryError": MessageLookupByLibrary.simpleMessage(
       "कृपया एक श्रेणी चुनें।",
+    ),
+    "selectCountry": MessageLookupByLibrary.simpleMessage("देश चुनें…"),
+    "selectIngredientPhotoError": MessageLookupByLibrary.simpleMessage(
+      "कृपया सामग्री की फोटो चुनें।",
+    ),
+    "selectNutritionPhotoError": MessageLookupByLibrary.simpleMessage(
+      "कृपया पोषण तालिका की फोटो चुनें।",
+    ),
+    "selectOriginCountries": MessageLookupByLibrary.simpleMessage(
+      "मूल देश चुनें",
     ),
     "selectPhotoError": MessageLookupByLibrary.simpleMessage(
       "कृपया एक तस्वीर चुनें।",
@@ -285,6 +352,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "sendingInfo": MessageLookupByLibrary.simpleMessage(
       "जानकारी भेजी जा रही है...",
     ),
+    "settingsTitle": MessageLookupByLibrary.simpleMessage("सेटिंग्स"),
+    "showTrumpHead": MessageLookupByLibrary.simpleMessage(
+      "ट्रम्प का चेहरा दिखाएं",
+    ),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("स्रोत नहीं मिला"),
     "submissionError": MessageLookupByLibrary.simpleMessage(
       "प्रस्तुत करने के दौरान त्रुटि।",
@@ -293,10 +364,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "उत्पाद सफलतापूर्वक जोड़ा गया!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("सफलता"),
+    "supportCommunity": MessageLookupByLibrary.simpleMessage(
+      "समर्थन और समुदाय",
+    ),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "पाठ जानकारी भेजी गई थी, लेकिन छवि अपलोड विफल रही।",
     ),
-    "textSubmissionFailed": m2,
+    "textSubmissionFailed": m4,
+    "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
+      "Instagram खोलने में असमर्थ",
+    ),
+    "unableToOpenLink": MessageLookupByLibrary.simpleMessage(
+      "लिंक खोलने में असमर्थ",
+    ),
     "unknown": MessageLookupByLibrary.simpleMessage("अज्ञात"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "आपके द्वारा खोजा गया उत्पाद हमारे डेटाबेस में नहीं मिला।",
@@ -307,6 +387,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "validate": MessageLookupByLibrary.simpleMessage("सत्यापित करें"),
     "viewCriteria": MessageLookupByLibrary.simpleMessage("मानदंड देखें"),
+    "visitWebsite": MessageLookupByLibrary.simpleMessage("हमारी वेबसाइट देखें"),
     "welcome": MessageLookupByLibrary.simpleMessage("में आपका स्वागत है"),
   };
 }

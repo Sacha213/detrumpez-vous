@@ -25,7 +25,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "Error sending: ${error}";
 
-  static String m2(statusCode) =>
+  static String m2(details) => "Ingredients photo upload failed: ${details}";
+
+  static String m3(details) => "Nutrition photo upload failed: ${details}";
+
+  static String m4(statusCode) =>
       "Failed to send text information (status ${statusCode}). Check logs for HTML response.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -100,6 +104,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
       "Vahiné is a French brand but was acquired by the American group McCormick in 2000. Thus, the brand is considered American.",
     ),
+    "considerAsAmericanIfLinkedToUSA": MessageLookupByLibrary.simpleMessage(
+      "Consider as American if linked to the USA",
+    ),
+    "contribution": MessageLookupByLibrary.simpleMessage("Contribution"),
     "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
       "You can find the contribution amounts for the 2024 US election on the Open Secret website.",
     ),
@@ -108,6 +116,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
       "Thank you! Your contributions have been submitted for review and will be processed within 48 hours.",
+    ),
+    "contributorModeInfo": MessageLookupByLibrary.simpleMessage(
+      "More info on contributor mode",
+    ),
+    "counter": MessageLookupByLibrary.simpleMessage("Counter"),
+    "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "Counter reset successfully",
+    ),
+    "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
+      "Origin Countries",
     ),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "Amount (Democrats)",
@@ -125,11 +143,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "This brand is not present in our database.",
     ),
+    "display": MessageLookupByLibrary.simpleMessage("Display"),
     "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage(
       "Edit",
     ),
     "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
       "Edit the political contributions for the American presidency election 2024",
+    ),
+    "enableBoycottMode": MessageLookupByLibrary.simpleMessage(
+      "Enable boycott mode",
+    ),
+    "enableContributorMode": MessageLookupByLibrary.simpleMessage(
+      "Enable contributor mode",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "An error occurred while adding the product.",
@@ -141,8 +166,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
       "Please fill in all fields.",
     ),
+    "followUsOnInstagram": MessageLookupByLibrary.simpleMessage(
+      "Follow us on Instagram",
+    ),
     "food": MessageLookupByLibrary.simpleMessage("Food"),
     "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
+    "general": MessageLookupByLibrary.simpleMessage("General"),
+    "however": MessageLookupByLibrary.simpleMessage("However"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "Error selecting image",
     ),
@@ -153,23 +183,39 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "Error uploading image.",
     ),
+    "ingredientPhotoUploadFailed": m2,
+    "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
+      "Ingredients (optional)",
+    ),
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
       "Ingredients origin",
     ),
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid number.",
     ),
+    "languageSelection": MessageLookupByLibrary.simpleMessage(
+      "Language selection",
+    ),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Enter a brand",
     ),
+    "mode": MessageLookupByLibrary.simpleMessage("Mode"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "No alternatives yet.",
     ),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "No political contributions yet.",
     ),
+    "nutritionPhotoUploadFailed": m3,
+    "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage(
+      "Nutrition Fact",
+    ),
+    "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
     "originLabel": MessageLookupByLibrary.simpleMessage("Country of origin"),
+    "originOfIngredients": MessageLookupByLibrary.simpleMessage(
+      "Origin of Ingredients",
+    ),
     "other": MessageLookupByLibrary.simpleMessage("Other"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "Name of the owning company",
@@ -191,6 +237,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
       "Political Contributions 2024",
     ),
+    "preferences": MessageLookupByLibrary.simpleMessage("Preferences"),
+    "preferencesScreenTitle": MessageLookupByLibrary.simpleMessage(
+      "Preferences",
+    ),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "We can make mistakes. If you spot one, please email us the brand name so we can update our list.",
     ),
@@ -210,6 +260,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "Propose an alternative",
     ),
+    "reportProblem": MessageLookupByLibrary.simpleMessage("Report a problem"),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "Click here to report an issue",
     ),
@@ -262,6 +313,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Republican Contributions",
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("Republicans"),
+    "reset": MessageLookupByLibrary.simpleMessage("Reset"),
+    "resetCounter": MessageLookupByLibrary.simpleMessage("Reset counter"),
     "safe": MessageLookupByLibrary.simpleMessage("NOT USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "This product does not seem to come from an American company.",
@@ -273,12 +326,30 @@ class MessageLookup extends MessageLookupByLibrary {
       "Saving contributions...",
     ),
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage("Scan a barcode"),
+    "scoresResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "Scores reset successfully",
+    ),
+    "searchCountryPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Search for a country",
+    ),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
       "⚠️ Make sure to enter a correctly spelled food brand to avoid errors.",
     ),
     "selectCategory": MessageLookupByLibrary.simpleMessage("Select a category"),
     "selectCategoryError": MessageLookupByLibrary.simpleMessage(
       "Please select a category.",
+    ),
+    "selectCountry": MessageLookupByLibrary.simpleMessage(
+      "Select country/countries...",
+    ),
+    "selectIngredientPhotoError": MessageLookupByLibrary.simpleMessage(
+      "Please select a photo for the ingredients.",
+    ),
+    "selectNutritionPhotoError": MessageLookupByLibrary.simpleMessage(
+      "Please select a photo for the nutrition table.",
+    ),
+    "selectOriginCountries": MessageLookupByLibrary.simpleMessage(
+      "Select origin countries",
     ),
     "selectPhotoError": MessageLookupByLibrary.simpleMessage(
       "Please select a photo.",
@@ -287,6 +358,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "sendingInfo": MessageLookupByLibrary.simpleMessage(
       "Sending information...",
     ),
+    "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
+    "showTrumpHead": MessageLookupByLibrary.simpleMessage("Show Trump’s head"),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("Source not found"),
     "submissionError": MessageLookupByLibrary.simpleMessage(
       "Error during submission.",
@@ -295,10 +368,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "Product added successfully!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("Success"),
+    "supportCommunity": MessageLookupByLibrary.simpleMessage(
+      "Support & Community",
+    ),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "Text information was sent, but image upload failed.",
     ),
-    "textSubmissionFailed": m2,
+    "textSubmissionFailed": m4,
+    "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
+      "Unable to open Instagram",
+    ),
+    "unableToOpenLink": MessageLookupByLibrary.simpleMessage(
+      "Unable to open link",
+    ),
     "unknown": MessageLookupByLibrary.simpleMessage("UNKNOWN"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "The product you searched for was not found in our database.",
@@ -309,6 +391,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "validate": MessageLookupByLibrary.simpleMessage("Validate"),
     "viewCriteria": MessageLookupByLibrary.simpleMessage("View criteria"),
+    "visitWebsite": MessageLookupByLibrary.simpleMessage("Visit our website"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome to"),
   };
 }

@@ -25,7 +25,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "भेजने में त्रुटि: ${error}";
 
-  static String m2(statusCode) =>
+  static String m2(details) => "فشل تحميل صورة المكونات: ${details}";
+
+  static String m3(details) => "فشل تحميل صورة جدول التغذية: ${details}";
+
+  static String m4(statusCode) =>
       "فشل إرسال المعلومات النصية (الحالة ${statusCode}). تحقق من السجلات للحصول على استجابة HTML.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -106,6 +110,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "companyUsaExplanation": MessageLookupByLibrary.simpleMessage(
       "Vahiné علامة تجارية فرنسية ولكن تم الاستحواذ عليها من قبل مجموعة McCormick الأمريكية في عام 2000. وبالتالي، تعتبر العلامة التجارية أمريكية.",
     ),
+    "considerAsAmericanIfLinkedToUSA": MessageLookupByLibrary.simpleMessage(
+      "اعتبره أمريكيًا إذا كان مرتبطًا بالولايات المتحدة",
+    ),
+    "contribution": MessageLookupByLibrary.simpleMessage("المساهمة"),
     "contributionsInfoText": MessageLookupByLibrary.simpleMessage(
       "يمكنك العثور على مبالغ المساهمات لانتخابات الولايات المتحدة 2024 على موقع Open Secret.",
     ),
@@ -114,6 +122,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "contributionsSavedSuccess": MessageLookupByLibrary.simpleMessage(
       "شكرًا لك! تم إرسال مساهماتك للمراجعة وستتم معالجتها في غضون 48 ساعة.",
+    ),
+    "contributorModeInfo": MessageLookupByLibrary.simpleMessage(
+      "مزيد من المعلومات حول وضع المساهم",
+    ),
+    "counter": MessageLookupByLibrary.simpleMessage("العداد"),
+    "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "تمت إعادة ضبط العداد بنجاح",
+    ),
+    "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
+      "دول المنشأ",
     ),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "المبلغ (الديمقراطيون)",
@@ -127,11 +145,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "descriptionNotFound": MessageLookupByLibrary.simpleMessage(
       "هذه العلامة التجارية غير موجودة في قاعدة بياناتنا.",
     ),
+    "display": MessageLookupByLibrary.simpleMessage("العرض"),
     "editContributionsButtonLabel": MessageLookupByLibrary.simpleMessage(
       "संपादित करें",
     ),
     "editContributionsSubtitle": MessageLookupByLibrary.simpleMessage(
       "تعديل المساهمات السياسية للانتخابات الرئاسية الأمريكية لعام 2024",
+    ),
+    "enableBoycottMode": MessageLookupByLibrary.simpleMessage(
+      "تمكين وضع المقاطعة",
+    ),
+    "enableContributorMode": MessageLookupByLibrary.simpleMessage(
+      "تمكين وضع المساهم",
     ),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ أثناء إضافة المنتج.",
@@ -143,8 +168,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
       "يرجى ملء جميع الحقول.",
     ),
+    "followUsOnInstagram": MessageLookupByLibrary.simpleMessage(
+      "تابعنا على إنستغرام",
+    ),
     "food": MessageLookupByLibrary.simpleMessage("طعام"),
     "gallery": MessageLookupByLibrary.simpleMessage("المعرض"),
+    "general": MessageLookupByLibrary.simpleMessage("عام"),
+    "however": MessageLookupByLibrary.simpleMessage("ومع ذلك"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "خطأ في اختيار الصورة",
     ),
@@ -153,23 +183,37 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "خطأ أثناء تحميل الصورة.",
     ),
+    "ingredientPhotoUploadFailed": m2,
+    "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
+      "المكونات (اختياري)",
+    ),
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage(
       "مصدر المكونات",
     ),
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم صالح.",
     ),
+    "languageSelection": MessageLookupByLibrary.simpleMessage("اختيار اللغة"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "أدخل علامة تجارية",
     ),
+    "mode": MessageLookupByLibrary.simpleMessage("الوضع"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "अभी तक कोई विकल्प नहीं।",
     ),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "अभी तक कोई राजनीतिक योगदान नहीं।",
     ),
+    "nutritionPhotoUploadFailed": m3,
+    "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage(
+      "جدول القيمة الغذائية",
+    ),
+    "ok": MessageLookupByLibrary.simpleMessage("موافق"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("موافق"),
     "originLabel": MessageLookupByLibrary.simpleMessage("بلد المنشأ"),
+    "originOfIngredients": MessageLookupByLibrary.simpleMessage(
+      "مصدر المكونات",
+    ),
     "other": MessageLookupByLibrary.simpleMessage("أخرى"),
     "parentCompanyHint": MessageLookupByLibrary.simpleMessage(
       "اسم الشركة المالكة",
@@ -189,6 +233,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "politicalContributionsTitle": MessageLookupByLibrary.simpleMessage(
       "राजनीतिक योगदान 2024",
     ),
+    "preferences": MessageLookupByLibrary.simpleMessage("التفضيلات"),
+    "preferencesScreenTitle": MessageLookupByLibrary.simpleMessage("التفضيلات"),
     "problemReportMessage": MessageLookupByLibrary.simpleMessage(
       "قد نرتكب أخطاء. إذا لاحظت خطأً، يرجى مراسلتنا باسم العلامة التجارية عبر البريد الإلكتروني حتى نتمكن من تحديث قائمتنا.",
     ),
@@ -206,6 +252,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "एक विकल्प प्रस्तावित करें",
     ),
+    "reportProblem": MessageLookupByLibrary.simpleMessage("الإبلاغ عن مشكلة"),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "انقر هنا للإبلاغ عن مشكلة",
     ),
@@ -258,6 +305,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "مساهمات الجمهوريين",
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("रिपब्लिकन"),
+    "reset": MessageLookupByLibrary.simpleMessage("إعادة تعيين"),
+    "resetCounter": MessageLookupByLibrary.simpleMessage("إعادة تعيين العداد"),
     "safe": MessageLookupByLibrary.simpleMessage("ليس أمريكي"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "لا يبدو أن هذا المنتج يأتي من شركة أمريكية.",
@@ -271,12 +320,28 @@ class MessageLookup extends MessageLookupByLibrary {
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage(
       "امسح الرمز الشريطي",
     ),
+    "scoresResetSuccess": MessageLookupByLibrary.simpleMessage(
+      "تمت إعادة ضبط النقاط بنجاح",
+    ),
+    "searchCountryPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "ابحث عن دولة",
+    ),
     "searchWarning": MessageLookupByLibrary.simpleMessage(
       "⚠️ تأكد من إدخال علامة تجارية غذائية مكتوبة بشكل صحيح لتجنب الأخطاء.",
     ),
     "selectCategory": MessageLookupByLibrary.simpleMessage("اختر فئة"),
     "selectCategoryError": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار فئة.",
+    ),
+    "selectCountry": MessageLookupByLibrary.simpleMessage("اختر الدولة/الدول…"),
+    "selectIngredientPhotoError": MessageLookupByLibrary.simpleMessage(
+      "الرجاء اختيار صورة للمكونات.",
+    ),
+    "selectNutritionPhotoError": MessageLookupByLibrary.simpleMessage(
+      "الرجاء اختيار صورة لجدول القيمة الغذائية.",
+    ),
+    "selectOriginCountries": MessageLookupByLibrary.simpleMessage(
+      "اختر دول المنشأ",
     ),
     "selectPhotoError": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار صورة.",
@@ -287,6 +352,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "sendingInfo": MessageLookupByLibrary.simpleMessage(
       "جارٍ إرسال المعلومات...",
     ),
+    "settingsTitle": MessageLookupByLibrary.simpleMessage("الإعدادات"),
+    "showTrumpHead": MessageLookupByLibrary.simpleMessage("عرض صورة ترامب"),
     "sourceNotFound": MessageLookupByLibrary.simpleMessage("المصدر غير موجود"),
     "submissionError": MessageLookupByLibrary.simpleMessage(
       "خطأ أثناء الإرسال.",
@@ -295,10 +362,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "تمت إضافة المنتج بنجاح!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("نجاح"),
+    "supportCommunity": MessageLookupByLibrary.simpleMessage("الدعم والمجتمع"),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "تم إرسال المعلومات النصية، ولكن فشل تحميل الصورة.",
     ),
-    "textSubmissionFailed": m2,
+    "textSubmissionFailed": m4,
+    "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
+      "تعذر فتح إنستغرام",
+    ),
+    "unableToOpenLink": MessageLookupByLibrary.simpleMessage("تعذر فتح الرابط"),
     "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "المنتج الذي بحثت عنه غير موجود في قاعدة بياناتنا.",
@@ -309,6 +381,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "validate": MessageLookupByLibrary.simpleMessage("تحقق"),
     "viewCriteria": MessageLookupByLibrary.simpleMessage("عرض المعايير"),
+    "visitWebsite": MessageLookupByLibrary.simpleMessage("زيارة موقعنا"),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحباً بك في"),
   };
 }
