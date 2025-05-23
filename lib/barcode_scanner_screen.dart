@@ -6,6 +6,7 @@ import 'package:detrumpezvous/add_product_info_screen.dart';
 import 'package:detrumpezvous/criteria_screen.dart';
 import 'package:detrumpezvous/edit_contribution_screen.dart';
 import 'package:detrumpezvous/report_problem_screen.dart';
+import 'package:detrumpezvous/settings_modal.dart';
 import 'package:http/http.dart' as http;
 import 'package:detrumpezvous/corner_painter.dart';
 import 'package:detrumpezvous/generated/l10n.dart';
@@ -16,6 +17,7 @@ import 'package:flutter/services.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:intl/intl.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:logger/logger.dart';
 import 'package:translator/translator.dart';
@@ -71,10 +73,12 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   bool _reviewHasBeenRequested =
       false; // Pour ne demander qu'une fois par session/période
   bool _isTrumpShowed = true;
-  bool _isUSACountShowed = true;
+  bool _boycottMode = true;
 
   bool _considerAsAmerican = false;
   bool _isFlashOn = false; // Par défaut, le flash est désactivé
+
+  bool _isContributionModeEnabled = true; // Ajoutez cette ligne
 
   // Contrôleur pour l'animation de tremblement
   late AnimationController _shakeController;
@@ -112,6 +116,10 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
       duration: const Duration(milliseconds: 500), // Durée de l'animation
       vsync: this, // Nécessite TickerProviderStateMixin
     );
+
+    //test
+    //fetchProductInfo("20724696090");
+    //barcode = "20724696090";
   }
 
   @override
@@ -139,7 +147,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     setState(() {
       _isTrumpShowed =
           prefs.getBool('isTrumpShowed') ?? true; // Charger l'état de Trump
-      _isUSACountShowed = prefs.getBool('isUSACountShowed') ??
+      _boycottMode = prefs.getBool('boycottMode') ??
           true; // Charger l'état du compteur USA
       _safeScanCount = prefs.getInt('safeScanCount') ?? 0;
       _usaScanCount =
@@ -147,6 +155,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
       _reviewHasBeenRequested = prefs.getBool('reviewRequested') ?? false;
       _considerAsAmerican = prefs.getBool('considerAsAmerican') ?? false;
       _contributionScore = prefs.getInt('contributionScore') ?? 0;
+      _isContributionModeEnabled =
+          prefs.getBool('contributionMode') ?? true; // Charger le mode
     });
   }
 
@@ -538,7 +548,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     } else if (productData == null || productData.isEmpty) {
       // --- MODIFICATION ICI ---
       // Vérifier si la sheet n'est PAS déjà ouverte OU en cours d'ouverture AVANT de programmer le callback
-      if (!_isBottomSheetOpen) {
+      if (!_isBottomSheetOpen && _isContributionModeEnabled) {
         // Marquer immédiatement que l'ouverture est en cours pour éviter les appels concurrents
         _isBottomSheetOpen = true;
 
@@ -804,6 +814,19 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
     );
   }
 
+  void _showSettingsModal(BuildContext context) async {
+    await showCupertinoModalBottomSheet<bool>(
+      context: context,
+      expand: false,
+      builder: (_) => SettingsModal(
+        barcode: barcode,
+        brand: brand,
+      ),
+    ).then((_) async {
+      _loadCounters();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
@@ -1022,7 +1045,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                     ),
                                     Row(
                                       children: [
-                                        (_isUSACountShowed)
+                                        (_boycottMode)
                                             ? GestureDetector(
                                                 onTap: () async {
                                                   final prefs =
@@ -1061,7 +1084,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                 ),
                                               ),
                                         Text(
-                                          (_isUSACountShowed)
+                                          (_boycottMode)
                                               ? " x $_usaScanCount"
                                               : " x $_safeScanCount",
                                           style: TextStyle(
@@ -1104,15 +1127,15 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                           fontWeight: FontWeight.w500),
                                     ),
                                     Switch(
-                                      value: _isUSACountShowed,
+                                      value: _boycottMode,
                                       onChanged: (bool value) async {
                                         final prefs = await SharedPreferences
                                             .getInstance();
                                         setState(() {
-                                          _isUSACountShowed = value;
+                                          _boycottMode = value;
                                         });
                                         await prefs.setBool(
-                                            'isUSACountShowed', value);
+                                            'boycottMode', value);
 
                                         Navigator.pop(
                                             context); // Fermer la boîte de dialogue
@@ -1192,7 +1215,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        (_isUSACountShowed)
+                        (_boycottMode)
                             ? CircleAvatar(
                                 radius: 12,
                                 backgroundImage: (_isTrumpShowed)
@@ -1221,7 +1244,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                 opacity: animation, child: child);
                           },
                           child: Text(
-                            (_isUSACountShowed)
+                            (_boycottMode)
                                 ? "$_usaScanCount"
                                 : "$_safeScanCount",
                             key: ValueKey<int>(_usaScanCount),
@@ -1300,57 +1323,94 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                         ),
                                         const SizedBox(height: 8),
                                         // Champ de recherche manuelle
-                                        Center(
-                                          child: Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 16.0, vertical: 8),
-                                            child: AnimatedBuilder(
-                                              animation: _searchShakeController,
-                                              builder: (context, child) {
-                                                // Calculer le décalage horizontal basé sur l'animation
-                                                final double dx = sin(
-                                                        _searchShakeController
-                                                                .value *
-                                                            pi *
-                                                            6) *
-                                                    8;
-                                                return Transform.translate(
-                                                  offset: Offset(dx,
-                                                      0), // Appliquer le décalage horizontal
-                                                  child:
-                                                      child, // Le champ de recherche
-                                                );
-                                              },
-                                              child: CupertinoSearchTextField(
-                                                controller:
-                                                    manualSearchController,
-                                                placeholder: S
-                                                    .of(context)
-                                                    .manualSearchPlaceholder,
-                                                style: const TextStyle(
-                                                    fontSize: 16),
-                                                backgroundColor:
-                                                    Colors.grey[200],
-                                                borderRadius:
-                                                    BorderRadius.circular(12),
-                                                onSubmitted: (value) async {
-                                                  final String brand =
-                                                      value.trim();
-                                                  if (brand.isNotEmpty) {
-                                                    setState(() {
-                                                      manualSearchUsed = true;
-                                                    });
-                                                    await updateProductInfoDetails(
-                                                        brand, "");
-                                                  }
+
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 8.0, vertical: 8),
+                                          child: Row(children: [
+                                            Expanded(
+                                              child: AnimatedBuilder(
+                                                animation:
+                                                    _searchShakeController,
+                                                builder: (context, child) {
+                                                  // Calculer le décalage horizontal basé sur l'animation
+                                                  final double dx = sin(
+                                                          _searchShakeController
+                                                                  .value *
+                                                              pi *
+                                                              6) *
+                                                      8;
+                                                  return Transform.translate(
+                                                    offset: Offset(dx,
+                                                        0), // Appliquer le décalage horizontal
+                                                    child:
+                                                        child, // Le champ de recherche
+                                                  );
                                                 },
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        horizontal: 12,
-                                                        vertical: 10),
+                                                child: CupertinoSearchTextField(
+                                                  controller:
+                                                      manualSearchController,
+                                                  placeholder: S
+                                                      .of(context)
+                                                      .manualSearchPlaceholder,
+                                                  style: const TextStyle(
+                                                      fontSize: 16),
+                                                  backgroundColor:
+                                                      Colors.grey[200],
+                                                  borderRadius:
+                                                      BorderRadius.circular(12),
+                                                  onSubmitted: (value) async {
+                                                    final String brand =
+                                                        value.trim();
+                                                    if (brand.isNotEmpty) {
+                                                      setState(() {
+                                                        manualSearchUsed = true;
+                                                      });
+                                                      await updateProductInfoDetails(
+                                                          brand, "");
+                                                    }
+                                                  },
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 12,
+                                                      vertical: 10),
+                                                ),
                                               ),
                                             ),
-                                          ),
+                                            GestureDetector(
+                                              onTap: () {
+                                                _showSettingsModal(context);
+                                              },
+                                              child: Container(
+                                                margin: const EdgeInsets.only(
+                                                    left: 16),
+                                                width: 40,
+                                                height: 40,
+                                                decoration: BoxDecoration(
+                                                  color: Colors.grey[
+                                                      200], // Couleur de fond du bouton
+                                                  shape: BoxShape
+                                                      .circle, // Forme ronde
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: Colors.grey
+                                                          .withOpacity(0.2),
+                                                      spreadRadius: 1,
+                                                      blurRadius: 3,
+                                                      offset: const Offset(
+                                                          0, 1), // Ombre légère
+                                                    ),
+                                                  ],
+                                                ),
+                                                child: Icon(
+                                                  CupertinoIcons
+                                                      .settings, // Icône de paramètres iOS
+                                                  color: Colors.grey[
+                                                      700], // Couleur de l'icône
+                                                ),
+                                              ),
+                                            ),
+                                          ]),
                                         ),
                                         if (!isBrandFound && manualSearchUsed)
                                           Text(
@@ -2199,8 +2259,8 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                   child: Row(
                                                     children: [
                                                       const Icon(
-                                                        Icons
-                                                            .report_problem_outlined, // Icône plus pertinente
+                                                        CupertinoIcons
+                                                            .exclamationmark_bubble, // Icône plus pertinente
                                                         color: Colors
                                                             .redAccent, // Couleur de l'icône
                                                       ),
@@ -2261,18 +2321,7 @@ class BarcodeScannerScreenState extends State<BarcodeScannerScreen>
                                                       builder: (context) =>
                                                           const CriteriaScreen(),
                                                     ),
-                                                  ).then((value) async {
-                                                    // Recharger la page après le retour
-                                                    final prefs =
-                                                        await SharedPreferences
-                                                            .getInstance();
-                                                    setState(() {
-                                                      _considerAsAmerican =
-                                                          prefs.getBool(
-                                                                  'considerAsAmerican') ??
-                                                              false;
-                                                    });
-                                                  });
+                                                  );
                                                 },
                                                 borderRadius: const BorderRadius
                                                     .only(
