@@ -73,7 +73,7 @@ class _CriteriaScreenState extends State<CriteriaScreen> {
               children: [
                 Flexible(
                   child: Text(
-                    "Consider as American if linked to the USA", // Nouvelle clé de localisation
+                    S.of(context).considerAsAmericanIfLinkedToUSA,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
