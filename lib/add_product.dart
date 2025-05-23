@@ -1,5 +1,6 @@
 import 'dart:convert'; // Import pour jsonDecode
 import 'dart:io';
+import 'package:detrumpezvous/country_selection_screen.dart';
 import 'package:detrumpezvous/secrets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class _AddProductState extends State<AddProduct> {
   final TextEditingController _brandNameController = TextEditingController();
   //bool _ingredientsFromUS = false;
 
-  String? category;
+  String category = S.current.food;
   bool _isSubmitting = false;
 
   late final Map<String, IconData> categoryIcons;
@@ -32,8 +33,13 @@ class _AddProductState extends State<AddProduct> {
 
   File? _selectedImageFile;
   File? _selectedIngredientImageFile;
+  File? _selectedNutritionImageFile; // ← nouveau
+
   final ImagePicker _picker = ImagePicker();
   int _contributionScore = 0; // Score de contribution
+
+  Set<String> _selectedOrigins = {};
+  late BuildContext _loadingDialogContext;
 
   @override
   void initState() {
@@ -85,18 +91,20 @@ class _AddProductState extends State<AddProduct> {
         maxWidth: 1000,
       );
 
-      if (pickedFile != null) {
-        setState(() {
-          if (type == "product") {
+      if (pickedFile == null) return;
+      setState(() {
+        switch (type) {
+          case "product":
             _selectedImageFile = File(pickedFile.path);
-          } else if (type == "ingredient") {
+            break;
+          case "ingredient":
             _selectedIngredientImageFile = File(pickedFile.path);
-          } else {
-            // Handle error or unexpected type
-            print("Unknown type: $type");
-          }
-        });
-      }
+            break;
+          case "nutrition": // ← nouveau
+            _selectedNutritionImageFile = File(pickedFile.path);
+            break;
+        }
+      });
     } catch (e) {
       if (mounted) {
         final s = S.of(this.context);
@@ -152,34 +160,122 @@ class _AddProductState extends State<AddProduct> {
     );
   }
 
+  void _showLoadingDialog(String message) {
+    showCupertinoDialog(
+      context: this.context,
+      barrierDismissible: false,
+      builder: (dialogContext) {
+        _loadingDialogContext = dialogContext;
+        return CupertinoAlertDialog(
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const CupertinoActivityIndicator(radius: 15),
+              const SizedBox(height: 12),
+              Text(message, style: const TextStyle(fontSize: 16)),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Future<Map<String, dynamic>> _uploadSingleImage({
+    required File imageFile,
+    required Uri imageUploadUri,
+    required String barcode,
+    required String imageField, // ex: 'front_fr', 'ingredients', 'nutrition'
+    required String userId,
+    required String password,
+  }) async {
+    final fileFieldName = 'imgupload_$imageField';
+    final request = http.MultipartRequest('POST', imageUploadUri)
+      ..fields['code'] = barcode
+      ..fields['user_id'] = userId
+      ..fields['password'] = password
+      ..fields['imagefield'] = imageField;
+
+    final stream =
+        http.ByteStream(DelegatingStream.typed(imageFile.openRead()));
+    final length = await imageFile.length();
+    final multipartFile = http.MultipartFile(
+      fileFieldName,
+      stream,
+      length,
+      filename: basename(imageFile.path),
+    );
+    request.files.add(multipartFile);
+
+    try {
+      final response = await request.send();
+      final responseBody = await response.stream.bytesToString();
+      final statusCode = response.statusCode;
+
+      if (statusCode == 200) {
+        final decoded = jsonDecode(responseBody);
+        if (decoded is Map && decoded['status'] == 'status ok') {
+          return {'success': true, 'message': 'Image uploaded successfully.'};
+        } else if (decoded is Map && decoded.containsKey('error')) {
+          return {'success': false, 'message': decoded['error']};
+        }
+        return {
+          'success': false,
+          'message': 'Unexpected server response: $responseBody'
+        };
+      } else {
+        return {
+          'success': false,
+          'message': 'Upload failed with status $statusCode: $responseBody'
+        };
+      }
+    } catch (e) {
+      return {
+        'success': false,
+        'message': 'Error during image upload: ${e.toString()}'
+      };
+    }
+  }
+
   Future<void> _submitProduct() async {
     final s = S.of(this.context);
+
+    // --- Validations initiales ---
+    // Si une validation échoue, on affiche l'erreur et on sort.
+    // _isSubmitting n'est pas encore à true, donc pas besoin de le réinitialiser ici.
     final productName = _productNameController.text.trim();
     final brandName = _brandNameController.text.trim();
-    //final ingredientsOrigin = (_ingredientsFromUS) ? "united-states" : "";
+
     if (productName.isEmpty || brandName.isEmpty) {
       _showErrorDialog(s.fillAllFields);
       return;
     }
-
-    if (category == null) {
+    /*if (category == null) {
+      // Bien que 'category' soit initialisé, une vérification par sécurité.
       _showErrorDialog(s.selectCategoryError);
       return;
-    }
-
+    }*/
     if (_selectedImageFile == null) {
       _showErrorDialog(s.selectPhotoError);
       return;
     }
-
     if (category != s.other && _selectedIngredientImageFile == null) {
-      _showErrorDialog(s.selectPhotoError);
+      // Assurez-vous que 'selectIngredientPhotoError' est défini dans vos fichiers .arb
+      _showErrorDialog(s.selectIngredientPhotoError);
+      return;
+    }
+    if (category == s.food && _selectedNutritionImageFile == null) {
+      // Assurez-vous que 'selectNutritionPhotoError' est défini dans vos fichiers .arb
+      _showErrorDialog(s.selectNutritionPhotoError);
       return;
     }
 
-    setState(() => _isSubmitting = true);
-    _showLoadingDialog(s.sendingInfo);
+    // Protection contre les double-clics juste avant de commencer le processus de soumission.
+    if (_isSubmitting) return;
 
+    setState(() => _isSubmitting = true);
+
+    // --- URLs et Identifiants API ---
+    // (Votre code existant pour déterminer textUri, imageUri, userId, password)
     final Map<String, String> textApiUrls = {
       s.food: "https://world.openfoodfacts.org/cgi/product_jqm2.pl",
       s.beauty: "https://world.openbeautyfacts.org/cgi/product_jqm2.pl",
@@ -201,119 +297,128 @@ class _AddProductState extends State<AddProduct> {
     final textUri = Uri.parse(textUrlString);
     final imageUri = Uri.parse(imageUrlString);
 
-    const String userId = apiUserId;
-    const String password = apiPassword;
+    const String userId = apiUserId; // Défini dans secrets.dart
+    const String password = apiPassword; // Défini dans secrets.dart
+    final Locale currentLocale = Localizations.localeOf(this.context);
+    final String languageCode = currentLocale.languageCode;
 
     try {
+      _showLoadingDialog(s
+          .sendingInfo); // Affiche le dialogue et stocke son contexte dans _loadingDialogContext
+
+      // --- Envoi des données textuelles ---
       final textData = {
         "code": widget.barcode,
         "product_name": productName,
         "brands": brandName,
-        //"origins": ingredientsOrigin,
         "user_id": userId,
         "password": password,
         "comment": "Ajout via l'application Détrumpez-vous",
+        "lc": languageCode,
+        if (_selectedOrigins.isNotEmpty) "origins": _selectedOrigins.join(','),
+        // Ajoutez d'autres champs si nécessaire, comme countries_tags
       };
 
       final textResponse = await http.post(textUri, body: textData);
-
-      bool textSuccess = textResponse.statusCode == 200;
-
-      if (!textSuccess) {
-        print(textResponse.body);
+      if (textResponse.statusCode != 200) {
+        print(
+            "Text submission failed (${textResponse.statusCode}): ${textResponse.body}");
         throw Exception(s.textSubmissionFailed(textResponse.statusCode));
       }
+      await _incrementContributionScore(10);
 
-      // upload de l’image « front »
-      String imageFieldId = 'front_fr';
-      String fileFieldName = 'imgupload_$imageFieldId';
+      // --- Envoi des images ---
+      bool frontImageSuccess = false;
+      String frontImageErrorMsg = "";
+      bool ingredientsImageSuccess = true;
+      String ingredientsImageErrorMsg = "";
+      bool nutritionImageSuccess = true;
+      String nutritionImageErrorMsg = "";
 
-      var imageRequest = http.MultipartRequest('POST', imageUri);
-      imageRequest.fields['code'] = widget.barcode;
-      imageRequest.fields['user_id'] = userId;
-      imageRequest.fields['password'] = password;
-      imageRequest.fields['imagefield'] = imageFieldId;
-
-      var stream = http.ByteStream(
-          DelegatingStream.typed(_selectedImageFile!.openRead()));
-      var length = await _selectedImageFile!.length();
-      var multipartFile = http.MultipartFile(
-        fileFieldName,
-        stream,
-        length,
-        filename: basename(_selectedImageFile!.path),
-      );
-      imageRequest.files.add(multipartFile);
-
-      var imageResponse = await imageRequest.send();
-      var imageResponseBody = await imageResponse.stream.bytesToString();
-
-      // upload de l’image « ingredient » SEULEMENT SI ELLE EXISTE
-      if (_selectedIngredientImageFile != null) {
-        // upload de l’image « ingredient »
-        imageFieldId = 'ingredients';
-        fileFieldName = 'imgupload_$imageFieldId';
-
-        imageRequest = http.MultipartRequest('POST', imageUri);
-        imageRequest.fields['code'] = widget.barcode;
-        imageRequest.fields['user_id'] = userId;
-        imageRequest.fields['password'] = password;
-        imageRequest.fields['imagefield'] = imageFieldId;
-
-        stream = http.ByteStream(
-            DelegatingStream.typed(_selectedIngredientImageFile!.openRead()));
-        length = await _selectedIngredientImageFile!.length();
-        multipartFile = http.MultipartFile(
-          fileFieldName,
-          stream,
-          length,
-          filename: basename(_selectedIngredientImageFile!.path),
+      if (_selectedImageFile != null) {
+        final result = await _uploadSingleImage(
+          imageFile: _selectedImageFile!,
+          imageUploadUri: imageUri,
+          barcode: widget.barcode,
+          imageField: 'front_$languageCode',
+          userId: userId,
+          password: password,
         );
-        imageRequest.files.add(multipartFile);
-
-        imageResponse = await imageRequest.send();
-        imageResponseBody = await imageResponse.stream.bytesToString();
+        frontImageSuccess = result['success'];
+        frontImageErrorMsg = result['message'];
+        if (frontImageSuccess) await _incrementContributionScore(20);
       }
 
-      if (mounted) Navigator.pop(this.context);
+      if (category != s.other && _selectedIngredientImageFile != null) {
+        final result = await _uploadSingleImage(
+          imageFile: _selectedIngredientImageFile!,
+          imageUploadUri: imageUri,
+          barcode: widget.barcode,
+          imageField: 'ingredients_$languageCode',
+          userId: userId,
+          password: password,
+        );
+        ingredientsImageSuccess = result['success'];
+        ingredientsImageErrorMsg = result['message'];
+        if (ingredientsImageSuccess) {
+          await _incrementContributionScore(15);
+        } else {
+          print("Ingredients image upload failed: $ingredientsImageErrorMsg");
+        }
+      }
 
+      if (category == s.food && _selectedNutritionImageFile != null) {
+        final result = await _uploadSingleImage(
+          imageFile: _selectedNutritionImageFile!,
+          imageUploadUri: imageUri,
+          barcode: widget.barcode,
+          imageField: 'nutrition_$languageCode',
+          userId: userId,
+          password: password,
+        );
+        nutritionImageSuccess = result['success'];
+        nutritionImageErrorMsg = result['message'];
+        if (nutritionImageSuccess) {
+          await _incrementContributionScore(15);
+        } else {
+          print("Nutrition image upload failed: $nutritionImageErrorMsg");
+        }
+      }
+
+      // Fermer le dialogue de chargement en cas de succès (avant d'afficher le dialogue de succès)
+      // S'assurer que _loadingDialogContext est valide et que le widget est monté
+      if (mounted && Navigator.of(_loadingDialogContext).canPop()) {
+        Navigator.pop(_loadingDialogContext);
+      }
+
+      // --- Affichage du résultat final ---
       if (!mounted) return;
 
-      bool imageUploadSuccess = false;
-      String imageErrorDetail = "";
-      if (imageResponse.statusCode == 200) {
-        try {
-          var decodedResponse = jsonDecode(imageResponseBody);
-          if (decodedResponse is Map &&
-              decodedResponse['status'] == 'status ok') {
-            imageUploadSuccess = true;
-            _incrementContributionScore(
-                20); // Ajoute 20 points pour l'upload d'image
-          } else if (decodedResponse is Map &&
-              decodedResponse.containsKey('error')) {
-            imageErrorDetail = decodedResponse['error'];
-          } else {
-            imageErrorDetail = "Réponse inattendue du serveur.";
-          }
-        } catch (e) {
-          imageErrorDetail = "Réponse invalide du serveur.";
+      if (frontImageSuccess) {
+        String successMsg = s.productAndImageAddedSuccess;
+        List<String> minorFailures = [];
+        if (!ingredientsImageSuccess && _selectedIngredientImageFile != null) {
+          minorFailures
+              .add(s.ingredientPhotoUploadFailed(ingredientsImageErrorMsg));
         }
-      } else {
-        imageErrorDetail = "Code ${imageResponse.statusCode}";
-      }
+        if (!nutritionImageSuccess && _selectedNutritionImageFile != null) {
+          minorFailures
+              .add(s.nutritionPhotoUploadFailed(nutritionImageErrorMsg));
+        }
 
-      if (imageUploadSuccess) {
-        _showSuccessDialog();
-      } else {
-        String errorMessage = s.imageUploadError;
-        if (imageErrorDetail.isNotEmpty) {
-          errorMessage += "\n($imageErrorDetail)";
+        if (minorFailures.isNotEmpty) {
+          successMsg += "\n\n${s.however}:\n- ${minorFailures.join('\n- ')}";
         }
-        _showErrorDialog("${s.textDataSentButImageFailed}\n\n$errorMessage");
+        _showSuccessDialog(message: successMsg);
+      } else {
+        _showErrorDialog(
+            "${s.textDataSentButImageFailed}\n\n${s.imageUploadError}: $frontImageErrorMsg");
       }
     } catch (e) {
-      if (mounted) Navigator.pop(this.context);
-
+      // En cas d'erreur, fermer le dialogue de chargement s'il est ouvert
+      if (mounted && Navigator.of(_loadingDialogContext).canPop()) {
+        Navigator.pop(_loadingDialogContext);
+      }
       if (!mounted) return;
       _showErrorDialog("${s.submissionError}\n${e.toString()}");
     } finally {
@@ -323,56 +428,42 @@ class _AddProductState extends State<AddProduct> {
     }
   }
 
-  void _showLoadingDialog(String message) {
-    showCupertinoDialog(
-      context: this.context,
-      barrierDismissible: false,
-      builder: (dialogContext) {
-        return CupertinoAlertDialog(
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const CupertinoActivityIndicator(radius: 15),
-              const SizedBox(height: 16),
-              Text(message, style: const TextStyle(fontSize: 16)),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
   void _showErrorDialog(String message) {
-    final s = S.of(this.context);
+    final s = S.of(this
+        .context); // 'this.context' ou 'context' est le BuildContext de _AddProductState
     showCupertinoDialog(
-      context: this.context,
+      context: this.context, // Utilise le contexte du widget _AddProductState
       builder: (dialogContext) => CupertinoAlertDialog(
+        // dialogContext est spécifique à cette alerte
         title: Text(s.errorTitle),
         content: Text(message),
         actions: [
           CupertinoDialogAction(
             isDefaultAction: true,
-            onPressed: () => Navigator.pop(dialogContext),
-            child: const Text("OK"),
+            onPressed: () =>
+                Navigator.pop(dialogContext), // Ferme uniquement cette alerte
+            child: Text(s.ok), // Utilisez s.ok pour la localisation
           ),
         ],
       ),
     );
   }
 
-  void _showSuccessDialog() {
+  void _showSuccessDialog({String? message}) {
     final s = S.of(this.context);
     showCupertinoDialog(
       context: this.context,
       builder: (dialogContext) => CupertinoAlertDialog(
         title: Text(s.successTitle),
-        content: Text(s.productAndImageAddedSuccess),
+        content: Text(message ?? s.productAndImageAddedSuccess),
         actions: [
           CupertinoDialogAction(
             isDefaultAction: true,
             onPressed: () {
-              Navigator.pop(dialogContext);
-              Navigator.pop(this.context);
+              Navigator.pop(dialogContext); // Ferme ce dialogue d'alerte
+              if (mounted) {
+                Navigator.pop(this.context); // Retourne de la page AddProduct
+              }
             },
             child: Text(s.validate),
           ),
@@ -566,7 +657,7 @@ class _AddProductState extends State<AddProduct> {
                 style:
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
-            ),
+            },
             const SizedBox(height: 8),
             Row(
               children: [
@@ -610,6 +701,7 @@ class _AddProductState extends State<AddProduct> {
                 GestureDetector(
                   onTap: () => _showImageSourceActionSheet(context, "product"),
                   child: Container(
+                    width: 100,
                     padding:
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                     decoration: BoxDecoration(
@@ -659,6 +751,7 @@ class _AddProductState extends State<AddProduct> {
                         onTap: () =>
                             _showImageSourceActionSheet(context, "ingredient"),
                         child: Container(
+                          width: 100,
                           padding: const EdgeInsets.symmetric(
                               vertical: 8, horizontal: 8),
                           decoration: BoxDecoration(
@@ -705,8 +798,131 @@ class _AddProductState extends State<AddProduct> {
                         ),
                       )
                     : Container(),
+                const SizedBox(width: 16),
+                (category == S.of(context).food)
+                    ? GestureDetector(
+                        onTap: () =>
+                            _showImageSourceActionSheet(context, "nutrition"),
+                        child: Container(
+                          width: 100,
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 8, horizontal: 8),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                                color: Colors.grey.shade400, width: 1),
+                          ),
+                          child: _selectedNutritionImageFile == null
+                              ? Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                        CupertinoIcons
+                                            .camera_fill, // icône tableau
+                                        color: Colors.grey.shade600,
+                                        size: 28),
+                                    const SizedBox(height: 4),
+                                    Text(
+                                      S
+                                          .of(context)
+                                          .nutritionTablePhoto, // ajoutez dans .arb : addNutritionPhoto = "Ajouter photo nutrition";
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                          color: Colors.black87, fontSize: 12),
+                                    ),
+                                  ],
+                                )
+                              : Center(
+                                  child: Container(
+                                    height: 80,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      image: DecorationImage(
+                                        image: FileImage(
+                                            _selectedNutritionImageFile!),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                        ),
+                      )
+                    : Container(),
               ],
             ),
+            const SizedBox(height: 16),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                S.of(context).ingredientsOptional,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            GestureDetector(
+                child: Container(
+                  width: double
+                      .infinity, // S'assure que le conteneur prend toute la largeur
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 12, horizontal: 16), // Ajustement du padding
+                  decoration: BoxDecoration(
+                    color: CupertinoColors
+                        .tertiarySystemFill, // Couleur de fond de style iOS pour les champs
+                    borderRadius: BorderRadius.circular(
+                        8.0), // Rayon de bordure standard iOS
+                    // Pas besoin de bordure explicite si on utilise les couleurs de fond Cupertino
+                  ),
+                  child: Row(
+                    // Utiliser une Row pour le texte et l'icône
+                    mainAxisAlignment: MainAxisAlignment
+                        .spaceBetween, // Espace entre le texte et l'icône
+                    children: [
+                      Expanded(
+                        // Pour que le texte prenne l'espace disponible et gère le débordement
+                        child: Text(
+                          _selectedOrigins.isEmpty
+                              ? S.of(context).selectOriginCountries
+                              : _selectedOrigins.join(", "),
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: _selectedOrigins.isEmpty
+                                ? CupertinoColors
+                                    .placeholderText // Couleur pour le placeholder
+                                : CupertinoColors
+                                    .label, // Couleur standard du texte
+                          ),
+                          overflow:
+                              TextOverflow.ellipsis, // Gérer le texte long
+                        ),
+                      ),
+                      const Icon(
+                        CupertinoIcons.chevron_forward,
+                        color: CupertinoColors
+                            .tertiaryLabel, // Couleur pour l'icône de chevron
+                        size: 20,
+                      ),
+                    ],
+                  ),
+                ),
+                onTap: () async {
+                  final result = await Navigator.push<Set<String>>(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (_) => CountrySelectionScreen(
+                        initiallySelected:
+                            _selectedOrigins, // votre Set<String> existant
+                      ),
+                    ),
+                  );
+                  if (result != null) {
+                    setState(() => _selectedOrigins = result);
+                  }
+                }),
             const SizedBox(height: 40),
             SizedBox(
               width: double.infinity,
