@@ -29,7 +29,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Nous avons besoin d'accéder à votre galerie pour sélectionner une photo du produit.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Nous avons besoin d'accéder à votre appareil photo pour prendre une photo du produit.</string>
+	<string>This app needs camera access to scan QR codes.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Accès au microphone requis pour la capture vidéo.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
