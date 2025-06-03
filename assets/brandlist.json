@@ -471,7 +471,10 @@
         "parentCompany": "Procter & Gamble",
         "normalizedName": "oral_b",
         "parentOrigin": "US",
-        "origin": "US"
+        "origin": "US",
+        "alternatives": [
+            "signal"
+        ]
     },
     {
         "name": "Pampers",
@@ -736,7 +739,9 @@
         "alternatives": [
             "croky",
             "Vico",
-            "Brett’s"
+            "Brett’s",
+            "vico",
+            "Ādažu Čipsi"
         ]
     },
     {
@@ -818,7 +823,11 @@
         "parentCompany": "PepsiCo",
         "normalizedName": "quaker",
         "parentOrigin": "US",
-        "origin": "US"
+        "origin": "US",
+        "alternatives": [
+            "Jordan’s",
+            "jordans"
+        ]
     },
     {
         "name": "Gatorade",
@@ -1322,7 +1331,10 @@
         "parentCompany": "General Mills",
         "normalizedName": "nature_valley",
         "parentOrigin": "US",
-        "origin": "US"
+        "origin": "US",
+        "alternatives": [
+            "barre proteine carrefour"
+        ]
     },
     {
         "name": "Old El Paso",
@@ -1478,7 +1490,11 @@
         "parentCompany": "Mondelez",
         "normalizedName": "cadbury",
         "parentOrigin": "US",
-        "origin": "GB"
+        "origin": "GB",
+        "alternatives": [
+            "Nestlé",
+            "Lindt"
+        ]
     },
     {
         "name": "Cadbury Eclairs",
@@ -1595,7 +1611,11 @@
         "parentCompany": "Mondelez",
         "normalizedName": "cote_dor",
         "parentOrigin": "US",
-        "origin": "BE"
+        "origin": "BE",
+        "alternatives": [
+            "Lindt",
+            "Nestlé"
+        ]
     },
     {
         "name": "Honey Maid",
@@ -1631,7 +1651,10 @@
         "parentCompany": "Mondelez",
         "normalizedName": "lu",
         "parentOrigin": "US",
-        "origin": "FR"
+        "origin": "FR",
+        "alternatives": [
+            "Biscuits McVities"
+        ]
     },
     {
         "name": "Lacta",
@@ -1661,7 +1684,8 @@
         "origin": "SE",
         "alternatives": [
             "Fazer",
-            "Lindt"
+            "Lindt",
+            "Nidar"
         ]
     },
     {
@@ -1837,7 +1861,10 @@
         "parentCompany": "Mondelez",
         "normalizedName": "tuc",
         "parentOrigin": "US",
-        "origin": "BE"
+        "origin": "BE",
+        "alternatives": [
+            "krit"
+        ]
     },
     {
         "name": "Balisto",
@@ -2658,7 +2685,10 @@
         "parentCompany": "McCormick",
         "normalizedName": "vahine",
         "parentOrigin": "US",
-        "origin": "FR"
+        "origin": "FR",
+        "alternatives": [
+            "Alsa"
+        ]
     },
     {
         "name": "Zatarain's",
@@ -2684,7 +2714,6 @@
             "river cola",
             "Fritz cola",
             "French cola",
-            "Pepsi cola",
             "Lidl Freeway Cola",
             "Freeway Cola",
             "breizh cola",
@@ -2696,7 +2725,8 @@
             "green cola",
             "Hola Cola",
             "Fritz Kola",
-            "Hoop Cola"
+            "Hoop Cola",
+            "Breizh cola"
         ]
     },
     {
@@ -2769,7 +2799,11 @@
         "parentCompany": "The Coca‑Cola Company",
         "normalizedName": "fanta",
         "parentOrigin": "US",
-        "origin": "US"
+        "origin": "US",
+        "alternatives": [
+            "any alternative?",
+            "Sinalco"
+        ]
     },
     {
         "name": "Minute Maid",
@@ -2995,7 +3029,9 @@
             "Orlando",
             "Stokes Tomato Ketchup",
             "Hela Ketchup",
-            "Hellmann's"
+            "Hellmann's",
+            "felix ketchup",
+            "Tropicana"
         ]
     },
     {
@@ -3340,7 +3376,10 @@
         "parentCompany": "The Coca‑Cola Company",
         "normalizedName": "innocent",
         "parentOrigin": "US",
-        "origin": "GB"
+        "origin": "GB",
+        "alternatives": [
+            "andros"
+        ]
     },
     {
         "name": "5 GUM",
@@ -3655,7 +3694,13 @@
         "parentCompany": "Colgate-Palmolive",
         "normalizedName": "colgate",
         "parentOrigin": "US",
-        "origin": "US"
+        "origin": "US",
+        "alternatives": [
+            "kingfisher",
+            "Euthymol",
+            "Happybrush",
+            "Signal"
+        ]
     },
     {
         "name": "elmex",
@@ -4375,7 +4420,8 @@
         "parentOrigin": "US",
         "origin": "US",
         "alternatives": [
-            "Adidas"
+            "Adidas",
+            "Puma"
         ]
     },
     {
@@ -4555,7 +4601,8 @@
         "democratContribution": 4701347,
         "republicanContribution": 234173,
         "alternatives": [
-            "HMD"
+            "HMD",
+            "Samsung"
         ]
     },
     {
@@ -4643,7 +4690,11 @@
         "parentOrigin": "US",
         "origin": "US",
         "alternatives": [
-            "Volkswagen"
+            "Volkswagen",
+            "BYD",
+            "seat",
+            "Renault",
+            "Peugeot"
         ],
         "democratContribution": 253790,
         "republicanContribution": 69167
@@ -5139,7 +5190,10 @@
         "parentCompany": "Dell Technologies",
         "normalizedName": "dell",
         "parentOrigin": "US",
-        "origin": "US"
+        "origin": "US",
+        "alternatives": [
+            "Samsung"
+        ]
     },
     {
         "name": "Nvidia",
@@ -16273,7 +16327,10 @@
         "parentOrigin": "US",
         "normalizedName": "lea_and_perrins",
         "source": "Lea & Perrins Website/Kraft Heinz Website",
-        "origin": "GB"
+        "origin": "GB",
+        "alternatives": [
+            "Tesco own brand Worcester Sauce"
+        ]
     },
     {
         "name": "Canderel",
@@ -16435,7 +16492,10 @@
         "parentOrigin": "US",
         "normalizedName": "sodastream",
         "source": "Wikipedia Sodastream",
-        "origin": "GB"
+        "origin": "GB",
+        "alternatives": [
+            "mysoda"
+        ]
     },
     {
         "name": "Orkla",
@@ -31502,7 +31562,10 @@
         "parentCompany": "McCormick & Company",
         "normalizedName": "cholula",
         "parentOrigin": "US",
-        "origin": "MX"
+        "origin": "MX",
+        "alternatives": [
+            "Heinz"
+        ]
     },
     {
         "name": "River Rock",
@@ -32015,7 +32078,10 @@
         "parentCompany": "The Gorilla Glue Company",
         "normalizedName": "okeefes",
         "parentOrigin": "US",
-        "origin": "US"
+        "origin": "US",
+        "alternatives": [
+            "Achill Cracked Heel Balm"
+        ]
     },
     {
         "name": "Santa Rosa",
@@ -33717,5 +33783,1391 @@
         "normalizedName": "estrella_damm",
         "parentOrigin": "ES",
         "origin": "ES"
+    },
+    {
+        "name": "Pågen",
+        "description": "Pågen is a Swedish bakery company, producing a variety of breads and pastries. It is a family-owned business.",
+        "source": "Wikipedia: Pågen",
+        "parentCompany": "Pågen AB",
+        "normalizedName": "pagen",
+        "parentOrigin": "SE",
+        "origin": "SE"
+    },
+    {
+        "name": "Sirena",
+        "description": "Sirena is an Australian brand of canned tuna, known for its Italian-style tuna in oil. Products are often sourced from Thailand.",
+        "source": "Sirena website, Australian food news sources",
+        "parentCompany": "Valcorp Fine Foods",
+        "normalizedName": "sirena",
+        "parentOrigin": "AU",
+        "origin": "AU"
+    },
+    {
+        "name": "Arkina",
+        "description": "Arkina is a Swiss brand of mineral water, sourced from the Arkina spring in Yverdon-les-Bains.",
+        "source": "Wikipedia: Feldschlösschen Getränke",
+        "parentCompany": "Carlsberg Group",
+        "normalizedName": "arkina",
+        "parentOrigin": "DK",
+        "origin": "CH"
+    },
+    {
+        "name": "Blusecco",
+        "description": "Blusecco is an Italian brand of sparkling wine.",
+        "source": "Brand packaging/website",
+        "parentCompany": "",
+        "normalizedName": "blusecco",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Pulmoll",
+        "description": "Pulmoll is a German brand of cough drops and lozenges, known for their soothing properties and often sugar-free options.",
+        "source": "Wikipedia: Pulmoll",
+        "parentCompany": "Kalfany Süße Werbung GmbH & Co. KG",
+        "normalizedName": "pulmoll",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "Nestlé / General Mills",
+        "description": "This refers to Cereal Partners Worldwide, a joint venture between Nestlé and General Mills for manufacturing and marketing breakfast cereals outside North America (e.g. Cheerios).",
+        "source": "Wikipedia: Cereal Partners Worldwide",
+        "parentCompany": "Nestlé S.A. & General Mills, Inc.",
+        "normalizedName": "nestle_general_mills",
+        "parentOrigin": "CH & US",
+        "origin": "CH & US"
+    },
+    {
+        "name": "Scott's Porage Oats",
+        "description": "Scott's Porage Oats is a Scottish brand of rolled oats and oat-based breakfast cereals, established in 1880.",
+        "source": "Wikipedia: Scott's Porage Oats",
+        "parentCompany": "PepsiCo, Inc.",
+        "normalizedName": "scotts_porage_oats",
+        "parentOrigin": "US",
+        "origin": "GB"
+    },
+    {
+        "name": "Almhof",
+        "description": "Almhof is a brand of dairy products, particularly yogurts, originating from Germany.",
+        "source": "Wikipedia: Unternehmensgruppe Theo Müller",
+        "parentCompany": "Unternehmensgruppe Theo Müller",
+        "normalizedName": "almhof",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "The bridge",
+        "description": "The Bridge is an Italian company specializing in organic plant-based drinks, desserts, and cooking creams, such as rice milk.",
+        "source": "The Bridge Bio website",
+        "parentCompany": "The Bridge S.r.l.",
+        "normalizedName": "the_bridge",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Rodolfi",
+        "description": "Rodolfi Mansueto S.p.A. is an Italian company producing tomato-based products like tomato paste, purees, and sauces.",
+        "source": "Rodolfi website",
+        "parentCompany": "Rodolfi Mansueto S.p.A.",
+        "normalizedName": "rodolfi",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Ca' Bianca",
+        "description": "Ca' Bianca is a brand, possibly a private label, for products like sliced bread, with origin indicated as Germany.",
+        "source": "Product packaging",
+        "parentCompany": "",
+        "normalizedName": "ca_bianca",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "McIntosh",
+        "description": "The McIntosh is a Canadian apple cultivar, widely grown in Canada and the northern United States.",
+        "source": "Wikipedia: McIntosh (apple)",
+        "parentCompany": "",
+        "normalizedName": "mcintosh",
+        "parentOrigin": "CA",
+        "origin": "CA"
+    },
+    {
+        "name": "Evergood",
+        "description": "Evergood is a Norwegian coffee brand produced by Joh. Johannson Kaffe AS.",
+        "source": "Wikipedia: Joh. Johannson",
+        "parentCompany": "NorgesGruppen ASA",
+        "normalizedName": "evergood",
+        "parentOrigin": "NO",
+        "origin": "NO"
+    },
+    {
+        "name": "Sprague Cannery",
+        "description": "Sprague Foods Limited is a Canadian company producing canned goods like soups and beans.",
+        "source": "Sprague Foods website",
+        "parentCompany": "Sprague Foods Limited",
+        "normalizedName": "sprague_cannery",
+        "parentOrigin": "CA",
+        "origin": "CA"
+    },
+    {
+        "name": "La moderna",
+        "description": "La Moderna is a Mexican brand known for its pasta products and soups.",
+        "source": "La Moderna website",
+        "parentCompany": "Grupo La Moderna",
+        "normalizedName": "la_moderna",
+        "parentOrigin": "MX",
+        "origin": "MX"
+    },
+    {
+        "name": "Boulangerie Grissol",
+        "description": "Grissol is a Canadian brand of melba toast and other baked snacks.",
+        "source": "Wikipedia: Dare Foods",
+        "parentCompany": "Dare Foods Limited",
+        "normalizedName": "boulangerie_grissol",
+        "parentOrigin": "CA",
+        "origin": "CA"
+    },
+    {
+        "name": "Skotidakis",
+        "description": "Skotidakis Goat Farm is a Canadian company producing Greek yogurt, feta cheese, and other dairy products.",
+        "source": "Skotidakis website",
+        "parentCompany": "Skotidakis Goat Farm",
+        "normalizedName": "skotidakis",
+        "parentOrigin": "CA",
+        "origin": "CA"
+    },
+    {
+        "name": "Dempster’s",
+        "description": "Dempster's is a Canadian brand of bread, tortillas, and other bakery products.",
+        "source": "Wikipedia: Bimbo Canada",
+        "parentCompany": "Grupo Bimbo",
+        "normalizedName": "dempsters",
+        "parentOrigin": "MX",
+        "origin": "CA"
+    },
+    {
+        "name": "Country Harvest",
+        "description": "Country Harvest is a Canadian bread brand, known for its stone-milled wheat bread.",
+        "source": "Wonder Brands website",
+        "parentCompany": "Wonder Brands Inc. (Grupo Bimbo)",
+        "normalizedName": "country_harvest",
+        "parentOrigin": "MX",
+        "origin": "CA"
+    },
+    {
+        "name": "Dairy Queen",
+        "description": "Dairy Queen (DQ) is an American chain of soft serve ice cream and fast-food restaurants.",
+        "source": "Wikipedia: Dairy Queen",
+        "parentCompany": "Berkshire Hathaway Inc.",
+        "normalizedName": "dairy_queen",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Your Condiment Co",
+        "description": "Your Condiment Co appears to be a brand for products like baked beans, with Italian origin and linked to Unilever.",
+        "source": "Product packaging",
+        "parentCompany": "Unilever PLC",
+        "normalizedName": "your_condiment_co",
+        "parentOrigin": "GB",
+        "origin": "IT"
+    },
+    {
+        "name": "Altonaer Fischfeinkost",
+        "description": "Altonaer Fischfeinkost is a German brand of fish delicatessen products.",
+        "source": "Product packaging",
+        "parentCompany": "AC salatfrische uc",
+        "normalizedName": "altonaer_fischfeinkost",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "Holy",
+        "description": "HOLY Energy is a German company producing powdered energy drinks as a healthier alternative.",
+        "source": "HOLY Energy website",
+        "parentCompany": "HOLY Energy GmbH",
+        "normalizedName": "holy",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "Passendale",
+        "description": "Passendale is a Belgian cheese, known for its semi-hard texture and distinctive rind.",
+        "source": "Wikipedia: Passendale cheese",
+        "parentCompany": "Savencia Fromage & Dairy",
+        "normalizedName": "passendale",
+        "parentOrigin": "FR",
+        "origin": "BE"
+    },
+    {
+        "name": "Dijamant",
+        "description": "Dijamant is a Serbian brand producing edible oils, mayonnaise, margarine, and other food products.",
+        "source": "Wikipedia: Dijamant",
+        "parentCompany": "Fortenova Group",
+        "normalizedName": "dijamant",
+        "parentOrigin": "HR",
+        "origin": "RS"
+    },
+    {
+        "name": "Kim's Chocolate",
+        "description": "Kim's Chocolates is a Belgian chocolate manufacturer founded in 1987, producing premium Belgian chocolates.",
+        "source": "Kim's Chocolates website",
+        "parentCompany": "Baronie Group",
+        "normalizedName": "kims_chocolate",
+        "parentOrigin": "BE",
+        "origin": "BE"
+    },
+    {
+        "name": "Hengstenberg",
+        "description": "Hengstenberg is a German food manufacturer specializing in pickled products like gherkins, sauerkraut, and mustard.",
+        "source": "Wikipedia: Hengstenberg (company)",
+        "parentCompany": "Hengstenberg GmbH & Co. KG",
+        "normalizedName": "hengstenberg",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "Tictac",
+        "description": "Tic Tac is a brand of small, hard mints manufactured by the Italian company Ferrero.",
+        "source": "Wikipedia: Tic Tac",
+        "parentCompany": "Ferrero S.p.A.",
+        "normalizedName": "tictac",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Plazma",
+        "description": "Plazma is a popular Serbian brand of biscuits, similar to digestive biscuits.",
+        "source": "Wikipedia: Plazma (biscuit)",
+        "parentCompany": "Bambi A.D. (Moji Brendovi group)",
+        "normalizedName": "plazma",
+        "parentOrigin": "RS",
+        "origin": "RS"
+    },
+    {
+        "name": "Rizla",
+        "description": "Rizla is a French brand of rolling papers and other smoking accessories.",
+        "source": "Wikipedia: Rizla",
+        "parentCompany": "Imperial Brands PLC",
+        "normalizedName": "rizla",
+        "parentOrigin": "GB",
+        "origin": "FR"
+    },
+    {
+        "name": "Saint Georges",
+        "description": "Eau de source Saint Georges is a brand of spring water from Corsica, France.",
+        "source": "Product packaging",
+        "parentCompany": "SAS DES EAUX DU COL SAINT GEORGES",
+        "normalizedName": "saint_georges",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Hunky Dory",
+        "description": "Hunky Dorys is an Irish brand of crinkle-cut potato crisps.",
+        "source": "Wikipedia: Tayto (Republic of Ireland)",
+        "parentCompany": "Tayto Snacks (Intersnack Group)",
+        "normalizedName": "hunky_dory",
+        "parentOrigin": "DE",
+        "origin": "IE"
+    },
+    {
+        "name": "Tapatio",
+        "description": "Tapatío is an American hot sauce, produced in Vernon, California.",
+        "source": "Wikipedia: Tapatío Hot Sauce",
+        "parentCompany": "Tapatio Foods, LLC",
+        "normalizedName": "tapatio",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Capri-Sun Orange & Peach",
+        "description": "Capri-Sun is a German brand of juice concentrate drinks in foil pouches, popular worldwide.",
+        "source": "Wikipedia: Capri Sun",
+        "parentCompany": "Capri Sun Group Holding AG (owned by Hans-Peter Wild)",
+        "normalizedName": "capri_sun_orange_and_peach",
+        "parentOrigin": "CH",
+        "origin": "DE"
+    },
+    {
+        "name": "Ahléns",
+        "description": "Ahléns is a Swedish chain of department stores. This entry likely refers to candy sold under their brand or in their stores.",
+        "source": "Wikipedia: Ahléns",
+        "parentCompany": "Axel Johnson AB",
+        "normalizedName": "ahlens",
+        "parentOrigin": "SE",
+        "origin": "SE"
+    },
+    {
+        "name": "Riso Gallo",
+        "description": "Riso Gallo is an Italian company that produces and sells rice and risotto products.",
+        "source": "Wikipedia: Riso Gallo",
+        "parentCompany": "Riso Gallo S.p.A.",
+        "normalizedName": "riso_gallo",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Kioene",
+        "description": "Kioene is an Italian company specializing in plant-based food products, particularly vegetarian and vegan items.",
+        "source": "Kioene website",
+        "parentCompany": "Kioene S.p.A. (Part of Tonazzo Group)",
+        "normalizedName": "kioene",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Vallelata",
+        "description": "Vallelata is an Italian brand of dairy products, particularly mozzarella and other fresh cheeses.",
+        "source": "Wikipedia: Lactalis",
+        "parentCompany": "Lactalis Group",
+        "normalizedName": "vallelata",
+        "parentOrigin": "FR",
+        "origin": "IT"
+    },
+    {
+        "name": "Aia",
+        "description": "AIA (Agricola Italiana Alimentare) is a major Italian food company, particularly known for poultry and processed meat products.",
+        "source": "Wikipedia: Gruppo Veronesi",
+        "parentCompany": "Gruppo Veronesi Holding S.p.A.",
+        "normalizedName": "aia",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Asdomar",
+        "description": "Asdomar is an Italian brand of canned fish, particularly tuna, known for its sustainable fishing practices.",
+        "source": "Asdomar website",
+        "parentCompany": "Generale Conserve S.p.A.",
+        "normalizedName": "asdomar",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Nostromo",
+        "description": "Nostromo is an Italian brand of canned tuna and other fish products.",
+        "source": "Wikipedia: Grupo Calvo",
+        "parentCompany": "Grupo Calvo",
+        "normalizedName": "nostromo",
+        "parentOrigin": "ES",
+        "origin": "IT"
+    },
+    {
+        "name": "Guaraná Antarctica Zero",
+        "description": "Guaraná Antarctica is a Brazilian soft drink made from guaraná fruit. This is the zero-sugar version.",
+        "source": "Wikipedia: Guaraná Antarctica",
+        "parentCompany": "Ambev (Anheuser-Busch InBev)",
+        "normalizedName": "guarana_antarctica_zero",
+        "parentOrigin": "BE",
+        "origin": "BR"
+    },
+    {
+        "name": "Snack Day",
+        "description": "Snack Day is a private label brand of snacks, often associated with Lidl supermarkets.",
+        "source": "Lidl website/product packaging",
+        "parentCompany": "Lidl Stiftung & Co. KG (Schwarz Gruppe)",
+        "normalizedName": "snack_day",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "Kemphor",
+        "description": "Kemphor is a Spanish brand of oral hygiene products, including toothpaste.",
+        "source": "Kemphor website",
+        "parentCompany": "Laboratorios Verkos S.A.",
+        "normalizedName": "kemphor",
+        "parentOrigin": "ES",
+        "origin": "ES"
+    },
+    {
+        "name": "Chicco",
+        "description": "Chicco is an Italian brand specializing in baby care products, including clothing, toys, and nursery equipment.",
+        "source": "Wikipedia: Chicco",
+        "parentCompany": "Artsana Group S.p.A.",
+        "normalizedName": "chicco",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Licor Polo",
+        "description": "Licor del Polo is a Spanish brand of oral care products, including toothpaste and mouthwash.",
+        "source": "Wikipedia: Henkel",
+        "parentCompany": "Henkel AG & Co. KGaA",
+        "normalizedName": "licor_polo",
+        "parentOrigin": "DE",
+        "origin": "ES"
+    },
+    {
+        "name": "Title Nne",
+        "description": "Title Nine is an American company that designs and sells women's athletic apparel and outdoor gear.",
+        "source": "Title Nine website",
+        "parentCompany": "Title Nine",
+        "normalizedName": "title_nne",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Leggo's",
+        "description": "Leggo's is an Australian brand of Italian-style food products, including pasta sauces and tomato paste.",
+        "source": "Wikipedia: Leggo's",
+        "parentCompany": "Simplot Australia (J.R. Simplot Company)",
+        "normalizedName": "leggos",
+        "parentOrigin": "US",
+        "origin": "AU"
+    },
+    {
+        "name": "Malee",
+        "description": "Malee Group PCL is a Thai company producing and distributing fruit juices, canned fruits, and other beverages.",
+        "source": "Malee Group website",
+        "parentCompany": "Malee Group PCL",
+        "normalizedName": "malee",
+        "parentOrigin": "TH",
+        "origin": "TH"
+    },
+    {
+        "name": "Mademoiselle Desserts Renaison",
+        "description": "Mademoiselle Desserts is a European leader in frozen industrial pastry. Renaison is one of their production sites in France.",
+        "source": "Mademoiselle Desserts website",
+        "parentCompany": "Mademoiselle Desserts Group",
+        "normalizedName": "mademoiselle_desserts_renaison",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "NHCO",
+        "description": "NHCO Nutrition is a French laboratory specializing in amino acid-based dietary supplements.",
+        "source": "NHCO Nutrition website",
+        "parentCompany": "Chiesi Group",
+        "normalizedName": "nhco",
+        "parentOrigin": "IT",
+        "origin": "FR"
+    },
+    {
+        "name": "Metcalfe's",
+        "description": "Metcalfe's is a British brand of snack foods, known for popcorn crisps and rice cakes.",
+        "source": "Wikipedia: Kettle Foods (Europe)",
+        "parentCompany": "Valeo Foods Group",
+        "normalizedName": "metcalfes",
+        "parentOrigin": "IE",
+        "origin": "GB"
+    },
+    {
+        "name": "Nugatti",
+        "description": "Nugatti is a Norwegian brand of chocolate and hazelnut spread.",
+        "source": "Wikipedia: Orkla Group",
+        "parentCompany": "Orkla ASA",
+        "normalizedName": "nugatti",
+        "parentOrigin": "NO",
+        "origin": "NO"
+    },
+    {
+        "name": "Chrysler",
+        "description": "Chrysler is an American automotive brand, one of the 'Big Three' in the United States.",
+        "source": "Wikipedia: Chrysler",
+        "parentCompany": "Stellantis N.V.",
+        "normalizedName": "chrysler",
+        "parentOrigin": "NL",
+        "origin": "US"
+    },
+    {
+        "name": "Milkyway",
+        "description": "Milky Way is a brand of chocolate bar manufactured by Mars, Incorporated. There are different versions in the US and globally.",
+        "source": "Wikipedia: Milky Way (chocolate bar)",
+        "parentCompany": "Mars, Incorporated",
+        "normalizedName": "milkyway",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "M&M",
+        "description": "M&M's are multi-colored button-shaped chocolates, each of which has the letter 'm' printed in lower case on one side, manufactured by Mars, Incorporated.",
+        "source": "Wikipedia: M&M's",
+        "parentCompany": "Mars, Incorporated",
+        "normalizedName": "mandm",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Felce Azzura Talco Classico",
+        "description": "Felce Azzurra is an Italian brand of personal care products, including their classic talcum powder.",
+        "source": "Felce Azzurra website",
+        "parentCompany": "Paglieri S.p.A.",
+        "normalizedName": "felce_azzura_talco_classico",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Hanseatisches Chocoladen Kontor GmbH & Co KG",
+        "description": "Hanseatisches Chocoladen Kontor is a German chocolate manufacturer, known for brands like Feodora.",
+        "source": "Feodora website",
+        "parentCompany": "Hanseatisches Chocoladen Kontor GmbH & Co. KG",
+        "normalizedName": "hanseatisches_chocoladen_kontor_gmbh_and_co_kg",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "little moons mochi ice cream",
+        "description": "Little Moons are a British brand of mochi ice cream, small round desserts made of ice cream wrapped in soft rice dough.",
+        "source": "Little Moons website",
+        "parentCompany": "Little Moons Ltd.",
+        "normalizedName": "little_moons_mochi_ice_cream",
+        "parentOrigin": "GB",
+        "origin": "GB"
+    },
+    {
+        "name": "IHerb",
+        "description": "iHerb is an American online retailer of vitamins, supplements, and natural health products.",
+        "source": "Wikipedia: iHerb",
+        "parentCompany": "iHerb, LLC",
+        "normalizedName": "iherb",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Geflügel Wiener",
+        "description": "Geflügel Wiener refers to poultry Vienna sausages, a product by Schmälzle, a German meat and sausage producer.",
+        "source": "Product packaging",
+        "parentCompany": "Schmälzle - Feine Fleisch und Wurstwaren",
+        "normalizedName": "geflugel_wiener",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "Ragusa",
+        "description": "Ragusa is a Swiss chocolate bar brand, characterized by its praline filling and whole hazelnuts, manufactured by Camille Bloch.",
+        "source": "Wikipedia: Ragusa (chocolate)",
+        "parentCompany": "Chocolats Camille Bloch SA",
+        "normalizedName": "ragusa",
+        "parentOrigin": "CH",
+        "origin": "CH"
+    },
+    {
+        "name": "Pastabilities",
+        "description": "Pastabilities is a brand of pasta, including protein pasta, from The Pasta Shoppe.",
+        "source": "The Pasta Shoppe website",
+        "parentCompany": "The Pasta Shoppe",
+        "normalizedName": "pastabilities",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Isautier",
+        "description": "Isautier is a distillery located on Réunion Island, known for producing rum and other spirits since 1845.",
+        "source": "Isautier website",
+        "parentCompany": "Isautier SAS",
+        "normalizedName": "isautier",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Gavotte",
+        "description": "Gavottes are a brand of crispy crêpe dentelle biscuits originating from Brittany, France.",
+        "source": "Wikipedia: Crêpe dentelle",
+        "parentCompany": "Loc Maria Biscuits (Groupe Galapagos)",
+        "normalizedName": "gavotte",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Cool Ridge",
+        "description": "Cool Ridge is an Australian brand of spring water.",
+        "source": "Asahi Beverages website",
+        "parentCompany": "Asahi Group Holdings",
+        "normalizedName": "cool_ridge",
+        "parentOrigin": "JP",
+        "origin": "AU"
+    },
+    {
+        "name": "Ardmona",
+        "description": "Ardmona is an Australian brand of canned fruit and tomato products.",
+        "source": "Wikipedia: SPC Ardmona",
+        "parentCompany": "SPC Global Limited (Shepparton Partners Collective)",
+        "normalizedName": "ardmona",
+        "parentOrigin": "AU",
+        "origin": "AU"
+    },
+    {
+        "name": "American",
+        "description": "This is a generic term and requires more context for specific product identification.",
+        "source": "",
+        "parentCompany": "",
+        "normalizedName": "american",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Fiction",
+        "description": "This refers to a work of fiction, possibly a novel published by Simon & Schuster.",
+        "source": "Publisher information",
+        "parentCompany": "Paramount Global",
+        "normalizedName": "fiction",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Mariage frères",
+        "description": "Mariage Frères is a French gourmet tea company, founded in Paris in 1854, known for its wide range of high-quality teas.",
+        "source": "Wikipedia: Mariage Frères",
+        "parentCompany": "Mariage Frères International S.A.",
+        "normalizedName": "mariage_freres",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Rigolo do Asiago",
+        "description": "Rigoni di Asiago is an Italian company known for organic products, including Nocciolata hazelnut spread.",
+        "source": "Wikipedia: Rigoni di Asiago",
+        "parentCompany": "Rigoni di Asiago S.p.A.",
+        "normalizedName": "rigolo_do_asiago",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Schneider",
+        "description": "Schneider is a French brand, possibly referring to Schneider Traiteur, known for Alsatian culinary preparations.",
+        "source": "Brand website/packaging",
+        "parentCompany": "",
+        "normalizedName": "schneider",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "ARO",
+        "description": "ARO is a private label brand of Metro AG, offering a wide range of food and non-food products.",
+        "source": "Wikipedia: Metro AG",
+        "parentCompany": "Metro AG",
+        "normalizedName": "aro",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "Boulangerie Neuhauser",
+        "description": "Neuhauser is a French bakery group, producing bread, pastries, and viennoiserie.",
+        "source": "Wikipedia: Groupe Soufflet",
+        "parentCompany": "InVivo Group (via Soufflet Group)",
+        "normalizedName": "boulangerie_neuhauser",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Gervais",
+        "description": "Gervais is a French brand of dairy products, particularly fresh cheese, now part of Danone.",
+        "source": "Wikipedia: Danone",
+        "parentCompany": "Danone S.A.",
+        "normalizedName": "gervais",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Oust Odour Eliminator",
+        "description": "Oust is a brand of air freshener and odour eliminator sprays.",
+        "source": "Wikipedia: S. C. Johnson & Son",
+        "parentCompany": "S. C. Johnson & Son, Inc.",
+        "normalizedName": "oust_odour_eliminator",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "JAFADEN",
+        "description": "Jafaden is a brand of orange juice, notably sold by E.Leclerc in France. The oranges may be imported and processed/packaged in France.",
+        "source": "User provided information, E.Leclerc",
+        "parentCompany": "E.Leclerc",
+        "normalizedName": "jafaden",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Xiaomi",
+        "description": "Xiaomi Corporation is a Chinese multinational electronics company, known for smartphones, mobile apps, laptops, home appliances, and consumer electronics.",
+        "source": "Wikipedia: Xiaomi",
+        "parentCompany": "Xiaomi Corporation",
+        "normalizedName": "xiaomi",
+        "parentOrigin": "CN",
+        "origin": "CN"
+    },
+    {
+        "name": "Redmi",
+        "description": "Redmi is a sub-brand owned by the Chinese electronics company Xiaomi. It produces budget smartphones and other consumer electronics.",
+        "source": "Wikipedia: Redmi",
+        "parentCompany": "Xiaomi Corporation",
+        "normalizedName": "redmi",
+        "parentOrigin": "CN",
+        "origin": "CN"
+    },
+    {
+        "name": "Ubisoft",
+        "description": "Ubisoft Entertainment SA is a French video game company, known for developing and publishing popular game franchises.",
+        "source": "Wikipedia: Ubisoft",
+        "parentCompany": "Ubisoft Entertainment SA",
+        "normalizedName": "ubisoft",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Peace River Honey",
+        "description": "Peace River Honey is a Canadian brand of honey, sourced from the Peace River region.",
+        "source": "Peace River Honey website",
+        "parentCompany": "",
+        "normalizedName": "peace_river_honey",
+        "parentOrigin": "CA",
+        "origin": "CA"
+    },
+    {
+        "name": "Old Jamaica",
+        "description": "Old Jamaica is a brand of ginger beer and other carbonated soft drinks, popular in the UK.",
+        "source": "Wikipedia: Old Jamaica Ginger Beer",
+        "parentCompany": "Refresco Group N.V.",
+        "normalizedName": "old_jamaica",
+        "parentOrigin": "NL",
+        "origin": "GB"
+    },
+    {
+        "name": "Tastino",
+        "description": "Tastino is a private label brand, often associated with Lidl, for bakery products like hotdog buns.",
+        "source": "Lidl website/product packaging",
+        "parentCompany": "Lidl Stiftung & Co. KG (Schwarz Gruppe)",
+        "normalizedName": "tastino",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "Quintesens",
+        "description": "Quintesens is a French brand specializing in organic oils and vinaigrettes tailored for different age groups and nutritional needs.",
+        "source": "Quintesens website",
+        "parentCompany": "Quintesens SAS",
+        "normalizedName": "quintesens",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Brasserie {C}",
+        "description": "Brasserie C is a craft brewery located in Liège, Belgium, known for its Curtius beer.",
+        "source": "Brasserie C website",
+        "parentCompany": "Brasserie C",
+        "normalizedName": "brasserie_c",
+        "parentOrigin": "BE",
+        "origin": "BE"
+    },
+    {
+        "name": "Smiths",
+        "description": "Smith's is a British-Australian brand of snack foods, primarily potato crisps. In Australia, it is owned by PepsiCo.",
+        "source": "Wikipedia: Smith's Snackfood Company",
+        "parentCompany": "PepsiCo, Inc. (for Australian operations)",
+        "normalizedName": "smiths",
+        "parentOrigin": "US",
+        "origin": "GB"
+    },
+    {
+        "name": "Red Rock Deli",
+        "description": "Red Rock Deli is an Australian brand of premium potato crisps and other snacks.",
+        "source": "Wikipedia: The Smith's Snackfood Company",
+        "parentCompany": "PepsiCo, Inc.",
+        "normalizedName": "red_rock_deli",
+        "parentOrigin": "US",
+        "origin": "AU"
+    },
+    {
+        "name": "Insituto Español",
+        "description": "Instituto Español is a Spanish company producing cosmetics and personal care products, including shower gels.",
+        "source": "Instituto Español website",
+        "parentCompany": "Instituto Español S.A.",
+        "normalizedName": "insituto_espanol",
+        "parentOrigin": "ES",
+        "origin": "ES"
+    },
+    {
+        "name": "Morand",
+        "description": "Distillerie Morand is a Swiss company based in Martigny, known for its fruit brandies (eaux-de-vie) and syrups.",
+        "source": "Wikipedia: Distillerie Morand",
+        "parentCompany": "Distillerie Louis Morand & Cie SA",
+        "normalizedName": "morand",
+        "parentOrigin": "CH",
+        "origin": "CH"
+    },
+    {
+        "name": "Hemme",
+        "description": "Hemme Milch is a German dairy company from the Uckermark region, producing milk, yogurt, and other dairy products.",
+        "source": "Hemme Milch website",
+        "parentCompany": "Hemme Milch GmbH & Co. KG",
+        "normalizedName": "hemme",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "Popchips",
+        "description": "Popchips are a brand of popped potato and corn chips, marketed as a healthier alternative to fried crisps.",
+        "source": "Wikipedia: Popchips",
+        "parentCompany": "KP Snacks (Intersnack Group)",
+        "normalizedName": "popchips",
+        "parentOrigin": "DE",
+        "origin": "US"
+    },
+    {
+        "name": "Buffalo Trace",
+        "description": "Buffalo Trace is a brand of Kentucky straight bourbon whiskey produced by the Buffalo Trace Distillery.",
+        "source": "Wikipedia: Buffalo Trace Distillery",
+        "parentCompany": "Sazerac Company, Inc.",
+        "normalizedName": "buffalo_trace",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Mr beast",
+        "description": "Feastables is a chocolate brand created by American YouTuber MrBeast (Jimmy Donaldson).",
+        "source": "Wikipedia: MrBeast",
+        "parentCompany": "Feastables, Inc.",
+        "normalizedName": "mr_beast",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Nutroma",
+        "description": "Nutroma is a brand of coffee creamer, popular in Belgium.",
+        "source": "Product packaging",
+        "parentCompany": "Royal FrieslandCampina N.V.",
+        "normalizedName": "nutroma",
+        "parentOrigin": "NL",
+        "origin": "BE"
+    },
+    {
+        "name": "TomTom",
+        "description": "TomTom N.V. is a Dutch multinational company that develops and sells navigation technology, including GPS devices and map data.",
+        "source": "Wikipedia: TomTom",
+        "parentCompany": "TomTom N.V.",
+        "normalizedName": "tomtom",
+        "parentOrigin": "NL",
+        "origin": "NL"
+    },
+    {
+        "name": "Uniqlo",
+        "description": "Uniqlo Co., Ltd. is a Japanese casual wear designer, manufacturer, and retailer.",
+        "source": "Wikipedia: Uniqlo",
+        "parentCompany": "Fast Retailing Co., Ltd.",
+        "normalizedName": "uniqlo",
+        "parentOrigin": "JP",
+        "origin": "JP"
+    },
+    {
+        "name": "The Collective",
+        "description": "The Collective is a brand known for its gourmet yogurts, originating in New Zealand and popular in the UK.",
+        "source": "The Collective website",
+        "parentCompany": "The Collective (UK) Ltd / The Collective NZ",
+        "normalizedName": "the_collective",
+        "parentOrigin": "GB / NZ",
+        "origin": "NZ"
+    },
+    {
+        "name": "Blue Diamond",
+        "description": "Blue Diamond Growers is an American agricultural cooperative and global brand for almonds and almond products.",
+        "source": "Wikipedia: Blue Diamond Growers",
+        "parentCompany": "Blue Diamond Growers",
+        "normalizedName": "blue_diamond",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Lucien Georgelin",
+        "description": "Lucien Georgelin is a French company producing jams, compotes, pâtés, and other traditional food products.",
+        "source": "Lucien Georgelin website",
+        "parentCompany": "Lucien Georgelin SAS",
+        "normalizedName": "lucien_georgelin",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Orezza",
+        "description": "Orezza is a brand of naturally sparkling mineral water from Corsica, France.",
+        "source": "Orezza website",
+        "parentCompany": "S.N.E. Eaux Minérales d'Orezza",
+        "normalizedName": "orezza",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Lien Ying",
+        "description": "Lien Ying is a German brand offering Asian food ingredients and products.",
+        "source": "Lien Ying website",
+        "parentCompany": "Rila Feinkost-Importe GmbH & Co. KG",
+        "normalizedName": "lien_ying",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "Villars",
+        "description": "Villars Maître Chocolatier is a Swiss chocolate company based in Fribourg, producing a range of Swiss chocolates.",
+        "source": "Wikipedia: Villars Maître Chocolatier",
+        "parentCompany": "Villars Maître Chocolatier SA",
+        "normalizedName": "villars",
+        "parentOrigin": "CH",
+        "origin": "CH"
+    },
+    {
+        "name": "Pepsi cola",
+        "description": "Pepsi is a carbonated soft drink manufactured by PepsiCo. Originally created and developed in 1893.",
+        "source": "Wikipedia: Pepsi",
+        "parentCompany": "PepsiCo, Inc.",
+        "normalizedName": "pepsi_cola",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Biofan",
+        "description": "Biofan is a brand, possibly Dutch or Nigerian, for organic products like coconut oil.",
+        "source": "Product packaging",
+        "parentCompany": "",
+        "normalizedName": "biofan",
+        "parentOrigin": "",
+        "origin": "NG"
+    },
+    {
+        "name": "LA VIE CLAIRE",
+        "description": "La Vie Claire is a French chain of organic food stores, also offering products under its own brand name.",
+        "source": "Wikipedia: La Vie Claire",
+        "parentCompany": "La Vie Claire S.A.",
+        "normalizedName": "la_vie_claire",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Franziskaner-Brau GmbH",
+        "description": "Franziskaner is a German brewery known for its Weissbier (wheat beer), originating from Munich.",
+        "source": "Wikipedia: Franziskaner",
+        "parentCompany": "Anheuser-Busch InBev",
+        "normalizedName": "franziskaner_brau_gmbh",
+        "parentOrigin": "BE",
+        "origin": "DE"
+    },
+    {
+        "name": "Yeo Valley",
+        "description": "Yeo Valley is a British family-owned company producing organic dairy products, including yogurt, milk, and butter.",
+        "source": "Wikipedia: Yeo Valley Organic",
+        "parentCompany": "Yeo Valley Group Ltd.",
+        "normalizedName": "yeo_valley",
+        "parentOrigin": "GB",
+        "origin": "GB"
+    },
+    {
+        "name": "Somersby",
+        "description": "Somersby is a brand of cider produced by Carlsberg Group, launched in 2008.",
+        "source": "Wikipedia: Somersby cider",
+        "parentCompany": "Carlsberg Group",
+        "normalizedName": "somersby",
+        "parentOrigin": "DK",
+        "origin": "DK"
+    },
+    {
+        "name": "Cauvin",
+        "description": "Cauvin is a French company specializing in vegetable oils, including olive oil.",
+        "source": "Cauvin website",
+        "parentCompany": "Cauvin SAS",
+        "normalizedName": "cauvin",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "BW-100",
+        "description": "BW-100 is a brand of metal-working lubricant products from Bex InterCorporation in South Korea.",
+        "source": "Bex InterCorporation website",
+        "parentCompany": "Buhmwoo Group",
+        "normalizedName": "bw_100",
+        "parentOrigin": "KR",
+        "origin": "KR"
+    },
+    {
+        "name": "Bex InterCorporation",
+        "description": "BEX Inter-Corporation Ltd. is a South Korean company, subsidiary of Buhmwoo Group, specializing in lubricants and chemical products.",
+        "source": "Bex InterCorporation website",
+        "parentCompany": "Buhmwoo Group",
+        "normalizedName": "bex_intercorporation",
+        "parentOrigin": "KR",
+        "origin": "KR"
+    },
+    {
+        "name": "Proraso Wood and Spice Beard Wash",
+        "description": "Proraso is an Italian brand of shaving and beard care products. This is their beard wash with a wood and spice scent.",
+        "source": "Proraso website",
+        "parentCompany": "Ludovico Martelli S.r.l.",
+        "normalizedName": "proraso_wood_and_spice_beard_wash",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Proraso",
+        "description": "Proraso is an iconic Italian brand specializing in shaving and beard care products since 1948.",
+        "source": "Wikipedia: Proraso",
+        "parentCompany": "Ludovico Martelli S.r.l.",
+        "normalizedName": "proraso",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Magnesia Red Grapefruit",
+        "description": "Magnesia is a Czech brand of mineral water, naturally rich in magnesium. This is a red grapefruit flavored version.",
+        "source": "Wikipedia: Mattoni 1873",
+        "parentCompany": "Mattoni 1873 a.s.",
+        "normalizedName": "magnesia_red_grapefruit",
+        "parentOrigin": "CZ",
+        "origin": "CZ"
+    },
+    {
+        "name": "Kellogg",
+        "description": "Kellogg's is an American multinational food manufacturing company, known for cereals and convenience foods.",
+        "source": "Wikipedia: Kellogg's",
+        "parentCompany": "Kellanova (formerly Kellogg Company)",
+        "normalizedName": "kellogg",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Pärsons",
+        "description": "Pärsons is a Swedish brand known for sliced meat products, particularly ham.",
+        "source": "HKScan website",
+        "parentCompany": "HKScan Oyj",
+        "normalizedName": "parsons",
+        "parentOrigin": "FI",
+        "origin": "SE"
+    },
+    {
+        "name": "WeightWord",
+        "description": "WeightWorld is a British online retailer of health and wellness products, including supplements like Vitamin B12.",
+        "source": "WeightWorld website",
+        "parentCompany": "Comfort Click Ltd.",
+        "normalizedName": "weightword",
+        "parentOrigin": "GB",
+        "origin": "GB"
+    },
+    {
+        "name": "Vitacraft",
+        "description": "Vitakraft is a German-based international company that manufactures and sells pet food and pet supplies.",
+        "source": "Wikipedia: Vitakraft",
+        "parentCompany": "Vitakraft Pet Care GmbH & Co. KG",
+        "normalizedName": "vitacraft",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "Cocagne",
+        "description": "Cocagne is a Portuguese brand of canned fish, particularly sardines.",
+        "source": "Product packaging/brand information",
+        "parentCompany": "Conserveira de Lisboa",
+        "normalizedName": "cocagne",
+        "parentOrigin": "PT",
+        "origin": "PT"
+    },
+    {
+        "name": "Fonte de Medici",
+        "description": "Fonte de' Medici is an Italian brand of mineral water from Tuscany.",
+        "source": "Fonte Santafiora website",
+        "parentCompany": "Fonte Santafiora S.p.A.",
+        "normalizedName": "fonte_de_medici",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Rapso",
+        "description": "Rapso is an Austrian brand of rapeseed oil, known for its quality and health benefits.",
+        "source": "Rapso website",
+        "parentCompany": "VOG AG (Vereinigte Fettwarenindustrie)",
+        "normalizedName": "rapso",
+        "parentOrigin": "AT",
+        "origin": "AT"
+    },
+    {
+        "name": "Chocolates Valor",
+        "description": "Chocolates Valor S.A. is a Spanish chocolate manufacturing company.",
+        "source": "Wikipedia: Chocolates Valor",
+        "parentCompany": "Chocolates Valor S.A.",
+        "normalizedName": "chocolates_valor",
+        "parentOrigin": "ES",
+        "origin": "ES"
+    },
+    {
+        "name": "La Morena",
+        "description": "La Morena is a Mexican brand offering authentic Mexican food products, particularly canned chili peppers and sauces.",
+        "source": "La Morena website",
+        "parentCompany": "La Morena S.A. de C.V.",
+        "normalizedName": "la_morena",
+        "parentOrigin": "MX",
+        "origin": "MX"
+    },
+    {
+        "name": "Ayyo",
+        "description": "Ayyo is a German brand of Ayran, a yogurt-based drink.",
+        "source": "Ayyo.de website",
+        "parentCompany": "Ayyo GmbH",
+        "normalizedName": "ayyo",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "Karma Drinks",
+        "description": "Karma Drinks is a company producing ethically sourced, organic soft drinks, originating from New Zealand and operating in the UK.",
+        "source": "Karma Drinks website",
+        "parentCompany": "Karma Drinks Co.",
+        "normalizedName": "karma_drinks",
+        "parentOrigin": "NZ",
+        "origin": "NZ"
+    },
+    {
+        "name": "yfood",
+        "description": "yfood Labs GmbH is a German company producing nutritionally complete ready-to-drink meals, powders, and bars.",
+        "source": "yfood website",
+        "parentCompany": "yfood Labs GmbH",
+        "normalizedName": "yfood",
+        "parentOrigin": "DE",
+        "origin": "DE"
+    },
+    {
+        "name": "San narciso",
+        "description": "San Narciso is a Spanish brand of sparkling mineral water.",
+        "source": "Product packaging",
+        "parentCompany": "Aguas de San Narciso S.A. (Possible former Nestlé ownership)",
+        "normalizedName": "san_narciso",
+        "parentOrigin": "ES",
+        "origin": "ES"
+    },
+    {
+        "name": "Mazzer",
+        "description": "Mazzer Luigi S.R.L. is an Italian manufacturer of high-quality coffee grinders and grinder-dosers.",
+        "source": "Mazzer website",
+        "parentCompany": "Mazzer Luigi S.R.L.",
+        "normalizedName": "mazzer",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Cosmica",
+        "description": "Cosmica is a Nordic skincare brand, offering products for sensitive skin, developed by ACO HUD NORDIC AB.",
+        "source": "ACO Hud Nordic website",
+        "parentCompany": "Perrigo Company plc",
+        "normalizedName": "cosmica",
+        "parentOrigin": "IE",
+        "origin": "SE"
+    },
+    {
+        "name": "Solo Super",
+        "description": "Solo is a Norwegian orange-flavoured soft drink. Solo Super is a sugar-free version.",
+        "source": "Wikipedia: Solo (Norwegian soft drink)",
+        "parentCompany": "Ringnes AS (Carlsberg Group)",
+        "normalizedName": "solo_super",
+        "parentOrigin": "DK",
+        "origin": "NO"
+    },
+    {
+        "name": "Nutrend Whey protein",
+        "description": "Nutrend D.S., a.s. is a Czech company specializing in sports nutrition and dietary supplements, including whey protein.",
+        "source": "Nutrend website",
+        "parentCompany": "Nutrend D.S., a.s.",
+        "normalizedName": "nutrend_whey_protein",
+        "parentOrigin": "CZ",
+        "origin": "CZ"
+    },
+    {
+        "name": "Nothing Technology Limited",
+        "description": "Nothing Technology Limited is a London-based consumer technology company, known for its uniquely designed smartphones and audio products.",
+        "source": "Wikipedia: Nothing (company)",
+        "parentCompany": "Nothing Technology Limited",
+        "normalizedName": "nothing_technology_limited",
+        "parentOrigin": "GB",
+        "origin": "GB"
+    },
+    {
+        "name": "NR Instant Produce PCI",
+        "description": "NR Instant Produce PCL (NRF) is a Thai company manufacturing and distributing food products, including sauces like Sriracha.",
+        "source": "NR Instant Produce website",
+        "parentCompany": "NR Instant Produce PCL",
+        "normalizedName": "nr_instant_produce_pci",
+        "parentOrigin": "TH",
+        "origin": "TH"
+    },
+    {
+        "name": "L'Angelica Istituto Erboristico",
+        "description": "L'Angelica Istituto Erboristico is an Italian brand offering herbal products, including teas, supplements, and personal care items.",
+        "source": "L'Angelica website",
+        "parentCompany": "Coswell S.p.A.",
+        "normalizedName": "langelica_istituto_erboristico",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Gran Gallo",
+        "description": "Gran Gallo is a premium line of rice products from the Italian company Riso Gallo.",
+        "source": "Riso Gallo website",
+        "parentCompany": "Riso Gallo S.p.A.",
+        "normalizedName": "gran_gallo",
+        "parentOrigin": "IT",
+        "origin": "IT"
+    },
+    {
+        "name": "Waterloo",
+        "description": "Waterloo Sparkling Water is an American brand of flavored sparkling water.",
+        "source": "Waterloo Sparkling Water website",
+        "parentCompany": "Waterloo Sparkling Water Corp.",
+        "normalizedName": "waterloo",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "CND Creative Nail Deaign Inc",
+        "description": "CND (Creative Nail Design) is an American company specializing in professional nail, hand, and foot beauty products.",
+        "source": "CND website",
+        "parentCompany": "Revlon, Inc.",
+        "normalizedName": "cnd_creative_nail_deaign_inc",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Maxi-Wash",
+        "description": "Maxi-Wash is a brand of pet care products, such as hot spot sprays, from Lidan, Inc.",
+        "source": "Product packaging/Lidan Inc. information",
+        "parentCompany": "Lidan, Inc.",
+        "normalizedName": "maxi_wash",
+        "parentOrigin": "US",
+        "origin": "US"
+    },
+    {
+        "name": "Labeyrie",
+        "description": "Labeyrie is a French brand known for fine foods, particularly smoked salmon, foie gras, and other delicatessen products.",
+        "source": "Wikipedia: Labeyrie Fine Foods",
+        "parentCompany": "Labeyrie Fine Foods SAS",
+        "normalizedName": "labeyrie",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Frutesse",
+        "description": "Frutesse is a Dutch brand known for fruit syrups (appelstroop, perenstroop).",
+        "source": "Frutesse website",
+        "parentCompany": "Frumarco B.V.",
+        "normalizedName": "frutesse",
+        "parentOrigin": "NL",
+        "origin": "NL"
+    },
+    {
+        "name": "Homepride",
+        "description": "Homepride is a British brand of flour and cooking sauces.",
+        "source": "Wikipedia: Homepride",
+        "parentCompany": "Premier Foods plc (flour) / McCormick & Company (sauces)",
+        "normalizedName": "homepride",
+        "parentOrigin": "GB / US",
+        "origin": "GB"
+    },
+    {
+        "name": "Sainte Marguerite",
+        "description": "Sainte Marguerite is a brand of mineral water, likely a private label of Intermarché, sourced in France.",
+        "source": "Product packaging/Intermarché information",
+        "parentCompany": "Les Mousquetaires (Intermarché)",
+        "normalizedName": "sainte_marguerite",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "CORNY",
+        "description": "Corny is a German brand of muesli bars (cereal bars).",
+        "source": "Wikipedia: Schwartauer Werke",
+        "parentCompany": "Hero Group",
+        "normalizedName": "corny",
+        "parentOrigin": "CH",
+        "origin": "DE"
+    },
+    {
+        "name": "SCHWARTAUER WERKE",
+        "description": "Schwartauer Werke is a German food company, known for jams, spreads, dessert sauces, syrups, and muesli bars (like Corny).",
+        "source": "Wikipedia: Schwartauer Werke",
+        "parentCompany": "Hero Group",
+        "normalizedName": "schwartauer_werke",
+        "parentOrigin": "CH",
+        "origin": "DE"
+    },
+    {
+        "name": "Thatchers Katy",
+        "description": "Thatchers Katy is a single variety cider made from Katy apples by Thatchers Cider Company in Somerset, UK.",
+        "source": "Thatchers Cider website",
+        "parentCompany": "Thatchers Cider Co Ltd",
+        "normalizedName": "thatchers_katy",
+        "parentOrigin": "GB",
+        "origin": "GB"
+    },
+    {
+        "name": "Thatchers",
+        "description": "Thatchers Cider is an English cider maker based in Sandford, Somerset.",
+        "source": "Wikipedia: Thatchers Cider",
+        "parentCompany": "Thatchers Cider Co Ltd",
+        "normalizedName": "thatchers",
+        "parentOrigin": "GB",
+        "origin": "GB"
+    },
+    {
+        "name": "Liga",
+        "description": "Liga is a brand of biscuits, particularly known for children's biscuits and fruit bars, popular in the Netherlands and Belgium.",
+        "source": "Wikipedia: Liga (biscuit)",
+        "parentCompany": "Mondelēz International",
+        "normalizedName": "liga",
+        "parentOrigin": "US",
+        "origin": "NL"
+    },
+    {
+        "name": "Stada",
+        "description": "Stada Arzneimittel AG is a German pharmaceutical company specializing in generic drugs and consumer health products.",
+        "source": "Wikipedia: Stada Arzneimittel",
+        "parentCompany": "Nidda Healthcare Holding AG (Bain Capital & Cinven)",
+        "normalizedName": "stada",
+        "parentOrigin": "LU",
+        "origin": "DE"
+    },
+    {
+        "name": "Soubry",
+        "description": "Soubry is a Belgian company producing pasta and other cereal-based products.",
+        "source": "Soubry website",
+        "parentCompany": "Soubry N.V./S.A.",
+        "normalizedName": "soubry",
+        "parentOrigin": "BE",
+        "origin": "BE"
+    },
+    {
+        "name": "Hazlemere Fine Foods",
+        "description": "Hazlemere Fine Foods is a UK-based company, this product (Premium Beef Dripping) indicates Polish origin.",
+        "source": "Product packaging",
+        "parentCompany": "Hazlemere Fine Foods Ltd.",
+        "normalizedName": "hazlemere_fine_foods",
+        "parentOrigin": "GB",
+        "origin": "PL"
+    },
+    {
+        "name": "T&C Terres & Céréales BIO",
+        "description": "Terres et Céréales Bio is a French brand offering organic muesli and other cereal products.",
+        "source": "Terres et Céréales Bio website",
+        "parentCompany": "Favrichon & Vignon",
+        "normalizedName": "tandc_terres_and_cereales_bio",
+        "parentOrigin": "FR",
+        "origin": "FR"
+    },
+    {
+        "name": "Buckeye",
+        "description": "Buckeye is a brand of maple syrup from Canada.",
+        "source": "Product packaging",
+        "parentCompany": "",
+        "normalizedName": "buckeye",
+        "parentOrigin": "CA",
+        "origin": "CA"
+    },
+    {
+        "name": "Łowicz",
+        "description": "Łowicz is a well-known Polish brand offering a variety of food products, including jams, syrups, sauces, and processed fruit and vegetables.",
+        "source": "Wikipedia: Maspex",
+        "parentCompany": "Maspex Wadowice Group",
+        "normalizedName": "owicz",
+        "parentOrigin": "PL",
+        "origin": "PL"
+    },
+    {
+        "name": "Wet n Wild",
+        "description": "Wet n Wild is an American cosmetics brand, known for its affordable and cruelty-free makeup products.",
+        "source": "Wikipedia: Wet n Wild Beauty",
+        "parentCompany": "Markwins Beauty Brands, Inc.",
+        "normalizedName": "wet_n_wild",
+        "parentOrigin": "US",
+        "origin": "US"
     }
 ]
