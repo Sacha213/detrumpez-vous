@@ -25,13 +25,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "Ошибка при отправке: ${error}";
 
-  static String m2(details) =>
-      "Не удалось загрузить фото ингредиентов: ${details}";
+  static String m2(value) => "${value} г";
 
   static String m3(details) =>
+      "Не удалось загрузить фото ингредиентов: ${details}";
+
+  static String m4(value) => "${value} ккал";
+
+  static String m5(group) => "Группа ${group}";
+
+  static String m6(details) =>
       "Не удалось загрузить фото таблицы питания: ${details}";
 
-  static String m4(statusCode) =>
+  static String m7(statusCode) =>
       "Не удалось отправить текстовую информацию (статус ${statusCode}). Проверьте логи для ответа HTML.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -67,6 +73,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Добавить информацию",
     ),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("Добавить продукт"),
+    "additivesTitle": MessageLookupByLibrary.simpleMessage("Добавки"),
+    "allergensTitle": MessageLookupByLibrary.simpleMessage("Аллергены"),
     "alternativeSubmitErrorMessage": m1,
     "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
       "Ваша альтернатива отправлена на проверку",
@@ -97,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "classificationInfoTitle": MessageLookupByLibrary.simpleMessage(
       "Как классифицируются компании?",
     ),
+    "close": MessageLookupByLibrary.simpleMessage("Закрыть"),
     "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
       "Бренд считается американским, если он принадлежит американской группе.",
     ),
@@ -130,9 +139,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
       "Счетчик успешно сброшен",
     ),
+    "counterTitle": MessageLookupByLibrary.simpleMessage("Счётчик США"),
     "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
       "Страны происхождения",
     ),
+    "defectsTitle": MessageLookupByLibrary.simpleMessage("Недостатки"),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "Сумма (демократы)",
     ),
@@ -162,10 +173,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "enableContributorMode": MessageLookupByLibrary.simpleMessage(
       "Включить режим участника",
     ),
+    "energyHigh": MessageLookupByLibrary.simpleMessage("Высокая калорийность"),
+    "energyLow": MessageLookupByLibrary.simpleMessage("Низкая калорийность"),
+    "energyMedium": MessageLookupByLibrary.simpleMessage(
+      "Умеренная калорийность",
+    ),
+    "energyTitle": MessageLookupByLibrary.simpleMessage("Калории"),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "Произошла ошибка при добавлении продукта.",
     ),
     "errorTitle": MessageLookupByLibrary.simpleMessage("Ошибка"),
+    "fallbackProduct": MessageLookupByLibrary.simpleMessage("Продукт"),
+    "fatHigh": MessageLookupByLibrary.simpleMessage("Много жира"),
+    "fatLow": MessageLookupByLibrary.simpleMessage("Мало жира"),
+    "fatMedium": MessageLookupByLibrary.simpleMessage(
+      "Умеренное количество жира",
+    ),
+    "fatTitle": MessageLookupByLibrary.simpleMessage("Жиры"),
+    "fiberHigh": MessageLookupByLibrary.simpleMessage("Много клетчатки"),
+    "fiberLow": MessageLookupByLibrary.simpleMessage("Мало клетчатки"),
+    "fiberMedium": MessageLookupByLibrary.simpleMessage("Немного клетчатки"),
+    "fiberTitle": MessageLookupByLibrary.simpleMessage("Клетчатка"),
     "fieldRequiredError": MessageLookupByLibrary.simpleMessage(
       "Это поле обязательно для заполнения.",
     ),
@@ -178,6 +206,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "food": MessageLookupByLibrary.simpleMessage("Еда"),
     "gallery": MessageLookupByLibrary.simpleMessage("Галерея"),
     "general": MessageLookupByLibrary.simpleMessage("Общие"),
+    "gramsValue": m2,
+    "healthLabel": MessageLookupByLibrary.simpleMessage("Здоровье"),
     "however": MessageLookupByLibrary.simpleMessage("Однако"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "Ошибка при выборе изображения",
@@ -191,7 +221,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "Ошибка при загрузке изображения.",
     ),
-    "ingredientPhotoUploadFailed": m2,
+    "informationTitle": MessageLookupByLibrary.simpleMessage("Информация"),
+    "ingredientPhotoUploadFailed": m3,
     "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
       "Ингредиенты (необязательно)",
     ),
@@ -201,23 +232,50 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, введите действительное число.",
     ),
+    "kcalValue": m4,
     "languageSelection": MessageLookupByLibrary.simpleMessage("Выбор языка"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Введите бренд",
     ),
     "mode": MessageLookupByLibrary.simpleMessage("Режим"),
+    "naLabel": MessageLookupByLibrary.simpleMessage("Н/Д"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "Пока нет альтернатив.",
     ),
+    "noHealthInfo": MessageLookupByLibrary.simpleMessage(
+      "Информация о здоровье недоступна",
+    ),
+    "noInfo": MessageLookupByLibrary.simpleMessage("Информация недоступна"),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "Пока нет политических взносов.",
     ),
-    "nutritionPhotoUploadFailed": m3,
+    "novaGroup1Desc": MessageLookupByLibrary.simpleMessage(
+      "Необработанные или минимально обработанные продукты",
+    ),
+    "novaGroup2Desc": MessageLookupByLibrary.simpleMessage(
+      "Переработанные кулинарные ингредиенты",
+    ),
+    "novaGroup3Desc": MessageLookupByLibrary.simpleMessage(
+      "Переработанные продукты",
+    ),
+    "novaGroup4Desc": MessageLookupByLibrary.simpleMessage(
+      "Ультрапереработанные продукты",
+    ),
+    "novaGroupAdditional": m5,
+    "novaGroupTitle": MessageLookupByLibrary.simpleMessage("Группа NOVA"),
+    "novaGroupUnknown": MessageLookupByLibrary.simpleMessage(
+      "Неизвестная группа",
+    ),
+    "nutritionPhotoUploadFailed": m6,
     "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage(
       "Таблица пищевой ценности",
     ),
     "ok": MessageLookupByLibrary.simpleMessage("ОК"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
+    "optionsTitle": MessageLookupByLibrary.simpleMessage("Опции"),
+    "organicNo": MessageLookupByLibrary.simpleMessage("Не органический"),
+    "organicTitle": MessageLookupByLibrary.simpleMessage("Органический"),
+    "organicYes": MessageLookupByLibrary.simpleMessage("Органический продукт"),
     "originLabel": MessageLookupByLibrary.simpleMessage("Страна происхождения"),
     "originOfIngredients": MessageLookupByLibrary.simpleMessage(
       "Происхождение ингредиентов",
@@ -264,6 +322,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "Предложить альтернативу",
     ),
+    "proteinsHigh": MessageLookupByLibrary.simpleMessage("Много белка"),
+    "proteinsLow": MessageLookupByLibrary.simpleMessage("Мало белка"),
+    "proteinsMedium": MessageLookupByLibrary.simpleMessage("Немного белка"),
+    "proteinsTitle": MessageLookupByLibrary.simpleMessage("Белки"),
+    "qualitiesTitle": MessageLookupByLibrary.simpleMessage("Качества"),
     "reportProblem": MessageLookupByLibrary.simpleMessage(
       "Сообщить о проблеме",
     ),
@@ -320,10 +383,32 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("Республиканцы"),
     "reset": MessageLookupByLibrary.simpleMessage("Сброс"),
+    "resetButton": MessageLookupByLibrary.simpleMessage("Сбросить"),
     "resetCounter": MessageLookupByLibrary.simpleMessage("Сбросить счетчик"),
+    "resetSuccessSnack": MessageLookupByLibrary.simpleMessage(
+      "Очки успешно сброшены",
+    ),
     "safe": MessageLookupByLibrary.simpleMessage("НЕ США"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Этот продукт, похоже, не от американской компании.",
+    ),
+    "saltHigh": MessageLookupByLibrary.simpleMessage("Слишком солено"),
+    "saltLow": MessageLookupByLibrary.simpleMessage("Мало соли"),
+    "saltMedium": MessageLookupByLibrary.simpleMessage(
+      "Умеренное количество соли",
+    ),
+    "saltTitle": MessageLookupByLibrary.simpleMessage("Соль"),
+    "saturatedFatHigh": MessageLookupByLibrary.simpleMessage(
+      "Слишком много насыщенных жиров",
+    ),
+    "saturatedFatLow": MessageLookupByLibrary.simpleMessage(
+      "Мало насыщенных жиров",
+    ),
+    "saturatedFatMedium": MessageLookupByLibrary.simpleMessage(
+      "Умеренные насыщенные жиры",
+    ),
+    "saturatedFatTitle": MessageLookupByLibrary.simpleMessage(
+      "Насыщенные жиры",
     ),
     "saveContributionsButton": MessageLookupByLibrary.simpleMessage(
       "Сохранить взносы",
@@ -384,13 +469,19 @@ class MessageLookup extends MessageLookupByLibrary {
       "Продукт успешно добавлен!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("Успех"),
+    "sugarsHigh": MessageLookupByLibrary.simpleMessage("Слишком сладко"),
+    "sugarsLow": MessageLookupByLibrary.simpleMessage("Мало сахара"),
+    "sugarsMedium": MessageLookupByLibrary.simpleMessage(
+      "Умеренное количество сахара",
+    ),
+    "sugarsTitle": MessageLookupByLibrary.simpleMessage("Сахара"),
     "supportCommunity": MessageLookupByLibrary.simpleMessage(
       "Поддержка и сообщество",
     ),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "Текстовая информация отправлена, но загрузка изображения не удалась.",
     ),
-    "textSubmissionFailed": m4,
+    "textSubmissionFailed": m7,
     "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
       "Не удалось открыть Instagram",
     ),
@@ -398,6 +489,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Не удалось открыть ссылку",
     ),
     "unknown": MessageLookupByLibrary.simpleMessage("НЕИЗВЕСТНО"),
+    "unknownData": MessageLookupByLibrary.simpleMessage("Данные недоступны"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "Продукт, который вы искали, не найден в нашей базе данных.",
     ),
@@ -409,5 +501,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "viewCriteria": MessageLookupByLibrary.simpleMessage("Посмотреть критерии"),
     "visitWebsite": MessageLookupByLibrary.simpleMessage("Посетить наш сайт"),
     "welcome": MessageLookupByLibrary.simpleMessage("Добро пожаловать в"),
+    "xPrefix": MessageLookupByLibrary.simpleMessage("x"),
   };
 }

@@ -24,11 +24,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "发送出错：${error}";
 
-  static String m2(details) => "配料照片上传失败：${details}";
+  static String m2(value) => "${value} g";
 
-  static String m3(details) => "营养表照片上传失败：${details}";
+  static String m3(details) => "配料照片上传失败：${details}";
 
-  static String m4(statusCode) => "发送文本信息失败（状态 ${statusCode}）。检查日志以获取 HTML 响应。";
+  static String m4(value) => "${value} 千卡";
+
+  static String m5(group) => "组 ${group}";
+
+  static String m6(details) => "营养表照片上传失败：${details}";
+
+  static String m7(statusCode) => "发送文本信息失败（状态 ${statusCode}）。检查日志以获取 HTML 响应。";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -47,6 +53,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "addProductInfoTitle": MessageLookupByLibrary.simpleMessage("添加信息"),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("添加产品"),
+    "additivesTitle": MessageLookupByLibrary.simpleMessage("添加剂"),
+    "allergensTitle": MessageLookupByLibrary.simpleMessage("过敏原"),
     "alternativeSubmitErrorMessage": m1,
     "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
       "您的替代方案已提交审核",
@@ -71,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "点击此处了解我们的标准",
     ),
     "classificationInfoTitle": MessageLookupByLibrary.simpleMessage("公司如何分类？"),
+    "close": MessageLookupByLibrary.simpleMessage("关闭"),
     "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
       "如果一个品牌属于美国集团，则该品牌被视为美国品牌。",
     ),
@@ -96,7 +105,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "contributorModeInfo": MessageLookupByLibrary.simpleMessage("有关贡献者模式的更多信息"),
     "counter": MessageLookupByLibrary.simpleMessage("计数器"),
     "counterResetSuccess": MessageLookupByLibrary.simpleMessage("计数器已成功重置"),
+    "counterTitle": MessageLookupByLibrary.simpleMessage("美国计数器"),
     "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage("原产国"),
+    "defectsTitle": MessageLookupByLibrary.simpleMessage("缺陷"),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "金额（民主党）",
     ),
@@ -114,8 +125,21 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enableBoycottMode": MessageLookupByLibrary.simpleMessage("启用抵制模式"),
     "enableContributorMode": MessageLookupByLibrary.simpleMessage("启用贡献者模式"),
+    "energyHigh": MessageLookupByLibrary.simpleMessage("高热量"),
+    "energyLow": MessageLookupByLibrary.simpleMessage("低热量影响"),
+    "energyMedium": MessageLookupByLibrary.simpleMessage("中等热量摄入"),
+    "energyTitle": MessageLookupByLibrary.simpleMessage("卡路里"),
     "errorMessage": MessageLookupByLibrary.simpleMessage("添加产品时出错。"),
     "errorTitle": MessageLookupByLibrary.simpleMessage("错误"),
+    "fallbackProduct": MessageLookupByLibrary.simpleMessage("产品"),
+    "fatHigh": MessageLookupByLibrary.simpleMessage("高脂"),
+    "fatLow": MessageLookupByLibrary.simpleMessage("低脂"),
+    "fatMedium": MessageLookupByLibrary.simpleMessage("适量脂肪"),
+    "fatTitle": MessageLookupByLibrary.simpleMessage("脂肪"),
+    "fiberHigh": MessageLookupByLibrary.simpleMessage("高纤维"),
+    "fiberLow": MessageLookupByLibrary.simpleMessage("低纤维"),
+    "fiberMedium": MessageLookupByLibrary.simpleMessage("一些纤维"),
+    "fiberTitle": MessageLookupByLibrary.simpleMessage("纤维"),
     "fieldRequiredError": MessageLookupByLibrary.simpleMessage("此字段是必填字段。"),
     "fillAllFields": MessageLookupByLibrary.simpleMessage("请填写所有字段。"),
     "followUsOnInstagram": MessageLookupByLibrary.simpleMessage(
@@ -124,26 +148,44 @@ class MessageLookup extends MessageLookupByLibrary {
     "food": MessageLookupByLibrary.simpleMessage("食品"),
     "gallery": MessageLookupByLibrary.simpleMessage("相册"),
     "general": MessageLookupByLibrary.simpleMessage("常规"),
+    "gramsValue": m2,
+    "healthLabel": MessageLookupByLibrary.simpleMessage("健康"),
     "however": MessageLookupByLibrary.simpleMessage("但是"),
     "imagePickError": MessageLookupByLibrary.simpleMessage("选择图片时出错"),
     "imageSourceMessage": MessageLookupByLibrary.simpleMessage("选择一个来源"),
     "imageSourceTitle": MessageLookupByLibrary.simpleMessage("图片来源"),
     "imageUploadError": MessageLookupByLibrary.simpleMessage("上传图片时出错。"),
-    "ingredientPhotoUploadFailed": m2,
+    "informationTitle": MessageLookupByLibrary.simpleMessage("信息"),
+    "ingredientPhotoUploadFailed": m3,
     "ingredientsOptional": MessageLookupByLibrary.simpleMessage("配料（可选）"),
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage("配料来源"),
     "invalidNumberError": MessageLookupByLibrary.simpleMessage("请输入有效的数字。"),
+    "kcalValue": m4,
     "languageSelection": MessageLookupByLibrary.simpleMessage("语言选择"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage("输入品牌"),
     "mode": MessageLookupByLibrary.simpleMessage("模式"),
+    "naLabel": MessageLookupByLibrary.simpleMessage("无"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage("尚无替代方案。"),
+    "noHealthInfo": MessageLookupByLibrary.simpleMessage("没有健康信息"),
+    "noInfo": MessageLookupByLibrary.simpleMessage("没有可用信息"),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "尚无政治捐款。",
     ),
-    "nutritionPhotoUploadFailed": m3,
+    "novaGroup1Desc": MessageLookupByLibrary.simpleMessage("未加工或最低程度加工食品"),
+    "novaGroup2Desc": MessageLookupByLibrary.simpleMessage("加工烹饪配料"),
+    "novaGroup3Desc": MessageLookupByLibrary.simpleMessage("加工食品"),
+    "novaGroup4Desc": MessageLookupByLibrary.simpleMessage("超加工产品"),
+    "novaGroupAdditional": m5,
+    "novaGroupTitle": MessageLookupByLibrary.simpleMessage("NOVA 组"),
+    "novaGroupUnknown": MessageLookupByLibrary.simpleMessage("未知组"),
+    "nutritionPhotoUploadFailed": m6,
     "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage("营养表"),
     "ok": MessageLookupByLibrary.simpleMessage("确定"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("确定"),
+    "optionsTitle": MessageLookupByLibrary.simpleMessage("选项"),
+    "organicNo": MessageLookupByLibrary.simpleMessage("非有机"),
+    "organicTitle": MessageLookupByLibrary.simpleMessage("有机"),
+    "organicYes": MessageLookupByLibrary.simpleMessage("有机产品"),
     "originLabel": MessageLookupByLibrary.simpleMessage("原产国"),
     "originOfIngredients": MessageLookupByLibrary.simpleMessage("原料来源"),
     "other": MessageLookupByLibrary.simpleMessage("其他"),
@@ -174,6 +216,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "productNamePlaceholder": MessageLookupByLibrary.simpleMessage("输入产品名称"),
     "productNotFound": MessageLookupByLibrary.simpleMessage("未找到产品"),
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage("提出替代方案"),
+    "proteinsHigh": MessageLookupByLibrary.simpleMessage("高蛋白质"),
+    "proteinsLow": MessageLookupByLibrary.simpleMessage("低蛋白质"),
+    "proteinsMedium": MessageLookupByLibrary.simpleMessage("一些蛋白质"),
+    "proteinsTitle": MessageLookupByLibrary.simpleMessage("蛋白质"),
+    "qualitiesTitle": MessageLookupByLibrary.simpleMessage("品质"),
     "reportProblem": MessageLookupByLibrary.simpleMessage("报告问题"),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "点击此处报告问题",
@@ -216,9 +263,19 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("共和党人"),
     "reset": MessageLookupByLibrary.simpleMessage("重置"),
+    "resetButton": MessageLookupByLibrary.simpleMessage("重置"),
     "resetCounter": MessageLookupByLibrary.simpleMessage("重置计数器"),
+    "resetSuccessSnack": MessageLookupByLibrary.simpleMessage("分数重置成功"),
     "safe": MessageLookupByLibrary.simpleMessage("非美国"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage("该产品似乎不属于美国公司。"),
+    "saltHigh": MessageLookupByLibrary.simpleMessage("高盐"),
+    "saltLow": MessageLookupByLibrary.simpleMessage("低盐"),
+    "saltMedium": MessageLookupByLibrary.simpleMessage("适量盐"),
+    "saltTitle": MessageLookupByLibrary.simpleMessage("盐"),
+    "saturatedFatHigh": MessageLookupByLibrary.simpleMessage("高饱和脂肪"),
+    "saturatedFatLow": MessageLookupByLibrary.simpleMessage("低饱和脂肪"),
+    "saturatedFatMedium": MessageLookupByLibrary.simpleMessage("适量饱和脂肪"),
+    "saturatedFatTitle": MessageLookupByLibrary.simpleMessage("饱和脂肪"),
     "saveContributionsButton": MessageLookupByLibrary.simpleMessage("保存贡献"),
     "savingContributions": MessageLookupByLibrary.simpleMessage("正在保存贡献..."),
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage("扫描条形码"),
@@ -246,16 +303,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "submissionError": MessageLookupByLibrary.simpleMessage("提交过程中出错。"),
     "successMessage": MessageLookupByLibrary.simpleMessage("产品添加成功！"),
     "successTitle": MessageLookupByLibrary.simpleMessage("成功"),
+    "sugarsHigh": MessageLookupByLibrary.simpleMessage("高糖"),
+    "sugarsLow": MessageLookupByLibrary.simpleMessage("低糖"),
+    "sugarsMedium": MessageLookupByLibrary.simpleMessage("适量糖"),
+    "sugarsTitle": MessageLookupByLibrary.simpleMessage("糖"),
     "supportCommunity": MessageLookupByLibrary.simpleMessage("支持与社区"),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "文本信息已发送，但图片上传失败。",
     ),
-    "textSubmissionFailed": m4,
+    "textSubmissionFailed": m7,
     "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
       "无法打开 Instagram",
     ),
     "unableToOpenLink": MessageLookupByLibrary.simpleMessage("无法打开链接"),
     "unknown": MessageLookupByLibrary.simpleMessage("未知"),
+    "unknownData": MessageLookupByLibrary.simpleMessage("数据不可用"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "您搜索的产品在我们的数据库中未找到。",
     ),
@@ -265,5 +327,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "viewCriteria": MessageLookupByLibrary.simpleMessage("查看标准"),
     "visitWebsite": MessageLookupByLibrary.simpleMessage("访问我们的网站"),
     "welcome": MessageLookupByLibrary.simpleMessage("欢迎来到"),
+    "xPrefix": MessageLookupByLibrary.simpleMessage("x"),
   };
 }

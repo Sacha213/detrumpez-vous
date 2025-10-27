@@ -1484,6 +1484,446 @@ class S {
       args: [],
     );
   }
+
+  /// `x`
+  String get xPrefix {
+    return Intl.message('x', name: 'xPrefix', desc: '', args: []);
+  }
+
+  /// `Information`
+  String get informationTitle {
+    return Intl.message(
+      'Information',
+      name: 'informationTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Close`
+  String get close {
+    return Intl.message('Close', name: 'close', desc: '', args: []);
+  }
+
+  /// `Product`
+  String get fallbackProduct {
+    return Intl.message('Product', name: 'fallbackProduct', desc: '', args: []);
+  }
+
+  /// `Options`
+  String get optionsTitle {
+    return Intl.message('Options', name: 'optionsTitle', desc: '', args: []);
+  }
+
+  /// `USA Counter`
+  String get counterTitle {
+    return Intl.message(
+      'USA Counter',
+      name: 'counterTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset`
+  String get resetButton {
+    return Intl.message('Reset', name: 'resetButton', desc: '', args: []);
+  }
+
+  /// `Scores reset successfully.`
+  String get resetSuccessSnack {
+    return Intl.message(
+      'Scores reset successfully.',
+      name: 'resetSuccessSnack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No information available`
+  String get noInfo {
+    return Intl.message(
+      'No information available',
+      name: 'noInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Defects`
+  String get defectsTitle {
+    return Intl.message('Defects', name: 'defectsTitle', desc: '', args: []);
+  }
+
+  /// `Qualities`
+  String get qualitiesTitle {
+    return Intl.message(
+      'Qualities',
+      name: 'qualitiesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No health information available`
+  String get noHealthInfo {
+    return Intl.message(
+      'No health information available',
+      name: 'noHealthInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Health`
+  String get healthLabel {
+    return Intl.message('Health', name: 'healthLabel', desc: '', args: []);
+  }
+
+  /// `N/A`
+  String get naLabel {
+    return Intl.message('N/A', name: 'naLabel', desc: '', args: []);
+  }
+
+  /// `{value} g`
+  String gramsValue(Object value) {
+    return Intl.message(
+      '$value g',
+      name: 'gramsValue',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} kcal`
+  String kcalValue(Object value) {
+    return Intl.message(
+      '$value kcal',
+      name: 'kcalValue',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Sugars`
+  String get sugarsTitle {
+    return Intl.message('Sugars', name: 'sugarsTitle', desc: '', args: []);
+  }
+
+  /// `Low in sugars`
+  String get sugarsLow {
+    return Intl.message('Low in sugars', name: 'sugarsLow', desc: '', args: []);
+  }
+
+  /// `Moderate sugars`
+  String get sugarsMedium {
+    return Intl.message(
+      'Moderate sugars',
+      name: 'sugarsMedium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too sugary`
+  String get sugarsHigh {
+    return Intl.message('Too sugary', name: 'sugarsHigh', desc: '', args: []);
+  }
+
+  /// `Data unavailable`
+  String get unknownData {
+    return Intl.message(
+      'Data unavailable',
+      name: 'unknownData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Salt`
+  String get saltTitle {
+    return Intl.message('Salt', name: 'saltTitle', desc: '', args: []);
+  }
+
+  /// `Low in salt`
+  String get saltLow {
+    return Intl.message('Low in salt', name: 'saltLow', desc: '', args: []);
+  }
+
+  /// `Moderate salt`
+  String get saltMedium {
+    return Intl.message(
+      'Moderate salt',
+      name: 'saltMedium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too salty`
+  String get saltHigh {
+    return Intl.message('Too salty', name: 'saltHigh', desc: '', args: []);
+  }
+
+  /// `Fats`
+  String get fatTitle {
+    return Intl.message('Fats', name: 'fatTitle', desc: '', args: []);
+  }
+
+  /// `Low fat`
+  String get fatLow {
+    return Intl.message('Low fat', name: 'fatLow', desc: '', args: []);
+  }
+
+  /// `Moderate fat`
+  String get fatMedium {
+    return Intl.message('Moderate fat', name: 'fatMedium', desc: '', args: []);
+  }
+
+  /// `High fat`
+  String get fatHigh {
+    return Intl.message('High fat', name: 'fatHigh', desc: '', args: []);
+  }
+
+  /// `Saturated fats`
+  String get saturatedFatTitle {
+    return Intl.message(
+      'Saturated fats',
+      name: 'saturatedFatTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Low in saturated fat`
+  String get saturatedFatLow {
+    return Intl.message(
+      'Low in saturated fat',
+      name: 'saturatedFatLow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Moderate saturated fats`
+  String get saturatedFatMedium {
+    return Intl.message(
+      'Moderate saturated fats',
+      name: 'saturatedFatMedium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too much saturated fat`
+  String get saturatedFatHigh {
+    return Intl.message(
+      'Too much saturated fat',
+      name: 'saturatedFatHigh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fiber`
+  String get fiberTitle {
+    return Intl.message('Fiber', name: 'fiberTitle', desc: '', args: []);
+  }
+
+  /// `Low in fiber`
+  String get fiberLow {
+    return Intl.message('Low in fiber', name: 'fiberLow', desc: '', args: []);
+  }
+
+  /// `Some fiber`
+  String get fiberMedium {
+    return Intl.message('Some fiber', name: 'fiberMedium', desc: '', args: []);
+  }
+
+  /// `High in fiber`
+  String get fiberHigh {
+    return Intl.message('High in fiber', name: 'fiberHigh', desc: '', args: []);
+  }
+
+  /// `Proteins`
+  String get proteinsTitle {
+    return Intl.message('Proteins', name: 'proteinsTitle', desc: '', args: []);
+  }
+
+  /// `Low in protein`
+  String get proteinsLow {
+    return Intl.message(
+      'Low in protein',
+      name: 'proteinsLow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Some protein`
+  String get proteinsMedium {
+    return Intl.message(
+      'Some protein',
+      name: 'proteinsMedium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `High in protein`
+  String get proteinsHigh {
+    return Intl.message(
+      'High in protein',
+      name: 'proteinsHigh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Calories`
+  String get energyTitle {
+    return Intl.message('Calories', name: 'energyTitle', desc: '', args: []);
+  }
+
+  /// `Low caloric impact`
+  String get energyLow {
+    return Intl.message(
+      'Low caloric impact',
+      name: 'energyLow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Moderate caloric intake`
+  String get energyMedium {
+    return Intl.message(
+      'Moderate caloric intake',
+      name: 'energyMedium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Calorie-dense`
+  String get energyHigh {
+    return Intl.message(
+      'Calorie-dense',
+      name: 'energyHigh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `NOVA Group`
+  String get novaGroupTitle {
+    return Intl.message(
+      'NOVA Group',
+      name: 'novaGroupTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Group {group}`
+  String novaGroupAdditional(Object group) {
+    return Intl.message(
+      'Group $group',
+      name: 'novaGroupAdditional',
+      desc: '',
+      args: [group],
+    );
+  }
+
+  /// `Unprocessed or minimally processed foods`
+  String get novaGroup1Desc {
+    return Intl.message(
+      'Unprocessed or minimally processed foods',
+      name: 'novaGroup1Desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Processed culinary ingredients`
+  String get novaGroup2Desc {
+    return Intl.message(
+      'Processed culinary ingredients',
+      name: 'novaGroup2Desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Processed foods`
+  String get novaGroup3Desc {
+    return Intl.message(
+      'Processed foods',
+      name: 'novaGroup3Desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ultra-processed products`
+  String get novaGroup4Desc {
+    return Intl.message(
+      'Ultra-processed products',
+      name: 'novaGroup4Desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown group`
+  String get novaGroupUnknown {
+    return Intl.message(
+      'Unknown group',
+      name: 'novaGroupUnknown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Organic`
+  String get organicTitle {
+    return Intl.message('Organic', name: 'organicTitle', desc: '', args: []);
+  }
+
+  /// `Organic product`
+  String get organicYes {
+    return Intl.message(
+      'Organic product',
+      name: 'organicYes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not organic`
+  String get organicNo {
+    return Intl.message('Not organic', name: 'organicNo', desc: '', args: []);
+  }
+
+  /// `Additives`
+  String get additivesTitle {
+    return Intl.message(
+      'Additives',
+      name: 'additivesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Allergens`
+  String get allergensTitle {
+    return Intl.message(
+      'Allergens',
+      name: 'allergensTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

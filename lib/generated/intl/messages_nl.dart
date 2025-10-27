@@ -25,11 +25,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "Fout bij verzenden: ${error}";
 
-  static String m2(details) => "Upload ingrediëntenfoto mislukt: ${details}";
+  static String m2(value) => "${value} g";
 
-  static String m3(details) => "Upload voedingswaardefoto mislukt: ${details}";
+  static String m3(details) => "Upload ingrediëntenfoto mislukt: ${details}";
 
-  static String m4(statusCode) =>
+  static String m4(value) => "${value} kcal";
+
+  static String m5(group) => "Groep ${group}";
+
+  static String m6(details) => "Upload voedingswaardefoto mislukt: ${details}";
+
+  static String m7(statusCode) =>
       "Verzenden van tekstinformatie mislukt (status ${statusCode}). Controleer logs voor HTML-antwoord.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -69,6 +75,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "addProductTitle": MessageLookupByLibrary.simpleMessage(
       "Product toevoegen",
     ),
+    "additivesTitle": MessageLookupByLibrary.simpleMessage("Additieven"),
+    "allergensTitle": MessageLookupByLibrary.simpleMessage("Allergeen"),
     "alternativeSubmitErrorMessage": m1,
     "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
       "Je alternatief is ingediend voor beoordeling",
@@ -97,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "classificationInfoTitle": MessageLookupByLibrary.simpleMessage(
       "Hoe worden bedrijven geclassificeerd?",
     ),
+    "close": MessageLookupByLibrary.simpleMessage("Sluiten"),
     "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
       "Een merk wordt als Amerikaans beschouwd als het tot een Amerikaanse groep behoort.",
     ),
@@ -130,9 +139,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
       "Teller succesvol gereset",
     ),
+    "counterTitle": MessageLookupByLibrary.simpleMessage("VS Teller"),
     "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
       "Herkomstlanden",
     ),
+    "defectsTitle": MessageLookupByLibrary.simpleMessage("Defecten"),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "Bedrag (Democraten)",
     ),
@@ -162,10 +173,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "enableContributorMode": MessageLookupByLibrary.simpleMessage(
       "Bijdragermodus inschakelen",
     ),
+    "energyHigh": MessageLookupByLibrary.simpleMessage("Calorierijk"),
+    "energyLow": MessageLookupByLibrary.simpleMessage("Lage calorische impact"),
+    "energyMedium": MessageLookupByLibrary.simpleMessage(
+      "Gemiddelde calorie-inname",
+    ),
+    "energyTitle": MessageLookupByLibrary.simpleMessage("Calorieën"),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "Er is een fout opgetreden bij het toevoegen van het product.",
     ),
     "errorTitle": MessageLookupByLibrary.simpleMessage("Fout"),
+    "fallbackProduct": MessageLookupByLibrary.simpleMessage("Product"),
+    "fatHigh": MessageLookupByLibrary.simpleMessage("Hoog in vet"),
+    "fatLow": MessageLookupByLibrary.simpleMessage("Laag in vet"),
+    "fatMedium": MessageLookupByLibrary.simpleMessage("Gemiddeld vet"),
+    "fatTitle": MessageLookupByLibrary.simpleMessage("Vetten"),
+    "fiberHigh": MessageLookupByLibrary.simpleMessage("Hoog in vezels"),
+    "fiberLow": MessageLookupByLibrary.simpleMessage("Laag in vezels"),
+    "fiberMedium": MessageLookupByLibrary.simpleMessage("Enige vezels"),
+    "fiberTitle": MessageLookupByLibrary.simpleMessage("Vezels"),
     "fieldRequiredError": MessageLookupByLibrary.simpleMessage(
       "Dit veld is verplicht.",
     ),
@@ -178,6 +204,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "food": MessageLookupByLibrary.simpleMessage("Voedsel"),
     "gallery": MessageLookupByLibrary.simpleMessage("Galerij"),
     "general": MessageLookupByLibrary.simpleMessage("Algemeen"),
+    "gramsValue": m2,
+    "healthLabel": MessageLookupByLibrary.simpleMessage("Gezondheid"),
     "however": MessageLookupByLibrary.simpleMessage("Echter"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "Fout bij het selecteren van de afbeelding",
@@ -187,7 +215,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "Fout bij het uploaden van de afbeelding.",
     ),
-    "ingredientPhotoUploadFailed": m2,
+    "informationTitle": MessageLookupByLibrary.simpleMessage("Informatie"),
+    "ingredientPhotoUploadFailed": m3,
     "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
       "Ingrediënten (optioneel)",
     ),
@@ -197,6 +226,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "Voer een geldig nummer in.",
     ),
+    "kcalValue": m4,
     "languageSelection": MessageLookupByLibrary.simpleMessage(
       "Taal selecteren",
     ),
@@ -204,18 +234,44 @@ class MessageLookup extends MessageLookupByLibrary {
       "Voer een merk in",
     ),
     "mode": MessageLookupByLibrary.simpleMessage("Modus"),
+    "naLabel": MessageLookupByLibrary.simpleMessage("N/B"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "Nog geen alternatieven.",
+    ),
+    "noHealthInfo": MessageLookupByLibrary.simpleMessage(
+      "Geen gezondheidsinformatie beschikbaar",
+    ),
+    "noInfo": MessageLookupByLibrary.simpleMessage(
+      "Geen informatie beschikbaar",
     ),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "Nog geen politieke bijdragen.",
     ),
-    "nutritionPhotoUploadFailed": m3,
+    "novaGroup1Desc": MessageLookupByLibrary.simpleMessage(
+      "Onbewerkte of minimaal bewerkte voedingsmiddelen",
+    ),
+    "novaGroup2Desc": MessageLookupByLibrary.simpleMessage(
+      "Bewerkte culinaire ingrediënten",
+    ),
+    "novaGroup3Desc": MessageLookupByLibrary.simpleMessage(
+      "Bewerkte voedingsmiddelen",
+    ),
+    "novaGroup4Desc": MessageLookupByLibrary.simpleMessage(
+      "Ultra-bewerkte producten",
+    ),
+    "novaGroupAdditional": m5,
+    "novaGroupTitle": MessageLookupByLibrary.simpleMessage("NOVA-groep"),
+    "novaGroupUnknown": MessageLookupByLibrary.simpleMessage("Onbekende groep"),
+    "nutritionPhotoUploadFailed": m6,
     "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage(
       "Voedingswaardetabel",
     ),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
+    "optionsTitle": MessageLookupByLibrary.simpleMessage("Opties"),
+    "organicNo": MessageLookupByLibrary.simpleMessage("Niet biologisch"),
+    "organicTitle": MessageLookupByLibrary.simpleMessage("Bio"),
+    "organicYes": MessageLookupByLibrary.simpleMessage("Biologisch product"),
     "originLabel": MessageLookupByLibrary.simpleMessage("Land van herkomst"),
     "originOfIngredients": MessageLookupByLibrary.simpleMessage(
       "Oorsprong van ingrediënten",
@@ -262,6 +318,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "Stel een alternatief voor",
     ),
+    "proteinsHigh": MessageLookupByLibrary.simpleMessage("Hoog in eiwitten"),
+    "proteinsLow": MessageLookupByLibrary.simpleMessage("Laag in eiwitten"),
+    "proteinsMedium": MessageLookupByLibrary.simpleMessage("Enige eiwitten"),
+    "proteinsTitle": MessageLookupByLibrary.simpleMessage("Eiwitten"),
+    "qualitiesTitle": MessageLookupByLibrary.simpleMessage("Kwaliteiten"),
     "reportProblem": MessageLookupByLibrary.simpleMessage("Meld een probleem"),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "Klik hier om een probleem te melden",
@@ -316,10 +377,30 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("Republikeinen"),
     "reset": MessageLookupByLibrary.simpleMessage("Reset"),
+    "resetButton": MessageLookupByLibrary.simpleMessage("Reset"),
     "resetCounter": MessageLookupByLibrary.simpleMessage("Teller resetten"),
+    "resetSuccessSnack": MessageLookupByLibrary.simpleMessage(
+      "Scores succesvol gereset",
+    ),
     "safe": MessageLookupByLibrary.simpleMessage("NIET VS"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Dit product lijkt niet afkomstig te zijn van een Amerikaans bedrijf.",
+    ),
+    "saltHigh": MessageLookupByLibrary.simpleMessage("Te zout"),
+    "saltLow": MessageLookupByLibrary.simpleMessage("Laag in zout"),
+    "saltMedium": MessageLookupByLibrary.simpleMessage("Gemiddeld zout"),
+    "saltTitle": MessageLookupByLibrary.simpleMessage("Zout"),
+    "saturatedFatHigh": MessageLookupByLibrary.simpleMessage(
+      "Te veel verzadigd vet",
+    ),
+    "saturatedFatLow": MessageLookupByLibrary.simpleMessage(
+      "Laag in verzadigd vet",
+    ),
+    "saturatedFatMedium": MessageLookupByLibrary.simpleMessage(
+      "Gemiddelde verzadigde vetten",
+    ),
+    "saturatedFatTitle": MessageLookupByLibrary.simpleMessage(
+      "Verzadigde vetten",
     ),
     "saveContributionsButton": MessageLookupByLibrary.simpleMessage(
       "Bijdragen opslaan",
@@ -378,13 +459,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "Product succesvol toegevoegd!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("Succes"),
+    "sugarsHigh": MessageLookupByLibrary.simpleMessage("Te zoet"),
+    "sugarsLow": MessageLookupByLibrary.simpleMessage("Laag in suikers"),
+    "sugarsMedium": MessageLookupByLibrary.simpleMessage("Gemiddelde suikers"),
+    "sugarsTitle": MessageLookupByLibrary.simpleMessage("Suikers"),
     "supportCommunity": MessageLookupByLibrary.simpleMessage(
       "Ondersteuning & community",
     ),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "Tekstinformatie is verzonden, maar het uploaden van de afbeelding is mislukt.",
     ),
-    "textSubmissionFailed": m4,
+    "textSubmissionFailed": m7,
     "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
       "Kan Instagram niet openen",
     ),
@@ -392,6 +477,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Kan link niet openen",
     ),
     "unknown": MessageLookupByLibrary.simpleMessage("ONBEKEND"),
+    "unknownData": MessageLookupByLibrary.simpleMessage(
+      "Gegevens niet beschikbaar",
+    ),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "Het gezochte product is niet gevonden in onze database.",
     ),
@@ -403,5 +491,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "viewCriteria": MessageLookupByLibrary.simpleMessage("Bekijk criteria"),
     "visitWebsite": MessageLookupByLibrary.simpleMessage("Bezoek onze website"),
     "welcome": MessageLookupByLibrary.simpleMessage("Welkom bij"),
+    "xPrefix": MessageLookupByLibrary.simpleMessage("x"),
   };
 }

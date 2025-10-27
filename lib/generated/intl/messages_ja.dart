@@ -24,11 +24,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "送信エラー：${error}";
 
-  static String m2(details) => "原材料写真のアップロードに失敗しました：${details}";
+  static String m2(value) => "${value} g";
 
-  static String m3(details) => "栄養表写真のアップロードに失敗しました：${details}";
+  static String m3(details) => "原材料写真のアップロードに失敗しました：${details}";
 
-  static String m4(statusCode) =>
+  static String m4(value) => "${value} kcal";
+
+  static String m5(group) => "グループ ${group}";
+
+  static String m6(details) => "栄養表写真のアップロードに失敗しました：${details}";
+
+  static String m7(statusCode) =>
       "テキスト情報の送信に失敗しました（ステータス ${statusCode}）。HTML応答についてはログを確認してください。";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -56,6 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "addProductInfoTitle": MessageLookupByLibrary.simpleMessage("情報を追加"),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("製品を追加"),
+    "additivesTitle": MessageLookupByLibrary.simpleMessage("添加物"),
+    "allergensTitle": MessageLookupByLibrary.simpleMessage("アレルゲン"),
     "alternativeSubmitErrorMessage": m1,
     "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
       "代替案が確認のため送信されました",
@@ -82,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "classificationInfoTitle": MessageLookupByLibrary.simpleMessage(
       "企業はどのように分類されますか？",
     ),
+    "close": MessageLookupByLibrary.simpleMessage("閉じる"),
     "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
       "ブランドがアメリカのグループに属している場合、そのブランドはアメリカのものと見なされます。",
     ),
@@ -111,7 +120,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
       "カウンターがリセットされました",
     ),
+    "counterTitle": MessageLookupByLibrary.simpleMessage("米国カウンター"),
     "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage("原産国"),
+    "defectsTitle": MessageLookupByLibrary.simpleMessage("欠点"),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "金額（民主党）",
     ),
@@ -133,8 +144,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "enableContributorMode": MessageLookupByLibrary.simpleMessage(
       "貢献者モードを有効にする",
     ),
+    "energyHigh": MessageLookupByLibrary.simpleMessage("高カロリー"),
+    "energyLow": MessageLookupByLibrary.simpleMessage("低カロリー"),
+    "energyMedium": MessageLookupByLibrary.simpleMessage("中程度のカロリー"),
+    "energyTitle": MessageLookupByLibrary.simpleMessage("カロリー"),
     "errorMessage": MessageLookupByLibrary.simpleMessage("製品の追加中にエラーが発生しました。"),
     "errorTitle": MessageLookupByLibrary.simpleMessage("エラー"),
+    "fallbackProduct": MessageLookupByLibrary.simpleMessage("商品"),
+    "fatHigh": MessageLookupByLibrary.simpleMessage("高脂肪"),
+    "fatLow": MessageLookupByLibrary.simpleMessage("低脂肪"),
+    "fatMedium": MessageLookupByLibrary.simpleMessage("適度な脂肪"),
+    "fatTitle": MessageLookupByLibrary.simpleMessage("脂肪"),
+    "fiberHigh": MessageLookupByLibrary.simpleMessage("食物繊維が多い"),
+    "fiberLow": MessageLookupByLibrary.simpleMessage("食物繊維が少ない"),
+    "fiberMedium": MessageLookupByLibrary.simpleMessage("食物繊維がいくつか"),
+    "fiberTitle": MessageLookupByLibrary.simpleMessage("食物繊維"),
     "fieldRequiredError": MessageLookupByLibrary.simpleMessage("このフィールドは必須です。"),
     "fillAllFields": MessageLookupByLibrary.simpleMessage(
       "すべてのフィールドに入力してください。",
@@ -145,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "food": MessageLookupByLibrary.simpleMessage("食品"),
     "gallery": MessageLookupByLibrary.simpleMessage("ギャラリー"),
     "general": MessageLookupByLibrary.simpleMessage("一般"),
+    "gramsValue": m2,
+    "healthLabel": MessageLookupByLibrary.simpleMessage("健康"),
     "however": MessageLookupByLibrary.simpleMessage("しかし"),
     "imagePickError": MessageLookupByLibrary.simpleMessage("画像の選択中にエラーが発生しました"),
     "imageSourceMessage": MessageLookupByLibrary.simpleMessage("ソースを選択してください"),
@@ -152,25 +178,41 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "画像のアップロード中にエラーが発生しました。",
     ),
-    "ingredientPhotoUploadFailed": m2,
+    "informationTitle": MessageLookupByLibrary.simpleMessage("情報"),
+    "ingredientPhotoUploadFailed": m3,
     "ingredientsOptional": MessageLookupByLibrary.simpleMessage("材料（オプション）"),
     "ingredientsOriginLabel": MessageLookupByLibrary.simpleMessage("原材料の産地"),
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "有効な数字を入力してください。",
     ),
+    "kcalValue": m4,
     "languageSelection": MessageLookupByLibrary.simpleMessage("言語の選択"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "ブランドを入力してください",
     ),
     "mode": MessageLookupByLibrary.simpleMessage("モード"),
+    "naLabel": MessageLookupByLibrary.simpleMessage("N/A"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage("まだ代替案はありません。"),
+    "noHealthInfo": MessageLookupByLibrary.simpleMessage("健康に関する情報はありません"),
+    "noInfo": MessageLookupByLibrary.simpleMessage("情報なし"),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "まだ政治献金はありません。",
     ),
-    "nutritionPhotoUploadFailed": m3,
+    "novaGroup1Desc": MessageLookupByLibrary.simpleMessage("未加工または最小限の加工食品"),
+    "novaGroup2Desc": MessageLookupByLibrary.simpleMessage("加工された料理の材料"),
+    "novaGroup3Desc": MessageLookupByLibrary.simpleMessage("加工食品"),
+    "novaGroup4Desc": MessageLookupByLibrary.simpleMessage("超加工食品"),
+    "novaGroupAdditional": m5,
+    "novaGroupTitle": MessageLookupByLibrary.simpleMessage("NOVAグループ"),
+    "novaGroupUnknown": MessageLookupByLibrary.simpleMessage("不明なグループ"),
+    "nutritionPhotoUploadFailed": m6,
     "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage("栄養表"),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
+    "optionsTitle": MessageLookupByLibrary.simpleMessage("オプション"),
+    "organicNo": MessageLookupByLibrary.simpleMessage("非オーガニック"),
+    "organicTitle": MessageLookupByLibrary.simpleMessage("オーガニック"),
+    "organicYes": MessageLookupByLibrary.simpleMessage("オーガニック製品"),
     "originLabel": MessageLookupByLibrary.simpleMessage("原産国"),
     "originOfIngredients": MessageLookupByLibrary.simpleMessage("原材料の原産地"),
     "other": MessageLookupByLibrary.simpleMessage("その他"),
@@ -205,6 +247,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "productNotFound": MessageLookupByLibrary.simpleMessage("製品が見つかりません"),
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage("代替案を提案"),
+    "proteinsHigh": MessageLookupByLibrary.simpleMessage("たんぱく質が多い"),
+    "proteinsLow": MessageLookupByLibrary.simpleMessage("たんぱく質が少ない"),
+    "proteinsMedium": MessageLookupByLibrary.simpleMessage("たんぱく質がいくつか"),
+    "proteinsTitle": MessageLookupByLibrary.simpleMessage("たんぱく質"),
+    "qualitiesTitle": MessageLookupByLibrary.simpleMessage("品質"),
     "reportProblem": MessageLookupByLibrary.simpleMessage("問題を報告"),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "ここをクリックして問題を報告してください",
@@ -253,11 +300,21 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("共和党"),
     "reset": MessageLookupByLibrary.simpleMessage("リセット"),
+    "resetButton": MessageLookupByLibrary.simpleMessage("リセット"),
     "resetCounter": MessageLookupByLibrary.simpleMessage("カウンターをリセット"),
+    "resetSuccessSnack": MessageLookupByLibrary.simpleMessage("スコアをリセットしました"),
     "safe": MessageLookupByLibrary.simpleMessage("非米国"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "この製品はアメリカ企業のものではないようです。",
     ),
+    "saltHigh": MessageLookupByLibrary.simpleMessage("塩分が多い"),
+    "saltLow": MessageLookupByLibrary.simpleMessage("低塩"),
+    "saltMedium": MessageLookupByLibrary.simpleMessage("適度な塩分"),
+    "saltTitle": MessageLookupByLibrary.simpleMessage("塩分"),
+    "saturatedFatHigh": MessageLookupByLibrary.simpleMessage("飽和脂肪が多い"),
+    "saturatedFatLow": MessageLookupByLibrary.simpleMessage("低飽和脂肪"),
+    "saturatedFatMedium": MessageLookupByLibrary.simpleMessage("適度な飽和脂肪"),
+    "saturatedFatTitle": MessageLookupByLibrary.simpleMessage("飽和脂肪"),
     "saveContributionsButton": MessageLookupByLibrary.simpleMessage("寄付を保存"),
     "savingContributions": MessageLookupByLibrary.simpleMessage("寄付を保存中..."),
     "scanBarcodeLabel": MessageLookupByLibrary.simpleMessage("バーコードをスキャン"),
@@ -287,16 +344,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "submissionError": MessageLookupByLibrary.simpleMessage("送信中にエラーが発生しました。"),
     "successMessage": MessageLookupByLibrary.simpleMessage("製品が正常に追加されました！"),
     "successTitle": MessageLookupByLibrary.simpleMessage("成功"),
+    "sugarsHigh": MessageLookupByLibrary.simpleMessage("糖分が多い"),
+    "sugarsLow": MessageLookupByLibrary.simpleMessage("低糖"),
+    "sugarsMedium": MessageLookupByLibrary.simpleMessage("適度な糖"),
+    "sugarsTitle": MessageLookupByLibrary.simpleMessage("糖"),
     "supportCommunity": MessageLookupByLibrary.simpleMessage("サポートとコミュニティ"),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "テキスト情報は送信されましたが、画像のアップロードに失敗しました。",
     ),
-    "textSubmissionFailed": m4,
+    "textSubmissionFailed": m7,
     "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
       "Instagramを開けません",
     ),
     "unableToOpenLink": MessageLookupByLibrary.simpleMessage("リンクを開けません"),
     "unknown": MessageLookupByLibrary.simpleMessage("不明"),
+    "unknownData": MessageLookupByLibrary.simpleMessage("データなし"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "検索した製品はデータベースに見つかりませんでした。",
     ),
@@ -308,5 +370,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "viewCriteria": MessageLookupByLibrary.simpleMessage("基準を表示"),
     "visitWebsite": MessageLookupByLibrary.simpleMessage("ウェブサイトを訪問"),
     "welcome": MessageLookupByLibrary.simpleMessage("ようこそ"),
+    "xPrefix": MessageLookupByLibrary.simpleMessage("x"),
   };
 }

@@ -25,13 +25,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "Fejl ved afsendelse: ${error}";
 
-  static String m2(details) =>
-      "Upload af ingrediensfoto mislykkedes: ${details}";
+  static String m2(value) => "${value} g";
 
   static String m3(details) =>
+      "Upload af ingrediensfoto mislykkedes: ${details}";
+
+  static String m4(value) => "${value} kcal";
+
+  static String m5(group) => "Gruppe ${group}";
+
+  static String m6(details) =>
       "Upload af næringstabelbillede mislykkedes: ${details}";
 
-  static String m4(statusCode) =>
+  static String m7(statusCode) =>
       "Kunne ikke sende tekstinformation (status ${statusCode}). Tjek logfiler for HTML-svar.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -67,6 +73,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "addProductTitle": MessageLookupByLibrary.simpleMessage(
       "Tilføj et produkt",
     ),
+    "additivesTitle": MessageLookupByLibrary.simpleMessage(
+      "Tilsætningsstoffer",
+    ),
+    "allergensTitle": MessageLookupByLibrary.simpleMessage("Allergener"),
     "alternativeSubmitErrorMessage": m1,
     "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
       "Tak! Dit alternativ er blevet sendt til gennemgang og vil blive behandlet inden for 48 timer.",
@@ -95,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "classificationInfoTitle": MessageLookupByLibrary.simpleMessage(
       "Hvordan klassificeres firmaer?",
     ),
+    "close": MessageLookupByLibrary.simpleMessage("Luk"),
     "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
       "Et mærke betragtes som amerikansk, hvis det tilhører en amerikansk koncern.",
     ),
@@ -128,9 +139,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
       "Tæller nulstillet",
     ),
+    "counterTitle": MessageLookupByLibrary.simpleMessage("USA-tæller"),
     "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
       "Oprindelseslande",
     ),
+    "defectsTitle": MessageLookupByLibrary.simpleMessage("Fejl"),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "Beløb (Demokrater)",
     ),
@@ -160,10 +173,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "enableContributorMode": MessageLookupByLibrary.simpleMessage(
       "Aktivér bidragertilstand",
     ),
+    "energyHigh": MessageLookupByLibrary.simpleMessage("Kalorierig"),
+    "energyLow": MessageLookupByLibrary.simpleMessage("Lav kaloriepåvirkning"),
+    "energyMedium": MessageLookupByLibrary.simpleMessage(
+      "Moderat kalorieindtag",
+    ),
+    "energyTitle": MessageLookupByLibrary.simpleMessage("Kalorier"),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "Der opstod en fejl under tilføjelsen af produktet.",
     ),
     "errorTitle": MessageLookupByLibrary.simpleMessage("Fejl"),
+    "fallbackProduct": MessageLookupByLibrary.simpleMessage("Produkt"),
+    "fatHigh": MessageLookupByLibrary.simpleMessage("Højt fedtindhold"),
+    "fatLow": MessageLookupByLibrary.simpleMessage("Lavt fedtindhold"),
+    "fatMedium": MessageLookupByLibrary.simpleMessage("Moderat fedt"),
+    "fatTitle": MessageLookupByLibrary.simpleMessage("Fedt"),
+    "fiberHigh": MessageLookupByLibrary.simpleMessage("Højt fiberindhold"),
+    "fiberLow": MessageLookupByLibrary.simpleMessage("Lavt fiberindhold"),
+    "fiberMedium": MessageLookupByLibrary.simpleMessage("Noget fiber"),
+    "fiberTitle": MessageLookupByLibrary.simpleMessage("Fibre"),
     "fieldRequiredError": MessageLookupByLibrary.simpleMessage(
       "Dette felt er påkrævet.",
     ),
@@ -176,6 +204,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "food": MessageLookupByLibrary.simpleMessage("Mad"),
     "gallery": MessageLookupByLibrary.simpleMessage("Galleri"),
     "general": MessageLookupByLibrary.simpleMessage("Generelt"),
+    "gramsValue": m2,
+    "healthLabel": MessageLookupByLibrary.simpleMessage("Sundhed"),
     "however": MessageLookupByLibrary.simpleMessage("Dog"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "Fejl ved valg af billede",
@@ -185,7 +215,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "Fejl ved upload af billede.",
     ),
-    "ingredientPhotoUploadFailed": m2,
+    "informationTitle": MessageLookupByLibrary.simpleMessage("Information"),
+    "ingredientPhotoUploadFailed": m3,
     "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
       "Ingredienser (valgfrit)",
     ),
@@ -195,21 +226,48 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "Indtast venligst et gyldigt nummer.",
     ),
+    "kcalValue": m4,
     "languageSelection": MessageLookupByLibrary.simpleMessage("Sprogvalg"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Indtast et mærke",
     ),
     "mode": MessageLookupByLibrary.simpleMessage("Tilstand"),
+    "naLabel": MessageLookupByLibrary.simpleMessage("N/A"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "Ingen alternativer endnu.",
+    ),
+    "noHealthInfo": MessageLookupByLibrary.simpleMessage(
+      "Ingen sundhedsinformation tilgængelig",
+    ),
+    "noInfo": MessageLookupByLibrary.simpleMessage(
+      "Ingen information tilgængelig",
     ),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "Ingen politiske bidrag endnu.",
     ),
-    "nutritionPhotoUploadFailed": m3,
+    "novaGroup1Desc": MessageLookupByLibrary.simpleMessage(
+      "Uforarbejdede eller minimalt forarbejdede fødevarer",
+    ),
+    "novaGroup2Desc": MessageLookupByLibrary.simpleMessage(
+      "Forarbejdede kulinariske ingredienser",
+    ),
+    "novaGroup3Desc": MessageLookupByLibrary.simpleMessage(
+      "Forarbejdede fødevarer",
+    ),
+    "novaGroup4Desc": MessageLookupByLibrary.simpleMessage(
+      "Ultraforarbejdede produkter",
+    ),
+    "novaGroupAdditional": m5,
+    "novaGroupTitle": MessageLookupByLibrary.simpleMessage("NOVA-gruppe"),
+    "novaGroupUnknown": MessageLookupByLibrary.simpleMessage("Ukendt gruppe"),
+    "nutritionPhotoUploadFailed": m6,
     "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage("Næringstabel"),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
+    "optionsTitle": MessageLookupByLibrary.simpleMessage("Indstillinger"),
+    "organicNo": MessageLookupByLibrary.simpleMessage("Ikke økologisk"),
+    "organicTitle": MessageLookupByLibrary.simpleMessage("Økologisk"),
+    "organicYes": MessageLookupByLibrary.simpleMessage("Økologisk produkt"),
     "originLabel": MessageLookupByLibrary.simpleMessage("Oprindelsesland"),
     "originOfIngredients": MessageLookupByLibrary.simpleMessage(
       "Ingrediensernes oprindelse",
@@ -256,6 +314,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "Foreslå et alternativ",
     ),
+    "proteinsHigh": MessageLookupByLibrary.simpleMessage("Højt proteinindhold"),
+    "proteinsLow": MessageLookupByLibrary.simpleMessage("Lavt proteinindhold"),
+    "proteinsMedium": MessageLookupByLibrary.simpleMessage("Noget protein"),
+    "proteinsTitle": MessageLookupByLibrary.simpleMessage("Proteiner"),
+    "qualitiesTitle": MessageLookupByLibrary.simpleMessage("Kvaliteter"),
     "reportProblem": MessageLookupByLibrary.simpleMessage(
       "Rapportér et problem",
     ),
@@ -312,11 +375,27 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("Republikanere"),
     "reset": MessageLookupByLibrary.simpleMessage("Nulstil"),
+    "resetButton": MessageLookupByLibrary.simpleMessage("Nulstil"),
     "resetCounter": MessageLookupByLibrary.simpleMessage("Nulstil tæller"),
+    "resetSuccessSnack": MessageLookupByLibrary.simpleMessage(
+      "Scores nulstillet succesfuldt",
+    ),
     "safe": MessageLookupByLibrary.simpleMessage("IKKE USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Dette produkt ser ikke ud til at komme fra et amerikansk firma.",
     ),
+    "saltHigh": MessageLookupByLibrary.simpleMessage("For salt"),
+    "saltLow": MessageLookupByLibrary.simpleMessage("Lavt saltindhold"),
+    "saltMedium": MessageLookupByLibrary.simpleMessage("Moderat salt"),
+    "saltTitle": MessageLookupByLibrary.simpleMessage("Salt"),
+    "saturatedFatHigh": MessageLookupByLibrary.simpleMessage(
+      "For meget mættet fedt",
+    ),
+    "saturatedFatLow": MessageLookupByLibrary.simpleMessage("Lavt mættet fedt"),
+    "saturatedFatMedium": MessageLookupByLibrary.simpleMessage(
+      "Moderat mættet fedt",
+    ),
+    "saturatedFatTitle": MessageLookupByLibrary.simpleMessage("Mættet fedt"),
     "saveContributionsButton": MessageLookupByLibrary.simpleMessage(
       "Gem bidrag",
     ),
@@ -366,13 +445,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "Produkt tilføjet med succes!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("Succes"),
+    "sugarsHigh": MessageLookupByLibrary.simpleMessage("For sukkerholdigt"),
+    "sugarsLow": MessageLookupByLibrary.simpleMessage("Lavt sukkerindhold"),
+    "sugarsMedium": MessageLookupByLibrary.simpleMessage("Moderat sukker"),
+    "sugarsTitle": MessageLookupByLibrary.simpleMessage("Sukker"),
     "supportCommunity": MessageLookupByLibrary.simpleMessage(
       "Support & fællesskab",
     ),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "Tekstinformation blev sendt, men billedupload mislykkedes.",
     ),
-    "textSubmissionFailed": m4,
+    "textSubmissionFailed": m7,
     "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
       "Kan ikke åbne Instagram",
     ),
@@ -380,6 +463,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Kan ikke åbne link",
     ),
     "unknown": MessageLookupByLibrary.simpleMessage("UKENDT"),
+    "unknownData": MessageLookupByLibrary.simpleMessage(
+      "Data ikke tilgængelige",
+    ),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "Det produkt, du søgte efter, blev ikke fundet i vores database.",
     ),
@@ -393,5 +479,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Besøg vores hjemmeside",
     ),
     "welcome": MessageLookupByLibrary.simpleMessage("Velkommen til"),
+    "xPrefix": MessageLookupByLibrary.simpleMessage("x"),
   };
 }

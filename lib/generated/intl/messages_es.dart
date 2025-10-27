@@ -25,12 +25,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "Error al enviar: ${error}";
 
-  static String m2(details) =>
+  static String m2(value) => "${value} g";
+
+  static String m3(details) =>
       "Error al subir la foto de ingredientes: ${details}";
 
-  static String m3(details) => "Error al subir la foto nutricional: ${details}";
+  static String m4(value) => "${value} kcal";
 
-  static String m4(statusCode) =>
+  static String m5(group) => "Grupo ${group}";
+
+  static String m6(details) => "Error al subir la foto nutricional: ${details}";
+
+  static String m7(statusCode) =>
       "Error al enviar la información de texto (estado ${statusCode}). Revise los logs para la respuesta HTML.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -66,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "addProductTitle": MessageLookupByLibrary.simpleMessage(
       "Añadir un producto",
     ),
+    "additivesTitle": MessageLookupByLibrary.simpleMessage("Aditivos"),
+    "allergensTitle": MessageLookupByLibrary.simpleMessage("Alérgenos"),
     "alternativeSubmitErrorMessage": m1,
     "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
       "¡Gracias! Su alternativa ha sido enviada para revisión y será procesada en un plazo de 48 horas.",
@@ -100,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "classificationInfoTitle": MessageLookupByLibrary.simpleMessage(
       "¿Cómo se clasifican las empresas?",
     ),
+    "close": MessageLookupByLibrary.simpleMessage("Cerrar"),
     "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
       "Una marca se considera estadounidense si pertenece a un grupo estadounidense.",
     ),
@@ -133,9 +142,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
       "Contador restablecido correctamente",
     ),
+    "counterTitle": MessageLookupByLibrary.simpleMessage("Contador USA"),
     "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
       "Países de origen",
     ),
+    "defectsTitle": MessageLookupByLibrary.simpleMessage("Defectos"),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "Monto (Demócratas)",
     ),
@@ -165,10 +176,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "enableContributorMode": MessageLookupByLibrary.simpleMessage(
       "Activar modo colaborador",
     ),
+    "energyHigh": MessageLookupByLibrary.simpleMessage("Denso en calorías"),
+    "energyLow": MessageLookupByLibrary.simpleMessage("Bajo impacto calórico"),
+    "energyMedium": MessageLookupByLibrary.simpleMessage(
+      "Ingesta calórica moderada",
+    ),
+    "energyTitle": MessageLookupByLibrary.simpleMessage("Calorías"),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "Se produjo un error al añadir el producto.",
     ),
     "errorTitle": MessageLookupByLibrary.simpleMessage("Error"),
+    "fallbackProduct": MessageLookupByLibrary.simpleMessage("Producto"),
+    "fatHigh": MessageLookupByLibrary.simpleMessage("Alto en grasas"),
+    "fatLow": MessageLookupByLibrary.simpleMessage("Bajo en grasas"),
+    "fatMedium": MessageLookupByLibrary.simpleMessage("Grasas moderadas"),
+    "fatTitle": MessageLookupByLibrary.simpleMessage("Grasas"),
+    "fiberHigh": MessageLookupByLibrary.simpleMessage("Alto en fibra"),
+    "fiberLow": MessageLookupByLibrary.simpleMessage("Bajo en fibra"),
+    "fiberMedium": MessageLookupByLibrary.simpleMessage("Algo de fibra"),
+    "fiberTitle": MessageLookupByLibrary.simpleMessage("Fibra"),
     "fieldRequiredError": MessageLookupByLibrary.simpleMessage(
       "Este campo es obligatorio.",
     ),
@@ -181,6 +207,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "food": MessageLookupByLibrary.simpleMessage("Alimentos"),
     "gallery": MessageLookupByLibrary.simpleMessage("Galería"),
     "general": MessageLookupByLibrary.simpleMessage("General"),
+    "gramsValue": m2,
+    "healthLabel": MessageLookupByLibrary.simpleMessage("Salud"),
     "however": MessageLookupByLibrary.simpleMessage("Sin embargo"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "Error al seleccionar la imagen",
@@ -194,7 +222,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "Error al subir la imagen.",
     ),
-    "ingredientPhotoUploadFailed": m2,
+    "informationTitle": MessageLookupByLibrary.simpleMessage("Información"),
+    "ingredientPhotoUploadFailed": m3,
     "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
       "Ingredientes (opcional)",
     ),
@@ -204,6 +233,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "Por favor, introduce un número válido.",
     ),
+    "kcalValue": m4,
     "languageSelection": MessageLookupByLibrary.simpleMessage(
       "Selección de idioma",
     ),
@@ -211,18 +241,46 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ingrese una marca",
     ),
     "mode": MessageLookupByLibrary.simpleMessage("Modo"),
+    "naLabel": MessageLookupByLibrary.simpleMessage("N/A"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "Aún no hay alternativas.",
+    ),
+    "noHealthInfo": MessageLookupByLibrary.simpleMessage(
+      "No hay información de salud disponible",
+    ),
+    "noInfo": MessageLookupByLibrary.simpleMessage(
+      "No hay información disponible",
     ),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "Todavía no hay contribuciones políticas.",
     ),
-    "nutritionPhotoUploadFailed": m3,
+    "novaGroup1Desc": MessageLookupByLibrary.simpleMessage(
+      "Alimentos no procesados o mínimamente procesados",
+    ),
+    "novaGroup2Desc": MessageLookupByLibrary.simpleMessage(
+      "Ingredientes culinarios procesados",
+    ),
+    "novaGroup3Desc": MessageLookupByLibrary.simpleMessage(
+      "Alimentos procesados",
+    ),
+    "novaGroup4Desc": MessageLookupByLibrary.simpleMessage(
+      "Productos ultraprocesados",
+    ),
+    "novaGroupAdditional": m5,
+    "novaGroupTitle": MessageLookupByLibrary.simpleMessage("Grupo NOVA"),
+    "novaGroupUnknown": MessageLookupByLibrary.simpleMessage(
+      "Grupo desconocido",
+    ),
+    "nutritionPhotoUploadFailed": m6,
     "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage(
       "Tabla nutricional",
     ),
     "ok": MessageLookupByLibrary.simpleMessage("OK"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("OK"),
+    "optionsTitle": MessageLookupByLibrary.simpleMessage("Opciones"),
+    "organicNo": MessageLookupByLibrary.simpleMessage("No orgánico"),
+    "organicTitle": MessageLookupByLibrary.simpleMessage("Orgánico"),
+    "organicYes": MessageLookupByLibrary.simpleMessage("Producto orgánico"),
     "originLabel": MessageLookupByLibrary.simpleMessage("País de origen"),
     "originOfIngredients": MessageLookupByLibrary.simpleMessage(
       "Origen de los ingredientes",
@@ -271,6 +329,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "Proponer una alternativa",
     ),
+    "proteinsHigh": MessageLookupByLibrary.simpleMessage("Alto en proteínas"),
+    "proteinsLow": MessageLookupByLibrary.simpleMessage("Bajo en proteínas"),
+    "proteinsMedium": MessageLookupByLibrary.simpleMessage("Algo de proteínas"),
+    "proteinsTitle": MessageLookupByLibrary.simpleMessage("Proteínas"),
+    "qualitiesTitle": MessageLookupByLibrary.simpleMessage("Cualidades"),
     "reportProblem": MessageLookupByLibrary.simpleMessage(
       "Reportar un problema",
     ),
@@ -327,12 +390,32 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("Republicanos"),
     "reset": MessageLookupByLibrary.simpleMessage("Restablecer"),
+    "resetButton": MessageLookupByLibrary.simpleMessage("Restablecer"),
     "resetCounter": MessageLookupByLibrary.simpleMessage(
       "Restablecer contador",
+    ),
+    "resetSuccessSnack": MessageLookupByLibrary.simpleMessage(
+      "Puntuaciones restablecidas correctamente",
     ),
     "safe": MessageLookupByLibrary.simpleMessage("NO USA"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "Este producto no parece provenir de una empresa estadounidense.",
+    ),
+    "saltHigh": MessageLookupByLibrary.simpleMessage("Demasiado salado"),
+    "saltLow": MessageLookupByLibrary.simpleMessage("Bajo en sal"),
+    "saltMedium": MessageLookupByLibrary.simpleMessage("Sal moderada"),
+    "saltTitle": MessageLookupByLibrary.simpleMessage("Sal"),
+    "saturatedFatHigh": MessageLookupByLibrary.simpleMessage(
+      "Demasiadas grasas saturadas",
+    ),
+    "saturatedFatLow": MessageLookupByLibrary.simpleMessage(
+      "Bajo en grasas saturadas",
+    ),
+    "saturatedFatMedium": MessageLookupByLibrary.simpleMessage(
+      "Grasas saturadas moderadas",
+    ),
+    "saturatedFatTitle": MessageLookupByLibrary.simpleMessage(
+      "Grasas saturadas",
     ),
     "saveContributionsButton": MessageLookupByLibrary.simpleMessage(
       "Guardar Contribuciones",
@@ -391,13 +474,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "¡Producto añadido con éxito!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("Éxito"),
+    "sugarsHigh": MessageLookupByLibrary.simpleMessage("Demasiado azucarado"),
+    "sugarsLow": MessageLookupByLibrary.simpleMessage("Bajo en azúcares"),
+    "sugarsMedium": MessageLookupByLibrary.simpleMessage("Azúcares moderados"),
+    "sugarsTitle": MessageLookupByLibrary.simpleMessage("Azúcares"),
     "supportCommunity": MessageLookupByLibrary.simpleMessage(
       "Soporte y comunidad",
     ),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "La información de texto se envió, pero falló la subida de la imagen.",
     ),
-    "textSubmissionFailed": m4,
+    "textSubmissionFailed": m7,
     "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
       "No se puede abrir Instagram",
     ),
@@ -405,6 +492,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "No se puede abrir el enlace",
     ),
     "unknown": MessageLookupByLibrary.simpleMessage("DESCONOCIDO"),
+    "unknownData": MessageLookupByLibrary.simpleMessage("Datos no disponibles"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "El producto que buscó no se encontró en nuestra base de datos.",
     ),
@@ -418,5 +506,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Visitar nuestro sitio",
     ),
     "welcome": MessageLookupByLibrary.simpleMessage("Bienvenido a"),
+    "xPrefix": MessageLookupByLibrary.simpleMessage("x"),
   };
 }

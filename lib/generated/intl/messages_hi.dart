@@ -25,11 +25,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "भेजने में त्रुटि: ${error}";
 
-  static String m2(details) => "सामग्री फोटो अपलोड विफल: ${details}";
+  static String m2(value) => "${value} g";
 
-  static String m3(details) => "पोषण तालिका फोटो अपलोड विफल: ${details}";
+  static String m3(details) => "सामग्री फोटो अपलोड विफल: ${details}";
 
-  static String m4(statusCode) =>
+  static String m4(value) => "${value} kcal";
+
+  static String m5(group) => "समूह ${group}";
+
+  static String m6(details) => "पोषण तालिका फोटो अपलोड विफल: ${details}";
+
+  static String m7(statusCode) =>
       "पाठ जानकारी भेजने में विफल (स्थिति ${statusCode})। HTML प्रतिक्रिया के लिए लॉग जांचें।";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -63,6 +69,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "जानकारी जोड़ें",
     ),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("एक उत्पाद जोड़ें"),
+    "additivesTitle": MessageLookupByLibrary.simpleMessage("एडिटिव्स"),
+    "allergensTitle": MessageLookupByLibrary.simpleMessage("एलर्जेंस"),
     "alternativeSubmitErrorMessage": m1,
     "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
       "धन्यवाद! आपका विकल्प समीक्षा के लिए भेज दिया गया है और इसे 48 घंटों के भीतर संसाधित किया जाएगा।",
@@ -91,6 +99,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "classificationInfoTitle": MessageLookupByLibrary.simpleMessage(
       "कंपनियों को कैसे वर्गीकृत किया जाता है?",
     ),
+    "close": MessageLookupByLibrary.simpleMessage("बंद करें"),
     "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
       "एक ब्रांड को अमेरिकी माना जाता है यदि वह एक अमेरिकी समूह से संबंधित है।",
     ),
@@ -124,9 +133,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
       "गिनती सफलतापूर्वक रीसेट हुई",
     ),
+    "counterTitle": MessageLookupByLibrary.simpleMessage("यूएसए काउंटर"),
     "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
       "मूल देश",
     ),
+    "defectsTitle": MessageLookupByLibrary.simpleMessage("खामियाँ"),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "राशि (डेमोक्रेट)",
     ),
@@ -154,10 +165,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "enableContributorMode": MessageLookupByLibrary.simpleMessage(
       "योगदानकर्ता मोड सक्षम करें",
     ),
+    "energyHigh": MessageLookupByLibrary.simpleMessage("अधिक कैलोरी"),
+    "energyLow": MessageLookupByLibrary.simpleMessage("कम कैलोरी प्रभाव"),
+    "energyMedium": MessageLookupByLibrary.simpleMessage("मध्यम कैलोरी"),
+    "energyTitle": MessageLookupByLibrary.simpleMessage("कैलोरी"),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "उत्पाद जोड़ते समय एक त्रुटि हुई।",
     ),
     "errorTitle": MessageLookupByLibrary.simpleMessage("त्रुटि"),
+    "fallbackProduct": MessageLookupByLibrary.simpleMessage("उत्पाद"),
+    "fatHigh": MessageLookupByLibrary.simpleMessage("अधिक वसा"),
+    "fatLow": MessageLookupByLibrary.simpleMessage("कम वसा"),
+    "fatMedium": MessageLookupByLibrary.simpleMessage("मध्यम वसा"),
+    "fatTitle": MessageLookupByLibrary.simpleMessage("वसा"),
+    "fiberHigh": MessageLookupByLibrary.simpleMessage("ज्यादा फाइबर"),
+    "fiberLow": MessageLookupByLibrary.simpleMessage("कम फाइबर"),
+    "fiberMedium": MessageLookupByLibrary.simpleMessage("कुछ फाइबर"),
+    "fiberTitle": MessageLookupByLibrary.simpleMessage("फाइबर"),
     "fieldRequiredError": MessageLookupByLibrary.simpleMessage(
       "यह फ़ील्ड आवश्यक है।",
     ),
@@ -170,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "food": MessageLookupByLibrary.simpleMessage("खाद्य पदार्थ"),
     "gallery": MessageLookupByLibrary.simpleMessage("गैलरी"),
     "general": MessageLookupByLibrary.simpleMessage("सामान्य"),
+    "gramsValue": m2,
+    "healthLabel": MessageLookupByLibrary.simpleMessage("स्वास्थ्य"),
     "however": MessageLookupByLibrary.simpleMessage("हालाँकि"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "छवि चुनने में त्रुटि",
@@ -181,7 +207,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "छवि अपलोड करने में त्रुटि।",
     ),
-    "ingredientPhotoUploadFailed": m2,
+    "informationTitle": MessageLookupByLibrary.simpleMessage("जानकारी"),
+    "ingredientPhotoUploadFailed": m3,
     "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
       "सामग्री (वैकल्पिक)",
     ),
@@ -191,21 +218,46 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "कृपया एक मान्य संख्या दर्ज करें।",
     ),
+    "kcalValue": m4,
     "languageSelection": MessageLookupByLibrary.simpleMessage("भाषा चयन"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "एक ब्रांड दर्ज करें",
     ),
     "mode": MessageLookupByLibrary.simpleMessage("मोड"),
+    "naLabel": MessageLookupByLibrary.simpleMessage("N/A"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "अभी तक कोई विकल्प नहीं।",
     ),
+    "noHealthInfo": MessageLookupByLibrary.simpleMessage(
+      "कोई स्वास्थ्य जानकारी उपलब्ध नहीं",
+    ),
+    "noInfo": MessageLookupByLibrary.simpleMessage("कोई जानकारी उपलब्ध नहीं"),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "अभी तक कोई राजनीतिक योगदान नहीं।",
     ),
-    "nutritionPhotoUploadFailed": m3,
+    "novaGroup1Desc": MessageLookupByLibrary.simpleMessage(
+      "अप्रसंस्कृत या न्यूनतम प्रसंस्कृत खाद्य पदार्थ",
+    ),
+    "novaGroup2Desc": MessageLookupByLibrary.simpleMessage(
+      "प्रसंस्कृत पाक सामग्री",
+    ),
+    "novaGroup3Desc": MessageLookupByLibrary.simpleMessage(
+      "प्रसंस्कृत खाद्य पदार्थ",
+    ),
+    "novaGroup4Desc": MessageLookupByLibrary.simpleMessage(
+      "अल्ट्रा-प्रसंस्कृत उत्पाद",
+    ),
+    "novaGroupAdditional": m5,
+    "novaGroupTitle": MessageLookupByLibrary.simpleMessage("NOVA समूह"),
+    "novaGroupUnknown": MessageLookupByLibrary.simpleMessage("अज्ञात समूह"),
+    "nutritionPhotoUploadFailed": m6,
     "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage("पोषण तालिका"),
     "ok": MessageLookupByLibrary.simpleMessage("ठीक है"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("ठीक है"),
+    "optionsTitle": MessageLookupByLibrary.simpleMessage("विकल्प"),
+    "organicNo": MessageLookupByLibrary.simpleMessage("नॉन-ऑर्गेनिक"),
+    "organicTitle": MessageLookupByLibrary.simpleMessage("ऑर्गेनिक"),
+    "organicYes": MessageLookupByLibrary.simpleMessage("ऑर्गेनिक उत्पाद"),
     "originLabel": MessageLookupByLibrary.simpleMessage("मूल देश"),
     "originOfIngredients": MessageLookupByLibrary.simpleMessage(
       "सामग्री का स्रोत",
@@ -250,6 +302,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "एक विकल्प प्रस्तावित करें",
     ),
+    "proteinsHigh": MessageLookupByLibrary.simpleMessage("ज्यादा प्रोटीन"),
+    "proteinsLow": MessageLookupByLibrary.simpleMessage("कम प्रोटीन"),
+    "proteinsMedium": MessageLookupByLibrary.simpleMessage("कुछ प्रोटीन"),
+    "proteinsTitle": MessageLookupByLibrary.simpleMessage("प्रोटीन"),
+    "qualitiesTitle": MessageLookupByLibrary.simpleMessage("गुण"),
     "reportProblem": MessageLookupByLibrary.simpleMessage(
       "समस्या रिपोर्ट करें",
     ),
@@ -306,11 +363,27 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("रिपब्लिकन्स"),
     "reset": MessageLookupByLibrary.simpleMessage("रीसेट"),
+    "resetButton": MessageLookupByLibrary.simpleMessage("रीसेट"),
     "resetCounter": MessageLookupByLibrary.simpleMessage("गिनती रीसेट करें"),
+    "resetSuccessSnack": MessageLookupByLibrary.simpleMessage(
+      "स्कोर सफलतापूर्वक रीसेट हो गए",
+    ),
     "safe": MessageLookupByLibrary.simpleMessage("यूएसए नहीं"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "ऐसा लगता है कि यह उत्पाद किसी अमेरिकी कंपनी का नहीं है।",
     ),
+    "saltHigh": MessageLookupByLibrary.simpleMessage("बहुत ज्यादा नमक"),
+    "saltLow": MessageLookupByLibrary.simpleMessage("कम नमक"),
+    "saltMedium": MessageLookupByLibrary.simpleMessage("मध्यम नमक"),
+    "saltTitle": MessageLookupByLibrary.simpleMessage("नमक"),
+    "saturatedFatHigh": MessageLookupByLibrary.simpleMessage(
+      "बहुत ज्यादा संतृप्त वसा",
+    ),
+    "saturatedFatLow": MessageLookupByLibrary.simpleMessage("कम संतृप्त वसा"),
+    "saturatedFatMedium": MessageLookupByLibrary.simpleMessage(
+      "मध्यम संतृप्त वसा",
+    ),
+    "saturatedFatTitle": MessageLookupByLibrary.simpleMessage("संतृप्त वसा"),
     "saveContributionsButton": MessageLookupByLibrary.simpleMessage(
       "योगदान सहेजें",
     ),
@@ -364,13 +437,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "उत्पाद सफलतापूर्वक जोड़ा गया!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("सफलता"),
+    "sugarsHigh": MessageLookupByLibrary.simpleMessage("बहुत अधिक शुगर"),
+    "sugarsLow": MessageLookupByLibrary.simpleMessage("कम शुगर"),
+    "sugarsMedium": MessageLookupByLibrary.simpleMessage("मध्यम शुगर"),
+    "sugarsTitle": MessageLookupByLibrary.simpleMessage("शुगर"),
     "supportCommunity": MessageLookupByLibrary.simpleMessage(
       "समर्थन और समुदाय",
     ),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "पाठ जानकारी भेजी गई थी, लेकिन छवि अपलोड विफल रही।",
     ),
-    "textSubmissionFailed": m4,
+    "textSubmissionFailed": m7,
     "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
       "Instagram खोलने में असमर्थ",
     ),
@@ -378,6 +455,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "लिंक खोलने में असमर्थ",
     ),
     "unknown": MessageLookupByLibrary.simpleMessage("अज्ञात"),
+    "unknownData": MessageLookupByLibrary.simpleMessage("डेटा उपलब्ध नहीं"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "आपके द्वारा खोजा गया उत्पाद हमारे डेटाबेस में नहीं मिला।",
     ),
@@ -389,5 +467,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "viewCriteria": MessageLookupByLibrary.simpleMessage("मानदंड देखें"),
     "visitWebsite": MessageLookupByLibrary.simpleMessage("हमारी वेबसाइट देखें"),
     "welcome": MessageLookupByLibrary.simpleMessage("में आपका स्वागत है"),
+    "xPrefix": MessageLookupByLibrary.simpleMessage("x"),
   };
 }

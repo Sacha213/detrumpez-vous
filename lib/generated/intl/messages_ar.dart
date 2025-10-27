@@ -25,11 +25,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(error) => "भेजने में त्रुटि: ${error}";
 
-  static String m2(details) => "فشل تحميل صورة المكونات: ${details}";
+  static String m2(value) => "${value} g";
 
-  static String m3(details) => "فشل تحميل صورة جدول التغذية: ${details}";
+  static String m3(details) => "فشل تحميل صورة المكونات: ${details}";
 
-  static String m4(statusCode) =>
+  static String m4(value) => "${value} kcal";
+
+  static String m5(group) => "المجموعة ${group}";
+
+  static String m6(details) => "فشل تحميل صورة جدول التغذية: ${details}";
+
+  static String m7(statusCode) =>
       "فشل إرسال المعلومات النصية (الحالة ${statusCode}). تحقق من السجلات للحصول على استجابة HTML.";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -63,6 +69,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "إضافة معلومات",
     ),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("إضافة منتج"),
+    "additivesTitle": MessageLookupByLibrary.simpleMessage("المضافات"),
+    "allergensTitle": MessageLookupByLibrary.simpleMessage(
+      "مواد مسببة للحساسية",
+    ),
     "alternativeSubmitErrorMessage": m1,
     "alternativeSubmittedMessage": MessageLookupByLibrary.simpleMessage(
       "आपका विकल्प समीक्षा के लिए भेज दिया गया है",
@@ -97,6 +107,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "classificationInfoTitle": MessageLookupByLibrary.simpleMessage(
       "كيف يتم تصنيف الشركات؟",
     ),
+    "close": MessageLookupByLibrary.simpleMessage("إغلاق"),
     "companyCriteriaContent": MessageLookupByLibrary.simpleMessage(
       "تعتبر العلامة التجارية أمريكية إذا كانت تنتمي إلى مجموعة أمريكية.",
     ),
@@ -130,9 +141,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "counterResetSuccess": MessageLookupByLibrary.simpleMessage(
       "تمت إعادة ضبط العداد بنجاح",
     ),
+    "counterTitle": MessageLookupByLibrary.simpleMessage(
+      "عداد الولايات المتحدة",
+    ),
     "countrySelectionScreenTitle": MessageLookupByLibrary.simpleMessage(
       "دول المنشأ",
     ),
+    "defectsTitle": MessageLookupByLibrary.simpleMessage("عيوب"),
     "democratContributionsHint": MessageLookupByLibrary.simpleMessage(
       "المبلغ (الديمقراطيون)",
     ),
@@ -158,10 +173,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "enableContributorMode": MessageLookupByLibrary.simpleMessage(
       "تمكين وضع المساهم",
     ),
+    "energyHigh": MessageLookupByLibrary.simpleMessage("كثيفة السعرات"),
+    "energyLow": MessageLookupByLibrary.simpleMessage("تأثير حراري منخفض"),
+    "energyMedium": MessageLookupByLibrary.simpleMessage("سعرات حرارية معتدلة"),
+    "energyTitle": MessageLookupByLibrary.simpleMessage("سعرات حرارية"),
     "errorMessage": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ أثناء إضافة المنتج.",
     ),
     "errorTitle": MessageLookupByLibrary.simpleMessage("خطأ"),
+    "fallbackProduct": MessageLookupByLibrary.simpleMessage("منتج"),
+    "fatHigh": MessageLookupByLibrary.simpleMessage("دهون عالية"),
+    "fatLow": MessageLookupByLibrary.simpleMessage("دهون قليلة"),
+    "fatMedium": MessageLookupByLibrary.simpleMessage("دهون متوسطة"),
+    "fatTitle": MessageLookupByLibrary.simpleMessage("دهون"),
+    "fiberHigh": MessageLookupByLibrary.simpleMessage("ألياف عالية"),
+    "fiberLow": MessageLookupByLibrary.simpleMessage("ألياف قليلة"),
+    "fiberMedium": MessageLookupByLibrary.simpleMessage("بعض الألياف"),
+    "fiberTitle": MessageLookupByLibrary.simpleMessage("ألياف"),
     "fieldRequiredError": MessageLookupByLibrary.simpleMessage(
       "هذا الحقل مطلوب.",
     ),
@@ -174,6 +202,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "food": MessageLookupByLibrary.simpleMessage("طعام"),
     "gallery": MessageLookupByLibrary.simpleMessage("المعرض"),
     "general": MessageLookupByLibrary.simpleMessage("عام"),
+    "gramsValue": m2,
+    "healthLabel": MessageLookupByLibrary.simpleMessage("الصحة"),
     "however": MessageLookupByLibrary.simpleMessage("ومع ذلك"),
     "imagePickError": MessageLookupByLibrary.simpleMessage(
       "خطأ في اختيار الصورة",
@@ -183,7 +213,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "imageUploadError": MessageLookupByLibrary.simpleMessage(
       "خطأ أثناء تحميل الصورة.",
     ),
-    "ingredientPhotoUploadFailed": m2,
+    "informationTitle": MessageLookupByLibrary.simpleMessage("معلومات"),
+    "ingredientPhotoUploadFailed": m3,
     "ingredientsOptional": MessageLookupByLibrary.simpleMessage(
       "المكونات (اختياري)",
     ),
@@ -193,23 +224,48 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidNumberError": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم صالح.",
     ),
+    "kcalValue": m4,
     "languageSelection": MessageLookupByLibrary.simpleMessage("اختيار اللغة"),
     "manualSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
       "أدخل علامة تجارية",
     ),
     "mode": MessageLookupByLibrary.simpleMessage("الوضع"),
+    "naLabel": MessageLookupByLibrary.simpleMessage("غير متاح"),
     "noAlternativesYet": MessageLookupByLibrary.simpleMessage(
       "अभी तक कोई विकल्प नहीं।",
     ),
+    "noHealthInfo": MessageLookupByLibrary.simpleMessage(
+      "لا توجد معلومات صحية متاحة",
+    ),
+    "noInfo": MessageLookupByLibrary.simpleMessage("لا توجد معلومات متاحة"),
     "noPoliticalContributionsYet": MessageLookupByLibrary.simpleMessage(
       "अभी तक कोई राजनीतिक योगदान नहीं।",
     ),
-    "nutritionPhotoUploadFailed": m3,
+    "novaGroup1Desc": MessageLookupByLibrary.simpleMessage(
+      "أطعمة غير مصنعة أو قليلة المعالجة",
+    ),
+    "novaGroup2Desc": MessageLookupByLibrary.simpleMessage(
+      "مكونات طهوية معالجة",
+    ),
+    "novaGroup3Desc": MessageLookupByLibrary.simpleMessage("أطعمة مصنعة"),
+    "novaGroup4Desc": MessageLookupByLibrary.simpleMessage(
+      "منتجات فائقة المعالجة",
+    ),
+    "novaGroupAdditional": m5,
+    "novaGroupTitle": MessageLookupByLibrary.simpleMessage("مجموعة NOVA"),
+    "novaGroupUnknown": MessageLookupByLibrary.simpleMessage(
+      "مجموعة غير معروفة",
+    ),
+    "nutritionPhotoUploadFailed": m6,
     "nutritionTablePhoto": MessageLookupByLibrary.simpleMessage(
       "جدول القيمة الغذائية",
     ),
     "ok": MessageLookupByLibrary.simpleMessage("موافق"),
     "okButtonLabel": MessageLookupByLibrary.simpleMessage("موافق"),
+    "optionsTitle": MessageLookupByLibrary.simpleMessage("خيارات"),
+    "organicNo": MessageLookupByLibrary.simpleMessage("غير عضوي"),
+    "organicTitle": MessageLookupByLibrary.simpleMessage("عضوي"),
+    "organicYes": MessageLookupByLibrary.simpleMessage("منتج عضوي"),
     "originLabel": MessageLookupByLibrary.simpleMessage("بلد المنشأ"),
     "originOfIngredients": MessageLookupByLibrary.simpleMessage(
       "مصدر المكونات",
@@ -252,6 +308,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "proposeAlternativeHint": MessageLookupByLibrary.simpleMessage(
       "एक विकल्प प्रस्तावित करें",
     ),
+    "proteinsHigh": MessageLookupByLibrary.simpleMessage("بروتين عالٍ"),
+    "proteinsLow": MessageLookupByLibrary.simpleMessage("قليل البروتين"),
+    "proteinsMedium": MessageLookupByLibrary.simpleMessage("بعض البروتين"),
+    "proteinsTitle": MessageLookupByLibrary.simpleMessage("بروتينات"),
+    "qualitiesTitle": MessageLookupByLibrary.simpleMessage("جودة"),
     "reportProblem": MessageLookupByLibrary.simpleMessage("الإبلاغ عن مشكلة"),
     "reportProblemActionSubtitle": MessageLookupByLibrary.simpleMessage(
       "انقر هنا للإبلاغ عن مشكلة",
@@ -306,11 +367,27 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "republicansLabel": MessageLookupByLibrary.simpleMessage("रिपब्लिकन"),
     "reset": MessageLookupByLibrary.simpleMessage("إعادة تعيين"),
+    "resetButton": MessageLookupByLibrary.simpleMessage("إعادة ضبط"),
     "resetCounter": MessageLookupByLibrary.simpleMessage("إعادة تعيين العداد"),
+    "resetSuccessSnack": MessageLookupByLibrary.simpleMessage(
+      "تمت إعادة تعيين الدرجات بنجاح",
+    ),
     "safe": MessageLookupByLibrary.simpleMessage("ليس أمريكي"),
     "safeProductMessage": MessageLookupByLibrary.simpleMessage(
       "لا يبدو أن هذا المنتج يأتي من شركة أمريكية.",
     ),
+    "saltHigh": MessageLookupByLibrary.simpleMessage("مالح جدًا"),
+    "saltLow": MessageLookupByLibrary.simpleMessage("قليل الملح"),
+    "saltMedium": MessageLookupByLibrary.simpleMessage("ملح متوسط"),
+    "saltTitle": MessageLookupByLibrary.simpleMessage("ملح"),
+    "saturatedFatHigh": MessageLookupByLibrary.simpleMessage(
+      "دهون مشبعة عالية",
+    ),
+    "saturatedFatLow": MessageLookupByLibrary.simpleMessage("دهون مشبعة قليلة"),
+    "saturatedFatMedium": MessageLookupByLibrary.simpleMessage(
+      "دهون مشبعة متوسطة",
+    ),
+    "saturatedFatTitle": MessageLookupByLibrary.simpleMessage("دهون مشبعة"),
     "saveContributionsButton": MessageLookupByLibrary.simpleMessage(
       "حفظ المساهمات",
     ),
@@ -362,16 +439,21 @@ class MessageLookup extends MessageLookupByLibrary {
       "تمت إضافة المنتج بنجاح!",
     ),
     "successTitle": MessageLookupByLibrary.simpleMessage("نجاح"),
+    "sugarsHigh": MessageLookupByLibrary.simpleMessage("سكريات عالية"),
+    "sugarsLow": MessageLookupByLibrary.simpleMessage("قليل السكريات"),
+    "sugarsMedium": MessageLookupByLibrary.simpleMessage("سكريات متوسطة"),
+    "sugarsTitle": MessageLookupByLibrary.simpleMessage("سكريات"),
     "supportCommunity": MessageLookupByLibrary.simpleMessage("الدعم والمجتمع"),
     "textDataSentButImageFailed": MessageLookupByLibrary.simpleMessage(
       "تم إرسال المعلومات النصية، ولكن فشل تحميل الصورة.",
     ),
-    "textSubmissionFailed": m4,
+    "textSubmissionFailed": m7,
     "unableToOpenInstagram": MessageLookupByLibrary.simpleMessage(
       "تعذر فتح إنستغرام",
     ),
     "unableToOpenLink": MessageLookupByLibrary.simpleMessage("تعذر فتح الرابط"),
     "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
+    "unknownData": MessageLookupByLibrary.simpleMessage("بيانات غير متوفرة"),
     "unknownProductMessage": MessageLookupByLibrary.simpleMessage(
       "المنتج الذي بحثت عنه غير موجود في قاعدة بياناتنا.",
     ),
@@ -383,5 +465,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "viewCriteria": MessageLookupByLibrary.simpleMessage("عرض المعايير"),
     "visitWebsite": MessageLookupByLibrary.simpleMessage("زيارة موقعنا"),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحباً بك في"),
+    "xPrefix": MessageLookupByLibrary.simpleMessage("x"),
   };
 }

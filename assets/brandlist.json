@@ -35169,5 +35169,14 @@
         "normalizedName": "wet_n_wild",
         "parentOrigin": "US",
         "origin": "US"
+    },
+    {
+        "name": "Wahl",
+        "description": "Marque et entreprise américaines spécialisées dans les tondeuses, tondeuses à barbe et outils de soin personnel/coiffure.",
+        "source": "Site officiel: Wahl Clipper Corporation (wahl.com)",
+        "parentCompany": "Wahl Clipper Corporation",
+        "normalizedName": "wahl",
+        "parentOrigin": "US",
+        "origin": "US"
     }
 ]
