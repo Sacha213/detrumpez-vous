@@ -66,7 +66,7 @@ Chaque contribution est précieuse pour améliorer le projet et aider chacun à 
 
 ## Licence
 
-Ce projet est sous licence [MIT](LICENSE).
+Ce projet est sous licence [GNU General Public License v3.0](LICENSE).
 
 ---
 
